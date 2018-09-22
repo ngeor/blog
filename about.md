@@ -4,15 +4,16 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Nikolaos Georgiou. I'm a Greek software engineer
+living in the Netherlands.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I mostly blog about programming, continuous delivery, testing,
+automation, code quality.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Meta
 
+This blog is powered by [jekyll](https://jekyllrb.com/) and
+it is hosted on [GitHub Pages](https://pages.github.com/). The
+source code for the blog is [here](https://github.com/ngeor/blog).
 
-[jekyll-organization]: https://github.com/jekyll
+The theme is a modified version of [minima](https://github.com/jekyll/minima).
