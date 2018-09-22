@@ -1,0 +1,30 @@
+---
+layout: post
+title: Dynamic PNG Image Generation with ASP.NET
+date: 2010-06-25 14:16:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  geo_public: '0'
+  _publicize_job_id: '349614355'
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '114'
+  _wp_old_slug: '114'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>I had created a small web app in MonoDevelop that created a png image on the fly. Porting the app to Windows .NET 3.5 with Visual Studio 2008 was almost painless, but it did include two unexpected incident. The first one was... well the app didn't run anymore, showing the dreadful "A generic error occured in GDI+". A bit of a research lead to this article <a href="http://aspalliance.com/319">here</a>. Apparently the problem occurs only with PNG images. The stream that you write the generated image to needs to be seekable and I guess in Mono the Response.OutputStream is seekable but in .NET it's not. The solution is to use an intermediate MemoryStream to write the image to and then dump that stream on Response.OutputStream.</p>
+<p>After that was fixed, I noticed that the fonts were appearing ugly, as shown in the following graphic:</p>
+<p><img class="alignnone size-full wp-image-489" src="{{ site.baseurl }}/assets/png-ugly-fonts.png" alt="png-ugly-fonts" width="253" height="142" /></p>
+<p>The solution to that was to fill the background of the entire image with a colour (white in my case). I think it must be related with PNG transparency. If you observe the above screenshot, the text appears ugly only in the area that is not filled with colour.</p>

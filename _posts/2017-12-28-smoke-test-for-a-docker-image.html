@@ -1,0 +1,59 @@
+---
+layout: post
+title: Smoke test for a Docker image
+date: 2017-12-28 10:40:39.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- Docker
+- smoke test
+- TeamCity
+meta:
+  _thumbnail_id: '3494'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12964671663'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>According to <a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Wikipedia</a>, a smoke test is <em>a preliminary test that reveals simple failures severe enough to (for example) reject a prospective software release</em>. <em>The process of smoke testing aims to determine whether the application is so badly broken as to make further immediate testing unnecessary.</em> If we consider our dockerized blog-helm web application, a possible smoke test can be: can we pull the image from the registry? If we run the image, does the container stay alive or does it crash immediately? In this post, I'll implement this in an extra build configuration in TeamCity with a generic bash script doing the actual work.</p>
+<p><!--more--></p>
+<p>First we need to create the new build configuration:</p>
+<p>[caption id="attachment_3489" align="alignnone" width="1382"]<img class="alignnone size-full wp-image-3489" src="{{ site.baseurl }}/assets/2017-12-28-08_21_44-create-build-configuration-e28094-teamcity.png" alt="2017-12-28 08_21_44-Create Build Configuration — TeamCity.png" width="1382" height="1154" /> Adding a new build configuration for the Smoke Test[/caption]</p>
+<p>Just like in the previous post, we need to make it part of the <a href="https://ngeor.wordpress.com/2017/12/27/build-chains-in-teamcity/">build chain</a>, so it needs the VCS root:</p>
+<p>[caption id="attachment_3490" align="alignnone" width="2203"]<img class="alignnone size-full wp-image-3490" src="{{ site.baseurl }}/assets/2017-12-28-08_22_48-smoke-test-configuration-e28094-teamcity.png" alt="2017-12-28 08_22_48-Smoke Test Configuration — TeamCity.png" width="2203" height="486" /> Attaching VCS root[/caption]</p>
+<p>and the snapshot dependency. Note that the only artifact needed is the <code>image-tag.txt</code> file that contains the Docker image tag name.</p>
+<p>[caption id="attachment_3491" align="alignnone" width="2554"]<img class="alignnone size-full wp-image-3491" src="{{ site.baseurl }}/assets/2017-12-28-08_24_40-smoke-test-configuration-e28094-teamcity.png" alt="2017-12-28 08_24_40-Smoke Test Configuration — TeamCity.png" width="2554" height="1094" /> Configuring dependencies[/caption]</p>
+<p>I'd like to smoke test all feature branches automatically on every commit, so I configure a Finished Build trigger:</p>
+<p>[caption id="attachment_3492" align="alignnone" width="1103"]<img class="alignnone size-full wp-image-3492" src="{{ site.baseurl }}/assets/2017-12-28-08_26_31-smoke-test-configuration-e28094-teamcity.png" alt="2017-12-28 08_26_31-Smoke Test Configuration — TeamCity.png" width="1103" height="951" /> Automatically smoke test all green Commit Stage builds[/caption]</p>
+<p>and I don't want to be able to deploy to the test environment unless the smoke test has passed, so I add another snapshot dependency to the Deploy to Test build configuration:</p>
+<p>[caption id="attachment_3493" align="alignnone" width="3053"]<img class="alignnone size-full wp-image-3493" src="{{ site.baseurl }}/assets/2017-12-28-08_29_16-deploy-to-test-configuration-e28094-teamcity.png" alt="2017-12-28 08_29_16-Deploy To Test Configuration — TeamCity.png" width="3053" height="1086" /> Only deploy when smoke test passes[/caption]</p>
+<p>With these changes we have a new build chain with the Smoke Test build configuration in between Commit Stage and Deploy to Test:</p>
+<p>[caption id="attachment_3494" align="alignnone" width="2158"]<img class="alignnone size-full wp-image-3494" src="{{ site.baseurl }}/assets/2017-12-28-08_52_34-blog-helm-__-commit-stage-_-build-chains-e28094-teamcity.png" alt="2017-12-28 08_52_34-Blog Helm __ Commit Stage _ Build Chains — TeamCity.png" width="2158" height="449" /> The new build chain[/caption]</p>
+<p>Now the build pipeline is configured and we just need to write the script that performs the smoke test. The script is a bit long at 98 lines of Bash, so I'll just <a href="https://github.com/ngeor/blog-helm/blob/v1.5.1/ci-scripts/smoke-test-docker-image.sh">link to it</a> if you want to read it. Its logic is roughly as follows:</p>
+<ul>
+<li>Pull the image from the custom docker registry</li>
+<li>Start a container with this image in the background (so that the script can continue)</li>
+<li>Wait until the container starts (it retries 5 times with 5 seconds sleep between each retry). If the container can't start at all, either it's completely wrong, or the host is too slow, or something else weird is going on.</li>
+<li>Wait to verify that the container stays up (same retry rules as before). This is the actual substance of this smoke test. The container starts, but does it stay up? This is supposed to be a web application, so it should stay up to serve incoming HTTP requests.</li>
+<li>Cleanup: stop the container, print its logs (useful for troubleshooting), remove the container.</li>
+</ul>
+<p>Let's see an example build log of a successful smoke test:</p>
+<p>[caption id="attachment_3495" align="alignnone" width="2163"]<img class="alignnone size-full wp-image-3495" src="{{ site.baseurl }}/assets/2017-12-28-09_15_19-blog-helm-__-smoke-test-_-1-5-0-smoke-test-2-28-dec-17-08_09-_-build-log-e28094-te.png" alt="2017-12-28 09_15_19-Blog Helm __ Smoke Test _ #1.5.0-smoke-test.2 (28 Dec 17 08_09) _ Build Log — Te.png" width="2163" height="657" /> Build log of a passed smoke test[/caption]</p>
+<p>You can see that the container starts and stays up. The script tried 5 times and the container didn't die inexplicably in between, so that's good enough as far this smoke test is concerned.</p>
+<p>To get a red build out of this smoke test, I modified the <code>CMD</code> instruction in the <code>Dockerfile</code> so that it references a non-existing JavaScript file (<code>indexx.js</code> instead of <code>index.js</code>). This is the resulting build log:</p>
+<p>[caption id="attachment_3496" align="alignnone" width="2153"]<img class="alignnone size-full wp-image-3496" src="{{ site.baseurl }}/assets/2017-12-28-09_22_22-blog-helm-__-smoke-test-_-1-5-0-smoke-test-3-28-dec-17-08_21-_-build-log-e28094-te.png" alt="2017-12-28 09_22_22-Blog Helm __ Smoke Test _ #1.5.0-smoke-test.3 (28 Dec 17 08_21) _ Build Log — Te.png" width="2153" height="957" /> Build log of a failed smoke test[/caption]</p>
+<p>The container starts successfully, but a few seconds later it dies. The smoke test script prints the container logs, so we can clearly see that nodeJS exited because it couldn't find the file <code>/app/indexx.js</code>.</p>
+<p>This smoke test costs a bit more than 30'' when it is green and less when it is red. Including some overhead for preparing and starting the build, this means that, on the happy flow, we have almost an entire minute to wait before we can deploy our application. What are we buying with this minute to justify spending it?</p>
+<p>The checks we're doing (Can we pull the image? Does the container stay up?) would be implicit in an integration test, because you have to start the container in order to do the integration test against the running application. The advantage with a separate smoke test is that it's easier to troubleshoot what went wrong. If you see a failed smoke test, you understand that there's nothing wrong with your integration tests but something more fundamental has gone wrong.</p>
+<p>&nbsp;</p>

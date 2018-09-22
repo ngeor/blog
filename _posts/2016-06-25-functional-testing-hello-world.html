@@ -1,0 +1,133 @@
+---
+layout: post
+title: Functional Testing Hello World
+date: 2016-06-25 08:54:35.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- functional tests
+- JavaScript
+- mocha
+- promises
+- WebdriverIO
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '376'
+  _wp_old_slug: '376'
+  _publicize_job_id: '4016603679'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>Let's have a look at a first example of writing and running a functional test. This is going to be a very basic hello world example, but still it gives an opportunity of looking at the bare minimum usage of WebDriverIO and a first taste of asynchronous programming with promises.<!--more--></p>
+<p>Note that you can find the code mentioned in this post in the <a href="https://github.com/ngeor/Calculator">Calculator repo</a> we used in previous posts.</p>
+<p>First, we have to add the <a href="http://webdriver.io/">webdriverio</a> dependency to our repo with <code>npm install -D webdriverio</code>. This is the client library that can connect to WebDriver protocol servers like Selenium, PhantomJS, etc.</p>
+<p>We are going to take the hello world example from the <a href="http://webdriver.io/guide.html">WebdriverIO page</a>:</p>
+<p>[code language="JavaScript"]<br />
+var webdriverio = require('webdriverio');<br />
+var options = {<br />
+    desiredCapabilities: {<br />
+        browserName: 'firefox'<br />
+    }<br />
+};</p>
+<p>webdriverio<br />
+    .remote(options)<br />
+    .init()<br />
+    .url('http://www.google.com')<br />
+    .getTitle().then(function(title) {<br />
+        console.log('Title was: ' + title);<br />
+    })<br />
+    .end();<br />
+[/code]</p>
+<p>and try to run it with mocha.</p>
+<p>Before we start, some observations on the code:</p>
+<ul>
+<li>it defines a set of options to initialize the WebdriverIO object with. The available options are documented <a href="http://webdriver.io/guide/getstarted/configuration.html">here</a>. For example, you can fine-tune your timeouts for how much WebdriverIO should wait for something to load on your site before giving up.</li>
+<li>Then, it initializes the WebdriverIO client with the <code>remote</code> and <code>init</code> methods</li>
+<li>It navigates to the homepage of Google with the <code>url</code> method</li>
+<li>It requests the page's title with the <code>getTitle</code> method</li>
+<li>It prints that title to the console</li>
+<li>It terminates the session with the <code>end</code> method</li>
+</ul>
+<p>All these methods are documented in the <a href="http://webdriver.io/api.html">API section</a> of WebDriverIO. The coding style may look strange at first. Instead of having one function call per line, we have chained functions operating on top of the previous function's result. The reason is that we're dealing with an <strong>asynchronous</strong> API that uses <strong>promises</strong>. A promise is a way of returning something that will <strong>eventually</strong> return a value. Common pitfalls in writing functional tests originate by not properly chaining promises together.</p>
+<p>So, our first attempt is to wrap this code in a unit test:</p>
+<p>[code language="JavaScript"]<br />
+var expect = require('chai').expect;</p>
+<p>describe('Example Functional Test', function() {<br />
+    it('should work', function() {<br />
+        var webdriverio = require('webdriverio');<br />
+        var options = {<br />
+            desiredCapabilities: {<br />
+                browserName: 'firefox'<br />
+            }<br />
+        };</p>
+<p>        webdriverio<br />
+            .remote(options)<br />
+            .init()<br />
+            .url('http://www.google.com')<br />
+            .getTitle().then(function(title) {<br />
+                expect(title).to.equal('Google');<br />
+            })<br />
+            .end();<br />
+    });<br />
+});<br />
+[/code]</p>
+<p>In order to run this, you need to have Selenium or PhantomJS listening, otherwise the test will fail. To use phantom, run it with <code>phantom --webdriver=4444</code> which is the default port for webdriver.</p>
+<p>If you run this test, it will work and the test will pass. But, it is actually broken. If you modify the assertion and demand that the title equals to 'Yahoo', the test will still pass! This is a <strong>broken, evergreen test</strong>.</p>
+<p>The reason is that WebdriverIO is based on asynchronous code and promises. The unit test executes before the asynchronous code has completed its job. We have to tell mocha about this so that it can wait properly for the asynchronous code to finish.</p>
+<p>There are two ways of doing that:</p>
+<ul>
+<li>add a <code>done</code> parameter to the unit test and make sure that that parameter gets called before the test exits. This way is rather verbose.</li>
+<li>have the unit test return the promise so that mocha can wait for it. This is the easy way.</li>
+</ul>
+<p>Let's have a look at these two ways separately. Note that the first way, using the <code>done</code> parameter, is more verbose and I don't recommend it, because the other way is much simpler.</p>
+<p>First, the usage of the <code>done</code> parameter in the unit test:</p>
+<p>[code language="JavaScript"]<br />
+it('should work', function(done) {<br />
+[/code]</p>
+<p>Note that the function that runs the test has a parameter. Mocha will understand that the test will be complete only when somebody calls that <code>done</code> function. We therefore have to do that at the end of the test:</p>
+<p>[code language="JavaScript"]<br />
+getTitle().then(function(title) {<br />
+    expect(title).to.equal('Yahoo');<br />
+})<br />
+.end()<br />
+.then(function() {<br />
+    done();<br />
+}, function(err) {<br />
+    done(err);<br />
+});<br />
+[/code]</p>
+<p>After the <code>end</code> call, we have attached another promise that calls the done function. If the test succeeds, it calls the <code>done</code> without arguments. If the test fails, it calls the <code>done</code> function with the error that happened. This allows mocha to correctly report the test's status.</p>
+<p>This is a bit too verbose. A much easier way is to simply <strong>return the promise</strong> and not use the done function at all. Mocha does the rest for us:</p>
+<p>[code language="JavaScript"]<br />
+var expect = require('chai').expect;</p>
+<p>describe('Example Functional Test', function() {<br />
+    it('should work', function() {<br />
+        var webdriverio = require('webdriverio');<br />
+        var options = {<br />
+            desiredCapabilities: {<br />
+                browserName: 'firefox'<br />
+            }<br />
+        };</p>
+<p>        return webdriverio<br />
+            .remote(options)<br />
+            .init()<br />
+            .url('http://www.google.com')<br />
+            .getTitle().then(function(title) {<br />
+                expect(title).to.equal('Google');<br />
+            })<br />
+            .end();<br />
+    });<br />
+});<br />
+[/code]</p>
+<p>We took out the <code>done</code> parameter completely. Notice that now the promise chain is being returned from the unit test. This is all mocha needs in order to tie the loop together and make sure we don't have an evergreen test.</p>
+<p>In the next post we'll add a second test and start working towards giving some structure to these tests, taking advantage of mocha's before and after hooks.</p>

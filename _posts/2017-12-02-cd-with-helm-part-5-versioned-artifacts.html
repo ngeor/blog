@@ -1,0 +1,172 @@
+---
+layout: post
+title: 'CD with Helm part 5: versioned artifacts'
+date: 2017-12-02 16:04:56.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- continuous delivery
+- continuous integration
+- Docker
+- Helm
+- Kubernetes
+- TeamCity
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12072462100'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In the previous post we created the Helm chart for our hello world <code>blog-helm</code> application. The Helm chart contains all the information we need to deploy our application to a Kubernetes cluster. But so far, we always deploy the latest version. In a CD setup, we'd like to be able to deploy any version, from any feature branch, at any given point in time, to any environment (DTAP). Let's start by looking at versioning.</p>
+<p><!--more--></p>
+<p>We have various versions that we need to control in our application:</p>
+<ul>
+<li>The application version, as defined in <code>package.json</code>.</li>
+<li>The version of the Docker image (or tag in Docker terms). We haven't used this so far.</li>
+<li>The version of the Helm chart, as defined in <code>Chart.yaml</code>. One important point to remember is that the Helm chart references the desired Docker image version in <code>values.yaml</code>.</li>
+</ul>
+<p>To keep our sanity, it makes sense to use a <strong>single version number</strong> to describe all three versioned components. We'll try out the following setup:</p>
+<ul>
+<li>The version defined in <code>package.json</code> is leading. This way, we allow the version to come from Git and go under the same code review process, just like everything else.</li>
+<li>The version of the Docker image and the Helm chart will be the same. It will be equal to the application version for the master branch. For feature branches, we'll use the application version with the git SHA as a suffix.</li>
+</ul>
+<p>So for the master branch we'll have something like this:</p>
+<p><img src="{{ site.baseurl }}/assets/helm1.png" alt="helm1.png" width="429" height="169" class="alignnone size-full wp-image-3376" /></p>
+<p>With a small difference for feature branches:</p>
+<p><img src="{{ site.baseurl }}/assets/helm2.png" alt="helm2.png" width="483" height="169" class="alignnone size-full wp-image-3377" /></p>
+<p>To make all this happen, we need to write a bit of code in the commit stage.</p>
+<p>We will need these commands:</p>
+<ul>
+<li><code>git rev-parse HEAD</code> will output the git SHA ID</li>
+<li><code>git rev-parse --abbrev-ref HEAD</code> will output the name of the current branch</li>
+<li>and finally <code>cat package.json  | grep version | cut -d\" -f 4</code> is a little bit of bash kung-fu that will give us the version out of <code>package.json</code>
+</li>
+</ul>
+<p>Let's put these commands together in a small bash script:</p>
+<p>[code language="bash"]<br />
+GIT_SHA=$(git rev-parse HEAD)<br />
+GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)<br />
+APP_VERSION=$(cat package.json  | grep version | cut -d\&quot; -f 4)</p>
+<p>if [ &quot;$GIT_BRANCH&quot; = &quot;master&quot; ]; then<br />
+  IMAGE_TAG=&quot;$APP_VERSION&quot;<br />
+else<br />
+  IMAGE_TAG=&quot;$APP_VERSION-$GIT_SHA&quot;<br />
+fi</p>
+<p>echo &quot;Docker image tag will be $IMAGE_TAG&quot;<br />
+[/code]</p>
+<p>It's a good idea to commit this script in our source code, so that we don't have large inline scripts within the build server. We can create a new folder, e.g. <code>ci-scripts</code>, and store it there as <code>version.sh</code>.</p>
+<p>We'll need to <strong>share this unique version with the next steps</strong> of the build but also with the deployment stage (which we haven't seen yet). For the deployment stage, we can write the image tag in a small text file and publish it as an artifact. For the commit stage, it's possible to create an environment variable from within a build step. Each build server does this differently, e.g. Bamboo has a "Inject Variables" build step and Jenkins has something similar. TeamCity, which I'm using in this example, supports some special <code>echo</code> message during the build.</p>
+<p>The final script looks like this (<a href="https://github.com/ngeor/blog-helm/tree/f36bb849a9a3d5dce87a4a397c75d48dc67fa217" target="_blank">browse code at this point</a>):</p>
+<p>[code language="bash"]<br />
+#!/bin/sh</p>
+<p>set -x<br />
+set -e</p>
+<p>GIT_SHA=$(git rev-parse HEAD)<br />
+GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)<br />
+APP_VERSION=$(cat package.json  | grep version | cut -d\&quot; -f 4)</p>
+<p>if [ &quot;$GIT_BRANCH&quot; = &quot;master&quot; ]; then<br />
+  IMAGE_TAG=&quot;$APP_VERSION&quot;<br />
+else<br />
+  IMAGE_TAG=&quot;$APP_VERSION-$GIT_SHA&quot;<br />
+fi</p>
+<p>echo &quot;Docker image tag will be $IMAGE_TAG&quot;</p>
+<p># store image tag into a text file (artifact for deployment)<br />
+echo &quot;$IMAGE_TAG&quot; &gt; image-tag.txt</p>
+<p># inject environment variable for next steps<br />
+echo &quot;##teamcity[setParameter name='env.IMAGE_TAG' value='$IMAGE_TAG']&quot;<br />
+[/code]</p>
+<p>Let's go over the TeamCity configuration at this point. We have one extra build step, 4 in total:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-13_40_25-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-02 13_40_25-Commit Stage Configuration — TeamCity.png" width="702" height="312" class="alignnone size-full wp-image-3378" /></p>
+<ol>
+<li>Determine version. This runs the new script, <code>ci-scripts/version.sh</code>, which figures out the Docker image version (and Helm chart version) we will use.</li>
+<li>Build CI image. This builds the Docker image which includes all dependencies, including devDependencies. The only change here is that I'm now using TeamCity's Docker Build native step, instead of using a Command Line step.</li>
+<li>Run linting. No changes here, it uses the image built in the previous step to run linting. Notice that this image does not need to be versioned.</li>
+<li>Build production Docker image. Here we're using the environment variable <code>IMAGE_TAG</code> that is injected by the first build step. It looks like this:<br />
+<img src="{{ site.baseurl }}/assets/2017-12-02-13_47_01-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-02 13_47_01-Commit Stage Configuration — TeamCity.png" width="793" height="410" class="alignnone size-full wp-image-3379" />
+</li>
+</ol>
+<p>Now, we need to <strong>package the Helm chart</strong>. That's done with a simple command (which will become our fifth build step):</p>
+<p>[code language="bash"]<br />
+helm package --version $IMAGE_TAG ./helm/blog-helm<br />
+[/code]</p>
+<p>The command line utility helm will not be present on the build agent. As we discussed in <a href="https://ngeor.wordpress.com/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan/" target="_blank">Dockerize the build plan</a>, we need to wrap helm into a Docker image so that we can use it. Luckily, someone else has already created a <a href="https://hub.docker.com/r/lachlanevenson/k8s-helm/" target="_blank">Docker image with helm</a>. The build step in TeamCity looks like this:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-13_54_55-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-02 13_54_55-Commit Stage Configuration — TeamCity.png" width="789" height="813" class="alignnone size-full wp-image-3380" /></p>
+<p>The reason this works so seamlessly is that TeamCity mounts the current directory as a volume inside the Docker container. The integration is very nicely done by TeamCity, but it's still important to understand what happens under the hood.</p>
+<p>One last touch is to <strong>configure our artifacts in TeamCity</strong>:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_06_52-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-02 14_06_52-Commit Stage Configuration — TeamCity.png" width="754" height="268" class="alignnone size-full wp-image-3382" /></p>
+<p>The tgz file is the Helm chart and the txt file is the small text file that specifies the image version.</p>
+<p><em>Small but important note: at this point, it's not possible to override the Docker image tag during packaging of the Helm chart. There is an open <a href="https://github.com/kubernetes/helm/issues/3141" target="_blank">issue for that on GitHub</a>. We will be setting the correct image during deployment, but ideally the Helm chart should already be tied to the Docker image.</em></p>
+<p><strong>Demo time!</strong> Let's see if everything works fine. First, I'll bump the version on master branch to 1.0.1 to trigger a build. The build creates this artifacts:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_08_01-blog-helm-__-commit-stage-_-20-02-dec-17-13_05-_-artifacts-e28094-teamcity.png" alt="2017-12-02 14_08_01-Blog Helm __ Commit Stage _ #20 (02 Dec 17 13_05) _ Artifacts — TeamCity.png" width="513" height="167" class="alignnone size-full wp-image-3383" /></p>
+<p>If we download them, we'll see that <code>image-tag.txt</code> just contains "1.0.1". The tgz file can be unzipped and there we'll see that <code>Chart.yaml</code> has the correct version:</p>
+<p>[code]<br />
+apiVersion: v1<br />
+description: A Helm chart for Kubernetes<br />
+name: blog-helm<br />
+version: 1.0.1<br />
+[/code]</p>
+<p>We can try with a feature branch too. Our hello world page is serving plain text so far. It would be great if we change it into an HTML page with a large heading. That's an easy change in <code>index.js</code>:</p>
+<p>[code language="JavaScript"]<br />
+app.get('/', (req, res) =&gt; res.send(`<br />
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+  &lt;h1&gt;Hello, world!&lt;/h1&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;<br />
+`));<br />
+[/code]</p>
+<p>I'll also bump the version to 1.0.2. Here's the result in TeamCity:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_18_37-blog-helm-__-commit-stage-_-21-02-dec-17-13_15-_-artifacts-e28094-teamcity.png" alt="2017-12-02 14_18_37-Blog Helm __ Commit Stage _ #21 (02 Dec 17 13_15) _ Artifacts — TeamCity.png" width="487" height="170" class="alignnone size-full wp-image-3384" /></p>
+<p>This time, we're on a feature branch, so both the Docker image and the Helm chart will have the git SHA in their version.</p>
+<p>We made it this far, let's make one more step to <strong>deploy our app into Kubernetes using Helm from TeamCity</strong>. The TeamCity Agent will run a helm command, which talks to Tiller, which tells Kubernetes to do its job and run our dockerized app inside a pod.</p>
+<p>For this to happen, Kubernetes needs to be able to find the Docker images that TeamCity builds during the commit stage. <strong>The best way would be to setup a Docker registry, which we'll do on a future post</strong>. I've taken a shortcut however: <strong>I'm running TeamCity inside Kubernetes and TeamCity Agent is using Docker on Docker</strong>. This means that the TeamCity Agent is a dockerized application itself, but it's using the Docker daemon of Kubernetes when it needs to runs docker (remember, we've dockerized the build plan). It's very confusing, especially when volumes come into play. It feels a bit like the movie Inception, wondering on which level are you running currently:</p>
+<p><img src="{{ site.baseurl }}/assets/docker-inception.jpg" alt="docker-inception.jpg" width="410" height="668" class="alignnone size-full wp-image-3390" /></p>
+<p>We start by creating a new build configuration called Deploy Stage. We'd like to <strong>consume the artifacts from the Commit Stage</strong>:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_21_14-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-02 14_21_14-Deploy Stage Configuration — TeamCity.png" width="920" height="462" class="alignnone size-full wp-image-3385" /></p>
+<p>We don't have any dependency to the source code. All we need is the artifacts. We can deploy everything with one command:</p>
+<p>[code language="bash"]<br />
+helm upgrade --install blog-helm \<br />
+  ./blog-helm-${IMAGE_TAG}.tgz \<br />
+  --set image.tag=$IMAGE_TAG \<br />
+  --wait<br />
+[/code]</p>
+<p>We just need the <code>IMAGE_TAG</code> environment variable, which we'll populate from the <code>image-tag.txt</code> artifact:</p>
+<p>[code language="bash"]<br />
+IMAGE_TAG=$(cat image-tag.txt)<br />
+echo &quot;Using version $IMAGE_TAG&quot;</p>
+<p>helm upgrade --install blog-helm \<br />
+  ./blog-helm-${IMAGE_TAG}.tgz \<br />
+  --set image.tag=$IMAGE_TAG \<br />
+  --wait<br />
+[/code]</p>
+<p>Here's how it looks like in TeamCity:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_25_16-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-02 14_25_16-Deploy Stage Configuration — TeamCity.png" width="770" height="716" class="alignnone size-full wp-image-3386" /></p>
+<p>Let's explain a bit the command:</p>
+<ul>
+<li><code>upgrade --install blog-helm</code> specifies that we're interested in the Helm release named <code>blog-helm</code>. Helm uses its server-side component, Tiller, to keep tabs on releases. The <code>upgrade --install</code> part is equivalent to create or update. If the release is already there, it will upgrade it, otherwise it will create it.</li>
+<li>the next parameter points to the Helm chart, which in this case is the tgz artifact</li>
+<li>the <code>--set image.tag=$IMAGE_TAG</code> will override the Docker image tag defined in <code>values.yaml</code> with our environment variable. Since this also as artifact of the Commit Stage, we're certain we're deploying the correct version.</li>
+<li>the last part <code>--wait</code> is a nice feature of Helm, it waits until the new version is up and running.</li>
+</ul>
+<p><em>One more networking shortcut: for helm to be able to reach Tiller (from within the Docker container from within TeamCity from within Kubernetes) I had to punch a hole in the cluster using a NodePort service. We'll revisit this in a future post. Remember, Inception.<br />
+</em></p>
+<p>I can trigger a custom deployment to use my feature branch:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_29_21-blog-helm-__-deploy-stage-_-overview-e28094-teamcity.png" alt="2017-12-02 14_29_21-Blog Helm __ Deploy Stage _ Overview — TeamCity.png" width="713" height="283" class="alignnone size-full wp-image-3387" /></p>
+<p>After the deployment finishes, we can see the results in the Kubernetes dashboard:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_31_12-blog-helm-blog-helm-kubernetes-dashboard.png" alt="2017-12-02 14_31_12-blog-helm-blog-helm - Kubernetes Dashboard.png" width="1792" height="671" class="alignnone size-full wp-image-3388" /></p>
+<p>Notice how both the Helm chart version (indicated by the label "chart" in the top) and the Docker image tag (indicated in the replica set area) are aligned.</p>
+<p>And, of course, the app is now sporting an H1 header:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-02-14_35_22-mozilla-firefox.png" alt="2017-12-02 14_35_22-Mozilla Firefox.png" width="640" height="340" class="alignnone size-full wp-image-3389" /></p>
+<p>Perhaps it's worth to mention that you can use any other version strategy that makes sense. In this case, git leads. You can also turn it around and have the build server leading, ignoring what is specified in the code. Or you can mix and match, using for example the major.minor parts of semver from git and the patch from the build server. The important thing is to make sure you have one unique version identifier that you can use to link everything together.</p>
+<p>To summarize, we've created a versioning scheme which allows us to deploy any feature branch we want. We also created a deployment stage in TeamCity, which deploys based solely on the build artifacts, which means we can deploy any older version we want to. So far, we have only one environment to deploy to. We'll see in the next post how to support multiple deployment environments, moving towards a DTAP.</p>

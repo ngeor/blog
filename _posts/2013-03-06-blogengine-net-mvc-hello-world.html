@@ -1,0 +1,132 @@
+---
+layout: post
+title: BlogEngine.NET MVC - Hello world
+date: 2013-03-06 15:02:00.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- BlogEngine.NET MVC
+- pet project
+meta:
+  _oembed_9df128f9bbccd84128deea3a71f8f235: "{{unknown}}"
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '29'
+  _wp_old_slug: '29'
+  _oembed_a9d775fb3b9d2a2dcd0ebc6ba1921d3f: "{{unknown}}"
+  _oembed_0c4072466da4506845d969ef55afc190: "{{unknown}}"
+  _oembed_037b453484ef1668e5881c98d0b4e6f7: "{{unknown}}"
+  _publicize_job_id: '353321163'
+  _oembed_97824bedbee95ac448232dff780f89fb: "{{unknown}}"
+  _oembed_578b711eca59299639e735b5e6a9fc05: "{{unknown}}"
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>So, to share a bit more of my excitement, here's a screenshot of the classic ASP.NET and the MVC versions running side by side:</p>
+<p><img class="alignnone size-large wp-image-166" src="{{ site.baseurl }}/assets/blogengine-mvc-side-by-side.png?w=1024" alt="blogengine-mvc-side-by-side" width="1024" height="397" /></p>
+<p>So we got a homepage working! Hurray! Keep on reading for more in depth details.<!--more--></p>
+<h3>Copy pasting from the website</h3>
+<p>Before we even start, we need to copy paste a few things from the website project into the MVC project:</p>
+<ol>
+<li>copy pasted the App_Data folder into the MVC project. We have in this way the same start up sample data as the web site project.</li>
+<li>modified the Web.config to have the necessary BlogEngine sections, the BlogEngine related app settings and the BlogEngine Membership and Roles providers.</li>
+</ol>
+<h3>Routing</h3>
+<p>For rendering the blog's homepage, we need to map two routes:</p>
+<ol>
+<li>one route for the primary blog that corresponds to the root URL e.g. http://myhost/</li>
+<li>one route for all the secondary blogs that correspond to URLs like http://myhost/myblog/</li>
+</ol>
+<p>BlogEngine.NET supports multiple blogs (in fact my site is built with that feature) so we're going to support this feature. Unfortunately, the 'myblog' URL segment is in the beginning of the URL so, after a short investigation I did, it seems that optional URL parameters only work at the end of the URL.</p>
+<p>The problem is clearer when you think of the URLs that we'll be building next, for instance the URLs of posts and pages. So http://myhost/page/mypage and http://myhost/myblog/page/myotherpage need to be two different routes:</p>
+<ol>
+<li>page/{pageName}/{action} (primary blog's pages route)</li>
+<li>{blogName}/page/{pageName}/{action} (secondary blog's pages route)</li>
+</ol>
+<p>because the {blogName} parameter appears in the beginning of the URL.</p>
+<p>Of course there's going to be only one controller handling this:</p>
+<p>[code]<br />
+public class PageController<br />
+{</p>
+<p>    public ActionResult Index(string blogName, string pageName)<br />
+    {<br />
+    }<br />
+[/code]</p>
+<p>I'll try again to see if it's possible to do it with a single route definition, but it's not really a problem, just an annoying detail of implementation.</p>
+<h3>Routing constraint</h3>
+<p>To make sure our secondary blog route doesn't collide with action names, we're going to use a custom routing constraint. Here's how the secondary blog's homepage is mapped:</p>
+<p>[code]<br />
+routes.MapRoute(<br />
+    name: &quot;SecondaryHome&quot;,<br />
+    url: &quot;{blogName}/{action}&quot;,<br />
+    defaults: new { controller = &quot;Home&quot;, action = &quot;Index&quot; },<br />
+    constraints: new { blogName = new BlogNameConstraint() }<br />
+    );<br />
+[/code]</p>
+<p>and here's the implementation of the constraint:</p>
+<p>[code]<br />
+///</p>
+<p>/// Routing constraint that matches a secondary blog name.<br />
+///<br />
+[/code]</p>
+<p>public class BlogNameConstraint : IRouteConstraint { public bool Match(HttpContextBase httpContext, Route route, string parameterName, RouteValueDictionary values, RouteDirection routeDirection) { // match if the blog is active, not deleted, not primary and the name matches of course string blogName = (string)values[parameterName]; return !string.IsNullOrWhiteSpace(blogName) &amp;&amp; Blog.Blogs.Any( b =&gt; !b.IsDeleted &amp;&amp; !b.IsPrimary &amp;&amp; b.IsActive &amp;&amp; string.Equals(b.Name, blogName, StringComparison.InvariantCultureIgnoreCase)); } }</p>
+<p>With this constraint, the URL:</p>
+<p>http://myhost/Feed will be interpreted as the primary blog's RSS feed (action = Feed).</p>
+<p>but this URL:</p>
+<p>http://myhost/blog will be interpreted as the secondary blog's homepage (action = Index), and not as the non-existing 'blog' action of the primary blog route.</p>
+<p>Unless of course... you chose to name your secondary blog after an existing action of the HomeController. Let's say our HomeController has an action called Feed that renders the RSS feed of the blog (we're probably going to built it). If you call your secondary blog 'Feed', it will be impossible to determine if the URL:</p>
+<p>http://myhost/Feed</p>
+<p>is supposed to be the primary blog's RSS feed or the secondary blog's homepage.</p>
+<p>So the conclusion is: you must not name your secondary blogs after actions of the homepage controller. Also, you shouldn't shoot yourself in the foot, but you already knew that.</p>
+<h3>Controller implementation</h3>
+<p>The controller's default implementation is very simple:</p>
+<p>[code]<br />
+    public ActionResult Index(string blogName)<br />
+    {<br />
+        Blog blog = GetBlog(blogName);<br />
+        ViewBag.Blog = blog;<br />
+        ViewBag.Posts = Post.Posts.Take(BlogSettings.Instance.PostsPerPage).ToArray();<br />
+        return View();<br />
+    }<br />
+[/code]</p>
+<p>this should look familiar to a person who's used BlogEngine before. The important work is happening of course in that GetBlog method. Let's have a look:</p>
+<p>[code]<br />
+    private Blog GetBlog(string blogName)<br />
+    {<br />
+        Blog blog;<br />
+        if (string.IsNullOrWhiteSpace(blogName))<br />
+        {<br />
+            // we're loading the primary blog<br />
+            blog = Blog.Blogs.FirstOrDefault(b =&gt; b.IsActive &amp;&amp; b.IsPrimary &amp;&amp; !b.IsDeleted);<br />
+        }<br />
+        else<br />
+        {<br />
+            // we're loading a secondary blog<br />
+            blog = Blog.Blogs.FirstOrDefault(b =&gt; b.IsActive<br />
+                    &amp;&amp; !b.IsPrimary<br />
+                    &amp;&amp; !b.IsDeleted<br />
+                    &amp;&amp; string.Equals(blogName, b.Name, StringComparison.InvariantCultureIgnoreCase));<br />
+        }</p>
+<p>        if (blog == null)<br />
+        {<br />
+            // TODO: return 404 instead<br />
+            throw new InvalidOperationException(&quot;Blog not found&quot;);<br />
+        }</p>
+<p>        // important: this will make BlogEngine.Core use this blog as the 'current' blog<br />
+        // and don't make any assumptions using the URL etc<br />
+        Blog.InstanceIdOverride = blog.Id;<br />
+        return blog;<br />
+    }<br />
+[/code]</p>
+<p>So, like I said before, the blogName can indicate we're loading a secondary blog. If it's missing, then we're loading the primary blog of the site.</p>
+<p>The BlogEngine API heavily relies on Blog.CurrentInstance, which indicates what the current blog is. When you're loading Posts, it is loading Posts for the current blog. When you're loading blog settings, it is loading the settings of the current blog, and so on. Figuring out what the current blog is, is something that is heavily intertwined with the current HttpContent, the URLs, the request, etc. We really don't want to use that plumbing, because it's not MVC and because we already know what the current blog is based on MVC routing. Luckily, there's an InstanceIdOverride property that we can use to tell BlogEngine.NET what the current blog is. If that property is set, the default logic that evaluates the current blog is never executed.</p>
+<p>The code is <a href="https://blogengine.codeplex.com/SourceControl/network/forks/NikolaosGeorgiou/blogenginemvc">available on Codeplex</a>!</p>

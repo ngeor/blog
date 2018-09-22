@@ -1,0 +1,45 @@
+---
+layout: post
+title: Slim GitVersion Docker image
+date: 2018-08-19 08:47:04.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- Docker
+- GitVersion
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '21233752843'
+  timeline_notification: '1534661224'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In a previous post, I wrote about <a href="https://ngeor.wordpress.com/2017/12/19/semantic-versioning-with-gitversion/">GitVersion</a>. GitVersion is a tool which solves semantic versioning of a git repository in its own way. With GitVersion, the version of any git repository is a pure function of its state, derived by tags, branches and commit messages.</p>
+<p><!--more--></p>
+<p>GitVersion is built on .NET Framework (not .NET Core). Running it on a modern CI environment is possible, as a <a href="https://hub.docker.com/r/gittools/gitversion/">Docker image</a> is available. For example, to see the semantic version of a repo you can run:</p>
+<p>[code]<br />
+docker run --rm \<br />
+    -v $(pwd):/repo \<br />
+    gittools/gitversion /showvariable SemVer<br />
+[/code]</p>
+<p>The only problem is that the official image is a bit large, weighing in at 493MB.</p>
+<p>I've managed to slim that down significantly at 85MB, by installing only the necessary mono libraries (with some trial and error).</p>
+<p>My fork is <a href="https://github.com/ngeor/GitVersion">here</a> and the Dockerfile is called <a href="https://github.com/ngeor/GitVersion/blob/master/Dockerfile-slim">Dockerfile-slim</a>. You can use my <a href="https://hub.docker.com/r/ngeor/gitversion/">slim GitVersion image</a> simply by replacing the "gittools" with "ngeor" in the above command:</p>
+<p>[code]<br />
+docker run --rm \<br />
+    -v $(pwd):/repo \<br />
+    ngeor/gitversion /showvariable SemVer<br />
+[/code]</p>
+<p>This makes it a bit easier to use this tool. However, porting it to .NET Core might be a better solution overall.</p>
+<p>&nbsp;</p>

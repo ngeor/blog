@@ -1,0 +1,44 @@
+---
+layout: post
+title: How to use SQLite with Mono and Fluent NHibernate
+date: 2011-06-06 20:35:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '67'
+  _wp_old_slug: '67'
+  _edit_last: '14213986'
+  _publicize_job_id: '4017171108'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>So I have setup my project playing nice in Windows .NET 4.0 with SQLite and Fluent NHibernate. I opened it up from my Mac to see if it would still work and, big surprise, it didn&#039;t. It complained about System.Data.SQLite.dll not found, even though the dll was there.</p>
+<p>I struggled a bit with this; the <a href="http://system.data.sqlite.org/" target="_blank">official page</a> is quite bad and what&#039;s more than that it doesn&#039;t offer precompiled dlls but some installer. Searching a bit more, I found that Mono has its own implementation at assembly Mono.Data.Sqlite. I removed the reference to System.Data.SQLite and referenced Mono&#039;s assembly... still nothing. The problem is that Fluent NHibernate was still trying to find System.Data.SQLite.dll. Apparently something was missing from this piece of my code:</p>
+<p>[code]<br />
+private IPersistenceConfigurer ConfigureSQLite()<br />
+{<br />
+  return SQLiteConfiguration.Standard.UsingFile(DbFile);<br />
+}<br />
+[/code]</p>
+<p>Well I was very lucky at this point because I found <a href="http://intellect.dk/post/Why-I-love-frameworks-with-lots-of-extension-points.aspx" target="_blank">this article</a> that explains how to tell NHibernate to use Mono.Data.Sqlite. The first part, which is to include the small driver class MonoSqliteDriver that works with Mono.Data.Sqlite, stays the same. I still had to that. But with Fluent NHibernate the second part is done in code (and not configuration) like this:</p>
+<p>[code]<br />
+private IPersistenceConfigurer ConfigureSQLite()<br />
+{<br />
+  return SQLiteConfiguration<br />
+      .Standard<br />
+      .Driver&lt;MonoSqliteDriver&gt;()<br />
+      .UsingFile(DbFile);<br />
+}<br />
+[/code]</p>
+<p>And that&#039;s it! Hope this helps.</p>

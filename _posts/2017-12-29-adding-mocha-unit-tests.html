@@ -1,0 +1,95 @@
+---
+layout: post
+title: Adding mocha unit tests
+date: 2017-12-29 18:18:32.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- chai
+- Docker
+- mocha
+- proxyquire
+- sinon
+- TeamCity
+- Visual Studio Code
+meta:
+  _thumbnail_id: '3527'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '13008321436'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In this post, I'll add unit tests to the example application that I've been fiddling around with in the recent posts.</p>
+<p><!--more--></p>
+<p><strong>Folder structure</strong></p>
+<p>In the <a href="https://ngeor.wordpress.com/2017/12/29/adding-webdriverio-tests/">previous post</a>, I added some functional tests with WebdriverIO. They were stored in the folder <code>test/specs</code>. I'd like to keep the unit test separate from the functional tests, so I'll rename the old folder to <code>test/functional-specs</code> and store the new unit tests under <code>test/unit-specs</code>.</p>
+<p><strong>Dependencies</strong></p>
+<p>I'll install these dev dependencies (with <code>npm install --save-dev</code>):</p>
+<ul>
+<li>mocha: the test framework</li>
+<li>chai: an assertion library</li>
+<li>sinon: a library for spies, stubs and mocks</li>
+<li>proxyquire: a library for dependency injection</li>
+</ul>
+<p><strong>npm scripts</strong></p>
+<p>I'll setup two npm scripts. One that produces plain text output (for local usage) and one that produces XML report that the CI server can read. This needs to be added to <code>package.json</code>:</p>
+<p>[code]<br />
+  &quot;test&quot;: &quot;mocha ./test/unit-specs&quot;,<br />
+  &quot;test-junit&quot;: &quot;mocha -R xunit --reporter-options output=test-reports/ci-mocha.xml ./test/unit-specs&quot;,<br />
+[/code]</p>
+<p>Note that the first one works with simply <code>npm test</code> but the second one is invoked with <code>npm run test-junit</code>.</p>
+<p><strong>Adding the first test</strong></p>
+<p>The entire code base consists of a single file, <code>index.js</code>. I'll add a unit test in <code>./test/unit-specs/index.js</code> and I'll unit test the feature provided by the <a href="https://ngeor.wordpress.com/2017/12/29/waiting-for-the-correct-version-after-deployment/">version endpoint</a>. You can see the unit test <a href="https://github.com/ngeor/blog-helm/blob/v2.2.2/test/unit-specs/index.js">here</a>.</p>
+<p><strong>TeamCity</strong></p>
+<p>In TeamCity, we need to run the unit tests in the Commit Stage:</p>
+<p>[code]<br />
+docker run \<br />
+    --rm -v $(pwd)/test-reports:/app/test-reports \<br />
+    blog-helm-ci:%env.IMAGE_TAG% \<br />
+    npm run test-junit<br />
+[/code]</p>
+<p>The XML test report gets consumed and the tests are presented in the Test tab:<br />
+<img class="alignnone size-full wp-image-3528" src="{{ site.baseurl }}/assets/2017-12-29-18_12_36-blog-helm-__-commit-stage-_-2-2-2-29-dec-17-16_41-_-tests-e28094-teamcity.png" alt="2017-12-29 18_12_36-Blog Helm __ Commit Stage _ #2.2.2 (29 Dec 17 16_41) _ Tests — TeamCity.png" width="926" height="712" /></p>
+<p><strong>Visual Studio Code</strong></p>
+<p>One last bit is to configure Visual Studio Code so that I can run and debug the tests from within the editor. Visual Studio Code has a template configuration for running mocha tests and all I had to set is the path where the unit tests live. My entire <code>.vscode/launch.json</code> file is around 30 lines:</p>
+<p>[code language="JavaScript"]<br />
+{<br />
+    &quot;version&quot;: &quot;0.2.0&quot;,<br />
+    &quot;configurations&quot;: [<br />
+        {<br />
+            &quot;type&quot;: &quot;node&quot;,<br />
+            &quot;request&quot;: &quot;launch&quot;,<br />
+            &quot;name&quot;: &quot;Mocha Tests&quot;,<br />
+            &quot;program&quot;: &quot;${workspaceFolder}/node_modules/mocha/bin/_mocha&quot;,<br />
+            &quot;args&quot;: [<br />
+                &quot;-u&quot;,<br />
+                &quot;tdd&quot;,<br />
+                &quot;--timeout&quot;,<br />
+                &quot;999999&quot;,<br />
+                &quot;--colors&quot;,<br />
+                &quot;${workspaceFolder}/test/unit-specs&quot;<br />
+            ],<br />
+            &quot;internalConsoleOptions&quot;: &quot;openOnSessionStart&quot;<br />
+        },<br />
+        {<br />
+            &quot;type&quot;: &quot;node&quot;,<br />
+            &quot;request&quot;: &quot;launch&quot;,<br />
+            &quot;name&quot;: &quot;Launch Program&quot;,<br />
+            &quot;program&quot;: &quot;${workspaceFolder}\\index.js&quot;<br />
+        }<br />
+    ]<br />
+}<br />
+[/code]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

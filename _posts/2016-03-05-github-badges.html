@@ -1,0 +1,60 @@
+---
+layout: post
+title: GitHub badges
+date: 2016-03-05 07:57:36.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- badges
+- david
+- GitHub
+- JavaScript
+- markdown
+- nodejs
+- open source
+- shields.io
+- travis
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '309'
+  _wp_old_slug: '309'
+  geo_public: '0'
+  _publicize_job_id: '353837804'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>You may have noticed that a lot of GitHub projects have some badges in their homepage, showing for example the status of their latest build. For a node (JavaScript) project, you can use a few more badges to show the world that everything is in order.<!--more--></p>
+<p>Let's start with the <strong>build status badge</strong>. That badge is typically coming from <a href="https://travis-ci.org/" target="_blank">Travis</a> when we're talking about open source projects in GitHub. That's because Travis is a free CI service for open source projects and it has a very good integration with GitHub.</p>
+<p>Here you can see my Travis homepage. It automatically connects to GitHub and picks up my projects. You can choose for which of your projects you'd like to enable Travis.</p>
+<p><a href="https://ngeor.files.wordpress.com/2016/03/travis-projects.png"><img src="{{ site.baseurl }}/assets/travis-projects.png?w=840" alt="travis-projects" width="840" height="597" class="alignnone size-large wp-image-310" /></a></p>
+<p>In the next screenshot, you can see an example of a failed build.</p>
+<p><a href="https://ngeor.files.wordpress.com/2016/03/travis-failed-build.png"><img src="{{ site.baseurl }}/assets/travis-failed-build.png?w=840" alt="travis-failed-build" width="840" height="597" class="alignnone size-large wp-image-311" /></a></p>
+<p>The badge I'm talking about sits on the top. It's next to the header and it says "build failing". That's pretty clear that something needs to be fixed in this project! <strong>Side note:</strong> this project is called <a href="/2015/09/introducing-generator-csharp-cli-app/" target="_blank">generator-csharp-cli-app</a> and I'll be using that name for the rest of the blog post <strong>just as a placeholder</strong>. Just replace it with your own project name.</p>
+<p>How do we add this badge to the project's homepage in GitHub? That's typically done in the README.md file. Click the badge on the Travis page and a popup will appear. In there, select "Markdown". Markdown is the popular formatting language that GitHub also uses. Just copy paste that markdown code into your readme file, usually just below the title so that it appears on the top.</p>
+<p><a href="https://ngeor.files.wordpress.com/2016/03/travis-markdown.png"><img src="{{ site.baseurl }}/assets/travis-markdown.png?w=840" alt="travis-markdown" width="840" height="597" class="alignnone size-large wp-image-312" /></a></p>
+<p>Travis supports many technologies and languages, so this badge isn't really JavaScript specific. If you're using GitHub for your open source projects, I'd definitely recommend giving Travis a try and setting it up.</p>
+<p>The next badge is specific to JavaScript projects: the <strong>node dependencies status badge</strong>. This one comes from a service called <a href="https://david-dm.org/" target="_blank">David</a>, a service that is watching your node.js dependencies. If your dependencies are up to date, you get a green badge. This badge is useful because it offers an indication of how well a project is being maintained.</p>
+<p>Just like Travis, David integrates well with GitHub. The markdown code is also similar:</p>
+<p>[code]<br />
+[![Dependency Status](https://david-dm.org/ngeor/generator-csharp-cli-app.svg)](https://david-dm.org/ngeor/generator-csharp-cli-app)<br />
+[/code]</p>
+<p>Clicking the badge takes you to David's page that tells you in details what's wrong with the dependencies:</p>
+<p><a href="https://ngeor.files.wordpress.com/2016/03/david.png"><img src="{{ site.baseurl }}/assets/david.png?w=840" alt="david" width="840" height="690" class="alignnone size-large wp-image-313" /></a></p>
+<p>The final badge is relevant to node.js projects that publish npm packages: the <strong>npm version badge</strong>. You'd like to tell the world perhaps what your current version is and link to the npm page as well?  You can use a service called <a href="http://shields.io/" target="_blank">shields.io</a> for that badge. It supports all sorts of other badges as well, but I haven't explored them yet. The markdown code for this badge would be:</p>
+<p>[code]<br />
+[![npm version](https://img.shields.io/npm/v/generator-csharp-cli-app.svg)](https://npmjs.org/package/generator-csharp-cli-app)<br />
+[/code]</p>
+<p>Putting all these badges together, you get a nice homepage for your project:</p>
+<p><a href="https://ngeor.files.wordpress.com/2016/03/readme.png"><img src="{{ site.baseurl }}/assets/readme.png?w=840" alt="readme" width="840" height="690" class="alignnone size-large wp-image-314" /></a></p>
+<p>Hope this helps! Now, it looks like I have some red badges to fix :-)</p>
+<p>&nbsp;</p>

@@ -1,0 +1,62 @@
+---
+layout: post
+title: Custom progress indicator for UpdatePanel
+date: 2011-04-10 07:43:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '72'
+  _wp_old_slug: '72'
+  geo_public: '0'
+  _publicize_job_id: '352702992'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In ASP.NET the UpdatePanel can help you create an AJAX experience very fast and easy. It is typical to provide some visual element in the page that indicates that the AJAX request is been processed. This can be an animated image, a simple text message, a pretty modal box with a nice shadow effect - anything that does the trick and tells the user that the page is not broken but it's busy.</p>
+<p>The UpdateProgress control in ASP.NET can handle showing a simple message, but for something more sophisticated, you'll have to do it yourself.<!--more--></p>
+<p>In this example, we'll use an animated loading image to indicate progress when a user sorts a GridView. The animated loading image will appear within the table header that the user clicked on in order to sort. This way the user will definitely see the image, since it appears exactly where he clicked. We're aiming at something like the next screenshot:</p>
+<p class="screenshotholder"><a href="http://ngeor.files.wordpress.com/2011/04/ajax-progress-in-cell.png" rel="attachment wp-att-194"><img class="alignnone size-full wp-image-194" src="{{ site.baseurl }}/assets/ajax-progress-in-cell.png" alt="ajax progress in cell" width="346" height="76" /></a></p>
+<p>First we attach a javascript handler that will be called when an AJAX request is initiated:</p>
+<p>[code]<br />
+function onInit(sender, args) { }</p>
+<p>Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(onInit);<br />
+[/code]</p>
+<p>We need to see if the postback is caused by an element within a table header. If that's the case, we append the HTML markup that renders the loading image to the inner HTML of the table header:</p>
+<p>[code]<br />
+function onInit(sender, args) {<br />
+  var element = args.get_postBackElement();<br />
+  if (element &amp;&amp; element.parentNode &amp;&amp; element.parentNode.tagName == &quot;TH&quot;) {<br />
+    element.parentNode.innerHTML = element.parentNode.innerHTML +<br />
+      ' &lt;img src=&quot;img/progress.gif&quot; alt=&quot;Loading...&quot; /&gt;';<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>This is enough, but we can do a bit better. With this code, if you click very fast on the table header, you'll end up with more loading images shown. What we can do to fix this is to cancel the new request if an existing one is still been processed.</p>
+<p>[code]<br />
+function onInit(sender, args) {<br />
+  var status = Sys.WebForms.PageRequestManager.getInstance().get_isInAsyncPostBack();<br />
+  if (status) {<br />
+    args.set_cancel(true);<br />
+  } else {<br />
+    var element = args.get_postBackElement();<br />
+    if (element &amp;&amp; element.parentNode &amp;&amp; element.parentNode.tagName == &quot;TH&quot;) {<br />
+      element.parentNode.innerHTML = element.parentNode.innerHTML +<br />
+        ' &lt;img src=&quot;img/progress.gif&quot; alt=&quot;Loading...&quot; /&gt;';<br />
+    }<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>That's it! If you add this script to your page, all GridViews (or any other table for that matter) inside UpdatePanels will show the animated loading image within the table header when the user sorts the table.</p>
+<p>Hope this helps.</p>

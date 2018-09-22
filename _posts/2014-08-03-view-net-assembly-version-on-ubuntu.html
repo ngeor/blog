@@ -1,0 +1,44 @@
+---
+layout: post
+title: View .NET assembly version on Ubuntu
+date: 2014-08-03 06:32:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '11'
+  _wp_old_slug: '11'
+  geo_public: '0'
+  _publicize_job_id: '353623907'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>When you want to view the assembly version of a .NET assembly in Windows, you just right click the DLL and view its properties. Or, you just hover the mouse over the file and the version number will be shown in the tooltip. In Linux, things aren’t as easy.<!--more--></p>
+<p>Since this is something I do very rarely, I never remember the command I have to run. Googling brings me to the <a href="http://stackoverflow.com/questions/3946368/how-to-get-the-assemblyversion-of-a-net-file-in-linux">correct stackoverflow answer</a> which indicates I have to run this command:</p>
+<p>[code]<br />
+monodis --assembly file.dll | grep Version<br />
+[/code]</p>
+<p>And indeed this does the trick. But I won’t remember it next time. So this time, I created a nautilus script to be able to right click on the file. The script looks like this:</p>
+<p>[code]<br />
+#!/bin/bash</p>
+<p>VERSION=`monodis --assembly &quot;$@&quot; | grep Version`<br />
+zenity --info --text=&quot;$VERSION&quot;<br />
+[/code]</p>
+<p>&nbsp;</p>
+<p>I’ve saved this script as “Show assembly version” in the directory <code>~/.local/share/nautilus/scripts</code>. The file manager picks this up and creates a new menu item which is available by right clicking on a file, selecting Scripts and then “Show assembly version”:</p>
+<p><a href="https://ngeor.files.wordpress.com/2014/08/show-assembly-version.png"><img class="alignnone size-full wp-image-531" src="{{ site.baseurl }}/assets/show-assembly-version.png" alt="show-assembly-version" width="629" height="455" /></a></p>
+<p>&nbsp;</p>
+<p>The assembly version will be displayed on a popup dialog. Note that the <code>zenity</code> command is responsible for creating the dialog, so it needs to be present in the system.</p>
+<p><a href="https://ngeor.files.wordpress.com/2014/08/show-assembly-version-dialog1.png"><img class="alignnone size-full wp-image-532" src="{{ site.baseurl }}/assets/show-assembly-version-dialog1.png" alt="show-assembly-version-dialog" width="673" height="479" /></a></p>
+<p>I am using Ubuntu 14.04 but the same should be possible on any desktop running nautilus as a file manager. Hope this helps.</p>

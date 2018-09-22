@@ -1,0 +1,69 @@
+---
+layout: post
+title: Synchronizing App_Data with git
+date: 2012-08-26 10:57:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '34'
+  _wp_old_slug: '34'
+  _edit_last: '14213986'
+  _publicize_job_id: '4016896340'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>When you have a web application that stores data in it&#039;s App_Data folder, at some point you&#039;ll want to synchronize the development environment(s) with the live environment. This way your development machine will have the latest live data. This is a task that can be achieved with git.</p>
+<h2 id="requirements">Requirements</h2>
+<p>I have actually made the following work, but with the following adjustments:</p>
+<ul>
+<li>All involved Windows machines (development and live boxes) have Cygwin installed</li>
+<li>Windows live machine has Cygwin’s open ssh server running</li>
+</ul>
+<h2 id="step-1---convert-live-appdata-into-a-git-repository">Step 1 - Convert live App_Data into a git repository</h2>
+<p>The first step is to convert the App_Data on the live server into a git repository. This will be the source from which all other machines will fetch data from.</p>
+<p>To do that, a simple way is to create a new empty git repository, add all existing files, commit and replace the old App_Data folder with the new git repository. Assuming you have a unix (Cygwin) shell, you can write something like:</p>
+<p>[code]<br />
+cd /c/web/myapp<br />
+mkdir NewAppData<br />
+cd NewAppData<br />
+git init .<br />
+cp -R ../App_Data/* .<br />
+git add *<br />
+git commit -m "Copying existing App_Data"<br />
+cd ..<br />
+mv App_Data App_Data.backup<br />
+mv NewAppData App_Data<br />
+[/code]</p>
+<p>At this point the App_Data folder is now a git repository containing all the existing data.</p>
+<h2 id="step-2---convert-development-appdata-into-a-git-repository">Step 2 - Convert development App_Data into a git repository</h2>
+<p>The second step is to go to the development environment and fetch the App_Data from the production server. Something like:</p>
+<p>[code]<br />
+cd /c/projects/myapp<br />
+mv App_Data App_Data.backup<br />
+git clone ssh://my.live.server/c/web/myapp/App_Data App_Data<br />
+[/code]</p>
+<p>The local development machine now has a folder C:projectsmyappApp_Data that contains all the live data.</p>
+<h2 id="step-3---keeping-up-to-date">Step 3 - Keeping up to date</h2>
+<p>As the live server and the development machine continue to work on their App_Data folders, they will reach again a point that they need synchronization. To do that, first you need to commit the changes on the server:</p>
+<p>[code]<br />
+git add *<br />
+git commit -m "Blindly adding all changes"<br />
+[/code]</p>
+<p>Next, on the development machine you fetch the changes:</p>
+<p>[code]<br />
+git pull<br />
+[/code]</p>
+<p>That&#039;s it.</p>
+<p>A bonus step can be automation. By creating scheduled tasks for the commit and pull steps you can stay in sync automatically.</p>
+<p>Hope this helps.</p>

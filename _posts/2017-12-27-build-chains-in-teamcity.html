@@ -1,0 +1,53 @@
+---
+layout: post
+title: Build chains in TeamCity
+date: 2017-12-27 15:41:25.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- TeamCity
+meta:
+  _thumbnail_id: '3486'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12938948255'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In a <a href="https://ngeor.wordpress.com/2017/12/09/cd-with-helm-part-8-dtap/">previous post</a>, I had configured a deployment build configuration in TeamCity. I had mentioned back then that it's possible to set it up in a different way, which makes it is easier to visualize the deployment pipeline across all environments. In this post, I'll modify that deployment pipeline to use snapshot dependencies and project templates.</p>
+<p><!--more--></p>
+<p>First, I'll modify the artifacts so that they're all stored in a subfolder named <code>artifacts</code>. This allows to clear only that subfolder when clearing artifact paths. The inline script for deployment needs to be adjusted accordingly.</p>
+<p>[caption id="attachment_3475" align="alignnone" width="1328"]<img class="alignnone size-full wp-image-3475" src="{{ site.baseurl }}/assets/2017-12-27-13_27_40-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 13_27_40-Deploy Stage Configuration — TeamCity.png" width="1328" height="468" /> Using a subfolder for artifacts[/caption]</p>
+<p>Then, I'll attach the project's VCS root to the Deploy Stage as well. This is necessary to allow for snapshot dependencies:</p>
+<p>[caption id="attachment_3476" align="alignnone" width="1967"]<img class="alignnone size-full wp-image-3476" src="{{ site.baseurl }}/assets/2017-12-27-13_34_21-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 13_34_21-Deploy Stage Configuration — TeamCity.png" width="1967" height="760" /> Attaching VCS root to deploy stage[/caption]</p>
+<p>Note that we're still not using anything from the source code during deployment. We're only using the immutable artifacts generated during the commit stage. We just need to add the VCS root because TeamCity allows us then to use snapshot dependencies. Adding the snapshot dependency is the next step:</p>
+<p>[caption id="attachment_3477" align="alignnone" width="1021"]<img class="alignnone size-large wp-image-3477" src="{{ site.baseurl }}/assets/2017-12-27-14_13_09-deploy-stage-configuration-e28094-teamcity.png?w=2042" alt="2017-12-27 14_13_09-Deploy Stage Configuration — TeamCity" width="1021" height="1024" /> Adding snapshot dependency[/caption]</p>
+<p>And configure the artifact dependency to use the artifacts from the same build chain:</p>
+<p>[caption id="attachment_3478" align="alignnone" width="1093"]<img class="alignnone size-full wp-image-3478" src="{{ site.baseurl }}/assets/2017-12-27-14_13_54-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 14_13_54-Deploy Stage Configuration — TeamCity.png" width="1093" height="739" /> Using artifacts from the same build chain[/caption]</p>
+<p>This creates a build chain between the Commit Stage and Deploy Stage, which is visually more user friendly:</p>
+<p>[caption id="attachment_3479" align="alignnone" width="908"]<img class="alignnone size-full wp-image-3479" src="{{ site.baseurl }}/assets/2017-12-27-14_26_44-view-build-chain-e28094-teamcity.png" alt="2017-12-27 14_26_44-View build chain — TeamCity.png" width="908" height="354" /> Visualizing build chain[/caption]</p>
+<p>Now that this is done, I'd like to use one build configuration per DTAP environment. First, I'll change the environment configuration parameter so it's not a prompt anymore:</p>
+<p>[caption id="attachment_3480" align="alignnone" width="1086"]<img class="alignnone size-full wp-image-3480" src="{{ site.baseurl }}/assets/2017-12-27-14_35_38-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 14_35_38-Deploy Stage Configuration — TeamCity.png" width="1086" height="1170" /> Changing the env parameter to normal instead of prompt[/caption]</p>
+<p>I'll also change the build type into a deployment project:</p>
+<p>[caption id="attachment_3481" align="alignnone" width="1698"]<img class="alignnone size-full wp-image-3481" src="{{ site.baseurl }}/assets/2017-12-27-14_33_57-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 14_33_57-Deploy Stage Configuration — TeamCity.png" width="1698" height="391" /> Changing Deploy Stage into a Deployment build configuration[/caption]</p>
+<p>Now I'll extract a project template out of this build configuration, so that I'll be able to reuse it for all environments of the DTAP:</p>
+<p>[caption id="attachment_3482" align="alignnone" width="1953"]<img class="alignnone size-full wp-image-3482" src="{{ site.baseurl }}/assets/2017-12-27-14_43_44-deploy-stage-configuration-e28094-teamcity.png" alt="2017-12-27 14_43_44-Deploy Stage Configuration — TeamCity.png" width="1953" height="613" /> Extract template out of Deploy Stage[/caption]</p>
+<p>From there, I can rename the old "Deploy Stage" into "Deploy to Test" and set its <code>env</code> configuration parameter to <code>test</code>. I can further clone this build configuration for Acceptance and Production and set the <code>env</code> configuration parameter accordingly. In the end, I can see this screen on the Commit Stage of the build:</p>
+<p>[caption id="attachment_3483" align="alignnone" width="1159"]<img class="alignnone size-full wp-image-3483" src="{{ site.baseurl }}/assets/2017-12-27-15_04_06-blog-helm-__-commit-stage-_-1-3-16-27-dec-17-14_01-_-overview-e28094-teamcity.png" alt="2017-12-27 15_04_06-Blog Helm __ Commit Stage _ #1.3.16 (27 Dec 17 14_01) _ Overview — TeamCity.png" width="1159" height="806" /> Deployments of Commit Stage[/caption]</p>
+<p>One more trick I like to do is to see the same build number across all build configurations. The Commit Stage is already configured to use <a href="https://ngeor.wordpress.com/2017/12/19/semantic-versioning-with-gitversion/">SemVer</a>, so we'll re-use that number in the deploy configurations:</p>
+<p>[caption id="attachment_3484" align="alignnone" width="1565"]<img class="alignnone size-full wp-image-3484" src="{{ site.baseurl }}/assets/2017-12-27-15_07_09-deploy-template-template-e28094-teamcity.png" alt="2017-12-27 15_07_09-Deploy Template Template — TeamCity.png" width="1565" height="520" /> Using the same build number across all deployments[/caption]</p>
+<p>We can also configure Acceptance to depend on Test and Production to depend on Acceptance. This is done by adding additional snapshot dependencies, e.g. for production:</p>
+<p>[caption id="attachment_3485" align="alignnone" width="3048"]<img class="alignnone size-full wp-image-3485" src="{{ site.baseurl }}/assets/2017-12-27-15_21_55-deploy-to-production-configuration-e28094-teamcity.png" alt="2017-12-27 15_21_55-Deploy To Production Configuration — TeamCity.png" width="3048" height="1015" /> Making Production depend on Acceptance[/caption]</p>
+<p>This means we can't deploy to Production unless we have first deployed to Acceptance and we can't deploy to Acceptance unless we have first deployed to Testing. This has pros and cons, so you might want to think about before implementing it. In any case, it gives a nice build chain:</p>
+<p>[caption id="attachment_3486" align="alignnone" width="1674"]<img class="alignnone size-full wp-image-3486" src="{{ site.baseurl }}/assets/2017-12-27-15_22_35-blog-helm-__-commit-stage-_-build-chains-e28094-teamcity.png" alt="2017-12-27 15_22_35-Blog Helm __ Commit Stage _ Build Chains — TeamCity.png" width="1674" height="800" /> DTAP build chain[/caption]</p>
+<p>So this is it, a different way to model the deployment pipeline using build chains. From here, we can add more build configurations between the deployments that perform automatic tests (e.g. integration tests) but we can also add build configurations that correspond to manual acceptance steps (e.g. manual QA acceptance or PO acceptance). I'll try to do that in a next post.</p>

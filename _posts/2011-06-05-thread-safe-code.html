@@ -1,0 +1,168 @@
+---
+layout: post
+title: Thread-safe code
+date: 2011-06-05 07:04:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tech Notes
+tags: []
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '68'
+  _wp_old_slug: '68'
+  _publicize_job_id: '4017177005'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>Consider this code:</p>
+<p>[code]<br />
+if (!dictionary.ContainsKey(key)) {<br />
+  dictionary.Add(key, value);<br />
+}<br />
+[/code]</p>
+<p>In a multithreaded environment, thread A and B may check for the existence of the key at the same time and both determine that the key doesn’t exist. Then, they both try to add it. One of them gets the ArgumentException about the key  already been there, because the other thread just added it.</p>
+<table border="1">
+<tbody>
+<tr>
+<td></td>
+<td>Thread A</td>
+<td>Thread B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ContainsKey (returns false)</td>
+<td>ContainsKey (returns false)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add</td>
+<td>Add</td>
+</tr>
+</tbody>
+</table>
+<p>.NET collections are not synchronized as you know. So the above table shows the two threads happily running in parallel.</p>
+<p>What I saw in my project&#039;s code is that in some cases the problem was "solved" by using a ThreadSafeDictionary in place of the standard .NET Dictionary class. This custom ThreadSafeDictionary class has synchronized methods. However, this doesn’t actually solve the problem. Consider these possible execution paths:</p>
+<p>Thread B gets exception:</p>
+<table border="1">
+<tbody>
+<tr>
+<td></td>
+<td>Thread A</td>
+<td>Thread B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ContainsKey (returns false)</td>
+<td>Blocked by Thread A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Waits for system to resume Thread A</td>
+<td>ContainsKey (return false)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Add (ok)</td>
+<td>Blocked by Thread A</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>Add (exception)</td>
+</tr>
+</tbody>
+</table>
+<p>No exception scenario (if you’re lucky):</p>
+<table border="1">
+<tbody>
+<tr>
+<td></td>
+<td>Thread A</td>
+<td>Thread B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ContainsKey (returns false)</td>
+<td>Blocked by Thread A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add (ok)</td>
+<td>ContainsKey (return true)</td>
+</tr>
+</tbody>
+</table>
+<p>Thread A gets exception:</p>
+<table border="1">
+<tbody>
+<tr>
+<td></td>
+<td>Thread A</td>
+<td>Thread B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ContainsKey (returns false)</td>
+<td>Blocked by Thread A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Waits for system to resume Thread A</td>
+<td>ContainsKey (return false)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Blocked by Thread B</td>
+<td>Add (ok)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Add (exception)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Another one:</p>
+<table border="1">
+<tbody>
+<tr>
+<td></td>
+<td>Thread A</td>
+<td>Thread B</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ContainsKey (returns false)</td>
+<td>Blocked by Thread A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add (ok)</td>
+<td>ContainsKey (return false because Add of Thread A hasn’t quite finished yet)</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>Add (exception)</td>
+</tr>
+</tbody>
+</table>
+<p>So the problem is not solved. Why? While the ContainsKey and Add methods of the ThreadSafeDictionary are thread-safe on their own,  the business logic that they create combined isn’t.  What you need to do, is to lock your entire block of code that needs to be ran by one thread at a time. This is called the <a href="http://en.wikipedia.org/wiki/Critical_section" target="_blank">Critical Section</a>. The above code should be written like:</p>
+<p>[code]<br />
+lock (synchronizeObject) {<br />
+  if (!dictionary.ContainsKey(key)) {<br />
+    dictionary.Add(key, value);<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>This way you lock the entire code block for single thread access and you ensure your data integrity. And, the critical section should be as big as necessary but not more.</p>
+<p>The issue becomes more serious for structures that have a long life time (e.g. application scope), which increases the chances of failure over time.</p>

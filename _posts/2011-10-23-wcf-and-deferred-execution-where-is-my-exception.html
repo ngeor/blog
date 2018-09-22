@@ -1,0 +1,57 @@
+---
+layout: post
+title: WCF and deferred execution - where is my Exception?
+date: 2011-10-23 17:00:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '59'
+  _wp_old_slug: '59'
+  _edit_last: '14213986'
+  _publicize_job_id: '4017091924'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>A long time ago, I blogged about <a href="/2010/09/deferred-linq-queries-in-wcf-services" target="_blank">WCF and deferred LINQ queries</a> and some surprises that combination may have. Back then, our WCF service would crash inexplicably when the returning type of an operation would contain an enumerable whose evaluation was deferred until after the WCF operation was out of scope.</p>
+<p>Today I&#039;ll revisit the same problem with a different approach: the missing exception.</p>
+<p>Consider this small WCF service implementation:</p>
+<p>[code]<br />
+public class DemoService : IDemoService<br />
+{<br />
+    public IEnumerable&lt;string&gt; GetNames()<br />
+    {<br />
+        try<br />
+        {<br />
+            return DoGetNames();<br />
+        }<br />
+        catch (Exception ex)<br />
+        {<br />
+            // TODO: Log exception<br />
+            return Enumerable.Empty&lt;string&gt;();<br />
+        }<br />
+    }<br />
+}<br />
+[/code]</p>
+<p>The implementation is hidden in the DoGetNames method, which we&#039;ll see in a moment. I had a similar implementation in a project recently, and I thought that the try catch statement here would protect me from all unexpected exceptions that may occur in DoGetNames. However, that wasn&#039;t the case. Once again, the cause was deferred execution. Let&#039;s see a very basic implementation of DoGetNames that can cause this problem:</p>
+<p>[code]<br />
+private IEnumerable&lt;string&gt; DoGetNames()<br />
+{<br />
+    yield return &quot;Alice&quot;;<br />
+    yield return &quot;Bob&quot;;<br />
+    throw new ApplicationException(&quot;I am throwing an exception&quot;);<br />
+}<br />
+[/code]</p>
+<p>Because DoGetNames is implemented with a deferred execution iterator, it really doesn&#039;t get invoked until after the execution leaves the try catch block. So not only our exception is not logged, but on top of that the client&#039;s call fails. I had spent some time wondering why on earth my exception was not been logged at all... until I thought to start searching for these kind of cases.</p>
+<p>So if you&#039;re thinking that you&#039;ve safe guarded your WCF operations with a simple try catch, make sure you haven&#039;t missed any sneaky LINQ statements or similar code that is lazily executed.</p>
+<p>Hope this helps.</p>

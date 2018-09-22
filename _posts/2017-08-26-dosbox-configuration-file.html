@@ -1,0 +1,40 @@
+---
+layout: post
+title: DOSBox configuration file
+date: 2017-08-26 07:59:27.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Tech Notes
+tags:
+- DOSBox
+meta:
+  _edit_last: '14213986'
+  geo_public: '0'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '8649975016'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>I did the following changes to my DOSBox configuration file:</p>
+<ul>
+<li>fulldouble=true (it probably doesn't hurt, it's supposed to reduce flickering)</li>
+<li>windowresolution=1900x1024 (because on my high DPI laptop screen DOSBox by default launches in a teeny tiny window I can barely read)</li>
+<li>output=opengl (works in combination with the previous setting)</li>
+</ul>
+<p>&nbsp;</p>
+<p>And in the autoexec section, these two commands:</p>
+<ul>
+<li>mount c c:\users\ngeor\dosbox</li>
+<li>c:</li>
+</ul>
+<p>This mounts my dosbox folder as the C drive and switches to that drive, so I'm ready to launch GWBasic :-)</p>
+<p>&nbsp;</p>

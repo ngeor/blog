@@ -1,0 +1,208 @@
+---
+layout: post
+title: Using Spring Boot Actuators
+date: 2018-07-07 08:38:06.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- actuators
+- Java
+- Spring Boot
+meta:
+  _wpcom_is_markdown: '1'
+  timeline_notification: '1530945488'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '19753623784'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>Implementing Spring Boot actuators is not very difficult. In this post I'll show what you can get for free, without adding any code.</p>
+<p><!--more--></p>
+<p>First of all, you need this dependency in your <code>pom.xml</code>:</p>
+<p>[code lang=xml]<br />
+    &lt;dependency&gt;<br />
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br />
+      &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;<br />
+    &lt;/dependency&gt;<br />
+[/code]</p>
+<p>This will expose the <code>/health</code> and <code>/info</code> endpoints by default, as mentioned in <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html">the documentation</a>. Both endpoints will be under <code>/actuator</code> (so the full path is <code>/actuator/health</code>).</p>
+<p><strong>Health endpoint</strong></p>
+<p>The health endpoint will give back this JSON:</p>
+<p>[code lang=text]<br />
+{&quot;status&quot;:&quot;UP&quot;}<br />
+[/code]</p>
+<p>which tells us that the service is up and running.</p>
+<p><strong>Info endpoint</strong></p>
+<p>The info endpoint does not return any information by default. We can change that and use the endpoint to see the state of the git repository at the time of the build.</p>
+<p>In <code>pom.xml</code>, add the following build plugin:</p>
+<p>[code lang=xml]<br />
+      &lt;plugin&gt;<br />
+        &lt;groupId&gt;pl.project13.maven&lt;/groupId&gt;<br />
+        &lt;artifactId&gt;git-commit-id-plugin&lt;/artifactId&gt;<br />
+      &lt;/plugin&gt;<br />
+[/code]</p>
+<p>and in <code>application.properties</code>, add this line:</p>
+<p>[code lang=text]<br />
+management.info.git.mode=full<br />
+[/code]</p>
+<p>Now, the info endpoint will offer information about the state of the git repository at the time the project was built.</p>
+<p>Example:</p>
+<p>[code lang=text]<br />
+{<br />
+  &quot;git&quot;: {<br />
+    &quot;build&quot;: {<br />
+      &quot;host&quot;: &quot;6b7e5600-3108-4330-a08a-5a7eff38002d&quot;,<br />
+      &quot;version&quot;: &quot;1.0.0&quot;,<br />
+      &quot;time&quot;: &quot;2018-07-06T09:59:47Z&quot;,<br />
+      &quot;user&quot;: {<br />
+        &quot;name&quot;: &quot;&quot;,<br />
+        &quot;email&quot;: &quot;&quot;<br />
+      }<br />
+    },<br />
+    &quot;branch&quot;: &quot;master&quot;,<br />
+    &quot;commit&quot;: {<br />
+      &quot;message&quot;: {<br />
+        &quot;short&quot;: &quot;Merged in MON-448 (pull request #3)&quot;,<br />
+        &quot;full&quot;: &quot;Merged in MON-448 (pull request #3)\n\nMON-448 Changed auth service to return ExpiresIn for the access token.&quot;<br />
+      },<br />
+      &quot;id&quot;: {<br />
+        &quot;describe&quot;: &quot;df38293&quot;,<br />
+        &quot;abbrev&quot;: &quot;df38293&quot;,<br />
+        &quot;describe-short&quot;: &quot;df38293&quot;,<br />
+        &quot;full&quot;: &quot;df382933d0e2f8cb390cfe9f2e87e6a9046b661d&quot;<br />
+      },<br />
+      &quot;time&quot;: &quot;2018-07-06T09:59:07Z&quot;,<br />
+      &quot;user&quot;: {<br />
+        &quot;email&quot;: &quot;john.doe@wordpress.com&quot;,<br />
+        &quot;name&quot;: &quot;John Doe&quot;<br />
+      }<br />
+    },<br />
+    &quot;closest&quot;: {<br />
+      &quot;tag&quot;: {<br />
+        &quot;name&quot;: &quot;&quot;,<br />
+        &quot;commit&quot;: {<br />
+          &quot;count&quot;: &quot;&quot;<br />
+        }<br />
+      }<br />
+    },<br />
+    &quot;dirty&quot;: &quot;false&quot;,<br />
+    &quot;remote&quot;: {<br />
+      &quot;origin&quot;: {<br />
+        &quot;url&quot;: &quot;https://github.com/secret-project.git&quot;<br />
+      }<br />
+    },<br />
+    &quot;tags&quot;: &quot;&quot;<br />
+  }<br />
+}<br />
+[/code]</p>
+<p><strong>Adding more endpoints</strong></p>
+<p>There are more endpoints available, but not exposed by default. As an example, let's enable the metrics endpoint. We need this in <code>application.properties</code>:</p>
+<p>[code lang=text]<br />
+management.endpoint.metrics.enabled=true<br />
+management.endpoints.web.exposure.include=health,info,metrics<br />
+[/code]</p>
+<p>This will enable the metrics endpoint but also expose it through the web.</p>
+<p>Alternatively, we can expose all endpoints to the web, but control which ones are enabled:</p>
+<p>[code lang=text]<br />
+management.endpoints.web.exposure.include=*<br />
+management.endpoints.enabled-by-default=false<br />
+management.endpoint.health.enabled=true<br />
+management.endpoint.info.enabled=true<br />
+management.endpoint.metrics.enabled=true<br />
+[/code]</p>
+<p><strong>Metrics endpoint</strong></p>
+<p>In any case, visiting the endpoint at <code>/actuators/metrics</code> give us a list of available metrics:</p>
+<p>[code lang=text]<br />
+{<br />
+  &quot;names&quot;: [<br />
+    &quot;http.server.requests&quot;,<br />
+    &quot;process.files.max&quot;,<br />
+    &quot;jvm.gc.memory.promoted&quot;,<br />
+    &quot;tomcat.cache.hit&quot;,<br />
+    &quot;jvm.memory.committed&quot;,<br />
+    &quot;system.load.average.1m&quot;,<br />
+    &quot;tomcat.cache.access&quot;,<br />
+    &quot;jvm.memory.used&quot;,<br />
+    &quot;jvm.gc.max.data.size&quot;,<br />
+    &quot;system.cpu.count&quot;,<br />
+    &quot;logback.events&quot;,<br />
+    &quot;tomcat.global.sent&quot;,<br />
+    &quot;jvm.buffer.memory.used&quot;,<br />
+    &quot;tomcat.sessions.created&quot;,<br />
+    &quot;jvm.memory.max&quot;,<br />
+    &quot;jvm.threads.daemon&quot;,<br />
+    &quot;system.cpu.usage&quot;,<br />
+    &quot;jvm.gc.memory.allocated&quot;,<br />
+    &quot;tomcat.global.request.max&quot;,<br />
+    &quot;tomcat.global.request&quot;,<br />
+    &quot;tomcat.sessions.expired&quot;,<br />
+    &quot;jvm.threads.live&quot;,<br />
+    &quot;jvm.threads.peak&quot;,<br />
+    &quot;tomcat.global.received&quot;,<br />
+    &quot;process.uptime&quot;,<br />
+    &quot;tomcat.sessions.rejected&quot;,<br />
+    &quot;process.cpu.usage&quot;,<br />
+    &quot;jvm.gc.pause&quot;,<br />
+    &quot;tomcat.threads.config.max&quot;,<br />
+    &quot;jvm.classes.loaded&quot;,<br />
+    &quot;jvm.classes.unloaded&quot;,<br />
+    &quot;tomcat.global.error&quot;,<br />
+    &quot;tomcat.sessions.active.current&quot;,<br />
+    &quot;tomcat.sessions.alive.max&quot;,<br />
+    &quot;jvm.gc.live.data.size&quot;,<br />
+    &quot;tomcat.servlet.request.max&quot;,<br />
+    &quot;tomcat.threads.current&quot;,<br />
+    &quot;tomcat.servlet.request&quot;,<br />
+    &quot;process.files.open&quot;,<br />
+    &quot;jvm.buffer.count&quot;,<br />
+    &quot;jvm.buffer.total.capacity&quot;,<br />
+    &quot;tomcat.sessions.active.max&quot;,<br />
+    &quot;tomcat.threads.busy&quot;,<br />
+    &quot;process.start.time&quot;,<br />
+    &quot;tomcat.servlet.error&quot;<br />
+  ]<br />
+}<br />
+[/code]</p>
+<p>And to see for example the uptime (<code>process.uptime</code> metric) we need to visit <code>/actuator/metrics/process.uptime</code>:</p>
+<p>[code lang=text]<br />
+{<br />
+  &quot;name&quot;: &quot;process.uptime&quot;,<br />
+  &quot;measurements&quot;: [<br />
+    {<br />
+      &quot;statistic&quot;: &quot;VALUE&quot;,<br />
+      &quot;value&quot;: 72704.929<br />
+    }<br />
+  ],<br />
+  &quot;availableTags&quot;: []<br />
+}<br />
+[/code]</p>
+<p><strong>Security</strong></p>
+<p>Some endpoints might reveal sensitive information that can potentially be exploited by an attacker. If Spring Security is used, the actuators are protected by default.</p>
+<p>You can bypass Spring Security for the actuators that you feel comfortable that they do not expose anything exploitable. You'll need this kind of configuration:</p>
+<p>[code lang=java]<br />
+@EnableWebSecurity<br />
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {<br />
+    private static final String[] AUTH_WHITELIST = {<br />
+        &quot;/actuator/info&quot;,<br />
+        &quot;/actuator/health&quot;<br />
+        // other public endpoints of your API may be appended to this array<br />
+    };</p>
+<p>    @Override<br />
+    protected void configure(HttpSecurity http) throws Exception {<br />
+        // allow all whitelisted resources<br />
+        http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll();<br />
+    }<br />
+}<br />
+[/code]</p>
+<p><strong>Conclusion</strong></p>
+<p>It's easy to get started with Spring Boot actuators, without even writing any code. You can already use these endpoints in monitoring tools, but also extend them with <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html#production-ready-endpoints-custom">custom solutions</a>.</p>

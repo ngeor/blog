@@ -1,0 +1,37 @@
+---
+layout: post
+title: Copy InputStream to OutputStream
+date: 2018-04-21 19:19:53.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Quick Code Tips
+tags:
+- Java
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '17039042462'
+  timeline_notification: '1524331193'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>To copy from a stream into a file:</p>
+<p>[code language="Java"]<br />
+import java.nio.file.Files;<br />
+import java.nio.file.Path;</p>
+<p>Files.copy(inputStream, path);<br />
+[/code]</p>
+<p>To copy from a stream into another stream, assuming you're using Spring:</p>
+<p>[code language="java"]<br />
+import org.springframework.util.StreamUtils;</p>
+<p>StreamUtils.copy(inputStream, outputStream);<br />
+[/code]</p>

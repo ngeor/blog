@@ -1,0 +1,73 @@
+---
+layout: post
+title: Strip the BOM
+date: 2017-08-02 07:03:25.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- bom
+- gulp
+- nodejs
+- Visual Studio
+meta:
+  _edit_last: '14213986'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '7791067187'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>The <a href="https://en.wikipedia.org/wiki/Byte_order_mark" target="_blank" rel="noopener">byte order mark</a>, or BOM for short, is a special Unicode character that can be used to indicate that a file's contents is Unicode. Visual Studio is one of those editors that like to use the BOM when saving UTF-8 files. There are a few problems with the BOM. It can break shell scripts, as it precedes the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank" rel="noopener">shebang</a>. It can cause unnecessary diff noise in git history, just like any other invisible character mismatch (spaces vs tabs, different line endings, lack of EOL at EOF). In short, I don't like it and I'd like to get rid of it.</p>
+<p><!--more--></p>
+<p>I was working on a Yeoman generator that creates a C# project, so this BOM issue was annoying at unit tests. Some source files had the BOM while their corresponding expected files didn't. As usual in the JavaScript world, there's a npm package that solves the problem. I added the package <a href="https://github.com/lichunqiang/gulp-stripbom" target="_blank" rel="noopener">gulp-stripbom</a> and this is how it looks like in my <code>gulpfile.js</code>:</p>
+<p>[code]</p>
+<p>const stripBom = require('gulp-stripbom');</p>
+<p>gulp.task('stripbom', function() {<br />
+return gulp.src(['**/*.*', '!node_modules/**'])<br />
+    .pipe(stripBom())<br />
+    .pipe(gulp.dest('.'));<br />
+});</p>
+<p>[/code]</p>
+<p><em>Side note</em>: I started using gulp instead of grunt and I find it a bit better. A common problem with gulp and grunt tasks is that documentation is spread over the tasks and the libraries they're wrapping. I think gulp gives you more flexibility and I like its streams. <em>End of side note</em>.</p>
+<p>This gulp task just removes the BOM character from all files in the project, case closed.</p>
+<p>I do have other projects however which don't use gulp or JavaScript for that matter. How do I do a one time cleanup to get rid of the BOM character?</p>
+<p>I poked around in the dependencies of gulp-stripbom and I found it's using the <a href="https://github.com/sindresorhus/strip-bom" target="_blank" rel="noopener">strip-bom</a> package, which is essentially <a href="https://github.com/sindresorhus/strip-bom/blob/master/index.js" target="_blank" rel="noopener">a very simple function</a>. There's also the <a href="https://github.com/sindresorhus/strip-bom-cli" target="_blank" rel="noopener">strip-bom-cli</a> package, but it doesn't edit files in-place.</p>
+<p>I ended up writing this long bash line:</p>
+<p>[code]</p>
+<p>$ find . -type f -iname &quot;*.cs&quot; -exec node -e &quot;var f = process.argv[1]; var contents = fs.readFileSync(f, 'utf8'); if (contents.charCodeAt(0) === 0xFEFF) { fs.writeFileSync(f, contents.slice(1), 'utf8'); } &quot; \{\} \;</p>
+<p>[/code]</p>
+<p>Disclaimer: You should have a backup. Better try this on a git directory, so that you can rollback if needed.</p>
+<p>What does this code do? It uses <code>find</code> to find all files I want to change (*.cs) and runs the given inline node script (<code>node -e</code>) for every match.</p>
+<p>The node script can be reviewed easier if I format it in multiple lines:</p>
+<p>[code]</p>
+<p>var f = process.argv[1]; // get the filename passed as parameter to the node script by find<br />
+var contents = fs.readFileSync(f, 'utf8'); // read the file contents in utf8<br />
+if (contents.charCodeAt(0) === 0xFEFF) { // if the first character the BOM?<br />
+    fs.writeFileSync(f, contents.slice(1), 'utf8'); // save the file, stripping the first character<br />
+}</p>
+<p>[/code]</p>
+<p>This way is suboptimal, as it launches a separate node process for each file, but I don't care for a one time cleanup.</p>
+<p>If I do <code>git diff</code> I can see the invisible BOM:</p>
+<p>[code]</p>
+<p>$ git diff<br />
+diff --git a/NGSoftware.Common/IStoppable.cs b/NGSoftware.Common/IStoppable.cs<br />
+index bb592a5..c13522d 100644<br />
+--- a/NGSoftware.Common/IStoppable.cs<br />
++++ b/NGSoftware.Common/IStoppable.cs<br />
+@@ -1,4 +1,4 @@<br />
+-&lt;U+FEFF&gt;using System;<br />
++using System;<br />
+using System.Threading;</p>
+<p>[/code]</p>
+<p>It's the U+FEFF character being removed. I'm not sure if it's also visible when reviewing a pull request on a browser.</p>
+<p>For JavaScript files, you can also use ESLint to prevent the usage BOM with the <a href="http://eslint.org/docs/rules/unicode-bom" target="_blank" rel="noopener">unicode-bom rule</a>.</p>
+<p>&nbsp;</p>

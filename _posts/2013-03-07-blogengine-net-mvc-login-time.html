@@ -1,0 +1,78 @@
+---
+layout: post
+title: BlogEngine.NET MVC - Login time
+date: 2013-03-07 09:11:00.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- BlogEngine.NET MVC
+- pet project
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '28'
+  _wp_old_slug: '28'
+  geo_public: '0'
+  _publicize_job_id: '353161337'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>It's not difficult to implement a basic login system. BlogEngine.NET comes with its own membership and roles providers, so all we need to do is create a controller that uses the standard Membership features of .NET.<!--more--></p>
+<p>To speed things up, I copy pasted the AccountController that is generated when you create a new MVC project in Visual Studio and select the template Internet Application. That controller actually does a whole lot more than what we need (e.g. authenticate via Facebook), so I removed the extra parts, keeping only the login functionality.</p>
+<p>The login form does look a bit crappy, but I'm not interested in styling anything so far:</p>
+<p><a href="https://ngeor.files.wordpress.com/2013/03/blogengine-mvc-login.png"><img class="alignnone size-medium wp-image-163" src="{{ site.baseurl }}/assets/blogengine-mvc-login.png?w=300" alt="blogengine-mvc-login" width="300" height="230" /></a></p>
+<p>And after logging in with admin admin (the default credentials of BlogEngine.NET), you get a nice welcome message in the homepage:</p>
+<p><a href="https://ngeor.files.wordpress.com/2013/03/blogengine-mvc-logged-in.png"><img class="alignnone size-medium wp-image-162" src="{{ site.baseurl }}/assets/blogengine-mvc-logged-in.png?w=300" alt="blogengine-mvc-logged-in" width="300" height="205" /></a></p>
+<p>We're logged in!</p>
+<h3>But wait, there's more!</h3>
+<p>I added some HTML into the layout (it seems that's the name for master pages in ASP.NET MVC) of the site that is dependent on the current blog. That means that for every view that is been rendered, it is important we don't forget to set the Blog.InstanceIdOverride property, otherwise BlogEngine.NET will attempt to figure out the current blog on its own.</p>
+<p>Now, we could go and make some base controller class that has that functionality as a method, but it's too soon to start building class hierarchies that we might later regret (although the base controller will probably come in handy later). Plus, ASP.NET MVC has a cool feature called <a href="http://www.asp.net/mvc/tutorials/older-versions/controllers-and-routing/understanding-action-filters-cs">action filters</a>. You can create a .NET attribute and decorate an action or even a controller and affect the executing action.</p>
+<p>With that in mind, I implemented a SetCurrentBlogAttribute and I decorated my two controllers (HomeController and AccountController). The attribute intercepts each executing action and determines what the current blog is. The implementation is based on the GetBlog method we saw in the <a href="/2013/03/blogengine-net-mvc-hello-world">previous post</a>. The whole attribute implementation looks like this:</p>
+<p>[code]<br />
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]<br />
+public class SetCurrentBlogAttribute : ActionFilterAttribute<br />
+{<br />
+    public override void OnActionExecuting(ActionExecutingContext filterContext)<br />
+    {<br />
+        base.OnActionExecuting(filterContext);</p>
+<p>        string blogName = null;<br />
+        if (filterContext.RouteData.Values.ContainsKey(&quot;blogName&quot;))<br />
+        {<br />
+            blogName = filterContext.RouteData.Values[&quot;blogName&quot;] as string;<br />
+        }</p>
+<p>        Blog blog;<br />
+        if (string.IsNullOrWhiteSpace(blogName))<br />
+        {<br />
+            // we're loading the primary blog<br />
+            blog = Blog.Blogs.Find(b =&gt; b.IsActive &amp;&amp; b.IsPrimary &amp;&amp; !b.IsDeleted);<br />
+        }<br />
+        else<br />
+        {<br />
+            // we're loading a secondary blog<br />
+            blog = Blog.Blogs.Find(b =&gt; b.IsActive<br />
+                &amp;&amp; !b.IsPrimary<br />
+                &amp;&amp; !b.IsDeleted<br />
+                &amp;&amp; string.Equals(blogName, b.Name, StringComparison.InvariantCultureIgnoreCase));<br />
+        }</p>
+<p>        if (blog == null)<br />
+        {<br />
+            // TODO: return 404 instead<br />
+            throw new InvalidOperationException(&quot;Blog not found&quot;);<br />
+        }</p>
+<p>        // important: this will make BlogEngine.Core use this blog as the 'current' blog<br />
+        // and don't make any assumptions using the URL etc<br />
+        Blog.InstanceIdOverride = blog.Id;<br />
+    }<br />
+}<br />
+[/code]</p>
+<p>So, as long as there is a 'blogName' parameter in the route, the correct blog will be set as current blog and we'll be able to seamlessly use the standard BlogEngine.Core API.</p>
+<p>Coming up next? Building up post and page links... stay tuned!</p>

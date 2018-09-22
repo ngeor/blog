@@ -1,0 +1,74 @@
+---
+layout: post
+title: MasterType directive and namespace conflicts
+date: 2011-07-12 21:25:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '62'
+  _wp_old_slug: '62'
+  _edit_last: '14213986'
+  _publicize_job_id: '4017085734'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>Let me start by saying that I hope you won&#039;t run into this one and that you probably won&#039;t.</p>
+<p>In ASP.NET you can use the <a href="http://msdn.microsoft.com/en-us/library/ms228274.aspx" target="_blank">MasterType</a> directive in your pages to have a strongly typed reference to your master page class. So if you add this directive on top of your page:</p>
+<p>[code]<br />
+&lt;%@ MasterType VirtualPath=&quot;~/MyMasterPage.master&quot; %&gt;<br />
+[/code]</p>
+<p>You page now has a strongly typed reference to your master page. The Master property has been overriden and now you can access your master page&#039;s properties and methods directly:</p>
+<p>[code]<br />
+protected void Page_Load(object sender, EventArgs e)<br />
+{<br />
+  // assuming our master page has a property called MySiteName<br />
+  Title = Master.MySiteName + &quot; - Home Page&quot;;<br />
+}<br />
+[/code]</p>
+<p>Behind the scenes, it&#039;s the automatically generated designer code that makes this possible. The MasterType directive causes the Master property to be overriden in the aspx.designer.cs file:</p>
+<p>[code]<br />
+public new MyWebApp.MyMasterPage Master<br />
+{<br />
+  get<br />
+  {<br />
+    return (MyWebApp.MyMasterPage)base.Master;<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>So far so good. There&#039;s one rare scenario that can break this nice setup. If the root namespace element is repeated somewhere inside the namespace of the master page, the automatically generated code doesn&#039;t compile anymore. I think an example is probably needed here to see what I am talking about.</p>
+<p>If your fully qualified type name of your master page is for example MyWebApp.Templates.MyWebApp.MyMasterPage, the code doesn&#039;t compile anymore because of the automatically generated code:</p>
+<p>[code]<br />
+public new MyWebApp.Templates.MyWebApp.MyMasterPage Master<br />
+{<br />
+  get<br />
+  {<br />
+    return (MyWebApp.Templates.MyWebApp.MyMasterPage)base.Master;<br />
+  }<br />
+}<br />
+[/code]</p>
+<p>This doesn&#039;t compile anymore, because the "MyWebApp" will be interpreted as "MyWebApp.Templates.MyWebApp" and it is actually trying to find MyWebApp.Templates.MyWebApp.Templates.MyWebApp.MyMasterPage ! Amazing. Had the auto generating tool emitted a simple "global::" in front of the type, this would have worked.</p>
+<p>Technically, we can blame the auto generated code. The big question is why would you want to setup your namespaces like that and I have no answer to that. I can only say that I&#039;ve seen this one too.</p>
+<p>You might think you can win this hopeless situation by using the variation of the MasterType directive with the TypeName attribute.</p>
+<p>[code]<br />
+&lt;%@ MasterType TypeName=&quot;MyWebApp.Templates.MyWebApp.MyMasterPage&quot; %&gt;<br />
+[/code]</p>
+<p>instead of specifying the virtual path, we specify the type of our master page. This doesn&#039;t make the situation any different. But you might try to specify the global prefix or the correct type yourself:</p>
+<p>[code]<br />
+&lt;%@ MasterType TypeName=&quot;global::MyWebApp.Templates.MyWebApp.MyMasterPage&quot; %&gt;<br />
+[/code]</p>
+<p>or</p>
+<p>[code]<br />
+&lt;%@ MasterType TypeName=&quot;MyWebApp.MyMasterPage&quot; %&gt;<br />
+[/code]</p>
+<p>Surprisingly, this will get your code to compile! The TypeName attribute gets copied as-is directly to the designer code file so both these options pass compilation. However, now the page will throw an exception at run time, complaining that the type can&#039;t be found... it&#039;s a lose lose situation. Just don&#039;t set-up your namespaces like that, not just because of this problem, but for sanity&#039;s sake.</p>

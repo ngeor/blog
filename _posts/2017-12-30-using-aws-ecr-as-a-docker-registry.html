@@ -1,0 +1,135 @@
+---
+layout: post
+title: Using AWS ECR as a Docker registry
+date: 2017-12-30 14:31:03.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- AWS
+- AWS ECR
+- blog-helm-sample
+- Docker
+- Helm
+- Kubernetes
+- TeamCity
+meta:
+  _thumbnail_id: '3538'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '13034084431'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In this post, I'll modify the pipeline from the previous posts to use a Docker registry powered by AWS ECR (Amazon Elastic Container Registry).</p>
+<p><!--more--></p>
+<p><strong>Creating AWS ECR repositories</strong></p>
+<p>First, we need to enable ECR in Amazon and create our repositories. We have two images that we need to publish, <code>blog-helm</code> and <code>blog-helm-ci</code>, so we need two repositories.</p>
+<p>[caption id="attachment_3539" align="alignnone" width="1137"]<img class="alignnone size-full wp-image-3539" src="{{ site.baseurl }}/assets/2017-12-30-08_43_50-amazon-ecs.png" alt="2017-12-30 08_43_50-Amazon ECS.png" width="1137" height="353" /> Enable ECR[/caption]</p>
+<p>[caption id="attachment_3540" align="alignnone" width="1188"]<img class="alignnone size-full wp-image-3540" src="{{ site.baseurl }}/assets/2017-12-30-08_50_43-amazon-ecs.png" alt="2017-12-30 08_50_43-Amazon ECS.png" width="1188" height="506" /> Create the blog-helm repository[/caption]</p>
+<p>[caption id="attachment_3541" align="alignnone" width="1206"]<img class="alignnone size-full wp-image-3541" src="{{ site.baseurl }}/assets/2017-12-30-08_58_05-amazon-ecs.png" alt="2017-12-30 08_58_05-Amazon ECS.png" width="1206" height="769" /> Success![/caption]</p>
+<p>The second repository is created in the same way.</p>
+<p><strong>Getting Docker credentials</strong></p>
+<p>To be able to use this registry, we need to login with <code>docker login</code>. The AWS CLI offers a command which prints the necessary <code>docker login</code> command we need to run:</p>
+<p>[code]</p>
+<p>&gt; aws ecr get-login --no-include-email --region eu-west-1<br />
+docker login -u AWS -p *** https://830988624223.dkr.ecr.eu-west-1.amazonaws.com</p>
+<p>[/code]</p>
+<p><strong>TeamCity changes</strong></p>
+<p>TeamCity in theory supports connecting to a Docker registry as a build feature. However, when I tried to setup the connection it complained that the password is too long (it is 1868 characters, so, yeah that's long), so that didn't work. This means that we need to do some extra work.</p>
+<p>First, we'll create a few parameters on the project level:</p>
+<p>[caption id="attachment_3542" align="alignnone" width="737"]<img class="alignnone size-full wp-image-3542" src="{{ site.baseurl }}/assets/2017-12-30-13_21_50-blog-helm-project-_-parameters-e28094-teamcity.png" alt="2017-12-30 13_21_50-Blog Helm Project _ Parameters — TeamCity.png" width="737" height="205" /> Configuration Parameters for the Docker registry[/caption]</p>
+<p>With this in place, I need to add two new build steps:</p>
+<ul>
+<li>Before pushing to or pulling from the Docker registry, we need to be logged in. This is an extra step that will run <code>docker login -u %docker.username% -p %docker.password% %docker.server%</code>.</li>
+<li>After the registry is no longer required, I'd like to be logged out. This is an extra step that will run <code>docker logout %docker.server%</code>.</li>
+</ul>
+<p>Since I have my <a href="https://ngeor.wordpress.com/2017/12/25/build-configurations-as-code-with-teamcity/">build pipeline in code</a>, I can inject these steps easily wherever I need:</p>
+<p>[code]<br />
+        script {<br />
+            name = &quot;Login to Docker registry&quot;<br />
+            scriptContent = &quot;docker login -u %docker.username% -p %docker.password% %docker.server%&quot;<br />
+        }<br />
+        script {<br />
+            name = &quot;Push Docker production image&quot;<br />
+            scriptContent = &quot;docker push %docker.registry%/blog-helm:%env.IMAGE_TAG%&quot;<br />
+        }<br />
+        script {<br />
+            name = &quot;Push Docker CI image&quot;<br />
+            scriptContent = &quot;docker push %docker.registry%/blog-helm-ci:%env.IMAGE_TAG%&quot;<br />
+        }<br />
+        script {<br />
+            name = &quot;Logout from Docker registry&quot;<br />
+            scriptContent = &quot;docker logout %docker.server%&quot;<br />
+            executionMode = BuildStep.ExecutionMode.ALWAYS<br />
+        }<br />
+[/code]</p>
+<p>Notice that in the logout step, I've configured the execution mode to be <code>Always</code>. This means that it will always run, even if some other step failed before. It's a nice setting to have for cleanup tasks like these.</p>
+<p>It might be interesting to see how the password is stored. Having defined the parameter as a password, TeamCity does not commit its actual value into the code repository. Instead, it commits some reference value:</p>
+<p>[code]<br />
+        password(&quot;docker.password&quot;, &quot;credentialsJSON:175b2d15-2353-475e-ab70-571d1e5843e9&quot;, label = &quot;Docker registry password&quot;)<br />
+[/code]</p>
+<p>When I change the password via the UI, TeamCity commits a patch file that updates this reference value:</p>
+<p>[code]<br />
+changeProject(&quot;d3c230cf-b4cd-4a9e-8017-4b4b945b3a3c&quot;) {<br />
+    params {<br />
+        expect {<br />
+            password(&quot;docker.password&quot;, &quot;credentialsJSON:6a39fd43-0513-4ba4-a446-14843fa7c355&quot;, label = &quot;Docker registry password&quot;)<br />
+        }<br />
+        update {<br />
+            password(&quot;docker.password&quot;, &quot;credentialsJSON:175b2d15-2353-475e-ab70-571d1e5843e9&quot;, label = &quot;Docker registry password&quot;)<br />
+        }<br />
+    }<br />
+}<br />
+[/code]</p>
+<p><strong>Results in AWS ECR</strong></p>
+<p>With this in place, I'm able to publish the images to AWS ECR:</p>
+<p>[caption id="attachment_3543" align="alignnone" width="1328"]<img class="alignnone size-full wp-image-3543" src="{{ site.baseurl }}/assets/2017-12-30-13_39_36-amazon-ecs.png" alt="2017-12-30 13_39_36-Amazon ECS.png" width="1328" height="537" /> Production Image (blog-helm)[/caption]</p>
+<p>[caption id="attachment_3544" align="alignnone" width="1309"]<img class="alignnone size-full wp-image-3544" src="{{ site.baseurl }}/assets/2017-12-30-13_40_19-amazon-ecs.png" alt="2017-12-30 13_40_19-Amazon ECS.png" width="1309" height="663" /> CI Image (blog-helm-ci)[/caption]</p>
+<p>You can see that the production image is much smaller than the ci image, because the latter contains dev dependencies and <a href="https://ngeor.wordpress.com/2017/12/29/adding-webdriverio-tests/">it's not based on alpine, due to PhantomJS</a>.</p>
+<p>I also had a mistake in my <code>.dockerignore</code>, I should have excluded the <code>ci-scripts</code> folder from the Docker context; this unfortunately was creating a different CI image on every build. This is why the CI image has so many different tags compared to the production image.</p>
+<p><strong>Using the image in Kubernetes</strong></p>
+<p>My minikube needs to be able to pull from the AWS ECR too. First, I need to create a secret with the <code>kubectl</code> CLI tool:</p>
+<p>[code]<br />
+$ kubectl create secret docker-registry myaws \<br />
+    --docker-username=AWS \<br />
+    --docker-password=*** \<br />
+    --docker-email=*** \<br />
+    --docker-server=830988624223.dkr.ecr.eu-west-1.amazonaws.com<br />
+secret &quot;myaws&quot; created<br />
+[/code]</p>
+<p>This will create a new secret named <code>myaws</code>. To use it, I need to modify the deployment template of my Helm chart:</p>
+<p>[code]<br />
+    spec:<br />
+      imagePullSecrets:<br />
+        - name: myaws<br />
+      containers:<br />
+        - name: {{ .Chart.Name }}<br />
+          image: &quot;{{ .Values.image.repository }}:{{ .Values.image.tag }}&quot;<br />
+          imagePullPolicy: {{ .Values.image.pullPolicy }}<br />
+[/code]</p>
+<p>and of course I need to specify the new registry in the <code>values.yaml</code>:</p>
+<p>[code]<br />
+replicaCount: 1<br />
+image:<br />
+  repository: 830988624223.dkr.ecr.eu-west-1.amazonaws.com/blog-helm<br />
+  tag: latest<br />
+  pullPolicy: IfNotPresent<br />
+[/code]</p>
+<p>And that's it! Now my local Kubernetes is able to pull images from the AWS ECR as well.</p>
+<p><strong>AWS Limits and Lifecycle Policy</strong></p>
+<p>In the AWS UI, there's a prominent warning: <em>Amazon ECR limits the number of images to 1,000 per repository</em>. Since we're publishing an image on every commit, I can imagine that this limit is easy to reach. Let's say 5 devs are working on a project (repository) and they each make 10 commits a day. In 20 working days, the limit is met.</p>
+<p>Luckily AWS offers a cleanup policy. It can delete images based on their age or their count. Images are selected based on the tag prefix. Unfortunately we don't have a specific catch-all prefix in the current setup, as the image tag is following semver. It would be perhaps interesting to implement a tag scheme that has a different prefix for feature branches and different for the master branch (e.g. prod-1.2.3 for master and feat-1.2.4-some-feature-branch.1 for the feature branches). It would be also great if AWS allowed for a regex match. In any case, since my code is at the moment on major version 2, I can setup a rule for all images starting with "2." and specify I want to keep the 5 most recent:</p>
+<p>[caption id="attachment_3545" align="alignnone" width="685"]<img class="alignnone size-full wp-image-3545" src="{{ site.baseurl }}/assets/2017-12-30-14_18_17-amazon-ecs.png" alt="2017-12-30 14_18_17-Amazon ECS.png" width="685" height="628" /> Creating a lifecycle policy[/caption]</p>
+<p>These are the 7 images currently available:</p>
+<p>[caption id="attachment_3546" align="alignnone" width="1290"]<img class="alignnone size-full wp-image-3546" src="{{ site.baseurl }}/assets/2017-12-30-14_19_59-amazon-ecs.png" alt="2017-12-30 14_19_59-Amazon ECS.png" width="1290" height="477" /> Images sorted by date[/caption]</p>
+<p>If I do a dry-run on the rule, it correctly identifies the two oldest that will be deleted with this policy:</p>
+<p>[caption id="attachment_3547" align="alignnone" width="1292"]<img class="alignnone size-full wp-image-3547" src="{{ site.baseurl }}/assets/2017-12-30-14_19_15-amazon-ecs.png" alt="2017-12-30 14_19_15-Amazon ECS.png" width="1292" height="571" /> Termination candidates[/caption]</p>

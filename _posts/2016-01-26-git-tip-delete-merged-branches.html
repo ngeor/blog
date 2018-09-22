@@ -1,0 +1,43 @@
+---
+layout: post
+title: 'git tip: Delete merged branches'
+date: 2016-01-26 21:06:02.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- bash
+- git
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '252'
+  _wp_old_slug: '252'
+  _publicize_job_id: '4016848925'
+  _wpcom_is_markdown: '1'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>If you want to delete your local branches that have already been merged to master remotely, run this in a bash shell:</p>
+<p>[code]<br />
+$ git branch -D `git branch --merged | grep -v '*' | xargs`<br />
+[/code]</p>
+<p>This deletes all branches that are merged, except the currently checked out branch (that's the part with the start). So you should better run this <strong>while you've got the master branch checked out</strong>.</p>
+<p><strong>Update 2018-08-25</strong>: Powershell equivalent:</p>
+<p>[code]</p>
+<p>PS&gt; git branch --merged | ? { $_ -notmatch '\*' } | ForEach-Object { git branch -d $_.Trim() }</p>
+<p>[/code]</p>
+<p>A different way for bash:</p>
+<p>[code]</p>
+<p>$ git branch --merged | grep -v '*' | xargs git branch -d</p>
+<p>[/code]</p>
+<p>Note that if you squash &amp; merge (a popular option in GitHub and Bitbucket), then <code>git branch --merged</code> will not return these branches. In that case, try <code>git branch -l</code> but with the extra risk you might delete a branch you were still working on.</p>
+<p>&nbsp;</p>

@@ -1,0 +1,128 @@
+---
+layout: post
+title: Maven Tips
+date: 2015-06-14 07:00:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- Java
+- maven
+meta:
+  _publicize_job_id: '4016803970'
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '10'
+  _wp_old_slug: '10'
+  _wpcom_is_markdown: '1'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>I started using Maven at work recently. Being a newbie, I find myself googling constantly (even though the answer is always on StackOverflow) about basic things. For reference, these are my most needed actions so far:<!--more--></p>
+<h2 id="how-to-create-a-new-maven-project">How to create a new maven project</h2>
+<p>Originally found <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">here</a>:</p>
+<p>[code]<br />
+mvn archetype:generate \<br />
+    -DgroupId=com.mycompany.app \<br />
+    -DartifactId=my-app \<br />
+    -DarchetypeArtifactId=maven-archetype-quickstart \<br />
+    -DinteractiveMode=false<br />
+[/code]</p>
+<p>Now that’s one long command line…</p>
+<h2 id="how-to-define-the-java-version-of-the-project">How to define the Java version of the project</h2>
+<p>You’ll need the maven-compiler-plugin. For example, to target Java 1.8, edit the <code>pom.xml</code> like this:</p>
+<p>[code]<br />
+&lt;project&gt; &lt;!-- root of pom.xml, details deleted for simiplicity --&gt;<br />
+    &lt;build&gt;<br />
+        &lt;plugins&gt;<br />
+            &lt;plugin&gt;<br />
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;<br />
+                &lt;version&gt;3.5.1&lt;/version&gt;<br />
+                &lt;configuration&gt;<br />
+                    &lt;source&gt;1.8&lt;/source&gt;<br />
+                    &lt;target&gt;1.8&lt;/target&gt;<br />
+                &lt;/configuration&gt;<br />
+            &lt;/plugin&gt;<br />
+[/code]</p>
+<p><strong>Update 2018-06-20</strong>: there's a much easier way but I have forgotten to update this post. Just use these properties:</p>
+<p>[code]<br />
+&lt;properties&gt;<br />
+    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;<br />
+    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;<br />
+&lt;/properties&gt;<br />
+[/code]<br />
+ </p>
+<h2 id="how-to-specify-the-main-class-of-your-jar-file">How to specify the main class of your jar file</h2>
+<p>You’ll need the maven-jar-plugin. Example:</p>
+<p>[code]<br />
+&lt;plugin&gt;<br />
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;<br />
+    &lt;version&gt;3.0.0&lt;/version&gt;<br />
+    &lt;configuration&gt;<br />
+        &lt;archive&gt;<br />
+            &lt;manifest&gt;<br />
+                &lt;addClasspath&gt;true&lt;/addClasspath&gt;<br />
+                &lt;mainClass&gt;com.mycompany.app.Program&lt;/mainClass&gt;<br />
+            &lt;/manifest&gt;<br />
+        &lt;/archive&gt;<br />
+    &lt;/configuration&gt;<br />
+&lt;/plugin&gt;<br />
+[/code]</p>
+<h2 id="how-to-copy-your-dependencies-to-the-output-folder">How to copy your dependencies to the output folder</h2>
+<p>Your jar file ends up being generated to the target folder (don’t forget to add it to the <code>.gitignore</code>!) but the dependencies aren’t copied by default. To do that, you’ll need the maven-dependency-plugin. Example:</p>
+<p>[code]<br />
+&lt;plugin&gt;<br />
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;<br />
+    &lt;version&gt;2.10&lt;/version&gt;<br />
+    &lt;executions&gt;<br />
+        &lt;execution&gt;<br />
+            &lt;phase&gt;package&lt;/phase&gt;<br />
+            &lt;goals&gt;<br />
+                &lt;goal&gt;copy-dependencies&lt;/goal&gt;<br />
+            &lt;/goals&gt;<br />
+            &lt;configuration&gt;<br />
+                &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;<br />
+                &lt;includeScope&gt;compile&lt;/includeScope&gt;<br />
+            &lt;/configuration&gt;<br />
+        &lt;/execution&gt;<br />
+    &lt;/executions&gt;<br />
+&lt;/plugin&gt;<br />
+[/code]<br />
+ </p>
+<h2 id="how-to-copy-extra-resource-files-to-the-output-folder">How to copy extra resource files to the output folder</h2>
+<p>This is when you have a few configuration property files in the conf folder and you want to copy them to the same folder where your jar file is going to live. These resource files will not be packaged in your jar file, they will live as standalone files. You’ll need the maven-resources-plugin. Example:</p>
+<p>[code]<br />
+&lt;plugin&gt;<br />
+    &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;<br />
+    &lt;executions&gt;<br />
+        &lt;execution&gt;<br />
+            &lt;id&gt;copy-resources&lt;/id&gt;<br />
+            &lt;phase&gt;package&lt;/phase&gt;<br />
+            &lt;goals&gt;<br />
+                &lt;goal&gt;copy-resources&lt;/goal&gt;<br />
+            &lt;/goals&gt;<br />
+            &lt;configuration&gt;<br />
+                &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;<br />
+                &lt;resources&gt;<br />
+                    &lt;resource&gt;<br />
+                        &lt;directory&gt;conf&lt;/directory&gt;<br />
+                        &lt;filtering&gt;true&lt;/filtering&gt;<br />
+                    &lt;/resource&gt;<br />
+                &lt;/resources&gt;<br />
+            &lt;/configuration&gt;<br />
+        &lt;/execution&gt;<br />
+    &lt;/executions&gt;<br />
+&lt;/plugin&gt;<br />
+[/code]</p>
+<p> </p>

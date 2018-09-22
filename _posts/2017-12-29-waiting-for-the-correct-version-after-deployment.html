@@ -1,0 +1,105 @@
+---
+layout: post
+title: Waiting for the correct version after deployment
+date: 2017-12-29 11:02:34.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- Helm
+- TeamCity
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12997805686'
+  _thumbnail_id: '3513'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In this post, I'll implement a post deployment check that waits until the application is running with the expected version.<br />
+<!--more--><br />
+The first step is to make the application aware of its version. The easiest way to do that in our setup is with an environment variable. We'll modify the deployment template of the Helm chart:</p>
+<p>[code]<br />
+env:<br />
+  - name: APP_VERSION<br />
+    value: {{ .Values.image.tag }}<br />
+[/code]</p>
+<p>The <code>.Values.image.tag</code> is already set to the correct version during deployment, so we get this for free.</p>
+<p>The second step is to expose this version information from the application. We'll create a new endpoint, <code>/version</code>, which will simply print this version information:</p>
+<p>[code language="JavaScript"]<br />
+app.get('/version', (req, res) =&gt; res.send(process.env.APP_VERSION));<br />
+[/code]</p>
+<p>At this point, our application is able to print its version. We'll use this endpoint in a script. The script, <code>wait-for-version.sh</code>, will poll this endpoint until it prints the expected version:</p>
+<p>[code language="bash"]<br />
+#!/bin/bash<br />
+#<br />
+# Wait until the version endpoint reports the expected version.<br />
+# Usage: wait-for-version.sh version-url expected-version<br />
+# Example: wait-for-version.sh http://some.host/version 1.3.0<br />
+set -e</p>
+<p>VERSION_URL=$1<br />
+if [ -z &quot;$VERSION_URL&quot; ]; then<br />
+    &gt;&amp;2 echo &quot;ERROR: first parameter should be version URL.&quot;<br />
+    exit 1<br />
+fi</p>
+<p>EXPECTED_VERSION=$2<br />
+if [ -z &quot;$EXPECTED_VERSION&quot; ]; then<br />
+    &gt;&amp;2 echo &quot;ERROR: second parameter should be the expected version.&quot;<br />
+    exit 1<br />
+fi</p>
+<p># how many times to retry<br />
+RETRY_COUNT=${RETRY_COUNT:-12}</p>
+<p># how many seconds to wait between retries<br />
+SLEEP_TIME=${SLEEP_TIME:-5}</p>
+<p>n=0<br />
+until [ $n -ge $RETRY_COUNT ]<br />
+do<br />
+    echo &quot;Waiting for url $VERSION_URL to be at version $EXPECTED_VERSION, attempt $n...&quot;<br />
+    ACTUAL_VERSION=$(curl $VERSION_URL)<br />
+    if [ &quot;$EXPECTED_VERSION&quot; = &quot;$ACTUAL_VERSION&quot; ]; then<br />
+        echo &quot;Version is correct!&quot;<br />
+        exit 0<br />
+    fi</p>
+<p>    echo &quot;Version was $ACTUAL_VERSION&quot;<br />
+    n=$[$n+1]<br />
+    sleep $SLEEP_TIME<br />
+done</p>
+<p>&gt;&amp;2 echo &quot;ERROR: expected version did not appear in time.&quot;<br />
+exit 1<br />
+[/code]</p>
+<p>To use this script, we'll add a new step in the deploy template which uses it. First, we'll setup a few parameters in the template:</p>
+<ul>
+<li><code>app.host</code>: the host name e.g. <code>test.blog-helm.local</code> for the test environment.</li>
+<li><code>app.baseurl</code>: the base URL e.g. <code>http://test.blog-helm.local</code></li>
+<li><code>app.version.url</code>: the URL the script should use to get the application's version, e.g. <code>http://test.blog-helm.local/version</code></li>
+</ul>
+<p>Note that the only parameter we need to specify in the deployment build configurations is the <code>app.host</code>; the others can be calculated based on that:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-29-12_44_30-deploy-template-template-e28094-teamcity.png" alt="2017-12-29 12_44_30-Deploy Template Template — TeamCity.png" width="1154" height="588" class="alignnone size-full wp-image-3510" /></p>
+<p>The build step is simply running the <code>wait-for-version</code> script, with parameters <code>%app.version.url%</code> and <code>%build.number%</code>:</p>
+<p><img src="{{ site.baseurl }}/assets/2017-12-29-12_46_06-deploy-template-template-e28094-teamcity.png" alt="2017-12-29 12_46_06-Deploy Template Template — TeamCity.png" width="1919" height="521" class="alignnone size-full wp-image-3511" /></p>
+<p>Here's an example of the output log:</p>
+<p>[code]<br />
+[09:55:39][Step 2/2] Waiting for url http://test.blog-helm.local/version to be at version 1.7.1, attempt 0...<br />
+[09:55:39][Step 2/2] Version was 1.7.0<br />
+[09:55:44][Step 2/2] Waiting for url http://test.blog-helm.local/version to be at version 1.7.1, attempt 1...<br />
+[09:55:44][Step 2/2] Version was &lt;html&gt;<br />
+[09:55:44][Step 2/2] &lt;head&gt;&lt;title&gt;503 Service Temporarily Unavailable&lt;/title&gt;&lt;/head&gt;<br />
+[09:55:44][Step 2/2] &lt;body bgcolor=&quot;white&quot;&gt;<br />
+[09:55:44][Step 2/2] &lt;center&gt;&lt;h1&gt;503 Service Temporarily Unavailable&lt;/h1&gt;&lt;/center&gt;<br />
+[09:55:44][Step 2/2] &lt;hr&gt;&lt;center&gt;nginx/1.13.6&lt;/center&gt;<br />
+[09:55:44][Step 2/2] &lt;/body&gt;<br />
+[09:55:44][Step 2/2] &lt;/html&gt;<br />
+[09:55:49][Step 2/2] Waiting for url http://test.blog-helm.local/version to be at version 1.7.1, attempt 2...<br />
+[09:55:49][Step 2/2] Version is correct!<br />
+[/code]</p>
+<p>As you can see, initially the version was old (1.7.0 instead of the expected 1.7.1). Then, the app returned 503 as it was being deployed. Finally, the correct version was activated, so the script succeeded.</p>
+<p><em>Hourglass photo source: https://pixabay.com/en/hourglass-time-hours-sand-clock-620397/</em></p>

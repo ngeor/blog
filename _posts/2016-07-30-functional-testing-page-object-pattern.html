@@ -1,0 +1,166 @@
+---
+layout: post
+title: Functional Testing - Page Object Pattern
+date: 2016-07-30 09:00:56.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- functional tests
+- JavaScript
+- page object pattern
+- WebdriverIO
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '423'
+  _wp_old_slug: '423'
+  geo_public: '0'
+  _publicize_job_id: '354222141'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>So far, we've seen how to write functional tests using the WebDriverIO API directly. Let's see what problems we may encounter with that and how the page object pattern comes to rescue.<br />
+<!--more--><br />
+Our example functional tests work against Google's homepage. One test verifies that the search text box exists and it's visible. Another test types something into that search text box and performs the search. In order to identify the text box, we use the same <a href="/2016/07/functional-testing-selectors/">selector</a>, <code>input[name=q]</code>. The problem starts here and it's not unique to functional tests: it's copy pasting around magic strings.</p>
+<p>If our implementation changes and the text field is no longer identified by the name 'q', then we'll have to replace it at potentially many places.</p>
+<p>Another risk is that we may be using multiple different selectors to reference the same element. One developer may have used a different selector, e.g. <code>input[type=text]</code>. Why? Simply because he didn't notice that there was another selector referencing the same element.</p>
+<p>Finally, using these selectors directly produces code that will be difficult to read and maintain. If the selector is simple enough, e.g. <code>#resultsDiv</code>, then perhaps it's straightforward what the selector points to. But what happens if the selector is something like <code>.main &gt; .nav &gt; li:nth-child(2)</code> ? Good luck remembering what that is supposed to retrieve.</p>
+<p>This is where the Page Object pattern can be helpful. The Page Object pattern encapsulates our interactions with WebDriverIO API into classes that model our pages and components. In our example, the homepage is an object which has 3 components: the search text box, the search button and the search results. The selectors that are used to identify these, should be hidden away. The tests should not use them directly, the tests should only use the page objects. Then, the test code can be more readable:</p>
+<p>[code language="javascript"]<br />
+    it('should verify the title of Google', function() {<br />
+        return page<br />
+            .getTitle()<br />
+            .then(function(title) {<br />
+                expect(title).to.equal('Google');<br />
+            });<br />
+    });</p>
+<p>    it('should have a text search box', function() {<br />
+        return page.searchTextBox<br />
+            .isVisible()<br />
+            .then(function(visible) {<br />
+                expect(visible).to.be.true;<br />
+            });<br />
+    });<br />
+[/code]</p>
+<p>The <code>page</code> variable (we'll see it in a moment) is the page object that represents the Google homepage. It has a field called <code>searchTextBox</code> that is a page object that represents the text box of that page. Notice how the <code>isVisible</code> method call no longer has a selector argument. The selector is hidden away in the implementation of the page object. This solves the problems mentioned earlier and it makes the code more readable and maintainable.</p>
+<p>Let's start working on that page object class. The first thing being called is the <code>getTitle</code> method and coincidentally it's the easiest to implement:</p>
+<p>[code language="javascript"]<br />
+var WebDriverHelper = require('./webdriver_helper');</p>
+<p>function PageObject() {}</p>
+<p>PageObject.prototype.getBrowser = function() {<br />
+    return WebDriverHelper.browser;<br />
+};</p>
+<p>PageObject.prototype.getTitle = function() {<br />
+    return this.getBrowser().getTitle();<br />
+};</p>
+<p>module.exports = PageObject;<br />
+[/code]</p>
+<p>We have a new class named <code>PageObject</code>. It uses our <code>WebDriverHelper</code> class and it's in the same folder. It has two methods so far:</p>
+<ul>
+<li>the <code>getBrowser</code> is a helper method that provides access to the WebDriverIO API instance. It's handy to have it.</li>
+<li>the <code>getTitle</code> is the method that gets, as a promise, the title of the current page. It just calls the corresponding <code>getTitle</code> method of the WebDriverIO API.</li>
+</ul>
+<p>It gets more interesting when we start hiding away our selectors. We'll implement a new class, named <code>SelectorPageObject</code>, that will represent a page object that is bound to a selector:</p>
+<p>[code language="javascript"]<br />
+var PageObject = require('./page_object');</p>
+<p>function SelectorPageObject(selector) {<br />
+    this.selector = selector;<br />
+}</p>
+<p>SelectorPageObject.prototype = Object.create(PageObject.prototype);</p>
+<p>module.exports = SelectorPageObject;<br />
+[/code]</p>
+<p>We started by just defining the class as a sub-class of the <code>PageObject</code> (so that it can reuse the <code>getBrowser</code> method). The interesting part is in the constructor: it expects a selector argument. With that in mind, let's implement the <code>isVisible</code> method:</p>
+<p>[code language="javascript"]<br />
+SelectorPageObject.prototype.isVisible = function() {<br />
+    return this.getBrowser().isVisible(this.selector);<br />
+};<br />
+[/code]</p>
+<p>It just calls the <code>isVisible</code> method of the WebDriverIO API, using the selector that this object was instantiated with. The rest of the methods we have in our tests so far can be implemented in the same fashion:</p>
+<p>[code language="javascript"]<br />
+SelectorPageObject.prototype.setValue = function(value) {<br />
+    return this.getBrowser().setValue(this.selector, value);<br />
+};</p>
+<p>SelectorPageObject.prototype.click = function() {<br />
+    return this.getBrowser().click(this.selector);<br />
+};</p>
+<p>SelectorPageObject.prototype.getText = function() {<br />
+    return this.getBrowser().getText(this.selector);<br />
+};<br />
+[/code]</p>
+<p>Now, we will put these classes together to good use and we'll model our Google homepage page object. We will place this class in a different folder in our code, called <code>page_objects</code>. The previous two classes were generic, framework-like code, that are not specific to our project, so it makes sense to keep them in the <code>lib</code> folder (or promote them to a separate npm package and use them as a dependency). The homepage class is quite specific to the site we're testing, so it should be in a separate folder.</p>
+<p>[code language="javascript"]<br />
+var PageObject = require('../lib/page_object');<br />
+var SelectorPageObject = require('../lib/selector_page_object');</p>
+<p>function GoogleHomepage() {<br />
+    this.searchTextBox = new SelectorPageObject('input[name=q]');<br />
+    this.searchButton = new SelectorPageObject('input[value*=Google]');<br />
+    this.searchResults = new SelectorPageObject('#resultStats');<br />
+}</p>
+<p>GoogleHomepage.prototype = Object.create(PageObject.prototype);</p>
+<p>module.exports = GoogleHomepage;<br />
+[/code]</p>
+<p>There we go! The class inherits from <code>PageObject</code> so that we can use the <code>url</code> and <code>getTitle</code> methods. The constructor takes care of instantiating the components. This is the only place where we see these selectors. They're tucked away in this implementation, so it's the one place we'd have to change them. The functional tests don't need to know about them.</p>
+<p><strong>Reminder</strong>: the source code for the examples of these posts <a href="https://github.com/ngeor/Calculator">is available on GitHub</a>.</p>
+<p>So, how do our tests look like with these new classes? Let's have a look one step at a time:</p>
+<p>[code language="javascript"]<br />
+var expect = require('chai').expect;<br />
+var WebDriverHelper = require('../lib/webdriver_helper');<br />
+var GoogleHomepage = require('../page_objects/google_homepage');</p>
+<p>describe('Google', function() {<br />
+    var page = new GoogleHomepage();<br />
+    WebDriverHelper.setupBrowser();</p>
+<p>    before(function() {<br />
+        return page.url('http://www.google.com');<br />
+    });</p>
+<p>    // tests follow ...<br />
+});<br />
+[/code]</p>
+<p>We are using the <code>GoogleHomepage</code> class we created earlier. We still need the <code>setupBrowser</code> call from the <code>WebDriverHelper</code> so that stays. The <code>before</code> hook has changed: it is now using our page object.</p>
+<p>Let's see the title test:</p>
+<p>[code language="javascript"]<br />
+    it('should verify the title of Google', function() {<br />
+        return page<br />
+            .getTitle()<br />
+            .then(function(title) {<br />
+                expect(title).to.equal('Google');<br />
+            });<br />
+    });<br />
+[/code]</p>
+<p>It also uses the <code>page</code> variable, just like the <code>before</code> hook. Other than that, it's just the same.</p>
+<p>The test that checks we have the search text box in the page:</p>
+<p>[code language="javascript"]<br />
+    it('should have a text search box', function() {<br />
+        return page.searchTextBox<br />
+            .isVisible()<br />
+            .then(function(visible) {<br />
+                expect(visible).to.be.true;<br />
+            });<br />
+    });<br />
+[/code]</p>
+<p>This one is the first test where we were using selectors. The selector is hidden away in the page object and we reference the <code>searchTextBox</code> field instead. It's the responsibility of the page object to figure out what selector identifies it.</p>
+<p>The test that performs the search is a bit more interesting:</p>
+<p>[code language="javascript"]<br />
+    it('should search for pokemon', function() {<br />
+        return page.searchTextBox.setValue('Pokemon')<br />
+            .then(function() {<br />
+                return page.searchButton.click();<br />
+            })<br />
+            .then(function() {<br />
+                return page.searchResults.getText();<br />
+            })<br />
+            .then(function(text) {<br />
+                expect(text).to.equal('Ongeveer 330.000.000 resultaten (0,37 seconden)', 'unexpected search result message');<br />
+            });<br />
+    });<br />
+[/code]</p>
+<p>This has actually become a bit more verbose. The original test was chaining a series of promises, without all these <code>then</code> statements. The reason this worked before is that previously all the promises were chained on top of the same instance, the <code>browser</code> variable that pointed to the WebDriverIO API. This is no longer the case. Each function of our page objects returns a promise which can be chained upon, but it points to the <code>browser</code> variable we've hidden inside the <code>WebDriverHelper</code> class.</p>
+<p>In the next post, we'll see some ways of shortening our tests.</p>

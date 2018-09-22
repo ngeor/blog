@@ -1,0 +1,144 @@
+---
+layout: post
+title: Using sinon stubs
+date: 2016-05-28 08:34:49.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- JavaScript
+- mocha
+- sinon
+- unit tests
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '368'
+  _wp_old_slug: '368'
+  geo_public: '0'
+  _publicize_job_id: '354054470'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In the previous post we had a look at <a href="https://ngeor.wordpress.com/2016/05/21/using-sinon-spies/">sinon spies</a>. With spies, we are able to determine if a specific function was called or not. Usually the dependencies between units are more interesting, they involve units co-operating, exchanging data and so on. Spies do not suffice. Let's have a look at another technique, using stubs.<!--more--></p>
+<p>A stub is <strong>pre-programmed function</strong>. You define the expected input and output and the stub complies happily. If you call the stub in an unexpected way, it will typically return a default value (<code>undefined</code>). In code, this looks something like that:</p>
+<p>[code]<br />
+// create a stub<br />
+var stub = sinon.stub();</p>
+<p>// prints 'undefined', nothing programmed so far<br />
+console.log(stub());</p>
+<p>// program the stub to return hello<br />
+stub.returns('hello');</p>
+<p>// prints 'hello'<br />
+console.log(stub());</p>
+<p>// program the stub to return hello world for specific arguments<br />
+stub.withArgs('world').returns('hello world');</p>
+<p>// prints 'hello world'<br />
+console.log(stub('world'));<br />
+[/code]</p>
+<p>Let's see how we can use a stub in our Calculator example. We are going to add a new dependency, a battery. The calculator will offer a new feature that will check the battery's charge level. If it's above zero, then the calculator will report that it is ready to work.</p>
+<p>Before we start writing the unit test, we already know that the <code>Battery</code> will be implemented as an object that has a method called <code>getLevel</code>. The method returns a number between 0 and 100. That's the interface (or contract) of the Battery.</p>
+<p>The first unit test looks like this:</p>
+<p>[code]<br />
+it('should be ready when the battery is charged', function() {<br />
+    // arrange<br />
+    var bell = sinon.spy();<br />
+    var battery = {<br />
+        getLevel: sinon.stub()<br />
+    };</p>
+<p>    battery.getLevel.returns(100);<br />
+    var calculator = new Calculator(bell, battery);</p>
+<p>    // act<br />
+    var isReady = calculator.isReady();</p>
+<p>    // assert<br />
+    expect(isReady).to.be.true;<br />
+});<br />
+[/code]</p>
+<p>The <code>Calculator</code> constructor now takes a second parameter, the battery. The bell is not really used in this test, but we should pass a parameter. In the act step, you can see the new method of the calculator, <code>isReady</code>, which is expected to return <code>true</code> in this test.</p>
+<p>The setup of the test shows that the battery is a simple object with a function called <code>getLevel</code>. Then we stub that function to return the value 100.</p>
+<p>The implementation of the <code>Calculator</code> changes like this:</p>
+<p>[code]<br />
+// changed: new parameter for the battery<br />
+function Calculator(bell, battery) {<br />
+    this.bell = bell;<br />
+    this.battery = battery;<br />
+}</p>
+<p>// new method: isReady<br />
+Calculator.prototype.isReady = function() {<br />
+    return this.battery.getLevel() &gt; 0;<br />
+};<br />
+[/code]</p>
+<p>Are we done? Not really. First of all, we only added one unit test that proves the calculator reports it is ready when the battery is charged. We should cover the opposite case as well: the calculator should report it's not ready when the battery is empty. Note that even if we don't cover this case, code coverage will be reported as 100% (remember how <a href="https://ngeor.wordpress.com/2016/05/07/what-is-code-coverage/">code coverage doesn't say anything about the quality of your tests</a>).</p>
+<p>To cover the negative test case, we could copy paste the test we already wrote and change it slightly:</p>
+<p>[code]<br />
+it('should not be ready when the battery is empty', function() {<br />
+    // arrange<br />
+    var bell = sinon.spy();<br />
+    var battery = {<br />
+        getLevel: sinon.stub()<br />
+    };</p>
+<p>    battery.getLevel.returns(0);<br />
+    var calculator = new Calculator(bell, battery);</p>
+<p>    // act<br />
+    var isReady = calculator.isReady();</p>
+<p>    // assert<br />
+    expect(isReady).to.be.false;<br />
+});<br />
+[/code]</p>
+<p>This works, but we can avoid some copy pasting by moving some of the common arrange steps into a shared step. Mocha offers <strong>hooks that you can run before or after</strong> all tests. Let's see both tests together with this technique:</p>
+<p>[code]<br />
+describe('isReady', function() {<br />
+    var battery;<br />
+    var calculator;</p>
+<p>    beforeEach(function() {<br />
+        // arrange<br />
+        var bell = sinon.spy();<br />
+        battery = {<br />
+            getLevel: sinon.stub()<br />
+        };</p>
+<p>        calculator = new Calculator(bell, battery);<br />
+    });</p>
+<p>    it('should be ready when the battery is charged', function() {<br />
+        // arrange<br />
+        battery.getLevel.returns(100);</p>
+<p>        // act<br />
+        var isReady = calculator.isReady();</p>
+<p>        // assert<br />
+        expect(isReady).to.be.true;<br />
+    });</p>
+<p>    it('should not be ready when the battery is empty', function() {<br />
+        // arrange<br />
+        battery.getLevel.returns(0);</p>
+<p>        // act<br />
+        var isReady = calculator.isReady();</p>
+<p>        // assert<br />
+        expect(isReady).to.be.false;<br />
+    });<br />
+});<br />
+[/code]</p>
+<p>&nbsp;</p>
+<p>All the common setup parts are moved into a <code>beforeEach</code> function. This is a hook offered my mocha and it is executed before any unit test within the same <code>describe</code> scope. Mocha also offers a <code>before</code> hook that runs once at the beginning of the <code>describe</code> scope. <code>before</code> runs only once, <code>beforeEach</code> runs once per unit test. There are also their counterparts, <code>after</code> and <code>afterEach</code> that run after the unit tests have run.</p>
+<p>Moving the setup parts into a hook is a good practice because <strong>it isolates the plumbing that doesn't change</strong>. The Calculator is always going to use the Battery (and the Bell) in the same way, that doesn't change. What changes per unit test is the battery's state. This also makes the unit tests very clear, in which the arrange step is a one liner.</p>
+<p>A subtle yet important difference of these examples, compared to the spies examples, is that the assertion step is done on the calculator itself, our SUT (system under test). In the previous post, the assertion was checking that the spy was called. In these examples, the assertion is checking that the Calculator returned the correct value. We don't really care what the Calculator is doing behind the scenes. All we care is that, given a full battery (the part we stub), the Calculator will report it is ready (and vice versa).</p>
+<p>Why didn't we do it like this in the previous post with the bell? Well, the bell did not return any values. In functional programming, this is called a <strong>side effect</strong>: all the bell does is interact with the outside world, but it doesn't return a value. A similar example is a function that writes something to the console or to a disk file. For these cases, the unit test has to use a spy to verify that the implementation is called. This goes against the principle of <strong>testing behavior and not implementation</strong>, but for side-effects there is no alternative. For the battery example however, we just test the behavior. We don't care about the implementation, we don't care if the <code>getLevel</code> function is called or not.</p>
+<p>&nbsp;</p>
+<p>Finally, let's see a different way of using the stub. This can come in handy if you already have an implementation of the Battery class:</p>
+<p>[code]<br />
+// instead of this<br />
+battery = {<br />
+    getLevel: sinon.stub()<br />
+};</p>
+<p>// you can do this<br />
+battery = require('./BatteryImplementation');<br />
+sinon.stub(battery, 'getLevel');<br />
+[/code]</p>
+<p>This has an extra benefit: if the contract of the Battery is modified (e.g. the method is renamed to getChargeLevel) then the unit test will break because sinon will complain that it can't stub a non existing function. This is another layer of safety. Even if you don't have concrete implementations, it's a good idea to separate your definitions into separate files.</p>
+<p>In the next post, we'll have a look at the final technique from sinon, mocks, and we'll see how they're different to stubs.</p>

@@ -1,0 +1,188 @@
+---
+layout: post
+title: 'CD with Helm part 8: DTAP'
+date: 2017-12-09 12:33:12.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- Docker
+- Helm
+- Kubernetes
+- TeamCity
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12319210983'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In the series so far, we have build a CI pipeline that produces a Docker image and a Helm chart. They are linked together with a unique version, allowing us to use Helm to deploy any feature branch we want. Now we'll see how to implement a traditional DTAP and use Helm to deploy whatever, wherever.</p>
+<p><!--more--></p>
+<p>When we deploy the Helm chart, it is possible to provide an additional <code>values.yaml</code> file. The values on that file will override the values defined inside the Helm chart. We can use this feature to model our <strong>environment-specific</strong> configuration.</p>
+<p>Let's create a file named <code>values-test.yaml</code> side by side with <code>values.yaml</code>:</p>
+<p>[code]<br />
+# Values for the test environment.<br />
+ingress:<br />
+  hosts:<br />
+    - test.blog-helm.local<br />
+[/code]</p>
+<p>This file contains the environment-specific configuration of the test environment. We only need to override the host. All other values are the same, so we don't need to define them.</p>
+<p>We repeat this for acceptance, creating <code>values-acc.yaml</code>:</p>
+<p>[code]<br />
+# Values for the acceptance environment.<br />
+ingress:<br />
+  hosts:<br />
+    - acc.blog-helm.local<br />
+[/code]</p>
+<p>For production, we could do the same, but another approach is to treat the default values file, <code>values.yaml</code>, as the production values. In any case, we will need a <code>values-prod.yaml</code> to make the deployment logic a bit simpler.</p>
+<p>To use these environment-specific files during deployment, we need to <strong>publish them as artifacts</strong> in our build plan. We need to add in the artifact definitions the line <code>helm/blog-helm/values-*.yaml</code>:</p>
+<p>[caption id="attachment_3415" align="alignnone" width="1001"]<img class="alignnone size-full wp-image-3415" src="{{ site.baseurl }}/assets/05-artifacts.png" alt="05-artifacts.png" width="1001" height="305" /> Artifact definition in Commit Stage[/caption]</p>
+<p>and the build will publish them:</p>
+<p>[caption id="attachment_3416" align="alignnone" width="537"]<img class="alignnone size-full wp-image-3416" src="{{ site.baseurl }}/assets/06-artifacts.png" alt="06-artifacts.png" width="537" height="225" /> Published artifacts[/caption]</p>
+<p>Now we need to <strong>consume them in the Deploy Stage</strong>, so let's update the Artifact Dependency to have the line <code>values-*.yaml</code>:</p>
+<p>[caption id="attachment_3417" align="alignnone" width="1050"]<img class="alignnone size-full wp-image-3417" src="{{ site.baseurl }}/assets/07-artifacts.png" alt="07-artifacts.png" width="1050" height="616" /> Artifact dependencies in deployment[/caption]</p>
+<p>Let's revise now our deployment script. So far it looks like this:</p>
+<p>[code]<br />
+IMAGE_TAG=$(cat image-tag.txt)<br />
+echo &quot;Using version $IMAGE_TAG&quot;</p>
+<p>helm upgrade --install blog-helm \<br />
+  ./blog-helm-${IMAGE_TAG}.tgz \<br />
+  --set image.tag=$IMAGE_TAG \<br />
+  --wait<br />
+[/code]</p>
+<p>The <code>helm</code> supports a <code>--values</code> argument, which we need to provide e.g. <code>--values ./values-acc.yaml</code> for acceptance.</p>
+<p>An important thing is that we'll also need to change the release name, which currently is <code>blog-helm</code>. This also needs to be environment specific, as each release will model a different environment.</p>
+<p>The easiest way to do this in TeamCity is to make our Deploy Stage parametric. We add a new configuration parameter named <code>env</code> (it can be any name we want):</p>
+<p>[caption id="attachment_3418" align="alignnone" width="540"]<img class="alignnone size-full wp-image-3418" src="{{ site.baseurl }}/assets/08-env.png" alt="08-env.png" width="540" height="341" /> Adding the 'env' configuration parameter[/caption]</p>
+<p>To make sure the user who deploys must choose an environment, we configure the spec of this parameter to be a Prompt. We also make it a bit more user friendly by providing a list of allowed values:</p>
+<p>[caption id="attachment_3419" align="alignnone" width="548"]<img class="alignnone size-full wp-image-3419" src="{{ site.baseurl }}/assets/09-env-spec.png" alt="09-env-spec.png" width="548" height="635" /> Setting the spec of the parameter[/caption]</p>
+<p>With this in place, we <strong>revise our deployment script</strong> to use the <code>env</code> configuration parameter:</p>
+<p>[code]<br />
+IMAGE_TAG=$(cat image-tag.txt)<br />
+echo &quot;Using version $IMAGE_TAG&quot;</p>
+<p>helm upgrade --install blog-helm-%env% \<br />
+  ./blog-helm-${IMAGE_TAG}.tgz \<br />
+  --set image.tag=$IMAGE_TAG \<br />
+  --values ./values-%env%.yaml \<br />
+  --debug \<br />
+  --wait<br />
+[/code]</p>
+<p>We changed the release name to be <code>blog-helm-%env%</code>, which will use the file <code>values-%env%.yaml</code>. The extra flag</p>
+<p>When we try to deploy, we get a popup asking us to select the environment:</p>
+<p>[caption id="attachment_3420" align="alignnone" width="703"]<img class="alignnone size-full wp-image-3420" src="{{ site.baseurl }}/assets/11-env-select.png" alt="11-env-select.png" width="703" height="290" /> Deploying to a specific environment[/caption]</p>
+<p>If we deploy to all environments, one by one, we'll end up with these deployments in Kubernetes:</p>
+<p>[caption id="attachment_3421" align="alignnone" width="1436"]<img class="alignnone size-full wp-image-3421" src="{{ site.baseurl }}/assets/12-deployments.png" alt="12-deployments.png" width="1436" height="344" /> Kubernetes deployments, managed by Helm[/caption]</p>
+<p>Some cleanup work is needed: we still have the old release, <code>blog-helm</code>. We can remove it with this command:</p>
+<p>[code]<br />
+$ helm delete --purge blog-helm<br />
+release &quot;blog-helm&quot; deleted<br />
+[/code]</p>
+<p><em>Small sidenote: TeamCity is not strictly speaking a deployment tool. It doesn't have features like deployment environments, promoting a deployment to a different environment, approving/rejecting deployments, etc. It is however possible to model a deployment in a better way than what I did here, e.g. with snapshot dependencies and project templates.</em></p>
+<p>To be able to access our environments, we need a small update on the <code>/etc/hosts</code> file:</p>
+<p>[code]<br />
+192.168.99.100 test.blog-helm.local<br />
+192.168.99.100 acc.blog-helm.local<br />
+192.168.99.100 blog-helm.local<br />
+[/code]</p>
+<p>All our hostnames point to the cluster and then Ingress knows which application to use.</p>
+<p>A small problem with our hello-world application is that it just says "Hello, world!". So we can't be sure which version we're looking at, or that the environments are setup correctly. Let's modify it so that it prints the version found in <code>package.json</code>:</p>
+<p>[code]<br />
+/* eslint-disable no-console */<br />
+const express = require('express');<br />
+const packageJson = require('./package.json');</p>
+<p>const app = express();<br />
+app.get('/', (req, res) =&gt; res.send(`<br />
+&lt;html&gt;<br />
+  &lt;head&gt;<br />
+    &lt;title&gt;blog-helm&lt;/title&gt;<br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+&lt;h1&gt;Hello world!&lt;/h1&gt;<br />
+package.json version: ${packageJson.version}</p>
+<p>  &lt;/body&gt;<br />
+&lt;/html&gt;<br />
+`));<br />
+app.listen(<br />
+  3000,<br />
+  () =&gt; console.log('Example app listening on port 3000!'),<br />
+);<br />
+/* eslint-enable no-console */<br />
+[/code]</p>
+<p>We can deploy to the test environment. Let's double check the versions in the Kubernetes dashboard:</p>
+<p>[caption id="attachment_3422" align="alignnone" width="1420"]<img class="alignnone size-full wp-image-3422" src="{{ site.baseurl }}/assets/13-test-on-1-2-0.png" alt="13-test-on-1.2.0.png" width="1420" height="266" /> After deploying to test[/caption]</p>
+<p>Our test environment is on the latest and greatest. Now the change is visible on the browser:</p>
+<p>[caption id="attachment_3423" align="alignnone" width="1206"]<img class="alignnone size-full wp-image-3423" src="{{ site.baseurl }}/assets/14-test-vs-acc.png" alt="14-test-vs-acc.png" width="1206" height="217" /> Test and Acceptance side by side[/caption]</p>
+<p>The test environment on the left has the latest code but acceptance still has the old version.</p>
+<p>What if we want to know on which environment we're running the application? We can set an environment variable using the Helm chart. We need to define it in the <code>deployment.yaml</code> template:</p>
+<p>[code]<br />
+    spec:<br />
+      containers:<br />
+        - name: {{ .Chart.Name }}<br />
+          image: &quot;{{ .Values.image.repository }}:{{ .Values.image.tag }}&quot;<br />
+          imagePullPolicy: {{ .Values.image.pullPolicy }}<br />
+          ports:<br />
+            - containerPort: {{ .Values.service.internalPort }}<br />
+          env:<br />
+            - name: APP_ENV<br />
+              value: {{ .Values.env }}<br />
+[/code]</p>
+<p>and we'll need to set this in all <code>values-*.yaml</code> files accordingly, e.g. for acceptance in <code>values-acc.yaml</code>:</p>
+<p>[code]<br />
+# Values for the acceptance environment.<br />
+ingress:<br />
+  hosts:<br />
+    - acc.blog-helm.local<br />
+env: acc<br />
+[/code]</p>
+<p>Printing it in the application is easy:</p>
+<p>[code]</p>
+<p>Environment: ${process.env.APP_ENV}</p>
+<p>[/code]</p>
+<p>Let's deploy again, this time to all environments:</p>
+<p>[caption id="attachment_3424" align="alignnone" width="1489"]<img class="alignnone size-full wp-image-3424" src="{{ site.baseurl }}/assets/15-print-env.png" alt="15-print-env.png" width="1489" height="193" /> Environment aware applications[/caption]</p>
+<p>This time, we can see that the environments are setup correctly.</p>
+<p>One final experiment has to do about feature branches. If you remember our <a href="https://ngeor.wordpress.com/2017/12/02/cd-with-helm-part-5-versioned-artifacts/">versioning strategy</a>, we compose an image tag based on the version in <code>package.json</code> and the git SHA. We can use an environment variable for this too:</p>
+<p>[code]<br />
+          env:<br />
+            - name: APP_ENV<br />
+              value: {{ .Values.env }}<br />
+            - name: IMAGE_TAG<br />
+              value: {{ .Values.image.tag }}<br />
+[/code]</p>
+<p>and we can print it in <code>index.js</code>:</p>
+<p>[code]<br />
+&lt;h1&gt;Hello world!&lt;/h1&gt;<br />
+package.json version: ${packageJson.version}</p>
+<p>Docker image tag: ${process.env.IMAGE_TAG}</p>
+<p>Environment: ${process.env.APP_ENV}</p>
+<p>[/code]</p>
+<p>[caption id="attachment_3425" align="alignnone" width="1593"]<img class="alignnone size-full wp-image-3425" src="{{ site.baseurl }}/assets/16-print-docker-tag.png" alt="16-print-docker-tag.png" width="1593" height="210" /> Deploying feature branch[/caption]</p>
+<p>This final experiment proves we can truly deploy whatever, wherever: any feature branch in any environment. With this milestone, we can wrap up this series of posts. We have achieved various goals:</p>
+<ul>
+<li><a href="https://ngeor.wordpress.com/2017/11/15/cd-with-helm-part-1-dockerize-it/">we dockerized an application</a></li>
+<li><a href="https://ngeor.wordpress.com/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan/">we dockerized the build plan of the application</a>, while keeping user friendly elements like test reports</li>
+<li>we included the infrastructural configuration of the application (<a href="https://ngeor.wordpress.com/2017/11/27/cd-with-helm-part-4-helm-intro/">Helm chart</a>) in the code repository. This allows us to change the application and its infrastructure configuration in a single pull request.</li>
+<li><a href="https://ngeor.wordpress.com/2017/12/02/cd-with-helm-part-5-versioned-artifacts/">we defined and implemented a versioning strategy</a> which ties together the application with its infrastructure, allowing us to use Helm as a deployment tool, for any branch</li>
+<li>we modeled a DTAP by using Helm releases and isolated the environment-specific configuration in separate files containing the bare minimum.</li>
+</ul>
+<p>This is actually enough for a continuous delivery pipeline using Helm. From here you can add all sorts of bells and whistles:</p>
+<ul>
+<li>explore namespaces in Kubernetes</li>
+<li>automate deployments for certain branches</li>
+<li>add linting and testing for Helm charts</li>
+<li>dynamically create environments</li>
+<li>use a Helm repository</li>
+<li>think about application configuration vs infrastructure configuration</li>
+<li>implement the CI pipeline as code</li>
+</ul>
+<p>But the bare minimum is to be able to deploy whatever, wherever. And that's complete!</p>

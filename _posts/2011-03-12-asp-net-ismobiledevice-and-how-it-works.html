@@ -1,0 +1,59 @@
+---
+layout: post
+title: ASP.NET IsMobileDevice and how it works
+date: 2011-03-12 08:09:00.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '79'
+  _wp_old_slug: '79'
+  _edit_last: '14213986'
+  _publicize_job_id: '4017202757'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In ASP.NET, you can use the <a href="http://msdn.microsoft.com/en-us/library/system.web.configuration.httpcapabilitiesbase.ismobiledevice.aspx" target="_blank">IsMobileDevice</a> property in the <a href="http://msdn.microsoft.com/en-us/library/system.web.httprequest.browser%28v=VS.100%29.aspx" target="_blank">Request.Browser</a> object of the current request to figure out if the user is calling your application using a mobile device.</p>
+<p>I tried it with my old HTC phone and it didn&#039;t work, so I wondered why. Well, here&#039;s how it works.</p>
+<p>Determining if the caller is a mobile device is based on the user agent string. The user agent is a header that the browser sends and it is a way of telling the server what is the browser, what is the browser&#039;s version, what is the operating system, etc. All browsers send this header by default. There are even browsers that falsely identify themselves as Internet Explorer, to trick sites that display messages "Works only with Internet Explorer".</p>
+<p>Server side, ASP.NET gets this header and analyzes it based on <a href="http://stackoverflow.com/questions/1829089/how-does-ismobiledevice-work" target="_blank">browser definition files</a>. These files have a browser file extension and can be found in C:WindowsMicrosoft.NETFramework&#091;your .NET version]ConfigBrowsers. These are the global browser definitions that apply to all applications; a web app can define its own app-specific browser definitions by placing browser files in App_Browsers.</p>
+<p>A <a href="http://msdn.microsoft.com/en-us/library/ms228122.aspx" target="_blank">browser definition file</a> is an XML file that defines rules (regular expressions) to test against the user agent string. An example can look like this:</p>
+<p>[code]<br />
+&lt;browsers&gt;<br />
+  &lt;browser id=&quot;IE&quot; parentID=&quot;Default&quot;&gt;<br />
+    &lt;identification&gt;<br />
+      &lt;userAgent match=&quot;Internet Explorer&quot; /&gt;<br />
+    &lt;/identification&gt;<br />
+    &lt;capabilities&gt;<br />
+        &lt;capability name=&quot;browser&quot; value=&quot;Internet Explorer&quot; /&gt;<br />
+        &lt;capability name=&quot;isMobileDevice&quot; value=&quot;false&quot; /&gt;<br />
+    &lt;/capabilities&gt;<br />
+  &lt;/browser&gt;<br />
+&lt;/browsers&gt;<br />
+[/code]</p>
+<p>This is a browser definition that says "if the user agent contains &#039;Internet Explorer&#039;, then define the following capabilities: browser is &#039;Internet Explorer&#039;, isMobileDevice is &#039;false&#039;". So the reason my phone didn&#039;t get recognized as a Mobile Device is that there wasn&#039;t an existing rule for it.</p>
+<p>I used Opera Mini on my phone and I used a test page to figure out its user agent. It&#039;s something like "Opera blah blah (Opera Mini; Windows Mobile; blah blah)". Well, I think the "Windows Mobile" is a nice obvious hint to use.</p>
+<p>I opened up the opera.browser file that already existed on my machine and added the following entry:</p>
+<p>[code]<br />
+&lt;browser id=&quot;Opera10_WindowsMobile&quot; parentID=&quot;Opera10&quot;&gt;<br />
+  &lt;identification&gt;<br />
+    &lt;userAgent match=&quot;Windows Mobile&quot; /&gt;<br />
+  &lt;/identification&gt;<br />
+  &lt;capabilities&gt;<br />
+    &lt;capability name=&quot;isMobileDevice&quot; value=&quot;true&quot; /&gt;<br />
+  &lt;/capabilities&gt;<br />
+&lt;/browser&gt;<br />
+[/code]</p>
+<p>I am deriving from the rule "Opera10" because that matches the version of Opera Mini on my phone. The regular expression I use it&#039;s pretty straight forward: if looks for "Windows Mobile". If it finds it, the browser is no longer identified as "Opera10" but as "Opera10_WindowsMobile", my new rule.</p>
+<p>How do I tell ASP.NET to use my changes? Saving the browser file apparently is not enough and iisreset also didn&#039;t work, so it was time to RTFM, or its web2.0 equivalent, Google for it. I found out that for local browser definition files (the ones placed in App_Browsers) folder, saving the file is enough. For global files however, there&#039;s a special command line tool called <a href="http://msdn.microsoft.com/en-us/library/ms229858%28v=VS.100%29.aspx" target="_blank">aspnet_regbrowsers</a>. This is located at C:WindowsMicrosoft.NETFramework&#091;your .NET version]. Running "aspnet_regbrowsers -i" will compile the browser files into an assembly called ASP.BrowserCapsFactory.dll and place it in the GAC.</p>
+<p>After that, accessing the test page with my phone works and ASP.NET identifies it as a mobile browser!</p>

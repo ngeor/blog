@@ -1,0 +1,63 @@
+---
+layout: post
+title: Thinning ZFS snapshots
+date: 2016-09-03 07:28:21.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- backup
+- zfs
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '449'
+  _wp_old_slug: '449'
+  _publicize_job_id: '4016491712'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>I have a small mini PC at home that is always turned on. It runs Ubuntu 14.04 (I plan to upgrade to 16.04). It sits at the living room and it doesn't make any noise, so it acts as a media server. I watch movies and TV series from there. I used 3 external disks, 2TB each, to make a ZFS raidz1 pool of 4TB. What is ZFS you ask?<!--more--></p>
+<p><a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> is a file system that can combine multiple drives and make them appear as one. It will figure out where the files go, all you know is that you have one big bucket to throw data in. This can be done in various configurations to give you extra security in case a drive fails. So in my case, I have setup a raidz1 pool. This means that if one disk fails, the system will continue to operate. If two disks fail, well, everything is lost. But I guess the chances of two disks failing are way higher than one disk. This also means that instead of 6TB (3 disks of 2TB), I have only 4TB available. But so far that's enough for me.</p>
+<p>Another nice feature of ZFS is snapshots. You can take a snapshot of the file system at a given point and rollback to it later. Snapshots are cheap too. I use them as a method of backup. I have setup a cron job that runs every day and takes a snapshot of the file system. The snapshot is identified by its name, so I use a script for that to make sure all the snapshot names are basically a timestamp:</p>
+<p>[code]<br />
+#!/bin/sh</p>
+<p># put zfs on the path<br />
+PATH=$PATH:/sbin</p>
+<p># takes a snapshot on the given filesystem<br />
+# the snapshot name is the current date</p>
+<p>SNAPSHOT_NAME=`date +%Y%m%d%H%M%S`<br />
+FILESYSTEM=$1</p>
+<p>if [ -z $FILESYSTEM ]; then<br />
+	echo &quot;Syntax $0 filesystem&quot;<br />
+	return 1<br />
+fi</p>
+<p>SNAPSHOT_LIST=`zfs list -H -o name -t snapshot -r $FILESYSTEM | sort`<br />
+if [ ! $? -eq 0 ]; then<br />
+	echo &quot;zfs failed&quot;<br />
+	exit 1<br />
+fi</p>
+<p>if [ -z &quot;`echo $SNAPSHOT_LIST | grep $SNAPSHOT_NAME`&quot; ]; then<br />
+	zfs snapshot $FILESYSTEM@$SNAPSHOT_NAME<br />
+else<br />
+	echo &quot;Snapshot $FILESYSTEM@$SNAPSHOT_NAME already exists&quot;<br />
+	exit 1<br />
+fi<br />
+[/code]</p>
+<p>&nbsp;</p>
+<p>A problem here is that the disk space reserved by snapshots will start to accumulate over time. I've been running this for almost two years now and that's a lot of snapshots. I decided to make a small script that will automatically thin out older snapshots. The rules are simple:</p>
+<ul>
+<li>for the current month, don't delete anything</li>
+<li>for previous months of this year, keep only one snapshot per month (the oldest)</li>
+<li>for previous years, keep only one snapshot (the oldest)</li>
+</ul>
+<p>This is easy to implement because all of my snapshots are named consistently. I've made the script <a href="https://github.com/ngeor/zfs-snapshot-trimmer">available in GitHub</a>.</p>
+<p>Hope this helps.</p>

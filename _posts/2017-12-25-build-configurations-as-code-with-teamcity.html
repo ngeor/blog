@@ -1,0 +1,90 @@
+---
+layout: post
+title: Build configurations as code with TeamCity
+date: 2017-12-25 09:41:36.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- blog-helm-sample
+- TeamCity
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '12868170015'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In this post, I'll show how to setup TeamCity so that your project's build configurations are stored in your git repository. This allows you to change your build configuration in the same way you change your code, via a pull request. It allows to make changes to the pipeline without affecting other branches. And all that is supported in a way that you don't have to give up the user friendly way of defining your build via the UI.</p>
+<p><!--more--></p>
+<p>I'm going to use the <a href="https://github.com/ngeor/blog-helm">blog-helm</a> project that I had configured in the <a href="https://ngeor.wordpress.com/cd-with-helm/">CD with Helm series</a>. In TeamCity, the project had two build configurations:</p>
+<p>[caption id="attachment_3459" align="alignnone" width="396"]<img class="alignnone size-full wp-image-3459" src="{{ site.baseurl }}/assets/2017-12-25-08_20_48-projects-e28094-teamcity.png" alt="2017-12-25 08_20_48-Projects — TeamCity.png" width="396" height="202" /> Project with two build configurations[/caption]</p>
+<p>First, edit the project and find the versioned settings section:</p>
+<p>[caption id="attachment_3460" align="alignnone" width="605"]<img class="alignnone size-full wp-image-3460" src="{{ site.baseurl }}/assets/2017-12-25-08_24_14-blog-helm-project-_-versioned-settings-e28094-teamcity.png" alt="2017-12-25 08_24_14-Blog Helm Project _ Versioned Settings — TeamCity.png" width="605" height="442" /> Versioned Settings - Before the changes[/caption]</p>
+<p>In this form, we enable synchronization, specify the git repository (blog-helm) to use, select 'use settings from VCS' and finally use the Kotlin format:</p>
+<p>[caption id="attachment_3461" align="alignnone" width="1038"]<img class="alignnone size-full wp-image-3461" src="{{ site.baseurl }}/assets/2017-12-25-08_26_46-blog-helm-project-_-versioned-settings-e28094-teamcity.png" alt="2017-12-25 08_26_46-Blog Helm Project _ Versioned Settings — TeamCity.png" width="1038" height="666" /> Versioned Settings - After the changes[/caption]</p>
+<p>Once you do this, TeamCity will commit to the master branch a bunch of files that describe everything under the project: in my case that's the two build configurations (Commit Stage and Deploy Stage) but also the VCS root definition of the project. Make sure TeamCtiy has write access to your git repository, otherwise it won't be able to push these changes.</p>
+<p>After this is done, we can get latest and see that we have a new folder named <code>.teamcity</code> in our repository:</p>
+<p>[caption id="attachment_3462" align="alignnone" width="232"]<img class="alignnone size-full wp-image-3462" src="{{ site.baseurl }}/assets/2017-12-25-08_41_52-blog-helm-visual-studio-code.png" alt="2017-12-25 08_41_52-blog-helm - Visual Studio Code.png" width="232" height="240" /> Versioned settings[/caption]</p>
+<p>It should be straightforward enough: everything is under <code>.teamcity</code>. The first subfolder is the name of the project, <code>BlogHelm</code>. Build configurations are under the <code>buildTypes</code> subfolder and the VCS root is under the <code>vcsRoots</code> subfolder.</p>
+<p>The settings are written in Kotlin. I don't know Kotlin but that's not a problem because the DSL is simple enough to make sense. In my opinion, it's more readable than editing XML files (which is an alternative option). For example, here's the DSL for running an inline shell script:</p>
+<p>[code]<br />
+        script {<br />
+            name = &quot;Radically changing build&quot;<br />
+            scriptContent = &quot;&quot;&quot;<br />
+                echo &quot;Hello, world!&quot;<br />
+            &quot;&quot;&quot;.trimIndent()<br />
+        }<br />
+[/code]</p>
+<p>I think it's much easier to start with an existing project and export it, so that you'll get a taste of what folders and files you get.</p>
+<p>Now that we have this in our git repository, these settings are leading. Settings still exist in TeamCity, but the ones in our git repository take precedence and override the ones in TeamCity. This opens up a window of opportunity: we can modify the build pipeline in a feature branch. This is extremely useful when you have a breaking change in a feature branch which involves a corresponding change to the build pipeline. Normally, that would be a chicken-egg problem where your branch would be red until you modify the pipeline, but doing that would cause everybody else's branch to turn red. Having the pipeline versioned in code means that you can do these changes in an isolated manner.</p>
+<p>As an example, I'll create a feature branch that has an extra build step which prints out some diagnostic information, e.g. the Docker version we're using. I'll do that with an inline script which just runs "docker version".</p>
+<p>First, I create a new feature branch out of master, named <code>add-diagnostics-step</code>. I'll modify the <code>BlogHelm_CommitStage.kt</code> file by injecting a schell script step at the start, right above the previous first step:</p>
+<p>[code]<br />
+steps {<br />
+    script {<br />
+        name = &quot;Basic diagnostics&quot;<br />
+        scriptContent = &quot;&quot;&quot;<br />
+            docker version<br />
+        &quot;&quot;&quot;.trimIndent()<br />
+    }<br />
+    exec {<br />
+        name = &quot;Ensure feature branch is ahead of master&quot;<br />
+        path = &quot;ci-scripts/merge.sh&quot;<br />
+    }<br />
+[/code]</p>
+<p>When I push these changes, the build will start with the settings defined in that branch. We can see that in the log of the build:</p>
+<p>[caption id="attachment_3463" align="alignnone" width="603"]<img class="alignnone size-full wp-image-3463" src="{{ site.baseurl }}/assets/2017-12-25-09_04_48-blog-helm-__-commit-stage-_-1-3-2-add-diagnostics-step-1-25-dec-17-08_02-_-bu.png" alt="2017-12-25 09_04_48-Blog Helm __ Commit Stage _ #1.3.2-add-diagnostics-step.1 (25 Dec 17 08_02) _ Bu.png" width="603" height="496" /> Feature branch with extra build steps[/caption]</p>
+<p>Our new build step was executed and it worked fine. Since this is just a feature branch, TeamCity will still report 7 build steps via the UI:</p>
+<p>[caption id="attachment_3464" align="alignnone" width="1524"]<img class="alignnone size-full wp-image-3464" src="{{ site.baseurl }}/assets/2017-12-25-09_06_47-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-25 09_06_47-Commit Stage Configuration — TeamCity.png" width="1524" height="661" /> Before merging the feature branch[/caption]</p>
+<p>If we merge the feature branch into master, TeamCity will show the new step in the UI:</p>
+<p>[caption id="attachment_3465" align="alignnone" width="1515"]<img class="alignnone size-full wp-image-3465" src="{{ site.baseurl }}/assets/2017-12-25-09_13_14-commit-stage-configuration-e28094-teamcity.png" alt="2017-12-25 09_13_14-Commit Stage Configuration — TeamCity.png" width="1515" height="726" /> After merging the feature branch[/caption]</p>
+<p>What happens if you still want to use the UI? TeamCity allows you to do so. Once you modify something in your build, TeamCity will commit the changes to the master branch. However, it won't modify the existing files. It will create instead a patch file, containing only the change you did, with instructions on how to merge the patch back to where it belongs and then delete it. This is an interesting design choice. They could've just opted for overwriting the files directly, but perhaps that could've lead to some conflicts.</p>
+<p>As an example, I'll modify the newly created diagnostics step to also print the Linux version the agent is running (with <code>lsb_release -cdir</code>):</p>
+<p>[caption id="attachment_3466" align="alignnone" width="748"]<img class="alignnone size-full wp-image-3466" src="{{ site.baseurl }}/assets/2017-12-25-09_18_42-todoist_-to-do-list-and-task-manager.png" alt="2017-12-25 09_18_42-Todoist_ To-Do List and Task Manager.png" width="748" height="369" /> Modifying the build with the UI[/caption]</p>
+<p>This will create a new commit in master branch, with a new folder named <code>patches</code>, containing the change:</p>
+<p>[caption id="attachment_3467" align="alignnone" width="1029"]<img class="alignnone size-full wp-image-3467" src="{{ site.baseurl }}/assets/2017-12-25-09_22_33-3f8adc5d-5b14-4a13-9ecd-70b624f828de-kts-blog-helm-visual-studio-code.png" alt="2017-12-25 09_22_33-3f8adc5d-5b14-4a13-9ecd-70b624f828de.kts - blog-helm - Visual Studio Code.png" width="1029" height="331" /> Patch file[/caption]</p>
+<p>The patch file mentions the expected steps and finally contains the actual change:</p>
+<p>[code]<br />
+    steps {<br />
+        update&lt;ScriptBuildStep&gt;(0) {<br />
+            scriptContent = &quot;&quot;&quot;<br />
+                lsb_release -cdir<br />
+                docker version<br />
+            &quot;&quot;&quot;.trimIndent()<br />
+        }<br />
+    }<br />
+[/code]</p>
+<p>These UI patches are meant to be temporary and they should be applied to the code and deleted.</p>
+<p>Having the build configuration is git is a great feature. Once something is in git, it obeys to the same rules as code does. It is open to anyone to read and experiment with. There are no special people in the team that have special access to configure the build, anyone can do it. Build configuration changes are subject to code review. And feature branches allow for introducing breaking changes to the build pipeline without impacting others.</p>
+<p>Another interesting thing to observe is that having the build configuration in git makes it easier to use (and abuse) inline shell scripts. It's often handy to add a little bit of ad-hoc inline bash in a build step, but if it's not under git you risk losing it, it's not transparent, etc. Now, these little steps become part of git just like everything else. It's probably a good idea to still use separate files for shell scripts (especially larger ones), as it will be clearer in the code review what you're changing, you'll be able to test them locally, you'll have syntax highlighting, and so on.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

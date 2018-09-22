@@ -1,0 +1,177 @@
+---
+layout: post
+title: Run dotCover from msbuild and ccnet
+date: 2012-09-02 07:52:00.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '33'
+  _wp_old_slug: '33'
+  geo_public: '0'
+  _publicize_job_id: '353079313'
+  _oembed_c0d269755aa602c19a80c8dbcd4a779d: "{{unknown}}"
+  _oembed_4a995fa7dc190e532651ccb3a522dfdd: "{{unknown}}"
+  _oembed_5e1391d4c52066b38e67d33528af6358: "{{unknown}}"
+  _oembed_a4c83443e01ec6b4fbcd807f430be3ae: "{{unknown}}"
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>TeamCity is a very nice tool that I use at home. Unfortunately the free license allows up to 20 configurations. That's why I'm experimenting also with another free tool, CruiseControl. It's definitely not as easy as TeamCity, you have to edit (which means learn) an XML file that the server picks up. In general, it probably supports what TeamCity supports, but you have to make everything yourself with a lot of work. Then again, it's completely free.</p>
+<p>What I wanted to setup is code coverage. TeamCity offers its own tool out of the box, dotCover. Since that tool is just a command line program, I figured I could reuse it in CruiseControl.<!--more--></p>
+<h2>dotCover</h2>
+<p>dotCover is the tool that does the work behind the scenes. In order to invoke it manually, in combination with NUnit, you'll have to run the dotCover executable like this (<strong>all command lines are broken down to multiple lines for readability, should be in a single line</strong>):</p>
+<p>[code]<br />
+dotCover analyse<br />
+    /TargetExecutable:nunit-console.exe<br />
+    /TargetArguments:MyProject.Tests.dll<br />
+    /TargetWorkingDir:MyProject.TestsbinDebug<br />
+    /Output:report.xml<br />
+[/code]</p>
+<p>This command will run the tests in the MyProject.Tests.dll with nunit and produce an XML code coverage report in report.xml. The XML report can be useful for generating graphs and statistics (haven't experimented with that yet). It is however possible to generate a much more friendly HTML report by running the command like this:</p>
+<p>[code]<br />
+dotCover analyse<br />
+    /TargetExecutable:nunit-console.exe<br />
+    /TargetArguments:MyProject.Tests.dll<br />
+    /TargetWorkingDir:MyProject.TestsbinDebug<br />
+    /ReportType:HTML<br />
+    /Output:report.html<br />
+[/code]</p>
+<p>This will generate the report.html file and a folder with CSS and JS that provide a pretty code coverage report.</p>
+<p><a href="https://ngeor.files.wordpress.com/2012/09/dotcover-report.png"><img class="alignnone size-medium wp-image-171" src="{{ site.baseurl }}/assets/dotcover-report.png?w=300" alt="dotCover-report" width="300" height="80" /></a></p>
+<p>It is also possible to generate both the XML and HTML reports. To do that, you only need to run the time consuming dotCover coverage part just once. Then, you run dotCover again twice to generate the two reports, telling it to work on the intermediate coverage report file produced on the first run. We'll use that in our build file.</p>
+<h2>Environment Variables</h2>
+<p>The previous examples of course assume that the dotCover and nunit-console executables are in the same folder or in the PATH. Usually, that's not the case. To make our setup more robust, we'll introduce two environment variables before going any further:</p>
+<ul>
+<li>DOTCOVER_HOME -&gt; C:TeamCitybuildAgenttoolsdotCover</li>
+<li>NUNIT_HOME -&gt; C:Program Files (x86)NUnit 2.5.10binnet-2.0</li>
+</ul>
+<p>The first path is the path where dotCover.exe resides. The second path is where nunit-console.exe should be found.</p>
+<h2>MSBuild</h2>
+<p>Now is the time to hack into our csproj file. We could do this directly in CruiseControl's ccnet.config file actually. However, I prefer modifying the csproj file because:</p>
+<ul>
+<li>the syntax is simpler</li>
+<li>I can run it from my development machine as well as from my build server</li>
+<li>even if I switch to a different build server, it will work (provided it supports msbuild)</li>
+</ul>
+<p>We'll use the AfterBuild target. Also, because we typically don't want to run dotCover on every build on our development machine (or maybe you do, your call), we'll only launch dotCover if a certain parameter is passed to msbuild, e.g. RunDotCover=true.</p>
+<p>We need to configure the exec task. It accepts a single command line. Because it's likely that our executables (dotCover and nunit-console) are in paths that contain spaces, we need to wrap these paths in quotes. In MSBuild that is actually done in an ugly way, using the <code>&amp;quot;</code> escape:</p>
+<p>[code]<br />
+&lt;Exec Command=&quot;&quot;$(DOTCOVER_HOME)dotCover&quot;<br />
+     /TargetExecutable:&quot;$(NUNIT_HOME)nunit-console.exe&quot;&quot; /&gt;<br />
+[/code]</p>
+<p>Let's define some properties first to keep things a bit neat:</p>
+<p>[code]<br />
+&lt;PropertyGroup&gt;<br />
+    &lt;DotCoverOutputPath&gt;$(OutputPath)dotCover&lt;/DotCoverOutputPath&gt;&lt;DotCoverExe&gt;&quot;$(DOTCOVER_HOME)dotCover.exe&quot;&lt;/DotCoverExe&gt;<br />
+ &lt;NUnitConsoleExe&gt;&quot;$(NUNIT_HOME)nunit-console.exe&quot;&lt;/NUnitConsoleExe&gt;<br />
+ &lt;DotCoverFilters&gt;+:MyProject*;-:nunit*&lt;/DotCoverFilters&gt;<br />
+ &lt;/PropertyGroup&gt;<br />
+[/code]</p>
+<p>The properties we just defined are:</p>
+<ul>
+<li><strong>DotCoverOutputPath</strong>. The path where dotCover will place its reports. That's typically binDebugdotCover. Notice that we're building on top of the existing OutputPath property, so if we're targeting 64bit build the path will adjust itself to binx64DebugdotCover.</li>
+<li><strong>DotCoverExe</strong>. This is the full path of the dotCover.exe. Notice how we're using the DOTCOVER_HOME environment variable.</li>
+<li><strong>NUnitConsoleExe</strong>. This is the full path of the nunit-console.exe. Again, we're building on top of the environment variable we defined earlier. No need to worry if it's under Program Files or Program Files (x86) or a custom location.</li>
+<li><strong>DotCoverFilters</strong>. This is going to be used as the Filters argument to the dotCover call. It has a strange syntax (you can read about it in dotCover's help message) that allows you to include or exclude assemblies and namespaces from the final report. The value specified in the above code block says we want to keep anything that starts with "MyProject" and we want to exclude nunit from the report (by default it gets included too).</li>
+</ul>
+<p>With these properties, let's see how our AfterBuild target looks like now:</p>
+<p>[code]<br />
+&lt;Target Name=&quot;AfterBuild&quot; Condition=&quot;$(RunDotCover) != ''&quot;&gt;<br />
+    &lt;Message Text=&quot;Running dotCover&quot; /&gt;<br />
+    &lt;Exec Command=&quot;$(DotCoverExe) cover /TargetExecutable:$(NUnitConsoleExe)<br />
+        /TargetArguments=$(AssemblyName).dll<br />
+        /TargetWorkingDir=$(OutputPath)<br />
+        /Output=$(DotCoverOutputPath)$(AssemblyName).cover<br />
+        /Filters=$(DotCoverFilters)&quot; /&gt;<br />
+    &lt;Message Text=&quot;Creating XML report&quot; /&gt;<br />
+    &lt;Exec Command=&quot;$(DotCoverExe) report<br />
+        /Source:$(DotCoverOutputPath)$(AssemblyName).cover<br />
+        /Output:$(DotCoverOutputPath)$(AssemblyName).xml&quot; /&gt;<br />
+    &lt;Message Text=&quot;Creating HTML report&quot; /&gt;<br />
+    &lt;Exec Command=&quot;$(DotCoverExe) report<br />
+        /Source:$(DotCoverOutputPath)$(AssemblyName).cover<br />
+        /Output:$(DotCoverOutputPath)$(AssemblyName).html<br />
+        /ReportType:HTML&quot; /&gt;<br />
+&lt;/Target&gt;<br />
+[/code]</p>
+<p>We're reusing the AssemblyName property. So if our test project is called MyProject.Tests, we'll end up with a folder binDebugdotCover containing the following:</p>
+<ul>
+<li>MyProject.Tests.cover - dotCover's code coverage report (the intermediate file needed to generate the text reports)</li>
+<li>MyProject.Tests.xml - the XML report</li>
+<li>MyProject.Tests.html (and a subfolder with CSS and JS) - the HTML report</li>
+</ul>
+<p>Notice also that the target will only run if the <strong>RunDotCover</strong> parameter has been set. So by default when you're just building in Visual Studio this target won't get invoked. We'll be passing that parameter through CCNet (short for CruiseControl.NET).</p>
+<h2>CCNet</h2>
+<p>Let's now have a look at CruiseControl's configuration.</p>
+<h3>msbuild task</h3>
+<p>We'll need a msbuild task in CCNet:</p>
+<p>[code]<br />
+&lt;msbuild&gt;<br />
+    &lt;targets&gt;Rebuild&lt;/targets&gt;<br />
+    &lt;projectFile&gt;$(ProjectName).sln&lt;/projectFile&gt;<br />
+    &lt;executable&gt;C:WindowsMicrosoft.NETFramework64v4.0.30319MSBuild.exe&lt;/executable&gt;<br />
+    &lt;buildArgs&gt;/p:BUILD_NUMBER=$[$CCNetLabel] /p:RunDotCover=true&lt;/buildArgs&gt;<br />
+&lt;/msbuild&gt;<br />
+[/code]</p>
+<p>Note that we're passing the RunDotCover argument to msbuild. The /p: syntax is basically that same as if you would invoke msbuild from the command line. That's all there is to it, if we run the build now in CCNet, it will invoke dotCover and it will generate the code coverage report. <strong>ProjectName</strong> is a variable I have defined to make this block reusable: it's basically the solution name without the sln file name extension. We can do the same for the RunDotCover argument:</p>
+<p>[code]<br />
+&lt;msbuild&gt;<br />
+    &lt;targets&gt;Rebuild&lt;/targets&gt;<br />
+    &lt;projectFile&gt;$(ProjectName).sln&lt;/projectFile&gt;<br />
+    &lt;executable&gt;C:WindowsMicrosoft.NETFramework64v4.0.30319MSBuild.exe&lt;/executable&gt;<br />
+    &lt;buildArgs&gt;/p:BUILD_NUMBER=$[$CCNetLabel] /p:RunDotCover=$(RunDotCover)&lt;/buildArgs&gt;<br />
+&lt;/msbuild&gt;<br />
+[/code]</p>
+<p>So we can reuse this block even for projects that don't need dotCover. In that case, we simply won't define the RunDotCover argument in that project's scope.</p>
+<h3>Using the XML report</h3>
+<p>It's a good idea to include the report of nunit (TestResult.xml) and dotCover's XML into the build log. This way you can write an XSLT file to present the results nicely in the Web Dashboard. You can do that with a merge publisher.</p>
+<p>[code]<br />
+&lt;merge&gt;<br />
+    &lt;files&gt;<br />
+        &lt;!-- nunit report --&gt;<br />
+        &lt;file&gt;$(ProjectName).Tests$(binDebug)TestResult.xml&lt;/file&gt;<br />
+        &lt;!-- dotCover report --&gt;<br />
+        &lt;file&gt;$(ProjectName).Tests$(binDebug)dotCover$(ProjectName).Tests.xml&lt;/file&gt;<br />
+    &lt;/files&gt;<br />
+&lt;/merge&gt;<br />
+[/code]</p>
+<p>Note that I'm using the ProjectName variable again, assuming that test project is called <code>$(ProjectName).Tests</code>. This is typically the case (e.g. MyProject.Tests) and it shows that if you stick to <strong>naming conventions</strong> you can easily reuse these blocks in ccnet's configuration file.</p>
+<p>Another idea for using the XML report is to fail the build if code coverage drops below a certain percentage. Again, I haven't done this, and it will probably need some custom code (a standard TeamCity feature by the way).</p>
+<h3>Using the HTML report</h3>
+<p>Publish dotCover's HTML report in the artifacts folder and you'll get the nice HTML report available through your web server (assuming you're publishing artifacts through the web server that is):</p>
+<p>[code]<br />
+&lt;cb:if expr=&quot;'$(RunDotCover)' == 'true'&quot;&gt;<br />
+    &lt;buildpublisher&gt;<br />
+        &lt;sourceDir&gt;$[$CCNetWorkingDirectory]$(ProjectName).Tests$(OutputPath)dotCover&lt;/sourceDir&gt;<br />
+        &lt;publishDir&gt;$(WorkingMainDir)$(ArtifactsDir)$(ProjectName)dotCover&lt;/publishDir&gt;<br />
+        &lt;useLabelSubDirectory&gt;true&lt;/useLabelSubDirectory&gt;<br />
+        &lt;alwaysPublish&gt;false&lt;/alwaysPublish&gt;<br />
+    &lt;/buildpublisher&gt;<br />
+&lt;/cb:if&gt;<br />
+[/code]</p>
+<p>What is happening here:</p>
+<ul>
+<li>We only invoke this publisher when the RunDotCover variable was set to <code>true</code>. This way we make this block reusable even for projects that don't need dotCover.</li>
+<li>There's a <code>$(OutputPath)</code> variable that needs to be defined, same as in msbuild. It's also supposed to contain the <code>binDebug</code> path. Keeping the same variable names as msbuild whenever possible is a good idea to avoid confusion.</li>
+<li>The <code>publishDir</code> points to the standard artifacts publishing folder, with an extra dotCover subfolder in order to keep reports contained under the same root folder.</li>
+<li>The <code>useLabelSubDirectory</code> is set to <code>true</code> so that reports will be divided per build and also we can keep the old reports as a reference.</li>
+</ul>
+<p>In my case, the final result is that my pretty HTML report is found at:</p>
+<p>[code]<br />
+http://myserver/artifacts/MyProject/dotCover/1.0.0.0/MyProject.Tests.html<br />
+[/code]</p>
+<h1>Conclusion</h1>
+<p>This took a lot of work to figure out and it helped me learn a few things about msbuild and dotCover. In the end, the extra benefit of tools like ccnet is that you'll have to dive into it and in the process you'll learn about a lot of things that you don't normally need to know. On the other hand, the benefit of tools like TeamCity is that you can accomplish these things with a few clicks of the mouse :)</p>
+<p>Hope this helps.</p>

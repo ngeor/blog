@@ -1,0 +1,62 @@
+---
+layout: post
+title: SystemWebCompanion
+date: 2011-03-19 18:10:00.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '77'
+  _wp_old_slug: '77'
+  _edit_last: '14213986'
+  _publicize_job_id: '4017205623'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In many ASP.NET web applications, there are some small bits of code that you have to write over and over again. They&#039;re too small so you never bother to refactor them out as a reusable dll. After all they are so small that it&#039;s very fast to create from scratch again. They end up as a Utils.cs file somewhere in your project, probably repeated in all your projects in one form or another.</p>
+<p>Suffering from the same disease, I decided to create a small project for that. Its name is SystemWebCompanion. Its goal to create various small conveniences that ASP.NET web applications usually need.</p>
+<p>The following features are currently included (version 1.1.0):</p>
+<ul>
+<li>Extension method to get the application path terminated with a slash (how many times have you coded this one?)</li>
+<li>Extension method to log an exception using log4net (and the inner exceptions too)</li>
+<li>Common page title prefix for every page in the application. Useful for apps where every page&#039;s title begins with some common text, such as the site&#039;s title.</li>
+<li>Web control to render the Google Analytics script, with the ability to turn it off for local development.</li>
+</ul>
+<p>Not much, but at least you&#039;ll never have to code them again!</p>
+<p>The project is <a href="http://sourceforge.net/projects/syswebcompanion/" target="_blank">hosted at SourceForge</a>. If you use NuGet, you can already <a href="http://nuget.org/List/Packages/SystemWebCompanion" target="_blank">search for SystemWebCompanion in the online gallery</a>.</p>
+<p>Let&#039;s see some examples on how to use the forementioned features.</p>
+<p>The methods to get the application path terminated with a slash:</p>
+<p>[code]<br />
+// bring extension methods in scope<br />
+using System.Web.Companion;</p>
+<p>// get the application path. &quot;/&quot; for sites, &quot;/myapp/&quot; for virtual directories.<br />
+string path = Request.SlashedAppPath();</p>
+<p>// get the absolute application path. &quot;http://mysite/&quot; for sites,&lt;br /&gt;// &quot;http://mysite/myapp/&quot; for virtual directories.<br />
+string absolutePath = Request.AbsoluteAppPath();<br />
+[/code]</p>
+<p>To use the common title prefix, you need to use a master page and derive from the CompanionMasterPage class:</p>
+<p>[code]<br />
+using System.Web.Companion;</p>
+<p>[SiteTitlePrefix(&quot;My Web Site&quot;, &quot; - &quot;)]<br />
+public class MyMasterPage : CompanionMasterPage {<br />
+}<br />
+[/code]</p>
+<p>To use the Google Analytics web control:</p>
+<p>[code]<br />
+&lt;swc:GoogleAnalytics runat=&quot;server&quot; SiteId=&quot;UA-1234-123&quot; /&gt;</p>
+<p>// by default it will not render on localhost. If you want it:<br />
+&lt;swc:GoogleAnalytics runat=&quot;server&quot; SiteId=&quot;UA-1234-123&quot;<br />
+    ShowOnLocalhost=&quot;true&quot; /&gt;<br />
+[/code]</p>
+<p>Note that swc tag prefix. It stands for SystemWebCompanion. If you install via NuGet, your web.config will be modified automatically to register the swc prefix.</p>
+<p>Hope this helps.</p>

@@ -1,0 +1,68 @@
+---
+layout: post
+title: log4net SmtpAppender on mono
+date: 2014-02-15 08:19:10.000000000 +01:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags: []
+meta:
+  _edit_last: '14213986'
+  restapi_import_id: 586b47d26eba1
+  original_post_id: '13'
+  _wp_old_slug: '13'
+  _publicize_job_id: '4016812184'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>I have some problems with the SmtpAppender of log4net on mono. I couldn't figure out what was going wrong, it just wasn't sending any e-mails.<!--more--></p>
+<p>With a bit googling, I found a nice trick that lets you <a href="http://mail-archives.apache.org/mod_mbox/logging-log4net-user/200412.mbox/%3C20041218002314.72939.qmail@web40407.mail.yahoo.com%3E">run log4net in 'debug' mode</a>. You have to set the appSetting log4net.Internal.Debug to true:</p>
+<p>[code]<br />
+&lt;appSettings&gt;<br />
+    &lt;add key=&quot;log4net.Internal.Debug&quot; value=&quot;true&quot; /&gt;<br />
+&lt;/appSettings&gt;<br />
+[/code]</p>
+<p>With that, you'll get detailed output of log4net on the console. In there, I found why no e-mails were being set: something about CallContextData not implemented... I guess I've hit on something that isn't implemented on mono? I don't know and I don't care.</p>
+<p>All I really want is to receive an e-mail when my app logs an error. That's it. So I put together a small custom appender that does just exactly what I want:</p>
+<p>[code]<br />
+public class SmtpAppenderThatWorks : AppenderSkeleton<br />
+{<br />
+    public string To { get; set; }<br />
+    public string From { get; set; }<br />
+    public string Subject { get; set; }</p>
+<p>    protected override void Append(LoggingEvent e)<br />
+    {<br />
+        using (SmtpClient client = new SmtpClient())<br />
+        {<br />
+            using (var msg = new MailMessage(From, To))<br />
+            {<br />
+                msg.Subject = Subject;<br />
+                msg.Body = RenderLoggingEvent(e);<br />
+                client.Send(msg);<br />
+            }<br />
+        }<br />
+    }<br />
+}<br />
+[/code]</p>
+<p>Note that the only settings you can set are the e-mail subject and the sender and receiver e-mail addresses. I leave the smtp host and authentication to be handled by the standard <code>system.net</code> configuration section.</p>
+<p>No buffering support, nothing fancy, just a small appender that actually works in mono. I used <a href="http://www.codeproject.com/Articles/406634/Creating-a-custom-log4net-appender">this article on CodeProject</a> as a guide to write the appender.</p>
+<p>The configuration looks like this:</p>
+<p>[code]<br />
+&lt;appender name=&quot;SmtpAppender&quot; type=&quot;Test.SmtpAppenderThatWorks&quot;&gt;<br />
+    &lt;layout type=&quot;log4net.Layout.PatternLayout&quot;&gt;<br />
+        &lt;conversionPattern value=&quot;%newline%date [%thread] %-5level %logger - %message%newline%newline%newline&quot; /&gt;<br />
+    &lt;/layout&gt;<br />
+    &lt;threshold value=&quot;ERROR&quot; /&gt;</p>
+<p>    &lt;to value=&quot;recipient@mydomain.com&quot; /&gt;<br />
+    &lt;from value=&quot;noreply@mydomain.com&quot; /&gt;<br />
+    &lt;subject value=&quot;Exception report&quot; /&gt;<br />
+&lt;/appender&gt;<br />
+[/code]</p>

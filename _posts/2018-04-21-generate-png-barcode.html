@@ -1,0 +1,49 @@
+---
+layout: post
+title: Generate PNG barcode
+date: 2018-04-21 19:35:51.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Quick Code Tips
+tags:
+- barcode
+- Java
+meta:
+  _wpcom_is_markdown: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '17039421338'
+  timeline_notification: '1524332152'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+excerpt: How to generate PNG barcodes in Java using the zxing library.
+---
+<p>How to generate PNG barcodes in Java using the zxing library:</p>
+<p><!--more--></p>
+<p>Using the <a href="https://github.com/zxing/zxing">zxing</a> library in the pom:</p>
+<p>[code language="xml"]<br />
+&lt;dependency&gt;<br />
+    &lt;groupId&gt;com.google.zxing&lt;&#x2F;groupId&gt;<br />
+    &lt;artifactId&gt;core&lt;&#x2F;artifactId&gt;<br />
+    &lt;version&gt;3.3.2&lt;&#x2F;version&gt;<br />
+&lt;&#x2F;dependency&gt;<br />
+&lt;dependency&gt;<br />
+    &lt;groupId&gt;com.google.zxing&lt;&#x2F;groupId&gt;<br />
+    &lt;artifactId&gt;javase&lt;&#x2F;artifactId&gt;<br />
+    &lt;version&gt;3.3.2&lt;&#x2F;version&gt;<br />
+&lt;&#x2F;dependency&gt;<br />
+[/code]</p>
+<p>it is possible to generate a PNG barcode in various formats like this:</p>
+<p>[code language="java"]<br />
+Path barcode = tempDirectory.resolve("barcode.png");<br />
+BitMatrix bitMatrix = new Code39Writer().encode("data", BarcodeFormat.CODE_39, 204, 70);<br />
+MatrixToImageWriter.writeToPath(bitMatrix, "png", barcode);<br />
+[/code]</p>

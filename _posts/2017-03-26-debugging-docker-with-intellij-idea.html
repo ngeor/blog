@@ -1,0 +1,258 @@
+---
+layout: post
+title: Debugging Docker with IntelliJ IDEA
+date: 2017-03-26 07:08:27.000000000 +02:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Code
+tags:
+- Docker
+- IntelliJ IDEA
+- Java
+- Kafka
+- maven
+meta:
+  _edit_last: '14213986'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '3282707540'
+author:
+
+
+  display_name: ngeor
+  first_name: Nikolaos
+  last_name: Georgiou
+---
+<p>In this post we'll create a small Java application, run it inside a Docker container, and use IntelliJ IDEA to debug. The source code is available <a href="https://github.com/ngeor/kafka-playground" target="_blank">here</a>. This is a rather large post, so take your time.</p>
+<p><!--more--></p>
+<h3>Introduction to the app</h3>
+<p>First, an introduction to the application itself. I started this as an experiment for Kafka and <a href="https://avro.apache.org/" target="_blank">Apache Avro</a>. There are two main classes in the application: a producer and a consumer. They can be started individually and the producer is able to send sample "users" to the consumer. A user is an object that has a name, a favorite number and a favorite color. The producer is interactive, so you type at the console the user's information and the user gets published to Kafka, serialized with Avro. The consumer simply polls forever, printing any user it might receive. We'll package the consumer into a Docker image.</p>
+<p>The overall picture looks something like this:</p>
+<p><img class="alignnone size-full wp-image-1522" src="{{ site.baseurl }}/assets/blog.png" alt="blog.png" width="866" height="224" /></p>
+<p>but we'll focus on the Docker side and debugging with IntelliJ.</p>
+<h3>Creating a Docker image</h3>
+<p>To create a Docker image, we need a Dockerfile. It looks like this:</p>
+<p>[code]</p>
+<p>FROM openjdk:8-jre</p>
+<p># change directory to where the app will live<br />
+WORKDIR /usr/local/playground/</p>
+<p># install the jars<br />
+COPY target/*.jar ./</p>
+<p>CMD [&quot;java&quot;, &quot;-cp&quot;, &quot;kafka-playground-1.0-SNAPSHOT.jar:*&quot;, &quot;ngeor.UserConsumer&quot;]</p>
+<p>[/code]</p>
+<p>Lines starting with <code>#</code> are comments. There are 4 instructions in this file:</p>
+<ul>
+<li><code>FROM</code>: References the base Docker image we'll build upon. This is a powerful feature of Docker, allowing you to build incrementally more specific images. All we need to run the app is the Java 8 JRE, so we're building on top of <code>openjdk:8-jre</code>.</li>
+<li><code>WORKDIR</code>: This changes the working directory inside the image filesystem. It's the folder where we'll place the jar of the application.</li>
+<li><code>COPY</code>: As the name suggests, it copies the application's jar into the image. The left side references the host filesystem, so that's the Maven target folder containing the generated jar. The right side is in the image, relative to the previously specified working directory (<code>WORKDIR</code>).</li>
+<li><code>CMD</code>: This is the command that the container will run. It's the java command line you might expect.</li>
+</ul>
+<p>If we have this <code>Dockerfile</code> at the root of the project, we can build a new image. First we need to prepare the jar with <code>mvn packge</code> and then we build the image like this:</p>
+<p>[code]</p>
+<p>docker image build -t consumer .</p>
+<p>[/code]</p>
+<p>This builds an image called <code>consumer</code> and uses the Dockerfile on the current folder (that's the <code>.</code> argument). We can run the image:</p>
+<p>[code]</p>
+<p>docker run --name consumer consumer</p>
+<p>[/code]</p>
+<p>This will run the <code>consumer</code> <em>image</em> (last argument) into a new <em>container</em> named also <code>consumer</code> (that's the optional <code>--name consumer</code> argument). If everything goes fine, the user consumer will start, waiting for messages.</p>
+<h3>Single jar</h3>
+<p>In general, things are easier when the application consists of a single file (jar, war, whatever). It is possible to produce a jar in which all the dependencies are packaged together with the <code>maven-assembly-plugin</code>. We'll need this <code>plugin</code> declaration in the pom:</p>
+<p>[code language="xml"]</p>
+<p>            &lt;plugin&gt;<br />
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;<br />
+                &lt;version&gt;3.0.0&lt;/version&gt;<br />
+                &lt;executions&gt;<br />
+                    &lt;execution&gt;<br />
+                        &lt;phase&gt;package&lt;/phase&gt;<br />
+                        &lt;goals&gt;<br />
+                            &lt;goal&gt;single&lt;/goal&gt;<br />
+                        &lt;/goals&gt;<br />
+                    &lt;/execution&gt;<br />
+                &lt;/executions&gt;<br />
+                &lt;configuration&gt;<br />
+                    &lt;descriptorRefs&gt;<br />
+                        &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt;<br />
+                    &lt;/descriptorRefs&gt;<br />
+                &lt;/configuration&gt;<br />
+            &lt;/plugin&gt;</p>
+<p>[/code]</p>
+<p>When we run <code>mvn package</code>, this will kick in automatically and create an additional jar named <code>kafka-playground-1.0-SNAPSHOT-jar-with-dependencies.jar</code>. The size of the plain jar is 12K while this new jar weighs in at 4.5MB, so batteries are included.</p>
+<h3>Enabling Debugging and structure for multiple Dockerfiles</h3>
+<p>To debug our app, we need to run it with a different command. The java command needs one extra parameter:</p>
+<p>[code]</p>
+<p>-agentlib:jdwp=transport=dt_socket,address=50505,suspend=n,server=y</p>
+<p>[/code]</p>
+<p>where 50505 is the port we'll use for debugging. It can be any port, it's up to us. Since debugging is done over the network, that also means we need to expose that port in Docker. In any case, we need a different Dockerfile.</p>
+<p>According to <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/" target="_blank">Docker best practices</a>, it’s best to put each Dockerfile in an empty directory. We still need our old Dockerfile for regular run (e.g. production) and we need a new one for debugging only. This is where we need to add some structure to the project.</p>
+<p>We'll create a folder called <code>docker</code> and inside that two folders: <code>debug</code> and <code>release</code> (that's my .NET background kicking in). In the <code>release</code> folder, we'll place our current Dockerfile. In the <code>debug</code> folder, we'll create this new Dockerfile:</p>
+<p>[code]</p>
+<p>FROM openjdk:8-jre</p>
+<p># change directory to where the app will live<br />
+WORKDIR /usr/local/playground/</p>
+<p># install the jars<br />
+COPY target/*.jar ./</p>
+<p># remote debugging port for IntelliJ<br />
+EXPOSE 50505</p>
+<p>CMD [&quot;java&quot;, \<br />
+    &quot;-agentlib:jdwp=transport=dt_socket,address=50505,suspend=n,server=y&quot;, \<br />
+    &quot;-cp&quot;, \<br />
+    &quot;kafka-playground-1.0-SNAPSHOT.jar:*&quot;, \<br />
+    &quot;ngeor.UserConsumer&quot;]</p>
+<p>[/code]</p>
+<p>Notice the differences:</p>
+<ul>
+<li>we use the <code>EXPOSE</code> instruction to tell Docker that the container will be listening to this port.</li>
+<li>the <code>CMD</code> instruction contains the extra argument that enables debugging. Also it is broken down for readability</li>
+</ul>
+<p>To build the debugging Docker image, we'll have to run this command:</p>
+<p>[code]</p>
+<p>docker image build -t consumer-debug ./docker/debug/</p>
+<p>[/code]</p>
+<p>But, it does not work! That's because the COPY command fails. Host paths are relative to the Dockerfile, so it's looking for <code>target/*.jar</code> inside our new <code>docker/debug</code> folder. You can try <code>../../target/*.jar</code> but that also does not work. By design, Docker does not allow you to include things outside the folder hierarchy defined by the folder where the Dockerfile lives. In other words, we'll have to bring the jar into that folder.</p>
+<p>I implemented that with the <code>mavent-antrun-plugin</code>. It allows you to run Ant targets during Maven execution. In this example, we copy the generated jar from the target folder into the new docker folders:</p>
+<p>[code language="xml"]</p>
+<p>    &lt;properties&gt;<br />
+        &lt;single.jar.descriptor&gt;jar-with-dependencies&lt;/single.jar.descriptor&gt;<br />
+        &lt;single.jar.file&gt;target/${artifactId}-${version}-${single.jar.descriptor}.jar&lt;/single.jar.file&gt;<br />
+    &lt;/properties&gt;</p>
+<p>    &lt;build&gt;<br />
+        &lt;plugins&gt;<br />
+            &lt;plugin&gt;<br />
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+                &lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt;<br />
+                &lt;version&gt;1.8&lt;/version&gt;<br />
+                &lt;executions&gt;<br />
+                    &lt;execution&gt;<br />
+                        &lt;phase&gt;package&lt;/phase&gt;<br />
+                        &lt;goals&gt;<br />
+                            &lt;goal&gt;run&lt;/goal&gt;<br />
+                        &lt;/goals&gt;<br />
+                    &lt;/execution&gt;<br />
+                &lt;/executions&gt;<br />
+                &lt;configuration&gt;<br />
+                    &lt;target&gt;<br />
+                        &lt;echo message=&quot;Copying package to docker/debug folder&quot; /&gt;<br />
+                        &lt;copy<br />
+                            file=&quot;${single.jar.file}&quot;<br />
+                            todir=&quot;docker/debug/target&quot; /&gt;<br />
+                        &lt;echo message=&quot;Copying package to docker/release folder&quot; /&gt;<br />
+                        &lt;copy<br />
+                            file=&quot;${single.jar.file}&quot;<br />
+                            todir=&quot;docker/release/target&quot; /&gt;<br />
+                    &lt;/target&gt;<br />
+                &lt;/configuration&gt;<br />
+            &lt;/plugin&gt;<br />
+        &lt;/plugins&gt;<br />
+    &lt;/build&gt;</p>
+<p>[/code]</p>
+<p>Notice that I have preserved the target folder inside <code>docker/debug</code> and <code>docker/release</code>, because it is already part of my <code>.gitignore</code>. This is how the folder structure looks like:</p>
+<p><img class="alignnone size-full wp-image-1395" src="{{ site.baseurl }}/assets/docker-folders.png" alt="docker-folders.png" width="1080" height="687" /></p>
+<p>It's a good idea to also cleanup after ourselves. It would be great to delete the new copies of the jar file when we run <code>mvn clean</code>. For that reason, we'll need this configuration:</p>
+<p>[code language="xml"]</p>
+<p>            &lt;plugin&gt;<br />
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br />
+                &lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt;<br />
+                &lt;version&gt;3.0.0&lt;/version&gt;<br />
+                &lt;configuration&gt;<br />
+                    &lt;filesets&gt;<br />
+                        &lt;!-- delete jar files copied into docker folders --&gt;<br />
+                        &lt;fileset&gt;<br />
+                            &lt;directory&gt;docker&lt;/directory&gt;<br />
+                            &lt;includes&gt;<br />
+                                &lt;include&gt;**/*.jar&lt;/include&gt;<br />
+                            &lt;/includes&gt;<br />
+                        &lt;/fileset&gt;<br />
+                    &lt;/filesets&gt;<br />
+                &lt;/configuration&gt;<br />
+            &lt;/plugin&gt;<br />
+[/code]</p>
+<p>And we're all set.</p>
+<h3>IntelliJ plugin</h3>
+<p>The IntelliJ plugin is called Docker Integration and it's provided by JetBrains. It offers various features:</p>
+<ul>
+<li>syntax highlighting for Dockerfiles</li>
+<li>managing the Docker instance, e.g. start/stop/delete containers, delete images</li>
+<li>enables debugging into Docker, implemented as an IntelliJ run configuration</li>
+</ul>
+<p>First of all, it needs to know where our Docker is:</p>
+<p><img class="alignnone size-full wp-image-1414" src="{{ site.baseurl }}/assets/docker-intellij.png" alt="docker-intellij.png" width="2097" height="1394" /></p>
+<p>It is quite smart, you probably won't have to do much typing. You'll find it sitting at the bottom toolbar:</p>
+<p><img class="alignnone size-large wp-image-1417" src="{{ site.baseurl }}/assets/docker-toolbar.png?w=1024" alt="docker-toolbar" width="1024" height="523" /></p>
+<p>The green play button connects you to Docker:</p>
+<p><img class="alignnone size-full wp-image-1419" src="{{ site.baseurl }}/assets/docker-connected.png" alt="docker-connected" width="983" height="589" /></p>
+<p>Notice that it lists existing containers and images. The containers are all stopped. I can right click the "hp-kafka" container and run it:</p>
+<p><img class="alignnone size-full wp-image-1423" src="{{ site.baseurl }}/assets/docker-container-running.png" alt="docker-container-running.png" width="988" height="592" /></p>
+<p>Notice that the icon changes into a filled light blue box.</p>
+<p>To be able to debug our app, we need a new debug configuration:</p>
+<p><img class="alignnone size-full wp-image-1440" src="{{ site.baseurl }}/assets/debug-configuration-fix.png" alt="debug-configuration-fix.png" width="1977" height="1390" /></p>
+<p>Let's take this step by step:</p>
+<ul>
+<li>The configuration is shared, so that we can put it in git and share it with developers (more on that later)</li>
+<li>The server is the local Docker we configured earlier</li>
+<li>The deployment drop down allows to select one of the Dockerfiles in the project (detected automatically) or an existing image. We'll go for the Dockerfile approach.</li>
+<li>The container name is just a name to identify the container by</li>
+<li>Notice the debug port, 50505 matching what our Dockerfile mentions. Notice also how helpful the plugin is, telling you the argument you will need in order to enable debugging (yes, that's where I got it from)</li>
+<li>Very important: before launch, run mvn package. This is why we did all the proper Maven setup and the folder structure according to best practices, so that the IntelliJ configuration is as minimum as possible.</li>
+</ul>
+<p>Notice the warning at the end about "Debug port forwarding not found". Our Dockerfile is correct. However, the <code>EXPOSE</code> directive just informs docker that the container listens to the 50505 port. When creating the container, you still have to tell it to forward that port so that it's accessible outside the container. If we were starting the container ourselves, that would be the <code>-p 50505:50505</code> flag. Here, it's IntelliJ that will be starting the container, so it raises the warning. The fix button does that. It offers to create a json file with the needed container settings. Save it side-by-side with the debug Dockerfile, so that it's clear it is only needed for debugging:</p>
+<p><img class="alignnone size-full wp-image-1447" src="{{ site.baseurl }}/assets/docker-container-settings.png" alt="docker-container-settings.png" width="1977" height="1390" /></p>
+<p>And with this the warning disappears:</p>
+<p><img class="alignnone size-full wp-image-1428" src="{{ site.baseurl }}/assets/debug-configuration.png" alt="debug-configuration.png" width="1977" height="1295" /></p>
+<p>The container settings looks like this:</p>
+<p>[code language="javascript"]</p>
+<p>{<br />
+  &quot;HostConfig&quot;: {<br />
+    &quot;PortBindings&quot;: {<br />
+      &quot;50505/tcp&quot;: [<br />
+        {<br />
+          &quot;HostIp&quot;: &quot;0.0.0.0&quot;,<br />
+          &quot;HostPort&quot;: &quot;50505&quot;<br />
+        }<br />
+      ]<br />
+    }<br />
+  }<br />
+}</p>
+<p>[/code]</p>
+<h3>Debugging</h3>
+<p>We can finally debug! We start the debug configuration with the debug icon. IntelliJ switches to the Debug panel:</p>
+<p><img class="alignnone size-full wp-image-1455" src="{{ site.baseurl }}/assets/debug-connected.png" alt="debug-connected.png" width="1652" height="617" /></p>
+<p>If you don't see this message immediately, you need to go back and see if everything is configured correctly.</p>
+<p>In the Docker panel, we see the container running:</p>
+<p><img class="alignnone size-full wp-image-1459" src="{{ site.baseurl }}/assets/docker-deploy-log.png" alt="docker-deploy-log.png" width="2783" height="454" /></p>
+<p>and we can also see the messages our app is printing:</p>
+<p><img class="alignnone size-full wp-image-1463" src="{{ site.baseurl }}/assets/docker-app-log.png" alt="docker-app-log.png" width="2936" height="448" /></p>
+<p>Let's put a breakpoint on the line where a new message is received from Kafka:</p>
+<p><img class="alignnone size-full wp-image-1466" src="{{ site.baseurl }}/assets/breakpoint.png" alt="breakpoint.png" width="1628" height="431" /></p>
+<p>To hit that breakpoint, we'll need to actually send a message. Let's start the producer. This is not a Docker container, just a regular Java app:</p>
+<p><img class="alignnone size-full wp-image-1469" src="{{ site.baseurl }}/assets/start-producer.png" alt="start-producer.png" width="1544" height="712" /></p>
+<p>IntelliJ allows you to run all sorts of things at the same time, so we can manage everything from the same IDE window. The producer is interactive, so we type the user information at the console:</p>
+<p><img class="alignnone size-full wp-image-1473" src="{{ site.baseurl }}/assets/producer-input.png" alt="producer-input.png" width="1519" height="522" /></p>
+<p>As soon as we enter all information, the message is sent and the breakpoint is hit:</p>
+<p><img class="alignnone size-full wp-image-1476" src="{{ site.baseurl }}/assets/breakpoint-hit.png" alt="breakpoint-hit.png" width="3200" height="1700" /></p>
+<p>The experience is the same as with local debugging, you can see the variables, the call stack, etc.</p>
+<h3>Sharing the debug configuration</h3>
+<p>One minor thing I found is that it's useful to share the debug configuration within the team. Normally, I exclude all IntelliJ files from git. I think this one is useful, so I've adjusted the gitignore like this:</p>
+<p>[code]</p>
+<p>#<br />
+# IntelliJ<br />
+#<br />
+*.iml<br />
+.idea/*<br />
+!.idea/runConfigurations/</p>
+<p>[/code]</p>
+<p>I see we're doing this wrong currently at work, where every developer creates run/debug configurations independently.</p>
+<h3>Lessons</h3>
+<ul>
+<li>read about the best practices regarding Dockerfiles</li>
+<li>before jumping into the IDE, understand what is happening under the hood</li>
+<li>use maven as much as possible. Everything that is possible through the IDE should be first be possible via the command line</li>
+<li>single jar with all dependencies is easier to manage</li>
+<li>share the debug configurations with the team</li>
+<li>debugging inside a container is cool!</li>
+</ul>
