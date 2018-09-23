@@ -40,3 +40,4 @@ plugins:
 
 permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: false
+google_analytics: UA-126249544-1

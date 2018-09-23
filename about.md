@@ -10,6 +10,10 @@ living in the Netherlands.
 I mostly blog about programming, continuous delivery, testing,
 automation, code quality.
 
+## Cookies and Tracking
+
+This website is using Google Analytics.
+
 ## Meta
 
 This blog is powered by [jekyll](https://jekyllrb.com/) and
