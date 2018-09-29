@@ -2,7 +2,6 @@
 layout: post
 title: Using AWS ECR as a Docker registry
 date: 2017-12-30 14:31:03.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

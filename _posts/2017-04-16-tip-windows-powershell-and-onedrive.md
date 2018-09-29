@@ -2,7 +2,6 @@
 layout: post
 title: 'Tip: Windows PowerShell and OneDrive'
 date: 2017-04-16 11:57:09.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

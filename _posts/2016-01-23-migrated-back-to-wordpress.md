@@ -2,7 +2,6 @@
 layout: post
 title: Migrated back to Wordpress
 date: 2016-01-23 19:58:16.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories: []

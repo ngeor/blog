@@ -2,7 +2,6 @@
 layout: post
 title: Too fast for my computer
 date: 2010-07-13 18:29:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

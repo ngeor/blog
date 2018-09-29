@@ -2,7 +2,6 @@
 layout: post
 title: 'Daleri Structure: the BlogEngine.NET version'
 date: 2010-07-18 16:41:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Sharing a green car
 date: 2011-12-14 18:39:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

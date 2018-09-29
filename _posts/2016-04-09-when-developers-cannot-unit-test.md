@@ -2,7 +2,6 @@
 layout: post
 title: When developers cannot unit test
 date: 2016-04-09 08:27:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

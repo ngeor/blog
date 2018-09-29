@@ -2,7 +2,6 @@
 layout: post
 title: The social experiment of public transport
 date: 2011-11-26 07:52:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

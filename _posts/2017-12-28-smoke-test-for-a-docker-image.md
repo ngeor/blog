@@ -2,7 +2,6 @@
 layout: post
 title: Smoke test for a Docker image
 date: 2017-12-28 10:40:39.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Making a habit
 date: 2016-04-02 10:03:07.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

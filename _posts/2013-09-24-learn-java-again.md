@@ -2,7 +2,6 @@
 layout: post
 title: Learn Java again
 date: 2013-09-24 05:47:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

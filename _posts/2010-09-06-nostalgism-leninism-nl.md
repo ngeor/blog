@@ -2,7 +2,6 @@
 layout: post
 title: Nostalgism Leninism (NL)
 date: 2010-09-06 21:04:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

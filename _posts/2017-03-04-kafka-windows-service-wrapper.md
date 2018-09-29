@@ -2,7 +2,6 @@
 layout: post
 title: Kafka Windows Service Wrapper
 date: 2017-03-04 06:36:16.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

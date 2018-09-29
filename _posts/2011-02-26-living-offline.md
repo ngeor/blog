@@ -2,7 +2,6 @@
 layout: post
 title: Living offline
 date: 2011-02-26 08:22:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Ακόμα πιο νέο ανεπίσημο podcast για Ελληνοφρένεια
 date: 2013-02-06 23:36:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

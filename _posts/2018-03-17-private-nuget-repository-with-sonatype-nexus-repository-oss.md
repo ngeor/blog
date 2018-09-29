@@ -2,7 +2,6 @@
 layout: post
 title: Private NuGet repository with Sonatype Nexus Repository OSS
 date: 2018-03-17 07:00:38.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

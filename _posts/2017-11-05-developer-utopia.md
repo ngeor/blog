@@ -2,7 +2,6 @@
 layout: post
 title: Developer Utopia
 date: 2017-11-05 11:43:14.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

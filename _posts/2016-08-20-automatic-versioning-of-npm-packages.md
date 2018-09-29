@@ -2,7 +2,6 @@
 layout: post
 title: Automatic versioning of npm packages
 date: 2016-08-20 08:00:16.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

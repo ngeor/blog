@@ -2,7 +2,6 @@
 layout: post
 title: What is Test Driven Development?
 date: 2016-04-30 09:09:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

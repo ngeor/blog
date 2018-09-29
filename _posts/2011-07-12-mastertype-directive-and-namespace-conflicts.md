@@ -2,7 +2,6 @@
 layout: post
 title: MasterType directive and namespace conflicts
 date: 2011-07-12 21:25:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

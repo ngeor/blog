@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon stubs
 date: 2016-05-28 08:34:49.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

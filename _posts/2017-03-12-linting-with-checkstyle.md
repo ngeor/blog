@@ -2,7 +2,6 @@
 layout: post
 title: Linting with Checkstyle
 date: 2017-03-12 18:15:26.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

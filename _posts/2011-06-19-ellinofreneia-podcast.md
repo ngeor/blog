@@ -2,7 +2,6 @@
 layout: post
 title: Ανεπίσημο podcast για Ελληνοφρένεια
 date: 2011-06-19 12:09:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

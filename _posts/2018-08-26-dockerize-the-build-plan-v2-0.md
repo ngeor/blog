@@ -2,7 +2,6 @@
 layout: post
 title: Dockerize the build plan v2.0
 date: 2018-08-26 09:18:49.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

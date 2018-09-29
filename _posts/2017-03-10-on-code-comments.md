@@ -2,7 +2,6 @@
 layout: post
 title: On Code Comments
 date: 2017-03-10 20:49:08.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: SystemWebCompanion
 date: 2011-03-19 18:10:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

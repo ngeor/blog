@@ -2,7 +2,6 @@
 layout: post
 title: Swagger Formats
 date: 2018-04-21 16:02:30.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

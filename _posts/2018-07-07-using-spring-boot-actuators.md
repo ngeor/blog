@@ -2,7 +2,6 @@
 layout: post
 title: Using Spring Boot Actuators
 date: 2018-07-07 08:38:06.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

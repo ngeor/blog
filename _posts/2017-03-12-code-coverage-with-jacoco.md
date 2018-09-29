@@ -2,7 +2,6 @@
 layout: post
 title: Code Coverage with JaCoCo
 date: 2017-03-12 08:48:58.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

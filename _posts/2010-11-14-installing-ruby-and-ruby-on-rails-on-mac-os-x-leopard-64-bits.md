@@ -2,7 +2,6 @@
 layout: post
 title: Installing Ruby and Ruby on Rails on Mac OS X Leopard 64 bits
 date: 2010-11-14 13:53:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

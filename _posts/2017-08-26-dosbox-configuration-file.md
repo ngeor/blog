@@ -2,7 +2,6 @@
 layout: post
 title: DOSBox configuration file
 date: 2017-08-26 07:59:27.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

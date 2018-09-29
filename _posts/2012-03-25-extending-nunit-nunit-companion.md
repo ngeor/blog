@@ -2,7 +2,6 @@
 layout: post
 title: 'Extending NUnit: NUnit Companion'
 date: 2012-03-25 14:04:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

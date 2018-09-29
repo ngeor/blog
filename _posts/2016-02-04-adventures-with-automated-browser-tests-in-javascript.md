@@ -2,7 +2,6 @@
 layout: post
 title: Adventures with automated browser tests in JavaScript
 date: 2016-02-04 20:49:24.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: WCF with IIS and multiple http bindings
 date: 2011-03-04 19:05:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Monochrome Theme for BlogEngine.NET
 date: 2010-09-12 14:14:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

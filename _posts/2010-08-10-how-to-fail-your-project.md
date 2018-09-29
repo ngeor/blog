@@ -2,7 +2,6 @@
 layout: post
 title: How to fail your project
 date: 2010-08-10 18:33:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

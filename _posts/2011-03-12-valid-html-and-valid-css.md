@@ -2,7 +2,6 @@
 layout: post
 title: Valid HTML and Valid CSS
 date: 2011-03-12 12:15:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

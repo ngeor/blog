@@ -2,7 +2,6 @@
 layout: post
 title: 'ResxTranslator: a resx file editor'
 date: 2010-10-31 12:43:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Code coverage on integration tests?
 date: 2018-08-11 19:48:15.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

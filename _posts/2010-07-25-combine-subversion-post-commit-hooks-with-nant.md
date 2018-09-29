@@ -2,7 +2,6 @@
 layout: post
 title: Combine subversion post-commit hooks with NAnt
 date: 2010-07-25 10:08:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

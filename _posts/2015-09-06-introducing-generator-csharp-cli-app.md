@@ -2,7 +2,6 @@
 layout: post
 title: Introducing generator-csharp-cli-app
 date: 2015-09-06 07:30:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

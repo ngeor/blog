@@ -2,7 +2,6 @@
 layout: post
 title: Playing with MonoMac
 date: 2010-11-07 09:26:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Announcing w3c-nant version 1.0.2 - now with FTP upload task!
 date: 2012-03-04 11:54:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

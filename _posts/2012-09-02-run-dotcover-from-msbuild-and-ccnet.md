@@ -2,7 +2,6 @@
 layout: post
 title: Run dotCover from msbuild and ccnet
 date: 2012-09-02 07:52:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

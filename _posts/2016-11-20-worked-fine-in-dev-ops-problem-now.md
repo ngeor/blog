@@ -2,7 +2,6 @@
 layout: post
 title: Worked fine in DEV, OPS problem now
 date: 2016-11-20 09:11:50.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

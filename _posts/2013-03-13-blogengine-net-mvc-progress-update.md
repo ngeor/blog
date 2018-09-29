@@ -2,7 +2,6 @@
 layout: post
 title: BlogEngine.NET MVC - Progress update
 date: 2013-03-13 08:39:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

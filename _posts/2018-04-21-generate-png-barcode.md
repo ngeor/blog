@@ -2,7 +2,6 @@
 layout: post
 title: Generate PNG barcode
 date: 2018-04-21 19:35:51.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

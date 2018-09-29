@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon mocks
 date: 2016-06-04 08:00:24.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

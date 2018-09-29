@@ -2,7 +2,6 @@
 layout: post
 title: WCF, JSON and the DateTime
 date: 2011-07-20 20:18:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

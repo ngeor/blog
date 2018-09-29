@@ -2,7 +2,6 @@
 layout: post
 title: Installing Ruby on Rails, August 2013
 date: 2013-08-28 19:39:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

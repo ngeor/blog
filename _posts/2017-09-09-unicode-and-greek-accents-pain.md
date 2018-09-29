@@ -2,7 +2,6 @@
 layout: post
 title: Unicode and Greek accents pain
 date: 2017-09-09 09:36:25.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

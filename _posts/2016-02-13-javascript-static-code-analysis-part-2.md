@@ -2,7 +2,6 @@
 layout: post
 title: JavaScript Static Code Analysis, part 2
 date: 2016-02-13 07:09:15.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

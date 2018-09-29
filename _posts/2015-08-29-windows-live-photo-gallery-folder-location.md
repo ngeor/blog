@@ -2,7 +2,6 @@
 layout: post
 title: Windows Live Photo Gallery Folder Location
 date: 2015-08-29 05:40:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

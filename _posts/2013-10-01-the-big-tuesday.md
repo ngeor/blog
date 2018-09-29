@@ -2,7 +2,6 @@
 layout: post
 title: The big Tuesday
 date: 2013-10-01 19:12:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

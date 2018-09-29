@@ -2,7 +2,6 @@
 layout: post
 title: Atom plugins
 date: 2016-02-20 13:07:29.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

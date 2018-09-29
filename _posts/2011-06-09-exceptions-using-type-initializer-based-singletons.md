@@ -2,7 +2,6 @@
 layout: post
 title: Exceptions using type initializer based singletons
 date: 2011-06-09 21:59:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

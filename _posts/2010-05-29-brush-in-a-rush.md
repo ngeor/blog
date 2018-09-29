@@ -2,7 +2,6 @@
 layout: post
 title: Brush in a Rush
 date: 2010-05-29 19:46:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: One script to version all
 date: 2017-12-20 20:55:35.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

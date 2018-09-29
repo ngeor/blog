@@ -2,7 +2,6 @@
 layout: post
 title: Building a REST API with Swagger and Spring Boot
 date: 2018-04-15 09:37:27.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

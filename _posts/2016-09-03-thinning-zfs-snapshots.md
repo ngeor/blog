@@ -2,7 +2,6 @@
 layout: post
 title: Thinning ZFS snapshots
 date: 2016-09-03 07:28:21.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

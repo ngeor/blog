@@ -2,7 +2,6 @@
 layout: post
 title: Exclude class from JaCoCo coverage
 date: 2018-04-21 12:40:20.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

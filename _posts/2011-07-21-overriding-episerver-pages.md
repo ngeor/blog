@@ -2,7 +2,6 @@
 layout: post
 title: Overriding EPiServer pages
 date: 2011-07-21 19:20:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

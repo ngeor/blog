@@ -2,7 +2,6 @@
 layout: post
 title: A closer look to a basic unit test
 date: 2016-04-23 08:41:59.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

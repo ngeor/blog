@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Reducing Code Duplication
 date: 2016-07-02 07:53:51.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

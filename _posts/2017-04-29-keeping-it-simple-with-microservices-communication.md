@@ -2,7 +2,6 @@
 layout: post
 title: Keeping it simple with microservices communication
 date: 2017-04-29 13:10:17.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

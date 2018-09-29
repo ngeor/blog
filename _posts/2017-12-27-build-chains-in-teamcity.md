@@ -2,7 +2,6 @@
 layout: post
 title: Build chains in TeamCity
 date: 2017-12-27 15:41:25.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

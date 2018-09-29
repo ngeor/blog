@@ -2,7 +2,6 @@
 layout: post
 title: Synchronizing App_Data with git
 date: 2012-08-26 10:57:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

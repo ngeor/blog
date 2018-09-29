@@ -2,7 +2,6 @@
 layout: post
 title: Playing with TeamCity on Azure
 date: 2018-03-10 11:57:38.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

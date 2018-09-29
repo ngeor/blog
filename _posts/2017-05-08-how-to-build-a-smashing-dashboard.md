@@ -2,7 +2,6 @@
 layout: post
 title: How to build a smashing dashboard
 date: 2017-05-08 20:16:45.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

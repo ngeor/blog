@@ -2,7 +2,6 @@
 layout: post
 title: Installing Ruby and Ruby on Rails on IIS - Doesn't work
 date: 2010-11-17 11:41:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

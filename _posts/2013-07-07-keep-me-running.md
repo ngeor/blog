@@ -2,7 +2,6 @@
 layout: post
 title: Keep me running
 date: 2013-07-07 15:40:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

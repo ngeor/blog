@@ -2,7 +2,6 @@
 layout: post
 title: 'CD with Helm part 3: Kubernetes Intro'
 date: 2017-11-25 11:44:24.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

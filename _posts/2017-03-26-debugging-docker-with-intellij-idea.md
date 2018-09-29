@@ -2,7 +2,6 @@
 layout: post
 title: Debugging Docker with IntelliJ IDEA
 date: 2017-03-26 07:08:27.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

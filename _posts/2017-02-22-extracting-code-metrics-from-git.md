@@ -2,7 +2,6 @@
 layout: post
 title: Extracting code metrics from git
 date: 2017-02-22 18:47:54.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

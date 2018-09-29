@@ -2,7 +2,6 @@
 layout: post
 title: Backup Strategy
 date: 2016-10-01 10:16:27.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

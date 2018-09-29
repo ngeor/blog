@@ -2,7 +2,6 @@
 layout: post
 title: Versioning Deployed Web Applications
 date: 2013-11-09 07:16:43.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

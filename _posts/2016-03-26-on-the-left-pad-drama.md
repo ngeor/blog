@@ -2,7 +2,6 @@
 layout: post
 title: On the left-pad drama
 date: 2016-03-26 07:33:06.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

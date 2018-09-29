@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - WebDriverIO Integrated Test Runner
 date: 2016-08-13 07:55:24.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: 'CD with Helm part 5: versioned artifacts'
 date: 2017-12-02 16:04:56.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

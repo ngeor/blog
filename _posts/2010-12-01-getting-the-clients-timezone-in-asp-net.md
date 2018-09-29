@@ -2,7 +2,6 @@
 layout: post
 title: Getting the client's timezone in ASP.NET
 date: 2010-12-01 20:03:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

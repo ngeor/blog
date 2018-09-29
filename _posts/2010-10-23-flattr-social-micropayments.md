@@ -2,7 +2,6 @@
 layout: post
 title: 'Flattr: Social Micropayments'
 date: 2010-10-23 08:23:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

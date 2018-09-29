@@ -2,7 +2,6 @@
 layout: post
 title: Δεν θέλει να δανείσει η Σλοβακία την Ελλάδα
 date: 2010-07-15 14:38:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

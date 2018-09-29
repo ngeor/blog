@@ -2,7 +2,6 @@
 layout: post
 title: Greeks in space!
 date: 2011-02-27 10:41:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

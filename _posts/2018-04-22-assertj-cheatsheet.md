@@ -2,7 +2,6 @@
 layout: post
 title: AssertJ cheatsheet
 date: 2018-04-22 07:10:29.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

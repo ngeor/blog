@@ -2,7 +2,6 @@
 layout: post
 title: How to use StyleCop.Analyzers
 date: 2018-03-03 10:14:56.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

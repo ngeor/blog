@@ -2,7 +2,6 @@
 layout: post
 title: Syncing Sublime Text 3 with Git
 date: 2015-08-17 16:36:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

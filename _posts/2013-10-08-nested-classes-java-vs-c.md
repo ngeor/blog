@@ -2,7 +2,6 @@
 layout: post
 title: 'Nested classes: Java vs C#'
 date: 2013-10-08 19:38:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

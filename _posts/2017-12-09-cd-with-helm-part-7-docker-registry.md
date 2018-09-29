@@ -2,7 +2,6 @@
 layout: post
 title: 'CD with Helm part 7: Docker registry'
 date: 2017-12-09 09:50:43.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

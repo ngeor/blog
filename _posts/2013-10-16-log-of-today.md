@@ -2,7 +2,6 @@
 layout: post
 title: Log of today
 date: 2013-10-16 20:32:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

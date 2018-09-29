@@ -2,7 +2,6 @@
 layout: post
 title: Changing Jobs
 date: 2010-10-16 08:21:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

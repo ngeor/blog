@@ -2,7 +2,6 @@
 layout: post
 title: GitHub badges
 date: 2016-03-05 07:57:36.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

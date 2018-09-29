@@ -2,7 +2,6 @@
 layout: post
 title: Playing with Castle DynamicProxy
 date: 2010-07-24 21:09:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

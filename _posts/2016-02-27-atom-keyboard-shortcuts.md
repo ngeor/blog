@@ -2,7 +2,6 @@
 layout: post
 title: Atom Keyboard Shortcuts
 date: 2016-02-27 13:52:24.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

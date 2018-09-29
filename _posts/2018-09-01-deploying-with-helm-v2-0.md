@@ -2,7 +2,6 @@
 layout: post
 title: Deploying with Helm v2.0
 date: 2018-09-01 08:00:48.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

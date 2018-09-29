@@ -2,7 +2,6 @@
 layout: post
 title: On versioning
 date: 2017-12-18 19:20:55.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

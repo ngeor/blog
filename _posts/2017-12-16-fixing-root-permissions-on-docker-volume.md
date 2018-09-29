@@ -2,7 +2,6 @@
 layout: post
 title: Fixing root permissions on Docker volume
 date: 2017-12-16 19:07:48.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

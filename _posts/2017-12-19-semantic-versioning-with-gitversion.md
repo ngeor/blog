@@ -2,7 +2,6 @@
 layout: post
 title: Semantic versioning with GitVersion
 date: 2017-12-19 21:07:41.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

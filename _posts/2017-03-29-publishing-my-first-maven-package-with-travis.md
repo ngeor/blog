@@ -2,7 +2,6 @@
 layout: post
 title: Publishing my first Maven package with Travis
 date: 2017-03-29 18:24:45.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: Copy InputStream to OutputStream
 date: 2018-04-21 19:19:53.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

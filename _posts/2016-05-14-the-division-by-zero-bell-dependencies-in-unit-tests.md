@@ -2,7 +2,6 @@
 layout: post
 title: The division by zero bell - Dependencies in unit tests
 date: 2016-05-14 08:00:38.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

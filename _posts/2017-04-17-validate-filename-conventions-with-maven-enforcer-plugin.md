@@ -2,7 +2,6 @@
 layout: post
 title: Validate filename conventions with Maven Enforcer plugin
 date: 2017-04-17 16:48:54.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

@@ -2,7 +2,6 @@
 layout: post
 title: CI requirements
 date: 2018-09-24
-type: post
 published: true
 categories:
 - Code

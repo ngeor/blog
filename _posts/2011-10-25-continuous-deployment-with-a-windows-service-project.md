@@ -2,7 +2,6 @@
 layout: post
 title: Continuous Deployment with a Windows Service project
 date: 2011-10-25 19:08:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

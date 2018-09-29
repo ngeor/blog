@@ -2,7 +2,6 @@
 layout: post
 title: How to deploy a smashing dashboard to AWS Elastic Beanstalk with Docker
 date: 2017-05-09 19:53:13.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

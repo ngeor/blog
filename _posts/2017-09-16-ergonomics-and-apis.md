@@ -2,7 +2,6 @@
 layout: post
 title: Ergonomics and APIs
 date: 2017-09-16 08:55:13.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

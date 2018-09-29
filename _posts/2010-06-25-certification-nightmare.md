@@ -2,7 +2,6 @@
 layout: post
 title: Certification Nightmare
 date: 2010-06-25 14:58:00.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

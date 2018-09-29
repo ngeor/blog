@@ -2,7 +2,6 @@
 layout: post
 title: Μουσικό διάλειμμα (Fuck you Papandreou)
 date: 2011-11-04 19:01:00.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

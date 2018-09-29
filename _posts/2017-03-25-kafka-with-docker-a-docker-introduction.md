@@ -2,7 +2,6 @@
 layout: post
 title: 'Kafka with Docker: A Docker introduction'
 date: 2017-03-25 08:47:07.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:

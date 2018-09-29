@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon spies
 date: 2016-05-21 08:15:53.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

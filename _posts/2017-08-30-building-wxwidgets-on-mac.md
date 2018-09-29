@@ -2,7 +2,6 @@
 layout: post
 title: Building wxWidgets on Mac
 date: 2017-08-30 13:41:44.000000000 +02:00
-type: post
 parent_id: '0'
 published: true
 categories:

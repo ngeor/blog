@@ -2,7 +2,6 @@
 layout: post
 title: A quickstart Maven archetype for Java 8
 date: 2017-02-25 12:08:38.000000000 +01:00
-type: post
 parent_id: '0'
 published: true
 categories:
