@@ -25,8 +25,8 @@ Swagger definition.
 
 With a little bit of investigation, I found [Swagger to UML]. It's a small
 script written in Python which converts the Swagger definition into [Plant UML]
-diagrams. Plant UML t hen renders the diagram into PNG or SVG but it
-requires [Graphviz] to be installed.
+diagrams. Plant UML then renders the diagram into PNG or SVG but it requires
+[Graphviz] to be installed.
 
 There are a lot of moving parts here with various technologies. Swagger to UML
 needs Python. Plant UML needs Java and Graphviz. And I would like all these to
@@ -63,7 +63,8 @@ step:
 And now, for the cherry on the top: I also added a script which publishes the
 PNG diagram as an attachment to Confluence Cloud. That's the extra mile that
 makes the whole process more magic. And it's just a `curl` call to the
-Confluence Cloud REST API which [creates or updates attachments](https://developer.atlassian.com/cloud/confluence/rest/#api-content-id-child-attachment-put).
+Confluence Cloud REST API which [creates or updates
+attachments](https://developer.atlassian.com/cloud/confluence/rest/#api-content-id-child-attachment-put).
 
 The script is packaged in the same Docker image and you can call it like this:
 
@@ -75,10 +76,10 @@ put-confluence-attachment.sh -u $USERNAME:$PASSWORD \
   --filename diagram.png
 ```
 
-You'll need a Confluence Cloud instance at `https://acme.atlassian.net/wiki` (
-that's the `domain` parameter) as well as a username and password to access the
-REST API. You'll also need a page to attach the diagram to. That's
-the `content-id` parameter.
+You'll need a Confluence Cloud instance at `https://acme.atlassian.net/wiki`
+(that's the `domain` parameter) as well as a username and password to access the
+REST API. You'll also need a page to attach the diagram to. That's the
+`content-id` parameter.
 
 In my case, I have one Confluence page per microservice. When the build of a
 microservice succeeds, it updates the diagram on the microservice's page.
