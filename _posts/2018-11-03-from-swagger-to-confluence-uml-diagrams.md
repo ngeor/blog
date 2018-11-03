@@ -17,7 +17,7 @@ author: Nikolaos Georgiou
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition
 and I'm publishing it to Confluence.
 
-At work we use Swagger to define our REST APIs. With the [swagger codegen maven
+At work, we use Swagger to define our REST APIs. With the [swagger codegen maven
 plugin], we can generate a lot of code (models and interfaces for the
 controllers) as well as our API documentation. But a picture is worth a thousand
 words, so I wanted a way to automatically generate a UML diagram out of the
@@ -78,8 +78,8 @@ put-confluence-attachment.sh -u $USERNAME:$PASSWORD \
 
 You'll need a Confluence Cloud instance at `https://acme.atlassian.net/wiki`
 (that's the `domain` parameter) as well as a username and password to access the
-REST API. You'll also need a page to attach the diagram to. That's the
-`content-id` parameter.
+REST API. You'll also need a page to attach the diagram. That's the `content-id`
+parameter.
 
 In my case, I have one Confluence page per microservice. When the build of a
 microservice succeeds, it updates the diagram on the microservice's page.
@@ -94,8 +94,8 @@ Some practical tips:
    server, so that you don't have to repeat them on each project.
 3. If you use a different Confluence page per project (that's what I do), then
    you should store that page's ID as a project environment variable in your CI
-   server. You could however use a single page and just use a different filename
-   per diagram.
+   server. You could, however, use a single page and just use a different
+   filename per diagram.
 
 In the end, you get a fancy diagram in Confluence:
 
