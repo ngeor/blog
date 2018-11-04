@@ -2,7 +2,8 @@
 layout: post
 title: 'CD with Helm part 6: networking interlude'
 date: 2017-12-03 11:41:12.000000000 +01:00
-parent_id: '0'
+series:
+- CD with Helm
 published: true
 categories:
 - Code

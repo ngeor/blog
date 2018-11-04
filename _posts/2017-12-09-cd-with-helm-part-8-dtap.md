@@ -2,7 +2,8 @@
 layout: post
 title: 'CD with Helm part 8: DTAP'
 date: 2017-12-09 12:33:12.000000000 +01:00
-parent_id: '0'
+series:
+- CD with Helm
 published: true
 categories:
 - Code

@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{{ page.date | date: date_format }}
+
+<ul>
+  {%- assign posts = site.posts | reverse -%}
+  {%- for post in posts -%}
+    {%- if post.series contains page.title -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+      <span>{{ post.date | date: date_format }}</span>
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

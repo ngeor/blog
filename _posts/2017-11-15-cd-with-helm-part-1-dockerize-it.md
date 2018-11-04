@@ -2,7 +2,8 @@
 layout: post
 title: 'CD with Helm part 1: Dockerize it'
 date: 2017-11-15 20:41:42.000000000 +01:00
-parent_id: '0'
+series:
+- CD with Helm
 published: true
 categories:
 - Code

@@ -2,7 +2,8 @@
 layout: post
 title: 'CD with Helm part 0: hello world app'
 date: 2017-11-13 20:28:56.000000000 +01:00
-parent_id: '0'
+series:
+- CD with Helm
 published: true
 categories:
 - Code

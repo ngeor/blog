@@ -6,6 +6,8 @@ parent_id: '0'
 published: true
 categories:
 - Code
+series:
+- Functional Tests
 tags:
 - browser tests
 - functional tests

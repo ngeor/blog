@@ -6,6 +6,8 @@ parent_id: '0'
 published: true
 categories:
 - Code
+series:
+- Unit Tests
 tags:
 - JavaScript
 - sinon
