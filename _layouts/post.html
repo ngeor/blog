@@ -20,6 +20,33 @@ layout: default
   </div>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+  {%- if page.series -%}
+    {%- for series in page.series -%}
+    <hr />
+    <div>
+      This article is part of the <strong>{{ series }}</strong> series:
+    </div>
+
+    <ol>
+      {%- assign posts = site.posts | reverse -%}
+      {%- for post in posts -%}
+        {%- if post.series contains series -%}
+        <li>
+          {%- if post.url == page.url -%}
+            {{ post.title | escape }}
+          {%- else -%}
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+          {%- endif -%}
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ol>
+
+    {%- endfor -%}
+  {%- endif -%}
 </article>
 
 <div class="page-navigation">
