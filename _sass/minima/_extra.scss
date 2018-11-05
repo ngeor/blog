@@ -2,3 +2,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+.series li div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.series-toc {
+  font-size: $small-font-size;
+  border: 1px dashed $grey-color;
+  padding: $spacing-unit / 2;
+  margin-bottom: $spacing-unit;
+  ul, ol {
+    columns: 2;
+  }
+}

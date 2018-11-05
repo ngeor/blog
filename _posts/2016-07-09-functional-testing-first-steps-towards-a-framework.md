@@ -5,8 +5,7 @@ date: 2016-07-09 08:19:34.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Functional Tests
+series: Functional Tests
 tags:
 - consistency
 - conventions

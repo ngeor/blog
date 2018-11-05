@@ -5,8 +5,7 @@ date: 2016-08-06 09:00:31.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Functional Tests
+series: Functional Tests
 tags:
 - chai
 - chai-as-promised

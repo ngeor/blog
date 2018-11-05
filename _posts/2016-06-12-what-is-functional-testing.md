@@ -5,8 +5,7 @@ date: 2016-06-12 20:50:05.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Functional Tests
+series: Functional Tests
 tags:
 - browser tests
 - functional tests

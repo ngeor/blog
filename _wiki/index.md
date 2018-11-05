@@ -10,7 +10,12 @@ with blog posts which are immutable) whenever I want to modify something.
   {%- unless wiki.title == 'Wiki' -%}
 
   <h2><a href="{{ wiki.url | relative_url }}">{{ wiki.title }}</a></h2>
-  {{ wiki.date | date: date_format }}
+  <p class="post-meta">
+    <time class="dt-published" datetime="{{ wiki.date | date_to_xmlschema }}">
+      {{ wiki.date | date: date_format }}
+    </time>
+  </p>
+
   {{ wiki.excerpt }}
 
   {%- endunless -%}

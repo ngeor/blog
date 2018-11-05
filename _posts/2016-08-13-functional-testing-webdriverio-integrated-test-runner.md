@@ -5,8 +5,7 @@ date: 2016-08-13 07:55:24.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Functional Tests
+series: Functional Tests
 tags:
 - functional tests
 - JavaScript

@@ -5,8 +5,7 @@ date: 2016-05-28 08:34:49.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Unit Tests
+series: Unit Tests
 tags:
 - JavaScript
 - mocha

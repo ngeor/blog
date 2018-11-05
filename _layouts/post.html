@@ -22,16 +22,17 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
   {%- if page.series -%}
-    {%- for series in page.series -%}
-    <hr />
-    <div>
-      This article is part of the <strong>{{ series }}</strong> series:
-    </div>
+  <div class="series-toc">
+    <p>
+      {% assign series_page = site.series | where: "title", page.series | first %}
+      This article is part of the <a href="{{ series_page.url | relative_url }}">{{ page.series }}</a>
+      series:
+    </p>
 
     <ol>
       {%- assign posts = site.posts | reverse -%}
       {%- for post in posts -%}
-        {%- if post.series contains series -%}
+        {%- if post.series contains page.series -%}
         <li>
           {%- if post.url == page.url -%}
             {{ post.title | escape }}
@@ -44,8 +45,7 @@ layout: default
         {%- endif -%}
       {%- endfor -%}
     </ol>
-
-    {%- endfor -%}
+  </div>
   {%- endif -%}
 </article>
 

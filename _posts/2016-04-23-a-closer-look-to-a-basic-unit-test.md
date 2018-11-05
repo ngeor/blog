@@ -5,8 +5,7 @@ date: 2016-04-23 08:41:59.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Unit Tests
+series: Unit Tests
 tags:
 - chai
 - JavaScript

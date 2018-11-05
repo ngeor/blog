@@ -2,8 +2,7 @@
 layout: post
 title: 'CD with Helm part 4: Helm Intro'
 date: 2017-11-27 20:27:37.000000000 +01:00
-series:
-- CD with Helm
+series: CD with Helm
 published: true
 categories:
 - Code

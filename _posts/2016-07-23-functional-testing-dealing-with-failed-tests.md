@@ -5,8 +5,7 @@ date: 2016-07-23 09:00:36.000000000 +02:00
 published: true
 categories:
 - Code
-series:
-- Functional Tests
+series: Functional Tests
 tags:
 - continuous integration
 - functional tests
