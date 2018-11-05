@@ -2,7 +2,6 @@
 layout: post
 title: AssertJ cheatsheet
 date: 2018-04-22 07:10:29.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Quick Code Tips
@@ -10,7 +9,6 @@ tags:
 - AssertJ
 - Java
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 <a href="https://joel-costigliola.github.io/assertj/">AssertJ</a> is a an assertions library for unit tests in Java that is well worth considering. Here are some examples.

@@ -2,7 +2,6 @@
 layout: post
 title: JavaScript Static Code Analysis, part 2
 date: 2016-02-13 07:09:15.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -18,7 +17,6 @@ tags:
 - maintainability
 - readability
 - static code analysis
-author: Nikolaos Georgiou
 ---
 
 In the <a href="s">previous post, I talked about static code analysis</a> and how it can be useful in enforcing and maintaining a consistent coding style, but also in catching subtle bugs and code smells. The focus was on two tools, jscs and jshint. What other tools and techniques can you use?<!--more-->

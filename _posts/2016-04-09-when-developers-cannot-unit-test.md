@@ -2,7 +2,6 @@
 layout: post
 title: When developers cannot unit test
 date: 2016-04-09 08:27:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -13,7 +12,6 @@ tags:
 - knowledge sharing
 - pair programming
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 Unit tests is an essential method of ensuring quality and predictability of software. In my current work, we have been going through a hard learning curve involving many factors:

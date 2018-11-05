@@ -2,12 +2,10 @@
 layout: post
 title: Learn Java again
 date: 2013-09-24 05:47:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I've been doing .NET for a long time. I started working on it exactly when .NET 2 was out, so I was lucky to avoid .NET 1 (almost) completely. I love .NET and C#. I think it's not a coincidence that the <a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg">main person</a> behind it is the same person who was behind my favorite products when I was a teenage coder: Turbo Pascal, Object Pascal and Delphi. There is some sort of inexpressible similarity, I think, that reflects the designer's choices in the framework and the language.

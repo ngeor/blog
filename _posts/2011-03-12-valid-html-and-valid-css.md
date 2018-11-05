@@ -2,12 +2,10 @@
 layout: post
 title: Valid HTML and Valid CSS
 date: 2011-03-12 12:15:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 This blog (and this site in general) has two nice image buttons at the end of the page, saying that the HTML and CSS are valid. Are they really?

@@ -2,12 +2,10 @@
 layout: post
 title: SystemWebCompanion
 date: 2011-03-19 18:10:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 In many ASP.NET web applications, there are some small bits of code that you have to write over and over again. They're too small so you never bother to refactor them out as a reusable dll. After all they are so small that it's very fast to create from scratch again. They end up as a Utils.cs file somewhere in your project, probably repeated in all your projects in one form or another.

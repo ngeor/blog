@@ -2,12 +2,10 @@
 layout: post
 title: Living offline
 date: 2011-02-26 08:22:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I spent a little more than 20 days without internet at home, waiting for my provider to reconnect it to my new house. I think I learned the following things out of this experience:

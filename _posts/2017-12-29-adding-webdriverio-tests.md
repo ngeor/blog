@@ -2,7 +2,6 @@
 layout: post
 title: Adding WebdriverIO tests
 date: 2017-12-29 13:55:32.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - phantomjs
 - TeamCity
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 In this post, I'll add some automated browser tests using PhantomJS and WebdriverIO.

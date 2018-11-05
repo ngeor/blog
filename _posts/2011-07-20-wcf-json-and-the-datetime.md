@@ -2,12 +2,10 @@
 layout: post
 title: WCF, JSON and the DateTime
 date: 2011-07-20 20:18:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I'm playing with a WCF service that works with JSON. If you haven't done this already, it's fairly easy. In the web.config, make sure your service is using the webHttpBinding binding. Also you'll need an endpoint behavior that looks like this:

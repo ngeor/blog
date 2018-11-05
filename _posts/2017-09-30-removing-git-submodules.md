@@ -2,14 +2,12 @@
 layout: post
 title: Removing git submodules
 date: 2017-09-30 10:36:39.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - git
 - submodules
-author: Nikolaos Georgiou
 ---
 
 Submodules is an advanced git feature. It allows you to have a folder inside your repository which serves as a link to a different repository. Working with submodules is more complicated and I haven't had a real need for it so far. Last week I had to deal with a codebase which was doing heavy usage of submodules, but without a good reason, so I got rid of them.

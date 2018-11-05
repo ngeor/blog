@@ -2,14 +2,12 @@
 layout: post
 title: Build configurations as code with TeamCity
 date: 2017-12-25 09:41:36.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - blog-helm-sample
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In this post, I'll show how to setup TeamCity so that your project's build configurations are stored in your git repository. This allows you to change your build configuration in the same way you change your code, via a pull request. It allows to make changes to the pipeline without affecting other branches. And all that is supported in a way that you don't have to give up the user friendly way of defining your build via the UI.

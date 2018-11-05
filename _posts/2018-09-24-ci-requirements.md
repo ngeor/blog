@@ -8,7 +8,6 @@ categories:
 tags:
 - continuous integration
 - quality
-author: Nikolaos Georgiou
 ---
 
 There are so many programming languages out there and so many

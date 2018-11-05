@@ -2,14 +2,12 @@
 layout: post
 title: 'Tip: Send to Programs Start Menu'
 date: 2017-04-15 10:49:15.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - start menu
 - Windows
-author: Nikolaos Georgiou
 ---
 
 When it comes to installing software on a Windows laptop, I often prefer portable apps compared to Windows installers. I am also looking currently into Chocolatey as a package manager solution. But also there, I prefer portable apps.<!--more-->

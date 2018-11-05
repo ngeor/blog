@@ -2,13 +2,11 @@
 layout: post
 title: Bash case insensitive auto completion
 date: 2017-08-30 17:51:48.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - bash
-author: Nikolaos Georgiou
 ---
 
 I added these two lines in my <code>.bashrc</code>:

@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - First steps towards a framework
 date: 2016-07-09 08:19:34.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -17,7 +16,6 @@ tags:
 - mocha
 - structure
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 Before we go any further, let’s take a break and add a bit of a structure to our functional tests. This will allow us to reduce the code we have to write for each test. We’ll also start thinking about how to organize the tests into folders and files.<!--more-->

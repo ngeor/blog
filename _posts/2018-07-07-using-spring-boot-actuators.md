@@ -2,7 +2,6 @@
 layout: post
 title: Using Spring Boot Actuators
 date: 2018-07-07 08:38:06.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - actuators
 - Java
 - Spring Boot
-author: Nikolaos Georgiou
 ---
 
 Implementing Spring Boot actuators is not very difficult. In this post I'll show what you can get for free, without adding any code.

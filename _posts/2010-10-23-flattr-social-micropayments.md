@@ -2,12 +2,10 @@
 layout: post
 title: 'Flattr: Social Micropayments'
 date: 2010-10-23 08:23:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 <div class="col2" lang="el">
 <div class="lang">[ Ελληνικά ]</div>

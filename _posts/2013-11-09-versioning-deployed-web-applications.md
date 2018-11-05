@@ -2,7 +2,6 @@
 layout: post
 title: Versioning Deployed Web Applications
 date: 2013-11-09 07:16:43.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - continuous delivery
 - continuous integration
 - versioning
-author: Nikolaos Georgiou
 ---
 
 In this post, I'm going to discuss the setup I have for deploying an ASP.NET application in Linux.<!--more-->

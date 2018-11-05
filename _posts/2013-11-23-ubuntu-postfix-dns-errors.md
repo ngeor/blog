@@ -2,12 +2,10 @@
 layout: post
 title: Ubuntu Postfix DNS errors
 date: 2013-11-23 06:59:09.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I've got Postfix setup on my local desktop computer and on my server. On my local desktop, every now and then Postfix stops sending e-mails. The <code>/var/log/syslog</code> gets filled up with DNS related errors:

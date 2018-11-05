@@ -2,14 +2,12 @@
 layout: post
 title: 'git tip: Delete merged branches'
 date: 2016-01-26 21:06:02.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - bash
 - git
-author: Nikolaos Georgiou
 ---
 
 If you want to delete your local branches that have already been merged to master remotely, run this in a bash shell:

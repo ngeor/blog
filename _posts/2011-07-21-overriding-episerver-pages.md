@@ -2,13 +2,11 @@
 layout: post
 title: Overriding EPiServer pages
 date: 2011-07-21 19:20:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - EPiServer
-author: Nikolaos Georgiou
 ---
 
 It is not very frequent or pretty but still sometimes it’s inevitable: we have to “steal” the code of EPiServer through <a href="http://reflector.red-gate.com/" target="_blank">Reflector</a>/<a href="http://wiki.sharpdevelop.net/ILSpy.ashx" target="_blank">ILSpy</a>/other and modify it to suit our needs. This way you can customize pages or user controls anyway you wish, beyond the way EPiServer allows through conventional channels.

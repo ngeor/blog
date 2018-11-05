@@ -2,14 +2,12 @@
 layout: post
 title: How to create a simple web app with maven
 date: 2016-09-18 19:37:05.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Java
 - maven
-author: Nikolaos Georgiou
 ---
 
 This post shows how to create a simple web application with maven. I have the relevant commits as well in GitHub for reference, in case you want to see in more details.

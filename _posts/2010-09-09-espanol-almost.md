@@ -2,12 +2,10 @@
 layout: post
 title: Español? Almost!
 date: 2010-09-09 16:35:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 <div class="col2" lang="el">
 <div class="lang">[ Ελληνικά ]</div>

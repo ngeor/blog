@@ -2,7 +2,6 @@
 layout: post
 title: Validate filename conventions with Maven Enforcer plugin
 date: 2017-04-17 16:48:54.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -15,7 +14,6 @@ tags:
 - maven enforcer
 - static code analysis
 - yagni
-author: Nikolaos Georgiou
 ---
 
 In this post I'm using the Maven Enforcer plugin to break the build when certain files don't follow the expected naming convention. It's always a good idea to take the time and implement these checks inside the build pipeline. The alternative is hoping that code reviewers will spot the problems, which is a manual, tedious and error prone approach. Automate all the things!<!--more-->

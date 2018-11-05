@@ -2,7 +2,6 @@
 layout: post
 title: On Code Comments
 date: 2017-03-10 20:49:08.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -11,7 +10,6 @@ tags:
 - culture
 - documentation
 - static code analysis
-author: Nikolaos Georgiou
 ---
 
 I recently joined a different team at work, working on a whole different project. For the past one to one and a half year, I did my bit in building up a culture in my old teams regarding code quality and the moral responsibility of a developer towards the codebase (also known as <strong>boy scout principle</strong>). Now, we have to start all over from scratch with the new team.

@@ -2,14 +2,12 @@
 layout: post
 title: Android SDK with Jenkins
 date: 2017-08-31 07:19:30.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Android
 - Jenkins
-author: Nikolaos Georgiou
 ---
 
 In this post I'm setting up a Jenkins server to be able to package and sign Android packages. This is done on a 64bit PC running Ubuntu 14.04 (trusty).

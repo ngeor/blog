@@ -2,12 +2,10 @@
 layout: post
 title: BlogEngine.NET MVC - Progress update
 date: 2013-03-13 08:39:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Here's a short update on what I've been working on. Time is a bit limited but I like to hack around in this project and that's what it's all about!

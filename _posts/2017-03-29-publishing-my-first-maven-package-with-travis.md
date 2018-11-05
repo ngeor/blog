@@ -2,7 +2,6 @@
 layout: post
 title: Publishing my first Maven package with Travis
 date: 2017-03-29 18:24:45.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - maven
 - Nexus
 - travis
-author: Nikolaos Georgiou
 ---
 
 A little bit more than a month ago, I created an <a href="{{ site.baseurl }}/2017/02/25/a-quickstart-maven-archetype-for-java-8.html">improved Maven archetype project</a>. Similar to the default quickstart archetype, but for Java 8 and with recent jUnit dependency. In order for someone to use it, they'd have to clone the repo, as I had not published it in Maven. After a bit of studying, I figured out what is needed to make the package public. More importantly, I implemented the process in Travis, so that a new version gets published automatically.

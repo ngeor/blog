@@ -2,12 +2,10 @@
 layout: post
 title: Combine subversion post-commit hooks with NAnt
 date: 2010-07-25 10:08:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Subversion offers a mechanism called <a href="http://svnbook.red-bean.com/en/1.4/svn.ref.reposhooks.post-commit.html">post-commit</a> hook that allows an executable file to be run on the subversion server after a successful commit has been made. Since I host my own home server, containing both this website and my own subersion server, I thought I could use this mechanism to automatically update some files on the website when a commit has been made. For example, if I commit some changes on a web page template, it would be nice if it would automatically be updated on the website and also be packaged as a zip file for visitors of the site to download.

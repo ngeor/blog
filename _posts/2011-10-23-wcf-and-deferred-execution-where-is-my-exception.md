@@ -2,12 +2,10 @@
 layout: post
 title: WCF and deferred execution - where is my Exception?
 date: 2011-10-23 17:00:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 A long time ago, I blogged about <a href="/2010/09/deferred-linq-queries-in-wcf-services" target="_blank">WCF and deferred LINQ queries</a> and some surprises that combination may have. Back then, our WCF service would crash inexplicably when the returning type of an operation would contain an enumerable whose evaluation was deferred until after the WCF operation was out of scope.

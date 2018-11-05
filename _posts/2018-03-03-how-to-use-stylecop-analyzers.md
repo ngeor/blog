@@ -2,7 +2,6 @@
 layout: post
 title: How to use StyleCop.Analyzers
 date: 2018-03-03 10:14:56.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - StyleCop
 - StyleCop.Analyzers
 - Visual Studio
-author: Nikolaos Georgiou
 ---
 
 I played a bit with StyleCop.Analyzers the other day and I wanted to share what I did. I'll be showing how to add a stylecop file, how to use the same rules across projects, how to create a custom ruleset file.

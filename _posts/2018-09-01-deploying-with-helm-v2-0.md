@@ -2,7 +2,6 @@
 layout: post
 title: Deploying with Helm v2.0
 date: 2018-09-01 08:00:48.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - continuous delivery
 - Helm
 - Kubernetes
-author: Nikolaos Georgiou
 ---
 
 In the series with Helm and Continuous Delivery nine months ago, I used <a href="{{ site.baseurl }}/2017/12/02/cd-with-helm-part-5-versioned-artifacts.html">helm to deploy the application to the kubernetes cluster</a>. To be able to do that from the CI server, I had to make a workaround. I had punched a hole in the cluster with a NodePort service for Tiller. This allows pretty much anyone to reach Tiller (the server side component of Helm) and interact with it. Great for a demo blog post, but not so great for security.

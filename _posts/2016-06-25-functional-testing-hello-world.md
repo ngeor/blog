@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing Hello World
 date: 2016-06-25 08:54:35.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -14,7 +13,6 @@ tags:
 - mocha
 - promises
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 Let's have a look at a first example of writing and running a functional test. This is going to be a very basic hello world example, but still it gives an opportunity of looking at the bare minimum usage of WebDriverIO and a first taste of asynchronous programming with promises.<!--more-->

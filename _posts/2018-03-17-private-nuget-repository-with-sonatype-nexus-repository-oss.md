@@ -2,14 +2,12 @@
 layout: post
 title: Private NuGet repository with Sonatype Nexus Repository OSS
 date: 2018-03-17 07:00:38.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Nexus
 - NuGet
-author: Nikolaos Georgiou
 ---
 
 In this post, I'm setting up a private NuGet repository using <a href="https://www.sonatype.com/nexus-repository-oss">Sonatype Nexus Repository OSS</a>.

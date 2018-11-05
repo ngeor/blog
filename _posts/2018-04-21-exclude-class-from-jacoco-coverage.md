@@ -2,7 +2,6 @@
 layout: post
 title: Exclude class from JaCoCo coverage
 date: 2018-04-21 12:40:20.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Quick Code Tips
@@ -10,7 +9,6 @@ tags:
 - JaCoCo
 - Java
 - maven
-author: Nikolaos Georgiou
 ---
 
 JaCoCo's <code>exclude</code> configuration works with classes, so the <code>.class</code> extension is relevant in specifying the path.

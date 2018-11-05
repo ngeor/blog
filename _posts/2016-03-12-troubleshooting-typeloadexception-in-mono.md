@@ -2,7 +2,6 @@
 layout: post
 title: Troubleshooting TypeLoadException in mono
 date: 2016-03-12 06:59:35.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - mono
 - troubleshooting
 - TypeLoadException
-author: Nikolaos Georgiou
 ---
 
 I don't do a lot of .NET programming these days. At work we deal mostly with JavaScript. However, C# is still the language I'm more fluent in and, also important, a language that I really like. That's why sometimes I like to code a bit in C# at home. That can be either on Windows or on a Mac with Mono. The problem with Mono is that things can always be a bit different and require some extra effort.<!--more-->

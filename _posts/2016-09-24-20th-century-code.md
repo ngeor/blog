@@ -2,12 +2,10 @@
 layout: post
 title: 20th Century Code
 date: 2016-09-24 13:15:13.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I spent the previous week migrating some old code I had laying around into GitHub. More specifically, I had a single git repository named "Legacy" that contained all sorts of projects and demos I had created over the years. It's difficult to find exact dates but I found a few that go as back as 1998, so I can justify the title of this blog post.

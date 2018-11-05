@@ -2,14 +2,12 @@
 layout: post
 title: Removing the image-tag.txt artifact
 date: 2017-12-29 09:37:12.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - blog-helm-sample
 - TeamCity
-author: Nikolaos Georgiou
 excerpt: Small update on replacing the image-tag.txt artifact with the implicit build.number
   parameter.
 ---

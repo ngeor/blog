@@ -2,12 +2,10 @@
 layout: post
 title: MSBuild Community Tasks NUnit and Mono
 date: 2013-11-20 21:27:28.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 As an experiment, I modified an NUnit test project to automatically test itself after the build process. This way, the unit tests become an integral part of the build; just by building in Visual Studio you'll know if you've broken a unit test.

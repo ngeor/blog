@@ -2,14 +2,12 @@
 layout: post
 title: WCF with IIS and multiple http bindings
 date: 2011-03-04 19:05:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - ".NET"
 - WCF
-author: Nikolaos Georgiou
 ---
 
 If you're writing a WCF service using .NET 3.5 and the service is hosted in IIS, there is a situation where you will get this strange error message:

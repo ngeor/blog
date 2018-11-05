@@ -2,7 +2,6 @@
 layout: post
 title: Adding code coverage with nyc
 date: 2017-12-29 19:07:25.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - Docker
 - nyc
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In this post, I'll add code coverage to the build pipeline and configure TeamCity to break the build if the code coverage drops.

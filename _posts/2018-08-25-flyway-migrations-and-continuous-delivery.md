@@ -2,14 +2,12 @@
 layout: post
 title: Flyway migrations and Continuous Delivery
 date: 2018-08-25 10:41:38.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Flyway
 - Java
-author: Nikolaos Georgiou
 ---
 
 Flyway is a tool that allows you to version your database schema changes. In this post I explain a bit how we use it at work (so far), in the context of automated deployments and GitHub Flow branching model.

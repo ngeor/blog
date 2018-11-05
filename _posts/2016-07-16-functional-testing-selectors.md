@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Selectors
 date: 2016-07-16 09:33:49.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - functional tests
 - JavaScript
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 So far, we have essentially <a href="/2016/07/functional-testing-first-steps-towards-a-framework/">only one test</a>, a test that verifies the title of the browser. Let's try to make a more interesting test. We'll need to interact with elements on the page and simulate the user's journey.<!--more-->

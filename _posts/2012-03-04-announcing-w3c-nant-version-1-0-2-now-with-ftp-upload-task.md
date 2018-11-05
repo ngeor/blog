@@ -2,12 +2,10 @@
 layout: post
 title: Announcing w3c-nant version 1.0.2 - now with FTP upload task!
 date: 2012-03-04 11:54:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I added a new NAnt task in the <a href="https://sourceforge.net/projects/w3c-nant/" target="_blank">w3c-nant</a> library to allow FTP uploads. Using the same <a href="http://nant.sourceforge.net/release/0.91/help/types/fileset.html" target="_blank">fileset</a> mechanism as the <a href="http://nant.sourceforge.net/release/0.91/help/tasks/copy.html" target="_blank">copy</a> task, you can create powerful scripts to automate deploying in a remote FTP server. Or at least that's what I'm using it for!

@@ -2,12 +2,10 @@
 layout: post
 title: View .NET assembly version on Ubuntu
 date: 2014-08-03 06:32:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 When you want to view the assembly version of a .NET assembly in Windows, you just right click the DLL and view its properties. Or, you just hover the mouse over the file and the version number will be shown in the tooltip. In Linux, things aren’t as easy.<!--more-->

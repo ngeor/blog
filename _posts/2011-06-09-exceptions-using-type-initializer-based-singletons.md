@@ -2,12 +2,10 @@
 layout: post
 title: Exceptions using type initializer based singletons
 date: 2011-06-09 21:59:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 A popular web page describing how to implement a singleton in C# is <a href="http://www.yoda.arachsys.com/csharp/singleton.html" target="_blank">this one</a>, where several ways to implement a singleton are discussed. I usually pick the last option, which, according to the author of that page, has the most benefits. The author goes on to mention some problems that can occur if an exception is thrown in the constructor, but I never paid attention to that until recently.

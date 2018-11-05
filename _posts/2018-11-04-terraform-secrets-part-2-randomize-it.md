@@ -11,7 +11,6 @@ tags:
 - Helm
 - Kubernetes
 - Security
-author: Nikolaos Georgiou
 ---
 
 In a [previous post]({{ site.baseurl }}{% post_url 2018-10-06-terraform-secrets

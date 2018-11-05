@@ -2,7 +2,6 @@
 layout: post
 title: Making a habit
 date: 2016-04-02 10:03:07.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Notes
@@ -16,7 +15,6 @@ tags:
 - running
 - streak
 - trackers
-author: Nikolaos Georgiou
 ---
 
 Some time ago, I stumbled upon this <a href="https://medium.com/@producthunt/32-of-the-best-productivity-tools-you-ll-ever-need-49fb7a676bcc" target="_blank" rel="noopener">article regarding productivity tools</a> by ProductHunt. It's a long list, but I noticed the first section "Habit and Goal Trackers". The term habit tracker was new to me.<!--more-->

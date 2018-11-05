@@ -2,12 +2,10 @@
 layout: post
 title: Syncing Sublime Text 3 with Git
 date: 2015-08-17 16:36:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I use Sublime Text 3 at home and at work. I use it on many computers and platforms. In this kind of setup, maintaining a consistent configuration across multiple installations can be a challenge. It just doesn’t feel right, when you switch to work on a different laptop and suddenly some package is missing here or some setting is different there. You want to simply have the same settings everywhere, without spending too much time on configuration.<!--more-->

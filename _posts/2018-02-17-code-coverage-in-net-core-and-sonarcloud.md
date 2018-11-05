@@ -2,7 +2,6 @@
 layout: post
 title: Code coverage in .NET Core and SonarCloud
 date: 2018-02-17 08:39:51.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - OpenCover
 - ReportGenerator
 - SonarCloud
-author: Nikolaos Georgiou
 ---
 
 In this post, I'm creating a code coverage report for a .NET Core project. I'm also using SonarCloud to analyze the project's quality.

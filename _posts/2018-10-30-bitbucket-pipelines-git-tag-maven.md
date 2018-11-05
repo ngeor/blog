@@ -11,7 +11,6 @@ tags:
 - Bitbucket Cloud
 - Bitbucket Pipelines
 - bash
-author: Nikolaos Georgiou
 ---
 I wrote a small script today that I wanted to share. It runs for Maven builds in
 Bitbucket Pipelines and it creates a new git tag based on the version in the

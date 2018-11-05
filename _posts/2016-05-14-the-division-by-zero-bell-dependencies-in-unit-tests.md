@@ -2,7 +2,6 @@
 layout: post
 title: The division by zero bell - Dependencies in unit tests
 date: 2016-05-14 08:00:38.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ series:
 tags:
 - JavaScript
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 We left our calculator <a href="/2016/05/what-is-code-coverage/">in the previous post</a> in a decent state, being able to do the four basic mathematical operations. In the special case of division by zero, we want the calculator to make a noise like a bell. Let's see what we can do about this.<!--more-->

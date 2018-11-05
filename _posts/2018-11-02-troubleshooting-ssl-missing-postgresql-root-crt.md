@@ -11,7 +11,6 @@ tags:
 - PostgreSQL
 - SSL
 - Azure
-author: Nikolaos Georgiou
 ---
 
 I run into a problem today trying to connect to an Azure PostgreSQL database.

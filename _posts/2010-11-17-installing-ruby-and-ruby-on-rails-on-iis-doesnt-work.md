@@ -2,12 +2,10 @@
 layout: post
 title: Installing Ruby and Ruby on Rails on IIS - Doesn't work
 date: 2010-11-17 11:41:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I tried to see if it's possible to install the latest Ruby on Rails on IIS 7.0. I didn't manage to do it and the reason is that there is something broken in the fast cgi ruby gem.

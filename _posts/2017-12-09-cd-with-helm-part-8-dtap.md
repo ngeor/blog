@@ -13,7 +13,6 @@ tags:
 - Helm
 - Kubernetes
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In the series so far, we have build a CI pipeline that produces a Docker image and a Helm chart. They are linked together with a unique version, allowing us to use Helm to deploy any feature branch we want. Now we'll see how to implement a traditional DTAP and use Helm to deploy whatever, wherever.

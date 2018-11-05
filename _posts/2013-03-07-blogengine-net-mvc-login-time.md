@@ -2,14 +2,12 @@
 layout: post
 title: BlogEngine.NET MVC - Login time
 date: 2013-03-07 09:11:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - BlogEngine.NET MVC
 - pet project
-author: Nikolaos Georgiou
 ---
 
 It's not difficult to implement a basic login system. BlogEngine.NET comes with its own membership and roles providers, so all we need to do is create a controller that uses the standard Membership features of .NET.<!--more-->

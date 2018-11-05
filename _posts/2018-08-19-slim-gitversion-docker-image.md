@@ -2,14 +2,12 @@
 layout: post
 title: Slim GitVersion Docker image
 date: 2018-08-19 08:47:04.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Docker
 - GitVersion
-author: Nikolaos Georgiou
 ---
 
 In a previous post, I wrote about <a href="{{ site.baseurl }}/2017/12/19/semantic-versioning-with-gitversion.html">GitVersion</a>. GitVersion is a tool which solves semantic versioning of a git repository in its own way. With GitVersion, the version of any git repository is a pure function of its state, derived by tags, branches and commit messages.

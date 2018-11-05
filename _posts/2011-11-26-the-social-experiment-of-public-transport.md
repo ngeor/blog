@@ -2,12 +2,10 @@
 layout: post
 title: The social experiment of public transport
 date: 2011-11-26 07:52:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Last night I was going home with the bus. A small child, probably around 2-3 years old was crying really loud, laying on the ground at the feet of his mother. That woman was also young, less than 30 years old, and didn't react to the child's non stop crying, probably because she didn't want to spoil him (or maybe she didn't care, who knows). Well the child was crying his heart out louder and louder so after 2-3 minutes of that, some guy who was standing close by screamed really loud at the baby! Everybody in the bus turned around to see what's going on.

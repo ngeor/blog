@@ -2,7 +2,6 @@
 layout: post
 title: How to deploy a smashing dashboard to AWS Elastic Beanstalk with Docker
 date: 2017-05-09 19:53:13.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - Docker
 - Elastic Beanstalk
 - smashing
-author: Nikolaos Georgiou
 ---
 
 So, <a href="{{ site.baseurl }}/2017/05/08/how-to-build-a-smashing-dashboard.html">in the previous post</a> we created a fancy dashboard using the smashing framework. Let's see how we can deploy our dashboard to AWS Elastic Beanstalk using Docker.

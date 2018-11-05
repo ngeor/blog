@@ -2,7 +2,6 @@
 layout: post
 title: How to build a smashing dashboard
 date: 2017-05-08 20:16:45.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - ruby
 - smashing
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 An information dashboard is a way to visualize and share information within a team about things that are important. You can setup a big monitor showing live updates about build statuses, open jira issues, a sprint burndown graph, the health of your applications on production, and so on. Having this information visible is a way to keep it on the back of your head (out of sight, out of mind). It also shows to people outside your team what matters to you.

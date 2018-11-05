@@ -2,12 +2,10 @@
 layout: post
 title: BlogEngine.NET MVC - Posts and Pages
 date: 2013-03-09 09:18:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 In the latest commit on BlogEngine.NET MVC, which is <a href="https://blogengine.codeplex.com/SourceControl/network/forks/NikolaosGeorgiou/blogenginemvc">always available here</a>, the following have been added:

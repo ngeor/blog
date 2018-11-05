@@ -2,12 +2,10 @@
 layout: post
 title: Getting the client's timezone in ASP.NET
 date: 2010-12-01 20:03:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 The client (browser) doesn't send any information to the server regarding the client's timezone. It's just not supported. One might try to guess the timezone from the culture or even try to guess it from this new geo-location feature. Maybe in the future there will be a new header like "X-Client-Timezone: UTC+1" but for the time being a good approach is the following.

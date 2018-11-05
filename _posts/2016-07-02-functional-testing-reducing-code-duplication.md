@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Reducing Code Duplication
 date: 2016-07-02 07:53:51.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - JavaScript
 - mocha
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 Let's <a href="/2016/06/functional-testing-hello-world/">continue our functional testing</a> examples by adding a few more tests. This will demonstrate why we need to start thinking about the structure of our tests and why we should be developing a framework that will allow us to write less code.

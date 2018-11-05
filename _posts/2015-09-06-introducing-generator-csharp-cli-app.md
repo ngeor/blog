@@ -2,7 +2,6 @@
 layout: post
 title: Introducing generator-csharp-cli-app
 date: 2015-09-06 07:30:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - generator-csharp-cli-app
 - pet project
 - yeoman
-author: Nikolaos Georgiou
 ---
 
 In the weekend I experimented with <a href="http://yeoman.io/">Yeoman</a> and I created my first generator. This is also the first time I publish a package to the official npm repository, so double fun.<!--more-->

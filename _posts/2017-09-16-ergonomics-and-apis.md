@@ -2,13 +2,11 @@
 layout: post
 title: Ergonomics and APIs
 date: 2017-09-16 08:55:13.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - ergonomics
-author: Nikolaos Georgiou
 ---
 
 According to my Google search, ergonomics is the study of people's efficiency in their working environment. The developer's working environment consists of the physical world but also the virtual world. In the physical world you desire a quiet office, good desk and chair, proper lighting, the best tools your budget can buy, etc. In the virtual world, you have software tools, IDEs, etc. But when writing code, the working environment also consists of the APIs you code against, as well as the code you have written for yourself.

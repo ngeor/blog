@@ -2,7 +2,6 @@
 layout: post
 title: Using wget to detect broken links
 date: 2016-01-24 09:43:45.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - broken links
 - Metablog
 - wget
-author: Nikolaos Georgiou
 ---
 
 To make sure I didn't forget any images in the <a href="/2016/01/23/migrated-back-to-wordpress.html">blog migration</a>, I used wget to detect broken links. Better safe than sorry! Simply run:

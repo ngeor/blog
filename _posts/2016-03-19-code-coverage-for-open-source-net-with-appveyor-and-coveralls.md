@@ -2,7 +2,6 @@
 layout: post
 title: Code coverage for open source .NET with AppVeyor and Coveralls
 date: 2016-03-19 09:11:24.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - Coveralls
 - mono
 - OpenCover
-author: Nikolaos Georgiou
 ---
 
 Code coverage is a useful metric of the quality of your code. It shows how much code is being covered by unit tests. It doesn't necessarily mean that the unit tests are well written, but no metric can probably tell you that. However, aiming for a specific code coverage, let's say 70%, is a good practice, because failing to meet the goal might mean somebody didn't write enough unit tests.

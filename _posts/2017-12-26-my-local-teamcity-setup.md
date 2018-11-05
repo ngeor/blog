@@ -2,7 +2,6 @@
 layout: post
 title: My local TeamCity setup
 date: 2017-12-26 20:46:29.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - Docker
 - Docker Toolbox
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In my recent blog posts I've played a lot with TeamCity. Often, when I want to blog about something, I end up doing some irrelevant yak shaving, which sometimes is also interesting. In this post I'll show how I'm currently setting up TeamCity locally on my laptop.

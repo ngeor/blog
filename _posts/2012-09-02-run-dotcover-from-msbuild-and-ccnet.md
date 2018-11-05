@@ -2,12 +2,10 @@
 layout: post
 title: Run dotCover from msbuild and ccnet
 date: 2012-09-02 07:52:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 TeamCity is a very nice tool that I use at home. Unfortunately the free license allows up to 20 configurations. That's why I'm experimenting also with another free tool, CruiseControl. It's definitely not as easy as TeamCity, you have to edit (which means learn) an XML file that the server picks up. In general, it probably supports what TeamCity supports, but you have to make everything yourself with a lot of work. Then again, it's completely free.

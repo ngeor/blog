@@ -2,7 +2,6 @@
 layout: post
 title: Linting with Checkstyle
 date: 2017-03-12 18:15:26.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -14,7 +13,6 @@ tags:
 - SonarQube
 - static code analysis
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 Code is going to be written once but read many times. A consistent coding style across the entire code base is important to increase readability and maintainability. Luckily, there are tools that can help to define and enforce such styling rules. From mere cosmetics up to nasty code smells, static code analysis can help increase the quality of your code. I wrote some posts on <a href="{{ site.baseurl }}/2016/02/07/javascript-static-code-analysis.html">static code analysis in JavaScript</a> a bit more than a year ago (which in the JavaScript world means the tools are now different, ESLint instead of JSCS/JSHint). In this post we'll see the Checkstyle tool in the Java world, how to use it with TeamCity and IntelliJ and finally a few words about SonarQube.

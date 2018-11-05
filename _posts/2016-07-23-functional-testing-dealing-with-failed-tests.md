@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Dealing with failed tests
 date: 2016-07-23 09:00:36.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -16,7 +15,6 @@ tags:
 - mocha
 - Visual Studio Code
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 In the <a href="/2016/07/functional-testing-selectors/">previous post</a>, we wrote some functional tests and we encountered our first failing test. Let's see how we can go about investigating these failures, both on a developer machine and during continuous integration.<!--more-->

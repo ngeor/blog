@@ -2,7 +2,6 @@
 layout: post
 title: What is a unit test and why should I care?
 date: 2016-04-16 08:08:45.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ series:
 - Unit Tests
 tags:
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 So, let's start with some basics. What is a unit test? A unit test is a piece of code that validates the expected behavior of a unit in isolation. I guess the next question is, what is a unit? A unit is the smallest piece of code in a given programming language. Typically that is a function or a class method. Let's see it with an example.

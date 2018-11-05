@@ -2,7 +2,6 @@
 layout: post
 title: On git branching models
 date: 2017-09-23 09:26:34.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -13,7 +12,6 @@ tags:
 - git
 - Git Flow
 - GitHub Flow
-author: Nikolaos Georgiou
 ---
 
 Usually, when you work with a version control system like git, development happens in multiple branches. It's funny to see people's faces when you tell them that the author of Continuous Delivery, Dave Farley, advocates "no branches". I had that same surprised face myself the first time I heard that concept. But, so far, I haven't really worked somewhere where no branches were used.

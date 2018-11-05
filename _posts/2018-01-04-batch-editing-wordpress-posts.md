@@ -2,7 +2,6 @@
 layout: post
 title: Batch editing WordPress posts
 date: 2018-01-04 09:08:39.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - oauth
 - python
 - wordpress
-author: Nikolaos Georgiou
 ---
 
 TL;DR: I had some fun hacking a tiny tool to batch edit posts in my blog in order to fix syntax highlighting of code blocks.

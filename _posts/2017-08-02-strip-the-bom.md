@@ -2,7 +2,6 @@
 layout: post
 title: Strip the BOM
 date: 2017-08-02 07:03:25.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - gulp
 - nodejs
 - Visual Studio
-author: Nikolaos Georgiou
 ---
 
 The <a href="https://en.wikipedia.org/wiki/Byte_order_mark" target="_blank" rel="noopener">byte order mark</a>, or BOM for short, is a special Unicode character that can be used to indicate that a file's contents is Unicode. Visual Studio is one of those editors that like to use the BOM when saving UTF-8 files. There are a few problems with the BOM. It can break shell scripts, as it precedes the <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank" rel="noopener">shebang</a>. It can cause unnecessary diff noise in git history, just like any other invisible character mismatch (spaces vs tabs, different line endings, lack of EOL at EOF). In short, I don't like it and I'd like to get rid of it.

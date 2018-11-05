@@ -2,13 +2,11 @@
 layout: post
 title: Pomodoro style
 date: 2010-11-16 09:14:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - pomodoro
-author: Nikolaos Georgiou
 ---
 
 <a href="#pomodoro-style-en"><em>Skip to English translation</em></a>

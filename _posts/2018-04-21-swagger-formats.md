@@ -2,13 +2,11 @@
 layout: post
 title: Swagger Formats
 date: 2018-04-21 16:02:30.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Quick Code Tips
 tags:
 - swagger
-author: Nikolaos Georgiou
 ---
 
 Some handy format combinations with Swagger:

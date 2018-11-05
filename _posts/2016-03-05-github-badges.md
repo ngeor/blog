@@ -2,7 +2,6 @@
 layout: post
 title: GitHub badges
 date: 2016-03-05 07:57:36.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -16,7 +15,6 @@ tags:
 - open source
 - shields.io
 - travis
-author: Nikolaos Georgiou
 ---
 
 You may have noticed that a lot of GitHub projects have some badges in their homepage, showing for example the status of their latest build. For a node (JavaScript) project, you can use a few more badges to show the world that everything is in order.<!--more-->

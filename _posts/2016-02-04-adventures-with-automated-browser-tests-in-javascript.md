@@ -2,7 +2,6 @@
 layout: post
 title: Adventures with automated browser tests in JavaScript
 date: 2016-02-04 20:49:24.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -17,7 +16,6 @@ tags:
 - selenium
 - technical debt
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 This is a long post, be advised! It goes through the adventures we have had at work with automated browser tests in JavaScript. It has been a journey full of challenges and knowledge build up, a journey that still goes on!<!--more-->

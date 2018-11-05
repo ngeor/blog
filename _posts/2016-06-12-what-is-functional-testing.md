@@ -2,7 +2,6 @@
 layout: post
 title: What is functional testing?
 date: 2016-06-12 20:50:05.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - functional tests
 - JavaScript
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 In the previous series of posts, we've explored the basics of <a href="/unit-tests/">unit testing</a> and the principles around it. When developing websites, there is another important type of testing: functional testing (also known as browser testing).<!--more-->

@@ -2,7 +2,6 @@
 layout: post
 title: Using swagger code generator with maven
 date: 2018-04-21 20:07:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Quick Code Tips
@@ -11,7 +10,6 @@ tags:
 - maven
 - Spring Boot
 - swagger
-author: Nikolaos Georgiou
 ---
 
 Following up the <a href="{{ site.baseurl }}/2018/04/15/building-a-rest-api-with-swagger-and-spring-boot.html">previous post about swagger</a>, in this post I'm using the maven plugin version of swagger code generator.

@@ -2,7 +2,6 @@
 layout: post
 title: Worked fine in DEV, OPS problem now
 date: 2016-11-20 09:11:50.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -10,7 +9,6 @@ tags:
 - culture
 - devops
 - technical debt
-author: Nikolaos Georgiou
 ---
 
 During the past year at work, we did a complete rewrite of our websites from scratch. Not only did we aim to build a mobile-first responsive website with high performance, we also tried to do it with continuous integration and continuous delivery in mind. All that on a proprietary platform not built with CI in mind. This was a very big challenge, which involved a culture change in a lot of people. Unfortunately, the project had a hard deadline. Things were left out. Corners were cut.

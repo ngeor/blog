@@ -9,7 +9,6 @@ tags:
 - Terraform
 - Helm
 - bash
-author: Nikolaos Georgiou
 ---
 Since the beginning of this year, I've been using [Terraform] to manage
 infrastructure. I use it with both AWS and Azure and so far I haven't

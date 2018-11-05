@@ -2,14 +2,12 @@
 layout: post
 title: ScrumCard
 date: 2010-06-05 20:49:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - ScrumCard
 - Windows Mobile Phone
-author: Nikolaos Georgiou
 ---
 
 I made my first "hello world" Windows Mobile Phone application today. It's called ScrumCard. ScrumCard is a simple mobile phone application that simulates poker planning for Scrum. So if you forgot your poker planning cards, you can use this app to show your team your estimate of the story points.

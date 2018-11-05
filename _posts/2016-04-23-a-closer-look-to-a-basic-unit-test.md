@@ -2,7 +2,6 @@
 layout: post
 title: A closer look to a basic unit test
 date: 2016-04-23 08:41:59.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - JavaScript
 - mocha
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 In the <a href="/2016/04/what-is-a-unit-test-and-why-should-i-care/">previous post</a> we started writing a basic Calculator class and added the first unit test. Let's have a closer look at that unit test and extend our calculator with more features.

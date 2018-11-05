@@ -2,12 +2,10 @@
 layout: post
 title: Keepass - open source without VCS?
 date: 2015-12-17 07:30:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 For reasons that are not important, I have managed to be dependent on two different password managers: <a href="http://keepass.info/">Keepass</a> and <a href="https://www.keepassx.org/">KeepassX</a>. Wanting to get rid of one of them, I started looking around in their websites.<!--more-->

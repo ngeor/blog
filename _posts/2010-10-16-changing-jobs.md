@@ -2,12 +2,10 @@
 layout: post
 title: Changing Jobs
 date: 2010-10-16 08:21:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 <a href="#changing-jobs-en">Skip to the English translation of this post.</a>

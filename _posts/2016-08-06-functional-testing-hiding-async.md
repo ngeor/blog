@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Hiding Async
 date: 2016-08-06 09:00:31.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -17,7 +16,6 @@ tags:
 - mocha
 - promises
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 In the previous post, we explored the Page Object pattern and rewrote our tests to use this technique. Sometimes, it can be that the tests appear to be a bit verbose due to the usage of promises. Additionally, promises and asynchronous programming in general can be somewhat confusing to developers. Let's see some ways of making the tests shorter and easier to read.

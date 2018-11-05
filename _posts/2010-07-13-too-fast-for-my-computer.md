@@ -2,13 +2,11 @@
 layout: post
 title: Too fast for my computer
 date: 2010-07-13 18:29:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - funny
-author: Nikolaos Georgiou
 ---
 
 I've been working on the same project since January and up to recently we had been using Visual Studio 2008 with ReSharper 4.5. A few weeks ago, we upgraded to Visual Studio 2010 and ReSharper 5. I don't know which one is to blame, but the IDE has become a bit slower. Two features in particular are really annoying:

@@ -2,7 +2,6 @@
 layout: post
 title: 'Kafka with Docker: A Docker introduction'
 date: 2017-03-25 08:47:07.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - Docker Toolbox
 - Kafka
 - Kafka Tool
-author: Nikolaos Georgiou
 ---
 
 Using Kafka on your local development machine adds another level of complexity. You need to manage two extra services, Apache ZooKeeper and Apache Kafka. In a previous post, I mentioned the possibility of creating <a href="{{ site.baseurl }}/2017/03/04/kafka-windows-service-wrapper.html">a Windows service wrapper for Kafka</a>, so that managing is a bit easier. In this post, we'll have a look at Docker and how we can use it to solve the same problem in a different way. I am new to Docker, so this is a very basic post, more like an introduction to Docker.<!--more-->

@@ -2,12 +2,10 @@
 layout: post
 title: IIS 7 gives 404.17 error with svc WCF services
 date: 2011-07-02 22:07:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 If you try to access a svc service hosted in IIS and you get the following error:

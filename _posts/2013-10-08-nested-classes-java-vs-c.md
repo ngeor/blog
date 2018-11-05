@@ -2,12 +2,10 @@
 layout: post
 title: 'Nested classes: Java vs C#'
 date: 2013-10-08 19:38:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 So I have started reading up on Java. Getting reacquainted with that old friend. Playing with swing components on the UI editor of NetBeans. Reliving the horror of having to declare every exception your method might throw. The ugliness of the XML DOM API. object.setNumber(object.getNumber() + 1) and so on and so on.

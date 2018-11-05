@@ -2,12 +2,10 @@
 layout: post
 title: w3c-nant version 1.2.0 released
 date: 2013-02-16 16:14:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Version 1.2.0 of w3c-nant was released today. This version contains some improvements submitted by Rob Richardson:

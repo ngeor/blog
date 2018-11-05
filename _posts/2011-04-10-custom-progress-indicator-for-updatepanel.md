@@ -2,12 +2,10 @@
 layout: post
 title: Custom progress indicator for UpdatePanel
 date: 2011-04-10 07:43:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 In ASP.NET the UpdatePanel can help you create an AJAX experience very fast and easy. It is typical to provide some visual element in the page that indicates that the AJAX request is been processed. This can be an animated image, a simple text message, a pretty modal box with a nice shadow effect - anything that does the trick and tells the user that the page is not broken but it's busy.

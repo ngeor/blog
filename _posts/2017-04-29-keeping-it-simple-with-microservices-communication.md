@@ -2,7 +2,6 @@
 layout: post
 title: Keeping it simple with microservices communication
 date: 2017-04-29 13:10:17.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -15,7 +14,6 @@ tags:
 - Kafka
 - SNS
 - SQS
-author: Nikolaos Georgiou
 ---
 
 The term microservice has been getting a lot of hype and attention. I have to admit that I fail to understand what's the big deal about it. The best practices about microservices are similar to the ones we should apply to everyday software design. Avoid tight coupling. Single responsibility principle. Keeping things simple. Even those principles go back to the old <a href="https://en.wikipedia.org/wiki/Unix_philosophy" target="_blank" rel="noopener noreferrer">Unix mantra</a> of <strong>doing one job and doing it well</strong> (and that's from 1978). And even that could in turn be labelled just "common sense".

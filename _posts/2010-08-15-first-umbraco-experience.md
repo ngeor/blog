@@ -2,12 +2,10 @@
 layout: post
 title: First Umbraco experience
 date: 2010-08-15 17:40:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Today I played a bit with Umbraco for the first time. I mostly focused on its multilingual support, which is a feature I usually expect from a CMS.

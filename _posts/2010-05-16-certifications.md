@@ -2,13 +2,11 @@
 layout: post
 title: Certifications
 date: 2010-05-16 09:12:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - certifications
-author: Nikolaos Georgiou
 ---
 
 Last March I passed my first exam, Microsoft .NET Framework 2.0 - Web-Based Client Development, also known as <a href="http://www.microsoft.com/learning/en/us/exam.aspx?ID=70-528">070-528</a>. Having worked many years in Athens with ASP.NET web applications, I didn't even study; I just made an appointment with the test center, went there, and passed the exam.

@@ -13,7 +13,6 @@ tags:
 - Helm
 - Kubernetes
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In a previous post, we had taken a shortcut: we had TeamCity running inside Kubernetes, sharing its Docker daemon. That trick allowed Kubernetes to access the Docker images produced by our builds. In this post, we'll setup our own Docker registry and publish Docker images there.

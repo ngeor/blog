@@ -2,7 +2,6 @@
 layout: post
 title: Debugging Docker with IntelliJ IDEA
 date: 2017-03-26 07:08:27.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - Java
 - Kafka
 - maven
-author: Nikolaos Georgiou
 ---
 
 In this post we'll create a small Java application, run it inside a Docker container, and use IntelliJ IDEA to debug. The source code is available <a href="https://github.com/ngeor/kafka-playground" target="_blank">here</a>. This is a rather large post, so take your time.

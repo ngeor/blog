@@ -2,12 +2,10 @@
 layout: post
 title: BuzzStats - A new pet project
 date: 2010-11-27 19:57:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 This week I've been very busy with my new pet project, BuzzStats.

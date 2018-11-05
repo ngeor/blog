@@ -12,7 +12,6 @@ tags:
 - plugin
 - microservices
 - api gateway
-author: Nikolaos Georgiou
 ---
 
 Consider the following scenario. You have a few microservices and they're all

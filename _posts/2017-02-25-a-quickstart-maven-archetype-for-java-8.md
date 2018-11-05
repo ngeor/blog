@@ -2,7 +2,6 @@
 layout: post
 title: A quickstart Maven archetype for Java 8
 date: 2017-02-25 12:08:38.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - archetype
 - Java
 - maven
-author: Nikolaos Georgiou
 ---
 
 As a Maven rookie, I often use the quickstart archetype from Maven when I want to create a new Maven project. Unfortunately, that archetype is a bit outdated, which means I have to tweak some details before I can actually use it. I guess I got a bit tired of this and I thought I could create my own archetype that is ready to use.

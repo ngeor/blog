@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon mocks
 date: 2016-06-04 08:00:24.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - JavaScript
 - sinon
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 In the previous posts we had a look at sinon <a href="/2016/05/using-sinon-spies/">spies</a> and <a href="/2016/05/using-sinon-stubs/">stubs</a>. There is one more technique we can use in order to orchestrate our test dependencies: mocks.

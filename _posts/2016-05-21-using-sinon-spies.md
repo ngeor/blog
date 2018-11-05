@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon spies
 date: 2016-05-21 08:15:53.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - JavaScript
 - sinon
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 In the <a href="/2016/05/the-division-by-zero-bell-dependencies-in-unit-tests/">previous post</a>, we implemented a new feature for our calculator: it makes a bell sound when you divide by zero. The bell is a simple function that the calculator calls and it is provided as a constructor dependency. We wrote a unit test for this as well, but the code for that is a bit verbose. Let's see how we can use a mocking library like sinon to reduce and standardize the testing code.<!--more-->

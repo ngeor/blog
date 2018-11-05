@@ -2,7 +2,6 @@
 layout: post
 title: Kafka Windows Service Wrapper
 date: 2017-03-04 06:36:16.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - Kafka
 - Windows Service
 - ZooKeeper
-author: Nikolaos Georgiou
 ---
 
 TL;DR: I created a wrapper for Apache Kafka so that it can be installed as a Windows Service. In this post I also describe a bit what Kafka is.

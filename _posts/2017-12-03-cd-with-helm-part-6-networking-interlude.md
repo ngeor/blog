@@ -13,7 +13,6 @@ tags:
 - Helm
 - Kubernetes
 - networks
-author: Nikolaos Georgiou
 ---
 
 Before we continue with setting up the multiple environments that comprise our DTAP, I'd like to take a break and discuss a bit about networks. This way we can understand better what is going on inside and outside of Kubernetes.

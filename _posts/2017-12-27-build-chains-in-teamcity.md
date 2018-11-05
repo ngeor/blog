@@ -2,14 +2,12 @@
 layout: post
 title: Build chains in TeamCity
 date: 2017-12-27 15:41:25.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - blog-helm-sample
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In a <a href="{{ site.baseurl }}/2017/12/09/cd-with-helm-part-8-dtap.html">previous post</a>, I had configured a deployment build configuration in TeamCity. I had mentioned back then that it's possible to set it up in a different way, which makes it is easier to visualize the deployment pipeline across all environments. In this post, I'll modify that deployment pipeline to use snapshot dependencies and project templates.

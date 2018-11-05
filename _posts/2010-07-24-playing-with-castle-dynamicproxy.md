@@ -2,12 +2,10 @@
 layout: post
 title: Playing with Castle DynamicProxy
 date: 2010-07-24 21:09:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 If you've ever used an ORM tool, such as NHibernate or the Entity Framework, you'll probably have noticed that their goal is to be as unobtrusive as possible. They say, and I agree, that you shouldn't be forced to have your business objects inherit from strange classes like MarshalByRefObject, or to annotate your properties with all sorts of ORM specific attributes. In that aspect, I find NHibernate to be rather clean.

@@ -2,12 +2,10 @@
 layout: post
 title: w3c-nant version 1.1.1 released
 date: 2012-06-23 09:31:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Short after releasing version 1.1.0, a new bug-fix version is been released.

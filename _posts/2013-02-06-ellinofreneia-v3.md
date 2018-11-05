@@ -2,13 +2,11 @@
 layout: post
 title: Ακόμα πιο νέο ανεπίσημο podcast για Ελληνοφρένεια
 date: 2013-02-06 23:36:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Greek
 tags:
 - Ελληνοφρένεια
-author: Nikolaos Georgiou
 ---
 
 <del datetime="2017-01-03T12:08:50+00:00">Διαθέσιμο εδώ: /ellinofreneia/rssnew.xml</del>

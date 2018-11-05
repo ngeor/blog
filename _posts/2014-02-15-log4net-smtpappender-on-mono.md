@@ -2,12 +2,10 @@
 layout: post
 title: log4net SmtpAppender on mono
 date: 2014-02-15 08:19:10.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I have some problems with the SmtpAppender of log4net on mono. I couldn't figure out what was going wrong, it just wasn't sending any e-mails.<!--more-->

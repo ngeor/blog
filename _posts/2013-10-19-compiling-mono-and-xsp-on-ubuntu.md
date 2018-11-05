@@ -2,12 +2,10 @@
 layout: post
 title: Compiling Mono and XSP on Ubuntu
 date: 2013-10-19 13:12:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 For future reference, this is what you need to do in order to install <a href="http://www.mono-project.com/">Mono</a> and <a href="http://www.mono-project.com/ASP.NET">XSP</a> on <a href="http://www.ubuntu.com/download/server">Ubuntu Server 12.04.3 LTS x64</a>. This is about a completely blank installation, where only the SSH server role was selected during the installation of the OS.

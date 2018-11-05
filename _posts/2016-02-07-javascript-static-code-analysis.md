@@ -2,7 +2,6 @@
 layout: post
 title: JavaScript Static Code Analysis
 date: 2016-02-07 07:07:32.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -15,7 +14,6 @@ tags:
 - maintainability
 - readability
 - static code analysis
-author: Nikolaos Georgiou
 ---
 
 Reading code is hard. It's often difficult to understand what the developer was trying to express when he was writing that function. If you keep your old projects around, go ahead and open them. You'll probably struggle to read even your own code. It might even look as if somebody else wrote it.<!--more-->

@@ -7,7 +7,6 @@ categories:
 - Tech Notes
 tags:
 - code review
-author: Nikolaos Georgiou
 ---
 In this post, I'm describing some do's and dont's about code reviews. I'm not
 focusing on the technical side, which depends on the technology stack, but on

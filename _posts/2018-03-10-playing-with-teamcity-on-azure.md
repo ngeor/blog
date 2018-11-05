@@ -2,7 +2,6 @@
 layout: post
 title: Playing with TeamCity on Azure
 date: 2018-03-10 11:57:38.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - git
 - MSBuild
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 I spent the past two days playing with setting up TeamCity on Azure. This is just a poc more than anything else, but it's always fun to do something new. I had to fiddle about with some things that didn't work as expected, so here are some notes to remember what I did.

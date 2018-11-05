@@ -2,12 +2,10 @@
 layout: post
 title: Greeks in space!
 date: 2011-02-27 10:41:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 I just got a video from an event in Paris that shows the Greek vice president of the government [*] been kicked out by several Greek protesters. A few days ago, in Berlin, the Greek prime minister had also troubles with Greek demonstrators that interrupted his speech. I think the one place Greeks haven't demonstrated yet is... space!

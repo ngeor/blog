@@ -2,14 +2,12 @@
 layout: post
 title: On versioning
 date: 2017-12-18 19:20:55.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - GitVersion
 - versioning
-author: Nikolaos Georgiou
 ---
 
 According to <a href="https://en.wiktionary.org/wiki/version" target="_blank" rel="noopener">Wiktionary</a>, the word version means "a specific form of variation of something". In computing, it's "a particular revision of something" (e.g. software). The word has French and Latin roots. The Greek translation, <em>έκδοση</em>, can also be translated as <em>publication</em>.

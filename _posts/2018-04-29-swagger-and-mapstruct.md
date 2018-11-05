@@ -2,7 +2,6 @@
 layout: post
 title: Swagger and MapStruct
 date: 2018-04-29 14:39:53.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - MapStruct
 - maven
 - swagger
-author: Nikolaos Georgiou
 ---
 
 I've been working lately on a project with a few services (or microservices, if you like to play buzzword bingo). I wanted to share some thoughts on how using Swagger together with MapStruct can make things easier.

@@ -2,12 +2,10 @@
 layout: post
 title: How to use SQLite with Mono and Fluent NHibernate
 date: 2011-06-06 20:35:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 So I have setup my project playing nice in Windows .NET 4.0 with SQLite and Fluent NHibernate. I opened it up from my Mac to see if it would still work and, big surprise, it didn't. It complained about System.Data.SQLite.dll not found, even though the dll was there.

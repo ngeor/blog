@@ -13,7 +13,6 @@ tags:
 - Docker
 - Helm
 - Kubernetes
-author: Nikolaos Georgiou
 ---
 
 I'd like to start a tutorial series on how to apply CI/CD principles with tools like Kubernetes and Helm. I'm extremely new in these technologies, so this is a learning exercise for me.

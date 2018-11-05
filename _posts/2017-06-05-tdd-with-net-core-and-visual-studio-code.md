@@ -2,7 +2,6 @@
 layout: post
 title: TDD with .NET Core and Visual Studio Code
 date: 2017-06-05 14:49:15.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - C Sharp
 - tdd
 - Visual Studio Code
-author: Nikolaos Georgiou
 ---
 
 In this post we'll see how to create a .NET Core solution with two projects with using nothing but the command line. Once that is setup, we'll do a bit of TDD using Visual Studio Code.

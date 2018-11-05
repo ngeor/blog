@@ -2,12 +2,10 @@
 layout: post
 title: ASP.NET IsMobileDevice and how it works
 date: 2011-03-12 08:09:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 In ASP.NET, you can use the <a href="http://msdn.microsoft.com/en-us/library/system.web.configuration.httpcapabilitiesbase.ismobiledevice.aspx" target="_blank">IsMobileDevice</a> property in the <a href="http://msdn.microsoft.com/en-us/library/system.web.httprequest.browser%28v=VS.100%29.aspx" target="_blank">Request.Browser</a> object of the current request to figure out if the user is calling your application using a mobile device.

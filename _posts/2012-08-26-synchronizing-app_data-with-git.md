@@ -2,12 +2,10 @@
 layout: post
 title: Synchronizing App_Data with git
 date: 2012-08-26 10:57:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 When you have a web application that stores data in it's App_Data folder, at some point you'll want to synchronize the development environment(s) with the live environment. This way your development machine will have the latest live data. This is a task that can be achieved with git.

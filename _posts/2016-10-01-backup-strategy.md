@@ -2,13 +2,11 @@
 layout: post
 title: Backup Strategy
 date: 2016-10-01 10:16:27.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - backup
-author: Nikolaos Georgiou
 ---
 
 Taking a backup was arguably easier back in the days. You had only one computer, your data could fit inside a few floppy disks and the only cloud in your life was the one that would indicate chances of rain later in the afternoon. Things are a bit different today. Nevertheless, the need to preserve your files, your work, and your digital memories, remains the same.

@@ -2,12 +2,10 @@
 layout: post
 title: MasterType directive and namespace conflicts
 date: 2011-07-12 21:25:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Let me start by saying that I hope you won't run into this one and that you probably won't.

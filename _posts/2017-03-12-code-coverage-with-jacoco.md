@@ -2,7 +2,6 @@
 layout: post
 title: Code Coverage with JaCoCo
 date: 2017-03-12 08:48:58.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - maven
 - TeamCity
 - travis
-author: Nikolaos Georgiou
 ---
 
 Code Coverage is a useful set of metrics that show you how much of your code you're impacting during testing. It doesn't say much about the quality of your tests (you can read more in the old post <a href="{{ site.baseurl }}/2016/05/07/what-is-code-coverage.html">What is code coverage?</a>), but a 30% coverage is definitely worse than 90%. Let's see how we can use JaCoCo to see our code coverage in the Java world. We'll check a few options to use it, such as using it manually, using it within a CI, breaking the build with it, etc. The assumption is we're working with a Maven project.

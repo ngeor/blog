@@ -15,7 +15,6 @@ tags:
 - Helm
 - Kubernetes
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In the previous post we created the Helm chart for our hello world <code>blog-helm</code> application. The Helm chart contains all the information we need to deploy our application to a Kubernetes cluster. But so far, we always deploy the latest version. In a CD setup, we'd like to be able to deploy any version, from any feature branch, at any given point in time, to any environment (DTAP). Let's start by looking at versioning.

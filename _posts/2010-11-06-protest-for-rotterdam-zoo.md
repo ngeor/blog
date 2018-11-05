@@ -2,12 +2,10 @@
 layout: post
 title: Protest for Rotterdam zoo
 date: 2010-11-06 08:29:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 <img src="{{ site.baseurl }}/assets/2010/blijdorp.jpg" />

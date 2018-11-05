@@ -2,7 +2,6 @@
 layout: post
 title: What is Test Driven Development?
 date: 2016-04-30 09:09:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - tdd
 - test driven development
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 Let's continue building up our calculator with more mathematic operations. So far <a href="/2016/04/a-closer-look-to-a-basic-unit-test/">we have addition and subtraction</a>, so multiplication comes up next.  In this post, we'll have a look at test driven development. Even though the examples are a bit trivial, I hope they'll outline the important points.<!--more-->

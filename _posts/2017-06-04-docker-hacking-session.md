@@ -2,7 +2,6 @@
 layout: post
 title: Docker hacking session
 date: 2017-06-04 06:17:41.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
@@ -10,7 +9,6 @@ tags:
 - Docker
 - hackathon
 - Spring Boot
-author: Nikolaos Georgiou
 ---
 
 Last week I organized a hacking session for my team at work. We ordered pizzas and we stayed a couple of hours extra to have a look at Docker. For some people this was completely new, for some others not as much. The feedback however was positive overall.

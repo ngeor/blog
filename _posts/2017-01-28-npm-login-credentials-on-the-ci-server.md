@@ -2,7 +2,6 @@
 layout: post
 title: npm login credentials on the CI server
 date: 2017-01-28 08:37:30.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - continuous integration
 - JavaScript
 - npm
-author: Nikolaos Georgiou
 ---
 
 In a <a href="{{ site.baseurl }}/2016/08/20/automatic-versioning-of-npm-packages.html">previous post</a>, I was discussing a way to publish an npm package to the public npm registry. A big prerequisite for that to work is that you have previously logged in to the CI server in order to authenticate against npm. But we can also fix that manual step and integrate it in the build.

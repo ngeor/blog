@@ -2,7 +2,6 @@
 layout: post
 title: Adding mocha unit tests
 date: 2017-12-29 18:18:32.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -15,7 +14,6 @@ tags:
 - sinon
 - TeamCity
 - Visual Studio Code
-author: Nikolaos Georgiou
 ---
 
 In this post, I'll add unit tests to the example application that I've been fiddling around with in the recent posts.

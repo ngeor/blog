@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - Page Object Pattern
 date: 2016-07-30 09:00:56.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - JavaScript
 - page object pattern
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 So far, we've seen how to write functional tests using the WebDriverIO API directly. Let's see what problems we may encounter with that and how the page object pattern comes to rescue.

@@ -2,12 +2,10 @@
 layout: post
 title: Continuous Deployment with a Windows Service project
 date: 2011-10-25 19:08:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 For a long time now I had a long running process here at home implemented as a Windows Console application. The application was quite stable, but from time to time I had to fix a bug or add a new feature. Before deploying a new version, I would have to login to the deployment machine where the application was running and terminate it, otherwise deployment would fail trying to copy over the new files. Quite tedious. And then I would have to start it again, as soon as the deployment server had finished its job. I like to automate this kind of things.

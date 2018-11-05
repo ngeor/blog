@@ -2,7 +2,6 @@
 layout: post
 title: Fixing root permissions on Docker volume
 date: 2017-12-16 19:07:48.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -10,7 +9,6 @@ tags:
 - blog-helm-sample
 - Docker
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In a previous post, we saw <a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html" target="_blank">how to dockerize the build plan</a> of an application. Typically, you'll want the build to run tasks like linting and unit tests, and then publish the results of these operations as XML reports that the build server can consume and present in a human friendly way.

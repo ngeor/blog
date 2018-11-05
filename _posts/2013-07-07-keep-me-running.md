@@ -2,13 +2,11 @@
 layout: post
 title: Keep me running
 date: 2013-07-07 15:40:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Fitness
 tags:
 - running
-author: Nikolaos Georgiou
 ---
 
 It's been quite a while since I've written in the blog. I don't do much programming at home these days, so the various pet projects I've published here over the time are idling. Instead, I've been working out a bit more than usual. In fact, for the first time in my life, I've taken quite a liking to running.<!--more-->

@@ -2,12 +2,10 @@
 layout: post
 title: BlogEngine.NET MVC
 date: 2013-03-06 13:16:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Finally, I got to play with ASP.NET MVC for a real project at work. I really enjoyed it, but it lasted only for a few weeks.

@@ -2,14 +2,12 @@
 layout: post
 title: Developer Utopia
 date: 2017-11-05 11:43:14.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags:
 - governance
 - technology radar
-author: Nikolaos Georgiou
 ---
 
 What happens when developers get the full freedom to work on the things they want with the tools they want? "Get the best people, give them the best tools and get out of their way". That <em>should</em> work. The reason it doesn't, it's because we haven't defined what "best" people means.<!--more-->

@@ -2,14 +2,12 @@
 layout: post
 title: Thinning ZFS snapshots
 date: 2016-09-03 07:28:21.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - backup
 - zfs
-author: Nikolaos Georgiou
 ---
 
 I have a small mini PC at home that is always turned on. It runs Ubuntu 14.04 (I plan to upgrade to 16.04). It sits at the living room and it doesn't make any noise, so it acts as a media server. I watch movies and TV series from there. I used 3 external disks, 2TB each, to make a ZFS raidz1 pool of 4TB. What is ZFS you ask?<!--more-->

@@ -2,7 +2,6 @@
 layout: post
 title: Smoke test for a Docker image
 date: 2017-12-28 10:40:39.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - Docker
 - smoke test
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 According to <a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Wikipedia</a>, a smoke test is <em>a preliminary test that reveals simple failures severe enough to (for example) reject a prospective software release</em>. <em>The process of smoke testing aims to determine whether the application is so badly broken as to make further immediate testing unnecessary.</em> If we consider our dockerized blog-helm web application, a possible smoke test can be: can we pull the image from the registry? If we run the image, does the container stay alive or does it crash immediately? In this post, I'll implement this in an extra build configuration in TeamCity with a generic bash script doing the actual work.

@@ -2,12 +2,10 @@
 layout: post
 title: Deferred LINQ queries in WCF services
 date: 2010-09-12 07:21:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Consider the following WCF service:

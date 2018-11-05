@@ -2,14 +2,12 @@
 layout: post
 title: 'ResxTranslator: a resx file editor'
 date: 2010-10-31 12:43:00.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - pet project
 - ResxTranslator
-author: Nikolaos Georgiou
 ---
 
 <a href="https://sourceforge.net/projects/resxtranslator/" target="_blank">ResxTranslator</a> is an open source project that facilitates easy translation of resx files. Resx files are XML files that .NET uses to store localizable strings. Visual Studio offers a built-in designer but MonoDevelop currently doesn't offer support for resx files. In addition to that, ResxTranslator is able to open multiple files in the same window, so that a user can translate strings while looking at the original text at the same time. Oh, and it is at this moment developed only by me when I have some time to spare :-)<!--more-->

@@ -2,7 +2,6 @@
 layout: post
 title: Mocking AWS with localstack
 date: 2017-06-06 20:03:24.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - localstack
 - SNS
 - SQS
-author: Nikolaos Georgiou
 ---
 
 We use AWS at work and I've been learning more and more about it. AWS offers so many services it's even difficult to remember all of them. It's quite impressive how many things a developer could build upon in order to deliver a scalable solution. The phrase "standing on the shoulders of giants" is quite fitting.

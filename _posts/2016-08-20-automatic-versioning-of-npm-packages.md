@@ -2,7 +2,6 @@
 layout: post
 title: Automatic versioning of npm packages
 date: 2016-08-20 08:00:16.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - Jenkins
 - npm
 - versioning
-author: Nikolaos Georgiou
 ---
 
 When you are the maintainer of an npm package, you need to do some administrative work around its versioning. When you release a new version, you need to make sure the package.json is updated, the package is correctly uploaded to npm registry, the git repository is tagged accordingly and so on. You shouldn't be doing these things manually if you can automate them.

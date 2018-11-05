@@ -2,7 +2,6 @@
 layout: post
 title: Building wxWidgets on Mac
 date: 2017-08-30 13:41:44.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - mac
 - Makefile
 - wxWidgets
-author: Nikolaos Georgiou
 ---
 
 In this post, I'm building wxWidgets on a Mac from source. This is done on a very old MacBook running El Capitan.<!--more-->

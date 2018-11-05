@@ -2,12 +2,10 @@
 layout: post
 title: The big Tuesday
 date: 2013-10-01 19:12:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Fitness
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Since the begin of May, so for the past 5 months, I've been doing a lot in order to get rid of some extra weight. Unlike my previous attempts in the past, this time I succeeded like never before.

@@ -2,7 +2,6 @@
 layout: post
 title: Functional Testing - WebDriverIO Integrated Test Runner
 date: 2016-08-13 07:55:24.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -12,7 +11,6 @@ tags:
 - functional tests
 - JavaScript
 - WebdriverIO
-author: Nikolaos Georgiou
 ---
 
 In the previous series of posts, we had a look at functional testing with WebDriverIO and mocha. We explored the page object pattern and saw the challenges of asynchronous programming with promises. We even saw some ways of mitigating those challenges. However, there is another approach to the same problems. Instead of running our tests with mocha, we can run them using the integrated test runner of WebDriverIO.

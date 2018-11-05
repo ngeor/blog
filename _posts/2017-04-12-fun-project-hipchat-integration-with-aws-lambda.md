@@ -2,7 +2,6 @@
 layout: post
 title: 'Fun project: HipChat integration with AWS Lambda'
 date: 2017-04-12 19:19:35.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -14,7 +13,6 @@ tags:
 - HipChat
 - Lambda
 - travis
-author: Nikolaos Georgiou
 ---
 
 TL;DR: I made a <a href="https://github.com/ngeor/bitbucket-hipchat-pr-notifier" target="_blank">hobby project</a> that gets the pull requests that still need code reviews from Bitbucket and posts a notification message on HipChat to inform developers. It's written in JavaScript (nodeJS). Travis CI automatically deploys it to AWS as a Lambda function. AWS CloudWatch is used to trigger the function hourly.<!--more-->

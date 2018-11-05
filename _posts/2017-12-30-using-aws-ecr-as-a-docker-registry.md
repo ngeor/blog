@@ -2,7 +2,6 @@
 layout: post
 title: Using AWS ECR as a Docker registry
 date: 2017-12-30 14:31:03.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -14,7 +13,6 @@ tags:
 - Helm
 - Kubernetes
 - TeamCity
-author: Nikolaos Georgiou
 ---
 
 In this post, I'll modify the pipeline from the previous posts to use a Docker registry powered by AWS ECR (Amazon Elastic Container Registry).

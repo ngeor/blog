@@ -2,7 +2,6 @@
 layout: post
 title: Correcting EXIF dates on photos
 date: 2016-01-30 14:01:45.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - metadata
 - organization
 - photos
-author: Nikolaos Georgiou
 ---
 
 Sometimes, the photos I take with my phone don't have the correct EXIF tags set. This gets annoying because those tags are used by photo organizers to determine when a photo was taken. If the photo doesn't contain the date in the EXIF tag, the organizer application will use the file's timestamp, which could change if you copy paste the file, move it around, move it to another computer, restore it from a backup and so on.<!--more-->

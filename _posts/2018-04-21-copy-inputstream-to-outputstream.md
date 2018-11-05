@@ -2,13 +2,11 @@
 layout: post
 title: Copy InputStream to OutputStream
 date: 2018-04-21 19:19:53.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Quick Code Tips
 tags:
 - Java
-author: Nikolaos Georgiou
 ---
 
 To copy from a stream into a file:

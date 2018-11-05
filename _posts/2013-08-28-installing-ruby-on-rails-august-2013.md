@@ -2,12 +2,10 @@
 layout: post
 title: Installing Ruby on Rails, August 2013
 date: 2013-08-28 19:39:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 During <a href="/2013/04/installing-ruby-on-rails-on-windows-8">my previous attempt</a> to install Ruby on Rails on Windows 8 I ran into a couple of issues. I decided to try again with the latest and greatest and see what happens.

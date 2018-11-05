@@ -2,7 +2,6 @@
 layout: post
 title: Extracting code metrics from git
 date: 2017-02-22 18:47:54.000000000 +01:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -11,7 +10,6 @@ tags:
 - git-analyze
 - graphs
 - statistics
-author: Nikolaos Georgiou
 ---
 
 TL;DR: I wrote a bash script that walks through your git repository history and calculates number of commits, number of merged pull requests, number of files and total number of lines of code, broken down per month.

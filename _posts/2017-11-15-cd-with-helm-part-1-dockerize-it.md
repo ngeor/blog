@@ -13,7 +13,6 @@ tags:
 - Docker
 - Helm
 - Kubernetes
-author: Nikolaos Georgiou
 ---
 
 In the previous post, we created the hello world application that we'll be using. Now it's time to dockerize the app. Dockerizing means to create a Docker image that can be used to run the app.

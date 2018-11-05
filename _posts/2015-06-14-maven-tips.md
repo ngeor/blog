@@ -2,14 +2,12 @@
 layout: post
 title: Maven Tips
 date: 2015-06-14 07:00:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - Java
 - maven
-author: Nikolaos Georgiou
 ---
 
 I started using Maven at work recently. Being a newbie, I find myself googling constantly (even though the answer is always on StackOverflow) about basic things. For reference, these are my most needed actions so far:<!--more-->

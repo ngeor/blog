@@ -2,14 +2,12 @@
 layout: post
 title: 'Extending NUnit: NUnit Companion'
 date: 2012-03-25 14:04:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags:
 - NUnit Companion
 - pet project
-author: Nikolaos Georgiou
 ---
 
 I have several test fixtures (test classes) written in NUnit that verify my data layer works against a live database (MSSQL). By live I mean that there is no mocking or anything like that - that's for the higher layers where I mock the data layer.

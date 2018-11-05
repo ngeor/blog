@@ -2,12 +2,10 @@
 layout: post
 title: How to fail your project
 date: 2010-08-10 18:33:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 The following list presents a few ways to screw up a project. Please use it only to save your project and not otherwise. Using this list for intentionally screwing up a project is forbidden.

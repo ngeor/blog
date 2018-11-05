@@ -2,12 +2,10 @@
 layout: post
 title: Certification Nightmare
 date: 2010-06-25 14:58:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Tech Notes
 tags: []
-author: Nikolaos Georgiou
 ---
 
 Last Monday, after spending about a month studying daily in the train to work, I went and took the 070-536 exam at New Horizons testing center, in Rotterdam Alexander. I was nervous because there are a lot of topics covered in this test that I've never ever used, since I'm focused more on web applications. After 45' minutes and 40 questions, I had succeeded! The popup window congratulated me and notified me that I had a scored 838 points, while the base is 700. Then I clicked next and that's when it all started.

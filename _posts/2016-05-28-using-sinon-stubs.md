@@ -2,7 +2,6 @@
 layout: post
 title: Using sinon stubs
 date: 2016-05-28 08:34:49.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
@@ -13,7 +12,6 @@ tags:
 - mocha
 - sinon
 - unit tests
-author: Nikolaos Georgiou
 ---
 
 In the previous post we had a look at <a href="{{ site.baseurl }}/2016/05/21/using-sinon-spies.html">sinon spies</a>. With spies, we are able to determine if a specific function was called or not. Usually the dependencies between units are more interesting, they involve units co-operating, exchanging data and so on. Spies do not suffice. Let's have a look at another technique, using stubs.<!--more-->

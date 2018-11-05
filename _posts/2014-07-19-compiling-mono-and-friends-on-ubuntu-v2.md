@@ -2,12 +2,10 @@
 layout: post
 title: Compiling Mono and friends on Ubuntu, v2
 date: 2014-07-19 18:00:00.000000000 +02:00
-parent_id: '0'
 published: true
 categories:
 - Code
 tags: []
-author: Nikolaos Georgiou
 ---
 
 This is an updated guide on how to compile mono from source on Ubuntu. This time, it’s about Ubuntu 14.04 (trusty tahr). This post covers:
