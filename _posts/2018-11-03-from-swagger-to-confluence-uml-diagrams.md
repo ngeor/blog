@@ -6,7 +6,7 @@ published: true
 categories:
 - Code
 tags:
-- Swagger
+- swagger
 - Confluence Cloud
 - automation
 - UML

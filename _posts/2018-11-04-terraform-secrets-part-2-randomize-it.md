@@ -6,7 +6,7 @@ published: true
 categories:
 - Code
 tags:
-- Terraform
+- terraform
 - Secrets
 - Helm
 - Kubernetes
