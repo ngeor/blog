@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - blog-helm-sample
-- Docker
+- docker
 - phantomjs
 - TeamCity
 - WebdriverIO

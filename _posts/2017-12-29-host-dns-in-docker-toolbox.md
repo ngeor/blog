@@ -8,8 +8,7 @@ categories:
 tags:
 - blog-helm-sample
 - DNS
-- Docker
-- Docker Toolbox
+- docker
 excerpt: How to configure Docker Toolbox so that it uses your laptop's hosts file.
 ---
 

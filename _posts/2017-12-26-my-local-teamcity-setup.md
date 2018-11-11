@@ -6,8 +6,7 @@ published: true
 categories:
 - Code
 tags:
-- Docker
-- Docker Toolbox
+- docker
 - TeamCity
 ---
 

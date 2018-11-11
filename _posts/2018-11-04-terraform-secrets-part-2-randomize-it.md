@@ -8,8 +8,8 @@ categories:
 tags:
 - terraform
 - Secrets
-- Helm
-- Kubernetes
+- helm
+- kubernetes
 - Security
 ---
 

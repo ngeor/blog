@@ -8,9 +8,9 @@ categories:
 - Code
 tags:
 - blog-helm-sample
-- Docker
-- Helm
-- Kubernetes
+- docker
+- helm
+- kubernetes
 - networks
 ---
 

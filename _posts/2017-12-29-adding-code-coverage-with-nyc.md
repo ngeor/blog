@@ -8,7 +8,7 @@ categories:
 tags:
 - blog-helm-sample
 - code coverage
-- Docker
+- docker
 - nyc
 - TeamCity
 ---

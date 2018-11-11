@@ -8,7 +8,7 @@ categories:
 tags:
 - blog-helm-sample
 - chai
-- Docker
+- docker
 - mocha
 - proxyquire
 - sinon

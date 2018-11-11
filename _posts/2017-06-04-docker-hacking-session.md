@@ -6,7 +6,7 @@ published: true
 categories:
 - Tech Notes
 tags:
-- Docker
+- docker
 - hackathon
 - Spring Boot
 ---

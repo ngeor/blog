@@ -10,7 +10,7 @@ tags:
 - Confluence Cloud
 - automation
 - UML
-- Docker
+- docker
 ---
 
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition

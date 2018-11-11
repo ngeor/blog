@@ -8,9 +8,9 @@ categories:
 - Code
 tags:
 - blog-helm-sample
-- Docker
-- Helm
-- Kubernetes
+- docker
+- helm
+- kubernetes
 ---
 
 In the previous post we had a first look at Kubernetes and deployed our hello world app on a local cluster using the CLI. The simple commands we used are good enough for a first taste. However, the full power of Kubernetes comes with using configuration files. Helm builds on top of that, taking these configuration files to the next level.

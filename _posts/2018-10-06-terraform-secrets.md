@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - terraform
-- Helm
+- helm
 - bash
 ---
 Since the beginning of this year, I've been using [Terraform] to manage

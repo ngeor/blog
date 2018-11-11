@@ -9,9 +9,9 @@ categories:
 tags:
 - blog-helm-sample
 - continuous integration
-- Docker
-- Helm
-- Kubernetes
+- docker
+- helm
+- kubernetes
 ---
 
 With Docker, we can package our application in a Docker image and we have the assurance that it will run on any machine that has Docker. We can do the same with our build plan. Dockerizing the build environment means that the only dependency we have on the build server is that it supports Docker. This reduces the amount of work needed to manage the build server and enables teams to be more independent.

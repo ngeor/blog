@@ -9,9 +9,9 @@ categories:
 tags:
 - blog-helm-sample
 - continuous integration
-- Docker
-- Helm
-- Kubernetes
+- docker
+- helm
+- kubernetes
 ---
 
 In the previous posts we took the first steps to dockerize our hello world application. This allows us to run the application on any host, as long as it runs Docker. We also dockerized the build plan, which allows us to use any build server, as long as it runs Docker. Now we're ready to run the application on production. Where should we run it?

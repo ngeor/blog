@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - blog-helm-sample
-- Helm
+- helm
 - TeamCity
 ---
 

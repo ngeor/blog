@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - AWS
-- Docker
+- docker
 - localstack
 - SNS
 - SQS

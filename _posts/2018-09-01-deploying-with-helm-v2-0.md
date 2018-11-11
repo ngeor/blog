@@ -7,8 +7,8 @@ categories:
 - Code
 tags:
 - continuous delivery
-- Helm
-- Kubernetes
+- helm
+- kubernetes
 ---
 
 In the series with Helm and Continuous Delivery nine months ago, I used <a href="{{ site.baseurl }}/2017/12/02/cd-with-helm-part-5-versioned-artifacts.html">helm to deploy the application to the kubernetes cluster</a>. To be able to do that from the CI server, I had to make a workaround. I had punched a hole in the cluster with a NodePort service for Tiller. This allows pretty much anyone to reach Tiller (the server side component of Helm) and interact with it. Great for a demo blog post, but not so great for security.

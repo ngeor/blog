@@ -6,7 +6,7 @@ published: true
 categories:
 - Code
 tags:
-- Docker
+- docker
 - IntelliJ IDEA
 - Java
 - Kafka

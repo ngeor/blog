@@ -8,7 +8,7 @@ categories:
 tags:
 - ".NET"
 - Azure
-- Docker
+- docker
 - git
 - MSBuild
 - TeamCity

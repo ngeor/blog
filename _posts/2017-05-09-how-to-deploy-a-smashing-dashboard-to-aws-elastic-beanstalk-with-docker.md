@@ -8,7 +8,7 @@ categories:
 tags:
 - AWS
 - dashboard
-- Docker
+- docker
 - Elastic Beanstalk
 - smashing
 ---

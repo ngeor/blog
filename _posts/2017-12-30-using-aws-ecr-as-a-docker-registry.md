@@ -9,9 +9,9 @@ tags:
 - AWS
 - AWS ECR
 - blog-helm-sample
-- Docker
-- Helm
-- Kubernetes
+- docker
+- helm
+- kubernetes
 - TeamCity
 ---
 
