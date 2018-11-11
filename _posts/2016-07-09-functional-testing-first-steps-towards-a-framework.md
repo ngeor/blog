@@ -11,7 +11,7 @@ tags:
 - conventions
 - functional tests
 - grunt-filenames
-- JavaScript
+- javascript
 - mocha
 - structure
 - WebdriverIO

@@ -7,10 +7,9 @@ categories:
 - Code
 tags:
 - AWS
-- Bitbucket
+- atlassian
 - CloudWatch
 - continuous integration
-- HipChat
 - Lambda
 - travis
 ---

@@ -7,7 +7,7 @@ categories:
 - Quick Code Tips
 tags:
 - AssertJ
-- Java
+- java
 - unit tests
 ---
 

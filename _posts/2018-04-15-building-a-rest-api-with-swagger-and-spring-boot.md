@@ -6,9 +6,9 @@ published: true
 categories:
 - Code
 tags:
-- Java
+- java
 - maven
-- Spring Boot
+- spring
 - swagger
 ---
 
@@ -41,7 +41,7 @@ We're gonna have the following operations:
 
 The entire YAML file looks like this:
 
-```
+```yaml
 swagger: "2.0"
 info:
   description: "A blog API."
@@ -204,7 +204,7 @@ It takes a while to get familiar with it, so let's highlight some interesting st
 <li><strong>paths</strong> is the place where you define your operations. For example, see the operation that creates a new blog post:</li>
 </ul>
 
-```
+```yaml
 paths:
   /post: # the path is /post
     post: # the HTTP verb is POST
@@ -226,7 +226,7 @@ paths:
 <li><strong>definitions</strong> is where you define your models. For example, this is how the blog post model is defined:</li>
 </ul>
 
-```
+```yaml
 definitions:
   Post:
     type: "object"
@@ -238,7 +238,6 @@ definitions:
         type: "string"
       body:
         type: "string"
-              type: "string"
       createdAt:
         type: "string"
         format: "date-time"

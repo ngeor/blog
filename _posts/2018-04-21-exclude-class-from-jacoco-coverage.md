@@ -7,7 +7,7 @@ categories:
 - Quick Code Tips
 tags:
 - JaCoCo
-- Java
+- java
 - maven
 ---
 

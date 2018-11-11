@@ -7,8 +7,8 @@ categories:
 - Code
 tags:
 - actuators
-- Java
-- Spring Boot
+- java
+- spring
 ---
 
 Implementing Spring Boot actuators is not very difficult. In this post I'll show what you can get for free, without adding any code.
@@ -18,10 +18,10 @@ Implementing Spring Boot actuators is not very difficult. In this post I'll show
 First of all, you need this dependency in your <code>pom.xml</code>:
 
 ```xml
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
 ```
 
 This will expose the <code>/health</code> and <code>/info</code> endpoints by default, as mentioned in <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html">the documentation</a>. Both endpoints will be under <code>/actuator</code> (so the full path is <code>/actuator/health</code>).
@@ -30,7 +30,7 @@ This will expose the <code>/health</code> and <code>/info</code> endpoints by de
 
 The health endpoint will give back this JSON:
 
-```
+```json
 {"status":"UP"}
 ```
 
@@ -43,10 +43,10 @@ The info endpoint does not return any information by default. We can change that
 In <code>pom.xml</code>, add the following build plugin:
 
 ```xml
-      <plugin>
-        <groupId>pl.project13.maven</groupId>
-        <artifactId>git-commit-id-plugin</artifactId>
-      </plugin>
+<plugin>
+  <groupId>pl.project13.maven</groupId>
+  <artifactId>git-commit-id-plugin</artifactId>
+</plugin>
 ```
 
 and in <code>application.properties</code>, add this line:
@@ -59,7 +59,7 @@ Now, the info endpoint will offer information about the state of the git reposit
 
 Example:
 
-```
+```json
 {
   "git": {
     "build": {
@@ -133,7 +133,7 @@ management.endpoint.metrics.enabled=true
 
 In any case, visiting the endpoint at <code>/actuators/metrics</code> give us a list of available metrics:
 
-```
+```json
 {
   "names": [
     "http.server.requests",
@@ -187,7 +187,7 @@ In any case, visiting the endpoint at <code>/actuators/metrics</code> give us a 
 
 And to see for example the uptime (<code>process.uptime</code> metric) we need to visit <code>/actuator/metrics/process.uptime</code>:
 
-```
+```json
 {
   "name": "process.uptime",
   "measurements": [

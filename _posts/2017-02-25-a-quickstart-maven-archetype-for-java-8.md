@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - archetype
-- Java
+- java
 - maven
 ---
 

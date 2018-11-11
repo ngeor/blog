@@ -8,7 +8,7 @@ categories:
 tags:
 - docker
 - hackathon
-- Spring Boot
+- spring
 ---
 
 Last week I organized a hacking session for my team at work. We ordered pizzas and we stayed a couple of hours extra to have a look at Docker. For some people this was completely new, for some others not as much. The feedback however was positive overall.

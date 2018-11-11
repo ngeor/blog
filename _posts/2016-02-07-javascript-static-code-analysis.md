@@ -8,7 +8,7 @@ categories:
 tags:
 - code review
 - continuous integration
-- JavaScript
+- javascript
 - jscs
 - jshint
 - maintainability

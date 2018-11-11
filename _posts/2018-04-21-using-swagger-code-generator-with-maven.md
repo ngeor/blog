@@ -6,9 +6,9 @@ published: true
 categories:
 - Quick Code Tips
 tags:
-- Java
+- java
 - maven
-- Spring Boot
+- spring
 - swagger
 ---
 

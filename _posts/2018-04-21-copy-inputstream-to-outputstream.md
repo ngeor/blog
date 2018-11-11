@@ -6,7 +6,7 @@ published: true
 categories:
 - Quick Code Tips
 tags:
-- Java
+- java
 ---
 
 To copy from a stream into a file:

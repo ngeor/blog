@@ -6,7 +6,7 @@ published: true
 categories:
 - Code
 tags:
-- Java
+- java
 - maven
 ---
 

@@ -9,7 +9,7 @@ tags:
 - automated tests
 - chai
 - es6
-- JavaScript
+- javascript
 - mocha
 - page object pattern
 - phantomjs

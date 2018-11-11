@@ -9,7 +9,7 @@ tags:
 - BeanShell
 - conventions
 - Flyway
-- Java
+- java
 - maven
 - maven enforcer
 - static code analysis

@@ -8,8 +8,7 @@ categories:
 tags:
 - AWS
 - AWS Lambda
-- Confluence Cloud
-- JIRA Cloud
+- atlassian
 - kdd
 - kddbot
 - python

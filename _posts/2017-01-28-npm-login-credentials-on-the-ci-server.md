@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - continuous integration
-- JavaScript
+- javascript
 - npm
 ---
 

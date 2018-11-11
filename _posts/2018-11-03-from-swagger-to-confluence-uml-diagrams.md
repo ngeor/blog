@@ -7,9 +7,7 @@ categories:
 - Code
 tags:
 - swagger
-- Confluence Cloud
-- automation
-- UML
+- atlassian
 - docker
 ---
 

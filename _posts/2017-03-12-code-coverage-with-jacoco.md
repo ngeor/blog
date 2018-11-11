@@ -8,7 +8,7 @@ categories:
 tags:
 - code coverage
 - JaCoCo
-- Java
+- java
 - maven
 - TeamCity
 - travis

@@ -8,7 +8,7 @@ categories:
 tags:
 - Checkstyle
 - IntelliJ IDEA
-- Java
+- java
 - maven
 - SonarQube
 - static code analysis

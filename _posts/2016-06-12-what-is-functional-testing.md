@@ -9,7 +9,7 @@ series: Functional Tests
 tags:
 - browser tests
 - functional tests
-- JavaScript
+- javascript
 - WebdriverIO
 ---
 

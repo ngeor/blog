@@ -8,8 +8,7 @@ categories:
 tags:
 - git
 - maven
-- Bitbucket Cloud
-- Bitbucket Pipelines
+- atlassian
 - bash
 ---
 I wrote a small script today that I wanted to share. It runs for Maven builds in

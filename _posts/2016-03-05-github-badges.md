@@ -9,7 +9,7 @@ tags:
 - badges
 - david
 - GitHub
-- JavaScript
+- javascript
 - markdown
 - nodejs
 - open source

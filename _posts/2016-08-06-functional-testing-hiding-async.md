@@ -11,7 +11,7 @@ tags:
 - chai-as-promised
 - ES6 generators
 - functional tests
-- JavaScript
+- javascript
 - mocha
 - promises
 - WebdriverIO

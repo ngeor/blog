@@ -8,7 +8,7 @@ categories:
 series: Unit Tests
 tags:
 - chai
-- JavaScript
+- javascript
 - sinon
 - unit tests
 ---

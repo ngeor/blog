@@ -7,7 +7,6 @@ categories:
 - Code
 tags:
 - Flyway
-- Java
 ---
 
 Flyway is a tool that allows you to version your database schema changes. In this post I explain a bit how we use it at work (so far), in the context of automated deployments and GitHub Flow branching model.

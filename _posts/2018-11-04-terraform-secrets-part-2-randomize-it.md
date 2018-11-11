@@ -7,10 +7,8 @@ categories:
 - Code
 tags:
 - terraform
-- Secrets
 - helm
 - kubernetes
-- Security
 ---
 
 In a [previous post]({{ site.baseurl }}{% post_url 2018-10-06-terraform-secrets
