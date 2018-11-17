@@ -3,6 +3,8 @@ layout: page
 title: Kafka cheat sheet
 ---
 
+A cheat sheet for Apache Kafka.
+
 ## Using Docker
 
 Using Docker allows starting Kafka locally without having to install anything
