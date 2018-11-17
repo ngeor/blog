@@ -6,7 +6,7 @@ published: true
 categories:
 - Quick Code Tips
 tags:
-- JaCoCo
+- jacoco
 - java
 - maven
 ---

@@ -8,7 +8,7 @@ categories:
 tags:
 - code coverage
 - integration tests
-- JaCoCo
+- jacoco
 - java
 - maven
 - unit tests

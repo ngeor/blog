@@ -7,7 +7,7 @@ categories:
 - Code
 tags:
 - code coverage
-- JaCoCo
+- jacoco
 - java
 - maven
 - TeamCity
