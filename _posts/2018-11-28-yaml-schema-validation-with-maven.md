@@ -16,8 +16,8 @@ tags:
 
 Sometimes it feels we're reinventing the wheel, but with different names. Back
 in the days, XML was the cool thing. We had XPath as a query language. We had
-XSLT to transform XML documents to different shapes. We had XSD to validate the
-schema of XML. We had code generation and validation. We could generate web
+XSLT to transform XML documents into different shapes. We had XSD to validate
+the schema of XML. We had code generation and validation. We could generate web
 service clients and servers with WSDL.
 
 But then, people started hating angle brackets I suppose. We switched to JSON,
@@ -39,7 +39,7 @@ example:
 
 - all operations need to be documented (i.e. the `description` property needs to
   be mandatory), so that my API can be understood by its users.
-- all URL paths needs to be lower case, separated by hyphens, so that the API is
+- all URL paths need to be lower case, separated by hyphens, so that the API is
   consistent.
 
 It would be great if I don't have to write any code to support this... and the
@@ -183,7 +183,7 @@ and bring them in place before the Groupon plugin kicks in:
 
 ### Putting it all together
 
-There's a lot of moving parts, so here it is all together:
+There are a lot of moving parts, so here it is all together:
 
 - convert YAML files to JSON, using my custom Maven plugin
 - unpack the shared JSON schema into the local filesystem, using the standard
