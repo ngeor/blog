@@ -4,14 +4,14 @@ title: Terraform secrets part 2 - Randomize it
 date: 2018-11-04
 published: true
 categories:
-- Code
+  - Code
 tags:
-- terraform
-- helm
-- kubernetes
+  - terraform
+  - helm
+  - kubernetes
 ---
 
-In a [previous post]({{ site.baseurl }}{% post_url 2018-10-06-terraform-secrets
+In a [previous post]({{ site.baseurl }}{% post_url 2018/2018-10-06-terraform-secrets
 %}), I used Terraform and Helm to pass the connection string of an Azure
 CosmosDB database to the service that needs it without storing it anywhere in
 between. In this post, I'll do something similar for a PostgreSQL database and
@@ -92,6 +92,7 @@ Kubernetes side as well by using a **Kubernetes secret**.
 In Helm, we create a new template `secret.yaml`:
 
 {% raw %}
+
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -101,12 +102,14 @@ type: Opaque
 data:
   dbPassword: "{{ .Values.dbPassword | b64enc }}"
 ```
+
 {% endraw %}
 
 and we change the environment variable definition in `deployment.yaml` to get
 the value from the secret:
 
 {% raw %}
+
 ```yaml
 - name: SPRING_DATASOURCE_PASSWORD
   valueFrom:
@@ -114,6 +117,7 @@ the value from the secret:
       name: for-your-eyes-only
       key: dbPassword
 ```
+
 {% endraw %}
 
 This has no impact to the application (it still reads the same value). It just
