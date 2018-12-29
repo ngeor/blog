@@ -14,7 +14,8 @@ tags:
 - travis
 ---
 
-TL;DR: I made a <a href="https://github.com/ngeor/bitbucket-hipchat-pr-notifier" target="_blank">hobby project</a> that gets the pull requests that still need code reviews from Bitbucket and posts a notification message on HipChat to inform developers. It's written in JavaScript (nodeJS). Travis CI automatically deploys it to AWS as a Lambda function. AWS CloudWatch is used to trigger the function hourly.<!--more-->
+TL;DR: I made a [hobby project](https://gist.github.com/ngeor/bb13c0d2937769fb71bd912664d073aa)
+that gets the pull requests that still need code reviews from Bitbucket and posts a notification message on HipChat to inform developers. It's written in JavaScript (nodeJS). Travis CI automatically deploys it to AWS as a Lambda function. AWS CloudWatch is used to trigger the function hourly.<!--more-->
 
 Hobby projects are a fun way to learn something new. In this case it started by curiosity. I noticed that HipChat, the group chat that we use at work, has an Integrations menu that allows you to connect to third party services:
 
