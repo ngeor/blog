@@ -31,7 +31,7 @@ The next step is to <strong>debug a test</strong>. It's better to close Phantom
 
 For a free solution, you can try Visual Studio Code. Don't let the name confuse you, this isn't Visual Studio. Visual Studio Code is a relatively new editor from Microsoft which runs on all platforms and supports debugging NodeJS applications. To be able to run/debug our functional tests, we'll need a <code>launch.json</code> configuration like this:
 
-```
+```json
 {
     "version": "0.2.0",
     "configurations": [
@@ -83,15 +83,15 @@ Finally, one common source of problems is about<strong> forgetting to return a p
 
 In general, one thing that would help us to understand more why a test failed is to be able to see what the browser was doing at the point of the failure. Since we have a minimal framework in place, our <code>webdriver_helper</code>, we can extend it with a new feature that will benefit all tests: <strong>if a test fails, take a screenshot</strong> of the browser at that point. It's not difficult to implement with a <code>afterEach</code> hook in mocha:
 
-```
+```javascript
 afterEach(function() {
-        var currentTest = this.currentTest;
-        if (!currentTest.err) {
-            return;
-        }
+    var currentTest = this.currentTest;
+    if (!currentTest.err) {
+        return;
+    }
 
-        return _this.browser.saveScreenshot(currentTest.title + '.png');
-    });
+    return _this.browser.saveScreenshot(currentTest.title + '.png');
+});
 ```
 
 To avoid some confusion:

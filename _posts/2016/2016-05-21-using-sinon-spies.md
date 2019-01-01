@@ -17,7 +17,7 @@ In the <a href="/2016/05/the-division-by-zero-bell-dependencies-in-unit-tests/">
 
 So the testing code was a bit too much:
 
-```
+```javascript
 describe('Calculator', function() {
     describe('divide', function() {
         it('should ring the bell when dividing by zero', function() {
@@ -56,7 +56,7 @@ A spy is easy to explain. It basically, well, spies on a function and after its 
 
 In our case, we pass the bell function as a dependency so we don't have an actual implementation to spy upon. We'll go for the second approach and change our test like this:
 
-```
+```javascript
 describe('Calculator', function() {
     describe('divide', function() {
         it('should ring the bell when dividing by zero', function() {
@@ -82,7 +82,7 @@ If the test fails, the error message is going to read "expected <code>false</cod
 
 Compare the two styles:
 
-```
+```javascript
 // with plain sinon
 expect(bell.called).to.be.true;
 
@@ -96,7 +96,7 @@ One piece of advice here: when doing a refactoring of this type on your tests, m
 
 Let's add one extra feature to the calculator before finishing the discussion about spies. The requirements have changed and the bell must be called with a parameter that indicates the loudness of the sound. Let's modify the test first:
 
-```
+```javascript
 it('should ring the bell when dividing by zero', function() {
     // arrange
     var bell = sinon.spy();
@@ -114,7 +114,7 @@ That's all there is to it! Can you imagine how much more code we'd have to write
 
 The test of course will fail because we don't supply any parameters to the bell function. Let's fix the implementation as well:
 
-```
+```javascript
 Calculator.prototype.divide = function(x, y) {
     if (y === 0) {
         this.bell('loud');
@@ -124,4 +124,4 @@ Calculator.prototype.divide = function(x, y) {
 };
 ```
 
-And we're done. In the next post, we'll add new requirements to the calculator and explore sinon stubs. By the way, I've setup <a href="https://github.com/ngeor/Calculator">a repository in github</a> with all the code of this series of posts, you can check it out if you want.
+And we're done. In the next post, we'll add new requirements to the calculator and explore sinon stubs.

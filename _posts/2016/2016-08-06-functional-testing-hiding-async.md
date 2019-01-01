@@ -25,17 +25,17 @@ First of all, we're working with promises. There's a nice chai plugin, <a href="
 
 In order to use it, we'd have to include it and tell chai about it. This is done with <code>chai.use(require('chai-as-promised'));</code>. The question is, where should we do that? We could do it on the test file, but we'll be repeating that in every test file we'd like to use it. To avoid repetition, we can put this statement on the top of our <code>WebDriverHelper</code> class, since this is a class that all of our tests will be including:
 
-```
+```javascript
 var chai = require('chai');
 chai.use(require('chai-as-promised'));
 ```
 
 Now this plugin is available in all of our tests. Let's use it for the simple test that checks the title of the homepage:
 
-```
+```javascript
 it('should verify the title of Google', function() {
-        return expect(page.getTitle()).to.eventually.equal('Google');
-    });
+    return expect(page.getTitle()).to.eventually.equal('Google');
+});
 ```
 
 The test is reduced to a readable one-liner. It's almost an English sentence: "I expect that the page title will eventually equal to Google". The most important word here is <strong>eventually</strong>. The developer(s) of this plugin picked a very accurate name here. It describes exactly what promises are about. Call the function and it will return you the value, <strong>eventually</strong>, once the asynchronous operation has completed.
@@ -46,23 +46,23 @@ Second, the argument of <code>expect</code> <strong>needs to be a promise</stro
 
 Finally, the assertion. What can we use after the <code>.to.eventually.</code> part? The answer is, <strong>you can still use all of chai's assertions</strong>. This plugin intelligently discovers the available assertions that chai offers and extends them. So everything mentioned by <a href="http://chaijs.com/api/bdd/">chai</a> can still be used. As an example, let's see the test that verifies we have a search text box:
 
-```
+```javascript
 it('should have a text search box', function() {
-        return expect(page.searchTextBox.isVisible()).to.eventually.be.true;
-    });
+    return expect(page.searchTextBox.isVisible()).to.eventually.be.true;
+});
 ```
 
 Here we used the <code>.be.true</code> assertion. Again, the test was reduced to an one-liner. You might end up with quite long lines, so it's okay to break them down into multiple lines for readability.
 
 There is another way we can write our tests. We can use <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function*">ES6 Generators</a>. This changes significantly the style of the tests and makes them look more like they're synchronous code. Let's see the test that performs the search, written with this style:
 
-```
+```javascript
 it('should search for pokemon', function * () {
-        yield page.searchTextBox.setValue('Pokemon');
-        yield page.searchButton.click();
-        var text = yield page.searchResults.getText();
-        expect(text).to.equal('Ongeveer 330.000.000 resultaten (0,37 seconden)', 'unexpected search result message');
-    });
+    yield page.searchTextBox.setValue('Pokemon');
+    yield page.searchButton.click();
+    var text = yield page.searchResults.getText();
+    expect(text).to.equal('Ongeveer 330.000.000 resultaten (0,37 seconden)', 'unexpected search result message');
+});
 ```
 
 Two obvious things: there are <code>yield</code> keywords all over the place and there is a star in the first line. What's up with that?

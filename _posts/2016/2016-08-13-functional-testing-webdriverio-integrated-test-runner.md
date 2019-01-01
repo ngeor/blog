@@ -40,7 +40,7 @@ I have to say that I don't like that the promise-free feature is so tightly coup
 
 When using the integrated test runner of WebDriverIO, it is still possible to have asynchronous promise-based tests. You just need to name the function of the test 'async' (which is a bit hacky arguably):
 
-```
+```javascript
 it('should support sync code', function() {
     browser.url('http://my-site.com');
     expect(browser.getTitle()).to.equal('My Site');
@@ -57,7 +57,7 @@ But the biggest question is, how to migrate thousands of tests written using a c
 
 It would be great if the promise-free code was something that we could programmatically activate, on a per-test basis, without being forced to use the integrated test runner. Something like this:
 
-```
+```javascript
 describe('some test', function() {
     before(function() {
         require('webdriver').sync();

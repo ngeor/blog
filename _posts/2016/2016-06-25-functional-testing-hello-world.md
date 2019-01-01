@@ -16,8 +16,6 @@ tags:
 
 Let's have a look at a first example of writing and running a functional test. This is going to be a very basic hello world example, but still it gives an opportunity of looking at the bare minimum usage of WebDriverIO and a first taste of asynchronous programming with promises.<!--more-->
 
-Note that you can find the code mentioned in this post in the <a href="https://github.com/ngeor/Calculator">Calculator repo</a> we used in previous posts.
-
 First, we have to add the <a href="http://webdriver.io/">webdriverio</a> dependency to our repo with <code>npm install -D webdriverio</code>. This is the client library that can connect to WebDriver protocol servers like Selenium, PhantomJS, etc.
 
 We are going to take the hello world example from the <a href="http://webdriver.io/guide.html">WebdriverIO page</a>:

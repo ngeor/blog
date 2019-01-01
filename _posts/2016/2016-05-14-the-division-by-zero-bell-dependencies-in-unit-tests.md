@@ -17,7 +17,7 @@ Like I mentioned in previous posts, the good thing about <a href="/2016/04/what-
 
 The unit test for dividing by zero might look like this:
 
-```
+```javascript
 describe('Calculator', function() {
     describe('divide', function() {
         it('should ring the bell when dividing by zero', function() {
@@ -52,7 +52,7 @@ We're passing the function as a constructor parameter. This is another good prac
 
 Let's see the implementation for this:
 
-```
+```javascript
 function Calculator(bell) {
     // store reference to the bell function
     this.bell = bell;
@@ -74,7 +74,7 @@ This is another reason why TDD is better: it lets you design your contracts, you
 
 Consider the following counter example. Let's start implementing the bell feature request without writing the unit test first. Instead, we'll dive head first into implementing it:
 
-```
+```javascript
 function Calculator() {
 }
 

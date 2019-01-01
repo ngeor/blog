@@ -69,26 +69,26 @@ describe('Google', function() {
 
 This works fine. We use the <a href="http://webdriver.io/api/state/isVisible.html">isVisible</a> method to verify that the element is visible on the page. We can speed up the tests here by moving the <code>url</code> call to a common <code>before</code> hook. We don't need to navigate twice to the page in order to perform our tests in this particular case. This is a nice optimization, but only do it when the tests won't affect each other.
 
-```
+```javascript
 before(function() {
-        return WebDriverHelper.browser.url('http://www.google.com');
-    });
+    return WebDriverHelper.browser.url('http://www.google.com');
+});
 
-    it('should verify the title of Google', function() {
-        return WebDriverHelper.browser
-            .getTitle()
-            .then(function(title) {
-                expect(title).to.equal('Google');
-            });
-    });
+it('should verify the title of Google', function() {
+    return WebDriverHelper.browser
+        .getTitle()
+        .then(function(title) {
+            expect(title).to.equal('Google');
+        });
+});
 
-    it('should have a text search box', function() {
-        return WebDriverHelper.browser
-            .isVisible('input[name=q]')
-            .then(function(visible) {
-                expect(visible).to.be.true;
-            });
-    });
+it('should have a text search box', function() {
+    return WebDriverHelper.browser
+        .isVisible('input[name=q]')
+        .then(function(visible) {
+            expect(visible).to.be.true;
+        });
+});
 ```
 
 Now, we need to click on the search button, which means we need a selector that identifies it. The <code>input[type=submit]</code> selector is simple but it matches both the Search button and the "I'm Feeling Lucky" button. According to the documentation of the click method, if there are many elements matching, only the first one will be clicked. So in this case, this selector could work but only for clicking. We can use the <code>input[value*=Google]</code> selector, which matches the button text. This works as well. If this were our site, we could modify the HTML to have easier CSS selectors to work with (e.g. unique ID or class name).
@@ -99,16 +99,16 @@ So, what should we search for? Let's follow the latest trend and let's search fo
 
 For this example, we'll try to match the result count. It's contained in a div with the id <code>resultStats</code>. We can query for its text with the <a href="http://webdriver.io/api/property/getText.html">getText</a> method. The screenshot is in Dutch and it says "Ongeveer 330.000.000 resultaten (0,37 seconden)". Translation: About 330.000.000 results (0,37 seconds). Let's write the test:
 
-```
+```javascript
 it('should search for pokemon', function() {
-        return WebDriverHelper.browser
-            .setValue('input[name=q]', 'Pokemon')
-            .click('input[value*=Google]')
-            .getText('#resultStats')
-            .then(function(text) {
-                expect(text).to.equal('Ongeveer 330.000.000 resultaten (0,37 seconden)');
-            });
-    });
+    return WebDriverHelper.browser
+        .setValue('input[name=q]', 'Pokemon')
+        .click('input[value*=Google]')
+        .getText('#resultStats')
+        .then(function(text) {
+            expect(text).to.equal('Ongeveer 330.000.000 resultaten (0,37 seconden)');
+        });
+});
 ```
 
 If we run it, it fails (at least on my computer):

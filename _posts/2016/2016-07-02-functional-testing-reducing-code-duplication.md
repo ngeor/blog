@@ -17,7 +17,7 @@ Let's <a href="/2016/06/functional-testing-hello-world/">continue our functional
 <!--more-->
 Let's add one more test. We already have a test that verifies Google's homepage title. We'll do the same for Yahoo's homepage. By the way, maybe it goes without saying, but normally you would be verifying your own site, during development and CI.
 
-```
+```javascript
 var expect = require('chai').expect;
 
 describe('Example Functional Test', function() {
@@ -78,7 +78,7 @@ Back to our tests: duplication is only one of the problems. The other problem is
 
 To avoid duplication, we can use mocha's before and after hooks. Our goal is also to avoid performance penalties, that's why we have to try to avoid the <code>beforeEach</code> and <code>afterEach</code> hooks; we need to use the <code>before</code> and <code>after</code> hooks that run only once before all tests.
 
-```
+```javascript
 var expect = require('chai').expect;
 
 describe('Example Functional Test', function() {
