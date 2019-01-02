@@ -8,15 +8,27 @@ categories:
 tags: []
 ---
 
-I use Sublime Text 3 at home and at work. I use it on many computers and platforms. In this kind of setup, maintaining a consistent configuration across multiple installations can be a challenge. It just doesn’t feel right, when you switch to work on a different laptop and suddenly some package is missing here or some setting is different there. You want to simply have the same settings everywhere, without spending too much time on configuration.<!--more-->
+I use Sublime Text 3 at home and at work. I use it on many computers and
+platforms. In this kind of setup, maintaining a consistent configuration across
+multiple installations can be a challenge. It just doesn’t feel right, when you
+switch to work on a different laptop and suddenly some package is missing here
+or some setting is different there. You want to simply have the same settings
+everywhere, without spending too much time on configuration.
 
-To solve this problem, I thought of storing the entire Packages folder of Sublime in a git repository and adding third-party packages as git submodules. You can find my repository <a href="https://github.com/ngeor/sublime-packages">here</a>. Next time I sit behind a fresh Sublime Text 3 installation, all I have to do to in order to configure it exactly as I want it is:
+To solve this problem, I thought of storing the entire Packages folder of
+Sublime in a git repository and adding third-party packages as git submodules.
+Next time I sit behind a fresh Sublime Text 3 installation, all I have to do to
+in order to configure it exactly as I want it is:
+
 <ul>
 <li>locate and delete the Packages folder</li>
 <li>do a git clone (recursive, so that it fetches the submodules as well) of my repo and use it in place of that Packages folder</li>
 </ul>
 
-The packages folder can live in various locations, depending on the platform and whether you’re using a standard or a portable version of Sublime. A little googling around will help you. On Windows, it’s somewhere inside the %APPDATA% folder (%APPDATA%RoamingSublime Text 3Packages).
+The packages folder can live in various locations, depending on the platform and
+whether you’re using a standard or a portable version of Sublime. A little
+googling around will help you. On Windows, it’s somewhere inside the %APPDATA%
+folder (%APPDATA%\Roaming\Sublime Text 3\Packages).
 
 At this moment, cloning my repo provides me the following:
 <ul>
@@ -31,4 +43,5 @@ At this moment, cloning my repo provides me the following:
 </li>
 </ul>
 
-And if I add more or change anything, I can commit it to my repository and then I can update any installation I have with a simple git pull.
+And if I add more or change anything, I can commit it to my repository and then
+I can update any installation I have with a simple git pull.
