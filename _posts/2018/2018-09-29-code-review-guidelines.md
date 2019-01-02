@@ -125,9 +125,7 @@ function" or "it is not needed", the author might not understand what the words
 Don't worry about things like indentation, blank lines, etc.
 
 Code style checks should be part of the build and [the build should break on
-
-code style violations]({{ site.baseurl }}{% post_url
-2018/2018-09-24-ci-requirements %}). If that's not the case, then fix that
+code style violations][ci-requirements]. If that's not the case, then fix that
 instead of wasting your energy complaining about blank lines on every PR.
 
 #### Perfect is the enemy of good
@@ -161,3 +159,5 @@ language you're using:
   smell: when a PR has code changes but no matching test changes.
 - Add good documentation comments (javadoc, jsdoc, xmldoc) according to the
   linter (at least on classes and public functions)
+
+[ci-requirements]: {{ site.baseurl }}{% post_url 2018/2018-09-24-ci-requirements %}

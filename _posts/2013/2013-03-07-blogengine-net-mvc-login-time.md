@@ -29,7 +29,7 @@ I added some HTML into the layout (it seems that's the name for master pages in 
 
 Now, we could go and make some base controller class that has that functionality as a method, but it's too soon to start building class hierarchies that we might later regret (although the base controller will probably come in handy later). Plus, ASP.NET MVC has a cool feature called <a href="http://www.asp.net/mvc/tutorials/older-versions/controllers-and-routing/understanding-action-filters-cs">action filters</a>. You can create a .NET attribute and decorate an action or even a controller and affect the executing action.
 
-With that in mind, I implemented a SetCurrentBlogAttribute and I decorated my two controllers (HomeController and AccountController). The attribute intercepts each executing action and determines what the current blog is. The implementation is based on the GetBlog method we saw in the <a href="/2013/03/blogengine-net-mvc-hello-world">previous post</a>. The whole attribute implementation looks like this:
+With that in mind, I implemented a SetCurrentBlogAttribute and I decorated my two controllers (HomeController and AccountController). The attribute intercepts each executing action and determines what the current blog is. The implementation is based on the GetBlog method we saw in the [previous post]. The whole attribute implementation looks like this:
 
 ```cs
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
@@ -76,3 +76,5 @@ public class SetCurrentBlogAttribute : ActionFilterAttribute
 So, as long as there is a 'blogName' parameter in the route, the correct blog will be set as current blog and we'll be able to seamlessly use the standard BlogEngine.Core API.
 
 Coming up next? Building up post and page links... stay tuned!
+
+[previous post]: {{ site.baseurl }}{% post_url 2013/2013-03-06-blogengine-net-mvc-hello-world %}

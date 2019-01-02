@@ -11,8 +11,7 @@ tags:
   - kubernetes
 ---
 
-In a [previous post]({{ site.baseurl }}{% post_url 2018/2018-10-06-terraform-secrets
-%}), I used Terraform and Helm to pass the connection string of an Azure
+In a [previous post], I used Terraform and Helm to pass the connection string of an Azure
 CosmosDB database to the service that needs it without storing it anywhere in
 between. In this post, I'll do something similar for a PostgreSQL database and
 beef up the security a bit.
@@ -143,3 +142,5 @@ improving. An idea might be to automatically taint the password every N days (or
 every N deployments). I'm also curious to play with a system like
 [Vault](https://www.vaultproject.io/) (which comes from the same company as
 Terraform, HashiCorp).
+
+[previous post]: {{ site.baseurl }}{% post_url 2018/2018-10-06-terraform-secrets %}
