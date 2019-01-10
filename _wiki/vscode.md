@@ -11,6 +11,10 @@ Extensions
 - Code Spell Checker
 - EditorConfig
 - Markdown Table Formatter
+
+#### Language Specific
+
+- ESLint
 - TSLint
 
 Themes
