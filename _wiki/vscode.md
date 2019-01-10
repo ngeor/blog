@@ -33,3 +33,8 @@ Configuration
     "telemetry.enableTelemetry": false,
 ```
 
+- Don't ask for syncing with git
+
+```
+    "git.confirmSync": false
+```
