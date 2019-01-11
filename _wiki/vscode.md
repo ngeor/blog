@@ -11,6 +11,7 @@ Extensions
 - Code Spell Checker
 - EditorConfig
 - Markdown Table Formatter
+- Rewrap
 
 #### Language Specific
 
@@ -21,6 +22,7 @@ Extensions
 Themes
 ------
 
+- Atom One Light Theme
 - Cobalt2 Theme Official
 - Night Owl
 
