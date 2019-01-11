@@ -15,6 +15,7 @@ Extensions
 #### Language Specific
 
 - ESLint
+- Python
 - TSLint
 
 Themes
@@ -34,11 +35,19 @@ Configuration
 - Disable telemetry
 
 ```
-    "telemetry.enableTelemetry": false,
+  "telemetry.enableTelemetry": false,
 ```
 
 - Don't ask for syncing with git
 
 ```
-    "git.confirmSync": false
+  "git.confirmSync": false
+```
+
+- Indent Python files with 2 spaces instead of 4
+
+```
+  "python.formatting.autopep8Args": [
+    "--indent-size=2"
+  ]
 ```
