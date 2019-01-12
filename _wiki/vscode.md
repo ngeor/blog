@@ -10,6 +10,7 @@ Extensions
 
 - Code Spell Checker
 - EditorConfig
+- Font Switcher
 - Markdown Table Formatter
 - Rewrap
 
