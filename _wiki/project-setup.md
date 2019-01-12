@@ -46,7 +46,7 @@ Only the keeper is allowed to update the version in project files.
 
 <img src="{{ site.baseurl }}/assets/wiki/manual-version-flow.png" />
 
-**Example**
+#### Example
 
 - `pom.xml` and latest git tag both point to version 1.4.0
 - The developer creates a branch out of master
@@ -54,6 +54,10 @@ Only the keeper is allowed to update the version in project files.
 - More PRs might be merged
 - The keeper bumps the version (e.g. to 1.5.0) in `pom.xml` and pushes the tag
 - The tag causes the deployment to production (e.g. publish to Nexus or npm)
+
+#### Tooling
+
+The tooling here should assist the keeper and prevent him/her from making mistakes.
 
 ### Automatic workflow
 
@@ -63,7 +67,7 @@ needs to be corrected before merging the pull request.
 
 <img src="{{ site.baseurl }}/assets/wiki/automatic-version-flow.png" />
 
-**Example**
+#### Example
 
 - `pom.xml` and latest git tag both point to version 1.4.0
 - The developer creates a branch out of master
@@ -76,6 +80,11 @@ needs to be corrected before merging the pull request.
 In this case, it is important that pushing a tag does not trigger a build,
 otherwise we'll be in an infinite build loop. It's worth mentioning that the default
 pipeline in Bitbucket Pipelines doesn't run on tags.
+
+#### Tooling
+
+The tooling here should prevent merging PRs where the version hasn't been bumped
+properly. Additionally, it should push a new tag once the master is green.
 
 ### Comparison
 
