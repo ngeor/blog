@@ -53,3 +53,21 @@ Configuration
     "--indent-size=2"
   ]
 ```
+
+- Trim trailing whitespace
+
+```
+  "files.trimTrailingWhitespace": true,
+```
+
+- Trim extra empty lines at the end of the file
+
+```
+  "files.trimFinalNewlines": true,
+```
+
+- Insert final new line (EOL at EOF)
+
+```
+  "files.insertFinalNewline": true
+```
