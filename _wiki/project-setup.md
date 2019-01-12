@@ -8,12 +8,11 @@ Setting up a project, creating a pipeline, automatic deployments, etc.
 Creating a project
 ------------------
 
-Simply create the project on GitHub. Select the appropriate `.gitignore`
-template and license (typically MIT).
-
-Add a common `.editorconfig` file.
-
-Enable the project via the Travis UI.
+- Simply create the project on GitHub. Select the appropriate `.gitignore`
+  template and license (typically MIT).
+- Clone the project. Also possible with `clone-all`.
+- Enable Travis with `travis enable` CLI.
+- Add a common `.editorconfig` file.
 
 Deployment options
 ------------------
