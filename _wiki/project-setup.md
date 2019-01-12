@@ -44,6 +44,8 @@ The tag triggers the deployment to production.
 
 Only the keeper is allowed to update the version in project files.
 
+<img src="{{ site.baseurl }}/assets/wiki/manual-version-flow.png" />
+
 **Example**
 
 - `pom.xml` and latest git tag both point to version 1.4.0
@@ -58,6 +60,8 @@ Only the keeper is allowed to update the version in project files.
 In this workflow, a **bot** automatically pushes a tag after a green build has
 occurred on the master branch. This means that the version in the project files
 needs to be corrected before merging the pull request.
+
+<img src="{{ site.baseurl }}/assets/wiki/automatic-version-flow.png" />
 
 **Example**
 
