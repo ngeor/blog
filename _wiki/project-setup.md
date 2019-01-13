@@ -5,14 +5,54 @@ title: Project Setup
 
 Setting up a project, creating a pipeline, automatic deployments, etc.
 
-Creating a project
-------------------
+Creating a project checklist
+----------------------------
 
-- Simply create the project on GitHub. Select the appropriate `.gitignore`
+- Create the project on GitHub. Select the appropriate `.gitignore`
   template and license (typically MIT).
 - Clone the project. Also possible with `clone-all`.
-- Enable Travis with `travis enable` CLI.
+- Travis
+  - Enable Travis with `travis enable` CLI.
+  - Add the Travis badge to the project's readme file.
+  - Configure `.travis.yml`.
+- Coveralls
+  - Enable Coveralls via the UI.
+  - Add the Coveralls badge to the project's readme file.
 - Add a common `.editorconfig` file.
+
+### Creating npm libraries
+
+- Run the yeoman generator `@ngeor/generator-npm`.
+- Run `travis setup npm` to setup npm deployment.
+
+### Creating Python libraries (deploy on PyPI)
+
+[Travis documentation for PyPI](https://docs.travis-ci.com/user/deployment/pypi/)
+
+`travis encrypt your-password-here --add deploy.password`
+
+<details>
+  <summary>Example <code>.travis.yml</code></summary><p>
+
+```yml
+language: python
+python:
+  - "3.6"
+script:
+  - python -m unittest
+  - python setup.py sdist
+deploy:
+  provider: pypi
+  user: ngeor
+  password:
+    secure: secret password
+  on:
+    tags: true
+  skip_cleanup: true
+```
+
+</p>
+</details>
 
 Deployment options
 ------------------
