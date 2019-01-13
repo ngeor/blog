@@ -24,6 +24,30 @@ Creating a project checklist
 
 - Run the yeoman generator `@ngeor/generator-npm`.
 - Run `travis setup npm` to setup npm deployment.
+- Add the npm badge
+- Add David badges for dependencies and devDependencies
+
+Example `.travis.yml`:
+
+```yml
+language: node_js
+sudo: false
+node_js:
+- lts/*
+after_success:
+- npm run coveralls
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: npm
+  email: Nikolaos.Georgiou@gmail.com
+  api_key:
+    secure: secret
+  on:
+    tags: true
+    repo: ngeor/clone-all
+```
 
 ### Creating Python libraries (deploy on PyPI)
 
@@ -51,6 +75,8 @@ deploy:
     tags: true
   skip_cleanup: true
 ```
+
+Add the PyPI badge.
 
 Deployment options
 ------------------
