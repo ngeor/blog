@@ -29,10 +29,11 @@ Creating a project checklist
 
 [Travis documentation for PyPI](https://docs.travis-ci.com/user/deployment/pypi/)
 
+Add the PyPI password with:
+
 `travis encrypt your-password-here --add deploy.password`
 
-<details>
-  <summary>Example <code>.travis.yml</code></summary><p>
+Example `.travis.yml`:
 
 ```yml
 language: python
@@ -50,9 +51,6 @@ deploy:
     tags: true
   skip_cleanup: true
 ```
-
-</p>
-</details>
 
 Deployment options
 ------------------
