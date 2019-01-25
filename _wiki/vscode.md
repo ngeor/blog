@@ -13,6 +13,8 @@ Extensions
 - Font Switcher
 - Markdown Table Formatter
 - Rewrap
+- XML by Red Hat
+- YAML by Red Hat (enable formatter)
 
 #### Language Specific
 
@@ -23,6 +25,7 @@ Extensions
 Themes
 ------
 
+- Atom One Dark Theme
 - Atom One Light Theme
 - Cobalt2 Theme Official
 - Night Owl
@@ -31,6 +34,7 @@ Fonts
 -----
 
 - Envy Code R
+- [Iosevka](https://github.com/be5invis/Iosevka)
 
 Configuration
 -------------
