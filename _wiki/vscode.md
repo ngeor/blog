@@ -29,12 +29,14 @@ Themes
 - Atom One Light Theme
 - Cobalt2 Theme Official
 - Night Owl
+- Xcode Default
 
 Fonts
 -----
 
 - Envy Code R
 - [Iosevka](https://github.com/be5invis/Iosevka)
+- Meslo LG S
 
 Configuration
 -------------
