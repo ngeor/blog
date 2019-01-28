@@ -26,6 +26,7 @@ github_username:  ngeor
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -40,7 +41,7 @@ plugins:
 #   - vendor/ruby/
 
 permalink: /:year/:month/:day/:title:output_ext
-show_excerpts: false
+show_excerpts: true
 google_analytics: UA-126249544-1
 
 collections:
@@ -50,3 +51,5 @@ collections:
     output: true
   wiki:
     output: true
+
+paginate: 10
