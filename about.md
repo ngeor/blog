@@ -12,7 +12,7 @@ automation, code quality.
 
 ## Cookies and Tracking
 
-This website is using Google Analytics.
+This website is using Google Analytics and Google AdSense.
 
 ## Meta
 
