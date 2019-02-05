@@ -204,12 +204,6 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
-
-  &::before {
-    content: '\f073';
-    font-family: 'Font Awesome 5 Free';
-    margin-right: 5px;
-  }
 }
 
 /**

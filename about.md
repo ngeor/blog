@@ -21,3 +21,7 @@ it is hosted on [GitHub Pages](https://pages.github.com/). The
 source code for the blog is [here](https://github.com/ngeor/blog).
 
 The theme is a modified version of [minima](https://github.com/jekyll/minima).
+
+## Icons
+
+[Gray test tube 4 icon](https://www.iconsdb.com/gray-icons/test-tube-4-icon.html)

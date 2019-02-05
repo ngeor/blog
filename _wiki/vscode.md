@@ -35,8 +35,9 @@ Fonts
 -----
 
 - Envy Code R
+- [Hack](https://github.com/source-foundry/Hack)
 - [Iosevka](https://github.com/be5invis/Iosevka)
-- Meslo LG S
+- [Meslo LG S](https://github.com/andreberg/Meslo-Font)
 
 Configuration
 -------------
