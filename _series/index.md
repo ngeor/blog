@@ -10,6 +10,8 @@ single post. In this page you can find a list of all these series.
 {%- assign posts = site.series | reverse -%}
 {%- for post in posts -%}
   {%- unless post.title == 'Series' %}
+  {%- assign sub_posts = site.posts | where: "series", post.title | reverse -%}
+  {%- assign sub_post = sub_posts.first -%}
   <li class="series-item">
     {%- if post.logo == 'helm' -%}
     <img class="tube" src="{{ site.baseurl }}/assets/helm-blue-vector.svg" alt="Helm">
@@ -18,12 +20,14 @@ single post. In this page you can find a list of all these series.
     {%- endif -%}
     <section>
       <header>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ sub_post.url | relative_url }}">{{ post.title }}</a>
         <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
           {{ post.date | date: date_format }}
         </time>
       </header>
+
       {{ post.excerpt }}
+
     </section>
   </li>
   {%- endunless -%}

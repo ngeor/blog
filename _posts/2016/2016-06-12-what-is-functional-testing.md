@@ -13,7 +13,8 @@ tags:
 - WebdriverIO
 ---
 
-In the previous series of posts, we've explored the basics of <a href="/unit-tests/">unit testing</a> and the principles around it. When developing websites, there is another important type of testing: functional testing (also known as browser testing).<!--more-->
+In the previous series of posts, we've explored the basics of [unit testing]({{ site.baseurl }}/series/2016-07-17-unit-tests.html)
+and the principles around it. When developing websites, there is another important type of testing: functional testing (also known as browser testing).
 
 Functional testing is an end to end type of test. Unlike unit tests, we're not testing the behavior of individual code units but we're testing the entire system as a whole. It involves writing a script against a browser, simulating a user interaction with the website, and verifying that the end result is what you would expect. This can be as easy as navigating to the homepage and verifying that the footer shows the copyright. But it can also involve more elaborate tests, like registering a new user, adding products to your shopping bag, performing an order, and so on.
 
