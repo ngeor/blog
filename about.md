@@ -24,4 +24,5 @@ The theme is a modified version of [minima](https://github.com/jekyll/minima).
 
 ## Icons
 
-[Gray test tube 4 icon](https://www.iconsdb.com/gray-icons/test-tube-4-icon.html)
+- [Gray test tube 4 icon](https://www.iconsdb.com/gray-icons/test-tube-4-icon.html)
+- [Helm logo](https://github.com/helm/helm/blob/master/docs/logos/helm-blue-vector.svg)

@@ -2,6 +2,7 @@
 layout: series
 title: CD with Helm
 date: 2017-12-09
+logo: helm
 ---
 Continuous delivery with Helm! I wrote a tutorial/adventure series in 8+1 parts.
 Here's a list of the posts for navigation and reference.

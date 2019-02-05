@@ -195,16 +195,19 @@
   > li {
     margin-bottom: $spacing-unit;
   }
-
-  h3 {
-    margin-bottom: 0;
-  }
 }
 
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
 }
+
+.post-link {
+  display: block;
+  @include relative-font-size(1.5);
+}
+
+
 
 /**
  * Posts
