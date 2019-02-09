@@ -4,10 +4,11 @@ title: CI requirements
 date: 2018-09-24
 published: true
 categories:
-- Code
+- notes
 tags:
 - continuous integration
 - quality
+- notes
 ---
 
 There are so many programming languages out there and so many

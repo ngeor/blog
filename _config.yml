@@ -42,10 +42,12 @@ plugins:
 #   - vendor/ruby/
 
 permalink: /:year/:month/:day/:title:output_ext
-show_excerpts: false
+show_excerpts: true
 google_analytics: UA-126249544-1
 
 collections:
+  category:
+    output: true
   series:
     output: true
   tag:

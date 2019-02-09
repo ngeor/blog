@@ -4,11 +4,12 @@ title: Worked fine in DEV, OPS problem now
 date: 2016-11-20 09:11:50.000000000 +01:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - culture
 - devops
 - technical debt
+- notes
 ---
 
 During the past year at work, we did a complete rewrite of our websites from scratch. Not only did we aim to build a mobile-first responsive website with high performance, we also tried to do it with continuous integration and continuous delivery in mind. All that on a proprietary platform not built with CI in mind. This was a very big challenge, which involved a culture change in a lot of people. Unfortunately, the project had a hard deadline. Things were left out. Corners were cut.
@@ -58,4 +59,3 @@ Back to the OPS challenges, I was thinking of a dedicated team of developers tha
 Perhaps what is missing is the DevOps culture. I like test driven development, in which you start with a red test and try to make it green. The software world should come up with a similar methodology in which developers would start implementing a feature by implementing the production sensors that check if the feature is working. Just like you start with a red test in TDD, you should start with a red production OPS alert.
 
 Maybe one day?
-

@@ -4,7 +4,7 @@ title: On git branching models
 date: 2017-09-23 09:26:34.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - branching model
 - continuous integration
@@ -12,6 +12,7 @@ tags:
 - git
 - Git Flow
 - GitHub Flow
+- notes
 ---
 
 Usually, when you work with a version control system like git, development happens in multiple branches. It's funny to see people's faces when you tell them that the author of Continuous Delivery, Dave Farley, advocates "no branches". I had that same surprised face myself the first time I heard that concept. But, so far, I haven't really worked somewhere where no branches were used.
@@ -43,4 +44,3 @@ GitHub Flow on the other hand works best when you've solved these problems first
 Going back to the "no branches" idea by Dave Farley. It definitely sounds scary and he admits it's the most controversial thing in his book. However, with the previous comparison of the branching models, you could argue that working directly on master branch is a natural evolution of GitHub flow. You could argue that the complexity of the branching model is inversely proportional to the confidence of the delivery pipeline. As the confidence reaches infinity, the branching model collapses to zero.
 
 Of course, there's always room for improvement to reach infinite confidence. But there are other aspects around accepting code into the mainline branch, aspects that an automated delivery pipeline can't possibly detect and humans are therefore needed: does the code fit in the architecture? Is it well documented? Is it elegant? To answer that, you need a branch and a code review. I can imagine that, without branches, you'd have to do a peer code review before committing, probably also do some pair programming to have early agreement on how to tackle a problem, and finally do small commits. Maybe in order to reach "no branches", you need to master not only a perfect delivery pipeline, but also a perfect development team, at least in terms of collaboration and possibly also in terms of skills.
-

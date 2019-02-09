@@ -4,7 +4,7 @@ title: Keeping it simple with microservices communication
 date: 2017-04-29 13:10:17.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - architecture
 - AWS
@@ -15,6 +15,7 @@ tags:
 - SNS
 - SQS
 - microservices
+- notes
 ---
 
 The term microservice has been getting a lot of hype and attention. I have to

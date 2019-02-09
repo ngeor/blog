@@ -4,12 +4,13 @@ title: On Code Comments
 date: 2017-03-10 20:49:08.000000000 +01:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - comments
 - culture
 - documentation
 - static code analysis
+- notes
 ---
 
 I recently joined a different team at work, working on a whole different project. For the past one to one and a half year, I did my bit in building up a culture in my old teams regarding code quality and the moral responsibility of a developer towards the codebase (also known as <strong>boy scout principle</strong>). Now, we have to start all over from scratch with the new team.
@@ -139,4 +140,3 @@ It has even more specific rules for boolean properties. I'm not going to repeat 
 Once upon a time, I think around 2010, I worked for a year in a project that produced a code library. It was the core engine of a CMS, written in C#. We used StyleCop and that's when I got the habit of writing comments Microsoft style and I learned to appreciate the beauty in that practice.
 
 Opening a file and being able to guess which teammate wrote the code is bad. The team should be writing code in the same consistent style. You should not be able to look at a file and say "oh that's Jim's code" (either with a positive or negative 'oh'). Code comments are also code. Ideally, stylistic options, also on the level of the English being used, should also be taken into account when breaking the build.
-

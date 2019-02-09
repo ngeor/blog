@@ -4,11 +4,12 @@ title: From Swagger to Confluence UML diagrams
 date: 2018-11-03
 published: true
 categories:
-- Code
+- automation
 tags:
 - swagger
 - atlassian
 - docker
+- automation
 ---
 
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition

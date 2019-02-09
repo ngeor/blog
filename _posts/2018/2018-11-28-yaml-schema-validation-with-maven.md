@@ -4,7 +4,7 @@ title: YAML schema validation with Maven
 date: 2018-11-28
 published: true
 categories:
-  - Code
+  - ci-tooling
 tags:
   - java
   - maven
@@ -12,6 +12,7 @@ tags:
   - yaml
   - json
   - microservices
+  - ci-tooling
 ---
 
 Sometimes it feels we're reinventing the wheel, but with different names. Back

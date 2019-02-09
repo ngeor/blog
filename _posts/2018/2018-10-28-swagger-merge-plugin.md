@@ -4,7 +4,7 @@ title: Merging Swagger files
 date: 2018-10-28
 published: true
 categories:
-- Code
+- ci-tooling
 tags:
 - swagger
 - java
@@ -12,6 +12,7 @@ tags:
 - plugin
 - microservices
 - api gateway
+- ci-tooling
 ---
 
 Consider the following scenario. You have a few microservices and they're all

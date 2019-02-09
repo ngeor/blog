@@ -4,9 +4,10 @@ title: Code review guidelines
 date: 2018-09-29
 published: true
 categories:
-  - Tech Notes
+  - notes
 tags:
   - code review
+  - notes
 ---
 
 In this post, I'm describing some do's and dont's about code reviews. I'm not

@@ -4,12 +4,13 @@ title: Extracting code metrics from git
 date: 2017-02-22 18:47:54.000000000 +01:00
 published: true
 categories:
-- Code
+- automation
 tags:
 - git
 - git-analyze
 - graphs
 - statistics
+- automation
 ---
 
 TL;DR: I wrote a bash script that walks through your git repository history and calculates number of commits, number of merged pull requests, number of files and total number of lines of code, broken down per month.
@@ -43,4 +44,3 @@ About the script itself, I'm not a bash expert but I managed to make it work. Ba
 Collecting metrics for number of files and lines of code is a bit different. For every commit, it has to check out the code and measure the local working copy. This can take a while. Also, I am running this through the <code>file</code> command, to exclude binary files from the report. This is even worse speed-wise. If you are working let's say with Java, you're better off telling it to only target files with the java extension.
 
 But still it was an interesting exercise and I got the statistics I wanted. I guess one could turn it into an online service in which you provide the URL of a repository and it generates the reports for you every month, with rendered graphs and all. Now that's a cool project!
-

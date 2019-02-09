@@ -4,10 +4,11 @@ title: Developer Utopia
 date: 2017-11-05 11:43:14.000000000 +01:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - governance
 - technology radar
+- notes
 ---
 
 What happens when developers get the full freedom to work on the things they want with the tools they want? "Get the best people, give them the best tools and get out of their way". That <em>should</em> work. The reason it doesn't, it's because we haven't defined what "best" people means.<!--more-->
@@ -33,4 +34,3 @@ Painting a radar obviously is the easiest part. The decision processes behind it
 Finally, I want to say how useful it is to see companies publicizing this kind of information. It's a huge advertisement for them of course, because it shows they've got it figured out. But it can also help other companies to set up something of their own. I find it's similar to how companies should publish (some of) their code as open source. They should also publish some of their processes as well.
 
 Because code is only part of the solution.
-

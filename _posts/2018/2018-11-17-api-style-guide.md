@@ -4,11 +4,12 @@ title: API Style Guide
 date: 2018-11-17
 published: true
 categories:
-- Code
+- notes
 tags:
 - rest
 - swagger
 - microservices
+- notes
 ---
 
 Using a microservice architecture allows development teams to work separately,
