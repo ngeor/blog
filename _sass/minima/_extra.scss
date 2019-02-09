@@ -82,3 +82,23 @@ $large-font-size:  $base-font-size * 1.25 !default;
     @include relative-font-size(1.125);
   }
 }
+
+#cookies {
+  background: black;
+  bottom: 0;
+  color: #fafad2;
+  font-size: $small-font-size;
+  padding: $spacing-unit / 2;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+
+  a {
+    color: #fafad2;
+    font-weight: bold;
+  }
+}
+
+.acknowledged {
+  display: none;
+}
