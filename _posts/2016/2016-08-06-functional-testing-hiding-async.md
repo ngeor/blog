@@ -4,7 +4,7 @@ title: Functional Testing - Hiding Async
 date: 2016-08-06 09:00:31.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 series: Functional Tests
 tags:
 - chai

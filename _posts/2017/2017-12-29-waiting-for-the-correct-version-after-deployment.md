@@ -4,7 +4,7 @@ title: Waiting for the correct version after deployment
 date: 2017-12-29 11:02:34.000000000 +01:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - blog-helm-sample
 - helm

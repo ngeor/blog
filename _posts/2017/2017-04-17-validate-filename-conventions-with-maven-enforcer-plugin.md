@@ -4,7 +4,7 @@ title: Validate filename conventions with Maven Enforcer plugin
 date: 2017-04-17 16:48:54.000000000 +02:00
 published: true
 categories:
-- Code
+- consistency
 tags:
 - BeanShell
 - conventions
@@ -125,4 +125,3 @@ Filename passes validation
 The other alternative is to implement <a href="http://maven.apache.org/enforcer/enforcer-api/writing-a-custom-rule.html" target="_blank">a full blown custom rule</a> in Java. While that is more structured than adding scripting code inside the pom, it is over-engineering in my mind for what I want. It requires setting up a new project, so that the custom rule can be added as a dependency to the Maven Enforcer plugin's dependencies. That means setting up a git repository, publishing it somewhere in Nexus, having a CI/CD pipeline, the works. You could argue that then you have a custom rule that you can easily share across projects. Or even make a rule that comes with the desired naming convention built-in.
 
 I see many developers who try to make things generic and abstract way too soon. In a lot of these cases, I try to follow <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it" target="_blank">You ain't gonna need it</a>. In this particular case, I would first implement the naming convention with the beanshell script, as shown in this post. This is enough to solve my actual problem (having consistent filenames). I would only invest in a separate custom rule if the beanshell approach starts to hurt too much for whatever reason.
-

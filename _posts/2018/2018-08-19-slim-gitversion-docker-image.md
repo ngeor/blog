@@ -4,7 +4,7 @@ title: Slim GitVersion Docker image
 date: 2018-08-19 08:47:04.000000000 +02:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - docker
 - GitVersion
@@ -35,4 +35,3 @@ docker run --rm \
 ```
 
 This makes it a bit easier to use this tool. However, porting it to .NET Core might be a better solution overall.
-

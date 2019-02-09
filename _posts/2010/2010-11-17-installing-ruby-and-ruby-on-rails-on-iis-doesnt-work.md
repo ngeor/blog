@@ -9,7 +9,9 @@ tags: []
 ---
 
 I tried to see if it's possible to install the latest Ruby on Rails on IIS 7.0. I didn't manage to do it and the reason is that there is something broken in the fast cgi ruby gem.
-<h2>Installing Rails</h2>
+
+
+## Installing Rails
 
 Installing Rails itself is a pretty straightforward process. For Ruby, there is a separate installer for Windows available <a href="http://rubyinstaller.org/downloads/" target="_blank">here</a>. From there, installing Rails is done as usual with the gem command "gem install rails".
 

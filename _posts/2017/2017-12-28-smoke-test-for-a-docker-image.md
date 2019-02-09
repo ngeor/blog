@@ -4,7 +4,7 @@ title: Smoke test for a Docker image
 date: 2017-12-28 10:40:39.000000000 +01:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - blog-helm-sample
 - docker
@@ -64,4 +64,3 @@ The container starts successfully, but a few seconds later it dies. The smoke te
 This smoke test costs a bit more than 30'' when it is green and less when it is red. Including some overhead for preparing and starting the build, this means that, on the happy flow, we have almost an entire minute to wait before we can deploy our application. What are we buying with this minute to justify spending it?
 
 The checks we're doing (Can we pull the image? Does the container stay up?) would be implicit in an integration test, because you have to start the container in order to do the integration test against the running application. The advantage with a separate smoke test is that it's easier to troubleshoot what went wrong. If you see a failed smoke test, you understand that there's nothing wrong with your integration tests but something more fundamental has gone wrong.
-

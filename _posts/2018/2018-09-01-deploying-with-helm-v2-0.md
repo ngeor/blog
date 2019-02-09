@@ -4,7 +4,7 @@ title: Deploying with Helm v2.0
 date: 2018-09-01 08:00:48.000000000 +02:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - continuous delivery
 - helm
@@ -33,4 +33,3 @@ And in the deployment script, you can use it like this:
 mkdir -p ~/.kube
 base64 -d "$KUBECTL_CONFIG" > ~/.kube/config
 ```
-

@@ -4,7 +4,7 @@ title: Strip the BOM
 date: 2017-08-02 07:03:25.000000000 +02:00
 published: true
 categories:
-- Code
+- consistency
 tags:
 - bom
 - gulp
@@ -83,4 +83,3 @@ using System.Threading;
 It's the U+FEFF character being removed. I'm not sure if it's also visible when reviewing a pull request on a browser.
 
 For JavaScript files, you can also use ESLint to prevent the usage BOM with the <a href="http://eslint.org/docs/rules/unicode-bom" target="_blank" rel="noopener">unicode-bom rule</a>.
-

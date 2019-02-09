@@ -4,7 +4,7 @@ title: Exclude class from JaCoCo coverage
 date: 2018-04-21 12:40:20.000000000 +02:00
 published: true
 categories:
-- Quick Code Tips
+- testing
 tags:
 - jacoco
 - java

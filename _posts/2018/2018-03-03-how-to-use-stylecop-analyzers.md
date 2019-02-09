@@ -4,7 +4,7 @@ title: How to use StyleCop.Analyzers
 date: 2018-03-03 10:14:56.000000000 +01:00
 published: true
 categories:
-- Code
+- consistency
 tags:
 - ".NET"
 - ".NET Core"

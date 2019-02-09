@@ -9,7 +9,8 @@ tags: []
 ---
 
 Some random steps on getting my Mac up to speed with Mono development.
-<h3>Versions</h3>
+
+### Versions
 
 I tried to download the latest MonoDevelop (3.0.3.5) but apparently it doesn't work anymore on Mac OS X Leopard, so, after <a href="http://stackoverflow.com/questions/10590268/how-to-download-older-version-of-monodevelop">searching a bit</a>, I used a <a href="http://download.xamarin.com/monodevelop/Mac/MonoDevelop-2.8.8.4.dmg">previous edition</a> (2.8.8.4).
 

@@ -9,6 +9,7 @@ tags: []
 ---
 
 Here's a short update on what I've been working on. Time is a bit limited but I like to hack around in this project and that's what it's all about!
+
 <ul>
 <li>Implemented Category and Tag pages</li>
 <li>Initial implementation for RSS feed</li>

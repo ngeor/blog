@@ -4,7 +4,7 @@ title: Building a REST API with Swagger and Spring Boot
 date: 2018-04-15 09:37:27.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - java
 - maven

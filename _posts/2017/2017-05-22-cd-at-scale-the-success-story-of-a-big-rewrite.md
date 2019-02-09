@@ -4,7 +4,7 @@ title: 'CD at scale: the success story of a big rewrite'
 date: 2017-05-22 19:37:35.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- continuous-delivery
 tags:
 - continuous integration
 ---

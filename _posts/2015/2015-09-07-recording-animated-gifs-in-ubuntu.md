@@ -8,8 +8,9 @@ categories:
 tags: []
 ---
 
-Last week I wanted to do a small screen recording on my Ubuntu desktop and save it as an animated gif. I tried <a href="https://screentogif.codeplex.com/">ScreenToGif</a> but that didn’t work in Ubuntu, it threw an exception when I pressed the record button. I found a good solution in this <a href="http://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast">askubuntu</a> question and I'm building on top of it to make it as easy as right clicking on a video file.<!--more-->
-<h2 id="overview-and-software-required">Overview and software required</h2>
+Last week I wanted to do a small screen recording on my Ubuntu desktop and save it as an animated gif. I tried <a href="https://screentogif.codeplex.com/">ScreenToGif</a> but that didn’t work in Ubuntu, it threw an exception when I pressed the record button. I found a good solution in this <a href="http://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast">askubuntu</a> question and I'm building on top of it to make it as easy as right clicking on a video file.
+
+## Overview and software required
 
 There are three basic steps in this process:
 <ul>

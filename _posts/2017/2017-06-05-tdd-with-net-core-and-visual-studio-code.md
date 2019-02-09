@@ -4,7 +4,7 @@ title: TDD with .NET Core and Visual Studio Code
 date: 2017-06-05 14:49:15.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - ".NET"
 - ".NET Core"
@@ -233,4 +233,3 @@ and shorter, expression-bodied methods:
 <img src="{{ site.baseurl }}/assets/2017/06/04/16_46_00-greeter-cs-myapp-visual-studio-code.png" />
 
 and of course rename the <code>v</code> parameter to a more appropriate name, like <code>personToGreet</code> (well anything is better than <code>v</code> in this case).
-

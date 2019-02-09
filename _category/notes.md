@@ -4,4 +4,4 @@ category: notes
 title: Notes
 ---
 
-Notes on tech.
+Notes, thoughts, opinions, etc.

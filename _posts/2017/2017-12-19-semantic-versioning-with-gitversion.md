@@ -4,7 +4,7 @@ title: Semantic versioning with GitVersion
 date: 2017-12-19 21:07:41.000000000 +01:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - blog-helm-sample
 - GitVersion

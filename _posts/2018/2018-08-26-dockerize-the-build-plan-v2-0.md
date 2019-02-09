@@ -4,7 +4,7 @@ title: Dockerize the build plan v2.0
 date: 2018-08-26 09:18:49.000000000 +02:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - continuous integration
 - docker

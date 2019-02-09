@@ -4,7 +4,7 @@ title: Playing with TeamCity on Azure
 date: 2018-03-10 11:57:38.000000000 +01:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - ".NET"
 - Azure

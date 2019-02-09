@@ -4,7 +4,7 @@ title: Copy InputStream to OutputStream
 date: 2018-04-21 19:19:53.000000000 +02:00
 published: true
 categories:
-- Quick Code Tips
+- programming
 tags:
 - java
 ---

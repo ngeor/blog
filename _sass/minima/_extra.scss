@@ -103,3 +103,28 @@ div#cookies {
 .acknowledged {
   display: none;
 }
+
+// category inside a post list summary
+.post-list {
+  .category {
+    background: #7cda98;
+    font-size: $small-font-size;
+    display: inline-block;
+    padding: 2px;
+    color: $text-color;
+
+    &:visited {
+      color: $text-color;
+    }
+  }
+
+  span.category {
+    background: #777777;
+    display: none; // show only for local debugging
+  }
+}
+
+// category in the header menu
+.site-nav .page-link {
+  white-space: nowrap;
+}

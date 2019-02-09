@@ -24,9 +24,14 @@
             {%- endif -%}
           {%- endfor -%}
 
-          <a class="page-link" href="{{ "/category/automation" | relative_url }}">Automation</a>
-          <a class="page-link" href="{{ "/category/ci-tooling" | relative_url }}">CI Tooling</a>
-          <a class="page-link" href="{{ "/category/notes" | relative_url }}">Notes</a>
+          {%- for category_page in site.category -%}
+            {%- unless category_page.hide_from_header -%}
+            <a class="page-link category" href="{{ category_page.url | relative_url }}">
+              {{- category_page.title -}}
+            </a>
+            {%- endunless -%}
+          {%- endfor -%}
+
           <a class="page-link" href="{{ "/series" | relative_url }}">Series</a>
           <a class="page-link" href="{{ "/wiki" | relative_url }}">Wiki</a>
 

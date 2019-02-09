@@ -4,7 +4,7 @@ title: Fixing root permissions on Docker volume
 date: 2017-12-16 19:07:48.000000000 +01:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - blog-helm-sample
 - docker

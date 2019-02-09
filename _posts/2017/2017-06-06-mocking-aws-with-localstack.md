@@ -4,7 +4,7 @@ title: Mocking AWS with localstack
 date: 2017-06-06 20:03:24.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - AWS
 - docker
@@ -64,4 +64,3 @@ With this trick, I can type <code>lsns create-topic</code> instead of <code>aws
 This solves the problem of testing in CI with managed services. You dockerize the application, together with localstack and any other dependencies, and you can run as many branches as you want in parallel. For production, you leave out the localstack and use the actual AWS services instead.
 
 I really like the idea behind localstack, but I don't know how reliable it is and how they ensure they're compatible with the actual AWS implementation. In my mind, Amazon should really support this effort and help out e.g. providing sample test suites that localstack should comply to.
-

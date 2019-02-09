@@ -4,7 +4,7 @@ title: Merging Swagger files
 date: 2018-10-28
 published: true
 categories:
-- ci-tooling
+- continuous-delivery
 tags:
 - swagger
 - java

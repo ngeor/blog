@@ -9,8 +9,6 @@ tags:
 - pomodoro
 ---
 
-<a href="#pomodoro-style-en"><em>Skip to English translation</em></a>
-
 Δοκίμασα χθες την <a href="http://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">τεχνική pomodoro</a> για να κάνω λίγη δουλειά στο <a href="https://sourceforge.net/projects/resxtranslator/" target="_blank">ResxTranslator</a>. Την τεχνική την πληροφορήθηκα από <a href="http://blog.postmaster.gr/2010/11/15/a-simple-pomodoro-timer/" target="_blank">αυτό το άρθρο</a>. Η λέξη pomodoro είναι Ιταλική και σημαίνει ντομάτα. Η τεχνική pomodoro λέει ότι δουλεύεις για 25 λεπτά σε ένα task και αυτό το task το λες pomodoro. Μόλις ολοκληρώσεις ένα pomodoro κάνεις 5 λεπτά διάλειμα. Κάθε 4 pomodoro κάνεις ένα μεγαλύτερο διάλειμμα, π.χ. 10 λεπτά.
 
 Στο Mac χρησιμοποιήσα ένα δωρεάν πρόγραμμα ονόματι <a href="http://pomodoro.ugolandini.com/" target="_blank">Pomodoro</a> για τη χρονομέτρηση. Δουλεύει αρκετά καλά και έχει πλάκα γιατί χρησιμοποιεί το σύστημα του Mac για σύνθεση φωνής.

@@ -4,7 +4,7 @@ title: Terraform secrets
 date: 2018-10-06
 published: true
 categories:
-- ci-tooling
+- continuous-delivery
 tags:
 - terraform
 - helm

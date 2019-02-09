@@ -5,7 +5,7 @@ date: 2017-12-09 09:50:43.000000000 +01:00
 series: CD with Helm
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - blog-helm-sample
 - docker

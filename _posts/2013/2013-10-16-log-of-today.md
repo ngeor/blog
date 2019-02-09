@@ -8,7 +8,9 @@ categories:
 tags: []
 ---
 
-So, this is a small summary of some things I did today (after all blog stands for web log):<!--more-->
+So, this is a small summary of some things I did today (after all blog stands for web log):
+
+
 <ul>
 <li>Progress on the Java front. The book reading goes slowly, but even the boring chapters about Swing help to jog my memory. As a result today I was able to write a small app, without Googling all the time on how do I do this, how do I do that, and so on. The app is supposed to ping my various virtual machines at home. I have a script that is taking them down, backs them up and then brings them up again. But sometimes that last part can go wrong... so I'm going to use the app I wrote (eat your own dog food!) to ping those hosts. It's one host per line, if it starts with http then it's going to try to access it as a web site (http request), otherwise it will just try to see if the address is reachable.</li>
 <li>My learning itch is manifesting in other ways as well, the approximately once per year "need to get certified" itch. This was spurred by <a href="https://twitter.com/ngeor/status/390411074626805761">a Twitter conversation</a> about the <a href="http://www.microsoft.com/learning/en-us/exam-70-486.aspx">Developing ASP.NET MVC 4 Web Applications 070-486 exam</a>. I almost bought that book actually; good thing I checked first to see if there is an alternative upgrade path for me (MCPD Web Developer 4 since 7th of May 2012) :-)

@@ -4,7 +4,7 @@ title: Automatic versioning of npm packages
 date: 2016-08-20 08:00:16.000000000 +02:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - continuous integration
 - javascript

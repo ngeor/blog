@@ -4,7 +4,7 @@ title: YAML schema validation with Maven
 date: 2018-11-28
 published: true
 categories:
-  - ci-tooling
+  - consistency
 tags:
   - java
   - maven

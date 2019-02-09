@@ -4,7 +4,7 @@ title: Code coverage on integration tests?
 date: 2018-08-11 19:48:15.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - code coverage
 - integration tests

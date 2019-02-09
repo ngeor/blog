@@ -4,7 +4,7 @@ title: Build configurations as code with TeamCity
 date: 2017-12-25 09:41:36.000000000 +01:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - blog-helm-sample
 - TeamCity
@@ -107,4 +107,3 @@ These UI patches are meant to be temporary and they should be applied to the cod
 Having the build configuration is git is a great feature. Once something is in git, it obeys to the same rules as code does. It is open to anyone to read and experiment with. There are no special people in the team that have special access to configure the build, anyone can do it. Build configuration changes are subject to code review. And feature branches allow for introducing breaking changes to the build pipeline without impacting others.
 
 Another interesting thing to observe is that having the build configuration in git makes it easier to use (and abuse) inline shell scripts. It's often handy to add a little bit of ad-hoc inline bash in a build step, but if it's not under git you risk losing it, it's not transparent, etc. Now, these little steps become part of git just like everything else. It's probably a good idea to still use separate files for shell scripts (especially larger ones), as it will be clearer in the code review what you're changing, you'll be able to test them locally, you'll have syntax highlighting, and so on.
-

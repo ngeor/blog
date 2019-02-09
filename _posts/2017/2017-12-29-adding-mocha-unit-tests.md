@@ -4,7 +4,7 @@ title: Adding mocha unit tests
 date: 2017-12-29 18:18:32.000000000 +01:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - blog-helm-sample
 - chai
@@ -95,4 +95,3 @@ One last bit is to configure Visual Studio Code so that I can run and debug the 
     ]
 }
 ```
-

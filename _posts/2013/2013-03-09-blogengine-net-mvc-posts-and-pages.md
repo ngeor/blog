@@ -9,6 +9,7 @@ tags: []
 ---
 
 In the latest commit on BlogEngine.NET MVC, which is <a href="https://blogengine.codeplex.com/SourceControl/network/forks/NikolaosGeorgiou/blogenginemvc">always available here</a>, the following have been added:
+
 <ul>
 <li>Page controller. Pages have URLs like http://localhost/page/my-page or http://localhost/secondary-blog/page/my-page if it's on a secondary blog</li>
 <li>Post controller. Post URLs are similar to pages, but the URL segment 'page' changes into 'post'. In addition, BlogEngine.NET supports two versions of URLs: simple (the ones we just described) and timestamped, where the post slug is prefixed by the date of the post. The latter looks like http://localhost/post/2013/03/09/my-post. This preference is set in blog settings and it's already been taken into account in BlogEngine.NET MVC! Depending on the preference, the correct post URL will be generated. Also, the 'incorrect' URL will redirect to the correct one to ensure we don't end up with duplicate URLs (for SEO reasons).</li>

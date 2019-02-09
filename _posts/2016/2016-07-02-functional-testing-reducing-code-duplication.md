@@ -4,7 +4,7 @@ title: Functional Testing - Reducing Code Duplication
 date: 2016-07-02 07:53:51.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 series: Functional Tests
 tags:
 - functional tests

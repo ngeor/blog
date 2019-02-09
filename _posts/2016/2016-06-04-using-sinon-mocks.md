@@ -4,7 +4,7 @@ title: Using sinon mocks
 date: 2016-06-04 08:00:24.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 series: Unit Tests
 tags:
 - javascript

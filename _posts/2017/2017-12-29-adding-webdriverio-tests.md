@@ -4,7 +4,7 @@ title: Adding WebdriverIO tests
 date: 2017-12-29 13:55:32.000000000 +01:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - blog-helm-sample
 - docker

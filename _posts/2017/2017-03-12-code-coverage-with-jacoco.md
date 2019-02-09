@@ -4,7 +4,7 @@ title: Code Coverage with JaCoCo
 date: 2017-03-12 08:48:58.000000000 +01:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - code coverage
 - jacoco

@@ -4,7 +4,7 @@ title: What is functional testing?
 date: 2016-06-12 20:50:05.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 series: Functional Tests
 tags:
 - browser tests

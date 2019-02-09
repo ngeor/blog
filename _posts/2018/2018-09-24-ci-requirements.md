@@ -4,7 +4,7 @@ title: CI requirements
 date: 2018-09-24
 published: true
 categories:
-- notes
+- continuous-delivery
 tags:
 - continuous integration
 - quality

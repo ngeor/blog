@@ -4,7 +4,7 @@ title: npm login credentials on the CI server
 date: 2017-01-28 08:37:30.000000000 +01:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - continuous integration
 - javascript
@@ -46,4 +46,3 @@ EOF
 ```
 
 This script generates the <code>.npmrc</code> file, using the environment variable <code>NPM_AUTH_TOKEN</code>. All you have to do now is to define that environment variable in your build configuration.
-

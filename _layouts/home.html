@@ -23,8 +23,22 @@ layout: default
       </h3>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+      {%- for category in post.categories -%}
+        {%- assign category_page = site.category | where: "category", category | first -%}
+        {%- if category_page %}
+          <a href="{{ category_page.url | relative_url }}" class="category">
+            {{ category_page.title }}
+          </a>
+        {%- else -%}
+          <span class="category">
+            {{ category }}
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+
       {%- if site.show_excerpts or page.show_excerpts -%}
-      {{ post.excerpt }}
+        {{ post.excerpt }}
       {%- endif -%}
     </li>
     {%- endfor -%}

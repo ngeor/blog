@@ -4,7 +4,7 @@ title: Adventures with automated browser tests in JavaScript
 date: 2016-02-04 20:49:24.000000000 +01:00
 published: true
 categories:
-- Code
+- testing
 tags:
 - automated tests
 - chai
@@ -334,4 +334,3 @@ before(function* () {
 I am very new to this, but one must admit the second version looks way more readable. It looks like you're reading synchronous code (looks exactly like the async/await of C#). Notice the extra star after the function. This marks it as a generator function. I invite you to read more at the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*" target="_blank">documentation</a>, it has some nice examples too. Like I said, this is going to be my next learning adventure.
 
 We intend to roll this out to the teams from next week, unless somebody objects. Additionally, we're thinking of starting cleaning up our existing tests: if you touch a file, you have to rewrite the entire thing in the new way. We'll see how that flies, you have to start paying up the debt sooner or later!
-

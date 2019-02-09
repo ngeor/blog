@@ -4,7 +4,7 @@ title: Troubleshooting SSL - missing /root/.postgresql/root.crt
 date: 2018-11-02
 published: true
 categories:
-- Code
+- programming
 tags:
 - java
 - docker

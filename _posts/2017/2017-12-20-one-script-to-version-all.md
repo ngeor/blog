@@ -4,7 +4,7 @@ title: One script to version all
 date: 2017-12-20 20:55:35.000000000 +01:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - blog-helm-sample
 - GitVersion

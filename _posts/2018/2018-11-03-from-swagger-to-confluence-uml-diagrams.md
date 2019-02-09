@@ -9,7 +9,6 @@ tags:
 - swagger
 - atlassian
 - docker
-- automation
 ---
 
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition

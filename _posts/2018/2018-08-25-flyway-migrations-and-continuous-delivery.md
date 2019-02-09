@@ -4,7 +4,7 @@ title: Flyway migrations and Continuous Delivery
 date: 2018-08-25 10:41:38.000000000 +02:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - Flyway
 ---

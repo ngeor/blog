@@ -10,8 +10,9 @@ tags:
 - maven
 ---
 
-I started using Maven at work recently. Being a newbie, I find myself googling constantly (even though the answer is always on StackOverflow) about basic things. For reference, these are my most needed actions so far:<!--more-->
-<h2 id="how-to-create-a-new-maven-project">How to create a new maven project</h2>
+I started using Maven at work recently. Being a newbie, I find myself googling constantly (even though the answer is always on StackOverflow) about basic things. For reference, these are my most needed actions so far:
+
+## How to create a new maven project
 
 Originally found <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">here</a>:
 

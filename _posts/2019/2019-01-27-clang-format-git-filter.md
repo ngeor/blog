@@ -4,7 +4,7 @@ title: clang-format as a git filter
 date: 2019-01-27
 published: true
 categories:
-  - Code
+  - consistency
 tags:
   - java
   - clang-format
@@ -21,7 +21,7 @@ In this post, I'm showing how to use this tool as a git filter in order to
 automatically format Java code when committing code to git. The inspiration
 comes from [these
 examples](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes) in the
-Git documentation and by tools like [prettier ](https://prettier.io/) from the
+Git documentation and by tools like [prettier](https://prettier.io/) from the
 JavaScript ecosystem.
 
 First of all, you need to have the `clang-format` program somewhere in your

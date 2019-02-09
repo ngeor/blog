@@ -4,12 +4,11 @@ title: Terraform secrets part 2 - Randomize it
 date: 2018-11-04
 published: true
 categories:
-  - ci-tooling
+  - continuous-delivery
 tags:
   - terraform
   - helm
   - kubernetes
-  - ci-tooling
 ---
 
 In a [previous post], I used Terraform and Helm to pass the connection string of an Azure

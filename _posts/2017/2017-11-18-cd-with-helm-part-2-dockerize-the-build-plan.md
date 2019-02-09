@@ -5,7 +5,7 @@ date: 2017-11-18 08:19:10.000000000 +01:00
 series: CD with Helm
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - blog-helm-sample
 - continuous integration

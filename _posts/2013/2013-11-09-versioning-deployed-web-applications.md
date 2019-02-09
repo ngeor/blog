@@ -4,7 +4,7 @@ title: Versioning Deployed Web Applications
 date: 2013-11-09 07:16:43.000000000 +01:00
 published: true
 categories:
-- Code
+- versioning
 tags:
 - continuous delivery
 - continuous integration

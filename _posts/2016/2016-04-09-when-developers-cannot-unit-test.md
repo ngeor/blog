@@ -4,8 +4,7 @@ title: When developers cannot unit test
 date: 2016-04-09 08:27:00.000000000 +02:00
 published: true
 categories:
-- Tech Notes
-series: Unit Tests
+- notes
 tags:
 - code review
 - knowledge sharing

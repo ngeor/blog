@@ -10,7 +10,8 @@ tags: []
 
 This week I've been very busy with my new pet project, BuzzStats.
 BuzzStats is an application that collects data from Buzz, a popular social bookmarking Greek speaking community.
-<h2>What is Buzz?</h2>
+
+## What is Buzz?
 
 <a href="http://buzz.reality-tape.com/" target="_blank">Buzz</a> is a popular Greek website and community. It's like digg more or less. Users of Buzz can submit new stories, vote stories that other users have submitted, leave comments on existing stories and rate existing comments. The stories are most usual in the Greek language and the topics are often related to politics. I'm not related to the Buzz website in any way, other than being a member.
 <h2>What is BuzzStats?</h2>

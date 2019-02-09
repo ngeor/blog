@@ -4,7 +4,7 @@ title: What is code coverage?
 date: 2016-05-07 08:30:49.000000000 +02:00
 published: true
 categories:
-- Code
+- testing
 series: Unit Tests
 tags:
 - code coverage

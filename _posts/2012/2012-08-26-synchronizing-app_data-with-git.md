@@ -9,7 +9,9 @@ tags: []
 ---
 
 When you have a web application that stores data in it's App_Data folder, at some point you'll want to synchronize the development environment(s) with the live environment. This way your development machine will have the latest live data. This is a task that can be achieved with git.
-<h2 id="requirements">Requirements</h2>
+
+
+## Requirements
 
 I have actually made the following work, but with the following adjustments:
 <ul>

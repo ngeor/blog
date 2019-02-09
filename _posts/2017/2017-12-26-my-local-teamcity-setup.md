@@ -4,7 +4,7 @@ title: My local TeamCity setup
 date: 2017-12-26 20:46:29.000000000 +01:00
 published: true
 categories:
-- Code
+- continuous-delivery
 tags:
 - docker
 - TeamCity
@@ -83,4 +83,3 @@ FROM jetbrains/teamcity-agent:2017.2.1
 RUN mkdir -p /etc/ssh
 RUN ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts
 ```
-
