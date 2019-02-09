@@ -7,12 +7,13 @@ permalink: /about/
 My name is Nikolaos Georgiou. I'm a Greek software engineer
 living in the Netherlands.
 
-I mostly blog about programming, continuous delivery, testing,
+I blog mostly about programming, continuous delivery, testing,
 automation, code quality.
 
-## Cookies and Tracking
+## Cookies
 
-This website is using Google Analytics and Google AdSense.
+This site uses third party cookies from Google Analytics and
+Google AdSense.
 
 ## Meta
 
