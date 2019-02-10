@@ -46,7 +46,7 @@ example:
 It would be great if I don't have to write any code to support this... and the
 search begins.
 
-### Searching for YAML validation
+## Searching for YAML validation
 
 Googling around for a YAML schema validator does not bring many results (what a
 surprise). We have some candidates:
@@ -63,7 +63,7 @@ not using anything fancy (and I don't think I am), I should be able to convert
 the YAML file into a JSON and then use [JSON schema](https://json-schema.org/),
 which has good adoption.
 
-### Converting YAML to JSON
+## Converting YAML to JSON
 
 I did some investigation here as well and I couldn't find an existing Maven
 plugin. The code to [convert YAML to JSON is trivial with
@@ -72,7 +72,7 @@ so I put together a [tiny Maven
 plugin](https://github.com/ngeor/yak4j-json-yaml-converter-maven-plugin) which
 does exactly that and nothing more.
 
-### Validating JSON schema
+## Validating JSON schema
 
 When it comes to performing JSON schema validation, I found two existing Maven
 plugins, one from [Groupon](https://github.com/groupon/json-schema-validator)
@@ -81,7 +81,7 @@ and one from
 As the first one is more recently maintained, I gave that one a chance and it
 worked.
 
-### Writing the JSON schema
+## Writing the JSON schema
 
 With a little bit of reading, I came up with the following initial version of my
 schema:
@@ -140,7 +140,7 @@ can be cryptic so what this says is that:
 We also check that the allowed verbs are `get`, `post`, `put` and `delete`, and
 that the `description` property is mandatory.
 
-### Reusing the schema
+## Reusing the schema
 
 If you've gone this far, you probably want to reuse this schema file in all of
 your microservices. To avoid copy pasting it around, we can package it in a tiny
@@ -182,7 +182,7 @@ and bring them in place before the Groupon plugin kicks in:
 </plugin>
 ```
 
-### Putting it all together
+## Putting it all together
 
 There are a lot of moving parts, so here it is all together:
 
@@ -266,7 +266,7 @@ There are a lot of moving parts, so here it is all together:
 </plugin>
 ```
 
-### Conclusion
+## Conclusion
 
 Validation and conventions belong in the CI. If you're developing RESTful
 microservices with Swagger, it's important that you maintain the consistency of

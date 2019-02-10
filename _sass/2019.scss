@@ -1,12 +1,12 @@
 @charset "utf-8";
 
 $spacing-unit: 30px;
-$base-font-family: 'Lucida Grande', Corbel, Verdana, Arial, Sans-Serif;
-$base-font-size: 14pt;
-$header-font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
-$small-font-size: 12pt;
+$base-font-family: 'Open Sans', sans-serif;
+$base-font-size: 12.5pt;
+$header-font-family: 'Montserrat', sans-serif;
+$small-font-size: 10pt;
 $header-background: #2174ac;
-$h1-font-size: 22pt;
+$h1-font-size: 20pt;
 $h2-font-size: 18pt;
 $h3-font-size: 14pt;
 
@@ -135,80 +135,14 @@ main .wrapper {
   justify-content: space-between;
 }
 
-.series li div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.series-toc {
-  font-size: $small-font-size;
-  border: 1px dashed $grey-color;
-  padding: $spacing-unit / 2;
-  margin-bottom: $spacing-unit;
-  ul, ol {
-    columns: 2;
-  }
-}
-
-.series-list {
-  margin: 0;
-  padding: 0;
-}
-
-.series-item {
-  align-items: center;
-  color: $text-color;
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: $spacing-unit / 2;
-  text-decoration: none;
-
-  // left logo image
-  > img.tube {
-    display: none;
-    flex: 0 0 auto;
-    max-width: inherit;
-    padding-right: $spacing-unit / 2;
-    width: $spacing-unit * 2;
-  }
-
-  @include on-laptop() {
-    // does not fit in mobile view
-    > img.tube {
-      display: inline-block;
-    }
-  }
-
-  // text
-  section {
-    flex: 1 1 auto;
-
-    header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-
-      a {
-        font-style: normal;
-        font-weight: bold;
-        font-size: $h1-font-size;
-      }
-
-      time {
-        font-style: normal;
-        font-weight: normal;
-        color: $grey-color;
-        font-size: $small-font-size;
-      }
-    }
-  }
-}
-
 @import
   "2019/header",
   "2019/post-list",
+  "2019/post-content",
   "2019/post-meta",
   "2019/post",
+  "2019/page",
+  "2019/series",
   "2019/footer",
   "2019/sidebar",
   "minima/syntax-highlighting"

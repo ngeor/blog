@@ -19,9 +19,9 @@ Mean
 It](https://haacked.com/archive/2013/10/28/code-review-like-you-mean-it.aspx/)
 by [Phil Haack](https://haacked.com/). Lots of great tips in there.
 
-### Author's point of view
+## Author's point of view
 
-#### When to create a PR
+### When to create a PR
 
 Normally, you should create a PR only when you're finished with your ticket
 **and** the build is green. If that's not the case, then you will need to
@@ -31,7 +31,7 @@ As an exception to this, you can also create a PR to get early feedback
 when you have doubts about how to proceed. Maybe add a note in the title of the
 PR such as "WIP" (work in progress) or something better.
 
-#### Size matters
+### Size matters
 
 Keep the PR small. Nobody wants to review a huge changeset.
 
@@ -40,7 +40,7 @@ world. However, big PRs usually indicate failure to break down a ticket into
 smaller units of work. Think about breaking the PR down to smaller chunks of
 work that still add value.
 
-#### Avoid Scope Creep
+### Avoid Scope Creep
 
 There's a fine line between the Boy Scout Principle and Scope Creep.
 
@@ -53,7 +53,7 @@ made, but the matching ticket will be pointing to something totally irrelevant.
 
 Example: fixing an easy IE-only bug under a ticket related to SEO.
 
-#### Adding reviewers
+### Adding reviewers
 
 Before you can merge a PR, it needs to be approved by at least one person (or
 more, depending on your team).
@@ -64,7 +64,7 @@ so it makes sense to add them as reviewers when that code is being changed.
 It might also make sense to wait for these people to sign off the PR, even
 though you have already received the necessary approvals by other team members.
 
-#### Be the first reviewer
+### Be the first reviewer
 
 You can also create a PR without any reviewers, in order to perform first the
 review by yourself. Try to put on the code reviewer's hat and see if you've
@@ -73,7 +73,7 @@ missed something obvious.
 It happens to me more than often that when I do a code review by myself, I find
 small things and typos that I can fix before asking for feedback.
 
-#### Annotate in advance
+### Annotate in advance
 
 Before appointing the reviewers, you can annotate the PR with guiding comments.
 The code reviewer does not have the context of the change on his/her mind. If
@@ -83,7 +83,7 @@ time trying to understand the PR.
 Do consider however if these guiding comments would be more useful to live
 inside the codebase.
 
-#### Nudging Reviewers
+### Nudging Reviewers
 
 Sometimes it takes a while before you get code reviewers to engage with your PR.
 You can use the Nudge button in Slack to gently poke them. You can also mention
@@ -94,7 +94,7 @@ Patience is a virtue. Wait a bit before poking them.
 It is still the author's responsibility to close the ticket, so don't forget to
 keep poking at the reviewers.
 
-#### Processing Comments
+### Processing Comments
 
 Even if you have approvals on your PR, make sure that all comments are discussed
 and properly addressed before merging a PR. This is more about manners and
@@ -105,9 +105,9 @@ You don't have to agree with every single suggestion and process the requested
 changes, that's fine. But don't discard a comment without answering it. That's
 what the PR is for, to discuss.
 
-### Reviewer's point of view
+## Reviewer's point of view
 
-#### Reacting in a timely manner
+### Reacting in a timely manner
 
 Getting a ticket done is a team effort. If you postpone reviews for too long,
 tickets pile up and stay in 'code review'.
@@ -115,13 +115,13 @@ tickets pile up and stay in 'code review'.
 Context switching is difficult, but before starting something new, consider
 going over open pull requests.
 
-#### Avoid the pronoun game
+### Avoid the pronoun game
 
 When commenting, try to elaborate a bit. If you use phrases like "move this to a
 function" or "it is not needed", the author might not understand what the words
 "_this_" or "_it_" are referring to.
 
-#### Don't worry about code style
+### Don't worry about code style
 
 Don't worry about things like indentation, blank lines, etc.
 
@@ -129,7 +129,7 @@ Code style checks should be part of the build and [the build should break on
 code style violations][ci-requirements]. If that's not the case, then fix that
 instead of wasting your energy complaining about blank lines on every PR.
 
-#### Perfect is the enemy of good
+### Perfect is the enemy of good
 
 - [Perfect is the enemy of good](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 - Premature optimization is the root of all evil (Donald Knuth)
@@ -141,7 +141,7 @@ a full refactoring of the entire code base.
 
 If things get out of hand, pause, take a breath, and create a separate ticket.
 
-### Things to check for regardless of programming language
+## Things to check for regardless of programming language
 
 Here's a small list of things you can check for, regardless of the programming
 language you're using:

@@ -16,6 +16,13 @@ footer {
     height: 16px;
   }
 
+  .footer-heading {
+    font-size: $h2-font-size;
+  }
+
+  a {
+    @include link-style($text-color);
+  }
 
   @include on-laptop {
     .footer-col-wrapper {
@@ -33,7 +40,7 @@ footer {
   background: black;
   bottom: 0;
   box-sizing: border-box;
-  color: #fafad2;
+  color: white;
   font-size: $small-font-size;
   padding: $spacing-unit / 2;
   position: fixed;
@@ -41,7 +48,7 @@ footer {
   width: 100%;
 
   a {
-    color: #fafad2;
+    color: white;
     font-weight: bold;
   }
 }

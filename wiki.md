@@ -1,15 +1,25 @@
 ---
-layout: page
+layout: sidebar
 title: Wiki
 permalink: /wiki/
 ---
+
+<h1>{{ page.title }}</h1>
+
 The Wiki section contains reference articles that will be updated (in contrast
 with blog posts which are immutable) whenever I want to modify something.
 
-{%- for wiki in site.wiki %}
-
-  <h2><a href="{{ wiki.url | relative_url }}">{{ wiki.title }}</a></h2>
-
-  {{ wiki.excerpt }}
-
-{%- endfor -%}
+<ul class="post-list">
+  {%- for post in site.wiki -%}
+  <li>
+    <h3>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
+    </h3>
+    {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>

@@ -16,7 +16,7 @@ frameworks to choose from. From a continuous integration
 perspective, I think that there a couple of requirements that
 one should check before jumping onto something brand new.
 
-**Code style**
+## Code style
 
 Having a consistent code style across the codebase makes it
 easier to read the code. Having tooling that breaks the build
@@ -86,7 +86,7 @@ puts "Hello, #{name}!" unless name.empty?
 I want to emphasize that these tools need to break the
 build when there are code style violations.
 
-**Documentation**
+## Documentation
 
 I would like to quote [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html#Comments) (which I
 discovered by [AirBnb's Ruby style guide](https://github.com/airbnb/ruby#commenting)):
@@ -139,7 +139,7 @@ This is something that your tooling might support. For
 instance, checkstyle can be configured to require
 comments for methods but not for getters/setters.
 
-**Unit Tests**
+## Unit Tests
 
 Now that the code is written in a consistent way and it
 is adequately documented, we move to testing. (I'm skipping
@@ -164,7 +164,7 @@ a format that the CI server can read, so that it can create
 nice reports and graphs. The most common format is an XML format
 called jUnit or sometimes xUnit.
 
-**Code Coverage**
+## Code Coverage
 
 I was surprised that .NET Core did not have a way to measure
 code coverage unless you use Windows. Luckily this seems to
@@ -177,7 +177,7 @@ machine and at the CI server, ideally with the same tooling. It
 should be possible to define thresholds and have the build
 break when they aren't met.
 
-**Cyclomatic Complexity**
+## Cyclomatic Complexity
 
 I am only familiar with JaCoCo here. Keeping the cyclomatic
 complexity under control is an automated way of ensuring
@@ -186,7 +186,7 @@ your code doesn't get inadvertedly infected with poor design.
 It would be great if your programming language supports this. I
 was pleasantly surprised to see rubocop supports this check.
 
-**Integration Tests**
+## Integration Tests
 
 Integration tests is an overloaded term. Without going into
 details, these are the expensive tests that use a real
@@ -204,7 +204,7 @@ that allow you to test your entire application
 Launching your entire app (or parts of it) and testing it
 should be supported by your stack with minimal effort.
 
-**Wrapping it up**
+## Wrapping it up
 
 Before choosing a programming language and/or a framework,
 be aware that you'll also need the CI tooling to support it.

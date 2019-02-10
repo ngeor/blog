@@ -13,8 +13,7 @@ tags:
 
 <a href="https://joel-costigliola.github.io/assertj/">AssertJ</a> is a an assertions library for unit tests in Java that is well worth considering. Here are some examples.
 
-<!--more-->
-<h3>Basic</h3>
+## Basic
 
 ```java
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,7 +23,8 @@ assertThat(something).isNull();
 assertThat(something).isEqualTo(expectation);
 assertThat(something.getId()).isGreaterThan(0);
 ```
-<h3>Exceptions</h3>
+
+## Exceptions
 
 ```java
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -37,7 +37,8 @@ assertThatThrownBy(() -> obj.otherAction())
     .hasMessage("oops")
     .hasFieldOrPropertyWithValue("code", HttpStatus.GATEWAY_TIMEOUT);
 ```
-<h3>Dates</h3>
+
+## Dates
 
 ```java
 import java.time.OffsetDateTime;
@@ -47,7 +48,8 @@ import static org.assertj.core.api.Assertions.within;
 assertThat(obj.getCreatedAt())
     .isCloseTo(OffsetDateTime.now(), within(500, ChronoUnit.MILLIS));
 ```
-<h3>Projections</h3>
+
+## Projections
 
 ```java
 assertThat(result.getParcels())

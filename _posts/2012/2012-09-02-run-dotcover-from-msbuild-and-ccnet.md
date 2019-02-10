@@ -189,7 +189,7 @@ In my case, the final result is that my pretty HTML report is found at:
 http://myserver/artifacts/MyProject/dotCover/1.0.0.0/MyProject.Tests.html
 ```
 
-<h1>Conclusion</h1>
+## Conclusion
 
 This took a lot of work to figure out and it helped me learn a few things about msbuild and dotCover. In the end, the extra benefit of tools like ccnet is that you'll have to dive into it and in the process you'll learn about a lot of things that you don't normally need to know. On the other hand, the benefit of tools like TeamCity is that you can accomplish these things with a few clicks of the mouse :)
 

@@ -14,8 +14,7 @@ tags:
 
 In this post, I'll be using Swagger to build a REST API with Java and Spring Boot. <a href="https://swagger.io/">Swagger</a> is an API framework. It uses a YAML-based language to define an API and it has a code generator that supports multiple languages.
 
-<!--more-->
-<h2>Tooling</h2>
+## Tooling
 
 Swagger offers an <a href="https://editor.swagger.io/">online editor</a> which is useful to start playing with the language and get familiar with the syntax. But in order to generate some code, it's handy to have the <a href="https://swagger.io/swagger-codegen/">code generator</a> locally.
 

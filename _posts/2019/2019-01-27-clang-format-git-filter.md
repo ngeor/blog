@@ -11,10 +11,10 @@ tags:
   - git
 ---
 
-[clang-format] is a tool that can format source code of C-like languages
-(C/C++/Java/JavaScript/Objective-C/Protobuf). It supports various presets but it
-is also possible to fine tune its behavior with a configuration file named
-`.clang-format`. It has quite a lot [configuration
+[clang-format] is a tool that can format source code of C-like languages (C /
+C++ / Java / JavaScript / Objective-C / Protobuf). It supports various presets
+but it is also possible to fine tune its behavior with a configuration file
+named `.clang-format`. It has quite a lot [configuration
 options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
 
 In this post, I'm showing how to use this tool as a git filter in order to
