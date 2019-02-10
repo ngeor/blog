@@ -9,6 +9,7 @@ tags:
 - swagger
 - atlassian
 - docker
+featured: true
 ---
 
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition

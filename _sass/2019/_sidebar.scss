@@ -10,10 +10,11 @@
     list-style: none;
     padding: 0;
     @extend %vertical-rhythm;
+    font-size: $small-font-size;
   }
 
-  a {
-    font-size: $small-font-size;
+  li::before {
+    content: '\00bb'; // &raquo;
   }
 
   // title of widget

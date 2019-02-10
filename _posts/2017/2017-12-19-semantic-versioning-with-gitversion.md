@@ -9,7 +9,7 @@ tags:
 - blog-helm-sample
 - GitVersion
 - TeamCity
-- versioning
+featured: true
 ---
 
 I recently stumbled upon a tool called <a href="https://github.com/GitTools/GitVersion" target="_blank">GitVersion</a> which takes a different approach on versioning. I already mentioned some <a href="{{ site.baseurl }}/2017/12/18/on-versioning.html" target="_blank">options regarding versioning</a>, but all of them require you to actively specify the version somewhere. GitVersion instead is able to calculate it based on the state of your git repository.

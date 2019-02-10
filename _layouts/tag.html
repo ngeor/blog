@@ -6,27 +6,5 @@ layout: sidebar
 
 {{ content }}
 
-{%- if site.posts.size > 0 -%}
-  {%- if page.list_title -%}
-  <h2 class="post-list-heading">{{ page.list_title }}</h2>
-  {%- endif -%}
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    {%- if post.tags contains page.tag -%}
-    <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      <h3>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      {%- include meta.html -%}
-      {%- if site.show_excerpts -%}
-        {{ post.excerpt }}
-      {%- endif -%}
-    </li>
-    {%- endif -%}
-    {%- endfor -%}
-  </ul>
-
-{%- endif -%}
+{%- assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
+{%- include post-list.html -%}

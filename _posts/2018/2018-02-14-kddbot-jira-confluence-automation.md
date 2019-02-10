@@ -13,6 +13,7 @@ tags:
 - kddbot
 - python
 - automation
+featured: true
 ---
 
 TL;DR: I implemented a small working poc that shows how to automatically create a Confluence page when a Jira ticket is created.

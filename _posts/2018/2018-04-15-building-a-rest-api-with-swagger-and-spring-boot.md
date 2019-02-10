@@ -10,6 +10,7 @@ tags:
 - maven
 - spring
 - swagger
+featured: true
 ---
 
 In this post, I'll be using Swagger to build a REST API with Java and Spring Boot. <a href="https://swagger.io/">Swagger</a> is an API framework. It uses a YAML-based language to define an API and it has a code generator that supports multiple languages.
