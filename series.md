@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Series
+permalink: /series/
 ---
 I've written a few series of blog posts on topics that are too big to fit in a
 single post. In this page you can find a list of all these series.
@@ -9,7 +10,6 @@ single post. In this page you can find a list of all these series.
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 {%- assign posts = site.series | reverse -%}
 {%- for post in posts -%}
-  {%- unless post.title == 'Series' %}
   {%- assign sub_posts = site.posts | where: "series", post.title | reverse -%}
   {%- assign sub_post = sub_posts.first -%}
   <li class="series-item">
@@ -30,6 +30,5 @@ single post. In this page you can find a list of all these series.
 
     </section>
   </li>
-  {%- endunless -%}
 {%- endfor -%}
 </ul>

@@ -1,0 +1,46 @@
+.post {
+  h1 {
+    margin: 0;
+  }
+
+  .post-content {
+    img {
+      max-width: 100%;
+    }
+
+    figure {
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    figcaption {
+      font-style: italic;
+    }
+
+    table {
+      border: 1px solid #e8e8e8;
+      border-collapse: collapse;
+      text-align: left;
+
+      th, td {
+        padding: 10px 15px;
+      }
+
+      td {
+        border: 1px solid #e8e8e8;
+      }
+
+      th {
+        background-color: #f0f0f0;
+        border: 1px solid #dedede;
+        border-bottom-color: #c9c9c9;
+      }
+
+      tr:nth-child(2n) {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-bottom: $spacing-unit;
+
+    h3 {
+      margin: 0;
+      font-size: $h1-font-size;
+
+      a {
+        @include link-style(black);
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    blockquote {
+      margin: 0;
+    }
+  }
+}
+
+// only shown on the category / tag page
+h1.page-heading {
+  &+p {
+    border-left: 5px solid #ccc;
+    padding-left: 5px;
+    box-sizing: border-box;
+  }
+}

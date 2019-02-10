@@ -1,0 +1,39 @@
+// main column
+.main-col {
+  @extend %margin-bottom;
+}
+
+// sidebar
+.side-col {
+  // widget in sidebar
+  ul {
+    list-style: none;
+    padding: 0;
+    @extend %vertical-rhythm;
+  }
+
+  a {
+    font-size: $small-font-size;
+  }
+
+  // title of widget
+  h4 {
+    margin: 0;
+  }
+}
+
+@include on-laptop {
+  // on laptop, show the two columns side by side
+  .col-container {
+    display: flex;
+
+    .main-col {
+      margin-right: $spacing-unit;
+      width: calc(#{$laptop} * 0.75 - #{$spacing-unit});
+    }
+
+    .side-col {
+      width: calc(#{$laptop} * 0.25 - #{$spacing-unit} * 2);
+    }
+  }
+}

@@ -44,13 +44,21 @@ function acknowledgedCookies() {
   document.cookie = "ackCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
 }
 
+function setupNavBar() {
+  addEventListener(document.getElementById('js-menu-icon'), 'click', function (event) {
+    var el = document.getElementById('js-site-nav');
+    el.className = !!el.className ? '' : 'js-open';
+    event.preventDefault();
+  });
+}
+
 function main() {
   if (!hasAcknowledgedCookies()) {
-    var el = document.getElementById('cookies');
+    var el = document.getElementById('js-cookies');
 
     // show the cookie popup
     el.className = '';
-    addEventListener(document.getElementById('cookies-close'), 'click', function (event) {
+    addEventListener(document.getElementById('js-cookies-close'), 'click', function (event) {
       // hide the cookie popup
       el.className = 'acknowledged';
 
@@ -60,6 +68,8 @@ function main() {
       event.preventDefault();
     });
   }
+
+  setupNavBar();
 }
 
 ready(main);
