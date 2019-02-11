@@ -4,7 +4,7 @@ title: Playing with MonoMac
 date: 2010-11-07 09:26:00.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

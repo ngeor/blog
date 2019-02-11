@@ -4,7 +4,7 @@ title: w3c-nant version 1.2.0 released
 date: 2013-02-16 16:14:00.000000000 +01:00
 published: true
 categories:
-- Code
+- pet-projects
 tags: []
 ---
 

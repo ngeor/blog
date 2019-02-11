@@ -4,7 +4,7 @@ title: Troubleshooting TypeLoadException in mono
 date: 2016-03-12 06:59:35.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - ".NET"
 - mono

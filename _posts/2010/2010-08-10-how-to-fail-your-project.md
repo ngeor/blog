@@ -4,7 +4,7 @@ title: How to fail your project
 date: 2010-08-10 18:33:00.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags: []
 ---
 

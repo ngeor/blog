@@ -12,7 +12,7 @@ max_line_length = 80
 [*.sh]
 end_of_line = lf
 
-[*.java]
+[*.{java,py}]
 indent_size = 4
 
 [*.{cpp,h,sln}]

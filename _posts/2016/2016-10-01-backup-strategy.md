@@ -4,7 +4,7 @@ title: Backup Strategy
 date: 2016-10-01 10:16:27.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - backup
 ---
@@ -63,4 +63,3 @@ I am totally missing contacts, calendar, etc. At this point, these are totally o
 I'm also missing backing up more important files like photos into more media e.g. a memory card or a Blu-Ray disk. And I haven't done any offsite backup yet.
 
 And, most importantly, I haven't tried if I can actually restore a file from the backup. Because, as the old joke says, the backup is 100% successful, it's always the restore that fails.
-

@@ -4,7 +4,7 @@ title: Η Ελλάδα έχει θάλασσα;
 date: 2010-06-01 21:17:00.000000000 +02:00
 published: true
 categories:
-- Greek
+- personal
 tags: []
 ---
 

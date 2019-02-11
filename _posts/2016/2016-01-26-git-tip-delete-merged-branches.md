@@ -4,7 +4,7 @@ title: 'git tip: Delete merged branches'
 date: 2016-01-26 21:06:02.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - bash
 - git
@@ -35,4 +35,3 @@ $ git branch --merged | grep -v '*' | xargs git branch -d
 ```
 
 Note that if you squash & merge (a popular option in GitHub and Bitbucket), then <code>git branch --merged</code> will not return these branches. In that case, try <code>git branch -l</code> but with the extra risk you might delete a branch you were still working on.
-

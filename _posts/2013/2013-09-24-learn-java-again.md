@@ -4,7 +4,7 @@ title: Learn Java again
 date: 2013-09-24 05:47:00.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags: []
 ---
 

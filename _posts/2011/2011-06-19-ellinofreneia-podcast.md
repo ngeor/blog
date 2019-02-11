@@ -4,8 +4,9 @@ title: Ανεπίσημο podcast για Ελληνοφρένεια
 date: 2011-06-19 12:09:00.000000000 +02:00
 published: true
 categories:
-- Greek
-tags: []
+- pet-projects
+tags:
+- podcast
 ---
 
 Η Ελληνοφρένεια μετακόμισε στον Real FM. Όσο έπαιζε από τον ΣΚΑΙ την άκουγα μέσω iTunes από <a href="http://www.sealabs.net/seadog/2009/05/update-%cf%83%cf%84%ce%b1-rss-feeds-%cf%84%ce%b7%cf%82-%ce%b5%ce%bb%ce%bb%ce%b7%ce%bd%ce%bf%cf%86%cf%81%ce%ad%ce%bd%ce%b5%ce%b9%ce%b1%cf%82-infowar-magazino-%cf%83%ce%b9%ce%b4%ce%b5%cf%81%ce%ad/" target="_blank">το podcast που είχαν φτιάξει τα sealabs</a>. Μιας και δεν έχει ενημερωθεί, είπα να φτιάξω κι εγώ το δικό μου.

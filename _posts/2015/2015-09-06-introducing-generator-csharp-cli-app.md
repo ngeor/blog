@@ -4,7 +4,7 @@ title: Introducing generator-csharp-cli-app
 date: 2015-09-06 07:30:00.000000000 +02:00
 published: true
 categories:
-- Code
+- pet-projects
 tags:
 - generator-csharp-cli-app
 - pet project
@@ -26,4 +26,3 @@ It is already discoverable if you search in Yeoman:
 and of course also in npm:
 
 <img src="{{ site.baseurl }}/assets/2015/09/npm-generator-csharp-cli-app.png" />
-

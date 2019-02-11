@@ -4,7 +4,7 @@ title: 'Fun project: HipChat integration with AWS Lambda'
 date: 2017-04-12 19:19:35.000000000 +02:00
 published: true
 categories:
-- Code
+- automation
 tags:
 - AWS
 - atlassian

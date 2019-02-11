@@ -4,7 +4,7 @@ title: Synchronizing App_Data with git
 date: 2012-08-26 10:57:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

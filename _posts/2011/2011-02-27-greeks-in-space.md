@@ -4,7 +4,7 @@ title: Greeks in space!
 date: 2011-02-27 10:41:00.000000000 +01:00
 published: true
 categories:
-- Notes
+- notes
 tags: []
 ---
 

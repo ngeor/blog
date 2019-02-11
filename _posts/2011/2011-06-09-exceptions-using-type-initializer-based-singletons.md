@@ -4,7 +4,7 @@ title: Exceptions using type initializer based singletons
 date: 2011-06-09 21:59:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

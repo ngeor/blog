@@ -4,7 +4,7 @@ title: On the left-pad drama
 date: 2016-03-26 07:33:06.000000000 +01:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - dependencies
 - javascript
@@ -42,4 +42,3 @@ $ curl https://api.left-pad.io/?str=hi&len=5
 ```
 
 Looking forward to microservice dependency hell in the near future :)
-

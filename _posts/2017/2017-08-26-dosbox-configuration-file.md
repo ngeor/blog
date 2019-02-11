@@ -4,7 +4,7 @@ title: DOSBox configuration file
 date: 2017-08-26 07:59:27.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- my-computer
 tags:
 - DOSBox
 ---
@@ -23,4 +23,3 @@ And in the autoexec section, these two commands:
 </ul>
 
 This mounts my dosbox folder as the C drive and switches to that drive, so I'm ready to launch GWBasic :-)
-

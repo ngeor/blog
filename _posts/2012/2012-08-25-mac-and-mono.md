@@ -4,7 +4,7 @@ title: Mac and Mono
 date: 2012-08-25 08:33:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

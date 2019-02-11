@@ -4,7 +4,7 @@ title: 'ResxTranslator: a resx file editor'
 date: 2010-10-31 12:43:00.000000000 +01:00
 published: true
 categories:
-- Code
+- pet-projects
 tags:
 - pet project
 - ResxTranslator

@@ -4,7 +4,7 @@ title: Log of today
 date: 2013-10-16 20:32:00.000000000 +02:00
 published: true
 categories:
-- Notes
+- personal
 tags: []
 ---
 

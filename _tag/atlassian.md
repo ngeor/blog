@@ -1,6 +1,5 @@
 ---
 layout: tag
+normalized_tag: atlassian
 tag: atlassian
 ---
-
-Posts about Atlassian products such as Jira and Confluence.

@@ -4,7 +4,7 @@ title: Δεν θέλει να δανείσει η Σλοβακία την Ελλ
 date: 2010-07-15 14:38:00.000000000 +02:00
 published: true
 categories:
-- Greek
+- notes
 tags: []
 ---
 

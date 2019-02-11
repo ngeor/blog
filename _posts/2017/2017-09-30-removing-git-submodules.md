@@ -4,7 +4,7 @@ title: Removing git submodules
 date: 2017-09-30 10:36:39.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- programming
 tags:
 - git
 - submodules
@@ -35,4 +35,3 @@ So when should you use submodules? In all honesty, I do not know and I haven't t
 If you really need to break down a monolith project into pieces, that's fine. Think about dependencies between them, think about deployment and think about how often each piece is expected to change. In any case, instead of submodules, think about creating versioned packaged dependencies (npm for nodeJS, NuGet for .NET, etc). That might be a better, simpler solution.
 
 Keep it simple, stupid.
-

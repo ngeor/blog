@@ -4,7 +4,7 @@ title: 'Flattr: Social Micropayments'
 date: 2010-10-23 08:23:00.000000000 +02:00
 published: true
 categories:
-- Notes
+- notes
 tags: []
 ---
 <div class="col2" lang="el">

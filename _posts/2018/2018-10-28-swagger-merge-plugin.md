@@ -5,11 +5,12 @@ date: 2018-10-28
 published: true
 categories:
 - continuous-delivery
+- pet-projects
 tags:
 - swagger
 - java
 - maven
-- plugin
+- maven-plugin
 - microservices
 - api gateway
 - ci-tooling

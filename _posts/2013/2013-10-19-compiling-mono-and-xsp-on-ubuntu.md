@@ -4,7 +4,7 @@ title: Compiling Mono and XSP on Ubuntu
 date: 2013-10-19 13:12:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

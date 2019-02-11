@@ -4,7 +4,7 @@ title: WCF and deferred execution - where is my Exception?
 date: 2011-10-23 17:00:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

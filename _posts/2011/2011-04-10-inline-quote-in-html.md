@@ -4,7 +4,7 @@ title: Inline quote in HTML
 date: 2011-04-10 07:21:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

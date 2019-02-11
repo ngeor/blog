@@ -4,7 +4,7 @@ title: Installing Ruby on Rails on Windows 8
 date: 2013-04-16 08:33:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

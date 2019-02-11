@@ -4,7 +4,7 @@ title: Maven Tips
 date: 2015-06-14 07:00:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - java
 - maven

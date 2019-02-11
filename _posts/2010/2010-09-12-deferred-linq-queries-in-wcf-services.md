@@ -4,7 +4,7 @@ title: Deferred LINQ queries in WCF services
 date: 2010-09-12 07:21:00.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 
@@ -138,4 +138,3 @@ namespace WcfService1
 	}
 }
 ```
-

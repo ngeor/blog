@@ -4,7 +4,7 @@ title: Protest for Rotterdam zoo
 date: 2010-11-06 08:29:00.000000000 +01:00
 published: true
 categories:
-- Notes
+- notes
 tags: []
 ---
 

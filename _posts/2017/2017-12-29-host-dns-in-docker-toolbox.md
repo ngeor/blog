@@ -4,7 +4,7 @@ title: Host DNS in Docker Toolbox
 date: 2017-12-29 08:01:14.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - blog-helm-sample
 - DNS

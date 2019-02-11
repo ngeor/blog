@@ -4,7 +4,7 @@ title: Pomodoro style
 date: 2010-11-16 09:14:00.000000000 +01:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - pomodoro
 ---

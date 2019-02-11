@@ -4,9 +4,9 @@ title: Ακόμα πιο νέο ανεπίσημο podcast για Ελληνοφ
 date: 2013-02-06 23:36:00.000000000 +01:00
 published: true
 categories:
-- Greek
+- pet-projects
 tags:
-- Ελληνοφρένεια
+- podcast
 ---
 
 <del datetime="2017-01-03T12:08:50+00:00">Διαθέσιμο εδώ: /ellinofreneia/rssnew.xml</del>

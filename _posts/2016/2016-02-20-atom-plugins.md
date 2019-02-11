@@ -4,10 +4,10 @@ title: Atom plugins
 date: 2016-02-20 13:07:29.000000000 +01:00
 published: true
 categories:
-- Code
+- my-computer
 tags:
 - atom
-- plugins
+- atom-plugins
 ---
 
 I've switched to Atom as my main editor for some time now. In this post, I want to go over some plugins I use.<!--more-->

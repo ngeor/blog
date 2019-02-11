@@ -4,7 +4,7 @@ title: 'Tip: Send to Programs Start Menu'
 date: 2017-04-15 10:49:15.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- my-computer
 tags:
 - start menu
 - Windows
@@ -54,4 +54,3 @@ Rename the shortcut to "KeePassX" and use the Send To menu to copy it directly t
 <img src="{{ site.baseurl }}/assets/2017/04/15/12_40_02.png" />
 
 The shortcut gets copied to the %APPDATA%\Microsoft\Windows\Start Menu\Programs folder (so you can delete the shortcut in the KeePassX folder). This allows pressing the Windows key and typing "KeePassX" to find the app:<img src="{{ site.baseurl }}/assets/2017/04/15/12_43_21.png" />
-

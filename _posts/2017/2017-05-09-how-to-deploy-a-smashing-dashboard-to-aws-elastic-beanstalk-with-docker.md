@@ -4,7 +4,7 @@ title: How to deploy a smashing dashboard to AWS Elastic Beanstalk with Docker
 date: 2017-05-09 19:53:13.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - AWS
 - dashboard
@@ -115,4 +115,3 @@ Notice that we didn't have to provide a Dockerfile at all. That's because we wer
 <img src="{{ site.baseurl }}/assets/2017/05/09/21_39_13-dashboard2-env-dashboard-e2808e-microsoft-edge.png" />
 
 This simple exercise is a nice example of how Docker solves infrastructure obstacles. Instead of figuring out what it takes for AWS to support our exotic stack, we provide a Docker container that just works.
-

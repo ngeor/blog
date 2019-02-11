@@ -4,7 +4,7 @@ title: Removing the image-tag.txt artifact
 date: 2017-12-29 09:37:12.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - blog-helm-sample
 - TeamCity

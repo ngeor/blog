@@ -4,7 +4,7 @@ title: Βενιζέλος is the grim reaper
 date: 2011-11-11 04:54:00.000000000 +01:00
 published: true
 categories:
-- Greek
+- funny
 tags:
 - funny
 ---

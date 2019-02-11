@@ -4,7 +4,7 @@ title: Using AWS ECR as a Docker registry
 date: 2017-12-30 14:31:03.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - AWS
 - AWS ECR

@@ -4,7 +4,7 @@ title: A quickstart Maven archetype for Java 8
 date: 2017-02-25 12:08:38.000000000 +01:00
 published: true
 categories:
-- Code
+- pet-projects
 tags:
 - archetype
 - java
@@ -64,4 +64,3 @@ Other things a future version (or a different archetype) could include:
 </ul>
 
 Hope this helps.
-

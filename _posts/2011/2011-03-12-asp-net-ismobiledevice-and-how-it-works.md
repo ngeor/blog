@@ -4,7 +4,7 @@ title: ASP.NET IsMobileDevice and how it works
 date: 2011-03-12 08:09:00.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags: []
 ---
 

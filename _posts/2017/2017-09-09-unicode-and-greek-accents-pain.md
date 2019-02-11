@@ -4,7 +4,7 @@ title: Unicode and Greek accents pain
 date: 2017-09-09 09:36:25.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- notes
 tags:
 - Greek
 - unicode
@@ -51,4 +51,3 @@ Luckily, my playlist application was written in .NET, which has support for this
 It's probably funny how difficult it is to handle properly basic human needs like language and time (timezones) in computers.
 
 Fun fact: in Windows 10, I need to exclude my iTunes library from the File Backup, otherwise it dies. We still have a long way to go before "tea, earl grey, hot".
-

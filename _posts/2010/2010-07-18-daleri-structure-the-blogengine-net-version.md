@@ -4,7 +4,7 @@ title: 'Daleri Structure: the BlogEngine.NET version'
 date: 2010-07-18 16:41:00.000000000 +02:00
 published: true
 categories:
-- Code
+- meta
 tags:
 - themes
 - wordpress

@@ -4,7 +4,7 @@ title: Correcting EXIF dates on photos
 date: 2016-01-30 14:01:45.000000000 +01:00
 published: true
 categories:
-- Code
+- my-computer
 tags:
 - exiftool
 - metadata

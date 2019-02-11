@@ -4,7 +4,7 @@ title: Certifications
 date: 2010-05-16 09:12:00.000000000 +02:00
 published: true
 categories:
-- Tech Notes
+- personal
 tags:
 - certifications
 ---

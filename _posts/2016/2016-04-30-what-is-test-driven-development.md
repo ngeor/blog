@@ -8,7 +8,6 @@ categories:
 series: Unit Tests
 tags:
 - tdd
-- test driven development
 - unit tests
 ---
 

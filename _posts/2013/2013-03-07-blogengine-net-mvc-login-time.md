@@ -4,7 +4,7 @@ title: BlogEngine.NET MVC - Login time
 date: 2013-03-07 09:11:00.000000000 +01:00
 published: true
 categories:
-- Code
+- pet-projects
 tags:
 - BlogEngine.NET MVC
 - pet project

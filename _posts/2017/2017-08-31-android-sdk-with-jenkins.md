@@ -4,7 +4,7 @@ title: Android SDK with Jenkins
 date: 2017-08-31 07:19:30.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - Android
 - Jenkins
@@ -69,4 +69,3 @@ apksigner verify app-signed.apk
 ```
 
 In reality, I'm using hard coded paths and inline passwords, which are definitely points for improvement. Also, the certificate "SuperSecret.jks" (which you need to have generated already) needs to be present on the Jenkins server.
-

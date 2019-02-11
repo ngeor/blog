@@ -4,7 +4,7 @@ title: The social experiment of public transport
 date: 2011-11-26 07:52:00.000000000 +01:00
 published: true
 categories:
-- Notes
+- funny
 tags: []
 ---
 

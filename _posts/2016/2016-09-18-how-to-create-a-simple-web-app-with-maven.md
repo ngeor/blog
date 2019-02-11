@@ -4,7 +4,7 @@ title: How to create a simple web app with maven
 date: 2016-09-18 19:37:05.000000000 +02:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - java
 - maven
@@ -34,4 +34,3 @@ To be able to run the web app from within the IDE and without needing a Tomcat i
 Finally, I made a small modification to the web.xml: instead of using the old 2.3 DTD schema, I <a href="https://github.com/ngeor/icqfriends/commit/eb6203046077bb842c12044fe698aaa425580269">changed it to a more recent 2.5 XSD</a>.
 
 The reason I went through this little exercise is because I had an old JSP project in NetBeans (not in maven) but I don't use NetBeans anymore. I wanted to see if it's possible to migrate it to maven and run it again to make a trip down the memory lane (the project is at least 10 years old). I think it's best to stick with an IDE-agnostic approach like maven when it comes to organizing your project; and any serious IDE should support maven.
-

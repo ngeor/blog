@@ -4,7 +4,7 @@ title: Kafka Windows Service Wrapper
 date: 2017-03-04 06:36:16.000000000 +01:00
 published: true
 categories:
-- Code
+- pet-projects
 tags:
 - Kafka
 - Windows Service
@@ -49,4 +49,3 @@ Well, I hope someone else will also use this and find it useful. Future improvem
 <li>create an installation package for the service wrapper, potentially bundled with Kafka, so you have a Windows developer-friendly installer</li>
 <li>Binaries are available through AppVeyor but you still need installutil to install them. Next point: make the service able to install itself as described <a href="http://stackoverflow.com/questions/1195478/how-to-make-a-net-windows-service-start-right-after-the-installation/1195621#1195621" target="_blank">here</a>.</li>
 </ul>
-

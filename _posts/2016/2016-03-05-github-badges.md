@@ -4,7 +4,7 @@ title: GitHub badges
 date: 2016-03-05 07:57:36.000000000 +01:00
 published: true
 categories:
-- Code
+- programming
 tags:
 - badges
 - david
@@ -60,4 +60,3 @@ Putting all these badges together, you get a nice homepage for your project:
 <img src="{{ site.baseurl }}/assets/2016/readme.png" />
 
 Hope this helps! Now, it looks like I have some red badges to fix :-)
-

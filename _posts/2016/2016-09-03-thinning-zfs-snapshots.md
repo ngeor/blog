@@ -4,7 +4,7 @@ title: Thinning ZFS snapshots
 date: 2016-09-03 07:28:21.000000000 +02:00
 published: true
 categories:
-- Code
+- my-computer
 tags:
 - backup
 - zfs

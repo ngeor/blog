@@ -36,7 +36,7 @@
       <div class="category-nav">
         <h4>Categories</h4>
         {%- for category_page in site.category -%}
-        {%- unless category_page.hide_from_header -%}
+        {%- unless category_page.hidden -%}
         <a class="page-link category" href="{{ category_page.url | relative_url }}">
           {{- category_page.title -}}
         </a>
