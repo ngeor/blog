@@ -6,7 +6,7 @@ layout: default
   <div class="main-col">
     {{ content }}
   </div>
-  <div class="side-col">
+  <aside class="side-col">
     <h4>Recent Posts</h4>
     <ul>
       {%- for post in site.posts limit:5 -%}
@@ -40,5 +40,5 @@ layout: default
       {%- endfor -%}
     </ul>
     {%- endif -%}
-  </div>
+  </aside>
 </div>
