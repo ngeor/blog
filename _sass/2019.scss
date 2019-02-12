@@ -10,6 +10,7 @@ $h1-font-size: 20pt;
 $h2-font-size: 18pt;
 $h3-font-size: 14pt;
 
+$tablet: 730px;
 $laptop: 1024px;
 
 $link-color: #06c;
@@ -32,6 +33,12 @@ $grey-color:       #828282;
   &:hover {
     color: $hover-link-color;
     text-decoration: underline;
+  }
+}
+
+@mixin on-tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
   }
 }
 

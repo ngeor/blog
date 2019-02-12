@@ -54,7 +54,7 @@
     font-size: $base-font-size * 2;
   }
 
-  @include on-laptop {
+  @include on-tablet {
     // extra white block on the very top of the page
     &::before {
       content: '';
