@@ -58,6 +58,7 @@ collections:
     output: true
 
 paginate: 10
+paginate_path: "/page:num/"
 
 # used by preprocessor.py
 categories:
