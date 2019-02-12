@@ -10,14 +10,14 @@
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
-              {{ site.author | escape }}
+            {{ site.author | escape }}
             {%- else -%}
-              {{ site.title | escape }}
+            {{ site.title | escape }}
             {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
         </ul>
       </div>
 
@@ -27,6 +27,14 @@
 
       <div class="footer-col footer-col-3">
         <p>{{- site.tagline | escape -}}</p>
+        <p>
+            <a href="https://validator.w3.org/nu/check/referer">
+              <img src="{{ "assets/valid_html5.png" | relative_url }}" alt="Valid HTML!" />
+            </a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="{{ "assets/valid_css3.png" | relative_url }}" alt="Valid CSS!" />
+          </a>
+        </p>
       </div>
     </div>
 
