@@ -13,12 +13,15 @@ Extensions
 - Font Switcher
 - Markdown Table Formatter
 - Rewrap
+- Travis CI Status
 - XML by Red Hat
 - YAML by Red Hat (enable formatter)
 
 #### Language Specific
 
+- Docker
 - ESLint
+- Mocha Test Explorer
 - Python
 - TSLint
 
@@ -27,7 +30,11 @@ Themes
 
 - Atom One Dark Theme
 - Atom One Light Theme
+- Ayu
+- bluloco-light
 - Cobalt2 Theme Official
+- Eva Theme
+- GitHub Plus Theme
 - Night Owl
 - Xcode Default
 
@@ -54,7 +61,7 @@ Configuration
   "git.confirmSync": false
 ```
 
-- Indent Python files with 2 spaces instead of 4
+- Override Python auto-format indentation, e.g. indent Python files with 2 spaces instead of 4
 
 ```
   "python.formatting.autopep8Args": [

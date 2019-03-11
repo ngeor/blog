@@ -5,6 +5,29 @@ title: Project Setup
 
 Setting up a project, creating a pipeline, automatic deployments, etc.
 
+Getting all projects
+--------------------
+
+If you work with multiple repositories, you can use [clone-all] to clone all the
+missing repositories in one go.
+
+Example:
+
+```sh
+# get all public repositories from GitHub
+clone-all -p github --username ngeor
+# get all private repositories from Bitbucket Cloud
+clone-all -p bitbucket --owner acme --username user --password secret
+```
+
+To get latest version of all repositories in a folder, you can use [dirloop] in
+this style:
+
+```sh
+dirloop git pull
+```
+
+
 Creating a project checklist
 ----------------------------
 
@@ -64,7 +87,7 @@ language: python
 python:
   - "3.6"
 script:
-  - python -m unittest
+  - python -m pytest
   - python setup.py sdist
 deploy:
   provider: pypi
@@ -78,18 +101,15 @@ deploy:
 
 Add the PyPI badge.
 
-Deployment options
-------------------
+Bumping version
+---------------
 
 There are two deployment options:
 
 - Deploy on tag
 - Deploy on master
 
-Bumping version
----------------
-
-### Manual workflow
+### Manual workflow (deploy on tag)
 
 In this workflow, one or more team members have the **keeper** role. The keeper
 has the extra privilege of being able to push directly (i.e. without a pull
@@ -122,7 +142,7 @@ Only the keeper is allowed to update the version in project files.
 
 The tooling here should assist the keeper and prevent him/her from making mistakes.
 
-### Automatic workflow
+### Automatic workflow (deploy on master)
 
 In this workflow, a **bot** automatically pushes a tag after a green build has
 occurred on the master branch. This means that the version in the project files
@@ -162,17 +182,28 @@ properly. Additionally, it should push a new tag once the master is green.
 Tooling for versioning
 ----------------------
 
-### Bumping version with npm
+### Manual workflow (deploy on tag)
+
+#### Bumping version with npm
 
 `npm version minor` and `npm version patch` are useful commands that ensure that
 there are no gaps in SemVer. They create a separate commit for the version bump,
 together with a tag. It is possible to combine it with a `postversion` npm
 script which will push the tag (e.g. `git push --follow-tags`)
 
-### Bumping version with yart
+#### Bumping version with yart
 
 [yart](https://github.com/ngeor/yart) tries to mimic `npm version`, but for Maven projects.
 
-### Tagging master with Maven
 
-[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/yak4j-bitbucket-maven-plugin) is able to push a tag to Bitbucket after a successful green build on master.
+### Automatic workflow (deploy on master)
+
+#### Tagging master with Maven
+
+[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/yak4j-bitbucket-maven-plugin)
+supports Maven projects. It breaks the build if the tag already exists and it is
+able to push a tag to Bitbucket after a successful green build on master.
+
+
+[clone-all]: https://github.com/ngeor/clone-all
+[dirloop]: https://github.com/ngeor/dirloop
