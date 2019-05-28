@@ -142,6 +142,25 @@ main .wrapper {
   justify-content: space-between;
 }
 
+.cv {
+  h2 {
+    padding-bottom: $small-font-size / 5;
+    border-bottom: 4px solid $grey-color;
+    margin: $spacing-unit 0 0 0;
+  }
+
+  h3 {
+    margin-top: $spacing-unit;
+  }
+
+  small {
+    color: $grey-color;
+    display: block;
+    margin-top: -$small-font-size;
+    margin-bottom: $small-font-size / 5;
+  }
+}
+
 @import
   "2019/header",
   "2019/post-list",
