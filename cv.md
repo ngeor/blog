@@ -28,7 +28,7 @@ microservices.</p>
     consistency of API.
 </p>
 <p>
-    AWS, Azure, Terraform, Docker, Kubernetes, Helm, Java / Maven / Spring Boot, Angular, Python, Swagger/OpenAPI.
+    AWS, Azure, Terraform, Docker, Kubernetes, Helm, Java / Maven / Spring Boot, Angular, Python, Swagger/OpenAPI, Kafka, ElasticSearch, microservices, event sourcing, monolith decomposition.
 </p>
 
 <h3>Suitsupply / Technology Lead</h3>
