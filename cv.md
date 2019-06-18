@@ -2,7 +2,7 @@
 layout: page
 title: CV
 permalink: /cv/
-hidden: true
+hidden: false
 ---
 
 <section class="cv">
@@ -18,14 +18,15 @@ microservices.</p>
 <small>February 2018 - Present</small>
 
 <p>
-    A greenfield project that I was lucky to design from scratch. Defined the technology stack.
-    Designed a microservice architecture by mapping business capabilities to services,
-    enabling developers to get onboard fast and deliver results.
-    Helped young developers grow. Implemented services in Java and frontend in Angular.
-    API design, documentation and code generation with Swagger/OpenAPI.
-    Implemented continuous delivery pipelines, including Terraform for automated infrastructure. Created
-    Maven archetypes to accelerate service creation. Maintained overview of architecture and overall
-    consistency of API.
+    UBTech started as a tiny startup aiming to improve logistics for everyone: end consumers,
+    e-commerce shops, carriers. A greenfield project that I was lucky to design from scratch.
+    I defined the technology stack and designed a microservice architecture, mapping business
+    capabilities to services, enabling developers to get onboard fast and deliver results.
+    A small startup brings many responsibilities and roles, so I also implemented
+    services in Java and frontend in Angular, designed the REST API of the platform, implemented
+    continuous delivery pipelines, including Terraform for automated infrastructure and custom
+    tooling. In later stages, we took up the challenge of integrating with legacy monolithic
+    systems and untangle them in order to deliver one unified multi-tenant platform.
 </p>
 <p>
     AWS, Azure, Terraform, Docker, Kubernetes, Helm, Java / Maven / Spring Boot, Angular, Python, Swagger/OpenAPI, Kafka, ElasticSearch, microservices, event sourcing, monolith decomposition, multi-tenant platform.
