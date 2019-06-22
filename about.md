@@ -25,6 +25,8 @@ source code for the blog is [here](https://github.com/ngeor/blog).
 
 ### 2019
 
+Update: the theme is based on [Twenty Seventeen].
+
 The custom made 2019 theme is inspired by the retro theme [K2].
 
 Code blocks and tables are still based on [minima].
@@ -41,3 +43,4 @@ The theme is a modified version of [minima].
 
 [K2]: http://binarybonsai.com/getk2/
 [minima]: https://github.com/jekyll/minima
+[Twenty Seventeen]: https://wordpress.org/themes/twentyseventeen/

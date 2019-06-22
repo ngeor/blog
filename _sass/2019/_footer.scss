@@ -1,8 +1,14 @@
 footer {
+  border-top: 1px solid #eee;
+
   .wrapper {
-    padding: $spacing-unit;
+    padding: $spacing-unit 0;
     box-sizing: border-box;
-    background: #ccc;
+    max-width: $tablet;
+
+    > * {
+      display: inline-block;
+    }
   }
 
   ul {
@@ -32,6 +38,17 @@ footer {
 
     p {
       margin: 0;
+    }
+  }
+
+  .social-media-list {
+    span {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      padding-left: $spacing-unit;
     }
   }
 }

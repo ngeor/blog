@@ -1,9 +1,7 @@
 .site-header {
   color: white;
-
-  #js-menu-icon {
-    margin-left: $spacing-unit;
-  }
+  background: $header-background;
+  padding: $spacing-unit 0;
 
   a.site-title {
     font-family: $header-font-family;
@@ -18,30 +16,10 @@
     align-items: baseline;
     display: flex;
     justify-content: space-between;
-    padding: 3 * $spacing-unit $spacing-unit;
 
     a {
       display: inline-block;
     }
-  }
-
-  nav {
-    display: none;
-    box-sizing: border-box;
-    padding: $spacing-unit;
-    background: darken($header-background, 5%);
-  }
-
-  nav.js-open {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .page-link {
-    color: white;
-    display: block;
-    white-space: nowrap;
-    font-size: $small-font-size;
   }
 
   .tagline {
@@ -55,34 +33,33 @@
   }
 
   @include on-tablet {
-    // extra white block on the very top of the page
-    &::before {
-      content: '';
-      display: block;
-      max-width: $laptop;
-      background: white;
-      margin: 0 auto;
-      height: $spacing-unit;
-    }
-
-    #js-menu-icon {
-      display: none;
-    }
-
-    nav {
-      background: $header-background;
-      display: flex;
-      justify-content: space-between;
-    }
-
     .wrapper {
-      background: $header-background;
+      max-width: $tablet;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
     }
+  }
+}
 
-    .pages-nav {
-      margin-right: $spacing-unit;
+.pages {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: $spacing-unit / 2 0;
+
+  @include on-tablet {
+    .wrapper {
+      max-width: $tablet;
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding-right: $spacing-unit;
+    color: $text-color;
+
+    &:hover {
+      color: $h2-color;
     }
   }
 }

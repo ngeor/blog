@@ -1,5 +1,5 @@
 ---
-layout: sidebar
+layout: default
 title: Wiki
 permalink: /wiki/
 ---

@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 $spacing-unit: 30px;
-$base-font-family: 'Open Sans', sans-serif;
+$base-font-family: 'Libre Franklin', sans-serif;
 $base-font-size: 12.5pt;
-$header-font-family: 'Montserrat', sans-serif;
+$header-font-family: 'Libre Franklin', sans-serif;
 $small-font-size: 10pt;
 $header-background: #2174ac;
 $h1-font-size: 20pt;
@@ -15,7 +15,8 @@ $laptop: 1024px;
 
 $link-color: #06c;
 $hover-link-color: #147;
-$text-color:       black;
+$h2-color:         #666;
+$text-color:       #333;
 $grey-color:       #828282;
 
 //
@@ -66,7 +67,7 @@ $grey-color:       #828282;
 
 body {
   font-family: $base-font-family;
-  background: #eee;
+  background: #fff;
   padding: 0;
   margin: 0;
   font-size: $base-font-size;
@@ -89,6 +90,7 @@ h1 {
 
 h2 {
   font-size: $h2-font-size;
+  color: $h2-color;
 }
 
 h3 {
@@ -127,14 +129,14 @@ h1, h2, h3, h4, p, table, pre, figure {
 //
 
 .wrapper {
-  max-width: $laptop;
+  max-width: $tablet;
   margin: 0 auto;
 }
 
 main .wrapper {
   background: white;
   box-sizing: border-box;
-  padding: $spacing-unit;
+  padding: $spacing-unit 0;
 }
 
 .page-navigation {
@@ -145,7 +147,7 @@ main .wrapper {
 .cv {
   h2 {
     padding-bottom: $small-font-size / 5;
-    border-bottom: 4px solid $grey-color;
+    border-bottom: 1px solid $grey-color;
     margin: $spacing-unit 0 0 0;
   }
 
@@ -170,6 +172,5 @@ main .wrapper {
   "2019/page",
   "2019/series",
   "2019/footer",
-  "2019/sidebar",
   "minima/syntax-highlighting"
 ;
