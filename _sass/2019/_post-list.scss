@@ -4,15 +4,12 @@
   padding: 0;
 
   li {
-    margin-bottom: $spacing-unit;
+    padding-bottom: 4em;
 
     h3 {
-      margin: 0;
-      font-size: $h1-font-size;
-
-      a {
-        @include link-style(black);
-      }
+      font-size: 1.625rem;
+      color: #666;
+      font-weight: 300;
     }
 
     p {

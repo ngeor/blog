@@ -4,9 +4,10 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <span class="post-time dt-published">{{ page.date | date: date_format }}</span>
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     {%- assign post = page -%}
-    {%- include meta.html -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -41,6 +42,9 @@ layout: default
     </ol>
   </div>
   {%- endif -%}
+
+  {%- include meta.html -%}
+
 </article>
 
 <div class="page-navigation">

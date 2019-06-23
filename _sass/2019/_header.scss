@@ -4,15 +4,13 @@
   padding: $spacing-unit 0;
 
   a.site-title {
-    font-family: $header-font-family;
-    font-size: 16pt;
+    font-size: 2.25rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
   }
 
   div.site-title {
-    background: $header-background;
     align-items: baseline;
     display: flex;
     justify-content: space-between;
@@ -23,43 +21,26 @@
   }
 
   .tagline {
-    font-size: $small-font-size;
-  }
-
-  h4 { margin: 0; }
-
-  a.site-title {
-    font-size: $base-font-size * 2;
-  }
-
-  @include on-tablet {
-    .wrapper {
-      max-width: $tablet;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-    }
+    font-size: 1rem;
   }
 }
 
 .pages {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  padding: $spacing-unit / 2 0;
-
-  @include on-tablet {
-    .wrapper {
-      max-width: $tablet;
-    }
-  }
 
   a {
     display: inline-block;
-    padding-right: $spacing-unit;
-    color: $text-color;
+    font-weight: 600;
+    transition: color 0.2s;
+    padding: 1em 1.25em;
 
     &:hover {
-      color: $h2-color;
+      color: #767676;
     }
+  }
+
+  a:first-child {
+    padding: 1em 1.25em 1em 0;
   }
 }

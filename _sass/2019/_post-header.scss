@@ -1,0 +1,23 @@
+.post-header {
+    margin: 0 0 0.25em 0;
+    padding: 0 0 1em 0;
+
+    .post-time {
+      display: block;
+      padding: 0 0 0.25em 0;
+      color: #767676;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1818em;
+    }
+
+    .post-title {
+        margin-bottom: 0.25em;
+        padding: 0;
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -11,8 +11,8 @@
   }
 
   figcaption {
-    font-size: $small-font-size;
-    color: $grey-color;
+    font-size: smaller;
+    color: #ccc;
   }
 
   table {
@@ -48,14 +48,4 @@
     font-weight: bold;
   }
 
-  a {
-    @include link-style(black);
-    text-decoration: underline;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0 0 1.5em;
-  }
 }

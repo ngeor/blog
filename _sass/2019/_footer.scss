@@ -1,14 +1,21 @@
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 3em 0;
+}
+
 footer {
   border-top: 1px solid #eee;
+  margin-top: 3em;
+  font-size: 0.875rem;
+  line-height: 1.6;
 
   .wrapper {
-    padding: $spacing-unit 0;
-    box-sizing: border-box;
-    max-width: $tablet;
+    padding: 2em 3em 1.5em 3em;
+  }
 
-    > * {
-      display: inline-block;
-    }
+  .wrapper > * {
+    display: inline-block;
   }
 
   ul {
@@ -22,33 +29,15 @@ footer {
     height: 16px;
   }
 
-  .footer-heading {
-    font-size: $h2-font-size;
-  }
-
-  a {
-    @include link-style($text-color);
-  }
-
-  @include on-laptop {
-    .footer-col-wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-
   .social-media-list {
     span {
+      // hide username and RSS text
       display: none;
     }
 
     li {
       display: inline-block;
-      padding-left: $spacing-unit;
+      padding-left: $spacing-unit / 2;
     }
   }
 }
@@ -58,7 +47,6 @@ footer {
   bottom: 0;
   box-sizing: border-box;
   color: white;
-  font-size: $small-font-size;
   padding: $spacing-unit / 2;
   position: fixed;
   text-align: center;

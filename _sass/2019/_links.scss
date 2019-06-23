@@ -1,0 +1,15 @@
+
+a {
+	color: #222;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	color: #000;
+	outline: 0;
+}

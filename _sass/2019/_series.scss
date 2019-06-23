@@ -4,8 +4,8 @@
 }
 
 .series-toc {
-  font-size: $small-font-size;
-  border: 1px dashed $grey-color;
+  font-size: smaller;
+  border: 1px dashed #ccc;
   padding: $spacing-unit / 2;
   margin-bottom: $spacing-unit;
   ul, ol {
@@ -28,18 +28,11 @@
 
   // left logo image
   > img.tube {
-    display: none;
+    display: inline-bloc;
     flex: 0 0 auto;
     max-width: inherit;
     padding-right: $spacing-unit / 2;
     width: $spacing-unit * 2;
-  }
-
-  @include on-laptop() {
-    // does not fit in mobile view
-    > img.tube {
-      display: inline-block;
-    }
   }
 
   // text
@@ -52,15 +45,14 @@
       justify-content: space-between;
 
       a {
-        font-size: $h1-font-size;
-        @include link-style($text-color);
+        font-size: larger;
       }
 
       time {
         font-style: normal;
         font-weight: normal;
-        color: $grey-color;
-        font-size: $small-font-size;
+        color: #ccc;
+        font-size: smaller;
       }
     }
   }

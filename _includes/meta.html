@@ -1,10 +1,5 @@
-{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
 <div class="post-meta">
-  Posted on
-  <span class="post-time dt-published">{{ post.date | date: date_format }}</span>.
-
-  Filed under
   {%- for category in post.categories -%}
   {%- assign category_page = site.category | where: "category", category | first -%}
   {%- if category_page %}
@@ -17,10 +12,8 @@
   </span>
   {%- endif -%}
   {%- endfor -%}
-  .
 
   {% if post.tags and post.tags.size > 0 %}
-  Tagged with
   {%- for tag in post.tags -%}
   {%- assign tag_page = site.tag | where: "tag", tag | first -%}
   {%- if tag_page %}
@@ -29,7 +22,6 @@
   #{{ tag }}
   {%- endif -%}
   {%- endfor -%}
-  .
   {%- endif -%}
 
 </div>

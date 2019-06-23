@@ -12,17 +12,18 @@ layout: default
 {%- if page.list_title -%}
 <h2 class="post-list-heading">{{ page.list_title }}</h2>
 {%- endif -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 <ul class="post-list">
   {%- for post in paginator.posts -%}
   <li>
-    <h3>
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title | escape }}
-      </a>
-    </h3>
-
-    {%- include meta.html -%}
-
+    <header class="post-header">
+      <span class="post-time dt-published">{{ post.date | date: date_format }}</span>
+      <h3 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+    </header>
     {%- if site.show_excerpts or page.show_excerpts -%}
     {{ post.excerpt }}
     {%- endif -%}

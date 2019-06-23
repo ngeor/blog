@@ -1,9 +1,13 @@
 .post-meta {
-  font-size: $small-font-size;
-  margin-bottom: $spacing-unit / 2;
-  color: $grey-color;
-}
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 2em;
+  padding: 2em 0;
 
-.post-time {
-  color: $text-color;
+  a {
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.1818em;
+    text-transform: uppercase;
+  }
 }

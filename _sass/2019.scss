@@ -1,176 +1,20 @@
 @charset "utf-8";
 
-$spacing-unit: 30px;
-$base-font-family: 'Libre Franklin', sans-serif;
-$base-font-size: 12.5pt;
-$header-font-family: 'Libre Franklin', sans-serif;
-$small-font-size: 10pt;
-$header-background: #2174ac;
-$h1-font-size: 20pt;
-$h2-font-size: 18pt;
-$h3-font-size: 14pt;
-
-$tablet: 730px;
-$laptop: 1024px;
-
-$link-color: #06c;
-$hover-link-color: #147;
-$h2-color:         #666;
-$text-color:       #333;
-$grey-color:       #828282;
-
-//
-// mix-ins
-//
-
-@mixin link-style($color) {
-  text-decoration: none;
-  color: $color;
-
-  &:visited {
-    color: $color;
-  }
-
-  &:hover {
-    color: $hover-link-color;
-    text-decoration: underline;
-  }
-}
-
-@mixin on-tablet {
-  @media screen and (min-width: $tablet) {
-    @content;
-  }
-}
-
-@mixin on-laptop {
-  @media screen and (min-width: $laptop) {
-    @content;
-  }
-}
-
-//
-// extensions
-//
-
-%vertical-rhythm {
-  margin: 0 0 $spacing-unit / 2 0;
-}
-
-%margin-bottom {
-  margin: 0 0 $spacing-unit 0;
-}
-
-//
-// general styles
-//
-
-body {
-  font-family: $base-font-family;
-  background: #fff;
-  padding: 0;
-  margin: 0;
-  font-size: $base-font-size;
-}
-
-h1, h2, h3 {
-  font-family: $header-font-family;
-  font-weight: normal;
-}
-
-h4 {
-  font-family: $base-font-family;
-  font-weight: bold;
-  font-size: $small-font-size;
-}
-
-h1 {
-  font-size: $h1-font-size;
-}
-
-h2 {
-  font-size: $h2-font-size;
-  color: $h2-color;
-}
-
-h3 {
-  font-size: $h3-font-size;
-}
-
-a {
-  @include link-style($link-color);
-}
-
-code {
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-  background-color: #eef;
-  font-family: Menlo, Consolas, monospace;
-  font-size: $small-font-size;
-  padding: 1px 5px;
-}
-
-pre > code {
-  border: 0;
-  padding: 0;
-}
-
-pre {
-  padding: $spacing-unit / 2;
-  overflow-x: auto;
-}
-
-h1, h2, h3, h4, p, table, pre, figure {
-  @extend %vertical-rhythm;
-}
-
-//
-// custom elements
-//
-
-.wrapper {
-  max-width: $tablet;
-  margin: 0 auto;
-}
-
-main .wrapper {
-  background: white;
-  box-sizing: border-box;
-  padding: $spacing-unit 0;
-}
-
-.page-navigation {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cv {
-  h2 {
-    padding-bottom: $small-font-size / 5;
-    border-bottom: 1px solid $grey-color;
-    margin: $spacing-unit 0 0 0;
-  }
-
-  h3 {
-    margin-top: $spacing-unit;
-  }
-
-  small {
-    color: $grey-color;
-    display: block;
-    margin-top: -$small-font-size;
-    margin-bottom: $small-font-size / 5;
-  }
-}
-
 @import
+  "2019/variables",
+  "2019/normalize",
+  "2019/typography",
+  "2019/formatting",
+  "2019/lists",
+  "2019/tables",
+  "2019/links",
+  "2019/layout",
   "2019/header",
+  "2019/footer",
+  "2019/post-header",
   "2019/post-list",
   "2019/post-content",
   "2019/post-meta",
-  "2019/post",
-  "2019/page",
   "2019/series",
-  "2019/footer",
   "minima/syntax-highlighting"
 ;
