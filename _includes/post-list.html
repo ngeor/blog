@@ -6,15 +6,15 @@
   {%- for post in posts -%}
   <li>
     <header class="post-header">
-      <span class="post-time dt-published">{{ post.date | date: date_format }}</span>
       <h3 class="post-title">
         <a href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
         </a>
       </h3>
+      <span class="post-time dt-published">{{ post.date | date: date_format }}</span>
     </header>
     {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
+    {{ post.excerpt }}
     {%- endif -%}
   </li>
   {%- endfor -%}
