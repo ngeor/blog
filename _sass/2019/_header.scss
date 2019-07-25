@@ -44,3 +44,25 @@
     padding: 1em 1.25em 1em 0;
   }
 }
+
+.social-media-list {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  span {
+    // hide username and RSS text
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    padding-left: $spacing-unit / 2;
+  }
+
+  .svg-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
