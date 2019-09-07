@@ -280,3 +280,89 @@ div#js-cookies {
 .acknowledged {
   display: none;
 }
+
+.cv .timeline {
+  $year: 50px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  display: flex;
+
+  .lane {
+    display: inline-block;
+
+    * {
+      overflow: hidden;
+    }
+  }
+
+  .years > div {
+    height: $year;
+    text-align: center;
+    line-height: $year;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .work > a {
+    margin-left: 100px;
+  }
+
+  a {
+    width: 100px;
+    overflow: hidden;
+    position: absolute;
+    font-size: small;
+    display: block;
+    text-align: center;
+  }
+
+  @mixin item($color, $startYear, $startMonth, $endYear, $endMonth) {
+    margin-top: ($startYear + (($startMonth - 1)/ 12)- 1998) * $year;
+    height: ($endYear * 12 + $endMonth - $startYear * 12 - $startMonth) / 12 * $year;
+    line-height: ($endYear * 12 + $endMonth - $startYear * 12 - $startMonth) / 12 * $year;
+    background: $color;
+    border: 1px solid darken($color, 25%);
+  }
+
+  .ntua {
+    @include item(rgb(157, 199, 238), 1998, 9, 2005, 1);
+  }
+
+  .agoranet {
+    @include item(cornsilk, 2000, 1, 2001, 1);
+  }
+
+  .eraise {
+    @include item(antiquewhite, 2003, 1, 2004, 1);
+  }
+
+  .kdbsl {
+    @include item(cornsilk, 2005, 3, 2007, 5);
+  }
+
+  .imis {
+    @include item(antiquewhite, 2007, 5, 2008, 7);
+  }
+
+  .hinttech {
+    @include item(cornsilk, 2008, 8, 2011, 11);
+  }
+
+  .emakina {
+    @include item(antiquewhite, 2011, 11, 2015, 1);
+  }
+
+  .bse {
+    @include item(cornsilk, 2015, 1, 2017, 8);
+  }
+
+  .suitsupply {
+    @include item(antiquewhite, 2017, 9, 2018, 2);
+  }
+
+  .ubtech {
+    @include item(cornsilk, 2018, 2, 2019, 9);
+  }
+}
