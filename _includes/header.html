@@ -9,22 +9,15 @@
   </div>
 </header>
 
-{%- assign default_paths = site.pages | map: "path" -%}
-{%- assign page_paths = site.header_pages | default: default_paths -%}
-{%- if page_paths -%}
 <nav class="pages">
   <div class="wrapper">
     <ul class="pages">
-      {%- for path in page_paths -%}
-      {%- assign my_page = site.pages | where: "path", path | first -%}
+      {%- for my_page in site.pages -%}
       {%- if my_page.title -%}
-      {%- unless my_page.hidden -%}
       <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-      {%- endunless -%}
       {%- endif -%}
       {%- endfor -%}
     </ul>
     {%- include social.html -%}
   </div>
 </nav>
-{%- endif -%}

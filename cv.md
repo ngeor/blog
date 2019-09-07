@@ -2,7 +2,6 @@
 layout: page
 title: CV
 permalink: /cv/
-hidden: false
 ---
 
 <section class="cv">
@@ -44,7 +43,6 @@ improving the continuous delivery pipeline.</p>
 Implemented new continuous integration pipelines and related tooling on Bamboo and TeamCity,
 with deployments on Kubernetes with Helm.</p>
 
-
 <h3>BESTSELLER / Lead Software Architect</h3>
 
 <small>January 2015 - July 2017</small>
@@ -80,7 +78,6 @@ sessions to build up team knowledge levels.</p>
 <p>Java, Maven, Spring Boot, Docker, AWS Elastic Beanstalk, AWS
 SNS, AWS SQS, Apache Kafka.</p>
 
-
 <h3>Emakina / Senior Software Engineer</h3>
 
 <small>November 2011 - December 2014</small>
@@ -90,7 +87,6 @@ eCommerce projects. Clients include: Greenpeace, Reed Business Media
 (Elsevier), Suitsupply, Rituals, AutoNL, Varova fashion, Sundio Group.
 Main technologies: EPiServer, Demandware, .NET. (Note: when I first
 joined, the company was named Relephant).</p>
-
 
 <h3>HintTech / Senior Software Engineer</h3>
 

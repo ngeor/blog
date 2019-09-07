@@ -1,13 +1,17 @@
-blog
-====
+# blog
 
 My blog
 
-Developing
-----------
+## Developing
 
 Requirements:
+
 - ruby
 - jekyll
 
-Start with `bundle exec jekyll serve`.
+Commands:
+
+- Start with `bundle exec jekyll serve`
+- Start incremental with `bundle exec jekyll serve --incremental`
+- Upgrade with `bundle update github-pages`
+- Profile with `bundle exec jekyll build --profile`
