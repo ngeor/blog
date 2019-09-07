@@ -1,0 +1,270 @@
+%no-margin {
+  margin: 0;
+}
+
+%no-padding {
+  padding: 0;
+}
+
+%no-margin-no-padding {
+  @extend %no-margin;
+  @extend %no-padding;
+}
+
+%no-bullets {
+  list-style: none;
+}
+
+%h1 {
+  font-weight: 600;
+  font-size: 15pt;
+}
+
+%h2 {
+  font-weight: 600;
+  font-size: 14pt;
+}
+
+%h3 {
+  font-weight: 600;
+  font-size: 13pt;
+  color: #333;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+@mixin link-inherit-color($text-decoration) {
+  color: inherit;
+  text-decoration: $text-decoration;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+body {
+  @extend %no-margin-no-padding;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12pt;
+}
+
+// normalize code blocks
+pre {
+  @extend %no-margin;
+  padding: 5px;
+}
+
+.wrapper {
+  padding: $spacing-unit;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header.site-header {
+  background: $header-background;
+  color: $header-color;
+
+  a {
+    @include link-inherit-color(none);
+    font-size: 175%;
+  }
+}
+
+nav.pages {
+  border-bottom: 1px solid #ccc;
+
+  .wrapper {
+    padding: $spacing-unit / 2 $spacing-unit;
+  }
+
+  ul.pages {
+    @extend %no-margin-no-padding;
+    @extend %no-bullets;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      padding: 0 0 0 10px;
+    }
+
+    li:first-child {
+      @extend %no-padding;
+    }
+  }
+
+  .social-media-list {
+    @extend %no-margin;
+    padding: 0 0 0 10px;
+    @extend %no-bullets;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      padding: 0 0 0 10px;
+    }
+
+    li:first-child {
+      @extend %no-padding;
+    }
+
+    span {
+      // hide username
+      display: none;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  a {
+    @include link-inherit-color(none);
+  }
+}
+
+main.page-content {
+  a {
+    @include link-inherit-color(underline);
+  }
+
+  // applies to both post-list and post-content
+  .post-title {
+    @extend %no-margin-no-padding;
+  }
+
+  .post-time {
+    font-size: smaller;
+    display: block;
+    padding: 0 0 5px 0;
+  }
+
+  .post-list {
+    @extend %no-margin-no-padding;
+    @extend %no-bullets;
+
+    blockquote,
+    p {
+      @extend %no-margin-no-padding;
+    }
+
+    li {
+      margin-bottom: $spacing-unit / 2;
+      padding-bottom: $spacing-unit / 2;
+    }
+
+    li:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .post-content {
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
+      font-style: italic;
+      font-size: small;
+    }
+
+    // scroll bars for code blocks
+    div.highlight {
+      overflow: auto;
+    }
+
+    // no indentation for lists
+    ul,
+    ol {
+      padding: 0 0 0 1em;
+    }
+
+    blockquote {
+      @extend %no-margin;
+      padding: 0 0 0 5px;
+      border-left: 5px solid #ccc;
+    }
+
+    .series-list {
+      @extend %no-margin-no-padding;
+      @extend %no-bullets;
+
+      img {
+        width: 50px;
+        padding-right: 5px;
+      }
+
+      time {
+        font-size: small;
+        font-weight: normal;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+
+        time {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .post-meta {
+    font-size: small;
+    color: #333;
+    margin-top: $spacing-unit / 2;
+
+    a {
+      @include link-inherit-color(none);
+      border-bottom: 1px dotted #333;
+    }
+  }
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: $spacing-unit / 2 0;
+
+  a {
+    @include link-inherit-color(underline);
+  }
+}
+
+footer.site-footer {
+}
+
+div#js-cookies {
+  background: black;
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  padding: $spacing-unit / 2;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+
+  a {
+    @include link-inherit-color(underline);
+    font-weight: bold;
+  }
+}
+
+.acknowledged {
+  display: none;
+}

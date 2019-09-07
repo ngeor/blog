@@ -13,22 +13,18 @@ single post. In this page you can find a list of all these series.
   {%- assign sub_posts = site.posts | where: "series", post.title | reverse -%}
   {%- assign sub_post = sub_posts.first -%}
   <li class="series-item">
-    {%- if post.logo == 'helm' -%}
-    <img class="tube" src="{{ site.baseurl }}/assets/helm-blue-vector.svg" alt="Helm">
-    {%- else -%}
-    <img class="tube" src="{{ site.baseurl }}/assets/test-tube-4-128.png" alt="Test tube">
-    {%- endif -%}
-    <section>
-      <header>
-        <a href="{{ sub_post.url | relative_url }}">{{ post.title }}</a>
-        <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date: date_format }}
-        </time>
-      </header>
-
-      {{ post.excerpt }}
-
-    </section>
+    <h2>
+      {%- if post.logo == 'helm' -%}
+      <img class="tube" src="{{ site.baseurl }}/assets/helm-blue-vector.svg" alt="Helm">
+      {%- else -%}
+      <img class="tube" src="{{ site.baseurl }}/assets/test-tube-4-128.png" alt="Test tube">
+      {%- endif -%}
+      <a href="{{ sub_post.url | relative_url }}">{{ post.title }}</a>
+      <time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: date_format }}
+      </time>
+    </h2>
+    {{ post.excerpt }}
   </li>
 {%- endfor -%}
 </ul>

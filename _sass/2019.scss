@@ -1,20 +1,3 @@
 @charset "utf-8";
 
-@import
-  "2019/variables",
-  "2019/normalize",
-  "2019/typography",
-  "2019/formatting",
-  "2019/lists",
-  "2019/tables",
-  "2019/links",
-  "2019/layout",
-  "2019/header",
-  "2019/footer",
-  "2019/post-header",
-  "2019/post-list",
-  "2019/post-content",
-  "2019/post-meta",
-  "2019/series",
-  "minima/syntax-highlighting"
-;
+@import "2019/variables", "2019/main", "minima/syntax-highlighting";

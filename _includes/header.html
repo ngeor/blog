@@ -14,14 +14,16 @@
 {%- if page_paths -%}
 <nav class="pages">
   <div class="wrapper">
-    {%- for path in page_paths -%}
-    {%- assign my_page = site.pages | where: "path", path | first -%}
-    {%- if my_page.title -%}
-    {%- unless my_page.hidden -%}
-    <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-    {%- endunless -%}
-    {%- endif -%}
-    {%- endfor -%}
+    <ul class="pages">
+      {%- for path in page_paths -%}
+      {%- assign my_page = site.pages | where: "path", path | first -%}
+      {%- if my_page.title -%}
+      {%- unless my_page.hidden -%}
+      <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+      {%- endunless -%}
+      {%- endif -%}
+      {%- endfor -%}
+    </ul>
     {%- include social.html -%}
   </div>
 </nav>

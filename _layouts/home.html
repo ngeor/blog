@@ -9,19 +9,16 @@ layout: default
 {{ content }}
 
 {%- if paginator.posts.size > 0 -%}
-{%- if page.list_title -%}
-<h2 class="post-list-heading">{{ page.list_title }}</h2>
-{%- endif -%}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 <ul class="post-list">
   {%- for post in paginator.posts -%}
   <li>
     <header class="post-header">
-      <h3 class="post-title">
+      <h2 class="post-title">
         <a href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
         </a>
-      </h3>
+      </h2>
       <span class="post-time dt-published">{{ post.date | date: date_format }}</span>
     </header>
     {%- if site.show_excerpts or page.show_excerpts -%}
