@@ -68,72 +68,84 @@ pre {
   padding: 5px;
 }
 
-.wrapper {
-  padding: $spacing-unit;
+%wrapper-width {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.wrapper {
+  @extend %wrapper-width;
+  padding: $spacing-unit;
 }
 
 header.site-header {
   background: $header-background;
   color: $header-color;
 
-  a {
-    @include link-inherit-color(none);
-    font-size: 175%;
+  .site-title-wrapper {
+    @extend %wrapper-width;
+    padding: $spacing-unit;
+
+    a {
+      @include link-inherit-color(none);
+      font-size: 175%;
+    }
   }
-}
 
-nav.pages {
-  border-bottom: 1px solid #ccc;
+  .pages-wrapper {
+    background: white;
+    color: black;
+    border-bottom: 1px solid #ccc;
+  }
 
-  .wrapper {
+  nav.pages {
+    @extend %wrapper-width;
     padding: $spacing-unit / 2 $spacing-unit;
-  }
 
-  ul.pages {
-    @extend %no-margin-no-padding;
-    @extend %no-bullets;
-    display: inline-block;
-
-    li {
+    ul.pages {
+      @extend %no-margin-no-padding;
+      @extend %no-bullets;
       display: inline-block;
+
+      li {
+        display: inline-block;
+        padding: 0 0 0 10px;
+      }
+
+      li:first-child {
+        @extend %no-padding;
+      }
+    }
+
+    .social-media-list {
+      @extend %no-margin;
       padding: 0 0 0 10px;
-    }
-
-    li:first-child {
-      @extend %no-padding;
-    }
-  }
-
-  .social-media-list {
-    @extend %no-margin;
-    padding: 0 0 0 10px;
-    @extend %no-bullets;
-    display: inline-block;
-
-    li {
+      @extend %no-bullets;
       display: inline-block;
-      padding: 0 0 0 10px;
+
+      li {
+        display: inline-block;
+        padding: 0 0 0 10px;
+      }
+
+      li:first-child {
+        @extend %no-padding;
+      }
+
+      span {
+        // hide username
+        display: none;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
     }
 
-    li:first-child {
-      @extend %no-padding;
+    a {
+      @include link-inherit-color(none);
     }
-
-    span {
-      // hide username
-      display: none;
-    }
-
-    svg {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  a {
-    @include link-inherit-color(none);
   }
 }
 

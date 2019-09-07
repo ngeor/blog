@@ -1,23 +1,20 @@
 <header class="site-header">
-  <div class="wrapper">
-    <div class="site-title">
-      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-      <div class="site-description">
-        {{- site.description -}}
-      </div>
+  <div class="site-title-wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <div class="site-description">
+      {{- site.description -}}
     </div>
   </div>
-</header>
-
-<nav class="pages">
-  <div class="wrapper">
-    <ul class="pages">
-      {%- for my_page in site.pages -%}
-      {%- if my_page.title -%}
-      <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-      {%- endif -%}
-      {%- endfor -%}
-    </ul>
-    {%- include social.html -%}
+  <div class="pages-wrapper">
+    <nav class="pages">
+      <ul class="pages">
+        {%- for my_page in site.pages -%}
+        {%- if my_page.title -%}
+        <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+        {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      {%- include social.html -%}
+    </nav>
   </div>
-</nav>
+</header>
