@@ -47,3 +47,10 @@ Import layout:
 Build -> Build Tools -> Maven -> Importing
 
 Check automatically download sources and documentation
+
+## Reset
+
+To reset IntelliJ IDEA, delete the folder starting with `.Idea` in your home
+folder.
+
+For example, on the current version the folder is named `.IdeaIC2019.2`.
