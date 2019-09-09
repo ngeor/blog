@@ -28,7 +28,12 @@
 %h3 {
   font-weight: 600;
   font-size: 13pt;
+
   color: #333;
+
+  @media (prefers-color-scheme: dark) {
+    color: #ddd;
+  }
 }
 
 h1 {
@@ -41,6 +46,11 @@ h2 {
 
 h3 {
   @extend %h3;
+}
+
+code {
+  font-family: "Liberation Mono", Consolas, "Courier New", Courier, monospace;
+  font-size: smaller;
 }
 
 @mixin link-inherit-color($text-decoration) {
@@ -56,8 +66,18 @@ h3 {
   }
 }
 
+@mixin main-color {
+  background-color: $light-theme-background-color;
+  color: $light-theme-color;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-theme-background-color;
+    color: $dark-theme-color;
+  }
+}
 body {
   @extend %no-margin-no-padding;
+  @include main-color();
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12pt;
 }
@@ -79,8 +99,13 @@ pre {
 }
 
 header.site-header {
-  background: $header-background;
+  background: $header-background-color;
   color: $header-color;
+
+  @media (prefers-color-scheme: dark) {
+    background: #003;
+    color: white;
+  }
 
   .site-title-wrapper {
     @extend %wrapper-width;
@@ -93,8 +118,7 @@ header.site-header {
   }
 
   .pages-wrapper {
-    background: white;
-    color: black;
+    @include main-color();
     border-bottom: 1px solid #ccc;
   }
 
@@ -140,6 +164,10 @@ header.site-header {
       svg {
         width: 16px;
         height: 16px;
+
+        @media (prefers-color-scheme: dark) {
+          fill: $dark-theme-color;
+        }
       }
     }
 
@@ -241,9 +269,17 @@ main.page-content {
     color: #333;
     margin-top: $spacing-unit / 2;
 
+    @media (prefers-color-scheme: dark) {
+      color: $dark-theme-color;
+    }
+
     a {
       @include link-inherit-color(none);
       border-bottom: 1px dotted #333;
+
+      @media (prefers-color-scheme: dark) {
+        border-bottom: 1px dotted $dark-theme-color;
+      }
     }
   }
 }
@@ -279,90 +315,4 @@ div#js-cookies {
 
 .acknowledged {
   display: none;
-}
-
-.cv .timeline {
-  $year: 50px;
-
-  * {
-    box-sizing: border-box;
-  }
-
-  display: flex;
-
-  .lane {
-    display: inline-block;
-
-    * {
-      overflow: hidden;
-    }
-  }
-
-  .years > div {
-    height: $year;
-    text-align: center;
-    line-height: $year;
-    border-bottom: 1px dotted #ccc;
-  }
-
-  .work > a {
-    margin-left: 100px;
-  }
-
-  a {
-    width: 100px;
-    overflow: hidden;
-    position: absolute;
-    font-size: small;
-    display: block;
-    text-align: center;
-  }
-
-  @mixin item($color, $startYear, $startMonth, $endYear, $endMonth) {
-    margin-top: ($startYear + (($startMonth - 1)/ 12)- 1998) * $year;
-    height: ($endYear * 12 + $endMonth - $startYear * 12 - $startMonth) / 12 * $year;
-    line-height: ($endYear * 12 + $endMonth - $startYear * 12 - $startMonth) / 12 * $year;
-    background: $color;
-    border: 1px solid darken($color, 25%);
-  }
-
-  .ntua {
-    @include item(rgb(157, 199, 238), 1998, 9, 2005, 1);
-  }
-
-  .agoranet {
-    @include item(cornsilk, 2000, 1, 2001, 1);
-  }
-
-  .eraise {
-    @include item(antiquewhite, 2003, 1, 2004, 1);
-  }
-
-  .kdbsl {
-    @include item(cornsilk, 2005, 3, 2007, 5);
-  }
-
-  .imis {
-    @include item(antiquewhite, 2007, 5, 2008, 7);
-  }
-
-  .hinttech {
-    @include item(cornsilk, 2008, 8, 2011, 11);
-  }
-
-  .emakina {
-    @include item(antiquewhite, 2011, 11, 2015, 1);
-  }
-
-  .bse {
-    @include item(cornsilk, 2015, 1, 2017, 8);
-  }
-
-  .suitsupply {
-    @include item(antiquewhite, 2017, 9, 2018, 2);
-  }
-
-  .ubtech {
-    @include item(cornsilk, 2018, 2, 2019, 9);
-  }
 }
