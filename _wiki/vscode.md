@@ -18,6 +18,7 @@ Extensions, themes and configuration for Visual Studio Code.
 - Go
 - Jira and Bitbucket (Official)
 - LaTeX Workshop
+- [PlantUML](https://github.com/qjebbs/vscode-plantuml)
 - Prettier - Code formatter
 - Python
 - Rust (rls)
