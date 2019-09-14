@@ -211,3 +211,32 @@ void invalidValuesAreNotAllowed(String person) {
 Now we have a bit more (reusable) code to write, but we end up with a
 parameterized test that just needs a simple annotation, `@BlankStringSource`, in
 order to cover our edge cases.
+
+## Update: Take 6
+
+Many thanks to [Sam Brannen](https://twitter.com/sam_brannen) who brought
+[this solution](https://twitter.com/sam_brannen/status/1172784780750073856) to
+my attention!
+
+So, today I learned:
+
+- it's possible to combine multiple sources on a parameterized test
+- there is a built-in `NullSource` which provides a `null` argument
+- there is a built-in `EmptySource` which provides an empty argument
+- and a composite `NullAndEmptySource` which provides both
+- the
+  [documentation](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests-sources-null-and-empty)
+  already covers the null, empty and blank scenario (because RTFM)
+
+With all that in mind, here's another take on the solution:
+
+```java
+@ParameterizedTest
+@NullAndEmptySource
+@ValueSource(strings = " ")
+void invalidValuesAreNotAllowed(String person) {
+  assertThatThrownBy(() -> greet(person))
+    .isInstanceOf(IllegalArgumentException.class)
+    .hasMessage("person is mandatory");
+}
+```
