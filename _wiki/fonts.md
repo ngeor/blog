@@ -10,6 +10,7 @@ Various fonts (typically programming fonts) that I've used.
 - [Andale Mono](https://sourceforge.net/projects/corefonts/files/the%20fonts/final/andale32.exe/download)
 - [Anonymous Pro](https://www.marksimonson.com/fonts/view/anonymous-pro)
 - [CamingoCode](https://www.janfromm.de/typefaces/camingomono/camingocode/)
+- [Cascadia Code](https://github.com/microsoft/cascadia-code/releases)
 - Consolas
 - Courier New
 - [Courier Prime Code](https://quoteunquoteapps.com/courierprime/)
