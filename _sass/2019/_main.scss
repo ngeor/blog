@@ -1,318 +1,162 @@
-%no-margin {
-  margin: 0;
-}
-
-%no-padding {
-  padding: 0;
-}
-
-%no-margin-no-padding {
-  @extend %no-margin;
-  @extend %no-padding;
-}
-
-%no-bullets {
-  list-style: none;
-}
-
-%h1 {
-  font-weight: 600;
-  font-size: 15pt;
-}
-
-%h2 {
-  font-weight: 600;
-  font-size: 14pt;
-}
-
-%h3 {
-  font-weight: 600;
-  font-size: 13pt;
-
-  color: #333;
-
-  @media (prefers-color-scheme: dark) {
-    color: #ddd;
-  }
-}
-
-h1 {
-  @extend %h1;
-}
-
-h2 {
-  @extend %h2;
-}
-
-h3 {
-  @extend %h3;
-}
-
-code {
-  font-family: "Liberation Mono", Consolas, "Courier New", Courier, monospace;
-  font-size: smaller;
-}
-
-@mixin link-inherit-color($text-decoration) {
-  color: inherit;
-  text-decoration: $text-decoration;
-
-  &:visited {
-    color: inherit;
-  }
-
-  &:hover {
-    color: inherit;
-  }
-}
-
-@mixin main-color {
-  background-color: $light-theme-background-color;
-  color: $light-theme-color;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: $dark-theme-background-color;
-    color: $dark-theme-color;
-  }
-}
 body {
-  @extend %no-margin-no-padding;
-  @include main-color();
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12pt;
+  font-family: Cambria, "Liberation Serif", Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 1.25 * 20px;
 }
 
-// normalize code blocks
-pre {
-  @extend %no-margin;
-  padding: 5px;
+h1, h2.post-title {
+  font-size: 30px;
 }
 
-%wrapper-width {
-  max-width: 600px;
-  margin: 0 auto;
-}
+// site header
+.site-header {
+  background: #f2f2f2;
+  padding: 20px;
 
-.wrapper {
-  @extend %wrapper-width;
-  padding: $spacing-unit;
-}
-
-header.site-header {
-  background: $header-background-color;
-  color: $header-color;
-
-  @media (prefers-color-scheme: dark) {
-    background: #003;
-    color: white;
+  a {
+    text-decoration: none;
+    color: #343434;
   }
 
   .site-title-wrapper {
-    @extend %wrapper-width;
-    padding: $spacing-unit;
+    text-align: center;
 
-    a {
-      @include link-inherit-color(none);
-      font-size: 175%;
+    .site-title {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .site-description {
+
     }
   }
 
   .pages-wrapper {
-    @include main-color();
-    border-bottom: 1px solid #ccc;
-  }
+    margin-top: 20px;
 
-  nav.pages {
-    @extend %wrapper-width;
-    padding: $spacing-unit / 2 $spacing-unit;
+    nav.pages {
 
-    ul.pages {
-      @extend %no-margin-no-padding;
-      @extend %no-bullets;
-      display: inline-block;
+      ul.pages {
+        margin-top: 20px;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-evenly;
 
-      li {
-        display: inline-block;
-        padding: 0 0 0 10px;
+        li { display: inline-block; }
+
+        a:hover {
+          text-decoration: underline;
+        }
       }
 
-      li:first-child {
-        @extend %no-padding;
+      .social-media-list {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+
+        li { display: inline-block; }
+        span { display: none; }
       }
     }
+  }
+}
 
-    .social-media-list {
-      @extend %no-margin;
-      padding: 0 0 0 10px;
-      @extend %no-bullets;
-      display: inline-block;
+// main
+.page-content {
+  padding: 20px;
 
-      li {
-        display: inline-block;
-        padding: 0 0 0 10px;
-      }
+  .post-list {
+    .post-title {
+      > a {
+        text-decoration: none;
+        color: #343434;
 
-      li:first-child {
-        @extend %no-padding;
-      }
-
-      span {
-        // hide username
-        display: none;
-      }
-
-      svg {
-        width: 16px;
-        height: 16px;
-
-        @media (prefers-color-scheme: dark) {
-          fill: $dark-theme-color;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
 
     a {
-      @include link-inherit-color(none);
-    }
-  }
-}
-
-main.page-content {
-  a {
-    @include link-inherit-color(underline);
-  }
-
-  // applies to both post-list and post-content
-  .post-title {
-    @extend %no-margin-no-padding;
-  }
-
-  .post-time {
-    font-size: smaller;
-    display: block;
-    padding: 0 0 5px 0;
-  }
-
-  .post-list {
-    @extend %no-margin-no-padding;
-    @extend %no-bullets;
-
-    blockquote,
-    p {
-      @extend %no-margin-no-padding;
+      color: #217ffa;
     }
 
-    li {
-      margin-bottom: $spacing-unit / 2;
-      padding-bottom: $spacing-unit / 2;
-    }
-
-    li:last-child {
-      border-bottom: 1px solid #ccc;
+    blockquote {
+      margin: 0;
+      padding: 0;
     }
   }
 
   .post-content {
+    a {
+      color: #217ffa;
+    }
+
     img {
       max-width: 100%;
     }
 
-    figcaption {
-      font-style: italic;
-      font-size: small;
-    }
-
-    // scroll bars for code blocks
-    div.highlight {
-      overflow: auto;
-    }
-
-    // no indentation for lists
-    ul,
-    ol {
-      padding: 0 0 0 1em;
-    }
-
     blockquote {
-      @extend %no-margin;
-      padding: 0 0 0 5px;
-      border-left: 5px solid #ccc;
+      margin: 0;
+      padding-left: 15px;
+      border-left: 5px solid #217ffa;
     }
 
-    .series-list {
-      @extend %no-margin-no-padding;
-      @extend %no-bullets;
+    table {
+      width: 100%;
+      border: 1px solid #dedede;
+      border-collapse: collapse;
+    }
 
-      img {
-        width: 50px;
-        padding-right: 5px;
-      }
+    th {
+      background: #eee;
+    }
 
-      time {
-        font-size: small;
-        font-weight: normal;
-      }
-
-      h2 {
-        display: flex;
-        align-items: center;
-
-        time {
-          margin-left: auto;
-        }
-      }
+    th, td {
+      border: 1px solid #dedede;
     }
   }
 
   .post-meta {
-    font-size: small;
-    color: #333;
-    margin-top: $spacing-unit / 2;
-
-    @media (prefers-color-scheme: dark) {
-      color: $dark-theme-color;
-    }
-
     a {
-      @include link-inherit-color(none);
-      border-bottom: 1px dotted #333;
+      color: #217ffa;
+      font-size: 16px;
+    }
+  }
 
-      @media (prefers-color-scheme: dark) {
-        border-bottom: 1px dotted $dark-theme-color;
-      }
+  .page-navigation {
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: #343434;
     }
   }
 }
 
-.page-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin: $spacing-unit / 2 0;
-
-  a {
-    @include link-inherit-color(underline);
-  }
+// footer
+.site-footer {
+  padding: 20px;
 }
 
-footer.site-footer {
-}
+// cookies popup
+#js-cookies {
 
-div#js-cookies {
-  background: black;
-  bottom: 0;
-  box-sizing: border-box;
-  color: white;
-  padding: $spacing-unit / 2;
-  position: fixed;
-  text-align: center;
-  width: 100%;
-
-  a {
-    @include link-inherit-color(underline);
-    font-weight: bold;
-  }
 }
 
 .acknowledged {
   display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .site-header {
+    position: fixed;
+    height: 100%;
+    width: 300px;
+  }
+
+  .page-content, .site-footer {
+    padding-left: 360px;
+  }
+
 }
