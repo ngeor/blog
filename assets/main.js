@@ -50,10 +50,10 @@
       var el = document.getElementById('js-cookies');
 
       // show the cookie popup
-      el.className = '';
+      el.className = 'cookies';
       addEventListener(document.getElementById('js-cookies-close'), 'click', function (event) {
         // hide the cookie popup
-        el.className = 'acknowledged';
+        el.className = 'cookies cookies--acknowledged';
 
         // store a cookie to not show the popup next time
         acknowledgedCookies();
