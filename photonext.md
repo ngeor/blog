@@ -20,10 +20,10 @@ Easily import and organize your photos and videos.
 
 3. Your photos and videos copied to your computer, organized as you prefer.
 
-
 photonext is available for **Windows 10** and supports **Android** phones and tablets.
 
 [Download now](#download)
+
   </div>
 
 </div>
@@ -89,7 +89,7 @@ It is possible to create a separate folder per year or, if you prefer, drill dow
 You can try photonext for up to 10 times. If you decide you want to continue using it,
 you can buy a license key online easily with PayPal for €9.95.
 
-[Download trial](#)
+[Download trial](/assets/photonext/photonext.zip)
 
 <button>Buy with PayPal</button>
 
@@ -104,7 +104,7 @@ Each device is different. If you experience issues importing, you can try the fo
 
 - Make sure your device (phone, tablet, etc) is connected to your computer
 - Make sure your device is connected as an MTP device:
-<br /><img style="max-width: 40%" src="/assets/photonext/2019-11-26_154553-mtp.jpg" alt="MTP connectivity" />
+  <br /><img style="max-width: 40%" src="/assets/photonext/2019-11-26_154553-mtp.jpg" alt="MTP connectivity" />
 - Try to disconnect and reconnect your device
 - Try to tap again on the MTP connection option on your device
 
