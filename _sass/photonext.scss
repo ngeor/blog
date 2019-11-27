@@ -81,6 +81,15 @@ img {
   }
 }
 
+.pay_buttons {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+  }
+}
+
 main .wrapper {
   max-width: 1024px;
   margin: 0 auto;

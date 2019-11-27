@@ -89,9 +89,17 @@ It is possible to create a separate folder per year or, if you prefer, drill dow
 You can try photonext for up to 10 times. If you decide you want to continue using it,
 you can buy a license key online easily with PayPal for €9.95.
 
-[Download trial](/assets/photonext/photonext.zip)
+<div class="pay_buttons" markdown="1">
 
-<button>Buy with PayPal</button>
+[**Download trial**](/assets/photonext/photonext.zip)
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="PVSP5LHBS5GZS">
+<input type="image" src="https://www.paypalobjects.com/en_US/NL/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div><!-- /pay_buttons -->
 
 </div>
 </div>
