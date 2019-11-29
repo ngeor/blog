@@ -20,7 +20,8 @@ Easily import and organize your photos and videos.
 
 3. Your photos and videos copied to your computer, organized as you prefer.
 
-photonext is available for **Windows 10** and supports **Android** phones and tablets.
+photonext is available for **Windows 10** and supports **Android** phones and
+tablets.
 
 [Download now](#download)
 
@@ -44,8 +45,9 @@ you want to organize them by year or month? Enter photonext.
 
 ## Ignore what you don't want
 
-By default, photonext will discover and import all photos and videos from your phone
-or tablet. You can skip the folders you don't care about (e.g. thumbnails, animated GIFs). photonext remembers your selection per device.
+By default, photonext will discover and import all photos and videos from your
+phone or tablet. You can skip the folders you don't care about (e.g. thumbnails,
+animated GIFs). photonext remembers your selection per device.
 
 <img src="/assets/photonext/2019-11-26-15_29_09-select-folders.png" alt="Select folders" />
 
@@ -57,11 +59,15 @@ or tablet. You can skip the folders you don't care about (e.g. thumbnails, anima
 
 <div class="hero__right" markdown="1">
 
-By default, photonext will import your photos and videos with their original filename. It is possible however to rename them automatically based on the date they were taken.
-A date-time based filename can make organization more efficient.
+By default, photonext will import your photos and videos with their original
+filename. It is possible however to rename them automatically based on the date
+they were taken. A date-time based filename can make organization more
+efficient.
 
-photonext does not impose its own date-time pattern but allows you to choose your own. For example, you can use `yyyy-MM-dd HHmmss.ext` or `dd_MM_yyyy.ext` as you wish.
-photonext remembers your preference so you only have to set this once.
+photonext does not impose its own date-time pattern but allows you to choose
+your own. For example, you can use `yyyy-MM-dd HHmmss.ext` or `dd_MM_yyyy.ext`
+as you wish. photonext remembers your preference so you only have to set this
+once.
 
 </div>
 </div>
@@ -70,11 +76,13 @@ photonext remembers your preference so you only have to set this once.
 
 ## Organize into folders
 
-By default, photonext will copy your photos to your Pictures folder. It is possible to
-pick a different folder, but what is more interesting is the ability to automatically
-import your photos and videos into subfolders based on the date they were taken.
+By default, photonext will copy your photos to your Pictures folder. It is
+possible to pick a different folder, but what is more interesting is the ability
+to automatically import your photos and videos into subfolders based on the date
+they were taken.
 
-It is possible to create a separate folder per year or, if you prefer, drill down to a separate subfolder per year and then per month.
+It is possible to create a separate folder per year or, if you prefer, drill
+down to a separate subfolder per year and then per month.
 
 <img src="/assets/photonext/2019-11-26-15_40_40-destination.png" alt="Destination options" />
 
@@ -86,8 +94,8 @@ It is possible to create a separate folder per year or, if you prefer, drill dow
 
 <div class="hero__right" markdown="1">
 
-You can try photonext for up to 10 times. If you decide you want to continue using it,
-you can buy a license key online easily with PayPal for €9.95.
+You can try photonext for up to 10 times. If you decide you want to continue
+using it, you can buy a license key online easily with PayPal for €9.95.
 
 <div class="pay_buttons" markdown="1">
 
@@ -108,7 +116,8 @@ you can buy a license key online easily with PayPal for €9.95.
 
 ## Troubleshooting
 
-Each device is different. If you experience issues importing, you can try the following:
+Each device is different. If you experience issues importing, you can try the
+following:
 
 - Make sure your device (phone, tablet, etc) is connected to your computer
 - Make sure your device is connected as an MTP device:
@@ -120,4 +129,4 @@ Each device is different. If you experience issues importing, you can try the fo
 
 ## About
 
-photonext created by [Nikolaos Georgiou](/).
+photonext created by [{{ site.author }}](/).

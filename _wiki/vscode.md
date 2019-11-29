@@ -8,7 +8,7 @@ Extensions, themes and configuration for Visual Studio Code.
 ## Extensions
 
 - AsciiDoc
-- Code Spell Checker
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - Cucumber (Gherkin) Full Support
 - Docker
 - EditorConfig for VS Code
@@ -63,7 +63,7 @@ Extensions, themes and configuration for Visual Studio Code.
   "files.insertFinalNewline": true,
 
   // A wide selection of fonts to choose from
-  "editor.fontFamily": "'Andale Mono', 'Courier Prime Code', 'Liberation Mono', 'Courier New', Consolas, 'Anonymous Pro', CamingoCode, 'Envy Code R', Hack, Iosevka, Inconsolata, 'Input Mono', 'Lucida Console', 'Meslo LG S', Monaco, monofur, Monoid, mononoki, 'PT Mono', 'Roboto Mono', 'Source Code Pro', 'Segoe UI Mono', 'Go Mono', 'Fira Code', 'Fantasque Sans Mono', 'Droid Sans Mono', 'DejaVu Sans Mono'",
+  "editor.fontFamily": "'Andale Mono', 'Anonymous Pro', CamingoCode, 'Cascadia Code', Consolas, 'Courier New', 'Courier Prime Code', 'DejaVu Sans Mono', 'Droid Sans Mono', 'Envy Code R', 'Fantasque Sans Mono', 'Fira Code', 'Go Mono', Hack, Iosevka, Inconsolata, 'Input Mono', 'Liberation Mono', 'Lucida Console', 'Meslo LG S', Monaco, monofur, Monoid, mononoki, 'Operator Mono Light', 'PT Mono', 'Roboto Mono', 'Source Code Pro', 'Segoe UI Mono'",
 
   // Auto-format document on save
   "editor.formatOnSave": true,
