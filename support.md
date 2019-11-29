@@ -2,6 +2,7 @@
 layout: page
 title: Support
 permalink: /support/
+css_class: page support
 ---
 
 Hello there!
@@ -39,12 +40,14 @@ You can use PayPal:
 
 or Bitcoin:
 
-1GryvZFs7Gk7paTeXd9iifgQtEJSFqkGEw
-
-<img src="/assets/bitcoin.svg" alt="Bitcoin QR code" />
+<div class="center">
+  <span class="qr-code">1GryvZFs7Gk7paTeXd9iifgQtEJSFqkGEw</span>
+  <img src="/assets/bitcoin.svg" alt="Bitcoin QR code" />
+</div>
 
 or Ethereum:
 
-0x4f9874ce7a2eddd8630a08dc3f8b49751672bc70
-
-<img src="/assets/ethereum.png" alt="Ethereum QR code" />
+<div class="center">
+  <span class="qr-code">0x4f9874ce7a2eddd8630a08dc3f8b49751672bc70</span>
+  <img src="/assets/ethereum.png" alt="Ethereum QR code" />
+</div>
