@@ -1,11 +1,22 @@
 body {
-  font-family: Cambria, Palatino, Optima, "Liberation Serif", Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Palatino, Optima, "Liberation Serif", Georgia, Times,
+    "Times New Roman", serif;
   font-size: 20px;
   line-height: 1.25 * 20px;
 }
 
-h1, h2.post-title {
+h1,
+h2.post-title {
   font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 // site header
@@ -27,7 +38,6 @@ h1, h2.post-title {
     }
 
     .site-description {
-
     }
   }
 
@@ -35,14 +45,15 @@ h1, h2.post-title {
     margin-top: 20px;
 
     nav.pages {
-
       ul.pages {
         margin-top: 20px;
         font-size: 16px;
         display: flex;
         justify-content: space-evenly;
 
-        li { display: inline-block; }
+        li {
+          display: inline-block;
+        }
 
         a:hover {
           text-decoration: underline;
@@ -54,8 +65,12 @@ h1, h2.post-title {
         display: flex;
         justify-content: space-evenly;
 
-        li { display: inline-block; }
-        span { display: none; }
+        li {
+          display: inline-block;
+        }
+        span {
+          display: none;
+        }
       }
     }
   }
@@ -64,6 +79,10 @@ h1, h2.post-title {
 // main
 .page-content {
   padding: 20px;
+
+  img {
+    max-width: 100%;
+  }
 
   .post-list {
     .post-title {
@@ -92,10 +111,6 @@ h1, h2.post-title {
       color: #217ffa;
     }
 
-    img {
-      max-width: 100%;
-    }
-
     blockquote {
       margin: 0;
       padding-left: 15px;
@@ -112,15 +127,17 @@ h1, h2.post-title {
       background: #eee;
     }
 
-    th, td {
+    th,
+    td {
       border: 1px solid #dedede;
     }
   }
 
   .post-meta {
+    font-size: 16px;
+
     a {
       color: #217ffa;
-      font-size: 16px;
     }
   }
 
@@ -145,8 +162,21 @@ h1, h2.post-title {
     width: 300px;
   }
 
-  .page-content, .site-footer {
+  .page-content,
+  .site-footer {
     padding-left: 360px;
   }
+}
 
+.support-banner {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  text-align: center;
+  font-size: 16px;
+  a {
+    color: #217ffa;
+  }
 }
