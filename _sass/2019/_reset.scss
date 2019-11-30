@@ -5,22 +5,12 @@ body {
 
 // site header
 .site-header {
-  .pages-wrapper {
-    nav.pages {
-      ul.pages {
-        padding: 0;
-        margin: 0;
-        > li {
-          list-style: none;
-        }
-      }
-      .social-media-list {
-        padding: 0;
-        margin: 0;
-        > li {
-          list-style: none;
-        }
-      }
+  .pages-list,
+  .social-media-list {
+    padding: 0;
+    margin: 0;
+    > li {
+      list-style: none;
     }
   }
 

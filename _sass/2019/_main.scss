@@ -1,21 +1,21 @@
 body {
   font-family: Cambria, Palatino, Optima, "Liberation Serif", Georgia, Times,
     "Times New Roman", serif;
-  font-size: 20px;
-  line-height: 1.25 * 20px;
+  font-size: $font-size;
+  line-height: 1.25 * $font-size;
 }
 
 h1,
 h2.post-title {
-  font-size: 30px;
+  font-size: 1.5 * $font-size;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.25 * $font-size;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: $font-size;
   font-weight: bold;
 }
 
@@ -36,7 +36,7 @@ h3 {
     text-align: center;
 
     .site-title {
-      font-size: 25px;
+      font-size: 1.25 * $font-size;
       font-weight: bold;
     }
 
@@ -46,35 +46,33 @@ h3 {
 
   .pages-wrapper {
     margin-top: 20px;
+  }
 
-    nav.pages {
-      ul.pages {
-        margin-top: 20px;
-        font-size: 16px;
-        display: flex;
-        justify-content: space-evenly;
+  .pages-list {
+    margin-top: 20px;
+    font-size: 0.75 * $font-size;
+    display: flex;
+    justify-content: space-evenly;
 
-        li {
-          display: inline-block;
-        }
+    li {
+      display: inline-block;
+    }
 
-        a:hover {
-          text-decoration: underline;
-        }
-      }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 
-      .social-media-list {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-evenly;
+  .social-media-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
 
-        li {
-          display: inline-block;
-        }
-        span {
-          display: none;
-        }
-      }
+    li {
+      display: inline-block;
+    }
+    span {
+      display: none;
     }
   }
 }
@@ -140,12 +138,12 @@ h3 {
   }
 
   .post-time {
-    font-size: 16px;
+    font-size: 0.75 * $font-size;
     color: #666;
   }
 
   .post-meta {
-    font-size: 16px;
+    font-size: 0.75 * $font-size;
 
     a {
       color: #217ffa;
@@ -169,11 +167,25 @@ h3 {
   padding: 20px;
 }
 
+//
+// desktop overrides
+//
+
 @media screen and (min-width: 1024px) {
   .site-header {
     position: fixed;
     height: 100%;
     width: 300px;
+
+    .pages-list {
+      display: block;
+      box-sizing: border-box;
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      > li {
+        display: block;
+      }
+    }
   }
 
   .page-content,
@@ -193,7 +205,7 @@ h3 {
   box-sizing: border-box;
   background: #f2f2f2;
   text-align: center;
-  font-size: 16px;
+  font-size: 0.75 * $font-size;
   a {
     color: #217ffa;
   }
