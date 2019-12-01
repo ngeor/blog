@@ -1,7 +1,6 @@
 ---
 layout: page
 title: CV
-permalink: /cv/
 css_class: page cv
 ---
 

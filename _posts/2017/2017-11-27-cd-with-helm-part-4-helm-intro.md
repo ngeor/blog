@@ -8,7 +8,7 @@ categories:
 - continuous-delivery
 tags:
 - blog-helm-sample
-- docker
+- Docker
 - helm
 - kubernetes
 ---

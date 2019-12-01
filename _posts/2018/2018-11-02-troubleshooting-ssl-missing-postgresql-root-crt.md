@@ -7,7 +7,7 @@ categories:
 - programming
 tags:
 - Java
-- docker
+- Docker
 - PostgreSQL
 - SSL
 - Azure

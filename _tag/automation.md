@@ -2,4 +2,5 @@
 layout: tag
 url_segment: automation
 title: automation
+post_count: 2
 ---

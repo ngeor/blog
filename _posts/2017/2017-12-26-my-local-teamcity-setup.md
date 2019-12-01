@@ -6,7 +6,7 @@ published: true
 categories:
 - continuous-delivery
 tags:
-- docker
+- Docker
 - TeamCity
 ---
 

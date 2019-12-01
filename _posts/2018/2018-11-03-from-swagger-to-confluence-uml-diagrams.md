@@ -8,7 +8,7 @@ categories:
 tags:
 - swagger
 - atlassian
-- docker
+- Docker
 featured: true
 ---
 

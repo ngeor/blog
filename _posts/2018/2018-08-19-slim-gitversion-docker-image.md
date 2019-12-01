@@ -6,7 +6,7 @@ published: true
 categories:
 - versioning
 tags:
-- docker
+- Docker
 - GitVersion
 ---
 

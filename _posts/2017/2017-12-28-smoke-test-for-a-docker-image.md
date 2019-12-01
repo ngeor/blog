@@ -7,7 +7,7 @@ categories:
 - testing
 tags:
 - blog-helm-sample
-- docker
+- Docker
 - smoke test
 - TeamCity
 ---

@@ -20,8 +20,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ngeor
-github_username:  ngeor
-linkedin_username:  nikolaosgeorgiou
+github_username: ngeor
+linkedin_username: nikolaosgeorgiou
 so_link: https://stackoverflow.com/users/153258/nikolaos-georgiou
 rss: RSS
 
@@ -34,14 +34,18 @@ plugins:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # custom items
+  - LICENSE
+  - preprocessor.py
+  - README.md
 
 permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: true
@@ -75,7 +79,9 @@ categories:
   testing:
     description: Unit tests, integration tests, code coverage, etc.
   versioning:
-    description: Semantic versioning, automatic creation of git tags, version strategies, etc.
+    description:
+      Semantic versioning, automatic creation of git tags, version strategies,
+      etc.
   personal:
     hidden: true
   my-computer:

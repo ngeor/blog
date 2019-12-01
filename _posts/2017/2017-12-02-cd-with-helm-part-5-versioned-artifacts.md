@@ -10,7 +10,7 @@ tags:
 - blog-helm-sample
 - continuous delivery
 - continuous integration
-- docker
+- Docker
 - helm
 - kubernetes
 - TeamCity

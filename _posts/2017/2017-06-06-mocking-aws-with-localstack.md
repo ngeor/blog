@@ -7,7 +7,7 @@ categories:
 - testing
 tags:
 - AWS
-- docker
+- Docker
 - localstack
 - SNS
 - SQS
