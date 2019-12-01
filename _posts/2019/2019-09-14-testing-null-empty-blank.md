@@ -6,7 +6,7 @@ published: true
 categories:
   - programming
 tags:
-  - java
+  - Java
   - junit5
   - unit tests
 ---

@@ -7,7 +7,7 @@ categories:
 - pet-projects
 tags:
 - archetype
-- java
+- Java
 - maven
 ---
 

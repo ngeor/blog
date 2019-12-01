@@ -7,7 +7,7 @@ categories:
 - testing
 series: Unit Tests
 tags:
-- javascript
+- JavaScript
 - unit tests
 ---
 

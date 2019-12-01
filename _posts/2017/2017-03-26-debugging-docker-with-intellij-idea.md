@@ -8,7 +8,7 @@ categories:
 tags:
 - docker
 - IntelliJ IDEA
-- java
+- Java
 - Kafka
 - maven
 ---

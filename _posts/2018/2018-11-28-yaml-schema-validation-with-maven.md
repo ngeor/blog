@@ -6,7 +6,7 @@ published: true
 categories:
   - consistency
 tags:
-  - java
+  - Java
   - maven
   - swagger
   - yaml

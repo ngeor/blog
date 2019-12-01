@@ -8,7 +8,7 @@ categories:
 - pet-projects
 tags:
 - swagger
-- java
+- Java
 - maven
 - maven-plugin
 - microservices

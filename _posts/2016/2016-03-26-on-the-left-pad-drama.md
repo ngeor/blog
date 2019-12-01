@@ -7,7 +7,7 @@ categories:
 - notes
 tags:
 - dependencies
-- javascript
+- JavaScript
 - left-pad
 - Nexus
 - npm

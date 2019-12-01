@@ -7,7 +7,7 @@ categories:
 - versioning
 tags:
 - continuous integration
-- javascript
+- JavaScript
 - Jenkins
 - npm
 - versioning

@@ -8,7 +8,7 @@ categories:
 series: Functional Tests
 tags:
 - functional tests
-- javascript
+- JavaScript
 - page object pattern
 - WebdriverIO
 ---

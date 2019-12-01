@@ -7,8 +7,8 @@ categories:
   - programming
 tags:
   - cli
-  - java
-  - javascript
+  - Java
+  - JavaScript
   - python
 ---
 

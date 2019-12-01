@@ -7,7 +7,7 @@ categories:
 - continuous-delivery
 tags:
 - continuous integration
-- javascript
+- JavaScript
 - npm
 ---
 

@@ -7,7 +7,7 @@ categories:
 - testing
 tags:
 - jacoco
-- java
+- Java
 - maven
 ---
 

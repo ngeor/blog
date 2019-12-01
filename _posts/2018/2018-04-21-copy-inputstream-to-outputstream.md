@@ -6,7 +6,7 @@ published: true
 categories:
 - programming
 tags:
-- java
+- Java
 ---
 
 To copy from a stream into a file:

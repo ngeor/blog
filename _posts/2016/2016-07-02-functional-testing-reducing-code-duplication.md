@@ -8,7 +8,7 @@ categories:
 series: Functional Tests
 tags:
 - functional tests
-- javascript
+- JavaScript
 - mocha
 - WebdriverIO
 ---

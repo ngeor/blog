@@ -1,5 +1,5 @@
 ---
 layout: tag
 url_segment: javascript
-title: javascript
+title: JavaScript
 ---

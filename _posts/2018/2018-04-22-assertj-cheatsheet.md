@@ -7,7 +7,7 @@ categories:
 - testing
 tags:
 - AssertJ
-- java
+- Java
 - unit tests
 ---
 

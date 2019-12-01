@@ -7,7 +7,7 @@ categories:
 - programming
 tags:
 - actuators
-- java
+- Java
 - spring
 ---
 

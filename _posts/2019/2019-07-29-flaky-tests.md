@@ -6,7 +6,7 @@ published: true
 categories:
   - testing
 tags:
-  - javascript
+  - JavaScript
   - typescript
   - angular
   - protractor

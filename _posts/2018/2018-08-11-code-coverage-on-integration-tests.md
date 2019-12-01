@@ -9,7 +9,7 @@ tags:
 - code coverage
 - integration tests
 - jacoco
-- java
+- Java
 - maven
 - unit tests
 ---

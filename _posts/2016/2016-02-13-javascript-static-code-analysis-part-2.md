@@ -12,7 +12,7 @@ tags:
 - grunt
 - grunt-filenames
 - grunt-search
-- javascript
+- JavaScript
 - jscs
 - maintainability
 - readability

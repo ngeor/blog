@@ -7,7 +7,7 @@ categories:
 - programming
 tags:
 - barcode
-- java
+- Java
 ---
 
 How to generate PNG barcodes in Java using the zxing library:

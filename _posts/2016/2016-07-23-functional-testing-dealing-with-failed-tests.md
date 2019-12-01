@@ -10,7 +10,7 @@ tags:
 - continuous integration
 - functional tests
 - IntelliJ IDEA
-- javascript
+- JavaScript
 - mocha
 - Visual Studio Code
 - WebdriverIO

@@ -8,7 +8,7 @@ categories:
 series: Unit Tests
 tags:
 - chai
-- javascript
+- JavaScript
 - mocha
 - unit tests
 ---

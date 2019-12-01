@@ -6,7 +6,7 @@ published: true
 categories:
 - programming
 tags:
-- java
+- Java
 - maven
 - spring
 - swagger
