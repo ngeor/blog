@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: dot-net
-tag: .NET
+url_segment: dot-net
+title: .NET
 ---

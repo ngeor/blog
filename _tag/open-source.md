@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: open-source
-tag: open source
+url_segment: open-source
+title: open source
 ---

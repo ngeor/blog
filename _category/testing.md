@@ -1,6 +1,6 @@
 ---
 layout: category
-category: testing
+url_segment: testing
 title: Testing
 ---
 

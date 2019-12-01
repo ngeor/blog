@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: resxtranslator
-tag: ResxTranslator
+url_segment: resxtranslator
+title: ResxTranslator
 ---

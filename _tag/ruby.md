@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: ruby
-tag: ruby
+url_segment: ruby
+title: ruby
 ---

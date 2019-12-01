@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: atom
-tag: atom
+url_segment: atom
+title: atom
 ---

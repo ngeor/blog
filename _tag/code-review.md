@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: code-review
-tag: code review
+url_segment: code-review
+title: code review
 ---

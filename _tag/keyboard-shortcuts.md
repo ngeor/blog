@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: keyboard-shortcuts
-tag: keyboard shortcuts
+url_segment: keyboard-shortcuts
+title: keyboard shortcuts
 ---

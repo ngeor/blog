@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: selenium
-tag: selenium
+url_segment: selenium
+title: selenium
 ---

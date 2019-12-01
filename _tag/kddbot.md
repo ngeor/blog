@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: kddbot
-tag: kddbot
+url_segment: kddbot
+title: kddbot
 ---

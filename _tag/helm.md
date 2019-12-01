@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: helm
-tag: helm
+url_segment: helm
+title: helm
 ---

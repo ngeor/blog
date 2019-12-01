@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: npm
-tag: npm
+url_segment: npm
+title: npm
 ---

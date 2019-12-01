@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: habits
-tag: habits
+url_segment: habits
+title: habits
 ---

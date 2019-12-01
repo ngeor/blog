@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: streak
-tag: streak
+url_segment: streak
+title: streak
 ---

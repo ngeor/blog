@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: grunt-search
-tag: grunt-search
+url_segment: grunt-search
+title: grunt-search
 ---

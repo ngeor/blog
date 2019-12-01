@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: c-sharp
-tag: C Sharp
+url_segment: c-sharp
+title: C#
 ---

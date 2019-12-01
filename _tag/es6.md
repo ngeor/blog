@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: es6
-tag: es6
+url_segment: es6
+title: es6
 ---

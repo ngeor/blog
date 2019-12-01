@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: documentation
-tag: documentation
+url_segment: documentation
+title: documentation
 ---

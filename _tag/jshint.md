@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: jshint
-tag: jshint
+url_segment: jshint
+title: jshint
 ---

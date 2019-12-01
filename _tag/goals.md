@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: goals
-tag: goals
+url_segment: goals
+title: goals
 ---

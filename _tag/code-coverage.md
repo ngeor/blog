@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: code-coverage
-tag: code coverage
+url_segment: code-coverage
+title: code coverage
 ---

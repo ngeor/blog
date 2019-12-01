@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: javascript
-tag: javascript
+url_segment: javascript
+title: javascript
 ---

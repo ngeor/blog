@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: barcode
-tag: barcode
+url_segment: barcode
+title: barcode
 ---

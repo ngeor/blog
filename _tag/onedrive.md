@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: onedrive
-tag: OneDrive
+url_segment: onedrive
+title: OneDrive
 ---

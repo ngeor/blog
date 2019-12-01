@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: left-pad
-tag: left-pad
+url_segment: left-pad
+title: left-pad
 ---

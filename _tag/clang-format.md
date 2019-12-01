@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: clang-format
-tag: clang-format
+url_segment: clang-format
+title: clang-format
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: markdown
-tag: markdown
+url_segment: markdown
+title: markdown
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: dashboard
-tag: dashboard
+url_segment: dashboard
+title: dashboard
 ---

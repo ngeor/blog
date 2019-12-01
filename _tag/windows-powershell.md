@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: windows-powershell
-tag: Windows PowerShell
+url_segment: windows-powershell
+title: Windows PowerShell
 ---

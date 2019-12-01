@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: protractor
-tag: protractor
+url_segment: protractor
+title: protractor
 ---

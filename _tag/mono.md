@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: mono
-tag: mono
+url_segment: mono
+title: mono
 ---

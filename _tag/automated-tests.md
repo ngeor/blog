@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: automated-tests
-tag: automated tests
+url_segment: automated-tests
+title: automated tests
 ---

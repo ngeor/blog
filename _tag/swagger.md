@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: swagger
-tag: swagger
+url_segment: swagger
+title: swagger
 ---

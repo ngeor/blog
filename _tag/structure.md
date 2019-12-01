@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: structure
-tag: structure
+url_segment: structure
+title: structure
 ---

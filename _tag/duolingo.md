@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: duolingo
-tag: DuoLingo
+url_segment: duolingo
+title: DuoLingo
 ---

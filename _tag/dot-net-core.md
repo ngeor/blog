@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: dot-net-core
-tag: .NET Core
+url_segment: dot-net-core
+title: .NET Core
 ---

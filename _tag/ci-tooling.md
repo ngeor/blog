@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: ci-tooling
-tag: ci-tooling
+url_segment: ci-tooling
+title: ci-tooling
 ---

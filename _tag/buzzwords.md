@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: buzzwords
-tag: buzzwords
+url_segment: buzzwords
+title: buzzwords
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: windows-service
-tag: Windows Service
+url_segment: windows-service
+title: Windows Service
 ---

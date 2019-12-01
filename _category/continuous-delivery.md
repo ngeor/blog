@@ -1,6 +1,6 @@
 ---
 layout: category
-category: continuous-delivery
+url_segment: continuous-delivery
 title: Continuous Delivery
 ---
 

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: blogengine-dot-net-mvc
-tag: BlogEngine.NET MVC
+url_segment: blogengine-dot-net-mvc
+title: BlogEngine.NET MVC
 ---

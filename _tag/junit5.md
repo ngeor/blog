@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: junit5
-tag: junit5
+url_segment: junit5
+title: junit5
 ---

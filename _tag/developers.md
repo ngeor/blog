@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: developers
-tag: developers
+url_segment: developers
+title: developers
 ---

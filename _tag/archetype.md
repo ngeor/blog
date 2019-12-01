@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: archetype
-tag: archetype
+url_segment: archetype
+title: archetype
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: grunt
-tag: grunt
+url_segment: grunt
+title: grunt
 ---

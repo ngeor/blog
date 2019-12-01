@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: scrumcard
-tag: ScrumCard
+url_segment: scrumcard
+title: ScrumCard
 ---

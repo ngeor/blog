@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: git-analyze
-tag: git-analyze
+url_segment: git-analyze
+title: git-analyze
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: flyway
-tag: Flyway
+url_segment: flyway
+title: Flyway
 ---

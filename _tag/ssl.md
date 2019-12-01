@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: ssl
-tag: SSL
+url_segment: ssl
+title: SSL
 ---

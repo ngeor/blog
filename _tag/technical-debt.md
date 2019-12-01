@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: technical-debt
-tag: technical debt
+url_segment: technical-debt
+title: technical debt
 ---

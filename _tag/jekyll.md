@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: jekyll
-tag: jekyll
+url_segment: jekyll
+title: jekyll
 ---

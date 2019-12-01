@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: productivity
-tag: Productivity
+url_segment: productivity
+title: Productivity
 ---

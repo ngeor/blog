@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: governance
-tag: governance
+url_segment: governance
+title: governance
 ---

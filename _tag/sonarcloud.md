@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: sonarcloud
-tag: SonarCloud
+url_segment: sonarcloud
+title: SonarCloud
 ---

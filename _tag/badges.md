@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: badges
-tag: badges
+url_segment: badges
+title: badges
 ---

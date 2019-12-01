@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: postgresql
-tag: PostgreSQL
+url_segment: postgresql
+title: PostgreSQL
 ---

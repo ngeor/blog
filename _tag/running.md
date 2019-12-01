@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: running
-tag: running
+url_segment: running
+title: running
 ---

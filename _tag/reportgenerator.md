@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: reportgenerator
-tag: ReportGenerator
+url_segment: reportgenerator
+title: ReportGenerator
 ---

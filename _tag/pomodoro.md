@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: pomodoro
-tag: pomodoro
+url_segment: pomodoro
+title: pomodoro
 ---

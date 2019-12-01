@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: graphs
-tag: graphs
+url_segment: graphs
+title: graphs
 ---

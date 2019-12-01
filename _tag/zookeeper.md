@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: zookeeper
-tag: ZooKeeper
+url_segment: zookeeper
+title: ZooKeeper
 ---

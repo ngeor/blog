@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: android
-tag: Android
+url_segment: android
+title: Android
 ---

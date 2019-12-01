@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: culture
-tag: culture
+url_segment: culture
+title: culture
 ---

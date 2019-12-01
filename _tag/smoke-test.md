@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: smoke-test
-tag: smoke test
+url_segment: smoke-test
+title: smoke test
 ---

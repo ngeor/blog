@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: atom-plugins
-tag: atom-plugins
+url_segment: atom-plugins
+title: atom-plugins
 ---

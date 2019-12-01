@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: jenkins
-tag: Jenkins
+url_segment: jenkins
+title: Jenkins
 ---

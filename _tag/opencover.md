@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: opencover
-tag: OpenCover
+url_segment: opencover
+title: OpenCover
 ---

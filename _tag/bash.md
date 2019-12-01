@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: bash
-tag: bash
+url_segment: bash
+title: bash
 ---

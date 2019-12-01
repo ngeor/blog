@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: functional-tests
-tag: functional tests
+url_segment: functional-tests
+title: functional tests
 ---

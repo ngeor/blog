@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: mocha
-tag: mocha
+url_segment: mocha
+title: mocha
 ---

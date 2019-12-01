@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: yagni
-tag: yagni
+url_segment: yagni
+title: yagni
 ---

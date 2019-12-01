@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: technology-radar
-tag: technology radar
+url_segment: technology-radar
+title: technology radar
 ---

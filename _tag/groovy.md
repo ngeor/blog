@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: groovy
-tag: groovy
+url_segment: groovy
+title: groovy
 ---

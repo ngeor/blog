@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: video
-tag: video
+url_segment: video
+title: video
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: wxwidgets
-tag: wxWidgets
+url_segment: wxwidgets
+title: wxWidgets
 ---

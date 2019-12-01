@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: maintainability
-tag: maintainability
+url_segment: maintainability
+title: maintainability
 ---

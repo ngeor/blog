@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: bom
-tag: bom
+url_segment: bom
+title: bom
 ---

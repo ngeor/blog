@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: tdd
-tag: tdd
+url_segment: tdd
+title: tdd
 ---

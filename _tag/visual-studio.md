@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: visual-studio
-tag: Visual Studio
+url_segment: visual-studio
+title: Visual Studio
 ---

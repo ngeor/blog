@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: nunit-companion
-tag: NUnit Companion
+url_segment: nunit-companion
+title: NUnit Companion
 ---

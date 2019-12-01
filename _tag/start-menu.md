@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: start-menu
-tag: start menu
+url_segment: start-menu
+title: start menu
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: phantomjs
-tag: phantomjs
+url_segment: phantomjs
+title: phantomjs
 ---

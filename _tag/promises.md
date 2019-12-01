@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: promises
-tag: promises
+url_segment: promises
+title: promises
 ---

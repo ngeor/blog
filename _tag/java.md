@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: java
-tag: java
+url_segment: java
+title: java
 ---

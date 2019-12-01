@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: maven-enforcer
-tag: maven enforcer
+url_segment: maven-enforcer
+title: maven enforcer
 ---

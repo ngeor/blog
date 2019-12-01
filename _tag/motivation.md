@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: motivation
-tag: motivation
+url_segment: motivation
+title: motivation
 ---

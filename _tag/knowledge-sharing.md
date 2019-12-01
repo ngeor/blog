@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: knowledge-sharing
-tag: knowledge sharing
+url_segment: knowledge-sharing
+title: knowledge sharing
 ---

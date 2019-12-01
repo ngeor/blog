@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: typescript
-tag: typescript
+url_segment: typescript
+title: typescript
 ---

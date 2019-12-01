@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: mac
-tag: mac
+url_segment: mac
+title: mac
 ---

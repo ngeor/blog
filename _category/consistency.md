@@ -1,6 +1,6 @@
 ---
 layout: category
-category: consistency
+url_segment: consistency
 title: Consistency
 ---
 

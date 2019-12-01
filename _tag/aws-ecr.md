@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: aws-ecr
-tag: AWS ECR
+url_segment: aws-ecr
+title: AWS ECR
 ---

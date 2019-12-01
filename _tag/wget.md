@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: wget
-tag: wget
+url_segment: wget
+title: wget
 ---

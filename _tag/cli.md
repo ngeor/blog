@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: cli
-tag: cli
+url_segment: cli
+title: cli
 ---

@@ -1,6 +1,6 @@
 ---
 layout: category
-category: funny
+url_segment: funny
 title: Funny
 hidden: True
 ---

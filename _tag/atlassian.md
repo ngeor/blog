@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: atlassian
-tag: atlassian
+url_segment: atlassian
+title: atlassian
 ---

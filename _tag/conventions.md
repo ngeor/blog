@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: conventions
-tag: conventions
+url_segment: conventions
+title: conventions
 ---

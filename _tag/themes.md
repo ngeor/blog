@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: themes
-tag: themes
+url_segment: themes
+title: themes
 ---

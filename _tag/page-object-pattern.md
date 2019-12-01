@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: page-object-pattern
-tag: page object pattern
+url_segment: page-object-pattern
+title: page object pattern
 ---

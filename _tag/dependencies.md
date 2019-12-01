@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: dependencies
-tag: dependencies
+url_segment: dependencies
+title: dependencies
 ---

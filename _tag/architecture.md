@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: architecture
-tag: architecture
+url_segment: architecture
+title: architecture
 ---

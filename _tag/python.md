@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: python
-tag: python
+url_segment: python
+title: python
 ---

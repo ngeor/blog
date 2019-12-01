@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: scripting
-tag: scripting
+url_segment: scripting
+title: scripting
 ---

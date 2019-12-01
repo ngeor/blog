@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: github-flow
-tag: GitHub Flow
+url_segment: github-flow
+title: GitHub Flow
 ---

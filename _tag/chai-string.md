@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: chai-string
-tag: chai-string
+url_segment: chai-string
+title: chai-string
 ---

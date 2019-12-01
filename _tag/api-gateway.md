@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: api-gateway
-tag: api gateway
+url_segment: api-gateway
+title: api gateway
 ---

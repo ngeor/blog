@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: grunt-filenames
-tag: grunt-filenames
+url_segment: grunt-filenames
+title: grunt-filenames
 ---

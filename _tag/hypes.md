@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: hypes
-tag: hypes
+url_segment: hypes
+title: hypes
 ---

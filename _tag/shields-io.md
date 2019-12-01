@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: shields-io
-tag: shields.io
+url_segment: shields-io
+title: shields.io
 ---

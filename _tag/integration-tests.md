@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: integration-tests
-tag: integration tests
+url_segment: integration-tests
+title: integration tests
 ---

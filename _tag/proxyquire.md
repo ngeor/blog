@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: proxyquire
-tag: proxyquire
+url_segment: proxyquire
+title: proxyquire
 ---

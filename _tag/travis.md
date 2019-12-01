@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: travis
-tag: travis
+url_segment: travis
+title: travis
 ---

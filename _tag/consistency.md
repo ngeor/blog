@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: consistency
-tag: consistency
+url_segment: consistency
+title: consistency
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: coveralls
-tag: Coveralls
+url_segment: coveralls
+title: Coveralls
 ---

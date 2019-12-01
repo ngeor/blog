@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: localstack
-tag: localstack
+url_segment: localstack
+title: localstack
 ---

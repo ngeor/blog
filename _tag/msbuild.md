@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: msbuild
-tag: MSBuild
+url_segment: msbuild
+title: MSBuild
 ---

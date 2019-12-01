@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: intellij-idea
-tag: IntelliJ IDEA
+url_segment: intellij-idea
+title: IntelliJ IDEA
 ---

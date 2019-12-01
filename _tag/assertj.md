@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: assertj
-tag: AssertJ
+url_segment: assertj
+title: AssertJ
 ---

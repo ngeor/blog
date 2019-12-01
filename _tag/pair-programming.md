@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: pair-programming
-tag: pair programming
+url_segment: pair-programming
+title: pair programming
 ---

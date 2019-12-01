@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: github
-tag: GitHub
+url_segment: github
+title: GitHub
 ---

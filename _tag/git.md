@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: git
-tag: git
+url_segment: git
+title: git
 ---

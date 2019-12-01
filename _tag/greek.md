@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: greek
-tag: Greek
+url_segment: greek
+title: Greek
 ---

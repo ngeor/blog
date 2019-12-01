@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: metadata
-tag: metadata
+url_segment: metadata
+title: metadata
 ---

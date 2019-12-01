@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: maven-plugin
-tag: maven-plugin
+url_segment: maven-plugin
+title: maven-plugin
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: actuators
-tag: actuators
+url_segment: actuators
+title: actuators
 ---

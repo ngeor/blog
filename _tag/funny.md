@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: funny
-tag: funny
+url_segment: funny
+title: funny
 ---

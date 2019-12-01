@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: wordpress
-tag: wordpress
+url_segment: wordpress
+title: wordpress
 ---

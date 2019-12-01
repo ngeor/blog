@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: windows-mobile-phone
-tag: Windows Mobile Phone
+url_segment: windows-mobile-phone
+title: Windows Mobile Phone
 ---

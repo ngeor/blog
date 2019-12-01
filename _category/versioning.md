@@ -1,6 +1,6 @@
 ---
 layout: category
-category: versioning
+url_segment: versioning
 title: Versioning
 ---
 

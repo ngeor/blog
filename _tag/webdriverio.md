@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: webdriverio
-tag: WebdriverIO
+url_segment: webdriverio
+title: WebdriverIO
 ---

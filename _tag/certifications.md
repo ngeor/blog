@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: certifications
-tag: certifications
+url_segment: certifications
+title: certifications
 ---

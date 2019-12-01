@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: unit-tests
-tag: unit tests
+url_segment: unit-tests
+title: unit tests
 ---

@@ -1,6 +1,6 @@
 ---
 layout: category
-category: automation
+url_segment: automation
 title: Automation
 ---
 

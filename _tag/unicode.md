@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: unicode
-tag: unicode
+url_segment: unicode
+title: unicode
 ---

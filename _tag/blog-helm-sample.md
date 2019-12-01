@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: blog-helm-sample
-tag: blog-helm-sample
+url_segment: blog-helm-sample
+title: blog-helm-sample
 ---

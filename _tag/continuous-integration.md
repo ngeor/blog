@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: continuous-integration
-tag: continuous integration
+url_segment: continuous-integration
+title: continuous integration
 ---

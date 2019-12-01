@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: bitbucket
-tag: bitbucket
+url_segment: bitbucket
+title: bitbucket
 ---

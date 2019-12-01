@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: presentation
-tag: presentation
+url_segment: presentation
+title: presentation
 ---

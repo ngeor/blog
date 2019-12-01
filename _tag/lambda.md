@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: lambda
-tag: Lambda
+url_segment: lambda
+title: Lambda
 ---

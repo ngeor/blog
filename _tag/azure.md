@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: azure
-tag: Azure
+url_segment: azure
+title: Azure
 ---

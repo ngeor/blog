@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: notes
-tag: notes
+url_segment: notes
+title: notes
 ---

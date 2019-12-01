@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: spring
-tag: spring
+url_segment: spring
+title: spring
 ---

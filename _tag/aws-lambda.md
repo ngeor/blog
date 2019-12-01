@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: aws-lambda
-tag: AWS Lambda
+url_segment: aws-lambda
+title: AWS Lambda
 ---

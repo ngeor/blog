@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: david
-tag: david
+url_segment: david
+title: david
 ---

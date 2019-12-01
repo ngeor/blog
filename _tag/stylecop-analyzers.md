@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: stylecop-analyzers
-tag: StyleCop.Analyzers
+url_segment: stylecop-analyzers
+title: StyleCop.Analyzers
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: organization
-tag: organization
+url_segment: organization
+title: organization
 ---

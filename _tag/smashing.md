@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: smashing
-tag: smashing
+url_segment: smashing
+title: smashing
 ---

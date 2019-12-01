@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: continuous-delivery
-tag: continuous delivery
+url_segment: continuous-delivery
+title: continuous delivery
 ---

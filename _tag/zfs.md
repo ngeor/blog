@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: zfs
-tag: zfs
+url_segment: zfs
+title: zfs
 ---

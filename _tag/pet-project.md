@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: pet-project
-tag: pet project
+url_segment: pet-project
+title: pet project
 ---

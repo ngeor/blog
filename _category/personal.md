@@ -1,6 +1,6 @@
 ---
 layout: category
-category: personal
+url_segment: personal
 title: Personal
 hidden: True
 ---

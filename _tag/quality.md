@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: quality
-tag: quality
+url_segment: quality
+title: quality
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: rest
-tag: rest
+url_segment: rest
+title: rest
 ---

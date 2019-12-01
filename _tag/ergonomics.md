@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: ergonomics
-tag: ergonomics
+url_segment: ergonomics
+title: ergonomics
 ---

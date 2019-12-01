@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: es6-generators
-tag: ES6 generators
+url_segment: es6-generators
+title: ES6 generators
 ---

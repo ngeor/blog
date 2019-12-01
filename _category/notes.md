@@ -1,6 +1,6 @@
 ---
 layout: category
-category: notes
+url_segment: notes
 title: Notes
 ---
 

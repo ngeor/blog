@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: sqs
-tag: SQS
+url_segment: sqs
+title: SQS
 ---

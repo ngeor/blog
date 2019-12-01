@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: networks
-tag: networks
+url_segment: networks
+title: networks
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: chai-as-promised
-tag: chai-as-promised
+url_segment: chai-as-promised
+title: chai-as-promised
 ---

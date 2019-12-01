@@ -1,6 +1,6 @@
 ---
 layout: category
-category: programming
+url_segment: programming
 title: Programming
 ---
 

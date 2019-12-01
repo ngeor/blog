@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: mapstruct
-tag: MapStruct
+url_segment: mapstruct
+title: MapStruct
 ---

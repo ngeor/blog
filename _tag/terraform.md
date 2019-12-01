@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: terraform
-tag: terraform
+url_segment: terraform
+title: terraform
 ---

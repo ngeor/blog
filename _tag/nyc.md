@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: nyc
-tag: nyc
+url_segment: nyc
+title: nyc
 ---

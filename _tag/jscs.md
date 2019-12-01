@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: jscs
-tag: jscs
+url_segment: jscs
+title: jscs
 ---

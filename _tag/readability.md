@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: readability
-tag: readability
+url_segment: readability
+title: readability
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: beanshell
-tag: BeanShell
+url_segment: beanshell
+title: BeanShell
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: podcast
-tag: podcast
+url_segment: podcast
+title: podcast
 ---

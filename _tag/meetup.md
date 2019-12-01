@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: meetup
-tag: meetup
+url_segment: meetup
+title: meetup
 ---

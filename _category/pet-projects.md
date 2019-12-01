@@ -1,6 +1,6 @@
 ---
 layout: category
-category: pet-projects
+url_segment: pet-projects
 title: Pet Projects
 ---
 

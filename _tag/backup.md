@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: backup
-tag: backup
+url_segment: backup
+title: backup
 ---

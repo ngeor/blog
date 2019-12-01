@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: submodules
-tag: submodules
+url_segment: submodules
+title: submodules
 ---

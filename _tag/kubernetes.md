@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: kubernetes
-tag: kubernetes
+url_segment: kubernetes
+title: kubernetes
 ---

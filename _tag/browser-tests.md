@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: browser-tests
-tag: browser tests
+url_segment: browser-tests
+title: browser tests
 ---

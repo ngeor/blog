@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: maven
-tag: maven
+url_segment: maven
+title: maven
 ---

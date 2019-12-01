@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: esprima
-tag: esprima
+url_segment: esprima
+title: esprima
 ---

@@ -1,6 +1,6 @@
 ---
 layout: category
-category: meta
+url_segment: meta
 title: Meta
 ---
 

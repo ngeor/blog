@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: jacoco
-tag: jacoco
+url_segment: jacoco
+title: jacoco
 ---

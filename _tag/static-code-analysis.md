@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: static-code-analysis
-tag: static code analysis
+url_segment: static-code-analysis
+title: static code analysis
 ---

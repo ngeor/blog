@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: broken-links
-tag: broken links
+url_segment: broken-links
+title: broken links
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: typeloadexception
-tag: TypeLoadException
+url_segment: typeloadexception
+title: TypeLoadException
 ---

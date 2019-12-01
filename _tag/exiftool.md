@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: exiftool
-tag: exiftool
+url_segment: exiftool
+title: exiftool
 ---

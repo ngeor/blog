@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: branching-model
-tag: branching model
+url_segment: branching-model
+title: branching model
 ---

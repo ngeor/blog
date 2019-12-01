@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: windows
-tag: Windows
+url_segment: windows
+title: Windows
 ---

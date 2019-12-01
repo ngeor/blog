@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: dosbox
-tag: DOSBox
+url_segment: dosbox
+title: DOSBox
 ---

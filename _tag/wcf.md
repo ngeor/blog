@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: wcf
-tag: WCF
+url_segment: wcf
+title: WCF
 ---

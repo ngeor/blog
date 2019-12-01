@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: photos
-tag: photos
+url_segment: photos
+title: photos
 ---

@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: checkstyle
-tag: Checkstyle
+url_segment: checkstyle
+title: Checkstyle
 ---

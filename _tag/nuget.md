@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: nuget
-tag: NuGet
+url_segment: nuget
+title: NuGet
 ---

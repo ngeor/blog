@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: yaml
-tag: yaml
+url_segment: yaml
+title: yaml
 ---

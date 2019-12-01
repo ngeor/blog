@@ -1,5 +1,5 @@
 ---
 layout: tag
-normalized_tag: json
-tag: json
+url_segment: json
+title: json
 ---
