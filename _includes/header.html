@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="pages-wrapper">
-    <nav class="pages-nav">
+    <nav>
       <ul class="pages-list">
         {%- for my_page in site.pages -%}
         {%- if my_page.title and my_page.hidden != true -%}
@@ -14,7 +14,7 @@
         {%- endif -%}
         {%- endfor -%}
       </ul>
-      {%- include social.html -%}
     </nav>
+    {%- include social.html -%}
   </div>
 </header>

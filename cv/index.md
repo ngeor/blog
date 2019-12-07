@@ -54,7 +54,7 @@ Automation, testing, continuous delivery, infrastructure as code, microservices.
 
 ### UBTech / Lead Software Architect
 
-February 2018 - Present
+February 2018 - October 2019
 
 UBTech started as a tiny startup aiming to improve logistics for everyone: end
 consumers, e-commerce shops, carriers. A greenfield project that I was lucky to
