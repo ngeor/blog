@@ -6,7 +6,7 @@ import yaml
 
 def tag_title_to_tag_url_segment(tag):
     normalized_tag = tag.replace(
-        " ", "-").lower().replace(".net", "-dot-net").replace(".", "-").replace("#", "-sharp").replace("++", "-plus-plus")
+        " ", "-").lower().replace(".net", "-dot-net").replace(".", "-").replace("#", "-sharp").replace("++", "-plus-plus").replace("!", "")
     if normalized_tag.startswith("-"):
         normalized_tag = normalized_tag[1:]
     return normalized_tag
