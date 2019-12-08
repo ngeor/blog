@@ -26,6 +26,7 @@ h3 {
 .site-header {
   background: #f2f2f2;
   padding: 20px;
+  box-sizing: border-box;
 
   a {
     text-decoration: none;
@@ -38,39 +39,6 @@ h3 {
     .site-title {
       font-size: 1.25 * $font-size;
       font-weight: bold;
-    }
-  }
-
-  .pages-wrapper {
-    margin-top: 20px;
-  }
-
-  .pages-list {
-    font-size: $small-font-size;
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-
-    li {
-      display: inline-block;
-      margin: $small-font-size;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .social-media-list {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-evenly;
-
-    li {
-      display: inline-block;
-    }
-    span {
-      display: none;
     }
   }
 }
@@ -99,7 +67,7 @@ h3 {
     }
 
     a {
-      color: #217ffa;
+      color: $link-color;
     }
 
     blockquote {
@@ -110,13 +78,13 @@ h3 {
 
   .post-content {
     a {
-      color: #217ffa;
+      color: $link-color;
     }
 
     blockquote {
       margin: 0;
       padding-left: 15px;
-      border-left: 5px solid #217ffa;
+      border-left: 5px solid $link-color;
     }
 
     table {
@@ -144,7 +112,7 @@ h3 {
     font-size: $small-font-size;
 
     a {
-      color: #217ffa;
+      color: $link-color;
     }
   }
 
@@ -162,35 +130,11 @@ h3 {
 //
 
 .site-footer {
+  background: #f2f2f2;
+  box-sizing: border-box;
+  border-top: 1px solid #dedede;
   padding: 20px;
-}
-
-//
-// desktop overrides
-//
-
-@media screen and (min-width: 1024px) {
-  .site-header {
-    position: fixed;
-    height: 100%;
-    width: 300px;
-
-    .pages-list {
-      display: block;
-      box-sizing: border-box;
-      border-top: 1px solid #dedede;
-      border-bottom: 1px solid #dedede;
-      > li {
-        display: block;
-        margin: 0;
-      }
-    }
-  }
-
-  .page-content,
-  .site-footer {
-    padding-left: 360px;
-  }
+  text-align: center;
 }
 
 //
@@ -206,7 +150,7 @@ h3 {
   text-align: center;
   font-size: $small-font-size;
   a {
-    color: #217ffa;
+    color: $link-color;
   }
 }
 

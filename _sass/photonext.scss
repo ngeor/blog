@@ -95,4 +95,9 @@ main .wrapper {
   margin: 0 auto;
 }
 
+.pages-list,
+.social-media-list {
+  display: none;
+}
+
 @import "shared/cookies";
