@@ -49,6 +49,7 @@ h3 {
 
 .page-content {
   padding: 20px;
+  box-sizing: border-box;
 
   img {
     max-width: 100%;
@@ -171,5 +172,28 @@ h3 {
 
   .center {
     text-align: center;
+  }
+}
+
+//
+// desktop overrides
+//
+
+@media screen and (min-width: 1024px) {
+  .body {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .site-header {
+    width: 340px;
+  }
+
+  .page-content {
+    width: calc(100% - 340px);
+  }
+
+  .site-footer {
+    flex-grow: 1;
   }
 }

@@ -1,21 +1,14 @@
+// nav appears on both header and footer.
+// header is for desktop, footer is for mobile.
+
+// Common properties
+
 .pages-list {
   font-size: $small-font-size;
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: row wrap;
-
-  li {
-    display: inline-block;
-    margin-bottom: $font-size;
-    margin-left: $small-font-size;
-  }
-
-  li:first-child {
-    margin-left: 0;
-  }
-
+  box-sizing: border-box;
   a {
-    color: $link-color;
+    color: black;
+    text-decoration: none;
   }
 
   a:hover {
@@ -26,12 +19,57 @@
 .social-media-list {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: $font-size;
-
+  span {
+    display: none; // hide text of social media icons
+  }
   li {
     display: inline-block;
   }
-  span {
+}
+
+// Header only
+
+.site-header {
+  .pages-list {
+    display: block;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin-top: $font-size;
+    margin-bottom: $font-size;
+    > li {
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+// Footer only
+
+.site-footer {
+  .pages-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+
+    li {
+      display: inline-block;
+      margin-bottom: $font-size;
+      margin-left: $small-font-size;
+    }
+
+    li:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .social-media-list {
+    margin-bottom: $font-size;
+  }
+}
+
+.site-header {
+  nav,
+  .social-media-list {
     display: none;
   }
 }
@@ -41,35 +79,21 @@
 //
 
 @media screen and (min-width: 1024px) {
-  .site-header,
-  .site-footer {
-    position: fixed;
-    width: 340px;
-  }
-
+  // show header elements
   .site-header {
-    height: 100px;
-  }
-
-  .site-footer {
-    height: calc(100% - 100px);
-    top: 100px;
-    border-top: none;
-  }
-
-  .footer-wrapper > * {
-    margin-bottom: $font-size;
-  }
-
-  .pages-list {
-    display: block;
-    > li {
+    .pages-nav {
       display: block;
-      margin: 0;
+    }
+    .social-media-list {
+      display: flex;
     }
   }
 
-  .page-content {
-    padding-left: 360px;
+  // hide footer elements
+  .site-footer {
+    .pages-nav,
+    .social-media-list {
+      display: none;
+    }
   }
 }
