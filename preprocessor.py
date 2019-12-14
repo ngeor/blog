@@ -101,12 +101,16 @@ class Collector:
 
     def read_post(self, fullpath):
         front_matter = extract_front_matter(fullpath)
-        categories = front_matter["categories"]
-        for category in categories:
-            self._add_category(category)
-        tags = front_matter["tags"]
-        for tag in tags:
-            self._add_tag(tag)
+        if "categories" in front_matter:
+            categories = front_matter["categories"]
+            for category in categories:
+                self._add_category(category)
+        else:
+            print(f"No categories in {fullpath}")
+        if "tags" in front_matter:
+            tags = front_matter["tags"]
+            for tag in tags:
+                self._add_tag(tag)
 
     def get_categories(self):
         return self._categories

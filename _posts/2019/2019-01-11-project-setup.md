@@ -2,6 +2,8 @@
 layout: page
 title: Project Setup
 date: 2019-01-11
+categories:
+  - notes
 ---
 
 Setting up a project, creating a pipeline, automatic deployments, etc.

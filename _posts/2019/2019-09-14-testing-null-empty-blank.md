@@ -4,7 +4,7 @@ title: Testing null, empty, blank
 date: 2019-09-14
 published: true
 categories:
-  - programming
+  - testing
 tags:
   - Java
   - junit5

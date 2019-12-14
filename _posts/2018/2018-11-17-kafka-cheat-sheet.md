@@ -2,6 +2,8 @@
 layout: page
 title: Kafka cheat sheet
 date: 2018-11-17
+categories:
+  - programming
 ---
 
 A cheat sheet for Apache Kafka.
