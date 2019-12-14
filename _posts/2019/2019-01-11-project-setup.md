@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Project Setup
+date: 2019-01-11
 ---
 
 Setting up a project, creating a pipeline, automatic deployments, etc.
 
-Getting all projects
---------------------
+## Getting all projects
 
 If you work with multiple repositories, you can use [clone-all] to clone all the
 missing repositories in one go.
@@ -27,12 +27,10 @@ this style:
 dirloop git pull
 ```
 
+## Creating a project checklist
 
-Creating a project checklist
-----------------------------
-
-- Create the project on GitHub. Select the appropriate `.gitignore`
-  template and license (typically MIT).
+- Create the project on GitHub. Select the appropriate `.gitignore` template and
+  license (typically MIT).
 - Clone the project. Also possible with `clone-all`.
 - Travis
   - Enable Travis with `travis enable` CLI.
@@ -56,12 +54,12 @@ Example `.travis.yml`:
 language: node_js
 sudo: false
 node_js:
-- lts/*
+  - lts/*
 after_success:
-- npm run coveralls
+  - npm run coveralls
 cache:
   directories:
-  - node_modules
+    - node_modules
 deploy:
   provider: npm
   email: Nikolaos.Georgiou@gmail.com
@@ -101,8 +99,7 @@ deploy:
 
 Add the PyPI badge.
 
-Bumping version
----------------
+## Bumping version
 
 There are two deployment options:
 
@@ -140,7 +137,8 @@ Only the keeper is allowed to update the version in project files.
 
 #### Tooling
 
-The tooling here should assist the keeper and prevent him/her from making mistakes.
+The tooling here should assist the keeper and prevent him/her from making
+mistakes.
 
 ### Automatic workflow (deploy on master)
 
@@ -154,15 +152,16 @@ needs to be corrected before merging the pull request.
 
 - `pom.xml` and latest git tag both point to version 1.4.0
 - The developer creates a branch out of master
-- The developer bumps the version in `pom.xml` to 1.5.0, indicating the intended next version
+- The developer bumps the version in `pom.xml` to 1.5.0, indicating the intended
+  next version
 - After the work is complete, a PR is created and merged
 - On master, the bot reads the version from `pom.xml` and tags master
 
 **Important**
 
 In this case, it is important that pushing a tag does not trigger a build,
-otherwise we'll be in an infinite build loop. It's worth mentioning that the default
-pipeline in Bitbucket Pipelines doesn't run on tags.
+otherwise we'll be in an infinite build loop. It's worth mentioning that the
+default pipeline in Bitbucket Pipelines doesn't run on tags.
 
 #### Tooling
 
@@ -172,15 +171,14 @@ properly. Additionally, it should push a new tag once the master is green.
 ### Comparison
 
 | Manual                                        | Automatic                                         |
-|-----------------------------------------------|---------------------------------------------------|
+| --------------------------------------------- | ------------------------------------------------- |
 | Requires a privileged human to push versions  | Requires a bot to tag master                      |
 | Not all merges needs to be deployed instantly | Every merge becomes a deployment                  |
 | Developers aren't allowed to bump version     | Developers need to bump version in advance        |
 | The trigger for a deployment is the tag       | The trigger for the deployment is merge to master |
 | Tagging happens at a developer's computer     | Tagging happens during CI (after a green build)   |
 
-Tooling for versioning
-----------------------
+## Tooling for versioning
 
 ### Manual workflow (deploy on tag)
 
@@ -193,8 +191,8 @@ script which will push the tag (e.g. `git push --follow-tags`)
 
 #### Bumping version with yart
 
-[yart](https://github.com/ngeor/yart) tries to mimic `npm version`, but for Maven projects.
-
+[yart](https://github.com/ngeor/yart) tries to mimic `npm version`, but for
+Maven projects.
 
 ### Automatic workflow (deploy on master)
 
@@ -203,7 +201,6 @@ script which will push the tag (e.g. `git push --follow-tags`)
 [yak4j-bitbucket-maven-plugin](https://github.com/ngeor/yak4j-bitbucket-maven-plugin)
 supports Maven projects. It breaks the build if the tag already exists and it is
 able to push a tag to Bitbucket after a successful green build on master.
-
 
 [clone-all]: https://github.com/ngeor/clone-all
 [dirloop]: https://github.com/ngeor/dirloop

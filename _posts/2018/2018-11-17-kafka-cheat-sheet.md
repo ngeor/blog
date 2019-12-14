@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Kafka cheat sheet
+date: 2018-11-17
 ---
 
 A cheat sheet for Apache Kafka.
@@ -17,7 +18,7 @@ As Kafka is a message broker, it can't be owned by a single project. Create the
 following `docker-compose.yml` file and store it in a folder of your choosing.
 
 ```yaml
-version: '2'
+version: "2"
 services:
   zookeeper:
     image: wurstmeister/zookeeper

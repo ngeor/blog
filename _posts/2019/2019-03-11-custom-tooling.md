@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Custom Tooling
+date: 2019-03-11
 ---
 
 A catalog of custom tooling I've written. yak4j stands for [yak shaving] for
@@ -69,16 +70,23 @@ Includes images regarding:
 [dirloop]: https://github.com/ngeor/dirloop
 [dockerfiles]: https://github.com/ngeor/dockerfiles
 [generator-csharp-cli-app]: https://github.com/ngeor/generator-csharp-cli-app
-[generator-csharp-nuget-lib]: https://github.com/ngeor/generator-csharp-nuget-lib
+[generator-csharp-nuget-lib]:
+  https://github.com/ngeor/generator-csharp-nuget-lib
 [generator-nodejs]: https://github.com/ngeor/generator-nodejs
 [instarepo]: https://github.com/ngeor/instarepo
-[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/yak4j-bitbucket-maven-plugin
-[yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/yak4j-filename-conventions-maven-plugin
-[yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/yak4j-json-yaml-converter-maven-plugin
+[yak4j-bitbucket-maven-plugin]:
+  https://github.com/ngeor/yak4j-bitbucket-maven-plugin
+[yak4j-filename-conventions-maven-plugin]:
+  https://github.com/ngeor/yak4j-filename-conventions-maven-plugin
+[yak4j-json-yaml-converter-maven-plugin]:
+  https://github.com/ngeor/yak4j-json-yaml-converter-maven-plugin
 [yak4j-spring-test-utils]: https://github.com/ngeor/yak4j-spring-test-utils
-[yak4j-swagger-maven-plugin]: https://github.com/ngeor/yak4j-swagger-maven-plugin
-[yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/yak4j-sync-archetype-maven-plugin
-[yak4j-utc-time-zone-mapper]: https://github.com/ngeor/yak4j-utc-time-zone-mapper
+[yak4j-swagger-maven-plugin]:
+  https://github.com/ngeor/yak4j-swagger-maven-plugin
+[yak4j-sync-archetype-maven-plugin]:
+  https://github.com/ngeor/yak4j-sync-archetype-maven-plugin
+[yak4j-utc-time-zone-mapper]:
+  https://github.com/ngeor/yak4j-utc-time-zone-mapper
 [yak4j-xml]: https://github.com/ngeor/yak4j-xml
 [yart]: https://github.com/ngeor/yart
 [yak shaving]: https://en.wiktionary.org/wiki/yak_shaving

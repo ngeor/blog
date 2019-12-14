@@ -58,8 +58,6 @@ collections:
     output: true
   tag:
     output: true
-  wiki:
-    output: true
 
 paginate: 10
 paginate_path: "/page:num/"
