@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Kafka cheat sheet
 date: 2018-11-17
 categories:

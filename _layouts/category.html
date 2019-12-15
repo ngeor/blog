@@ -4,5 +4,8 @@ layout: default
 
 <h1 class="page-heading">{{ page.title }}</h1>
 
-{{ content }} {%- assign posts = site.posts | where_exp: "item",
-"item.categories contains page.url_segment" -%} {%- include post-list.html -%}
+{{ content }}
+
+{%- assign posts = site.posts | where_exp: "item", "item.categories contains page.url_segment" -%}
+{%- assign show_category_in_title = false -%}
+{%- include post-list.html -%}

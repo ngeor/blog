@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Upgrading Dependencies
 date: 2018-11-04
 categories:

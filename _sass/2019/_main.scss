@@ -109,6 +109,22 @@ h3 {
   color: #666;
 }
 
+.post-meta-header {
+  display: flex;
+  .category {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: $small-font-size / 4;
+    margin: 0 0 0 $small-font-size / 4;
+    font-size: $small-font-size;
+    line-height: $small-font-size;
+    background: #666;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 10%;
+  }
+}
+
 .post-meta {
   display: block;
   margin-top: $font-size;

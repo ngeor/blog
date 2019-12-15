@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Project Setup
 date: 2019-01-11
 categories:
