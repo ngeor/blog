@@ -8,7 +8,7 @@ Categories
 
 <ul>
 
-{% assign categories = site.category | sort: "post_count" | reverse %}
+{% assign categories = site.category | sort: "sort_index" %}
 {%- for category in categories %}
 
 <li>

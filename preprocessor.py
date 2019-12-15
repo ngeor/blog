@@ -12,17 +12,55 @@ def tag_title_to_tag_url_segment(tag):
     return normalized_tag
 
 
+class PageInfo:
+    """
+    Information about a category or tag page.
+    """
+
+    def __init__(self, title, post_count):
+        self.title = title
+        self.post_count = post_count
+        self.sort_index = f"{(9999 - post_count):04}-{title.lower()}"
+
+
+class PageInfoCollection:
+    """
+    A collection of PageInfo instances.
+    """
+
+    def __init__(self):
+        self._title_to_post_count = {}
+
+    def add(self, title):
+        if title in self._title_to_post_count:
+            self._title_to_post_count[title] = self._title_to_post_count[title] + 1
+        else:
+            self._title_to_post_count[title] = 1
+
+    def to_array(self):
+        result = []
+        for title, count in self._title_to_post_count.items():
+            result.append(PageInfo(title, count))
+        result.sort(key=lambda p: p.sort_index)
+        return result
+
+
 class Creator:
+    """
+    Creates category and tag pages.
+    """
+
     def __init__(self, config, args):
         self._config = config
         self._args = args
 
-    def create_category_page(self, category, post_count):
+    def create_category_page(self, category_page_info):
         """
         Creates a category page.
 
-        :param category: The URL segment of the category
+        :param category_page_info: A PageInfo instance of the category
         """
+        category = category_page_info.title
         fullpath = os.path.join("_category", category + ".md")
         if os.path.isfile(fullpath) and not self._args.overwrite:
             return
@@ -49,7 +87,8 @@ class Creator:
             f.write("layout: category\n")
             f.write(f"url_segment: {category}\n")
             f.write(f"title: {title}\n")
-            f.write(f"post_count: {post_count}\n")
+            f.write(f"post_count: {category_page_info.post_count}\n")
+            f.write(f"sort_index: {category_page_info.sort_index}\n")
             for key in category_config.keys():
                 if not key in ["title", "description"]:
                     f.write(f"{key}: {category_config[key]}\n")
@@ -57,12 +96,13 @@ class Creator:
             f.write(description)
             f.write("\n")
 
-    def create_tag_page(self, tag, post_count):
+    def create_tag_page(self, tag_page_info):
         """
         Creates a tag page.
 
-        :param tag: The human friendly name of the tag (i.e. not the URL segment)
+        :param tag_page_info: A PageInfo of the tag. The title is the human friendly name of the tag (i.e. not the URL segment)
         """
+        tag = tag_page_info.title
         normalized_tag = tag_title_to_tag_url_segment(tag)
         fullpath = os.path.join("_tag", normalized_tag + ".md")
         if os.path.isfile(fullpath) and not self._args.overwrite:
@@ -73,7 +113,8 @@ class Creator:
             f.write("layout: tag\n")
             f.write(f"url_segment: {normalized_tag}\n")
             f.write(f"title: {tag}\n")
-            f.write(f"post_count: {post_count}\n")
+            f.write(f"post_count: {tag_page_info.post_count}\n")
+            f.write(f"sort_index: {tag_page_info.sort_index}\n")
             f.write("---\n")
 
 
@@ -83,21 +124,19 @@ def extract_front_matter(fullpath):
 
 
 class Collector:
+    """
+    Parses blog posts and collects category and tag information.
+    """
+
     def __init__(self):
-        self._categories = {}
-        self._tags = {}
+        self._categories = PageInfoCollection()
+        self._tags = PageInfoCollection()
 
     def _add_category(self, category):
-        if category in self._categories:
-            self._categories[category] = self._categories[category] + 1
-        else:
-            self._categories[category] = 1
+        self._categories.add(category)
 
     def _add_tag(self, tag):
-        if tag in self._tags:
-            self._tags[tag] = self._tags[tag] + 1
-        else:
-            self._tags[tag] = 1
+        self._tags.add(tag)
 
     def read_post(self, fullpath):
         front_matter = extract_front_matter(fullpath)
@@ -143,10 +182,10 @@ def main():
         collector.read_post(post_fullpath)
 
     creator = Creator(config, args)
-    for category, count in collector.get_categories().items():
-        creator.create_category_page(category, count)
-    for tag, count in collector.get_tags().items():
-        creator.create_tag_page(tag, count)
+    for category_page_info in collector.get_categories().to_array():
+        creator.create_category_page(category_page_info)
+    for tag_page_info in collector.get_tags().to_array():
+        creator.create_tag_page(tag_page_info)
 
 
 if __name__ == "__main__":

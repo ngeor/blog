@@ -6,7 +6,7 @@ hidden: true
 
 Tags
 
-{% assign tags = site.tag | sort: "post_count" | reverse %}
+{% assign tags = site.tag | sort: "sort_index" %}
 
 <ul>
 
