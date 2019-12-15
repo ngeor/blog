@@ -5,8 +5,6 @@ date: 2019-12-07
 published: true
 categories:
   - tooling
-ecosystem:
-  - JVM
 tags:
   - Java
   - SDKMAN!

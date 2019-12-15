@@ -54,75 +54,76 @@ h3 {
   img {
     max-width: 100%;
   }
+}
+.post-list {
+  .post-title {
+    > a {
+      text-decoration: none;
+      color: #343434;
 
-  .post-list {
-    .post-title {
-      > a {
-        text-decoration: none;
-        color: #343434;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
-
-    a {
-      color: $link-color;
-    }
-
-    blockquote {
-      margin: 0;
-      padding: 0;
-    }
   }
 
-  .post-content {
-    a {
-      color: $link-color;
-    }
-
-    blockquote {
-      margin: 0;
-      padding-left: 15px;
-      border-left: 5px solid $link-color;
-    }
-
-    table {
-      width: 100%;
-      border: 1px solid #dedede;
-      border-collapse: collapse;
-    }
-
-    th {
-      background: #eee;
-    }
-
-    th,
-    td {
-      border: 1px solid #dedede;
-    }
+  a {
+    color: $link-color;
   }
 
-  .post-time {
-    font-size: $small-font-size;
-    color: #666;
+  blockquote {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.post-content {
+  a {
+    color: $link-color;
   }
 
-  .post-meta {
-    font-size: $small-font-size;
-
-    a {
-      color: $link-color;
-    }
+  blockquote {
+    margin: 0;
+    padding-left: 15px;
+    border-left: 5px solid $link-color;
   }
 
-  .page-navigation {
-    display: flex;
-    justify-content: space-between;
-    a {
-      color: #343434;
-    }
+  table {
+    width: 100%;
+    border: 1px solid #dedede;
+    border-collapse: collapse;
+  }
+
+  th {
+    background: #eee;
+  }
+
+  th,
+  td {
+    border: 1px solid #dedede;
+  }
+}
+
+.post-time {
+  font-size: $small-font-size;
+  color: #666;
+}
+
+.post-meta {
+  display: block;
+  margin-top: $font-size;
+  font-size: $small-font-size;
+
+  a {
+    color: $link-color;
+  }
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: #343434;
   }
 }
 
@@ -195,5 +196,38 @@ h3 {
 
   .site-footer {
     flex-grow: 1;
+  }
+}
+
+//
+// mobile overrides
+// generally speaking, the styles are mobile-first, unless it is easier to define a mobile override
+//
+
+@media screen and (max-width: 600px) {
+  .post-content {
+    table {
+      border: none;
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: block;
+        border: 1px solid #dedede;
+        box-sizing: border-box;
+        margin-bottom: $font-size;
+      }
+
+      tr:last-child {
+        margin-bottom: 0;
+      }
+
+      td {
+        display: block;
+        border: none;
+      }
+    }
   }
 }
