@@ -7,5 +7,4 @@ layout: default
 {{ content }}
 
 {%- assign posts = site.posts | where_exp: "item", "item.categories contains page.url_segment" -%}
-{%- assign show_category_in_title = false -%}
 {%- include post-list.html -%}

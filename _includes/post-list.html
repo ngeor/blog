@@ -10,20 +10,6 @@
       </h2>
       <div class="post-meta-header">
         <span class="post-time dt-published">{{ post.date | date: date_format }}</span>
-        {%- if show_category_in_title -%}
-          {%- for category in post.categories -%}
-          {%- assign category_page = site.category | where: "url_segment", category | first -%}
-          {%- if category_page %}
-          <a href="{{ category_page.url | relative_url }}" class="p-category category">
-            {{- category_page.title -}}
-          </a>
-          {%- else %}
-          <span class="category">
-            {{- category -}}
-          </span>
-          {%- endif -%}
-          {%- endfor -%}
-        {%- endif -%}
       </div>
     </header>
     {%- if site.show_excerpts or page.show_excerpts -%} {{ post.excerpt }} {%- endif -%}

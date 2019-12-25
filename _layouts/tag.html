@@ -7,5 +7,4 @@ layout: default
 {{ content }}
 
 {%- assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
-{%- assign show_category_in_title = true -%}
 {%- include post-list.html -%}
