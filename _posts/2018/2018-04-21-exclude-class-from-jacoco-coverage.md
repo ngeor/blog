@@ -16,7 +16,6 @@ JaCoCo's <code>exclude</code> configuration works with classes, so the <code>.cl
 Example:
 
 ```xml
-
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
@@ -28,8 +27,6 @@ Example:
             <exclude>com/acme/api/*Api.class</exclude>
 
             <exclude>com/acme/generated/**/*</exclude>
-
         </excludes>
     </configuration>
-
 ```

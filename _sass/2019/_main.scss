@@ -8,6 +8,7 @@ h1,
 h2.post-title {
   font-size: 1.5 * $font-size;
   font-family: $header-font;
+  margin: 0;
 }
 
 h2 {
@@ -79,10 +80,25 @@ h3 {
     margin: 0;
     padding: 0;
   }
+
+  // increase margin from previous post
+  .post-title {
+    margin: $font-size * 3 0 0 0;
+  }
+
+  // except for the first post
+  li:first-child .post-title {
+    margin: 0;
+  }
+}
+
+// increase margin from h1 if it exists
+h1 + .post-list li:first-child .post-title,
+h1 + p + .post-list li:first-child .post-title {
+  margin: $font-size * 3 0 0 0;
 }
 
 .post-content {
-
   h2 {
     margin: $font-size * 3 0 $font-size 0;
   }
@@ -91,7 +107,7 @@ h3 {
     margin: $font-size * 3 0 $font-size 0;
   }
 
-  h2+h3 {
+  h2 + h3 {
     margin: $font-size 0;
   }
 

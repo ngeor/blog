@@ -4,5 +4,8 @@ code {
 }
 
 pre.highlight {
+  display: block;
   overflow: auto;
+  padding: $small-font-size;
+  box-sizing: border-box;
 }

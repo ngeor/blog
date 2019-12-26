@@ -12,9 +12,9 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">
       {{ page.title | escape }}
     </h1>
-    <span class="post-time dt-published"
-      >{{ page.date | date: date_format }}</span
-    >
+    <div class="post-meta-header">
+      <span class="post-time dt-published">{{ page.date | date: date_format }}</span>
+    </div>
     {%- assign post = page -%}
   </header>
 
