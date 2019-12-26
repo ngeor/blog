@@ -1,6 +1,5 @@
 body {
-  font-family: Cambria, Palatino, Optima, "Liberation Serif", Georgia, Times,
-    "Times New Roman", serif;
+  font-family: $text-font;
   font-size: $font-size;
   line-height: 1.25 * $font-size;
 }
@@ -8,15 +7,18 @@ body {
 h1,
 h2.post-title {
   font-size: 1.5 * $font-size;
+  font-family: $header-font;
 }
 
 h2 {
   font-size: 1.25 * $font-size;
+  font-family: $header-font;
 }
 
 h3 {
   font-size: $font-size;
   font-weight: bold;
+  font-family: $header-font;
 }
 
 //
@@ -35,6 +37,7 @@ h3 {
 
   .site-title-wrapper {
     text-align: center;
+    font-family: $header-font;
 
     .site-title {
       font-size: 1.25 * $font-size;

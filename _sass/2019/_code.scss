@@ -1,10 +1,8 @@
 
 code {
-  font-family: Consolas, Menlo, 'Courier New', Courier, monospace;
+  font-family: $code-font;
 }
 
 pre.highlight {
-  font-size: 14px;
-  line-height: 18px;
   overflow: auto;
 }
