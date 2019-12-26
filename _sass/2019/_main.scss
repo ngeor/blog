@@ -58,6 +58,7 @@ h3 {
     max-width: 100%;
   }
 }
+
 .post-list {
   .post-title {
     > a {
@@ -81,8 +82,26 @@ h3 {
 }
 
 .post-content {
+
+  h2 {
+    margin: $font-size * 3 0 $font-size 0;
+  }
+
+  h3 {
+    margin: $font-size * 3 0 $font-size 0;
+  }
+
+  h2+h3 {
+    margin: $font-size 0;
+  }
+
   a {
     color: $link-color;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: smaller;
   }
 
   blockquote {
