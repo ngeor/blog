@@ -2,8 +2,8 @@
 layout: category
 url_segment: automation
 title: Automation
-post_count: 6
-sort_index: 9993-automation
+post_count: 7
+sort_index: 9992-automation
 ---
 
 Never send a human do a machine's job.
