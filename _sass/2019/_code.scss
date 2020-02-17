@@ -6,6 +6,8 @@ code {
 pre.highlight {
   display: block;
   overflow: auto;
-  padding: $small-font-size;
+  padding: 0.5rem;
   box-sizing: border-box;
+  line-height: 1rem;
+  font-size: 0.85rem;
 }
