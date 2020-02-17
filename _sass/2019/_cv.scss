@@ -1,5 +1,5 @@
 .cv .timeline {
-  $year: 50px;
+  $year: 4rem;
 
   * {
     box-sizing: border-box;
@@ -23,11 +23,11 @@
   }
 
   .work > a {
-    margin-left: 100px;
+    margin-left: 6rem;
   }
 
   a {
-    width: 100px;
+    width: 6rem;
     overflow: hidden;
     position: absolute;
     font-size: small;

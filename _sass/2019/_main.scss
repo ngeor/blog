@@ -28,7 +28,7 @@ h3 {
 
 .site-header {
   background: #f2f2f2;
-  padding: 20px;
+  padding: 1.5rem;
   box-sizing: border-box;
 
   a {
@@ -52,7 +52,7 @@ h3 {
 //
 
 .page-content {
-  padding: 20px;
+  padding: 1.5rem;
   box-sizing: border-box;
 
   img {
@@ -122,8 +122,8 @@ h1 + p + .post-list li:first-child .post-title {
 
   blockquote {
     margin: 0;
-    padding-left: 15px;
-    border-left: 5px solid $link-color;
+    padding-left: 1rem;
+    border-left: 0.3rem solid $link-color;
   }
 
   table {
@@ -177,7 +177,7 @@ h1 + p + .post-list li:first-child .post-title {
   background: #f2f2f2;
   box-sizing: border-box;
   border-top: 1px solid #dedede;
-  padding: 20px;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -186,8 +186,8 @@ h1 + p + .post-list li:first-child .post-title {
 //
 
 .support-banner {
-  margin: 20px 0;
-  padding: 16px;
+  margin: 1.5rem 0;
+  padding: 1rem;
   border: 1px solid #dedede;
   box-sizing: border-box;
   background: #f2f2f2;
@@ -209,7 +209,7 @@ h1 + p + .post-list li:first-child .post-title {
 
   .qr-code {
     font-family: "Courier New", Courier, monospace;
-    font-size: 12px;
+    font-size: 1rem;
     display: block;
   }
 
