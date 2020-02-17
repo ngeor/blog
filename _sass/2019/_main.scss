@@ -1,23 +1,22 @@
 body {
   font-family: $text-font;
   font-size: $font-size;
-  line-height: 1.25 * $font-size;
 }
 
 h1,
 h2.post-title {
-  font-size: 1.5 * $font-size;
+  font-size: 2 * $font-size;
   font-family: $header-font;
   margin: 0;
 }
 
 h2 {
-  font-size: 1.25 * $font-size;
+  font-size: 1.5 * $font-size;
   font-family: $header-font;
 }
 
 h3 {
-  font-size: $font-size;
+  font-size: 1.2 * $font-size;
   font-weight: bold;
   font-family: $header-font;
 }
@@ -238,6 +237,31 @@ h1 + p + .post-list li:first-child .post-title {
 
   .site-footer {
     flex-grow: 1;
+  }
+}
+
+// wide screen overrides
+@media screen and (min-width: 1280px) {
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      box-sizing: border-box;
+      flex: 1 0 49%;
+    }
+
+    li:nth-child(even) {
+      margin-left: 2%;
+    }
+
+    .post-title {
+      margin: 0;
+    }
+  }
+
+  h1 + .post-list li:nth-child(2) .post-title, h1 + p + .post-list li:nth-child(2) .post-title {
+    margin: 3rem 0 0 0;
   }
 }
 
