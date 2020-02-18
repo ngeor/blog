@@ -6,7 +6,14 @@ permalink: /photonext/
 
 # photonext
 
-Easily import and organize your photos and videos.
+<p class="tagline">Easily import and organize your photos and videos</p>
+<p class="subtext">
+  photonext is a minimalist Windows application that imports
+  photos from Android devices and organizes them automatically as you desire.
+</p>
+<p>
+  <img class="demo" src="/assets/photonext/2020-02-18-demo.gif" alt="photonext demo">
+</p>
 
 <div class="hero" markdown="1">
 
@@ -30,6 +37,7 @@ tablets.
 </div>
 
 <div class="hero" markdown="1">
+
 
 ## Own your photos
 
