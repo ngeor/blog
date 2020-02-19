@@ -1,6 +1,7 @@
 body {
   font-family: $text-font;
   font-size: $font-size;
+  background: $footer-background; // so that the footer expands on short pages
 }
 
 h1,
@@ -26,7 +27,7 @@ h3 {
 //
 
 .site-header {
-  background: #f2f2f2;
+  background: $header-background;
   padding: 1.5rem;
   box-sizing: border-box;
 
@@ -53,6 +54,7 @@ h3 {
 .page-content {
   padding: 1.5rem;
   box-sizing: border-box;
+  background: $main-background;
 
   img {
     max-width: 100%;
@@ -127,7 +129,7 @@ h1 + p + .post-list li:first-child .post-title {
 
   table {
     width: 100%;
-    border: 1px solid #dedede;
+    border: 1px solid $table-border-color;
     border-collapse: collapse;
   }
 
@@ -137,13 +139,13 @@ h1 + p + .post-list li:first-child .post-title {
 
   th,
   td {
-    border: 1px solid #dedede;
+    border: 1px solid $table-border-color;
   }
 }
 
 .post-time {
   font-size: $small-font-size;
-  color: #666;
+  color: $post-time-color;
 }
 
 .post-meta-header {
@@ -173,9 +175,8 @@ h1 + p + .post-list li:first-child .post-title {
 //
 
 .site-footer {
-  background: #f2f2f2;
   box-sizing: border-box;
-  border-top: 1px solid #dedede;
+  border-top: 1px solid $footer-border;
   padding: 1.5rem;
   text-align: center;
 }
@@ -187,9 +188,9 @@ h1 + p + .post-list li:first-child .post-title {
 .support-banner {
   margin: 1.5rem 0;
   padding: 1rem;
-  border: 1px solid #dedede;
+  border: 1px solid $table-border-color;
   box-sizing: border-box;
-  background: #f2f2f2;
+  background: $header-background;
   text-align: center;
   font-size: $small-font-size;
   a {
@@ -281,7 +282,7 @@ h1 + p + .post-list li:first-child .post-title {
 
       tr {
         display: block;
-        border: 1px solid #dedede;
+        border: 1px solid $table-border-color;
         box-sizing: border-box;
         margin-bottom: $font-size;
       }

@@ -32,8 +32,8 @@
 .site-header {
   .pages-list {
     display: block;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
+    border-top: 1px solid $table-border-color;
+    border-bottom: 1px solid $table-border-color;
     margin-top: $font-size;
     margin-bottom: $font-size;
     > li {

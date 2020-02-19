@@ -19,7 +19,7 @@
     height: $year;
     text-align: center;
     line-height: $year;
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px dotted $table-border-color;
   }
 
   .work > a {
