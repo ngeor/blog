@@ -7,3 +7,4 @@ title: Archives
 
 - [Categories](./by-category.html)
 - [Tags](./by-tag.html)
+- [Stats](./stats.html)
