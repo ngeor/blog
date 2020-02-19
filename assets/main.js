@@ -45,7 +45,7 @@
     document.cookie = "ackCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
   }
 
-  function main() {
+  function showCookiesPopup() {
     if (!hasAcknowledgedCookies()) {
       var el = document.getElementById('js-cookies');
 
@@ -61,6 +61,10 @@
         event.preventDefault();
       });
     }
+  }
+
+  function main() {
+    showCookiesPopup();
   }
 
   ready(main);
