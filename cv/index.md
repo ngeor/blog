@@ -1,7 +1,6 @@
 ---
 layout: page
 title: CV
-css_class: page cv
 ---
 
 Polyglot full stack hands-on architect with 15+ years of working experience.

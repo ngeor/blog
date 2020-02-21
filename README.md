@@ -31,8 +31,5 @@ Posts need to specify categories and tags in this way:
 
 The page layout has a top-level element `article`.
 
-- CSS: The `article` will have the CSS class `page`. This can be overriden in
-  the page's frontmatter with the `css_class` attribute.
-- Data: The `article` will have the data attribute `data-file` which is the file
-  path of the page, without the `.md` extension and with all slashes replaced by
-  hyphens.
+The `article` will have the data attribute `data-file` which is the file path of
+the page, without the `.md` extension and with all slashes replaced by hyphens.

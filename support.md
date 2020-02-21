@@ -2,7 +2,6 @@
 layout: page
 title: Support
 permalink: /support/
-css_class: page support
 ---
 
 Hello there!

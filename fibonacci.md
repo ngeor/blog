@@ -161,5 +161,3 @@ I used Turbo Pascal 6, which was released in 1990 (according to
 </div>
 
 </div>
-
-<script src="/assets/fibonacci/fibonacci.js"></script>
