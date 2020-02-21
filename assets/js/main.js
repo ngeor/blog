@@ -13,6 +13,14 @@
     }
   }
 
+  function forEach(selector, fn) {
+    const nodes = document.querySelectorAll(selector);
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      fn(node);
+    }
+  }
+
   /**
    * js module for /fibonacci
    */
@@ -23,7 +31,7 @@
     selector: 'article[data-file="fibonacci"]',
 
     hideAllCodeBlocks: function () {
-      document.querySelectorAll('div.code').forEach((el) => {
+      forEach('div.code', function(el) {
         el.classList.add('hide');
       });
     },
@@ -35,7 +43,7 @@
       const that = this;
       this.hideAllCodeBlocks();
 
-      document.querySelectorAll('a.selector').forEach((el) => {
+      forEach('a.selector', function(el) {
         addEventListener(el, 'click', function (e) {
           e.preventDefault();
           that.hideAllCodeBlocks();
