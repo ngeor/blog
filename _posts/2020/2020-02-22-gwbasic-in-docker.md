@@ -32,7 +32,7 @@ be legal.
 
 ## DOSBox
 
-If you launch DOSBox, you'll notice that it opens up two Windows:
+If you launch DOSBox, you'll notice that it opens up two windows:
 
 ![DOSBox on Windows](/assets/2020/2020-02-22-08_02_24-dosbox-two-windows.png)
 
@@ -71,8 +71,8 @@ happen, the program must explicitly use the `SYSTEM` command. Example:
 20 SYSTEM
 ```
 
-If we don't have the `SYSTEM` command, the program won't exit. Additionally,
-make sure that `PROGRAM.BAS` uses CRLF for
+If we don't have the `SYSTEM` command, GW-Basic won't exit. Additionally, make
+sure that `PROGRAM.BAS` uses CRLF for
 [line endings](https://en.wikipedia.org/wiki/Newline).
 
 Since DOSBox can't pass parameters to the executable, we need a small batch file
@@ -1020,7 +1020,7 @@ value, it skips it when recreating the new file. It also listens only to the
 4041 PRINT ""
 4042 GOTO 9999
 
-4050 PRINT "Status: 405 Method not allowed, send POST"
+4050 PRINT "Status: 405 Method not allowed, send DELETE"
 4051 PRINT ""
 4052 GOTO 9999
 
