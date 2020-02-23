@@ -732,7 +732,7 @@ As a lot of our temporary filenames (`STDIN.TXT`, `ENVS.BAT`, `STDOUT.TXT`,
 setup won't be great at.
 
 The code for this post is available
-[here](https://github.com/ngeor/dockerfiles/tree/master/gwbasic).
+[here](https://github.com/ngeor/dockerfiles/tree/2020-02-22/gwbasic).
 
 ## Let's write some BASIC!
 
