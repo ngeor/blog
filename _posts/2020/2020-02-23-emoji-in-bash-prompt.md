@@ -48,8 +48,12 @@ __last_err_ps1() {
 }
 ```
 
-This function checks the exit code and prepends a text to the PS1 prompt. To use
-it, I modified `PROMPT_COMMAND` into:
+This function checks the exit code and prepends a text to the PS1 prompt. If the
+exit code is zero, it adds the OK emoji. Otherwise, it adds an alarm emoji and
+also shows the exit code in red. I find the visual hint quite useful and showing
+the exit code saves the extra effort of typing `echo $?` to see it.
+
+To use it, I modified `PROMPT_COMMAND` into:
 
 ```sh
 PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ " ; __last_err_ps1'
