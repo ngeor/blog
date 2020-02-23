@@ -7,6 +7,7 @@ categories:
 tags:
   - GW-Basic
   - Docker
+  - Retro
 ---
 
 This is one of those just for fun projects, doing it to see if it can be done.
