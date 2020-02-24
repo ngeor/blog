@@ -46,7 +46,7 @@ exclude:
   - LICENSE
   - preprocessor.py
   - README.md
-  - new.pl
+  - new.rb
 
 permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: true
