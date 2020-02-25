@@ -7,18 +7,23 @@ My blog
 Requirements:
 
 - ruby
-- jekyll
+- bundler
 
 Commands:
 
+- Install with `bundle install --path vendor/bundle`
 - Start with `bundle exec jekyll serve`
-- Start incremental with `bundle exec jekyll serve --incremental`
+- Or, start incremental with `bundle exec jekyll serve --incremental`
 - Upgrade with `bundle update github-pages`
 - Profile with `bundle exec jekyll build --profile`
 
+## New Post
+
+Scaffold a new post with `new.rb`.
+
 ## Categories and Tags
 
-The custom script `preprocessor.py` generates pages for categories and tags.
+The custom script `preprocessor.rb` generates pages for categories and tags.
 
 Posts need to specify categories and tags in this way:
 
