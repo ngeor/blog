@@ -4,11 +4,11 @@ title: Adding mocha unit tests
 date: 2017-12-29 18:18:32.000000000 +01:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - blog-helm-sample
 - chai
-- Docker
+- docker
 - mocha
 - proxyquire
 - sinon

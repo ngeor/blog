@@ -4,11 +4,11 @@ title: From Swagger to Confluence UML diagrams
 date: 2018-11-03
 published: true
 categories:
-- automation
+- tech
 tags:
 - swagger
 - atlassian
-- Docker
+- docker
 featured: true
 ---
 

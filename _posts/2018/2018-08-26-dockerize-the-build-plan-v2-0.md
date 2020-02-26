@@ -4,10 +4,10 @@ title: Dockerize the build plan v2.0
 date: 2018-08-26 09:18:49.000000000 +02:00
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
 - continuous integration
-- Docker
+- docker
 ---
 
 Back in 2017, I wrote a series of articles about using Helm for Continuous Delivery. One year later, I want to look back on some things I wrote and offer some alternative solutions. The most interesting thing is about the article <a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html">CD with Helm part 2: Dockerize the build plan</a>.

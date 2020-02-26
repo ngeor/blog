@@ -4,9 +4,9 @@ title: Maven Tips
 date: 2015-06-14 07:00:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
-- Java
+- java
 - maven
 ---
 
@@ -52,7 +52,7 @@ You’ll need the maven-compiler-plugin. For example, to target Java 1.8, edit t
     <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
 ```
- 
+
 <h2 id="how-to-specify-the-main-class-of-your-jar-file">How to specify the main class of your jar file</h2>
 
 You’ll need the maven-jar-plugin. Example:

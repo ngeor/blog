@@ -4,13 +4,13 @@ title: Troubleshooting SSL - missing /root/.postgresql/root.crt
 date: 2018-11-02
 published: true
 categories:
-- programming
+- tech
 tags:
-- Java
-- Docker
+- java
+- docker
 - PostgreSQL
 - SSL
-- Azure
+- azure
 ---
 
 I run into a problem today trying to connect to an Azure PostgreSQL database.

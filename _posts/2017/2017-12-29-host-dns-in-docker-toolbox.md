@@ -4,11 +4,11 @@ title: Host DNS in Docker Toolbox
 date: 2017-12-29 08:01:14.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - blog-helm-sample
 - DNS
-- Docker
+- docker
 excerpt: How to configure Docker Toolbox so that it uses your laptop's hosts file.
 ---
 

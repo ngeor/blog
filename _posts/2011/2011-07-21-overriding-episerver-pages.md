@@ -4,7 +4,7 @@ title: Overriding EPiServer pages
 date: 2011-07-21 19:20:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - EPiServer
 ---

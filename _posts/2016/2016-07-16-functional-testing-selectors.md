@@ -4,11 +4,11 @@ title: Functional Testing - Selectors
 date: 2016-07-16 09:33:49.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Functional Tests
 tags:
 - functional tests
-- JavaScript
+- javascript
 - WebdriverIO
 ---
 

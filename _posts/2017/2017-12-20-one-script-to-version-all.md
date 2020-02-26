@@ -4,12 +4,12 @@ title: One script to version all
 date: 2017-12-20 20:55:35.000000000 +01:00
 published: true
 categories:
-- versioning
+- tech
 tags:
 - blog-helm-sample
 - GitVersion
 - TeamCity
-- versioning
+- tech
 ---
 
 This is just a fun hacking post. I put together a script that is able to handle all versioning strategies that I mentioned about in the <a href="{{ site.baseurl }}/2017/12/18/on-versioning.html" target="_blank">post about versioning</a>.

@@ -3,9 +3,9 @@ layout: post
 title: Docker Hub automation
 date: 2019-12-26 03:37:42
 categories:
-  - automation
+  - tech
 tags:
-  - Docker
+  - docker
   - Docker Hub
 ---
 

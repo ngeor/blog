@@ -4,11 +4,11 @@ title: A CLI comparison of Java, JavaScript and Python
 date: 2019-03-16
 published: true
 categories:
-  - programming
+  - tech
 tags:
   - cli
-  - Java
-  - JavaScript
+  - java
+  - javascript
   - python
 ---
 

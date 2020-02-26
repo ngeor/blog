@@ -4,7 +4,7 @@ title: My open source pull requests
 date: 2019-12-15
 published: true
 categories:
-  - programming
+  - tech
 tags:
   - open source
 ---

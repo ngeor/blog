@@ -4,7 +4,7 @@ title: Windows Live Photo Gallery Folder Location
 date: 2015-08-29 05:40:00.000000000 +02:00
 published: true
 categories:
-- my-computer
+- tech
 tags: []
 ---
 

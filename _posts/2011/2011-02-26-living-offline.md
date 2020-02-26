@@ -4,7 +4,7 @@ title: Living offline
 date: 2011-02-26 08:22:00.000000000 +01:00
 published: true
 categories:
-- personal
+- Personal
 tags: []
 ---
 

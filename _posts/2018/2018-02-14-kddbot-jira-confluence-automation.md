@@ -4,15 +4,15 @@ title: 'kddbot: JIRA -> Confluence automation'
 date: 2018-02-14 15:45:54.000000000 +01:00
 published: true
 categories:
-- automation
+- tech
 tags:
-- AWS
-- AWS Lambda
+- aws
+- aws lambda
 - atlassian
 - kdd
 - kddbot
 - python
-- automation
+- tech
 featured: true
 ---
 

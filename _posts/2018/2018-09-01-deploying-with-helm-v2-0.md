@@ -4,7 +4,7 @@ title: Deploying with Helm v2.0
 date: 2018-09-01 08:00:48.000000000 +02:00
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
 - continuous delivery
 - helm

@@ -4,7 +4,7 @@ title: log4net SmtpAppender on mono
 date: 2014-02-15 08:19:10.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

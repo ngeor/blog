@@ -4,12 +4,12 @@ title: Terraform secrets
 date: 2018-10-06
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
 - terraform
 - helm
 - bash
-- ci-tooling
+- ci tooling
 ---
 Since the beginning of this year, I've been using [Terraform] to manage
 infrastructure. I use it with both AWS and Azure and so far I haven't

@@ -4,7 +4,7 @@ title: MasterType directive and namespace conflicts
 date: 2011-07-12 21:25:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

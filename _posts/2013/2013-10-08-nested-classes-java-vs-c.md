@@ -4,7 +4,7 @@ title: 'Nested classes: Java vs C#'
 date: 2013-10-08 19:38:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

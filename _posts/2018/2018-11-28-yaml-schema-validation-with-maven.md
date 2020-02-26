@@ -4,15 +4,15 @@ title: YAML schema validation with Maven
 date: 2018-11-28
 published: true
 categories:
-  - consistency
+  - tech
 tags:
-  - Java
+  - java
   - maven
   - swagger
-  - yaml
-  - json
+  - YAML
+  - JSON
   - microservices
-  - ci-tooling
+  - ci tooling
 ---
 
 Sometimes it feels we're reinventing the wheel, but with different names. Back

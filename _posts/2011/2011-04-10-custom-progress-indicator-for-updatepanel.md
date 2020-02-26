@@ -4,7 +4,7 @@ title: Custom progress indicator for UpdatePanel
 date: 2011-04-10 07:43:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

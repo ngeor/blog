@@ -4,13 +4,13 @@ title: Automatic versioning of npm packages
 date: 2016-08-20 08:00:16.000000000 +02:00
 published: true
 categories:
-- versioning
+- tech
 tags:
 - continuous integration
-- JavaScript
+- javascript
 - Jenkins
 - npm
-- versioning
+- tech
 ---
 
 When you are the maintainer of an npm package, you need to do some administrative work around its versioning. When you release a new version, you need to make sure the package.json is updated, the package is correctly uploaded to npm registry, the git repository is tagged accordingly and so on. You shouldn't be doing these things manually if you can automate them.
@@ -81,4 +81,4 @@ The last step is to tag the version in Git. This is done with the <a href="https
 
 Note that we're using the <code>LOCAL_VERSION</code> environment variable that we populated with the information coming from <code>package.json</code>. Also, the tag will only be published to git if the previous steps succeeded. In other words it won't tag anything in git if publishing the package to npm fails. Finally, the 'update tag' checkbox is disabled, which means that the build will fail if the same tag already exists. Just another sanity check that shouldn't happen.
 
- 
+

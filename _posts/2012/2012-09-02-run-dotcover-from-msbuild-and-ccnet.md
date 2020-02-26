@@ -4,7 +4,7 @@ title: Run dotCover from msbuild and ccnet
 date: 2012-09-02 07:52:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

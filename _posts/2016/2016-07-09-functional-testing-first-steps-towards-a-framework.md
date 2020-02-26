@@ -4,14 +4,14 @@ title: Functional Testing - First steps towards a framework
 date: 2016-07-09 08:19:34.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Functional Tests
 tags:
-- consistency
+- tech
 - conventions
 - functional tests
 - grunt-filenames
-- JavaScript
+- javascript
 - mocha
 - structure
 - WebdriverIO

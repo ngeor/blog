@@ -4,7 +4,7 @@ title: Using wget to detect broken links
 date: 2016-01-24 09:43:45.000000000 +01:00
 published: true
 categories:
-- meta
+- Meta
 tags:
 - broken links
 - wget

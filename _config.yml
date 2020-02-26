@@ -44,7 +44,7 @@ exclude:
   - vendor/ruby/
   # custom items
   - LICENSE
-  - preprocessor.py
+  - preprocessor.rb
   - README.md
   - new.rb
 
@@ -53,37 +53,10 @@ show_excerpts: true
 google_analytics: UA-126249544-1
 
 collections:
-  category:
+  by_tag:
     output: true
   series:
-    output: true
-  tag:
     output: true
 
 paginate: 10
 paginate_path: "/page:num/"
-
-# used by preprocessor.py
-categories:
-  automation:
-    description: Never send a human do a machine's job.
-  consistency:
-    description: |
-      The codebase should look as if it were written by a single person.
-      Linting, code formatting, code style, custom validations, style guides, etc.
-  continuous-delivery:
-    description: Continuous integration, delivery pipelines, custom tooling.
-  notes:
-    description: Notes, thoughts, opinions, etc.
-  testing:
-    description: Unit tests, integration tests, code coverage, etc.
-  versioning:
-    description:
-      Semantic versioning, automatic creation of git tags, version strategies,
-      etc.
-  personal:
-    hidden: true
-  my-computer:
-    hidden: true
-  funny:
-    hidden: true

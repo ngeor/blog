@@ -4,10 +4,10 @@ title: AssertJ cheatsheet
 date: 2018-04-22 07:10:29.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - AssertJ
-- Java
+- java
 - unit tests
 ---
 

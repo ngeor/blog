@@ -51,6 +51,8 @@ class PageInfoCollection
                     1
                   end
     @total_count += 1
+
+    puts "Warning: tag #{value} exists in case variations" if @map.keys.index { |k| k.casecmp?(value) && k != value }
   end
 
   def to_s
@@ -64,44 +66,18 @@ end
 
 class Collector
   def initialize
-    @categories = PageInfoCollection.new
     @tags = PageInfoCollection.new
   end
 
-  attr_reader :categories
   attr_reader :tags
 
   def add(front_matter)
-    front_matter['categories']&.each { |c| @categories.add(c) }
     front_matter['tags']&.each { |t| @tags.add(t) }
   end
 
   def to_s
-    "categories=[#{@categories}], tags=[#{@tags}]"
+    "tags=[#{@tags}]"
   end
-end
-
-def create_category_page(pi, config)
-  fullpath = File.join('_category', "#{pi.title}.md")
-  category_config = config['categories'][pi.title]
-  title = category_config['title'] if category_config
-  title = pi.title.tr('-', ' ').split(/(\W)/).map(&:capitalize).join unless title && !title.empty?
-  description = category_config['description'] if category_config
-  File.open(fullpath, 'w:UTF-8') do |f|
-    f.puts('---')
-    f.puts('layout: category')
-    f.puts("url_segment: #{pi.title}")
-    f.puts("title: #{title}")
-    f.puts("post_count: #{pi.post_count}")
-    f.puts("sort_index: #{pi.sort_index}")
-    category_config&.each { |k, v| f.puts("#{k}: #{v}") if k != 'title' && k != 'description' }
-    f.puts('---')
-    if description
-      f.puts('')
-      f.puts(description)
-    end
-  end
-  fullpath
 end
 
 def tag_title_to_tag_url_segment(tag)
@@ -113,36 +89,36 @@ end
 def create_tag_page(pi)
   tag = pi.title
   normalized_tag = tag_title_to_tag_url_segment(tag)
-  fullpath = File.join('_tag', "#{normalized_tag}.md")
+  fullpath = File.join('_by_tag', "#{normalized_tag}.md")
   File.open(fullpath, 'w:UTF-8') do |f|
-    f.puts('---')
-    f.puts('layout: tag')
-    f.puts("url_segment: #{normalized_tag}")
-    f.puts("title: #{tag}")
-    f.puts("post_count: #{pi.post_count}")
-    f.puts("sort_index: #{pi.sort_index}")
-    f.puts('---')
+    f.puts(<<~HERE
+      ---
+      layout: default
+      permalink: /archives/tag/#{normalized_tag}/
+      title: #{tag}
+      post_count: #{pi.post_count}
+      sort_index: #{pi.sort_index}
+      ---
+      <h1 class="page-heading">Posts tagged with #{tag}</h1>
+      {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+      {%- include post-list.html -%}
+      HERE
+          )
   end
   fullpath
 end
 
 def main
-  config = Psych.load_file('_config.yml')
   posts = collect_posts('_posts')
   collector = Collector.new
   posts.each do |p|
     collector.add(Psych.load_file(p))
   end
 
-  created_category_files = collector.categories.to_sorted_array.map do |pi|
-    create_category_page(pi, config)
-  end
-  delete_files '_category', created_category_files
-
   created_tag_files = collector.tags.to_sorted_array.map do |pi|
     create_tag_page(pi)
   end
-  delete_files '_tag', created_tag_files
+  delete_files '_by_tag', created_tag_files
 end
 
 main

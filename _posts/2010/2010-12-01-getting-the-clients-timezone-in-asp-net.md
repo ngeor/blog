@@ -4,7 +4,7 @@ title: Getting the client's timezone in ASP.NET
 date: 2010-12-01 20:03:00.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

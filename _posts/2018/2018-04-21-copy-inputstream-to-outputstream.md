@@ -4,9 +4,9 @@ title: Copy InputStream to OutputStream
 date: 2018-04-21 19:19:53.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
-- Java
+- java
 ---
 
 To copy from a stream into a file:

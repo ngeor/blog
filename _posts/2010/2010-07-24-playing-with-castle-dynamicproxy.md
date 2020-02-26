@@ -4,7 +4,7 @@ title: Playing with Castle DynamicProxy
 date: 2010-07-24 21:09:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

@@ -4,11 +4,11 @@ title: Code Coverage with JaCoCo
 date: 2017-03-12 08:48:58.000000000 +01:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - code coverage
 - jacoco
-- Java
+- java
 - maven
 - TeamCity
 - travis

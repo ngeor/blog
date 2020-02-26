@@ -4,9 +4,9 @@ title: Swagger and MapStruct
 date: 2018-04-29 14:39:53.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
-- Java
+- java
 - MapStruct
 - maven
 - swagger

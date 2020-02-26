@@ -4,7 +4,7 @@ title: Atom plugins
 date: 2016-02-20 13:07:29.000000000 +01:00
 published: true
 categories:
-- my-computer
+- tech
 tags:
 - atom
 - atom-plugins

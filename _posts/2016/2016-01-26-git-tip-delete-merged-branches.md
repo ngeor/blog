@@ -4,7 +4,7 @@ title: 'git tip: Delete merged branches'
 date: 2016-01-26 21:06:02.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - bash
 - git

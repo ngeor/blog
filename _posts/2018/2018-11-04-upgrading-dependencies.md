@@ -3,7 +3,7 @@ layout: post
 title: Upgrading Dependencies
 date: 2018-11-04
 categories:
-  - programming
+  - tech
 ---
 
 This page shows how to upgrade dependencies in various programming languages and

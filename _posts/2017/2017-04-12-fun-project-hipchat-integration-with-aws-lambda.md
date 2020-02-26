@@ -4,13 +4,13 @@ title: 'Fun project: HipChat integration with AWS Lambda'
 date: 2017-04-12 19:19:35.000000000 +02:00
 published: true
 categories:
-- automation
+- tech
 tags:
-- AWS
+- aws
 - atlassian
 - CloudWatch
 - continuous integration
-- Lambda
+- aws lambda
 - travis
 ---
 

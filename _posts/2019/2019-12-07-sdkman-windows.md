@@ -4,9 +4,9 @@ title: SDKMAN! on Windows
 date: 2019-12-07
 published: true
 categories:
-  - tooling
+  - tech
 tags:
-  - Java
+  - java
   - SDKMAN!
   - Windows
   - Visual Studio Code

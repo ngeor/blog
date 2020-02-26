@@ -3,10 +3,10 @@ layout: post
 title: Windows Docker and paths
 date: 2019-12-25 06:58:33
 categories:
-  - tooling
+  - tech
 tags:
   - Docker Toolbox
-  - Docker
+  - docker
   - Windows
   - Git Bash
 ---

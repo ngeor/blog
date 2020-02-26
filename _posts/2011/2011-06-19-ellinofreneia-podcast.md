@@ -4,7 +4,7 @@ title: Ανεπίσημο podcast για Ελληνοφρένεια
 date: 2011-06-19 12:09:00.000000000 +02:00
 published: true
 categories:
-- pet-projects
+- tech
 tags:
 - podcast
 ---

@@ -4,7 +4,7 @@ title: View .NET assembly version on Ubuntu
 date: 2014-08-03 06:32:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

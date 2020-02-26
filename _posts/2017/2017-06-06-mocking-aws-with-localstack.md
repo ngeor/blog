@@ -4,10 +4,10 @@ title: Mocking AWS with localstack
 date: 2017-06-06 20:03:24.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 tags:
-- AWS
-- Docker
+- aws
+- docker
 - localstack
 - SNS
 - SQS

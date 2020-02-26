@@ -4,7 +4,7 @@ title: BlogEngine.NET MVC - Progress update
 date: 2013-03-13 08:39:00.000000000 +01:00
 published: true
 categories:
-- pet-projects
+- tech
 tags: []
 ---
 

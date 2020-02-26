@@ -4,11 +4,11 @@ title: Atom Keyboard Shortcuts
 date: 2016-02-27 13:52:24.000000000 +01:00
 published: true
 categories:
-- my-computer
+- tech
 tags:
 - atom
 - keyboard shortcuts
-- Productivity
+- productivity
 ---
 
 It doesn't matter if you're using a simple editor or a full blown IDE, if you want to be more productive you have to spend time to learn some keyboard shortcuts. Here's a few keyboard shortcuts I use frequently when I work with Atom.<!--more-->

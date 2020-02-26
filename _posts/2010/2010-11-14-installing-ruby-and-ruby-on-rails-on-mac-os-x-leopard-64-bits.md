@@ -4,7 +4,7 @@ title: Installing Ruby and Ruby on Rails on Mac OS X Leopard 64 bits
 date: 2010-11-14 13:53:00.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

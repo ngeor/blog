@@ -4,9 +4,9 @@ title: Testing null, empty, blank
 date: 2019-09-14
 published: true
 categories:
-  - testing
+  - tech
 tags:
-  - Java
+  - java
   - junit5
   - unit tests
 ---

@@ -4,7 +4,7 @@ title: ScrumCard
 date: 2010-06-05 20:49:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - ScrumCard
 - Windows Mobile Phone

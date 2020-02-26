@@ -4,9 +4,9 @@ title: Kafka Windows Service Wrapper
 date: 2017-03-04 06:36:16.000000000 +01:00
 published: true
 categories:
-- pet-projects
+- tech
 tags:
-- Kafka
+- kafka
 - Windows Service
 - ZooKeeper
 ---

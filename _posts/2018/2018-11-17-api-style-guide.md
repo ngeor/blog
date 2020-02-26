@@ -4,7 +4,7 @@ title: API Style Guide
 date: 2018-11-17
 published: true
 categories:
-- consistency
+- tech
 tags:
 - rest
 - swagger

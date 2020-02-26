@@ -5,6 +5,5 @@ title: Archives
 
 > Impossible. Perhaps the Archives are incomplete.
 
-- [Categories](./by-category.html)
-- [Tags](./by-tag.html)
-- [Stats](./stats.html)
+- [Tags]({% link archives/by-tag.md %})
+- [Stats]({% link archives/stats.md %})

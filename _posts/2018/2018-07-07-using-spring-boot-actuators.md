@@ -4,10 +4,10 @@ title: Using Spring Boot Actuators
 date: 2018-07-07 08:38:06.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - actuators
-- Java
+- java
 - spring
 ---
 

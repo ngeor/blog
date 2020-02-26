@@ -5,10 +5,10 @@ date: 2017-12-03 11:41:12.000000000 +01:00
 series: CD with Helm
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
 - blog-helm-sample
-- Docker
+- docker
 - helm
 - kubernetes
 - networks

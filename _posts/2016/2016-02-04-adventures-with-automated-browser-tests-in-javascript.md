@@ -4,12 +4,12 @@ title: Adventures with automated browser tests in JavaScript
 date: 2016-02-04 20:49:24.000000000 +01:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - automated tests
 - chai
 - es6
-- JavaScript
+- javascript
 - mocha
 - page object pattern
 - phantomjs

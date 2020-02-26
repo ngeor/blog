@@ -4,7 +4,7 @@ title: Terraform secrets part 2 - Randomize it
 date: 2018-11-04
 published: true
 categories:
-  - continuous-delivery
+  - tech
 tags:
   - terraform
   - helm

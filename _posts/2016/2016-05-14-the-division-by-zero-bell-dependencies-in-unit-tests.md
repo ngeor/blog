@@ -4,10 +4,10 @@ title: The division by zero bell - Dependencies in unit tests
 date: 2016-05-14 08:00:38.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Unit Tests
 tags:
-- JavaScript
+- javascript
 - unit tests
 ---
 

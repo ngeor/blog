@@ -4,14 +4,14 @@ title: Functional Testing - Hiding Async
 date: 2016-08-06 09:00:31.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Functional Tests
 tags:
 - chai
 - chai-as-promised
-- ES6 generators
+- es6 generators
 - functional tests
-- JavaScript
+- javascript
 - mocha
 - promises
 - WebdriverIO

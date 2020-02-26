@@ -4,7 +4,7 @@ title: Monochrome Theme for BlogEngine.NET
 date: 2010-09-12 14:14:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

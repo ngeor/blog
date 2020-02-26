@@ -4,9 +4,9 @@ title: Slim GitVersion Docker image
 date: 2018-08-19 08:47:04.000000000 +02:00
 published: true
 categories:
-- versioning
+- tech
 tags:
-- Docker
+- docker
 - GitVersion
 ---
 

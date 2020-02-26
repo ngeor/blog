@@ -4,7 +4,7 @@ title: Removing git submodules
 date: 2017-09-30 10:36:39.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
 - git
 - submodules

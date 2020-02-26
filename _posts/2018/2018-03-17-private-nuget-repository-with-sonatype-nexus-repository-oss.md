@@ -4,9 +4,9 @@ title: Private NuGet repository with Sonatype Nexus Repository OSS
 date: 2018-03-17 07:00:38.000000000 +01:00
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
-- Nexus
+- nexus
 - NuGet
 ---
 

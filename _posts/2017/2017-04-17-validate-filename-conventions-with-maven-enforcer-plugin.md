@@ -4,12 +4,12 @@ title: Validate filename conventions with Maven Enforcer plugin
 date: 2017-04-17 16:48:54.000000000 +02:00
 published: true
 categories:
-- consistency
+- tech
 tags:
 - BeanShell
 - conventions
 - Flyway
-- Java
+- java
 - maven
 - maven enforcer
 - static code analysis

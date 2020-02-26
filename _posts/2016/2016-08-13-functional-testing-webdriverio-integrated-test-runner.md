@@ -4,11 +4,11 @@ title: Functional Testing - WebDriverIO Integrated Test Runner
 date: 2016-08-13 07:55:24.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Functional Tests
 tags:
 - functional tests
-- JavaScript
+- javascript
 - WebdriverIO
 ---
 

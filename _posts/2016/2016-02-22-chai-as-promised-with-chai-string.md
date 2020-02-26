@@ -4,7 +4,7 @@ title: Chai as promised with Chai string
 date: 2016-02-22 21:12:53.000000000 +01:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - automated tests
 - chai

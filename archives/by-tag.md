@@ -2,11 +2,12 @@
 layout: page
 title: Archive by tag
 hidden: true
+permalink: /archives/tag/
 ---
 
 Tags
 
-{% assign tags = site.tag | sort: "sort_index" %}
+{% assign tags = site.by_tag | sort: "sort_index" %}
 
 <ul>
 

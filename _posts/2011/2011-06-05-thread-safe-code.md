@@ -4,7 +4,7 @@ title: Thread-safe code
 date: 2011-06-05 07:04:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

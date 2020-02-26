@@ -4,11 +4,11 @@ title: Linting with Checkstyle
 date: 2017-03-12 18:15:26.000000000 +01:00
 published: true
 categories:
-- consistency
+- tech
 tags:
 - Checkstyle
 - IntelliJ IDEA
-- Java
+- java
 - maven
 - SonarQube
 - static code analysis

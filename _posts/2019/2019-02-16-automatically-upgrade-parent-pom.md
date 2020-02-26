@@ -4,7 +4,7 @@ title: Automatically upgrade parent pom
 date: 2019-02-16
 published: true
 categories:
-  - automation
+  - tech
 tags:
   - python
   - bitbucket

@@ -4,7 +4,7 @@ title: Customer Care 2.0
 date: 2011-03-23 18:31:00.000000000 +01:00
 published: true
 categories:
-- personal
+- Personal
 tags: []
 ---
 

@@ -4,9 +4,9 @@ title: clang-format as a git filter
 date: 2019-01-27
 published: true
 categories:
-  - consistency
+  - tech
 tags:
-  - Java
+  - java
   - clang-format
   - git
 ---

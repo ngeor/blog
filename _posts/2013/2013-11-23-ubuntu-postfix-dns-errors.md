@@ -4,7 +4,7 @@ title: Ubuntu Postfix DNS errors
 date: 2013-11-23 06:59:09.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

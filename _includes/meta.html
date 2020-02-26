@@ -1,25 +1,10 @@
 <div class="post-meta">
-  <!-- categories are matched based on their URL segment -->
-  Category:
-  {%- for category in post.categories -%}
-  {%- assign category_page = site.category | where: "url_segment", category | first -%}
-  {%- if category_page %}
-  <a href="{{ category_page.url | relative_url }}" class="p-category category">
-    {{- category_page.title -}}
-  </a>
-  {%- else %}
-  <span class="category">
-    {{- category -}}
-  </span>
-  {%- endif -%}
-  {%- endfor -%}
-  <!-- tags are matched based on their human-friendly name -->
   {% if post.tags and post.tags.size > 0 %}
   Tags:
   {%- for tag in post.tags -%}
-  {%- assign tag_page = site.tag | where: "title", tag | first -%}
+  {%- assign tag_page = site.by_tag | where: "title", tag | first -%}
   {%- if tag_page %}
-  <a href="{{ tag_page.url | relative_url }}" class="p-category">{{ tag }}</a>
+  <a href="{{ tag_page.url | relative_url }}" class="p-tag">{{ tag }}</a>
   {% else %}
   {{ tag }}
   {%- endif -%}

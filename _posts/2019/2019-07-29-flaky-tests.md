@@ -4,9 +4,9 @@ title: Flaky tests
 date: 2019-07-29
 published: true
 categories:
-  - testing
+  - tech
 tags:
-  - JavaScript
+  - javascript
   - typescript
   - angular
   - protractor

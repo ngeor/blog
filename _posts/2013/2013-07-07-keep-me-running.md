@@ -4,7 +4,7 @@ title: Keep me running
 date: 2013-07-07 15:40:00.000000000 +02:00
 published: true
 categories:
-- personal
+- Personal
 tags:
 - running
 ---

@@ -4,10 +4,10 @@ title: 'Kafka with Docker: A Docker introduction'
 date: 2017-03-25 08:47:07.000000000 +01:00
 published: true
 categories:
-- programming
+- tech
 tags:
-- Docker
-- Kafka
+- docker
+- kafka
 - Kafka Tool
 featured: true
 ---

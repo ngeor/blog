@@ -1,0 +1,10 @@
+---
+layout: default
+permalink: /archives/tag/yeoman/
+title: yeoman
+post_count: 1
+sort_index: 00589-yeoman
+---
+<h1 class="page-heading">Posts tagged with yeoman</h1>
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{%- include post-list.html -%}

@@ -4,7 +4,7 @@ title: Español? Almost!
 date: 2010-09-09 16:35:00.000000000 +02:00
 published: true
 categories:
-- personal
+- Personal
 tags: []
 ---
 <div class="col2" lang="el">

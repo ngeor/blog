@@ -7,11 +7,11 @@ categories:
 - notes
 tags:
 - architecture
-- AWS
+- aws
 - buzzwords
 - developers
 - hypes
-- Kafka
+- kafka
 - SNS
 - SQS
 - microservices

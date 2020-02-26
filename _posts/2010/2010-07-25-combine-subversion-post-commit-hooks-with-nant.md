@@ -4,7 +4,7 @@ title: Combine subversion post-commit hooks with NAnt
 date: 2010-07-25 10:08:00.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags: []
 ---
 

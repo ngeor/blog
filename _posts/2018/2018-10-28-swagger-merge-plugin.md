@@ -4,16 +4,16 @@ title: Merging Swagger files
 date: 2018-10-28
 published: true
 categories:
-- continuous-delivery
-- pet-projects
+- tech
+- tech
 tags:
 - swagger
-- Java
+- java
 - maven
 - maven-plugin
 - microservices
 - api gateway
-- ci-tooling
+- ci tooling
 ---
 
 Consider the following scenario. You have a few microservices and they're all

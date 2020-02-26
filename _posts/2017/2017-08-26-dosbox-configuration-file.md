@@ -4,7 +4,7 @@ title: DOSBox configuration file
 date: 2017-08-26 07:59:27.000000000 +02:00
 published: true
 categories:
-- my-computer
+- tech
 tags:
 - DOSBox
 ---

@@ -4,11 +4,11 @@ title: Functional Testing - Page Object Pattern
 date: 2016-07-30 09:00:56.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Functional Tests
 tags:
 - functional tests
-- JavaScript
+- javascript
 - page object pattern
 - WebdriverIO
 ---

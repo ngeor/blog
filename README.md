@@ -21,16 +21,11 @@ Commands:
 
 Scaffold a new post with `new.rb`.
 
-## Categories and Tags
+## Tags
 
-The custom script `preprocessor.rb` generates pages for categories and tags.
-
-Posts need to specify categories and tags in this way:
-
-- for categories: specify the url segment of the category (e.g. `programming`
-  instead of `Programming`)
-- for tags: specify the human-friendly tag name (e.g. `.net` instead of
-  `dot-net`)
+The custom script `preprocessor.rb` generates tag pages for categories. The tags need
+to be specified in the post's front-matter using the human-friendly name (e.g. `.net` instead of
+`dot-net`).
 
 ## Pages
 

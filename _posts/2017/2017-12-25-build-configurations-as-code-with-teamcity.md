@@ -4,7 +4,7 @@ title: Build configurations as code with TeamCity
 date: 2017-12-25 09:41:36.000000000 +01:00
 published: true
 categories:
-- continuous-delivery
+- tech
 tags:
 - blog-helm-sample
 - TeamCity

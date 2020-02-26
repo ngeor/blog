@@ -4,7 +4,7 @@ title: Introducing generator-csharp-cli-app
 date: 2015-09-06 07:30:00.000000000 +02:00
 published: true
 categories:
-- pet-projects
+- tech
 tags:
 - generator-csharp-cli-app
 - pet project

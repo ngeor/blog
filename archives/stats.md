@@ -2,6 +2,7 @@
 layout: page
 title: Stats
 hidden: true
+permalink: /archives/stats/
 ---
 
 ## Most viewed posts of 2019

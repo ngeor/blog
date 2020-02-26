@@ -4,7 +4,7 @@ title: Publishing git tags for Maven projects in Bitbucket Pipelines
 date: 2018-10-30
 published: true
 categories:
-- versioning
+- tech
 tags:
 - git
 - maven

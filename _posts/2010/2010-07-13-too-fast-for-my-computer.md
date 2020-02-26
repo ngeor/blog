@@ -4,7 +4,7 @@ title: Too fast for my computer
 date: 2010-07-13 18:29:00.000000000 +02:00
 published: true
 categories:
-- personal
+- Personal
 tags:
 - funny
 ---

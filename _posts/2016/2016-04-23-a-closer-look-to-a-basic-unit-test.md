@@ -4,11 +4,11 @@ title: A closer look to a basic unit test
 date: 2016-04-23 08:41:59.000000000 +02:00
 published: true
 categories:
-- testing
+- tech
 series: Unit Tests
 tags:
 - chai
-- JavaScript
+- javascript
 - mocha
 - unit tests
 ---

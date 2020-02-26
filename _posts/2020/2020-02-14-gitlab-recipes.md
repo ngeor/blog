@@ -3,9 +3,10 @@ layout: post
 title: GitLab recipes
 date: 2020-02-14 06:12:15
 categories:
-  - continuous-delivery
+  - tech
 tags:
   - GitLab
+  - YAML
 ---
 
 Another year, another CI tool. Due to work changes, I'm exploring GitLab for the

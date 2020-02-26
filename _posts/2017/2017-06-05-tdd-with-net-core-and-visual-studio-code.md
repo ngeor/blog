@@ -4,7 +4,7 @@ title: TDD with .NET Core and Visual Studio Code
 date: 2017-06-05 14:49:15.000000000 +02:00
 published: true
 categories:
-  - testing
+  - tech
 tags:
   - .NET
   - .NET Core

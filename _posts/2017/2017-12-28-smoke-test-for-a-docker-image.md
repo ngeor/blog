@@ -4,10 +4,10 @@ title: Smoke test for a Docker image
 date: 2017-12-28 10:40:39.000000000 +01:00
 published: true
 categories:
-- testing
+- tech
 tags:
 - blog-helm-sample
-- Docker
+- docker
 - smoke test
 - TeamCity
 ---

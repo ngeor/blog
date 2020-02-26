@@ -4,12 +4,12 @@ title: Debugging Docker with IntelliJ IDEA
 date: 2017-03-26 07:08:27.000000000 +02:00
 published: true
 categories:
-- programming
+- tech
 tags:
-- Docker
+- docker
 - IntelliJ IDEA
-- Java
-- Kafka
+- java
+- kafka
 - maven
 ---
 

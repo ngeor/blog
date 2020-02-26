@@ -4,7 +4,7 @@ title: Ακόμα πιο νέο ανεπίσημο podcast για Ελληνοφ
 date: 2013-02-06 23:36:00.000000000 +01:00
 published: true
 categories:
-- pet-projects
+- tech
 tags:
 - podcast
 ---

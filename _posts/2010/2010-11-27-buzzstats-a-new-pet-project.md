@@ -4,7 +4,7 @@ title: BuzzStats - A new pet project
 date: 2010-11-27 19:57:00.000000000 +01:00
 published: true
 categories:
-- pet-projects
+- tech
 tags: []
 ---
 

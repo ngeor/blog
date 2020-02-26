@@ -3,11 +3,13 @@ layout: post
 title: GW-Basic in Docker
 date: 2020-02-22 06:31:09
 categories:
-  - hacking
+  - tech
 tags:
   - GW-Basic
-  - Docker
-  - Retro
+  - docker
+  - retro
+  - bash
+  - Dockerfile
 ---
 
 This is one of those just for fun projects, doing it to see if it can be done.

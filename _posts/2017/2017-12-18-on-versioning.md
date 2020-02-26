@@ -4,10 +4,10 @@ title: On versioning
 date: 2017-12-18 19:20:55.000000000 +01:00
 published: true
 categories:
-- versioning
+- tech
 tags:
 - GitVersion
-- versioning
+- tech
 - notes
 ---
 
