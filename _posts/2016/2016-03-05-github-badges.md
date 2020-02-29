@@ -3,8 +3,6 @@ layout: post
 title: GitHub badges
 date: 2016-03-05 07:57:36.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - badges
 - david

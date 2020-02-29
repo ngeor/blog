@@ -3,9 +3,8 @@ layout: post
 title: Changing Jobs
 date: 2010-10-16 08:21:00.000000000 +02:00
 published: true
-categories:
-- Personal
-tags: []
+tags:
+- personal
 ---
 
 <div lang="el">

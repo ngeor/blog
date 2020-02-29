@@ -3,10 +3,9 @@ layout: post
 title: Swagger Formats
 date: 2018-04-21 16:02:30.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - swagger
+- cheat sheet
 ---
 
 Some handy format combinations with Swagger:

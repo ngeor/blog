@@ -3,8 +3,6 @@ layout: post
 title: The division by zero bell - Dependencies in unit tests
 date: 2016-05-14 08:00:38.000000000 +02:00
 published: true
-categories:
-- tech
 series: Unit Tests
 tags:
 - javascript

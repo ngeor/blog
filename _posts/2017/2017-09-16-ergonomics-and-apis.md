@@ -3,8 +3,6 @@ layout: post
 title: Ergonomics and APIs
 date: 2017-09-16 08:55:13.000000000 +02:00
 published: true
-categories:
-- notes
 tags:
 - ergonomics
 - notes

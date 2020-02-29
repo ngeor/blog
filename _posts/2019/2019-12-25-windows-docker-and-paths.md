@@ -2,8 +2,6 @@
 layout: post
 title: Windows Docker and paths
 date: 2019-12-25 06:58:33
-categories:
-  - tech
 tags:
   - Docker Toolbox
   - docker
@@ -65,4 +63,5 @@ docker () {
 export -f docker
 ```
 
-which sets the environment variable and calls the Docker executable. By adding the same snippet in `.bashrc`, Docker behaves the same everywhere.
+which sets the environment variable and calls the Docker executable. By adding
+the same snippet in `.bashrc`, Docker behaves the same everywhere.

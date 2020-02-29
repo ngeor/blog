@@ -2,8 +2,9 @@
 layout: post
 title: Project Setup
 date: 2019-01-11
-categories:
-  - notes
+tags:
+  - reference
+  - pet project
 ---
 
 Setting up a project, creating a pipeline, automatic deployments, etc.

@@ -3,9 +3,10 @@ layout: post
 title: BlogEngine.NET MVC - Progress update
 date: 2013-03-13 08:39:00.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- pet project
+- ".NET"
+- BlogEngine.NET MVC
 ---
 
 Here's a short update on what I've been working on. Time is a bit limited but I like to hack around in this project and that's what it's all about!

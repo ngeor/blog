@@ -3,8 +3,6 @@ layout: post
 title: A CLI comparison of Java, JavaScript and Python
 date: 2019-03-16
 published: true
-categories:
-  - tech
 tags:
   - cli
   - java
@@ -12,9 +10,8 @@ tags:
   - python
 ---
 
-The inspiration for this post is the [Python, Ruby, and Golang: A Command-Line
-Application
-Comparison](https://realpython.com/python-ruby-and-golang-a-command-line-application-comparison/)
+The inspiration for this post is the
+[Python, Ruby, and Golang: A Command-Line Application Comparison](https://realpython.com/python-ruby-and-golang-a-command-line-application-comparison/)
 published on [Real Python](https://realpython.com/).
 
 I've been sticking to my decision to [stop writing bash scripts] and it has paid
@@ -36,10 +33,10 @@ on your needs, you might need sub-command style cli, like git offers.
 ### Java
 
 The command line arguments are passed to the `main` method. I'm not aware of a
-built-in CLI builder. With a quick search I found [Apache Commons
-CLI](https://commons.apache.org/proper/commons-cli/), but I haven't used it
-myself. It's [usage
-page](https://commons.apache.org/proper/commons-cli/usage.html) has some
+built-in CLI builder. With a quick search I found
+[Apache Commons CLI](https://commons.apache.org/proper/commons-cli/), but I
+haven't used it myself. It's
+[usage page](https://commons.apache.org/proper/commons-cli/usage.html) has some
 detailed examples.
 
 ### JavaScript (node.js)
@@ -63,14 +60,15 @@ This is a no-brainer and it's supported out of the box everywhere:
 - JavaScript: `process.env.VARIABLE`
 - Python: `os.environ['VARIABLE']`
 
-A small problem with Java is that `System.getenv` is a static method and mocking it
-for unit tests is not that easy.
+A small problem with Java is that `System.getenv` is a static method and mocking
+it for unit tests is not that easy.
 
 ## Recursively listing files (walking a directory)
 
 ### Java
 
-This depends on the Java version you're targeting. Java 8 and later has a simpler API:
+This depends on the Java version you're targeting. Java 8 and later has a
+simpler API:
 
 ```java
 Files.walk(Paths.get("/tmp"))
@@ -78,25 +76,25 @@ Files.walk(Paths.get("/tmp"))
   .forEach(System.out::println);
 ```
 
-In older versions, you might have to write the recursion yourself using the `listFiles()`
-method of a `File` instance.
+In older versions, you might have to write the recursion yourself using the
+`listFiles()` method of a `File` instance.
 
 ### JavaScript
 
-node.js does not have a built-in function so you'd need to ~~write it yourself~~ [copy paste it
-from the internet](https://medium.com/@allenhwkim/nodejs-walk-directory-f30a2d8f038f):
+node.js does not have a built-in function so you'd need to ~~write it yourself~~
+[copy paste it from the internet](https://medium.com/@allenhwkim/nodejs-walk-directory-f30a2d8f038f):
 
 ```javascript
-const fs = require('fs'), path = require('path');
+const fs = require("fs"),
+  path = require("path");
 
 function walkDir(dir, callback) {
-  fs.readdirSync(dir).forEach( f => {
+  fs.readdirSync(dir).forEach(f => {
     let dirPath = path.join(dir, f);
     let isDirectory = fs.statSync(dirPath).isDirectory();
-    isDirectory ?
-      walkDir(dirPath, callback) : callback(path.join(dir, f));
+    isDirectory ? walkDir(dirPath, callback) : callback(path.join(dir, f));
   });
-};
+}
 ```
 
 ### Python
@@ -112,7 +110,8 @@ For every directory, you get an `entry` which contains:
 - `dirnames`: an array of the sub-directories
 - `filenames`: an array of the filenames on that directory
 
-I like how Python already splits it into directories and files, which is what you typically want.
+I like how Python already splits it into directories and files, which is what
+you typically want.
 
 ## File reading / writing
 
@@ -146,8 +145,8 @@ FileUtils.writeLines(new File("/tmp/test.copy"), "utf8", lines);
 It's quite simple:
 
 ```js
-const contents = fs.readFileSync('/tmp/test', 'utf8');
-fs.writeFileSync('/tmp/test.copy', contents, 'utf8');
+const contents = fs.readFileSync("/tmp/test", "utf8");
+fs.writeFileSync("/tmp/test.copy", contents, "utf8");
 ```
 
 ### Python
@@ -181,15 +180,19 @@ if (exitCode != 0) {
 InputStream output = process.getOutputStream();
 ```
 
-If we don't care to process the command's output, but we want to show it as
-part of our cli app, then we can call `redirectOutputStream(ProcessBuilder.Redirect.INHERIT)` on the `processBuilder`.
+If we don't care to process the command's output, but we want to show it as part
+of our cli app, then we can call
+`redirectOutputStream(ProcessBuilder.Redirect.INHERIT)` on the `processBuilder`.
 
 ### JavaScript
 
 nodeJS has the `child_process` module:
 
 ```js
-const result = child_process.spawnSync('git', ['status'], { cwd: '/tmp', encoding: 'utf8' });
+const result = child_process.spawnSync("git", ["status"], {
+  cwd: "/tmp",
+  encoding: "utf8"
+});
 if (result.status) {
   // the command failed
 }
@@ -198,9 +201,9 @@ if (result.status) {
 const output = result.stdout;
 ```
 
-Similar with Java, there is a `stdio` option which by default is set to `pipe` and
-it can be set to `inherit` if we just want the command's output to be shown as
-if it were part of our own.
+Similar with Java, there is a `stdio` option which by default is set to `pipe`
+and it can be set to `inherit` if we just want the command's output to be shown
+as if it were part of our own.
 
 ### Python
 
@@ -212,26 +215,30 @@ if result.returncode != 0:
   // the command failed
 ```
 
-Unlike the previous two, the default here is to print the output instead of capture it.
+Unlike the previous two, the default here is to print the output instead of
+capture it.
 
-To capture and process the output, we need to pass the `stdout=subprocess.PIPE` option:
+To capture and process the output, we need to pass the `stdout=subprocess.PIPE`
+option:
 
 ```python
 result = subprocess.run(['git', 'status'], cwd='/tmp', encoding='utf8', stdout=subprocess.PIPE)
 lines = result.stdout.splitlines()
 ```
 
-A useful feature of Python is that it has a `check=True` option which will throw an
-exception if the command didn't terminate with a zero exit code. This means that
-you don't need to explicitly check if the `returncode` was zero after each command.
+A useful feature of Python is that it has a `check=True` option which will throw
+an exception if the command didn't terminate with a zero exit code. This means
+that you don't need to explicitly check if the `returncode` was zero after each
+command.
 
 ## Reading / writing JSON
 
 ### Java
 
-There are many libraries, I've used [Jackson]. Typically, you'd use it against a pojo
-that you want to serialize/deserialize. It is possible to use it with a map, although
-that wouldn't be the normal case in a strongly typed language like Java:
+There are many libraries, I've used [Jackson]. Typically, you'd use it against a
+pojo that you want to serialize/deserialize. It is possible to use it with a
+map, although that wouldn't be the normal case in a strongly typed language like
+Java:
 
 ```java
 ObjectMapper objectMapper = new ObjectMapper();
@@ -247,15 +254,15 @@ Map<String, Object> value = objectMapper.readValue(
 );
 ```
 
-But since the other two languages can serialize/deserialize maps, it's worth showing
-that it's feasible also in Java.
+But since the other two languages can serialize/deserialize maps, it's worth
+showing that it's feasible also in Java.
 
 ### JavaScript
 
 This works in node.js but also in the browser:
 
 ```js
-JSON.stringify({ hello: 'world' });
+JSON.stringify({ hello: "world" });
 JSON.parse('{"hello":"world"}');
 ```
 
@@ -273,8 +280,10 @@ json.loads('{"hello":"world"}')
 
 ### Java
 
-Java 11 has a [new HTTP Client](https://openjdk.java.net/groups/net/httpclient/intro.html). I didn't even know about it until 5 minutes ago. I have
-it a try and it works on my machine:
+Java 11 has a
+[new HTTP Client](https://openjdk.java.net/groups/net/httpclient/intro.html). I
+didn't even know about it until 5 minutes ago. I have it a try and it works on
+my machine:
 
 ```java
 HttpClient httpClient = HttpClient.newHttpClient();
@@ -286,27 +295,30 @@ HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.Bo
 System.out.println(httpResponse.body());
 ```
 
-For external dependencies, if you're already using Spring, you should probably use the Spring Rest Template. The [OkHttp] client is also nice and it supports Android too.
+For external dependencies, if you're already using Spring, you should probably
+use the Spring Rest Template. The [OkHttp] client is also nice and it supports
+Android too.
 
 ### JavaScript
 
-The standard `https` module reminds me why I don't like asynchronous programming in node.js:
+The standard `https` module reminds me why I don't like asynchronous programming
+in node.js:
 
 ```js
-const req = https.request(url, requestOptions, (res) => {
+const req = https.request(url, requestOptions, res => {
   const minSuccess = 200;
   const maxSuccess = 300;
-  let message = '';
+  let message = "";
   if (res.statusCode >= minSuccess && res.statusCode < maxSuccess) {
-    res.on('data', (chunk) => {
+    res.on("data", chunk => {
       message += chunk;
     });
 
-    res.on('end', () => {
+    res.on("end", () => {
       // at this point we have the payload in message
     });
   } else {
-    res.on('data', (d) => {
+    res.on("data", d => {
       process.stdout.write(d);
     });
 
@@ -316,14 +328,15 @@ const req = https.request(url, requestOptions, (res) => {
 
 req.end();
 
-req.on('error', (e) => {
+req.on("error", e => {
   // oops different error
 });
 ```
 
-The [request](https://www.npmjs.com/package/request) external dependency tries to make things
-prettier. If you want to use Promises and `async/await`, you have (at least) 3 alternative
-extra libraries to pick from (which is why I often feel this is a prank).
+The [request](https://www.npmjs.com/package/request) external dependency tries
+to make things prettier. If you want to use Promises and `async/await`, you have
+(at least) 3 alternative extra libraries to pick from (which is why I often feel
+this is a prank).
 
 ### Python
 
@@ -356,10 +369,12 @@ with urllib.request.urlopen(req) as response:
     raise ValueError(f'Oops: {status}')
 ```
 
-Even the [documentation of urllib.request](https://docs.python.org/3/library/urllib.request.html)
-mentions that the external dependency [Requests package] is recommended for a higher-level HTTP
-client interface. I've tried it also, and it is kind of better, but I think that the default
-is not too bad (and having worked enough with npm I don't like adding too many dependencies).
+Even the
+[documentation of urllib.request](https://docs.python.org/3/library/urllib.request.html)
+mentions that the external dependency [Requests package] is recommended for a
+higher-level HTTP client interface. I've tried it also, and it is kind of
+better, but I think that the default is not too bad (and having worked enough
+with npm I don't like adding too many dependencies).
 
 ## Distribution
 
@@ -371,58 +386,58 @@ To the best of my knowledge, this is missing in the Java world.
 
 ### JavaScript
 
-You can publish your app on the npm registry. The users can then install it with npm.
+You can publish your app on the npm registry. The users can then install it with
+npm.
 
 e.g. `npm i -g eslint` will install the `eslint` cli.
 
-A great feature of npm is the npx variant which allows you to run an app without installing it,
-e.g. `npx eslint` will install `eslint` temporarily, run it, and remove it. It is quite fast too.
+A great feature of npm is the npx variant which allows you to run an app without
+installing it, e.g. `npx eslint` will install `eslint` temporarily, run it, and
+remove it. It is quite fast too.
 
 ### Python
 
-Similar with npm, you have pip. You can publish your app on the PyPI registry and the users
-can install it with pip.
+Similar with npm, you have pip. You can publish your app on the PyPI registry
+and the users can install it with pip.
 
-A minor difference for Windows: npm generates cmd scripts while pip generates exe stubs.
+A minor difference for Windows: npm generates cmd scripts while pip generates
+exe stubs.
 
 ## Overall remarks
 
 ### Java
 
-Both the language and the standard library show their age. While the
-standard library has support for XML and zip files, it doesn't have built-in
-support for JSON. The need for backwards compatibility means that there are
-multiple ways of doing the same thing (e.g. `java.time`, `java.nio`, `List.of`,
-etc). The programming style is often a bit verbose. Checked exceptions can be
-annoying (I've omitted them from all examples) and don't play well with newer
-language features like lambdas and streams.
+Both the language and the standard library show their age. While the standard
+library has support for XML and zip files, it doesn't have built-in support for
+JSON. The need for backwards compatibility means that there are multiple ways of
+doing the same thing (e.g. `java.time`, `java.nio`, `List.of`, etc). The
+programming style is often a bit verbose. Checked exceptions can be annoying
+(I've omitted them from all examples) and don't play well with newer language
+features like lambdas and streams.
 
 ### JavaScript/node.js
 
-The standard library is async-first, designed for high
-performing non-blocking services. This is something of little value for small
-cli apps. The language itself has 3 different ways of doing async operations
-(callback hell, promises, async/await), which doesn't make things easier. All in
-all, it's not bad to be honest. I deliberately used synchronous variants in the
-above examples whenever possible.
+The standard library is async-first, designed for high performing non-blocking
+services. This is something of little value for small cli apps. The language
+itself has 3 different ways of doing async operations (callback hell, promises,
+async/await), which doesn't make things easier. All in all, it's not bad to be
+honest. I deliberately used synchronous variants in the above examples whenever
+possible.
 
 ### Python
 
-The standard library can get you very far without having to install any
-external dependency. There are options that take into account common use cases,
-such as validate the success of an external command, which adds extra
-appreciation points for usability in my book, that feeling that someone went for
-the extra mile.
+The standard library can get you very far without having to install any external
+dependency. There are options that take into account common use cases, such as
+validate the success of an external command, which adds extra appreciation
+points for usability in my book, that feeling that someone went for the extra
+mile.
 
 ## Conclusion
 
-[De gustibus et coloribus non est
-disputandum](https://en.wiktionary.org/wiki/de_gustibus_et_coloribus_non_est_disputandum).
+[De gustibus et coloribus non est disputandum](https://en.wiktionary.org/wiki/de_gustibus_et_coloribus_non_est_disputandum).
 Pick whatever you like. I like to write less code and having less dependencies
-to worry about. And remember that [there are two kinds of programming languages:
-the ones people complain about and the ones that nobody
-uses](https://en.wikiquote.org/wiki/Bjarne_Stroustrup).
-
+to worry about. And remember that
+[there are two kinds of programming languages: the ones people complain about and the ones that nobody uses](https://en.wikiquote.org/wiki/Bjarne_Stroustrup).
 
 [stop writing bash scripts]: {{ site.baseurl }}{% post_url 2019/2019-02-11-goodbye-bash %}
 [commander]: https://www.npmjs.com/package/commander

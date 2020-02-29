@@ -3,9 +3,6 @@ layout: post
 title: Merging Swagger files
 date: 2018-10-28
 published: true
-categories:
-- tech
-- tech
 tags:
 - swagger
 - java

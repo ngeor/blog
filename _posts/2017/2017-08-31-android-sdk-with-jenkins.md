@@ -3,8 +3,6 @@ layout: post
 title: Android SDK with Jenkins
 date: 2017-08-31 07:19:30.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - android
 - Jenkins

@@ -3,9 +3,11 @@ layout: post
 title: BlogEngine.NET MVC - Posts and Pages
 date: 2013-03-09 09:18:00.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- pet project
+- ".NET"
+- BlogEngine.NET MVC
+- C#
 ---
 
 In the latest commit on BlogEngine.NET MVC, which is <a href="https://blogengine.codeplex.com/SourceControl/network/forks/NikolaosGeorgiou/blogenginemvc">always available here</a>, the following have been added:
@@ -19,7 +21,7 @@ In the latest commit on BlogEngine.NET MVC, which is <a href="https://blogengine
 
 Mapping the post route is quite simple:
 
-```
+```cs
 // map posts, with timestamped links
 MapBlogRoute(routes,
     name: "PostWithTimestamp",
@@ -33,7 +35,7 @@ MapBlogRoute is a helper method that maps the route twice, once for the primary 
 
 We also need to map the post URL without the timestamp. This is the same situation we saw with the blog name parameter: because the date parameters are in the middle of the URL, they can't be simply ignored.
 
-```
+```cs
 // map posts, without timestamped links
 MapBlogRoute(routes,
     name: "PostWithoutTimestamp",
@@ -47,7 +49,7 @@ Simple enough!
 
 In the views, we'll be generating links to posts. We want a simple way of passing a post and getting a URL to that post. Plus, the URL should respect the blog settings regarding whether the user wants timestamped post URLs or plain URLs. This is best done in a view helper. Here's the method that does the trick. It's inside HtmlHelpers/UrlHelpers, were more extension methods like these can be put:
 
-```
+```cs
 /// <summary>
 /// Gets the URL of a post.
 /// </summary>

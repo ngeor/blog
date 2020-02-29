@@ -4,8 +4,6 @@ title: 'CD with Helm part 8: DTAP'
 date: 2017-12-09 12:33:12.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - docker
@@ -234,7 +232,7 @@ This final experiment proves we can truly deploy whatever, wherever: any feature
 <li>we modeled a DTAP by using Helm releases and isolated the environment-specific configuration in separate files containing the bare minimum.</li>
 </ul>
 
-This is actually enough for a continuous delivery pipeline using Helm. From here you can add all sorts of bells and whistles:
+This is actually enough for a continuous deployment pipeline using Helm. From here you can add all sorts of bells and whistles:
 <ul>
 <li>explore namespaces in Kubernetes</li>
 <li>automate deployments for certain branches</li>

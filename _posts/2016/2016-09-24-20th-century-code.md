@@ -3,8 +3,6 @@ layout: post
 title: 20th Century Code
 date: 2016-09-24 13:15:13.000000000 +02:00
 published: true
-categories:
-- notes
 tags:
 - notes
 ---

@@ -23,9 +23,9 @@ Scaffold a new post with `new.rb`.
 
 ## Tags
 
-The custom script `preprocessor.rb` generates tag pages for categories. The tags need
-to be specified in the post's front-matter using the human-friendly name (e.g. `.net` instead of
-`dot-net`).
+The custom script `preprocessor.rb` generates tag pages. The tags need to be
+specified in the post's front-matter using the human-friendly name (e.g. `.net`
+instead of `dot-net`).
 
 ## Pages
 

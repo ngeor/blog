@@ -3,9 +3,10 @@ layout: post
 title: Using controllers with the same name in ASP.NET MVC
 date: 2013-12-17 14:18:36.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- ".NET"
+- asp.net mvc
+- C#
 ---
 
 How to use controllers that have the same class name but different namespaces

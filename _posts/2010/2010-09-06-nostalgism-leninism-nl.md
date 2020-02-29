@@ -3,9 +3,8 @@ layout: post
 title: Nostalgism Leninism (NL)
 date: 2010-09-06 21:04:00.000000000 +02:00
 published: true
-categories:
-- Personal
-tags: []
+tags:
+- personal
 ---
 <div class="lang">
 

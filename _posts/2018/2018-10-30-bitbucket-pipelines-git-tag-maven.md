@@ -3,13 +3,12 @@ layout: post
 title: Publishing git tags for Maven projects in Bitbucket Pipelines
 date: 2018-10-30
 published: true
-categories:
-- tech
 tags:
 - git
 - maven
 - atlassian
 - bash
+- bitbucket pipelines
 ---
 > **Update 2018-11-24:** I've put together a maven plugin that can also publish
 > git tags in Bitbucket Cloud, plus it checks there are no gaps in a semver

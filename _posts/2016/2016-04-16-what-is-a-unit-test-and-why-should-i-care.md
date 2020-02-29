@@ -3,8 +3,6 @@ layout: post
 title: What is a unit test and why should I care?
 date: 2016-04-16 08:08:45.000000000 +02:00
 published: true
-categories:
-- tech
 series: Unit Tests
 tags:
 - unit tests

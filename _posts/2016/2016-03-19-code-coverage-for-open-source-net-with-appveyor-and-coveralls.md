@@ -3,8 +3,6 @@ layout: post
 title: Code coverage for open source .NET with AppVeyor and Coveralls
 date: 2016-03-19 09:11:24.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - ".NET"
 - AppVeyor

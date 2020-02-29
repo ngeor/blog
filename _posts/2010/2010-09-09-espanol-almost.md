@@ -3,9 +3,8 @@ layout: post
 title: Español? Almost!
 date: 2010-09-09 16:35:00.000000000 +02:00
 published: true
-categories:
-- Personal
-tags: []
+tags:
+- personal
 ---
 <div class="col2" lang="el">
 <div class="lang">[ Ελληνικά ]</div>

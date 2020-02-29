@@ -3,8 +3,6 @@ layout: post
 title: Optional files in Maven archetypes
 date: 2019-09-07
 published: true
-categories:
-  - tech
 tags:
   - java
   - groovy

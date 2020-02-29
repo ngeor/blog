@@ -4,8 +4,6 @@ title: 'CD with Helm part 3: Kubernetes Intro'
 date: 2017-11-25 11:44:24.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - continuous integration

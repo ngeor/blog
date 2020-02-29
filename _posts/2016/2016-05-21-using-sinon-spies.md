@@ -3,8 +3,6 @@ layout: post
 title: Using sinon spies
 date: 2016-05-21 08:15:53.000000000 +02:00
 published: true
-categories:
-- tech
 series: Unit Tests
 tags:
 - chai

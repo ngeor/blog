@@ -3,9 +3,11 @@ layout: post
 title: Deferred LINQ queries in WCF services
 date: 2010-09-12 07:21:00.000000000 +02:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+  - ".NET"
+  - C#
+  - WCF
+  - linq
 ---
 
 Consider the following WCF service:
@@ -40,11 +42,13 @@ namespace WcfService1
 }
 ```
 
-as you can see it defines one WCF service with two methods. The first method returns an IEnumerable of strings while the second method returns a class that contains an IEnumerable of strings.
+as you can see it defines one WCF service with two methods. The first method
+returns an IEnumerable of strings while the second method returns a class that
+contains an IEnumerable of strings.
 
 The implementation I have looks like this:
 
-```
+```cs
 using System.Collections.Generic;
 using System.Linq;
 
@@ -71,11 +75,17 @@ namespace WcfService1
 }
 ```
 
-The first method populates some sample data on a List and uses a LINQ query to return the data to the client. The second method calls the first method to populate its own results.
+The first method populates some sample data on a List and uses a LINQ query to
+return the data to the client. The second method calls the first method to
+populate its own results.
 
-You would expect that they both work the same on the client. But they don't. The first method works fine, but the second one throws an obscure CommunicationException with the not so helpful message: <strong>The underlying connection was closed: The connection was closed unexpectedly</strong>. Here's what the WCF client looks like:
+You would expect that they both work the same on the client. But they don't. The
+first method works fine, but the second one throws an obscure
+CommunicationException with the not so helpful message: <strong>The underlying
+connection was closed: The connection was closed unexpectedly</strong>. Here's
+what the WCF client looks like:
 
-```
+```cs
 using System;
 using ConsoleApplication1.ServiceReference1;
 
@@ -108,9 +118,13 @@ namespace ConsoleApplication1
 }
 ```
 
-To work around this, you need to force the evaluation of the LINQ query using the .ToArray or .ToList method. Then everything works normally. I'm not sure exactly why the deferred LINQ query works when the list is the direct return value and it fails when it is assigned to a data member of a class that is the returned value...
+To work around this, you need to force the evaluation of the LINQ query using
+the .ToArray or .ToList method. Then everything works normally. I'm not sure
+exactly why the deferred LINQ query works when the list is the direct return
+value and it fails when it is assigned to a data member of a class that is the
+returned value...
 
-```
+```cs
 using System.Collections.Generic;
 using System.Linq;
 

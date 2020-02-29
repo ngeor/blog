@@ -3,8 +3,6 @@ layout: post
 title: Batch editing WordPress posts
 date: 2018-01-04 09:08:39.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - oauth
 - python

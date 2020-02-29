@@ -3,8 +3,6 @@ layout: post
 title: Functional Testing - First steps towards a framework
 date: 2016-07-09 08:19:34.000000000 +02:00
 published: true
-categories:
-- tech
 series: Functional Tests
 tags:
 - tech

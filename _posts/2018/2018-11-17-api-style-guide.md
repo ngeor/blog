@@ -3,13 +3,12 @@ layout: post
 title: API Style Guide
 date: 2018-11-17
 published: true
-categories:
-- tech
 tags:
-- rest
-- swagger
-- microservices
-- notes
+  - rest
+  - swagger
+  - microservices
+  - notes
+  - api design
 ---
 
 Using a microservice architecture allows development teams to work separately,
@@ -17,13 +16,13 @@ delivering work faster and focusing on a specific part of the business domain.
 Working independently means that developers are free to make their own choices.
 While that's great, there's the risk of building the tower of Babel.
 
-Imagine this simple example: team A is developing an address book service,
-team B is working on an invoice service. The first team is using Java, the
-second is using .NET. They both follow the default options for their stack.
-When we put service A and B together, we'll have an address book API which uses
-camelCase for the payload of the requests, while the invoice service uses
-PascalCase. Technically it works, but it looks unprofessional and it will be
-difficult to integrate with.
+Imagine this simple example: team A is developing an address book service, team
+B is working on an invoice service. The first team is using Java, the second is
+using .NET. They both follow the default options for their stack. When we put
+service A and B together, we'll have an address book API which uses camelCase
+for the payload of the requests, while the invoice service uses PascalCase.
+Technically it works, but it looks unprofessional and it will be difficult to
+integrate with.
 
 We need an **API style guide** to ensure that the API looks consistent. It's the
 same as using a code style guide to ensure that the code looks as if it was
@@ -124,7 +123,7 @@ paths:
     get:
       operationId: getAddresses
       tags:
-      - AddressBook
+        - AddressBook
 ```
 
 The naming convention for tags is PascalCase.
@@ -194,7 +193,8 @@ More specifically:
 - 406 Not acceptable (content type is not accepted)
 - 409 (CONFLICT) indicates that an entity already exists
 
-See [here for 401 vs 403](https://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses).
+See
+[here for 401 vs 403](https://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses).
 
 ### Which response codes should be documented?
 
@@ -266,7 +266,7 @@ ErrorDetail:
 We use the appropriate HTTP verb per operation.
 
 | Verb   | Typical Use Case            |
-|--------|-----------------------------|
+| ------ | --------------------------- |
 | GET    | Get a resource              |
 | POST   | Create a new resource       |
 | PUT    | Update an existing resource |
@@ -281,7 +281,7 @@ Several services define a set of CRUD (create, read, update, delete) operations
 on a resource. Let's see an example for the address book:
 
 | Operation Id  | HTTP Verb | HTTP Path              | HTTP Parameters                   | Payload |
-|---------------|-----------|------------------------|-----------------------------------|---------|
+| ------------- | --------- | ---------------------- | --------------------------------- | ------- |
 | getAddresses  | GET       | /addresses             | Searching, Sorting and Pagination | -       |
 | createAddress | POST      | /addresses             | -                                 | Address |
 | updateAddress | PUT       | /addresses             | -                                 | Address |
@@ -316,7 +316,8 @@ Examples:
 
 ### Sorting
 
-Our conventions are based on [GitHub conventions](https://developer.github.com/v3/repos/).
+Our conventions are based on
+[GitHub conventions](https://developer.github.com/v3/repos/).
 
 - the field to sort by is defined by the `sort` parameter. The valid values for
   this parameter depend on the object. The value should use camelCase, just like
@@ -337,7 +338,8 @@ documented per operation.
 
 ### Pagination
 
-We follow [GitHub's API regarding pagination](https://developer.github.com/v3/#pagination).
+We follow
+[GitHub's API regarding pagination](https://developer.github.com/v3/#pagination).
 
 - current page is defined by the `page` parameter
 - page numbering is one-based, not zero-based
@@ -348,6 +350,7 @@ We follow [GitHub's API regarding pagination](https://developer.github.com/v3/#p
 
 Examples:
 
-- /addresses (fetches the first 10 results according to the default sorting rules)
+- /addresses (fetches the first 10 results according to the default sorting
+  rules)
 - /addresses?page=2 (fetches the next 10 results)
 - /addresses?page=3&per_page=20 (fetches addresses 41-60)

@@ -4,8 +4,6 @@ title: 'CD with Helm part 2: Dockerize the build plan'
 date: 2017-11-18 08:19:10.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - continuous integration

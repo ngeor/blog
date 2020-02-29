@@ -4,7 +4,7 @@ title: CV
 ---
 
 Polyglot full stack hands-on architect with 15+ years of working experience.
-Automation, testing, continuous delivery, infrastructure as code, microservices.
+Automation, testing, continuous integration, infrastructure as code, microservices.
 
 ## Timeline
 
@@ -79,7 +79,7 @@ September 2017 - January 2018
 
 Worked with the webshop team in the Salesforce Commerce Cloud (formerly known as
 Demandware) implementation of the storefront. Introduced unit testing in all
-storefront teams. Worked on improving the continuous delivery pipeline.
+storefront teams. Worked on improving the continuous integration pipeline.
 
 Later joined the newly formed platform team, with the purpose of enabling other
 teams to deliver. Implemented new continuous integration pipelines and related
@@ -100,7 +100,7 @@ Mid-late 2015, the big rewrite of our websites. As the architect, I was
 responsible for coordinating the project from a technical point of view in every
 phase, from design until implementation. Coached developers about best practices
 not often used in the Demandware ecosystem but also making sure they deliver
-work according to our high standards. Developed the continuous delivery
+work according to our high standards. Developed the continuous deployment
 pipeline, from writing the code until deploying to production, working around
 inherent limitations of the Demandware platform. Static code analysis, unit
 tests, integration tests, code coverage, all with the new Demandware JavaScript

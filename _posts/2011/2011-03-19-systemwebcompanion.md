@@ -3,16 +3,26 @@ layout: post
 title: SystemWebCompanion
 date: 2011-03-19 18:10:00.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+  - pet project
+  - SystemWebCompanion
+  - ".NET"
+  - ASP.NET
+  - C#
 ---
 
-In many ASP.NET web applications, there are some small bits of code that you have to write over and over again. They're too small so you never bother to refactor them out as a reusable dll. After all they are so small that it's very fast to create from scratch again. They end up as a Utils.cs file somewhere in your project, probably repeated in all your projects in one form or another.
+In many ASP.NET web applications, there are some small bits of code that you
+have to write over and over again. They're too small so you never bother to
+refactor them out as a reusable dll. After all they are so small that it's very
+fast to create from scratch again. They end up as a Utils.cs file somewhere in
+your project, probably repeated in all your projects in one form or another.
 
-Suffering from the same disease, I decided to create a small project for that. Its name is SystemWebCompanion. Its goal to create various small conveniences that ASP.NET web applications usually need.
+Suffering from the same disease, I decided to create a small project for that.
+Its name is SystemWebCompanion. Its goal to create various small conveniences
+that ASP.NET web applications usually need.
 
 The following features are currently included (version 1.1.0):
+
 <ul>
 <li>Extension method to get the application path terminated with a slash (how many times have you coded this one?)</li>
 <li>Extension method to log an exception using log4net (and the inner exceptions too)</li>
@@ -22,7 +32,11 @@ The following features are currently included (version 1.1.0):
 
 Not much, but at least you'll never have to code them again!
 
-The project is <a href="http://sourceforge.net/projects/syswebcompanion/" target="_blank">hosted at SourceForge</a>. If you use NuGet, you can already <a href="http://nuget.org/List/Packages/SystemWebCompanion" target="_blank">search for SystemWebCompanion in the online gallery</a>.
+The project is
+<a href="http://sourceforge.net/projects/syswebcompanion/" target="_blank">hosted
+at SourceForge</a>. If you use NuGet, you can already
+<a href="http://nuget.org/List/Packages/SystemWebCompanion" target="_blank">search
+for SystemWebCompanion in the online gallery</a>.
 
 Let's see some examples on how to use the forementioned features.
 
@@ -40,7 +54,8 @@ string path = Request.SlashedAppPath();
 string absolutePath = Request.AbsoluteAppPath();
 ```
 
-To use the common title prefix, you need to use a master page and derive from the CompanionMasterPage class:
+To use the common title prefix, you need to use a master page and derive from
+the CompanionMasterPage class:
 
 ```cs
 using System.Web.Companion;
@@ -56,10 +71,15 @@ To use the Google Analytics web control:
 <swc:GoogleAnalytics runat="server" SiteId="UA-1234-123" />
 
 // by default it will not render on localhost. If you want it:
-<swc:GoogleAnalytics runat="server" SiteId="UA-1234-123"
-    ShowOnLocalhost="true" />
+<swc:GoogleAnalytics
+  runat="server"
+  SiteId="UA-1234-123"
+  ShowOnLocalhost="true"
+/>
 ```
 
-Note that swc tag prefix. It stands for SystemWebCompanion. If you install via NuGet, your web.config will be modified automatically to register the swc prefix.
+Note that swc tag prefix. It stands for SystemWebCompanion. If you install via
+NuGet, your web.config will be modified automatically to register the swc
+prefix.
 
 Hope this helps.

@@ -3,13 +3,12 @@ layout: post
 title: Semantic versioning with GitVersion
 date: 2017-12-19 21:07:41.000000000 +01:00
 published: true
-categories:
-  - tech
 tags:
   - blog-helm-sample
   - GitVersion
   - TeamCity
-featured: true
+  - semantic versioning
+  - versioning
 ---
 
 I recently stumbled upon a tool called

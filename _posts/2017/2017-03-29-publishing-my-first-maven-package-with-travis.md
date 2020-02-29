@@ -3,8 +3,6 @@ layout: post
 title: Publishing my first Maven package with Travis
 date: 2017-03-29 18:24:45.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - continuous integration
 - maven

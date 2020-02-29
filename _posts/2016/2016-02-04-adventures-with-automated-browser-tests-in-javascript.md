@@ -3,10 +3,8 @@ layout: post
 title: Adventures with automated browser tests in JavaScript
 date: 2016-02-04 20:49:24.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
-- automated tests
+- functional tests
 - chai
 - es6
 - javascript

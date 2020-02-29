@@ -3,8 +3,6 @@ layout: post
 title: clang-format as a git filter
 date: 2019-01-27
 published: true
-categories:
-  - tech
 tags:
   - java
   - clang-format
@@ -14,15 +12,15 @@ tags:
 [clang-format] is a tool that can format source code of C-like languages (C /
 C++ / Java / JavaScript / Objective-C / Protobuf). It supports various presets
 but it is also possible to fine tune its behavior with a configuration file
-named `.clang-format`. It has quite a lot [configuration
-options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
+named `.clang-format`. It has quite a lot
+[configuration options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html).
 
 In this post, I'm showing how to use this tool as a git filter in order to
 automatically format Java code when committing code to git. The inspiration
-comes from [these
-examples](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes) in the
-Git documentation and by tools like [prettier](https://prettier.io/) from the
-JavaScript ecosystem.
+comes from
+[these examples](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes)
+in the Git documentation and by tools like [prettier](https://prettier.io/) from
+the JavaScript ecosystem.
 
 First of all, you need to have the `clang-format` program somewhere in your
 `PATH`. You can get it [here](http://releases.llvm.org/download.html). For
@@ -30,7 +28,8 @@ Windows, there is a
 [bundle](http://releases.llvm.org/7.0.1/LLVM-7.0.1-win64.exe) containing various
 tools. Just unzip it with 7zip and keep only the `bin/clang-format.exe` file.
 
-Next, you'll need to define your style preferences. Mine currently look like this:
+Next, you'll need to define your style preferences. Mine currently look like
+this:
 
 ```
 BasedOnStyle: LLVM
@@ -81,7 +80,8 @@ specify that java files will go through the `clang-format-java` filter:
 *.java filter=clang-format-java
 ```
 
-Note that git doesn't know anything about this, so we need to define what that filter does. Run the following commands:
+Note that git doesn't know anything about this, so we need to define what that
+filter does. Run the following commands:
 
 ```sh
 git config --global filter.clang-format-java.clean 'clang-format -assume-filename=test.java'

@@ -3,8 +3,6 @@ layout: post
 title: How to create a simple web app with maven
 date: 2016-09-18 19:37:05.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - java
 - maven

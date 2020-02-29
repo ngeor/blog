@@ -3,9 +3,8 @@ layout: post
 title: Protest for Rotterdam zoo
 date: 2010-11-06 08:29:00.000000000 +01:00
 published: true
-categories:
+tags:
 - notes
-tags: []
 ---
 
 <img src="{{ site.baseurl }}/assets/2010/blijdorp.jpg" />

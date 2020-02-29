@@ -3,8 +3,6 @@ layout: post
 title: Using swagger code generator with maven
 date: 2018-04-21 20:07:00.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - java
 - maven

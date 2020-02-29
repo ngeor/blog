@@ -3,8 +3,6 @@ layout: post
 title: How to build a smashing dashboard
 date: 2017-05-08 20:16:45.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - dashboard
 - nodejs

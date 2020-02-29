@@ -2,14 +2,13 @@
 layout: post
 title: GW-Basic in Docker
 date: 2020-02-22 06:31:09
-categories:
-  - tech
 tags:
   - GW-Basic
   - docker
   - retro
   - bash
   - Dockerfile
+  - just for fun
 ---
 
 This is one of those just for fun projects, doing it to see if it can be done.

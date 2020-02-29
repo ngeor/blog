@@ -3,8 +3,6 @@ layout: post
 title: Code review guidelines
 date: 2018-09-29
 published: true
-categories:
-  - notes
 tags:
   - code review
   - notes

@@ -8,7 +8,7 @@ My name is Nikolaos Georgiou. I'm a Greek software engineer
 living in the Netherlands.
 
 I blog mostly about things that I try out. Usually it's about
-programming, continuous delivery, testing, automation, code quality.
+programming, continuous integration, testing, automation, code quality.
 
 ## Cookies
 

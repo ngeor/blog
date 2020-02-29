@@ -3,8 +3,6 @@ layout: post
 title: Mocking AWS with localstack
 date: 2017-06-06 20:03:24.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - aws
 - docker

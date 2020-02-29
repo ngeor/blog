@@ -3,13 +3,13 @@ layout: post
 title: From Swagger to Confluence UML diagrams
 date: 2018-11-03
 published: true
-categories:
-- tech
 tags:
-- swagger
-- atlassian
-- docker
-featured: true
+  - swagger
+  - atlassian
+  - docker
+  - confluence
+  - uml
+  - plant uml
 ---
 
 TL;DR: During CI, I am generating a UML diagram out of the Swagger definition
@@ -28,8 +28,8 @@ diagrams. Plant UML then renders the diagram into PNG or SVG but it requires
 
 There are a lot of moving parts here with various technologies. Swagger to UML
 needs Python. Plant UML needs Java and Graphviz. And I would like all these to
-run automatically during CI. [Sounds like it's time to bake a Docker
-image!](https://xkcd.com/1988/)
+run automatically during CI.
+[Sounds like it's time to bake a Docker image!](https://xkcd.com/1988/)
 
 I created the [swagger-to-diagram] Docker image which assembles together:
 
@@ -55,14 +55,14 @@ step:
   name: Generate UML diagram from Swagger file
   image: ngeor/swagger-to-diagram
   script:
-  - swagger2png.sh ./src/main/swagger/swagger.yml diagram.png
+    - swagger2png.sh ./src/main/swagger/swagger.yml diagram.png
 ```
 
 And now, for the cherry on the top: I also added a script which publishes the
 PNG diagram as an attachment to Confluence Cloud. That's the extra mile that
 makes the whole process more magic. And it's just a `curl` call to the
-Confluence Cloud REST API which [creates or updates
-attachments](https://developer.atlassian.com/cloud/confluence/rest/#api-content-id-child-attachment-put).
+Confluence Cloud REST API which
+[creates or updates attachments](https://developer.atlassian.com/cloud/confluence/rest/#api-content-id-child-attachment-put).
 
 The script is packaged in the same Docker image and you can call it like this:
 
@@ -99,9 +99,8 @@ In the end, you get a fancy diagram in Confluence:
 
 <figure><img src="{{ site.baseurl }}/assets/2018/11/uml-confluence.png" /><figcaption>From Swagger to Confluence</figcaption></figure>
 
-
 [swagger codegen maven plugin]: https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen-maven-plugin
-[Swagger to UML]: https://github.com/nlohmann/swagger_to_uml
-[Plant UML]: http://plantuml.com/
-[Graphviz]: http://www.graphviz.org/
+[swagger to uml]: https://github.com/nlohmann/swagger_to_uml
+[plant uml]: http://plantuml.com/
+[graphviz]: http://www.graphviz.org/
 [swagger-to-diagram]: https://github.com/ngeor/docker-swagger-to-diagram

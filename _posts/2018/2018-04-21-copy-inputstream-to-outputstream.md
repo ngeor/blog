@@ -3,10 +3,9 @@ layout: post
 title: Copy InputStream to OutputStream
 date: 2018-04-21 19:19:53.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
-- java
+  - java
+  - cheat sheet
 ---
 
 To copy from a stream into a file:

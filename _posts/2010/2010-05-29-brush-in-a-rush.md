@@ -3,9 +3,8 @@ layout: post
 title: Brush in a Rush
 date: 2010-05-29 19:46:00.000000000 +02:00
 published: true
-categories:
-- funny
-tags: []
+tags:
+  - funny
 ---
 
 Τι άλλο θα δουν τα μάτια μου...

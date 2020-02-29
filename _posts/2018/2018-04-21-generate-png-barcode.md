@@ -3,11 +3,10 @@ layout: post
 title: Generate PNG barcode
 date: 2018-04-21 19:35:51.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
-- barcode
-- java
+  - barcode
+  - java
+  - png
 ---
 
 How to generate PNG barcodes in Java using the zxing library:

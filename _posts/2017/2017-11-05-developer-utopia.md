@@ -3,8 +3,6 @@ layout: post
 title: Developer Utopia
 date: 2017-11-05 11:43:14.000000000 +01:00
 published: true
-categories:
-- notes
 tags:
 - governance
 - technology radar

@@ -3,8 +3,6 @@ layout: post
 title: On Code Comments
 date: 2017-03-10 20:49:08.000000000 +01:00
 published: true
-categories:
-- notes
 tags:
 - comments
 - culture

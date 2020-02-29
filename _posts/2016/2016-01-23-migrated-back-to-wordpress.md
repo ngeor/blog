@@ -3,12 +3,11 @@ layout: post
 title: Migrated back to Wordpress
 date: 2016-01-23 19:58:16.000000000 +01:00
 published: true
-categories:
-- Meta
 tags:
 - google analytics
 - jekyll
 - wordpress
+- meta
 ---
 
 I've just migrated my blog back to Wordpress. I had been using Jekyll for quite some time now.<!--more-->

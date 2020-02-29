@@ -3,8 +3,6 @@ layout: post
 title: Strip the BOM
 date: 2017-08-02 07:03:25.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - bom
 - gulp

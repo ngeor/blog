@@ -3,9 +3,10 @@ layout: post
 title: Thread-safe code
 date: 2011-06-05 07:04:00.000000000 +02:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- ".NET"
+- C#
+- thread safe
 ---
 
 Consider this code:
@@ -152,7 +153,7 @@ Another one:
 
 So the problem is not solved. Why? While the ContainsKey and Add methods of the ThreadSafeDictionary are thread-safe on their own,  the business logic that they create combined isn’t.  What you need to do, is to lock your entire block of code that needs to be ran by one thread at a time. This is called the <a href="http://en.wikipedia.org/wiki/Critical_section" target="_blank">Critical Section</a>. The above code should be written like:
 
-```
+```cs
 lock (synchronizeObject) {
   if (!dictionary.ContainsKey(key)) {
     dictionary.Add(key, value);

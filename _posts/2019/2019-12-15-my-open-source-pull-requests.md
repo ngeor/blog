@@ -3,10 +3,10 @@ layout: post
 title: My open source pull requests
 date: 2019-12-15
 published: true
-categories:
-  - tech
 tags:
   - open source
+  - reference
+  - pull requests
 ---
 
 I thought of tracking down the pull requests I've written for open source

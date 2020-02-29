@@ -2,8 +2,9 @@
 layout: post
 title: Kafka cheat sheet
 date: 2018-11-17
-categories:
-  - tech
+tags:
+  - kafka
+  - cheat sheet
 ---
 
 A cheat sheet for Apache Kafka.

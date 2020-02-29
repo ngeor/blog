@@ -3,11 +3,11 @@ layout: post
 title: BlogEngine.NET MVC - Hello world
 date: 2013-03-06 15:02:00.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - BlogEngine.NET MVC
 - pet project
+- ".NET"
+- C#
 ---
 
 So, to share a bit more of my excitement, here's a screenshot of the classic ASP.NET and the MVC versions running side by side:

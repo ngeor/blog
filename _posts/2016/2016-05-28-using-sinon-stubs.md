@@ -3,8 +3,6 @@ layout: post
 title: Using sinon stubs
 date: 2016-05-28 08:34:49.000000000 +02:00
 published: true
-categories:
-- tech
 series: Unit Tests
 tags:
 - javascript

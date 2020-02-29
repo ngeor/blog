@@ -3,8 +3,6 @@ layout: post
 title: 'Tip: Send to Programs Start Menu'
 date: 2017-04-15 10:49:15.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
 - start menu
 - Windows

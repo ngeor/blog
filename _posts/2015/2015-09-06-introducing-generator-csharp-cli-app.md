@@ -3,19 +3,24 @@ layout: post
 title: Introducing generator-csharp-cli-app
 date: 2015-09-06 07:30:00.000000000 +02:00
 published: true
-categories:
-- tech
 tags:
-- generator-csharp-cli-app
-- pet project
-- yeoman
+  - generator-csharp-cli-app
+  - pet project
+  - yeoman
+  - javascript
+  - C#
 ---
 
-In the weekend I experimented with <a href="http://yeoman.io/">Yeoman</a> and I created my first generator. This is also the first time I publish a package to the official npm repository, so double fun.<!--more-->
+In the weekend I experimented with <a href="http://yeoman.io/">Yeoman</a> and I
+created my first generator. This is also the first time I publish a package to
+the official npm repository, so double fun.<!--more-->
 
-Yeoman is a nice Javascript framework for scaffolding. There are several generators out there, but it is relatively easy to create your own, as they provide good documentation.
+Yeoman is a nice Javascript framework for scaffolding. There are several
+generators out there, but it is relatively easy to create your own, as they
+provide good documentation.
 
-My generator creates a Visual Studio solution for a console app, together with a class library for the unit tests. The following animation shows it in action:
+My generator creates a Visual Studio solution for a console app, together with a
+class library for the unit tests. The following animation shows it in action:
 
 <img src="{{ site.baseurl }}/assets/2015/09/generator-csharp-cli-app-in-action.gif" />
 

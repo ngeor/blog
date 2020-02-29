@@ -4,8 +4,6 @@ title: 'CD with Helm part 4: Helm Intro'
 date: 2017-11-27 20:27:37.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - docker
@@ -217,4 +215,4 @@ blog-helm       1               Mon Nov 27 20:01:34 2017        DEPLOYED        
 
 And we can upgrade an existing release if we want to with <code>helm upgrade</code>.
 
-While this is all very nice and interesting, we are far from implementing a continuous delivery pipeline. We'll start doing that in the next posts. The main points to think about is to see what our artifacts are, how to version them and how to support multiple environments for deployments. The goal is to be able to use Helm to deploy whatever (whatever branch), wherever (any environment).
+While this is all very nice and interesting, we are far from implementing a continuous deployment pipeline. We'll start doing that in the next posts. The main points to think about is to see what our artifacts are, how to version them and how to support multiple environments for deployments. The goal is to be able to use Helm to deploy whatever (whatever branch), wherever (any environment).

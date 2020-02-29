@@ -3,8 +3,6 @@ layout: post
 title: Docker hacking session
 date: 2017-06-04 06:17:41.000000000 +02:00
 published: true
-categories:
-- Personal
 tags:
 - docker
 - hackathon

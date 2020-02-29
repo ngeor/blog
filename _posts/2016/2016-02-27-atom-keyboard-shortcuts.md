@@ -3,8 +3,6 @@ layout: post
 title: Atom Keyboard Shortcuts
 date: 2016-02-27 13:52:24.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - atom
 - keyboard shortcuts

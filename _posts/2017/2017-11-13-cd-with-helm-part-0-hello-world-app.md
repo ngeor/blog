@@ -4,8 +4,6 @@ title: 'CD with Helm part 0: hello world app'
 date: 2017-11-13 20:28:56.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - continuous integration

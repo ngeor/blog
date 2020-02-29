@@ -2,8 +2,8 @@
 layout: default
 permalink: /archives/tag/git/
 title: git
-post_count: 7
-sort_index: 992-git
+post_count: 10
+sort_index: 989-git
 ---
 <h1 class="page-heading">Posts tagged with git</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

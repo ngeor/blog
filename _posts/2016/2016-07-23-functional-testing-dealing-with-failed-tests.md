@@ -3,8 +3,6 @@ layout: post
 title: Functional Testing - Dealing with failed tests
 date: 2016-07-23 09:00:36.000000000 +02:00
 published: true
-categories:
-- tech
 series: Functional Tests
 tags:
 - continuous integration

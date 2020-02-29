@@ -3,8 +3,6 @@ layout: post
 title: Making a habit
 date: 2016-04-02 10:03:07.000000000 +02:00
 published: true
-categories:
-- Personal
 tags:
 - android
 - DuoLingo

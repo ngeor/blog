@@ -2,8 +2,6 @@
 layout: post
 title: Emoji in bash prompt
 date: 2020-02-23 08:08:51
-categories:
-  - tech
 tags:
   - bash
   - emoji

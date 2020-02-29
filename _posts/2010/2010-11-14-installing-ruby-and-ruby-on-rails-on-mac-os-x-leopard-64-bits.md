@@ -3,9 +3,10 @@ layout: post
 title: Installing Ruby and Ruby on Rails on Mac OS X Leopard 64 bits
 date: 2010-11-14 13:53:00.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- mac
+- ruby
+- ruby on rails
 ---
 
 This post describes what I had to do in order to have the latest and greatest Ruby on Rails up and running on my machine. At this point, that is version 3.0.1.

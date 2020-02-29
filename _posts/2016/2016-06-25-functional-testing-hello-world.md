@@ -3,8 +3,6 @@ layout: post
 title: Functional Testing Hello World
 date: 2016-06-25 08:54:35.000000000 +02:00
 published: true
-categories:
-- tech
 series: Functional Tests
 tags:
 - functional tests

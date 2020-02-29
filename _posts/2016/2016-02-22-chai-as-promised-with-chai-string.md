@@ -3,13 +3,12 @@ layout: post
 title: Chai as promised with Chai string
 date: 2016-02-22 21:12:53.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
-- automated tests
+- functional tests
 - chai
 - chai-as-promised
 - chai-string
+- javascript
 ---
 
 Here's a small tip that puzzled us at work the other day for a while. How do you use chai-as-promised together with chai-string?<!--more-->

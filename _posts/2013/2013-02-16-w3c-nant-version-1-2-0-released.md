@@ -3,12 +3,17 @@ layout: post
 title: w3c-nant version 1.2.0 released
 date: 2013-02-16 16:14:00.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+  - pet project
+  - w3c-nant
+  - ".NET"
+  - C
+  - NAnt
 ---
 
-Version 1.2.0 of w3c-nant was released today. This version contains some improvements submitted by Rob Richardson:
+Version 1.2.0 of w3c-nant was released today. This version contains some
+improvements submitted by Rob Richardson:
+
 <ul>
 <li>ability to store the status code of an FTP task in a property, using the new resultproperty attribute</li>
 <li>better handling of exceptions</li>
@@ -16,4 +21,6 @@ Version 1.2.0 of w3c-nant was released today. This version contains some improve
 <li>less messages in the log file, unless verbose is turned on</li>
 </ul>
 
-Also a small bug was fixed regarding the Never value of overwrite condition: instead of uploading only files that don't exist remotely, this mode would instead always overwrite remote files and never upload new ones.
+Also a small bug was fixed regarding the Never value of overwrite condition:
+instead of uploading only files that don't exist remotely, this mode would
+instead always overwrite remote files and never upload new ones.

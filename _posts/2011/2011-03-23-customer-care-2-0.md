@@ -3,9 +3,8 @@ layout: post
 title: Customer Care 2.0
 date: 2011-03-23 18:31:00.000000000 +01:00
 published: true
-categories:
-- Personal
-tags: []
+tags:
+- personal
 ---
 
 So I wake up this morning and check my e-mail as usual. In my e-mail I see an invoice from my internet provider, Telfort, that charges me 49 euros for moving costs. I get pissed off and I twit about it.

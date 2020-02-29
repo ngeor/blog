@@ -3,12 +3,11 @@ layout: post
 title: Waiting for the correct version after deployment
 date: 2017-12-29 11:02:34.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - helm
 - TeamCity
+- continuous deployment
 ---
 
 In this post, I'll implement a post deployment check that waits until the application is running with the expected version.

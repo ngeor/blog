@@ -3,8 +3,6 @@ layout: post
 title: CI requirements
 date: 2018-09-24
 published: true
-categories:
-- tech
 tags:
 - continuous integration
 - quality

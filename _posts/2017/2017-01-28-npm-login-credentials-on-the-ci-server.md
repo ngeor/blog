@@ -3,8 +3,6 @@ layout: post
 title: npm login credentials on the CI server
 date: 2017-01-28 08:37:30.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - continuous integration
 - javascript

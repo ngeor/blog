@@ -3,9 +3,9 @@ layout: post
 title: Syncing Sublime Text 3 with Git
 date: 2015-08-17 16:36:00.000000000 +02:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+  - git
+  - sublime text
 ---
 
 I use Sublime Text 3 at home and at work. I use it on many computers and
@@ -31,6 +31,7 @@ googling around will help you. On Windows, it’s somewhere inside the %APPDATA%
 folder (%APPDATA%\Roaming\Sublime Text 3\Packages).
 
 At this moment, cloning my repo provides me the following:
+
 <ul>
 <li>my user settings (e.g. trim whitespace on save, ensure new line at end of file, etc)</li>
 <li>some code snippets for Javascript</li>

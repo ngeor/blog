@@ -3,8 +3,6 @@ layout: post
 title: JavaScript Static Code Analysis
 date: 2016-02-07 07:07:32.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - code review
 - continuous integration

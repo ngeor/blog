@@ -3,12 +3,12 @@ layout: post
 title: Exclude class from JaCoCo coverage
 date: 2018-04-21 12:40:20.000000000 +02:00
 published: true
-categories:
-  - tech
 tags:
   - jacoco
   - java
   - maven
+  - code coverage
+  - cheat sheet
 ---
 
 JaCoCo's `exclude` configuration works with classes, so the `.class` extension

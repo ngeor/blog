@@ -3,14 +3,13 @@ layout: post
 title: On the left-pad drama
 date: 2016-03-26 07:33:06.000000000 +01:00
 published: true
-categories:
-- notes
 tags:
 - dependencies
 - javascript
 - left-pad
 - nexus
 - npm
+- notes
 ---
 
 This week the internet exploded in drama after <a href="http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos" target="_blank">11 lines of code got unpublished from npm</a>. If you didn't read about it, the summary is that the developer of left-pad removed his package from npm, after npm renamed another package of his because of some name conflict with some other company's trademark or so. Lots of other packages broke because of this due to the missing dependency. What is interesting here, is that this removed left-pad package consists of a single function (only 11 lines of code). How can that tiny package break the internet?<!--more-->

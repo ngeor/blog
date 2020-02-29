@@ -3,8 +3,6 @@ layout: post
 title: Adding code coverage with nyc
 date: 2017-12-29 19:07:25.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - code coverage

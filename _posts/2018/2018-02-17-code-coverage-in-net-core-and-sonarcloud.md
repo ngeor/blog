@@ -3,8 +3,6 @@ layout: post
 title: Code coverage in .NET Core and SonarCloud
 date: 2018-02-17 08:39:51.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - ".NET Core"
 - badges

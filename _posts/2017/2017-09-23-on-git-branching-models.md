@@ -3,8 +3,6 @@ layout: post
 title: On git branching models
 date: 2017-09-23 09:26:34.000000000 +02:00
 published: true
-categories:
-- notes
 tags:
 - branching model
 - continuous integration

@@ -3,8 +3,6 @@ layout: post
 title: SDKMAN! on Windows
 date: 2019-12-07
 published: true
-categories:
-  - tech
 tags:
   - java
   - SDKMAN!

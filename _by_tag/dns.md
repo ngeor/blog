@@ -1,10 +1,10 @@
 ---
 layout: default
 permalink: /archives/tag/dns/
-title: DNS
-post_count: 1
-sort_index: 998-dns
+title: dns
+post_count: 2
+sort_index: 997-dns
 ---
-<h1 class="page-heading">Posts tagged with DNS</h1>
+<h1 class="page-heading">Posts tagged with dns</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
 {%- include post-list.html -%}

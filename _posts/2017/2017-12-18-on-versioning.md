@@ -3,12 +3,11 @@ layout: post
 title: On versioning
 date: 2017-12-18 19:20:55.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - GitVersion
 - tech
 - notes
+- versioning
 ---
 
 According to <a href="https://en.wiktionary.org/wiki/version" target="_blank" rel="noopener">Wiktionary</a>, the word version means "a specific form of variation of something". In computing, it's "a particular revision of something" (e.g. software). The word has French and Latin roots. The Greek translation, <em>έκδοση</em>, can also be translated as <em>publication</em>.
@@ -21,7 +20,7 @@ Ubuntu's versions are derived from the <strong>release schedule</strong>. Versio
 
 I can't remember if it was Chrome or Firefox, but it was one of these browsers that changed the version into something the customer shouldn't care about. By having frequent updates and adding features quickly, <strong>the version became a technicality</strong>, something you should only care about if things go wrong. You just run Chrome, latest and greatest. That was dubbed the "evergreen browser".
 
-When can see something similar to that when we talk about <strong>agile and continuous delivery</strong>. We talk about fast iterations that add a little bit of value to the customer. It's important to be able to implement and test business ideas fast, before they become irrelevant. If we think about web applications, versioning is even more concealed. What version of Facebook or BBC News are you running now?
+When can see something similar to that when we talk about <strong>agile and continuous deployment</strong>. We talk about fast iterations that add a little bit of value to the customer. It's important to be able to implement and test business ideas fast, before they become irrelevant. If we think about web applications, versioning is even more concealed. What version of Facebook or BBC News are you running now?
 
 From the developer's point of view, versions are still very relevant. When developing an application or a website, you depend on 3rd party libraries which need to have a proper versioning strategy. When developing a library for others, you need to be communicating clearly if there are new features or breaking changes.
 

@@ -3,9 +3,11 @@ layout: post
 title: MSBuild Community Tasks NUnit and Mono
 date: 2013-11-20 21:27:28.000000000 +01:00
 published: true
-categories:
-- tech
-tags: []
+tags:
+- msbuild
+- .NET
+- NUnit
+- mono
 ---
 
 As an experiment, I modified an NUnit test project to automatically test itself

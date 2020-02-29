@@ -2,11 +2,10 @@
 layout: post
 title: GitLab recipes
 date: 2020-02-14 06:12:15
-categories:
-  - tech
 tags:
   - GitLab
   - YAML
+  - continuous integration
 ---
 
 Another year, another CI tool. Due to work changes, I'm exploring GitLab for the

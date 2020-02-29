@@ -3,8 +3,6 @@ layout: post
 title: Building wxWidgets on Mac
 date: 2017-08-30 13:41:44.000000000 +02:00
 published: true
-categories:
-  - tech
 tags:
   - C++
   - mac

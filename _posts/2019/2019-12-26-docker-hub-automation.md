@@ -2,11 +2,10 @@
 layout: post
 title: Docker Hub automation
 date: 2019-12-26 03:37:42
-categories:
-  - tech
 tags:
   - docker
   - Docker Hub
+  - automation
 ---
 
 I have [a git repository](https://github.com/ngeor/dockerfiles) that contains

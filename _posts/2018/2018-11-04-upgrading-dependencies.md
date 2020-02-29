@@ -2,8 +2,14 @@
 layout: post
 title: Upgrading Dependencies
 date: 2018-11-04
-categories:
-  - tech
+tags:
+  - dependencies
+  - maven
+  - java
+  - node
+  - npm
+  - python
+  - pip
 ---
 
 This page shows how to upgrade dependencies in various programming languages and

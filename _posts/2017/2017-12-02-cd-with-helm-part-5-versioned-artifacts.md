@@ -4,11 +4,9 @@ title: 'CD with Helm part 5: versioned artifacts'
 date: 2017-12-02 16:04:56.000000000 +01:00
 series: CD with Helm
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
-- continuous delivery
+- continuous deployment
 - continuous integration
 - docker
 - helm

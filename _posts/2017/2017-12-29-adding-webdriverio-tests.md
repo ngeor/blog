@@ -3,8 +3,6 @@ layout: post
 title: Adding WebdriverIO tests
 date: 2017-12-29 13:55:32.000000000 +01:00
 published: true
-categories:
-- tech
 tags:
 - blog-helm-sample
 - docker
