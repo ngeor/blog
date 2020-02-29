@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/trackers/
 title: trackers
 post_count: 1
-sort_index: 00589-trackers
+sort_index: 998-trackers
 ---
 <h1 class="page-heading">Posts tagged with trackers</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

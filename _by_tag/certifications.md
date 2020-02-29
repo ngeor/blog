@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/certifications/
 title: certifications
 post_count: 1
-sort_index: 00589-certifications
+sort_index: 998-certifications
 ---
 <h1 class="page-heading">Posts tagged with certifications</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

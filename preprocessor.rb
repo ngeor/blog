@@ -23,10 +23,17 @@ def delete_files(dir, exceptions)
 end
 
 class PageInfo
+  # Creates an instance of this class.
+  # title: The title of the tag
+  # post_count: How many posts are tagged with this tag
+  # total_count: The total number of posts
   def initialize(title, post_count, total_count)
     @title = title
     @post_count = post_count
-    @sort_index = "#{format('%05d', total_count - post_count)}-#{title.downcase}"
+    max_len = total_count.to_s.length
+    all_nines = ('9' * max_len).to_i
+    fmt = "%0#{max_len}d" # %05d
+    @sort_index = "#{format(fmt, all_nines - post_count)}-#{title.downcase}"
   end
 
   attr_reader :title
@@ -50,9 +57,12 @@ class PageInfoCollection
                   else
                     1
                   end
-    @total_count += 1
 
     puts "Warning: tag #{value} exists in case variations" if @map.keys.index { |k| k.casecmp?(value) && k != value }
+  end
+
+  def add_post
+    @total_count += 1
   end
 
   def to_s
@@ -72,6 +82,7 @@ class Collector
   attr_reader :tags
 
   def add(front_matter)
+    @tags.add_post
     front_matter['tags']&.each { |t| @tags.add(t) }
   end
 
@@ -110,6 +121,7 @@ end
 
 def main
   posts = collect_posts('_posts')
+  puts "Found #{posts.length} posts"
   collector = Collector.new
   posts.each do |p|
     collector.add(Psych.load_file(p))

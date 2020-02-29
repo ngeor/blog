@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/photos/
 title: photos
 post_count: 1
-sort_index: 00589-photos
+sort_index: 998-photos
 ---
 <h1 class="page-heading">Posts tagged with photos</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

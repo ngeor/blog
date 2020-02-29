@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/graphs/
 title: graphs
 post_count: 1
-sort_index: 00589-graphs
+sort_index: 998-graphs
 ---
 <h1 class="page-heading">Posts tagged with graphs</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

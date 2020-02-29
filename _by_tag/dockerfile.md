@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/dockerfile/
 title: Dockerfile
 post_count: 1
-sort_index: 00589-dockerfile
+sort_index: 998-dockerfile
 ---
 <h1 class="page-heading">Posts tagged with Dockerfile</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

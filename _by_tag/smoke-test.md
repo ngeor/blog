@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/smoke-test/
 title: smoke test
 post_count: 1
-sort_index: 00589-smoke test
+sort_index: 998-smoke test
 ---
 <h1 class="page-heading">Posts tagged with smoke test</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}

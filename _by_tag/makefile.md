@@ -3,7 +3,7 @@ layout: default
 permalink: /archives/tag/makefile/
 title: Makefile
 post_count: 1
-sort_index: 00589-makefile
+sort_index: 998-makefile
 ---
 <h1 class="page-heading">Posts tagged with Makefile</h1>
 {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
