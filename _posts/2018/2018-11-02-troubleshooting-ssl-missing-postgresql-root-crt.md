@@ -7,7 +7,7 @@ tags:
 - java
 - docker
 - PostgreSQL
-- SSL
+- ssl
 - azure
 - troubleshooting
 ---
