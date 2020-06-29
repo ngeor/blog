@@ -3,243 +3,155 @@ layout: page
 title: CV
 ---
 
-Polyglot full stack hands-on architect with 15+ years of working experience.
-Automation, testing, continuous integration, infrastructure as code, microservices.
-
-## Timeline
-
-<div class="timeline">
-  <div class="lane years">
-    <div>1998</div>
-    <div>1999</div>
-    <div>2000</div>
-    <div>2001</div>
-    <div>2002</div>
-    <div>2003</div>
-    <div>2004</div>
-    <div>2005</div>
-    <div>2006</div>
-    <div>2007</div>
-    <div>2008</div>
-    <div>2009</div>
-    <div>2010</div>
-    <div>2011</div>
-    <div>2012</div>
-    <div>2013</div>
-    <div>2014</div>
-    <div>2015</div>
-    <div>2016</div>
-    <div>2017</div>
-    <div>2018</div>
-    <div>2019</div>
-  </div>
-  <div class="lane study">
-    <a href="#education" class="ntua">NTUA</a>
-  </div>
-  <div class="lane work">
-    <a href="#agoranet-sa--junior-software-engineer" class="agoranet">AgoraNet</a>
-    <a href="#erational-sa--software-engineer" class="eraise">eRational</a>
-    <a href="#knowledge--database-systems-laboratory--software-engineer" class="kdbsl">KDBSL</a>
-    <a href="#institute-for-the-management-of-information-systems--software-engineer" class="imis">IMIS</a>
-    <a href="#hinttech--senior-software-engineer" class="hinttech">HintTech</a>
-    <a href="#emakina--senior-software-engineer" class="emakina">Emakina</a>
-    <a href="#bestseller--lead-software-architect" class="bse">Bestseller</a>
-    <a href="#suitsupply--technology-lead" class="suitsupply">Suitsupply</a>
-    <a href="#ubtech--lead-software-architect" class="ubtech">UBTech</a>
-  </div>
-</div>
+Polyglot full-stack software engineer with 15+ years of working experience.
+Automation, testing, continuous delivery, observability.
 
 ## Working Experience
 
-### UBTech / Lead Software Architect
+<ul>
+  <li>
+    <div><strong>Booking.com</strong> – Software Engineer</div>
+    <div>Travel industry</div>
+    <div class="period">December 2019 – Present</div>
+    <div>
+      SRE team member, responsible for the availability of services used by hoteliers.
+      Full-stack developer for several internal tools. Introduced integration testing
+      and ci/cd pipelines. Joined cost-saving initiatives and drove their
+      implementation. Introduced decision documents as a decision framework. Migrated
+      internal tools to Java 11.
+    </div>
+    <div class="keywords">
+      Java, Dropwizard, Python, JavaScript, React, Perl, GitLab, Docker, Kubernetes,
+      Helm, MySQL, Puppet, Ansible, bash.
+    </div>
+  </li>
 
-February 2018 - October 2019
+  <li>
+    <div><strong>UBTech</strong> – Lead Software Architect</div>
+    <div>Logistics</div>
+    <div class="period">February 2018 – October 2019</div>
+    <div>
+      Defined the technology stack and micro-service architecture of a greenfield
+      multi-tenant platfrom. Implemented backend, frontend, ci/cd pipelines, and
+      infrastructure of the platform. Migrated legacy monolith systems to the new
+      platform.
+    </div>
+    <div class="keywords">
+      Java, TypeScript, Python, Maven, Spring Boot, Angular, AWS, Azure, Terraform,
+      Docker, Kubernetes, Helm, Swagger, Kafka, PostgreSQL, CosmosDB, Elasticsearch,
+      Bitbucket Pipelines.
+    </div>
+  </li>
 
-UBTech started as a tiny startup aiming to improve logistics for everyone: end
-consumers, e-commerce shops, carriers. A greenfield project that I was lucky to
-design from scratch. I defined the technology stack and designed a microservice
-architecture, mapping business capabilities to services, enabling developers to
-get onboard fast and deliver results. A small startup brings many
-responsibilities and roles, so I also implemented services in Java and frontend
-in Angular, designed the REST API of the platform, implemented continuous
-delivery pipelines, including Terraform for automated infrastructure and custom
-tooling. In later stages, we took up the challenge of integrating with legacy
-monolithic systems and untangle them in order to deliver one unified
-multi-tenant platform.
+  <li>
+    <div><strong>Suitsupply</strong> – Technology Lead</div>
+    <div>eCommerce</div>
+    <div class="period">September 2017 – January 2018</div>
+    <div>
+      Full-stack developer on the eCommerce platform. Introduced unit testing to
+      frontend developers. Worked on the Kubernetes platform, implementing ci/cd
+      pipelines.
+    </div>
+    <div class="keywords">
+      JavaScript, nodeJS, mocha, Demandware, bash, Docker, Kubernetes, Helm, TeamCity,
+      Bamboo.
+    </div>
+  </li>
 
-AWS, Azure, Terraform, Docker, Kubernetes, Helm, Java / Maven / Spring Boot,
-Angular, Python, Swagger/OpenAPI, Kafka, ElasticSearch, microservices, event
-sourcing, monolith decomposition, multi-tenant platform.
+  <li>
+    <div><strong>Bestseller</strong> – Lead Software Architect</div>
+    <div>eCommerce</div>
+    <div class="period">January 2015 – July 2017</div>
+    <div>
+      Designed and implemented the custom tooling (build suite) that made it possible
+      to have ci/cd in Demandware (Salesforce Commerce Cloud). Lead the implementation
+      of Bestseller’s new eCommerce platform. As technical lead, defined and upheld
+      the code quality standards. As technical product owner, cataloged and
+      prioritized technical debt and technical improvements.
+    </div>
+    <div class="keywords">
+      JavaScript, nodeJS, mocha, Demandware, Java, Maven, Spring Boot, Docker, AWS,
+      Kafka, TeamCity, Bamboo.
+    </div>
+  </li>
 
-[Top]
+  <li>
+    <div><strong>Emakina</strong> – Software Engineer</div>
+    <div>Web agency</div>
+    <div class="period">November 2010 – December 2014</div>
+    <div>
+      Full-stack developer and tech lead for multiple projects of Emakina (Greenpeace,
+      Reed Business Media, Rituals, Men At Work, and more).
+    </div>
+    <div class="keywords">
+      C#, .NET, ASP.NET, JavaScript, EPiServer CMS, Demandware
+    </div>
+  </li>
 
-### Suitsupply / Technology Lead
+  <li>
+    <div><strong>HintTech</strong> – Software Engineer</div>
+    <div>Web agency</div>
+    <div class="period">August 2008 – October 2010</div>
+    <div>
+      Full-stack developer on multiple projects of HintTech (Pluimen, SDL Tridion,
+      JobPlay, and more). Migrated the legacy VB6 core of SDL Tridion to .NET.
+    </div>
+    <div class="keywords">
+      C#, .NET, ASP.NET, IIS, MSSQL, SDL Tridion CMS
+    </div>
+  </li>
 
-September 2017 - January 2018
+  <li>
+    <div><strong>Institute for the Management of Information Systems</strong> – Software Engineer</div>
+    <div class="period">May 2007 – August 2008</div>
+    <div>
+      Implemented custom .NET projects to support actions of the Greek ministry of
+      education.
+    </div>
+    <div class="keywords">C#, .NET, ASP.NET, IIS, MSSQL</div>
+  </li>
 
-Worked with the webshop team in the Salesforce Commerce Cloud (formerly known as
-Demandware) implementation of the storefront. Introduced unit testing in all
-storefront teams. Worked on improving the continuous integration pipeline.
+  <li>
+    <div><strong>Knowledge & Database Systems Laboratory</strong> – Software Engineer</div>
+    <div class="period">March 2005 – May 2007</div>
+    <div>
+      Ported a classic ASP CMS into .NET. Implemented custom .NET solutions to support
+      actions of the Greek ministry of education.
+    </div>
+    <div class="keywords">C#, .NET, ASP.NET, IIS, MSSQL, classic ASP, VB6</div>
+  </li>
 
-Later joined the newly formed platform team, with the purpose of enabling other
-teams to deliver. Implemented new continuous integration pipelines and related
-tooling on Bamboo and TeamCity, with deployments on Kubernetes with Helm.
+  <li>
+    <div><strong>eRational</strong> – Software Engineer</div>
+    <div class="period">2003 – 2004</div>
+    <div>Designed and implemented an e-learning platform.</div>
+    <div class="keywords">Java, JSP, Tomcat, MySQL</div>
+  </li>
 
-[Top]
-
-### BESTSELLER / Lead Software Architect
-
-January 2015 - July 2017
-
-Initially involved with BESTSELLER as external consultant, after BESTSELLER
-moved from Aarhus to Amsterdam, I was offered the role of the architect.
-Demandware development, migration from svn to git, automating manual tasks and
-thinking about systems' responsibilities and what can be done better.
-
-Mid-late 2015, the big rewrite of our websites. As the architect, I was
-responsible for coordinating the project from a technical point of view in every
-phase, from design until implementation. Coached developers about best practices
-not often used in the Demandware ecosystem but also making sure they deliver
-work according to our high standards. Developed the continuous deployment
-pipeline, from writing the code until deploying to production, working around
-inherent limitations of the Demandware platform. Static code analysis, unit
-tests, integration tests, code coverage, all with the new Demandware JavaScript
-controllers engine.
-
-JavaScript, nodeJS, mocha, istanbul, grunt, webdriverIO, ESLint, CI/CD, Jenkins,
-Bamboo Cloud, TeamCity, best practices, mentoring junior/medior developers.
-
-Having successfully lead the technical effort of stabilizing the frontend, I was
-transferred to the backend team to repeat the challenge there. Gave team focus
-and technical guidance to make the right decisions. Created technical roadmap
-and cataloged technical debt for dealing with legacy monolith application.
-Microservices design and CI best practices. Organized hackathon sessions to
-build up team knowledge levels.
-
-Java, Maven, Spring Boot, Docker, AWS Elastic Beanstalk, AWS SNS, AWS SQS,
-Apache Kafka.
-
-[Top]
-
-### Emakina / Senior Software Engineer
-
-November 2011 - December 2014
-
-Worked as a developer and technical lead in multiple CMS and eCommerce projects.
-Clients include: Greenpeace, Reed Business Media (Elsevier), Suitsupply,
-Rituals, AutoNL, Varova fashion, Sundio Group. Main technologies: EPiServer,
-Demandware, .NET. (Note: when I first joined, the company was named Relephant).
-
-[Top]
-
-### HintTech / Senior Software Engineer
-
-August 2008 - November 2011
-
-Worked as a developer in multiple CMS and custom code projects. Main
-technologies: .NET, SDL Tridion CMS. The most interesting project was migrating
-the legacy VB6/COM core of the Tridion CMS into .NET 3.5.
-
-[Top]
-
-### Institute for the Management of Information Systems / Software Engineer
-
-May 2007 - August 2008
-
-Implemented custom .NET projects (ASP.NET, IIS, MSSQL) to support various
-initiatives of the ministry of education (e.g. DesTinPsifiaka, a platform
-offering discounts to students purchasing laptops on the store of their
-selection).
-
-[Top]
-
-### Knowledge & Database Systems Laboratory / Software Engineer
-
-March 2005 - May 2007 (part time)
-
-I worked part time at the Knowledge & Database Systems Laboratory of the
-National Technical University of Athens. We developed a custom CMS solution
-(COMMET: COntent Management MEthodologies and Tools) (classic ASP, ASP.NET, IIS,
-MSSQL). We also implemented and supported COMMET in various projects in the
-university.
-
-Additionally, we implemented custom .NET websites to support various initiatives
-of the ministry of education (e.g. DIODOS - a portal where students could apply
-for cheaper internet).
-
-[Top]
-
-### eRational S.A. / Software Engineer
-
-2003 - 2004
-
-Developed an e-learning platform named eRaise (Java, JSP, MySQL). I worked on
-frontend and backend, including database design.
-
-[Top]
-
-### AgoraNet S.A. / Junior Software Engineer
-
-2000 - 2001
-
-I developed single-handedly for AgoraNet an application called “Ermis” (Hermes).
-It was a VB6/Access desktop application for managing retail clothing shops.
-
-[Top]
+  <li>
+    <div><strong>AgoraNet</strong> – Software Engineer</div>
+    <div class="period">2000 – 2001</div>
+    <div>Implemented a desktop application for small retail clothing shops.</div>
+    <div class="keywords">VB6, Microsoft Access</div>
+  </li>
+</ul>
 
 ## Education
 
-National Technical University of Athens / Electrical and Computer Engineer
-
-1998 - 2004
-
-[Top]
+<ul>
+  <li>
+    <div><strong>National Technical University of Athens</strong></div>
+    <div>Electrical and Computer Engineer</div>
+    <div>1998 – 2004</div>
+  </li>
+</ul>
 
 ## Certifications
 
-<table>
-    <tr>
-        <td>
-            2017
-        </td>
-        <td>
-            AWS Certified Developer - Associate Level
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2016
-        </td>
-        <td>
-            Oracle Certified Associate, Java SE 8 Programmer
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2014
-        </td>
-        <td>
-            Microsoft Certified Solutions Developer - Web Applications
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2013
-        </td>
-        <td>
-            Demandware Developer
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2011
-        </td>
-        <td>
-            MCPD ASP.NET Developer 3.5
-        </td>
-    </tr>
-</table>
+AWS Certified Developer – Associate Level • Oracle Certified Associate – Java SE
+8 Programmer • MSCD – Web Applications • Demandware Developer • MCPD ASP.NET
+Developer 3.5
 
-[Top]
+## Languages
 
-[top]: #timeline
+English, Greek, Dutch
