@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IntelliJ IDEA Live Templates
-date: 2020-03-04 09:37:48
+date: 2020-03-04 09:37:48 +02:00
 tags:
   - IntelliJ IDEA
   - live templates

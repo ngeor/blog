@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning QBasic part 1
-date: 2020-08-08 07:20:58
+date: 2020-08-08 07:20:58 +02:00
 tags:
   - qbasic
 ---

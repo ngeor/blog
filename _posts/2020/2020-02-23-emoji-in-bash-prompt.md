@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Emoji in bash prompt
-date: 2020-02-23 08:08:51
+date: 2020-02-23 08:08:51 +02:00
 tags:
   - bash
   - emoji

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitLab recipes
-date: 2020-02-14 06:12:15
+date: 2020-02-14 06:12:15 +02:00
 tags:
   - GitLab
   - YAML

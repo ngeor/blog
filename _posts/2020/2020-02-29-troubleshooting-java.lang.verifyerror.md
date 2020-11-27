@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Troubleshooting java.lang.VerifyError
-date: 2020-02-29 08:31:56
+date: 2020-02-29 08:31:56 +02:00
 tags:
   - troubleshooting
   - java

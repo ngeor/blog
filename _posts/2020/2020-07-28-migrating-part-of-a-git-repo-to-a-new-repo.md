@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Migrating part of a git repo to a new repo
-date: 2020-07-28 08:07:50
+date: 2020-07-28 08:07:50 +02:00
 tags:
   - git
 ---

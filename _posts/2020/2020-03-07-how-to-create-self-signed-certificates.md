@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to create self-signed certificates
-date: 2020-03-07 04:50:45
+date: 2020-03-07 04:50:45 +02:00
 tags:
   - ssl
   - certificates

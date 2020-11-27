@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dropwizard with Immutables
-date: 2020-10-11 14:19:06
+date: 2020-10-11 14:19:06 +02:00
 tags:
   - java
   - dropwizard

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GW-Basic in Docker
-date: 2020-02-22 06:31:09
+date: 2020-02-22 06:31:09 +02:00
 tags:
   - GW-Basic
   - docker
