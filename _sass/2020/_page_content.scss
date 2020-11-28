@@ -43,8 +43,32 @@ article {
     font-size: 22pt; /* same as h1 but not aligned to the center */
   }
 
+  h3 {
+    font-size: 16pt;
+  }
+
   pre {
     overflow: auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: blue;
+  }
+
+  a:hover {
+    color: red;
+  }
+
+  ul, ol {
+    margin-left: 25px;
+  }
+
+  li {
+    line-height: 35px;
   }
 }
 
