@@ -1,0 +1,71 @@
+/*
+.page-content is the main div element between header and footer
+*/
+.page-content {
+  padding: $margin;
+}
+
+// post-header
+
+.post-header {
+  margin-bottom: $margin;
+
+  .post-title {
+    text-align: center;
+    font-size: 22pt;
+  }
+
+  .post-time {
+    font-size: 14pt;
+    font-style: italic;
+    color: #444;
+  }
+}
+
+/**
+.post-content is the main post content, between the title and the post meta
+*/
+.post-content > * {
+  margin-bottom: $margin;
+}
+
+code,
+code span {
+  font-family: "Source Code Pro", monospace;
+}
+
+article {
+  p {
+    line-height: 35px;
+  }
+
+  h2 {
+    font-size: 22pt; /* same as h1 but not aligned to the center */
+  }
+
+  pre {
+    overflow: auto;
+  }
+}
+
+// post-meta
+.post-meta {
+  margin-bottom: $margin;
+  font-size: 12pt;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+  padding-top: $margin;
+}
+
+.support-banner {
+  margin-bottom: $margin;
+  padding: $margin;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background: #f0f8ff;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+}

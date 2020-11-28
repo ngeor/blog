@@ -5,6 +5,7 @@
       {{- site.description -}}
     </div>
   </div>
+  {%- if page.layout == "home" -%}
   <nav class="pages-nav">
     <ul class="pages-list">
       {%- for my_page in site.pages -%} {%- if my_page.title and
@@ -16,4 +17,5 @@
     </ul>
   </nav>
   {%- include social.html -%}
+  {%- endif -%}
 </header>

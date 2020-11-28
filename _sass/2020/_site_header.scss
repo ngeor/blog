@@ -1,0 +1,25 @@
+.site-header {
+  background: #ccddcc;
+  padding: $margin;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.site-title {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 32pt;
+  font-family: "Source Code Pro", monospace;
+  margin-bottom: $margin;
+}
+
+.site-description {
+  display: block;
+  text-align: center;
+  font-size: 14pt;
+  color: #444;
+}
