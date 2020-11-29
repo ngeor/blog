@@ -1,0 +1,21 @@
+.page__cv-index {
+  ul {
+    @include margin-bottom-children;
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      @include margin-bottom-children;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    .keywords {
+      font-size: smaller;
+    }
+  }
+}
