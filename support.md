@@ -39,14 +39,14 @@ You can use PayPal:
 
 or Bitcoin:
 
-<div class="center">
-  <span class="qr-code">1GryvZFs7Gk7paTeXd9iifgQtEJSFqkGEw</span>
+<div class="qr-code">
+  <div>1GryvZFs7Gk7paTeXd9iifgQtEJSFqkGEw</div>
   <img src="/assets/bitcoin.svg" alt="Bitcoin QR code" />
 </div>
 
 or Ethereum:
 
-<div class="center">
-  <span class="qr-code">0x4f9874ce7a2eddd8630a08dc3f8b49751672bc70</span>
+<div class="qr-code">
+  <div>0x4f9874ce7a2eddd8630a08dc3f8b49751672bc70</div>
   <img src="/assets/ethereum.png" alt="Ethereum QR code" />
 </div>
