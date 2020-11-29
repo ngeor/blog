@@ -1,14 +1,29 @@
 /*
 .page-content is the main div element between header and footer
 */
-.page-content {
+
+@mixin round-box {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
   padding: $margin;
+  border-radius: $margin / 3;
+  box-shadow: 2px 2px #f0f0f0;
+}
+
+.page-content {
+  @include margin-bottom-children;
+}
+
+@media screen and (max-width: 800px) {
+  .page-content {
+    padding: 0 $margin;
+  }
 }
 
 // post-header
 
 .post-header {
-  margin-bottom: $margin;
+  @include margin-bottom-children;
 
   .post-title {
     text-align: center;
@@ -25,8 +40,14 @@
 /**
 .post-content is the main post content, between the title and the post meta
 */
-.post-content > * {
-  margin-bottom: $margin;
+.post-content {
+  @include margin-bottom-children;
+}
+
+// appears on tag pages
+.page-heading {
+  font-size: 22pt;
+  text-align: center;
 }
 
 code,
@@ -36,7 +57,7 @@ code span {
 
 article {
   p {
-    line-height: 35px;
+    line-height: $line-height;
   }
 
   h2 {
@@ -63,22 +84,53 @@ article {
     color: red;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-left: 25px;
   }
 
   li {
-    line-height: 35px;
+    line-height: $line-height;
+  }
+
+  blockquote {
+    font-style: italic;
+    color: #444;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 1px solid #444;
   }
 
   .mermaid {
     text-align: center;
   }
+
+  table {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: smaller;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: $margin / 3;
+    text-align: left;
+  }
+
+  figure {
+    @include margin-bottom-children-except-last;
+    @include round-box;
+  }
+
+  figcaption {
+    font-size: smaller;
+    font-style: italic;
+  }
 }
 
 // post-meta
 .post-meta {
-  margin-bottom: $margin;
   font-size: 12pt;
   box-sizing: border-box;
   border-top: 1px solid #ccc;
@@ -86,7 +138,6 @@ article {
 }
 
 .support-banner {
-  margin-bottom: $margin;
   padding: $margin;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -96,4 +147,35 @@ article {
 .page-navigation {
   display: flex;
   justify-content: space-between;
+
+  .next {
+    text-align: right;
+  }
+}
+
+// .post-list is the list of posts on the home page
+.post-list {
+  list-style: none;
+  @include margin-bottom-children;
+
+  li {
+    line-height: $line-height;
+    @include round-box;
+  }
+
+  @media screen and (min-width: 800px) {
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-meta-header {
+      text-align: right;
+    }
+  }
+
+  .post-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

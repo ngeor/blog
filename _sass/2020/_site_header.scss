@@ -1,6 +1,8 @@
 .site-header {
   background: #ccddcc;
   padding: $margin;
+  margin-bottom: $margin;
+  text-align: center;
 
   ul {
     list-style: none;
@@ -27,8 +29,7 @@
 }
 
 .site-title {
-  display: block;
-  text-align: center;
+  display: inline-block;
   text-decoration: none;
   color: black;
   font-size: 32pt;
@@ -38,7 +39,6 @@
 
 .site-description {
   display: block;
-  text-align: center;
   font-size: 14pt;
   color: #444;
 }
@@ -54,6 +54,7 @@
   overflow: auto;
   box-sizing: border-box;
   border-right: 1px solid #ccc;
+  text-align: left;
 
   label {
     display: inline-block;
@@ -77,16 +78,4 @@
 
 input[type="checkbox"]:checked ~ .pages-list {
   left: 0;
-}
-
-.social-media-list {
-  display: flex;
-
-  span {
-    display: none;
-  }
-  svg {
-    width: 16px;
-    height: 16px;
-  }
 }
