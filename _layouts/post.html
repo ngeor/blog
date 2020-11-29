@@ -25,7 +25,7 @@ layout: default
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 
   {%- if page.series -%}
-  <div class="series-toc">
+  <div class="series-toc-in-post">
     <p>
       {% assign series_page = site.series | where: "title", page.series | first
       %} This article is part of the
@@ -46,7 +46,9 @@ layout: default
       {%- endif -%} {%- endfor -%}
     </ol>
   </div>
-  {%- endif -%} {%- include meta.html -%}
+  {%- endif -%}
+
+  {%- include meta.html -%}
 </article>
 
 <div class="support-banner">

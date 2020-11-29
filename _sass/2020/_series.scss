@@ -1,0 +1,40 @@
+.page__series {
+  ul {
+    @include margin-bottom-children;
+    list-style: none;
+    margin-left: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  img {
+    max-width: 96px;
+    padding-right: $margin / 3;
+  }
+
+  .series-list-header {
+    display: flex;
+    justify-content: space-between;
+
+    time {
+      text-align: right;
+    }
+  }
+}
+
+.series-toc-in-post {
+  margin-bottom: $margin;
+  font-size: smaller;
+}
+
+.series-toc-in-toc > li > * {
+  display: flex;
+  justify-content: space-between;
+
+  > :last-child {
+    text-align: right;
+  }
+}
