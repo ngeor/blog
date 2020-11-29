@@ -11,42 +11,21 @@ F<sub>n-2</sub>.
 
 I made this page with a bit of [MS-DOS](https://en.wikipedia.org/wiki/MS-DOS)
 nostalgia, showing a solution to the Fibonacci quiz in some of my earliest
-programming languages (if you're curious, I have more Fibonacci implementations
-[in this repo](https://github.com/ngeor/Fibonacci)).
+programming languages (if you're curious, I have
+[more Fibonacci implementations](https://github.com/ngeor/kamino/tree/trunk/fibonacci)).
 
 Click on a screenshot to see the solution:
 
-<div class="selector">
-  <ul>
+  <ul class="selector">
     <li>
-      <a href="#" class="selector" title="GW-Basic" data-rel="gwbasic">
+      <input type="checkbox" id="gwbasic" />
+      <label for="gwbasic" class="selector" title="GW-Basic">
         <figure>
           <img alt="GW-Basic" src="/assets/fibonacci/gwbasic.png">
           <figcaption>GW-Basic</figcaption>
         </figure>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="selector" title="QBasic" data-rel="qbasic">
-        <figure>
-          <img alt="QBasic" src="/assets/fibonacci/qbasic.png">
-          <figcaption>QBasic</figcaption>
-        </figure>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="selector" title="Turbo Pascal" data-rel="pascal">
-        <figure>
-          <img alt="Turbo Pascal" src="/assets/fibonacci/pascal.png">
-          <figcaption>Turbo Pascal</figcaption>
-        </figure>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<div id="gwbasic" class="code">
-<div markdown="1">
+      </label>
+      <div markdown="1" class="code">
 
 ```
 10 PRINT "Enter N to calculate fibonacci"
@@ -77,11 +56,16 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GW-BASIC):
 > First appeared: 1983
 
 </div>
-
-</div>
-
-<div id="qbasic" class="code">
-<div markdown="1">
+    </li>
+    <li>
+      <input type="checkbox" id="qbasic" />
+      <label for="qbasic" class="selector" title="QBasic">
+        <figure>
+          <img alt="QBasic" src="/assets/fibonacci/qbasic.png">
+          <figcaption>QBasic</figcaption>
+        </figure>
+      </label>
+<div markdown="1" class="code">
 
 ```vb
 DECLARE FUNCTION Fib! (N!)
@@ -115,11 +99,16 @@ From [Wikipedia](https://en.wikipedia.org/wiki/QBasic):
 > First appeared: 1991
 
 </div>
-
-</div>
-
-<div id="pascal" class="code">
-<div markdown="1">
+    </li>
+    <li>
+      <input type="checkbox" id="pascal" />
+      <label for="pascal" class="selector" title="Turbo Pascal">
+        <figure>
+          <img alt="Turbo Pascal" src="/assets/fibonacci/pascal.png">
+          <figcaption>Turbo Pascal</figcaption>
+        </figure>
+      </label>
+<div markdown="1" class="code">
 
 ```pascal
 program Fibonacci;
@@ -160,4 +149,5 @@ I used Turbo Pascal 6, which was released in 1990 (according to
 
 </div>
 
-</div>
+  </li>
+</ul>

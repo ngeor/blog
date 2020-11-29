@@ -13,46 +13,6 @@
     }
   }
 
-  function forEach(selector, fn) {
-    const nodes = document.querySelectorAll(selector);
-    for (let i = 0; i < nodes.length; i++) {
-      const node = nodes[i];
-      fn(node);
-    }
-  }
-
-  /**
-   * js module for /fibonacci
-   */
-  const fibonacciModule = {
-    /**
-     * Module will only run if an element can be found using this selector.
-     */
-    selector: 'article[data-file="fibonacci"]',
-
-    hideAllCodeBlocks: function () {
-      forEach('div.code', function(el) {
-        el.classList.add('hide');
-      });
-    },
-
-    /**
-     * Main method of the module.
-     */
-    main: function () {
-      const that = this;
-      this.hideAllCodeBlocks();
-
-      forEach('a.selector', function(el) {
-        addEventListener(el, 'click', function (e) {
-          e.preventDefault();
-          that.hideAllCodeBlocks();
-          document.getElementById(e.currentTarget.getAttribute('data-rel')).classList.remove('hide');
-        });
-      });
-    }
-  };
-
   const cookiesModule = {
     // so that it runs on every page
     selector: 'body',
@@ -100,8 +60,7 @@
 
   function main() {
     const modules = [
-      cookiesModule,
-      fibonacciModule
+      cookiesModule
     ];
 
     for (let i = 0; i < modules.length; i++) {
