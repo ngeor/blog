@@ -1,0 +1,128 @@
+@mixin comment {
+  color: darkgreen;
+  font-style: italic;
+}
+
+@mixin keyword {
+  color: navy;
+  font-weight: bold;
+}
+
+@mixin string-literal {
+  color: gray;
+}
+
+.highlight {
+  .c,
+  .c1 {
+    @include comment;
+  }
+
+  .s,
+  .s2 {
+    @include string-literal;
+  }
+
+  .k,
+  .ow {
+    @include keyword;
+  }
+}
+
+.language-java {
+  .nd {
+    color: darkcyan;
+  }
+
+  // trying to style @Value.Immutable
+  .nd + .o + .na {
+    color: darkcyan;
+  }
+
+  .kd,
+  .kt,
+  .k,
+  .kn {
+    @include keyword;
+  }
+
+  .nc {
+    color: darkcyan;
+  }
+}
+
+.language-html,
+.language-xml {
+  .nt {
+    color: maroon;
+  }
+
+  .na {
+    color: red;
+  }
+
+  .s {
+    color: blue;
+  }
+}
+
+.language-sh {
+  .nv {
+    color: navy;
+  }
+
+  .nt {
+    color: maroon;
+  }
+
+  .k {
+    @include keyword;
+  }
+}
+
+.language-yml {
+  .na {
+    color: maroon;
+  }
+
+  .s,
+  .s2 {
+    color: blue;
+  }
+
+  .no {
+    color: red;
+  }
+}
+
+.language-groovy {
+  .k,
+  .kn {
+    @include keyword;
+  }
+}
+
+.language-python {
+  .kn {
+    @include keyword;
+  }
+}
+
+.language-pascal {
+  .kt {
+    @include keyword;
+  }
+}
+
+.language-javascript,
+.language-js {
+  .kd {
+    @include keyword;
+  }
+}
+
+.language-cs {
+  .nc {
+    color: darkcyan;
+  }
+}
