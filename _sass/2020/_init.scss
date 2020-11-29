@@ -1,5 +1,4 @@
 $margin: 30px;
-$line-height: 35px;
 
 * {
   font-family: "Merriweather", Candara, Georgia, serif;
@@ -16,11 +15,19 @@ body {
 .body is the main container in the page, child of <body>
 */
 
+@mixin normal-font-size {
+  font-size: 16pt;
+
+  @media screen and (max-width: 800px) {
+    font-size: 12pt;
+  }
+}
+
 .body {
   max-width: 800px;
   margin: 0 auto;
-  font-size: 16pt;
   background: #fff;
+  @include normal-font-size;
 }
 
 // links

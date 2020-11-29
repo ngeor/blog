@@ -10,6 +10,15 @@
   box-shadow: 2px 2px #f0f0f0;
 }
 
+@mixin line-height {
+  line-height: 35px;
+
+  @media screen and (max-width: 800px) {
+    line-height: 25px;
+  }
+
+}
+
 .page-content {
   @include margin-bottom-children;
 }
@@ -56,8 +65,8 @@ code span {
 }
 
 article {
-  p {
-    line-height: $line-height;
+  p, li {
+    @include line-height;
   }
 
   h2 {
@@ -89,10 +98,6 @@ article {
   ul,
   ol {
     margin-left: 25px;
-  }
-
-  li {
-    line-height: $line-height;
   }
 
   blockquote {
@@ -162,7 +167,6 @@ article {
   @include margin-bottom-children;
 
   li {
-    line-height: $line-height;
     @include round-box;
   }
 
