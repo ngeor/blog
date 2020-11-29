@@ -1,19 +1,27 @@
 <header class="site-header">
-  <div class="site-title-wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    <div class="site-description">
-      {{- site.description -}}
-    </div>
+  <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  <div class="site-description">
+    {{- site.description -}}
   </div>
-  <nav class="pages-nav">
-    <ul class="pages-list">
-      {%- for my_page in site.pages -%} {%- if my_page.title and
-        my_page.hidden != true -%}
-      <li>
-        <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-      </li>
-      {%- endif -%} {%- endfor -%}
-    </ul>
-  </nav>
-  {%- include social.html -%}
+  <input type="checkbox" id="burger" />
+  <label class="burger" for="burger">
+    <img src="/assets/burger.svg" alt="Burger menu" />
+  </label>
+  <ul class="pages-list">
+    <li>
+      <label for="burger">
+        <img src="/assets/close.svg" alt="Close menu" />
+      </label>
+    </li>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    {%- for my_page in site.pages -%}
+    {%- if my_page.title and my_page.hidden != true -%}
+    <li>
+      <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+    </li>
+    {%- endif -%}
+    {%- endfor -%}
+  </ul>
 </header>

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article data-file="{{ page.path | replace: '.md', '' | replace: '/', '-' }}" class="page">
+<article data-file="{{ page.path | replace: '.md', '' | replace: '/', '-' }}" class="page page__{{ page.path | replace: '.md', '' | replace: '/', '-' }}">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>

@@ -17,7 +17,7 @@ With a bit googling, I found a nice trick that lets you
 log4net in 'debug' mode</a>. You have to set the appSetting
 log4net.Internal.Debug to true:
 
-```
+```xml
 <appSettings>
     <add key="log4net.Internal.Debug" value="true" />
 </appSettings>
@@ -31,7 +31,7 @@ don't know and I don't care.
 All I really want is to receive an e-mail when my app logs an error. That's it.
 So I put together a small custom appender that does just exactly what I want:
 
-```
+```cs
 public class SmtpAppenderThatWorks : AppenderSkeleton
 {
     public string To { get; set; }
@@ -64,7 +64,7 @@ article on CodeProject</a> as a guide to write the appender.
 
 The configuration looks like this:
 
-```
+```xml
 <appender name="SmtpAppender" type="Test.SmtpAppenderThatWorks">
     <layout type="log4net.Layout.PatternLayout">
         <conversionPattern value="%newline%date [%thread] %-5level %logger - %message%newline%newline%newline" />

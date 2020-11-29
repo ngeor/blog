@@ -1,0 +1,49 @@
+$margin: 30px;
+$line-height: 35px;
+
+* {
+  font-family: "Merriweather", Candara, Georgia, serif;
+  // 'Open Sans', sans-serif
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+/*
+.body is the main container in the page, child of <body>
+*/
+
+.body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16pt;
+  background: #fff;
+}
+
+// links
+a {
+  color: black;
+}
+
+a:hover {
+  color: #666;
+}
+
+@mixin margin-bottom-children {
+  > * {
+    margin-bottom: $margin;
+  }
+}
+
+@mixin margin-bottom-children-except-last {
+  > * {
+    margin-bottom: $margin;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

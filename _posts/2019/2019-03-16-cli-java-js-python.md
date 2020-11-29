@@ -282,7 +282,7 @@ json.loads('{"hello":"world"}')
 
 Java 11 has a
 [new HTTP Client](https://openjdk.java.net/groups/net/httpclient/intro.html). I
-didn't even know about it until 5 minutes ago. I have it a try and it works on
+didn't even know about it until 5 minutes ago. I gave it a try and it works on
 my machine:
 
 ```java

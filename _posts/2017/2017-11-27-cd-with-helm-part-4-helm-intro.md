@@ -16,7 +16,8 @@ In the previous post we had a first look at Kubernetes and deployed our hello wo
 <!--more-->
 
 Let's start with the deployment we created last time. We had created it with the command <code>kubectl run</code>. The equivalent YAML file for Kubernetes looks like this:
-```
+
+```yml
 apiVersion: extensions/v1beta1
 kind: Deployment
 spec:
