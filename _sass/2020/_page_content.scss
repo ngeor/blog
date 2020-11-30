@@ -11,18 +11,14 @@
 }
 
 @mixin line-height {
-  line-height: 35px;
-
-  @media screen and (max-width: 800px) {
-    line-height: 25px;
-  }
+  line-height: 1.4;
 }
 
 .page-content {
   @include margin-bottom-children;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $desktop) {
   .page-content {
     padding: 0 $margin;
   }
@@ -168,9 +164,13 @@ article {
 
   li {
     @include round-box;
+
+    p {
+      @include line-height;
+    }
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: $desktop) {
     .post-header {
       display: flex;
       justify-content: space-between;
