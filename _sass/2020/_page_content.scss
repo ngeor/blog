@@ -65,6 +65,10 @@ article {
     @include line-height;
   }
 
+  li {
+    margin-bottom: $margin / 3;
+  }
+
   h2 {
     font-size: 22pt; /* same as h1 but not aligned to the center */
   }
