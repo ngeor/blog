@@ -733,9 +733,6 @@ As a lot of our temporary filenames (`STDIN.TXT`, `ENVS.BAT`, `STDOUT.TXT`,
 `PROGRAM.BAS`) are unique, concurrent requests are probably something that this
 setup won't be great at.
 
-The code for this post is available
-[here](https://github.com/ngeor/dockerfiles/tree/2020-02-22/gwbasic).
-
 ## Let's write some BASIC!
 
 Now that everything is in place, let's see what we can do.

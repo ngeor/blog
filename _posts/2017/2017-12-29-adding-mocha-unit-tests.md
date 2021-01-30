@@ -45,7 +45,7 @@ Note that the first one works with simply <code>npm test</code> but the second o
 
 <strong>Adding the first test</strong>
 
-The entire code base consists of a single file, <code>index.js</code>. I'll add a unit test in <code>./test/unit-specs/index.js</code> and I'll unit test the feature provided by the <a href="{{ site.baseurl }}/2017/12/29/waiting-for-the-correct-version-after-deployment.html">version endpoint</a>. You can see the unit test <a href="https://github.com/ngeor/blog-helm/blob/v2.2.2/test/unit-specs/index.js">here</a>.
+The entire code base consists of a single file, <code>index.js</code>. I'll add a unit test in <code>./test/unit-specs/index.js</code> and I'll unit test the feature provided by the <a href="{{ site.baseurl }}/2017/12/29/waiting-for-the-correct-version-after-deployment.html">version endpoint</a>. You can see the unit test <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/test/unit-specs/index.js">here</a>.
 
 <strong>TeamCity</strong>
 

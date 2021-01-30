@@ -115,4 +115,4 @@ Notice the executions here. The prepare-agent and report goals are automatically
 
 JaCoCo also supports breaking the build with the check goal. You can define in the check goal the thresholds that the code must meet (e.g. 60% code coverage). If you don't have TeamCity and additionally you're dealing with a brand new project, this could be an option. Set a very high threshold upfront and stick with it.
 
-I have a sample pom configured with a separate profile for Travis. It's unlikely there's a real life use case for supporting two CIs in the same pom, but you can see it <a href="https://github.com/ngeor/zfs-snapshot-trimmer/blob/master/pom.xml" target="_blank">here</a>. It's more useful as a reference to compare the different ways of configuring JaCoCo in the pom.
+I have a sample pom configured with a separate profile for Travis. It's unlikely there's a real life use case for supporting two CIs in the same pom. It's more useful as a reference to compare the different ways of configuring JaCoCo in the pom.

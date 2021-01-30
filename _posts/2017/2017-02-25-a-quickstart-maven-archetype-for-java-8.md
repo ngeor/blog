@@ -51,7 +51,7 @@ mvn archetype:generate -DgroupId=com.mycompany.myapp \
     -DinteractiveMode=false
 ```
 
-This is it. The archetype is <a href="https://github.com/ngeor/archetype-quickstart-jdk8" target="_blank">available in github</a> so you can also use it if you like it.
+This is it. The archetype is <a href="https://github.com/ngeor/kamino/tree/trunk/archetype-quickstart-jdk8" target="_blank">available in github</a> so you can also use it if you like it.
 
 Other things a future version (or a different archetype) could include:
 <ul>

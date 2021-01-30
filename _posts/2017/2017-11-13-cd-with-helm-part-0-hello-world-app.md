@@ -38,7 +38,7 @@ app.listen(
   () => console.log('Example app listening on port 3000!'));
 ```
 
-This gives us a blank application that listens to port 3000 and prints "Hello World!" <a href="https://github.com/ngeor/blog-helm/tree/8efb8a2a74f57b1173a45ae56e371787da6787e4" target="_blank">(browse code)</a>.
+This gives us a blank application that listens to port 3000 and prints "Hello World!" <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">(browse code)</a>.
 
 I would also like to add some linting with ESLint. The reason for that is to demonstrate later the difference between dependencies and devDependencies and how this affects the build pipeline.
 
@@ -67,7 +67,7 @@ But we can also define an npm script in <code>package.json</code>:
     "lint": "eslint .",
 ```
 
-This allows us to run the linter in this way <a href="https://github.com/ngeor/blog-helm/tree/f70b80c791167a2eef1c542951a00753b48a1671" target="_blank">(browse code)</a>:
+This allows us to run the linter in this way <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">(browse code)</a>:
 
 ```
 npm run lint

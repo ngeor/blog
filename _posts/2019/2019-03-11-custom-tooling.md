@@ -67,22 +67,22 @@ Includes images regarding:
 - Generate diagrams out of swagger definitions and publish them to Confluence
   Cloud
 
-[archetype-quickstart-jdk8]: https://github.com/ngeor/archetype-quickstart-jdk8
-[checkstyle-rules]: https://github.com/ngeor/checkstyle-rules
-[clone-all]: https://github.com/ngeor/clone-all
-[dirloop]: https://github.com/ngeor/dirloop
-[dockerfiles]: https://github.com/ngeor/dockerfiles
-[generator-csharp-cli-app]: https://github.com/ngeor/generator-csharp-cli-app
-[generator-csharp-nuget-lib]: https://github.com/ngeor/generator-csharp-nuget-lib
-[generator-nodejs]: https://github.com/ngeor/generator-nodejs
-[instarepo]: https://github.com/ngeor/instarepo
-[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/yak4j-bitbucket-maven-plugin
-[yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/yak4j-filename-conventions-maven-plugin
-[yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/yak4j-json-yaml-converter-maven-plugin
-[yak4j-spring-test-utils]: https://github.com/ngeor/yak4j-spring-test-utils
-[yak4j-swagger-maven-plugin]: https://github.com/ngeor/yak4j-swagger-maven-plugin
-[yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/yak4j-sync-archetype-maven-plugin
-[yak4j-utc-time-zone-mapper]: https://github.com/ngeor/yak4j-utc-time-zone-mapper
-[yak4j-xml]: https://github.com/ngeor/yak4j-xml
-[yart]: https://github.com/ngeor/yart
+[archetype-quickstart-jdk8]: https://github.com/ngeor/kamino/tree/trunk/archetype-quickstart-jdk8
+[checkstyle-rules]: https://github.com/ngeor/kamino/tree/trunk/checkstyle-rules
+[clone-all]: https://github.com/ngeor/kamino/tree/trunk/clone-all
+[dirloop]: https://github.com/ngeor/kamino/tree/trunk/dirloop
+[dockerfiles]: https://github.com/ngeor/kamino/tree/trunk/dockerfiles
+[generator-csharp-cli-app]: https://github.com/ngeor/kamino/tree/trunk/generator-csharp-cli-app
+[generator-csharp-nuget-lib]: https://github.com/ngeor/kamino/tree/trunk/generator-csharp-nuget-lib
+[generator-nodejs]: https://github.com/ngeor/kamino/tree/trunk/generator-nodejs
+[instarepo]: https://github.com/ngeor/kamino/tree/trunk/instarepo
+[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-bitbucket-maven-plugin
+[yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-filename-conventions-maven-plugin
+[yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-json-yaml-converter-maven-plugin
+[yak4j-spring-test-utils]: https://github.com/ngeor/kamino/tree/trunk/yak4j-spring-test-utils
+[yak4j-swagger-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-swagger-maven-plugin
+[yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-sync-archetype-maven-plugin
+[yak4j-utc-time-zone-mapper]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-utc-time-zone-mapper
+[yak4j-xml]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-xml
+[yart]: https://github.com/ngeor/kamino/tree/trunk/yart
 [yak shaving]: https://en.wiktionary.org/wiki/yak_shaving

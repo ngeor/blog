@@ -12,7 +12,7 @@ In this post, I'll show how to setup TeamCity so that your project's build confi
 
 <!--more-->
 
-I'm going to use the <a href="https://github.com/ngeor/blog-helm">blog-helm</a> project that I had configured in the <a href="{{ site.baseurl }}/cd-with-helm.html">CD with Helm series</a>. In TeamCity, the project had two build configurations:
+I'm going to use the <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm">blog-helm</a> project that I had configured in the <a href="{{ site.baseurl }}/cd-with-helm.html">CD with Helm series</a>. In TeamCity, the project had two build configurations:
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/25/08_20_48-projects-e28094-teamcity.png" /><figcaption>Project with two build configurations</figcaption></figure>
 

@@ -113,6 +113,6 @@ After I fix this linting issue, I get a green build:
 
 <img src="{{ site.baseurl }}/assets/2017/teamcity-pass.png" />
 
-The <a href="https://github.com/ngeor/blog-helm" target="_blank">code is available on GitHub</a> and you can browse the progress so far <a href="https://github.com/ngeor/blog-helm/tree/0a918f0e3e74a3d6b9cd1205a70f7dd10a822e4f" target="_blank">here</a>.
+The <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">code is available on GitHub</a>.
 
 On the next post, we'll have a look at creating a Helm chart for this project.

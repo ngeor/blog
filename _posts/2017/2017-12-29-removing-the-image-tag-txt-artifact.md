@@ -16,4 +16,4 @@ After the post <a href="{{ site.baseurl }}/2017/12/20/one-script-to-version-all.
 
 In a more recent post, I've configured a <a href="{{ site.baseurl }}/2017/12/27/build-chains-in-teamcity.html">build chain</a> in TeamCity, in which all build configurations share the build number of the Commit Stage. This means that all build configurations have the correct image tag information implicitly, as their build number. This makes the <code>image-tag.txt</code> artifact <strong>obsolete</strong>.
 
-I have therefore removed the <code>image-tag.txt</code> artifact and I'm using the implicit configuration parameter <code>%build.number%</code> wherever I need it. The pull request is available <a href="https://github.com/ngeor/blog-helm/pull/8/files">here</a>.
+I have therefore removed the <code>image-tag.txt</code> artifact and I'm using the implicit configuration parameter <code>%build.number%</code> wherever I need it.

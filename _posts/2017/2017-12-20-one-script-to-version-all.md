@@ -15,7 +15,7 @@ This is just a fun hacking post. I put together a script that is able to handle 
 
 <!--more-->
 
-The script is a bit large at exactly 100 lines of bash so I'll just link to it <a href="https://github.com/ngeor/blog-helm/blob/v1.3.0/ci-scripts/version.sh" target="_blank" rel="noopener">here</a>.
+The script is a bit large at exactly 100 lines of bash so I'll just link to it <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/ci-scripts/version.sh" target="_blank" rel="noopener">here</a>.
 
 You can see here the 4 different ways it can be used to generate a version:
 

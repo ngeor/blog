@@ -194,16 +194,16 @@ script which will push the tag (e.g. `git push --follow-tags`)
 
 #### Bumping version with yart
 
-[yart](https://github.com/ngeor/yart) tries to mimic `npm version`, but for
+[yart](https://github.com/ngeor/kamino/tree/trunk/yart) tries to mimic `npm version`, but for
 Maven projects.
 
 ### Automatic workflow (deploy on master)
 
 #### Tagging master with Maven
 
-[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/yak4j-bitbucket-maven-plugin)
+[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/kamino/tree/trunk/java/yak4j-bitbucket-maven-plugin)
 supports Maven projects. It breaks the build if the tag already exists and it is
 able to push a tag to Bitbucket after a successful green build on master.
 
-[clone-all]: https://github.com/ngeor/clone-all
-[dirloop]: https://github.com/ngeor/dirloop
+[clone-all]: https://github.com/ngeor/kamino/tree/trunk/clone-all
+[dirloop]: https://github.com/ngeor/kamino/tree/trunk/dirloop

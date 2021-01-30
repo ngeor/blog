@@ -68,7 +68,7 @@ GitVersion easier, because it has less commits to traverse in order to evaluate
 the version.
 
 Let's do some hands on work. I'll modify
-<a href="https://github.com/ngeor/blog-helm" target="_blank">blog-helm</a>, the
+<a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">blog-helm</a>, the
 project I used in the
 <a href="{{ site.baseurl }}/cd-with-helm.html" target="_blank">CD with Helm
 series</a>, to use GitVersion. First, in order to install GitVersion you can use

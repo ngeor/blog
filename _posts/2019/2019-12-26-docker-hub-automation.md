@@ -8,13 +8,13 @@ tags:
   - automation
 ---
 
-I have [a git repository](https://github.com/ngeor/dockerfiles) that contains
+I have [a git repository](https://github.com/ngeor/kamino/tree/trunk/dockerfiles) that contains
 various Docker files. I hacked a script that builds and pushes the images (which
 is straightforward enough) but also updates the description of the images on
 Docker Hub.
 
 The build script is
-[here](https://github.com/ngeor/dockerfiles/blob/master/build.pl). Side note:
+[here](https://github.com/ngeor/kamino/blob/trunk/dockerfiles/build.pl). Side note:
 I'm playing a bit with Perl currently. In the words of Bjarne Stroustrup: "There
 are only two kinds of languages: the ones people complain about and the ones
 nobody uses.". End of side note. The structure of my repository is simple. Each

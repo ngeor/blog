@@ -12,7 +12,7 @@ tags:
 ---
 > **Update 2018-11-24:** I've put together a maven plugin that can also publish
 > git tags in Bitbucket Cloud, plus it checks there are no gaps in a semver
-> sequence. It's available [here](https://github.com/ngeor/yak4j-bitbucket-maven-plugin).
+> sequence. It's available [here](https://github.com/ngeor/kamino/tree/trunk/java/yak4j-bitbucket-maven-plugin).
 
 I wrote a small script today that I wanted to share. It runs for Maven builds in
 Bitbucket Pipelines and it creates a new git tag based on the version in the

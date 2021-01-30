@@ -69,7 +69,7 @@ It's a good idea to commit this script in our source code, so that we don't have
 
 We'll need to <strong>share this unique version with the next steps</strong> of the build but also with the deployment stage (which we haven't seen yet). For the deployment stage, we can write the image tag in a small text file and publish it as an artifact. For the commit stage, it's possible to create an environment variable from within a build step. Each build server does this differently, e.g. Bamboo has a "Inject Variables" build step and Jenkins has something similar. TeamCity, which I'm using in this example, supports some special <code>echo</code> message during the build.
 
-The final script looks like this (<a href="https://github.com/ngeor/blog-helm/tree/f36bb849a9a3d5dce87a4a397c75d48dc67fa217" target="_blank">browse code at this point</a>):
+The final script looks like this (<a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">browse code at this point</a>):
 
 ```bash
 #!/bin/sh
