@@ -147,7 +147,7 @@ Having solved the boring part, this is how I have configured Swagger for service
 
 Points of interest:
 <ul>
-<li>this is an additional execution of the Swagger code generation plugin, which generates the client code that calls service B. Service A already has its own swagger code generation which generates the server code (you can see it in <a href="{{ site.baseurl }}/2018/04/21/using-swagger-code-generator-with-maven.html">a previous post</a>).</li>
+<li>this is an additional execution of the Swagger code generation plugin, which generates the client code that calls service B. Service A already has its own swagger code generation which generates the server code (you can see it in <a href="{% post_url 2018/2018-04-21-using-swagger-code-generator-with-maven %}">a previous post</a>).</li>
 <li>
 
 the Swagger definition <code>client-b.yml</code> is copy pasted (gasp!) from service B. If service B introduces a new operation or a new field, it won't be available until service A updates itself. If service B introduces a new mandatory field, service A will break. There are various ways to ensure the services don't break. For example, you can introduce mandatory fields in phases: phase 1, the field is introduced as optional. When all clients have upgraded, phase 2, change the field into mandatory. On a side note about backwards compatible changes, my VB6 apps (the exe files) still run in Windows 10.

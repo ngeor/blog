@@ -16,7 +16,7 @@ With Docker, we can package our application in a Docker image and we have the as
 
 <!--more-->
 
-<strong>Update 2018-08-26</strong> See also <a href="{{ site.baseurl }}/2018/08/26/dockerize-the-build-plan-v2-0.html">Dockerize the build plan v2.0</a>
+<strong>Update 2018-08-26</strong> See also <a href="{% post_url 2018/2018-08-26-dockerize-the-build-plan-v2-0 %}">Dockerize the build plan v2.0</a>
 
 To do that, we'll need to write a separate <code>Dockerfile</code>. Let's call it <code>Dockerfile-ci</code>. It looks similar to the main <code>Dockerfile</code> at first:
 

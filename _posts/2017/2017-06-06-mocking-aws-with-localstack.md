@@ -19,7 +19,7 @@ Developers are sometimes reluctant to get on board. Why choose DynamoDB when the
 
 The main argument is that these services are managed, which means they are, well, managed by Amazon. You can't get a local copy of SQS and play with it on your computer. You need an AWS account, billing is involved, etc. Also, it's proprietary, and developers tend to favor open source technologies instead.
 
-It's all fine, but there is one factor missing out of this equation: OPS. I've wrote about this <a href="{{ site.baseurl }}/2016/11/20/worked-fine-in-dev-ops-problem-now.html">before</a> and I'm hardly being original by saying that developers often disregard the operational part of the solution. In other words, developers often forget about production and leave it for OPS to sort out.
+It's all fine, but there is one factor missing out of this equation: OPS. I've wrote about this <a href="{% post_url 2016/2016-11-20-worked-fine-in-dev-ops-problem-now %}">before</a> and I'm hardly being original by saying that developers often disregard the operational part of the solution. In other words, developers often forget about production and leave it for OPS to sort out.
 
 AWS guarantees a certain availability (I don't remember how many nines). What kind of uptime do your OPS guarantee? Is it even measured? Is there an internal SLA? How stable is your OPS team? How skilled are they? etc What I'm trying to say is, with no disrespect to your OPS team, AWS is probably better. You should be solving the problems of your business and not trying to implement infrastructure at scale (unless of course that is your business).
 

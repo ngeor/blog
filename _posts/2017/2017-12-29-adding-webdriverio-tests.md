@@ -105,7 +105,7 @@ docker run \
     npm run wdio -- -b %app.baseurl%
 ```
 
-Notice that I'm passing the base URL I configured in the <a href="{{ site.baseurl }}/2017/12/29/waiting-for-the-correct-version-after-deployment.html">previous post</a> in the %app.baseurl% configuration parameter. This way the tests run against the correct environment.
+Notice that I'm passing the base URL I configured in the <a href="{% post_url 2017/2017-12-29-waiting-for-the-correct-version-after-deployment %}">previous post</a> in the %app.baseurl% configuration parameter. This way the tests run against the correct environment.
 
 <strong>PhantomJS problems with Alpine</strong>
 

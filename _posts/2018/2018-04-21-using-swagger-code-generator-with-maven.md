@@ -10,7 +10,7 @@ tags:
 - swagger
 ---
 
-Following up the <a href="{{ site.baseurl }}/2018/04/15/building-a-rest-api-with-swagger-and-spring-boot.html">previous post about swagger</a>, in this post I'm using the maven plugin version of swagger code generator.
+Following up the <a href="{% post_url 2018/2018-04-15-building-a-rest-api-with-swagger-and-spring-boot %}">previous post about swagger</a>, in this post I'm using the maven plugin version of swagger code generator.
 
 <!--more-->
 

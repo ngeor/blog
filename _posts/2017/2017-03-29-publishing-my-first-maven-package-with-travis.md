@@ -10,7 +10,7 @@ tags:
 - travis
 ---
 
-A little bit more than a month ago, I created an <a href="{{ site.baseurl }}/2017/02/25/a-quickstart-maven-archetype-for-java-8.html">improved Maven archetype project</a>. Similar to the default quickstart archetype, but for Java 8 and with recent jUnit dependency. In order for someone to use it, they'd have to clone the repo, as I had not published it in Maven. After a bit of studying, I figured out what is needed to make the package public. More importantly, I implemented the process in Travis, so that a new version gets published automatically.
+A little bit more than a month ago, I created an <a href="{% post_url 2017/2017-02-25-a-quickstart-maven-archetype-for-java-8 %}">improved Maven archetype project</a>. Similar to the default quickstart archetype, but for Java 8 and with recent jUnit dependency. In order for someone to use it, they'd have to clone the repo, as I had not published it in Maven. After a bit of studying, I figured out what is needed to make the package public. More importantly, I implemented the process in Travis, so that a new version gets published automatically.
 
 <!--more-->
 
@@ -72,4 +72,4 @@ Compared with npm and NuGet, this is a very difficult process. What I expect fro
 
 I hope they start looking at what other platforms are doing and improve this experience, as well as their Nexus UI which could use a makeover.
 
-One last bit left: <strong>celebrate</strong>! Celebrate that our new package is there for the whole world to use! And what better way to celebrate than to add a <a href="{{ site.baseurl }}/2016/03/05/github-badges.html">badge</a> to your repository's README to show off the maven package and its version! That's done with this nice <a href="https://github.com/jirutka/maven-badges" target="_blank">project that makes maven badges</a>.
+One last bit left: <strong>celebrate</strong>! Celebrate that our new package is there for the whole world to use! And what better way to celebrate than to add a <a href="{% post_url 2016/2016-03-05-github-badges %}">badge</a> to your repository's README to show off the maven package and its version! That's done with this nice <a href="https://github.com/jirutka/maven-badges" target="_blank">project that makes maven badges</a>.

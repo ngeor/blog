@@ -10,7 +10,7 @@ tags:
 ---
 
 In a previous post, we saw
-<a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html" target="_blank">how
+<a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}" target="_blank">how
 to dockerize the build plan</a> of an application. Typically, you'll want the
 build to run tasks like linting and unit tests, and then publish the results of
 these operations as XML reports that the build server can consume and present in
@@ -26,7 +26,7 @@ not running as root (hopefully) and won't be able to delete these reports when
 it needs to cleanup (e.g. in order to run the next build in a clean workspace).
 
 The easiest approach is what we did in the post about
-<a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html" target="_blank">dockerizing
+<a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}" target="_blank">dockerizing
 the build plan</a>, simply run the chown command after we use the image, to make
 sure permissions are back to normal.
 

@@ -54,7 +54,7 @@ With this in place, I need to add two new build steps:
 <li>After the registry is no longer required, I'd like to be logged out. This is an extra step that will run <code>docker logout %docker.server%</code>.</li>
 </ul>
 
-Since I have my <a href="{{ site.baseurl }}/2017/12/25/build-configurations-as-code-with-teamcity.html">build pipeline in code</a>, I can inject these steps easily wherever I need:
+Since I have my <a href="{% post_url 2017/2017-12-25-build-configurations-as-code-with-teamcity %}">build pipeline in code</a>, I can inject these steps easily wherever I need:
 
 ```
         script {
@@ -107,7 +107,7 @@ With this in place, I'm able to publish the images to AWS ECR:
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/30/13_40_19-amazon-ecs.png" /><figcaption>CI Image (blog-helm-ci)</figcaption></figure>
 
-You can see that the production image is much smaller than the ci image, because the latter contains dev dependencies and <a href="{{ site.baseurl }}/2017/12/29/adding-webdriverio-tests.html">it's not based on alpine, due to PhantomJS</a>.
+You can see that the production image is much smaller than the ci image, because the latter contains dev dependencies and <a href="{% post_url 2017/2017-12-29-adding-webdriverio-tests %}">it's not based on alpine, due to PhantomJS</a>.
 
 I also had a mistake in my <code>.dockerignore</code>, I should have excluded the <code>ci-scripts</code> folder from the Docker context; this unfortunately was creating a different CI image on every build. This is why the CI image has so many different tags compared to the production image.
 

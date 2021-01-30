@@ -114,7 +114,7 @@ Now, we need to <strong>package the Helm chart</strong>. That's done with a simp
 helm package --version $IMAGE_TAG ./helm/blog-helm
 ```
 
-The command line utility helm will not be present on the build agent. As we discussed in <a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html" target="_blank">Dockerize the build plan</a>, we need to wrap helm into a Docker image so that we can use it. Luckily, someone else has already created a <a href="https://hub.docker.com/r/lachlanevenson/k8s-helm/" target="_blank">Docker image with helm</a>. The build step in TeamCity looks like this:
+The command line utility helm will not be present on the build agent. As we discussed in <a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}" target="_blank">Dockerize the build plan</a>, we need to wrap helm into a Docker image so that we can use it. Luckily, someone else has already created a <a href="https://hub.docker.com/r/lachlanevenson/k8s-helm/" target="_blank">Docker image with helm</a>. The build step in TeamCity looks like this:
 
 <img src="{{ site.baseurl }}/assets/2017/12/02/13_54_55-commit-stage-configuration-e28094-teamcity.png" />
 

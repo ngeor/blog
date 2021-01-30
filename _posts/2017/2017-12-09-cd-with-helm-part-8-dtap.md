@@ -197,7 +197,7 @@ Let's deploy again, this time to all environments:
 
 This time, we can see that the environments are setup correctly.
 
-One final experiment has to do about feature branches. If you remember our <a href="{{ site.baseurl }}/2017/12/02/cd-with-helm-part-5-versioned-artifacts.html">versioning strategy</a>, we compose an image tag based on the version in <code>package.json</code> and the git SHA. We can use an environment variable for this too:
+One final experiment has to do about feature branches. If you remember our <a href="{% post_url 2017/2017-12-02-cd-with-helm-part-5-versioned-artifacts %}">versioning strategy</a>, we compose an image tag based on the version in <code>package.json</code> and the git SHA. We can use an environment variable for this too:
 
 {% raw %}
 ```yml
@@ -225,10 +225,10 @@ Environment: ${process.env.APP_ENV}
 
 This final experiment proves we can truly deploy whatever, wherever: any feature branch in any environment. With this milestone, we can wrap up this series of posts. We have achieved various goals:
 <ul>
-<li><a href="{{ site.baseurl }}/2017/11/15/cd-with-helm-part-1-dockerize-it.html">we dockerized an application</a></li>
-<li><a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html">we dockerized the build plan of the application</a>, while keeping user friendly elements like test reports</li>
-<li>we included the infrastructural configuration of the application (<a href="{{ site.baseurl }}/2017/11/27/cd-with-helm-part-4-helm-intro.html">Helm chart</a>) in the code repository. This allows us to change the application and its infrastructure configuration in a single pull request.</li>
-<li><a href="{{ site.baseurl }}/2017/12/02/cd-with-helm-part-5-versioned-artifacts.html">we defined and implemented a versioning strategy</a> which ties together the application with its infrastructure, allowing us to use Helm as a deployment tool, for any branch</li>
+<li><a href="{% post_url 2017/2017-11-15-cd-with-helm-part-1-dockerize-it %}">we dockerized an application</a></li>
+<li><a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}">we dockerized the build plan of the application</a>, while keeping user friendly elements like test reports</li>
+<li>we included the infrastructural configuration of the application (<a href="{% post_url 2017/2017-11-27-cd-with-helm-part-4-helm-intro %}">Helm chart</a>) in the code repository. This allows us to change the application and its infrastructure configuration in a single pull request.</li>
+<li><a href="{% post_url 2017/2017-12-02-cd-with-helm-part-5-versioned-artifacts %}">we defined and implemented a versioning strategy</a> which ties together the application with its infrastructure, allowing us to use Helm as a deployment tool, for any branch</li>
 <li>we modeled a DTAP by using Helm releases and isolated the environment-specific configuration in separate files containing the bare minimum.</li>
 </ul>
 

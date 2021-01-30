@@ -11,7 +11,7 @@ tags:
 - smashing
 ---
 
-So, <a href="{{ site.baseurl }}/2017/05/08/how-to-build-a-smashing-dashboard.html">in the previous post</a> we created a fancy dashboard using the smashing framework. Let's see how we can deploy our dashboard to AWS Elastic Beanstalk using Docker.
+So, <a href="{% post_url 2017/2017-05-08-how-to-build-a-smashing-dashboard %}">in the previous post</a> we created a fancy dashboard using the smashing framework. Let's see how we can deploy our dashboard to AWS Elastic Beanstalk using Docker.
 
 <!--more-->
 

@@ -8,7 +8,7 @@ tags:
 - GitVersion
 ---
 
-In a previous post, I wrote about <a href="{{ site.baseurl }}/2017/12/19/semantic-versioning-with-gitversion.html">GitVersion</a>. GitVersion is a tool which solves semantic versioning of a git repository in its own way. With GitVersion, the version of any git repository is a pure function of its state, derived by tags, branches and commit messages.
+In a previous post, I wrote about <a href="{% post_url 2017/2017-12-19-semantic-versioning-with-gitversion %}">GitVersion</a>. GitVersion is a tool which solves semantic versioning of a git repository in its own way. With GitVersion, the version of any git repository is a pure function of its state, derived by tags, branches and commit messages.
 
 <!--more-->
 

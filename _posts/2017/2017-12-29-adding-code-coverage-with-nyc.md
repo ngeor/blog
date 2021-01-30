@@ -28,7 +28,7 @@ I'll also add two npm scripts in <code>package.json</code>:
 "nyc-junit": "nyc npm run test-junit"
 ```
 
-They both use the npm scripts configured in the <a href="{{ site.baseurl }}/2017/12/29/adding-mocha-unit-tests.html">previous post about unit tests</a>. The second one produces the unit test XML report, so it will be used on the build server.
+They both use the npm scripts configured in the <a href="{% post_url 2017/2017-12-29-adding-mocha-unit-tests %}">previous post about unit tests</a>. The second one produces the unit test XML report, so it will be used on the build server.
 
 <strong>Configuring nyc</strong>
 

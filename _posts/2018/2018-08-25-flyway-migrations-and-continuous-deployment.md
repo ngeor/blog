@@ -145,7 +145,7 @@ In that case, you will probably need to set these two properties in the configur
 
 Some parting thoughts:
 <ul>
-<li><a href="{{ site.baseurl }}/2017/04/17/validate-filename-conventions-with-maven-enforcer-plugin.html">validate the filename conventions of your migration files</a></li>
+<li><a href="{% post_url 2017/2017-04-17-validate-filename-conventions-with-maven-enforcer-plugin %}">validate the filename conventions of your migration files</a></li>
 <li>use a datetime version scheme for regular versioned migrations</li>
 <li>consider using the same datetime prefix for repeatable migrations</li>
 </ul>

@@ -16,7 +16,7 @@ In the previous posts we took the first steps to dockerize our hello world appli
 
 <!--more-->
 
-With Docker being such a popular technology, it's no surprise that cloud providers such as AWS and Azure offer support for it (here's for example <a href="{{ site.baseurl }}/2017/05/09/how-to-deploy-a-smashing-dashboard-to-aws-elastic-beanstalk-with-docker.html">an older post with AWS Elastic Beanstalk</a>). You can simply provide the Docker image and the cloud provider takes care of the rest.
+With Docker being such a popular technology, it's no surprise that cloud providers such as AWS and Azure offer support for it (here's for example <a href="{% post_url 2017/2017-05-09-how-to-deploy-a-smashing-dashboard-to-aws-elastic-beanstalk-with-docker %}">an older post with AWS Elastic Beanstalk</a>). You can simply provide the Docker image and the cloud provider takes care of the rest.
 
 But running an application is the bare minimum. Depending on your needs, you might need load balancing, scaling, health monitoring. Maybe you need rolling updates, automatic rollback on failure, secrets and configuration management.
 
@@ -26,7 +26,7 @@ Small side note: I've only worked with Kubernetes for a month or less but I'm ve
 
 <img src="{{ site.baseurl }}/assets/2017/blog-kubernetes.jpg" />
 
-As I had said <a href="{{ site.baseurl }}/2017/04/29/keeping-it-simple-with-microservices-communication.html">in a previous post</a>, my advice is to pick a solution that fits the business needs, not a solution that is cool to work on. End of side note.
+As I had said <a href="{% post_url 2017/2017-04-29-keeping-it-simple-with-microservices-communication %}">in a previous post</a>, my advice is to pick a solution that fits the business needs, not a solution that is cool to work on. End of side note.
 
 To experiment with Kubernetes on your local laptop, you can use minikube. You'll need the following tools:
 <ul>

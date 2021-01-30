@@ -18,7 +18,7 @@ First we need to create the new build configuration:
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_21_44-create-build-configuration-e28094-teamcity.png" /><figcaption>Adding a new build configuration for the Smoke Test</figcaption></figure>
 
-Just like in the previous post, we need to make it part of the <a href="{{ site.baseurl }}/2017/12/27/build-chains-in-teamcity.html">build chain</a>, so it needs the VCS root:
+Just like in the previous post, we need to make it part of the <a href="{% post_url 2017/2017-12-27-build-chains-in-teamcity %}">build chain</a>, so it needs the VCS root:
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_22_48-smoke-test-configuration-e28094-teamcity.png" /><figcaption>Attaching VCS root</figcaption></figure>
 

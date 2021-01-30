@@ -117,7 +117,7 @@ The first analysis will take more time, subsequent runs are faster. In the end y
 
 <figure><img src="{{ site.baseurl }}/assets/2018/sonarcloud-dashboard.png" /><figcaption>SonarCloud Dashboard</figcaption></figure>
 
-And I see SonarCloud even supports various <a href="{{ site.baseurl }}/2016/03/05/github-badges.html">badges</a> for your README:
+And I see SonarCloud even supports various <a href="{% post_url 2016/2016-03-05-github-badges %}">badges</a> for your README:
 
 <figure>
   <img src="{{ site.baseurl }}/assets/2018/badge-coverage.png" />

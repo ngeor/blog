@@ -8,7 +8,7 @@ tags:
 - TeamCity
 ---
 
-In a <a href="{{ site.baseurl }}/2017/12/09/cd-with-helm-part-8-dtap.html">previous post</a>, I had configured a deployment build configuration in TeamCity. I had mentioned back then that it's possible to set it up in a different way, which makes it is easier to visualize the deployment pipeline across all environments. In this post, I'll modify that deployment pipeline to use snapshot dependencies and project templates.
+In a <a href="{% post_url 2017/2017-12-09-cd-with-helm-part-8-dtap %}">previous post</a>, I had configured a deployment build configuration in TeamCity. I had mentioned back then that it's possible to set it up in a different way, which makes it is easier to visualize the deployment pipeline across all environments. In this post, I'll modify that deployment pipeline to use snapshot dependencies and project templates.
 
 <!--more-->
 
@@ -48,7 +48,7 @@ From there, I can rename the old "Deploy Stage" into "Deploy to Test" and set it
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/27/15_04_06-blog-helm-__-commit-stage-_-1-3-16-27-dec-17-14_01-_-overview-e28094-teamcity.png" /><figcaption>Deployments of Commit Stage</figcaption></figure>
 
-One more trick I like to do is to see the same build number across all build configurations. The Commit Stage is already configured to use <a href="{{ site.baseurl }}/2017/12/19/semantic-versioning-with-gitversion.html">SemVer</a>, so we'll re-use that number in the deploy configurations:
+One more trick I like to do is to see the same build number across all build configurations. The Commit Stage is already configured to use <a href="{% post_url 2017/2017-12-19-semantic-versioning-with-gitversion %}">SemVer</a>, so we'll re-use that number in the deploy configurations:
 
 <figure><img src="{{ site.baseurl }}/assets/2017/12/27/15_07_09-deploy-template-template-e28094-teamcity.png" /><figcaption>Using the same build number across all deployments</figcaption></figure>
 

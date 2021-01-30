@@ -20,7 +20,7 @@ In this post, I'll add unit tests to the example application that I've been fidd
 
 <strong>Folder structure</strong>
 
-In the <a href="{{ site.baseurl }}/2017/12/29/adding-webdriverio-tests.html">previous post</a>, I added some functional tests with WebdriverIO. They were stored in the folder <code>test/specs</code>. I'd like to keep the unit test separate from the functional tests, so I'll rename the old folder to <code>test/functional-specs</code> and store the new unit tests under <code>test/unit-specs</code>.
+In the <a href="{% post_url 2017/2017-12-29-adding-webdriverio-tests %}">previous post</a>, I added some functional tests with WebdriverIO. They were stored in the folder <code>test/specs</code>. I'd like to keep the unit test separate from the functional tests, so I'll rename the old folder to <code>test/functional-specs</code> and store the new unit tests under <code>test/unit-specs</code>.
 
 <strong>Dependencies</strong>
 
@@ -45,7 +45,7 @@ Note that the first one works with simply <code>npm test</code> but the second o
 
 <strong>Adding the first test</strong>
 
-The entire code base consists of a single file, <code>index.js</code>. I'll add a unit test in <code>./test/unit-specs/index.js</code> and I'll unit test the feature provided by the <a href="{{ site.baseurl }}/2017/12/29/waiting-for-the-correct-version-after-deployment.html">version endpoint</a>. You can see the unit test <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/test/unit-specs/index.js">here</a>.
+The entire code base consists of a single file, <code>index.js</code>. I'll add a unit test in <code>./test/unit-specs/index.js</code> and I'll unit test the feature provided by the <a href="{% post_url 2017/2017-12-29-waiting-for-the-correct-version-after-deployment %}">version endpoint</a>. You can see the unit test <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/test/unit-specs/index.js">here</a>.
 
 <strong>TeamCity</strong>
 

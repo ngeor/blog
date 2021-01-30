@@ -11,7 +11,7 @@ tags:
 - versioning
 ---
 
-This is just a fun hacking post. I put together a script that is able to handle all versioning strategies that I mentioned about in the <a href="{{ site.baseurl }}/2017/12/18/on-versioning.html" target="_blank">post about versioning</a>.
+This is just a fun hacking post. I put together a script that is able to handle all versioning strategies that I mentioned about in the <a href="{% post_url 2017/2017-12-18-on-versioning %}" target="_blank">post about versioning</a>.
 
 <!--more-->
 
@@ -31,7 +31,7 @@ I'll take it from bottom to top:
 
 <strong>GitVersion</strong>
 
-I covered <a href="{{ site.baseurl }}/2017/12/19/semantic-versioning-with-gitversion.html" target="_blank">GitVersion in the previous post</a>, it uses the GitVersion tool to calculate the semantic version. The base tag was 1.3.0, so it bumped the version to 1.3.1, appended the branch name (demo) and the number of commits.
+I covered <a href="{% post_url 2017/2017-12-19-semantic-versioning-with-gitversion %}" target="_blank">GitVersion in the previous post</a>, it uses the GitVersion tool to calculate the semantic version. The base tag was 1.3.0, so it bumped the version to 1.3.1, appended the branch name (demo) and the number of commits.
 
 This is the default mode in the <code>version.sh</code> script.
 

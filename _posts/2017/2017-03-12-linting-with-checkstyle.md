@@ -13,7 +13,7 @@ tags:
 - TeamCity
 ---
 
-Code is going to be written once but read many times. A consistent coding style across the entire code base is important to increase readability and maintainability. Luckily, there are tools that can help to define and enforce such styling rules. From mere cosmetics up to nasty code smells, static code analysis can help increase the quality of your code. I wrote some posts on <a href="{{ site.baseurl }}/2016/02/07/javascript-static-code-analysis.html">static code analysis in JavaScript</a> a bit more than a year ago (which in the JavaScript world means the tools are now different, ESLint instead of JSCS/JSHint). In this post we'll see the Checkstyle tool in the Java world, how to use it with TeamCity and IntelliJ and finally a few words about SonarQube.
+Code is going to be written once but read many times. A consistent coding style across the entire code base is important to increase readability and maintainability. Luckily, there are tools that can help to define and enforce such styling rules. From mere cosmetics up to nasty code smells, static code analysis can help increase the quality of your code. I wrote some posts on <a href="{% post_url 2016/2016-02-07-javascript-static-code-analysis %}">static code analysis in JavaScript</a> a bit more than a year ago (which in the JavaScript world means the tools are now different, ESLint instead of JSCS/JSHint). In this post we'll see the Checkstyle tool in the Java world, how to use it with TeamCity and IntelliJ and finally a few words about SonarQube.
 
 <!--more-->
 
@@ -43,7 +43,7 @@ This configures it as a reporting plugin. You can then run <code>mvn checkstyle
 
 Note that you can additionally configure it as a build plugin and use it to break the build with <code>mvn checkstyle:check</code>. This one will break the build if you have any violations whatsoever. You can also configure the plugin so that the check is done automatically during the default lifecycle. This might not be a good idea for an existing project that has too many problems to solve.
 
-As I mentioned in the <a href="{{ site.baseurl }}/2017/03/12/code-coverage-with-jacoco.html">previous post about JaCoCo</a>, <strong>TeamCity can really help solving the problems one step at a time</strong>. It supports consuming the XML report that Checkstyle generates and understands it as Inspection Errors. This is a built-in metric of TeamCity, which means that you can define a custom failure condition for that metric. It's a two step configuration process. First, you need to tell TeamCity where to find the report. That's done with the XML report processing Build Feature:
+As I mentioned in the <a href="{% post_url 2017/2017-03-12-code-coverage-with-jacoco %}">previous post about JaCoCo</a>, <strong>TeamCity can really help solving the problems one step at a time</strong>. It supports consuming the XML report that Checkstyle generates and understands it as Inspection Errors. This is a built-in metric of TeamCity, which means that you can define a custom failure condition for that metric. It's a two step configuration process. First, you need to tell TeamCity where to find the report. That's done with the XML report processing Build Feature:
 
 <img src="{{ site.baseurl }}/assets/2017/teamcity-checkstyle.png" />
 

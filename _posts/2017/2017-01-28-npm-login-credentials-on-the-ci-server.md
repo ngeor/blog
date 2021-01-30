@@ -9,7 +9,7 @@ tags:
 - npm
 ---
 
-In a <a href="{{ site.baseurl }}/2016/08/20/automatic-versioning-of-npm-packages.html">previous post</a>, I was discussing a way to publish an npm package to the public npm registry. A big prerequisite for that to work is that you have previously logged in to the CI server in order to authenticate against npm. But we can also fix that manual step and integrate it in the build.
+In a <a href="{% post_url 2016/2016-08-20-automatic-versioning-of-npm-packages %}">previous post</a>, I was discussing a way to publish an npm package to the public npm registry. A big prerequisite for that to work is that you have previously logged in to the CI server in order to authenticate against npm. But we can also fix that manual step and integrate it in the build.
 
 <!--more-->
 

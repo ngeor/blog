@@ -8,7 +8,7 @@ tags:
 - docker
 ---
 
-Back in 2017, I wrote a series of articles about using Helm for Continuous Deployment. One year later, I want to look back on some things I wrote and offer some alternative solutions. The most interesting thing is about the article <a href="{{ site.baseurl }}/2017/11/18/cd-with-helm-part-2-dockerize-the-build-plan.html">CD with Helm part 2: Dockerize the build plan</a>.
+Back in 2017, I wrote a series of articles about using Helm for Continuous Deployment. One year later, I want to look back on some things I wrote and offer some alternative solutions. The most interesting thing is about the article <a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}">CD with Helm part 2: Dockerize the build plan</a>.
 
 <!--more-->
 
@@ -44,7 +44,7 @@ RUN npm install
 ADD . /app
 ```
 
-After the introduction of <a href="{{ site.baseurl }}/2017/12/29/adding-webdriverio-tests.html">WebdriverIO testing</a>, the <code>Dockerfile-ci</code> changed further into this:
+After the introduction of <a href="{% post_url 2017/2017-12-29-adding-webdriverio-tests %}">WebdriverIO testing</a>, the <code>Dockerfile-ci</code> changed further into this:
 
 ```
 # phantomJS does not work with alpine
