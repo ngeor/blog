@@ -41,7 +41,7 @@ I can't even begin to understand why somebody thought this was a good idea, but 
 
 I even managed to find some text editors that couldn't cope with representing the two unicode characters as one, rendering it a bit weird:
 
-<img src="{{ site.baseurl }}/assets/2017/unicode-and-greek-accents-pain.png" />
+<img src="{% link /assets/2017/unicode-and-greek-accents-pain.png %}" />
 
 In gedit, it showed the accent as a separate character. In Sublime, it showed the accent as a kind of phantom character, which I think makes the most sense. Vim just does its job as it should and so did Visual Studio that I was using to write my small playlist program.
 

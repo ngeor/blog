@@ -23,7 +23,7 @@ First, a gentle introduction to our way of working. We follow the <a href="https
 
 <strong>Deployment for master branch</strong>: When the build is green and the pull request is reviewed and approved, it is merged to master. That triggers the same build pipeline, but with the extra step of automatically deploying to production. That's the only difference with GitHub flow.
 
-<figure><img src="{{ site.baseurl }}/assets/2018/branching-model.jpg" /><figcaption>Our branching model</figcaption></figure>
+<figure><img src="{% link /assets/2018/branching-model.jpg %}" /><figcaption>Our branching model</figcaption></figure>
 
 The application(s) are using Spring Boot 2 (Java 8). Flyway migrations are automatically run when the application starts.
 
@@ -52,7 +52,7 @@ Flyway keeps track of which migrations have been applied, so that it doesn't hav
 
 In that table, Flyway also keeps a checksum of the applied migration. If the SQL file's content changes, the checksum changes and Flyway will stop with an error. This will prevent the application from starting.
 
-<img src="{{ site.baseurl }}/assets/2018/if-flyway-cant-apply-your-migrations-youre-gonna-have-a-bad-time.jpg" />
+<img src="{% link /assets/2018/if-flyway-cant-apply-your-migrations-youre-gonna-have-a-bad-time.jpg %}" />
 
 This takes us to the first problem with our branching model. We always deploy green builds to the test environment. So if I start working on my branch and create the above migration <code>V1__create-user-table.sql</code>, it will be applied automatically on my first green build. If I have made a mistake in my branch, I can't edit the file anymore, because Flyway will complain about the modified checksum.
 
@@ -136,12 +136,12 @@ In that case, you will probably need to set these two properties in the configur
 <li><code>spring.flyway.outOfOrder=true</code>. This will apply migrations that exist in the code, but not in the database, and are <em>older</em> than the database's latest version. So if the "create articles table" feature branch is already deployed, this will allow the older (timestamp wise) "add password field" feature branch to apply its migration too.</li>
 </ul>
 
-<img src="{{ site.baseurl }}/assets/2018/flyway-out-of-order.jpg" />
+<img src="{% link /assets/2018/flyway-out-of-order.jpg %}" />
 <ul>
 <li><code>spring.flyway.ignoreMissingMigrations=true</code>. This takes care of the opposite order, where migrations exist in the database but not in the code. This is the case where the "add password field" has applied already its migration and the "create articles table" is trying to apply its own.</li>
 </ul>
 
-<img src="{{ site.baseurl }}/assets/2018/flyway-ignore-missing-migrations.jpg" />
+<img src="{% link /assets/2018/flyway-ignore-missing-migrations.jpg %}" />
 
 Some parting thoughts:
 <ul>

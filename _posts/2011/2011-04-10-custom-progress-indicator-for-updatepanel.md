@@ -14,7 +14,7 @@ In ASP.NET the UpdatePanel can help you create an AJAX experience very fast and 
 The UpdateProgress control in ASP.NET can handle showing a simple message, but for something more sophisticated, you'll have to do it yourself.<!--more-->
 
 In this example, we'll use an animated loading image to indicate progress when a user sorts a GridView. The animated loading image will appear within the table header that the user clicked on in order to sort. This way the user will definitely see the image, since it appears exactly where he clicked. We're aiming at something like the next screenshot:
-<img src="{{ site.baseurl }}/assets/2011/ajax-progress-in-cell.png" />
+<img src="{% link /assets/2011/ajax-progress-in-cell.png %}" />
 
 First we attach a javascript handler that will be called when an AJAX request is initiated:
 

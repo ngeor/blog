@@ -9,6 +9,6 @@ tags:
 
 Τι άλλο θα δουν τα μάτια μου...
 
-<img src="{{ site.baseurl }}/assets/2010/brush-in-a-rush.jpg" />
+<img src="{% link /assets/2010/brush-in-a-rush.jpg %}" />
 
 Χτένα και οδοντόβουρτσα δύο σε ένα...

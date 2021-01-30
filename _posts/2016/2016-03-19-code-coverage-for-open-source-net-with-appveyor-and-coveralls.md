@@ -64,23 +64,23 @@ But what I really like here is the support by AppVeyor for encrypting sensitive 
 
 To encrypt data, you have to go to the menu in AppVeyor and select "Encrypt data":
 
-<img src="{{ site.baseurl }}/assets/2016/encrypt1.png" />
+<img src="{% link /assets/2016/encrypt1.png %}" />
 
 There you'll get a form with which you can encrypt the data. It even gives you the sample YAML code for using it as an environment variable inside appveyor.yml (extra kudos points for usability!).
 
-<img src="{{ site.baseurl }}/assets/2016/encrypt2-1.png" />
+<img src="{% link /assets/2016/encrypt2-1.png %}" />
 
 You can get the token from Coveralls. It's available on the repository page:
 
-<img src="{{ site.baseurl }}/assets/2016/token.png" />
+<img src="{% link /assets/2016/token.png %}" />
 
 Coveralls provides something extra that I hadn't seen before: it tells you how much the coverage has changed between each commit and it breaks it down that delta per file too. Nice extra touch.
 
-<img src="{{ site.baseurl }}/assets/2016/coveragediff.png" />
+<img src="{% link /assets/2016/coveragediff.png %}" />
 
 And, of course, both AppVeyor and Coveralls offer pretty badges to add to your GitHub homepage:
 
-<img src="{{ site.baseurl }}/assets/2016/badges.png" />
+<img src="{% link /assets/2016/badges.png %}" />
 
 (The first badge is from Travis, I still have Travis hooked up and it's failing because of their Mono installation)
 

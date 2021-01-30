@@ -12,7 +12,7 @@ tags:
 
 So, to share a bit more of my excitement, here's a screenshot of the classic ASP.NET and the MVC versions running side by side:
 
-<img src="{{ site.baseurl }}/assets/2013/blogengine-mvc-side-by-side.png" />
+<img src="{% link /assets/2013/blogengine-mvc-side-by-side.png %}" />
 
 So we got a homepage working! Hurray! Keep on reading for more in depth details.<!--more-->
 <h3>Copy pasting from the website</h3>

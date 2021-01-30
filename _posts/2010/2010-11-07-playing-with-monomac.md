@@ -24,8 +24,8 @@ make
 ```
 
 </li>
-<li>Add a repository in MonoDevelop: http://addins.monodevelop.com/Alpha/Mac/2.4/main.mrep<img src="{{ site.baseurl }}/assets/2010/repository.png" /></li>
-<li>A new add-in will be available: MonoMac development under category Mac Development<img src="{{ site.baseurl }}/assets/2010/addin.png" /></li>
+<li>Add a repository in MonoDevelop: http://addins.monodevelop.com/Alpha/Mac/2.4/main.mrep<img src="{% link /assets/2010/repository.png %}" /></li>
+<li>A new add-in will be available: MonoMac development under category Mac Development<img src="{% link /assets/2010/addin.png %}" /></li>
 </ul>
 
 MonoMac is not done yet, so I had some problems:

@@ -73,7 +73,7 @@ One gotcha: mocha does not support this out of the box. If you try to run this, 
 
 This coding style looks quite strange at first. If you've done any .NET programming with <a href="https://msdn.microsoft.com/en-us/library/mt674882.aspx">async/await</a>, you can probably relate to that. Which style should you use? Let's see them side by side:
 
-<img src="{{ site.baseurl }}/assets/2016/diff.png" />
+<img src="{% link /assets/2016/diff.png %}" />
 
 Using generators is perhaps a bit alien. However, the code is much shorter. If you get used to it, it starts to feel like synchronous programming. It doesn't save you from the danger of not returning promises. You can easily forget to add a <code>yield</code> keyword. Any style you pick, you have to make sure that the developers are async-savvy and aware of what they're doing.
 

@@ -18,7 +18,7 @@ Both these methods accept a <code>selector</code> parameter. Selectors are use
 
 To figure out the selector we need to use for the search text box, we use a browser and the developer tools to inspect the element:
 
-<img src="{{ site.baseurl }}/assets/2016/text-selector-1.png" />
+<img src="{% link /assets/2016/text-selector-1.png %}" />
 
 Just like with CSS, making selectors overly specific is not advised. For example, if you use a selector like this (I'm just copying the last parts of the path from the developer tools):
 
@@ -28,13 +28,13 @@ then if someone removes or adds a <code>div</code> for all sorts of reasons (e.
 
 You can use the Console tab of the Developer Tools as well and play a bit to verify that the selector works. For example, try this:
 
-<img src="{{ site.baseurl }}/assets/2016/query1.png" />
+<img src="{% link /assets/2016/query1.png %}" />
 
 Typing <code>document.querySelectorAll('#lst-ib')</code> in the console proves that this selector is good enough, as it matches only the text box we care about. However, another selector can do the trick: <code>input[type=text]</code>.  This one happens to work as well, because this page consists of only one text box. Another selector that does the trick: <code>input[name=q]</code>. As you can guess, picking the correct selector can be a bit subjective.
 
 Let's fire up phantom to run our tests. I have a small shell script for that:
 
-<img src="{{ site.baseurl }}/assets/2016/phantom.png" />
+<img src="{% link /assets/2016/phantom.png %}" />
 
 To verify that our selector works for WebDriverIO as well, let's write a first test for that:
 
@@ -93,7 +93,7 @@ Now, we need to click on the search button, which means we need a selector that 
 
 So, what should we search for? Let's follow the latest trend and let's search for some Pokemon!
 
-<img src="{{ site.baseurl }}/assets/2016/pokemon-result.png" />
+<img src="{% link /assets/2016/pokemon-result.png %}" />
 
 For this example, we'll try to match the result count. It's contained in a div with the id <code>resultStats</code>. We can query for its text with the <a href="http://webdriver.io/api/property/getText.html">getText</a> method. The screenshot is in Dutch and it says "Ongeveer 330.000.000 resultaten (0,37 seconden)". Translation: About 330.000.000 results (0,37 seconds). Let's write the test:
 
@@ -111,7 +111,7 @@ it('should search for pokemon', function() {
 
 If we run it, it fails (at least on my computer):
 
-<img src="{{ site.baseurl }}/assets/2016/mocha-fail.png" />
+<img src="{% link /assets/2016/mocha-fail.png %}" />
 
 Wow! What happened here? My computer's locale is Greek, so phantom inherited that and Google detected it. As a result, phantom got served the Greek version of the Google results page. Additionally, the results are different (332 million vs 330 million, so Greek version has 2 million more pokemon :) ). The search duration is also missing.
 

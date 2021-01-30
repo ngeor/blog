@@ -13,19 +13,19 @@ ResxTranslator is an open source project that facilitates easy translation of re
 
 At this moment ResxTranslator offers two separate UIs: one for Windows only, built using Windows Forms and one for Mac OS X and Linux, built using Gtk#. The project is in alpha version but it should offer basic capabilities. The following screenshots demonstrate the usage of ResxTranslator, shown in Ubuntu 10.10:
 
-<img src="{{ site.baseurl }}/assets/2010/resxtranslatorgtk-empty.png" />
+<img src="{% link /assets/2010/resxtranslatorgtk-empty.png %}" />
 
 This is the initial view of the Gtk UI of ResxTranslator, in Ubuntu 10.10. Clicking the open button opens up the standard file open dialog, shown in the following screenshot:
 
-<img src="{{ site.baseurl }}/assets/2010/resxtranslatorgtk-two-files.png" />
+<img src="{% link /assets/2010/resxtranslatorgtk-two-files.png %}" />
 
 Two files are selected: the default resources (labels.resx) and the greek translation (labels.el.resx). By the way these are the actual resx files of the BlogEngine.NET project.
 
-<img src="{{ site.baseurl }}/assets/2010/resxtranslatorgtk-open-dialog.png" />
+<img src="{% link /assets/2010/resxtranslatorgtk-open-dialog.png %}" />
 
 In the following screenshot the two files are loaded and displayed in parallel for easy translation.
 
-<img src="{{ site.baseurl }}/assets/2010/resxtranslatorgtk-editing.png" />
+<img src="{% link /assets/2010/resxtranslatorgtk-editing.png %}" />
 
 The "action" resource has not been yet translated to Greek. Clicking on the cell switches to edit mode where it is possible to fill-in the translated value:
 

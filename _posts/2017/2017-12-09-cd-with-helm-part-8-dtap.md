@@ -42,15 +42,15 @@ For production, we could do the same, but another approach is to treat the defau
 
 To use these environment-specific files during deployment, we need to <strong>publish them as artifacts</strong> in our build plan. We need to add in the artifact definitions the line <code>helm/blog-helm/values-*.yaml</code>:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/05-artifacts.png" /><figcaption>Artifact definition in Commit Stage</figcaption></figure>
+<figure><img src="{% link /assets/2017/05-artifacts.png %}" /><figcaption>Artifact definition in Commit Stage</figcaption></figure>
 
 and the build will publish them:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/06-artifacts.png" /><figcaption>Published artifacts</figcaption></figure>
+<figure><img src="{% link /assets/2017/06-artifacts.png %}" /><figcaption>Published artifacts</figcaption></figure>
 
 Now we need to <strong>consume them in the Deploy Stage</strong>, so let's update the Artifact Dependency to have the line <code>values-*.yaml</code>:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/07-artifacts.png" /><figcaption>Artifact dependencies in deployment</figcaption></figure>
+<figure><img src="{% link /assets/2017/07-artifacts.png %}" /><figcaption>Artifact dependencies in deployment</figcaption></figure>
 
 Let's revise now our deployment script. So far it looks like this:
 
@@ -70,11 +70,11 @@ An important thing is that we'll also need to change the release name, which cur
 
 The easiest way to do this in TeamCity is to make our Deploy Stage parametric. We add a new configuration parameter named <code>env</code> (it can be any name we want):
 
-<figure><img src="{{ site.baseurl }}/assets/2017/08-env.png" /><figcaption>Adding the 'env' configuration parameter</figcaption></figure>
+<figure><img src="{% link /assets/2017/08-env.png %}" /><figcaption>Adding the 'env' configuration parameter</figcaption></figure>
 
 To make sure the user who deploys must choose an environment, we configure the spec of this parameter to be a Prompt. We also make it a bit more user friendly by providing a list of allowed values:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/09-env-spec.png" /><figcaption>Setting the spec of the parameter</figcaption></figure>
+<figure><img src="{% link /assets/2017/09-env-spec.png %}" /><figcaption>Setting the spec of the parameter</figcaption></figure>
 
 With this in place, we <strong>revise our deployment script</strong> to use the <code>env</code> configuration parameter:
 
@@ -94,11 +94,11 @@ We changed the release name to be <code>blog-helm-%env%</code>, which will use t
 
 When we try to deploy, we get a popup asking us to select the environment:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/11-env-select.png" /><figcaption>Deploying to a specific environment</figcaption></figure>
+<figure><img src="{% link /assets/2017/11-env-select.png %}" /><figcaption>Deploying to a specific environment</figcaption></figure>
 
 If we deploy to all environments, one by one, we'll end up with these deployments in Kubernetes:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12-deployments.png" /><figcaption>Kubernetes deployments, managed by Helm</figcaption></figure>
+<figure><img src="{% link /assets/2017/12-deployments.png %}" /><figcaption>Kubernetes deployments, managed by Helm</figcaption></figure>
 
 Some cleanup work is needed: we still have the old release, <code>blog-helm</code>. We can remove it with this command:
 
@@ -148,11 +148,11 @@ app.listen(
 
 We can deploy to the test environment. Let's double check the versions in the Kubernetes dashboard:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/13-test-on-1-2-0.png" /><figcaption>After deploying to test</figcaption></figure>
+<figure><img src="{% link /assets/2017/13-test-on-1-2-0.png %}" /><figcaption>After deploying to test</figcaption></figure>
 
 Our test environment is on the latest and greatest. Now the change is visible on the browser:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/14-test-vs-acc.png" /><figcaption>Test and Acceptance side by side</figcaption></figure>
+<figure><img src="{% link /assets/2017/14-test-vs-acc.png %}" /><figcaption>Test and Acceptance side by side</figcaption></figure>
 
 The test environment on the left has the latest code but acceptance still has the old version.
 
@@ -193,7 +193,7 @@ Environment: ${process.env.APP_ENV}
 
 Let's deploy again, this time to all environments:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/15-print-env.png" /><figcaption>Environment aware applications</figcaption></figure>
+<figure><img src="{% link /assets/2017/15-print-env.png %}" /><figcaption>Environment aware applications</figcaption></figure>
 
 This time, we can see that the environments are setup correctly.
 
@@ -221,7 +221,7 @@ Environment: ${process.env.APP_ENV}
 
 ```
 
-<figure><img src="{{ site.baseurl }}/assets/2017/16-print-docker-tag.png" /><figcaption>Deploying feature branch</figcaption></figure>
+<figure><img src="{% link /assets/2017/16-print-docker-tag.png %}" /><figcaption>Deploying feature branch</figcaption></figure>
 
 This final experiment proves we can truly deploy whatever, wherever: any feature branch in any environment. With this milestone, we can wrap up this series of posts. We have achieved various goals:
 <ul>

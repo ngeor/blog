@@ -14,7 +14,7 @@ called ScrumCard. ScrumCard is a simple mobile phone application that simulates
 poker planning for Scrum. So if you forgot your poker planning cards, you can
 use this app to show your team your estimate of the story points.
 
-<img src="{{ site.baseurl }}/assets/2010/scrum-card.png" />
+<img src="{% link /assets/2010/scrum-card.png %}" />
 
 Using the horizontal scrollbar, you can choose a value between 1 and 89. Values
 belong to the Fibonacci sequence. If you want to enter a different value, you

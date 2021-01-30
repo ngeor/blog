@@ -7,7 +7,7 @@ tags:
 - notes
 ---
 
-<img src="{{ site.baseurl }}/assets/2010/blijdorp.jpg" />
+<img src="{% link /assets/2010/blijdorp.jpg %}" />
 
 Sometimes even the Dutch protest! The local government of Rotterdam is planning cutbacks that will affect the Rotterdam zoo. Last week around 200 employees and supporters went to the city hall to protest against that holding up photos of animals of the zoo. Even <a href="http://en.wikipedia.org/wiki/Zwarte_Piet" target="_blank">Sinterklaas and Zwarte Piet</a> joined the protest, as you can see <a href="http://www.zie.nl/video/algemeen/Demonstratie-tegen-bezuinigingen-Blijdorp/m1fzqk8fa7pf" target="_blank">in this video</a>.
 

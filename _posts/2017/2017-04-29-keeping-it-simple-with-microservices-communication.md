@@ -128,7 +128,7 @@ possible to subscribe an SQS queue to an SNS topic, meaning that a message
 published to an SNS topic gets sent to all subscribed SQS queues. The following
 diagram shows this in action:
 
-<img src="{{ site.baseurl }}/assets/2017/sns-sqs1.png" />
+<img src="{% link /assets/2017/sns-sqs1.png %}" />
 
 The red blocks are external systems, the green blocks are our microservices.
 <ul>
@@ -146,7 +146,7 @@ shipped messages? We don't have to change anything in the existing
 microservices. We need to add one new SQS queue and subscribe it to the SNS
 topic:
 
-<img src="{{ site.baseurl }}/assets/2017/sns-sqs.png" />
+<img src="{% link /assets/2017/sns-sqs.png %}" />
 
 This new microservice maintains a state of the orders and updates a good old
 fashioned traditional relational SQL database (I survived the NoSQL hype as

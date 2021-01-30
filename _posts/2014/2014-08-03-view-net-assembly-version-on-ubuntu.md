@@ -39,13 +39,13 @@ I’ve saved this script as “Show assembly version” in the directory
 creates a new menu item which is available by right clicking on a file,
 selecting Scripts and then “Show assembly version”:
 
-<img src="{{ site.baseurl }}/assets/2014/show-assembly-version.png" />
+<img src="{% link /assets/2014/show-assembly-version.png %}" />
 
 The assembly version will be displayed on a popup dialog. Note that the
 <code>zenity</code> command is responsible for creating the dialog, so it needs
 to be present in the system.
 
-<img src="{{ site.baseurl }}/assets/2014/show-assembly-version-dialog1.png" />
+<img src="{% link /assets/2014/show-assembly-version-dialog1.png %}" />
 
 I am using Ubuntu 14.04 but the same should be possible on any desktop running
 nautilus as a file manager. Hope this helps.

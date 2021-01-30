@@ -89,15 +89,15 @@ In this example the <code>docker-compose.yaml</code> file should live side by si
 
 The next step is to <strong>change the build configuration</strong> in TeamCity so that it will publish the Docker image to the new Docker registry. We'll create a configuration property to avoid repeating the <code>registry.local:5000</code> all over the place:
 
-<img src="{{ site.baseurl }}/assets/2017/03-param.png" />
+<img src="{% link /assets/2017/03-param.png %}" />
 
 We need to <strong>tag the image</strong>, which is easily done with the native Docker Build runner:
 
-<img src="{{ site.baseurl }}/assets/2017/01-tag-image.png" />
+<img src="{% link /assets/2017/01-tag-image.png %}" />
 
 and we need to <strong>push the image</strong> to our registry, which requires a new custom step:
 
-<img src="{{ site.baseurl }}/assets/2017/02-push-image.png" />
+<img src="{% link /assets/2017/02-push-image.png %}" />
 
 We also need to <strong>change the Helm chart</strong> to indicate that the image comes from <code>registry.local:5000/blog-helm</code> and that it should pull the image if it doesn't exist locally. That's in <code>values.yaml</code>:
 
@@ -145,6 +145,6 @@ $ cp /hosthome/ngeor/Projects/teamcity/certs/registry.local.crt ca.crt
 
 We're all done, now we can build and deploy using the brand new Docker registry. Here's a pod using the image of the new registry:
 
-<img src="{{ site.baseurl }}/assets/2017/04-dashboard.png" />
+<img src="{% link /assets/2017/04-dashboard.png %}" />
 
 Introducing a Docker registry brings out setup one step closer to a more realistic setup. A Docker registry is the authority point where you push (during build) and pull (during deployment) images. In a next post, we'll use AWS and implement a secure Docker registry there. But before that, we'll explore how we can model our DTAP.

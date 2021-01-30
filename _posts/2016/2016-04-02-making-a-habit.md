@@ -21,9 +21,9 @@ These apps, mostly for your phone, help you form new habits and stick to them. W
 
 A common concept here is the chain or the streak: how many days in a row can you go on keeping your promise? It's like a competition with yourself really and I find it quite motivating. Some services that I use, like DuoLingo and GitHub, already use this motivation technique.
 
-<img src="{{ site.baseurl }}/assets/2016/duolingo-streak.png" />
+<img src="{% link /assets/2016/duolingo-streak.png %}" />
 
-<img src="{{ site.baseurl }}/assets/2016/github-streak.png" />
+<img src="{% link /assets/2016/github-streak.png %}" />
 
 Habit trackers often take this concept and extend it to any habit you'd like to build. DuoLingo and GitHub are examples of daily habits, but a habit doesn't have to be daily.
 

@@ -17,7 +17,7 @@ over the place here. Feel free to think of it as 'HelloWorldApp' or 'MyWebApp'.
 
 Here's a nice diagram I made that illustrates my current deployment process:
 
-<img src="{{ site.baseurl }}/assets/2013/drawing.png" />
+<img src="{% link /assets/2013/drawing.png %}" />
 
 The basic points are:
 

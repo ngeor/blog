@@ -16,11 +16,11 @@ To speed things up, I copy pasted the AccountController that is generated when y
 
 The login form does look a bit crappy, but I'm not interested in styling anything so far:
 
-<img src="{{ site.baseurl }}/assets/2013/blogengine-mvc-login.png" />
+<img src="{% link /assets/2013/blogengine-mvc-login.png %}" />
 
 And after logging in with admin admin (the default credentials of BlogEngine.NET), you get a nice welcome message in the homepage:
 
-<img src="{{ site.baseurl }}/assets/2013/blogengine-mvc-logged-in.png" />
+<img src="{% link /assets/2013/blogengine-mvc-logged-in.png %}" />
 
 We're logged in!
 <h3>But wait, there's more!</h3>

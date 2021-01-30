@@ -17,4 +17,4 @@ Viklund</a>. Since I've ported it to
 <a href="http://www.dotnetblogengine.net/">BlogEngine.NET</a>, I think it's a
 good idea to publish it so that other BlogEngine.NET users can use it.
 
-<img src="{{ site.baseurl }}/assets/2010/daleri-structure.png" />
+<img src="{% link /assets/2010/daleri-structure.png %}" />

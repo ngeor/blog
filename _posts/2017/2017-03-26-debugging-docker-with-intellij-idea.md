@@ -29,7 +29,7 @@ user it might receive. We'll package the consumer into a Docker image.
 
 The overall picture looks something like this:
 
-<img src="{{ site.baseurl }}/assets/2017/avro.png" />
+<img src="{% link /assets/2017/avro.png %}" />
 
 but we'll focus on the Docker side and debugging with IntelliJ.
 
@@ -218,7 +218,7 @@ Notice that I have preserved the target folder inside
 <code>docker/debug</code> and <code>docker/release</code>, because it is already
 part of my <code>.gitignore</code>. This is how the folder structure looks like:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-folders.png" />
+<img src="{% link /assets/2017/docker-folders.png %}" />
 
 It's a good idea to also cleanup after ourselves. It would be great to delete
 the new copies of the jar file when we run <code>mvn clean</code>. For that
@@ -258,27 +258,27 @@ It offers various features:
 
 First of all, it needs to know where our Docker is:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-intellij.png" />
+<img src="{% link /assets/2017/docker-intellij.png %}" />
 
 It is quite smart, you probably won't have to do much typing. You'll find it
 sitting at the bottom toolbar:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-toolbar.png" />
+<img src="{% link /assets/2017/docker-toolbar.png %}" />
 
 The green play button connects you to Docker:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-connected.png" />
+<img src="{% link /assets/2017/docker-connected.png %}" />
 
 Notice that it lists existing containers and images. The containers are all
 stopped. I can right click the "hp-kafka" container and run it:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-container-running.png" />
+<img src="{% link /assets/2017/docker-container-running.png %}" />
 
 Notice that the icon changes into a filled light blue box.
 
 To be able to debug our app, we need a new debug configuration:
 
-<img src="{{ site.baseurl }}/assets/2017/debug-configuration-fix.png" />
+<img src="{% link /assets/2017/debug-configuration-fix.png %}" />
 
 Let's take this step by step:
 
@@ -302,11 +302,11 @@ that. It offers to create a json file with the needed container settings. Save
 it side-by-side with the debug Dockerfile, so that it's clear it is only needed
 for debugging:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-container-settings.png" />
+<img src="{% link /assets/2017/docker-container-settings.png %}" />
 
 And with this the warning disappears:
 
-<img src="{{ site.baseurl }}/assets/2017/debug-configuration.png" />
+<img src="{% link /assets/2017/debug-configuration.png %}" />
 
 The container settings looks like this:
 
@@ -330,37 +330,37 @@ The container settings looks like this:
 We can finally debug! We start the debug configuration with the debug icon.
 IntelliJ switches to the Debug panel:
 
-<img src="{{ site.baseurl }}/assets/2017/debug-connected.png" />
+<img src="{% link /assets/2017/debug-connected.png %}" />
 
 If you don't see this message immediately, you need to go back and see if
 everything is configured correctly.
 
 In the Docker panel, we see the container running:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-deploy-log.png" />
+<img src="{% link /assets/2017/docker-deploy-log.png %}" />
 
 and we can also see the messages our app is printing:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-app-log.png" />
+<img src="{% link /assets/2017/docker-app-log.png %}" />
 
 Let's put a breakpoint on the line where a new message is received from Kafka:
 
-<img src="{{ site.baseurl }}/assets/2017/breakpoint.png" />
+<img src="{% link /assets/2017/breakpoint.png %}" />
 
 To hit that breakpoint, we'll need to actually send a message. Let's start the
 producer. This is not a Docker container, just a regular Java app:
 
-<img src="{{ site.baseurl }}/assets/2017/start-producer.png" />
+<img src="{% link /assets/2017/start-producer.png %}" />
 
 IntelliJ allows you to run all sorts of things at the same time, so we can
 manage everything from the same IDE window. The producer is interactive, so we
 type the user information at the console:
 
-<img src="{{ site.baseurl }}/assets/2017/producer-input.png" />
+<img src="{% link /assets/2017/producer-input.png %}" />
 
 As soon as we enter all information, the message is sent and the breakpoint is hit:
 
-<img src="{{ site.baseurl }}/assets/2017/breakpoint-hit.png" />
+<img src="{% link /assets/2017/breakpoint-hit.png %}" />
 
 The experience is the same as with local debugging, you can see the variables,
 the call stack, etc.

@@ -103,7 +103,7 @@ satisfying to see all these editors highlight the code as invalid with my error
 message. And as far as fail fast feedback goes, there's nothing faster than
 <strong>seeing it fail as you type</strong>.
 
-<img src="{{ site.baseurl }}/assets/2016/jscs-custom-rule.png" />
+<img src="{% link /assets/2016/jscs-custom-rule.png %}" />
 
 You don't have to change anything else in your build pipeline either. Your
 plugin is part of jscs, which makes it <strong>part of your build

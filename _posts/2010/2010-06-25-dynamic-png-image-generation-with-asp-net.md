@@ -23,7 +23,7 @@ image to and then dump that stream on Response.OutputStream.
 After that was fixed, I noticed that the fonts were appearing ugly, as shown in
 the following graphic:
 
-<img src="{{ site.baseurl }}/assets/2010/png-ugly-fonts.png" />
+<img src="{% link /assets/2010/png-ugly-fonts.png %}" />
 
 The solution to that was to fill the background of the entire image with a
 colour (white in my case). I think it must be related with PNG transparency. If

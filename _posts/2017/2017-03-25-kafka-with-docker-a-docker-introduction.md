@@ -17,7 +17,7 @@ A small note about Windows 10 Home, which is what my laptop is running. Microsof
 
 We start Docker with the <strong>Docker Quickstart Terminal</strong>. Eventually you are greeted with a bash shell:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-shell.png" />
+<img src="{% link /assets/2017/docker-shell.png %}" />
 
 Two interesting things in the message below the ASCII whale:
 <ul>
@@ -27,7 +27,7 @@ Two interesting things in the message below the ASCII whale:
 
 Actually, we're ready to start Kafka. Turns out there are already <a href="https://store.docker.com/search?q=kafka&source=community&type=image" target="_blank">Docker images for Kafka</a> available in <strong>Docker Store</strong>. I am going to use the <a href="https://store.docker.com/community/images/spotify/kafka" target="_blank">spotify image</a> because it seems to be rather basic (also because I recognize the spotify name...). Following the instructions, this is how we start Kafka:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-kafka-command-line.png" />
+<img src="{% link /assets/2017/docker-kafka-command-line.png %}" />
 
 The command is:
 
@@ -59,19 +59,19 @@ Points of interest:
 
 That's it actually. Docker will realize it doesn't have the spotify/kafka image locally, so it will first download it:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-download.png" />
+<img src="{% link /assets/2017/docker-download.png %}" />
 
 and once that's done, it will start Kafka:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-kafka.png" />
+<img src="{% link /assets/2017/docker-kafka.png %}" />
 
 That's all there is to it. You can verify that everything is working as expected with the test kafka-console-producer and kafka-console-consumer tools. Or you can use a UI tool like <a href="http://www.kafkatool.com/" target="_blank">Kafka Tool</a> to attempt to connect to Kafka.
 
-<img src="{{ site.baseurl }}/assets/2017/kafka-tool.png" />
+<img src="{% link /assets/2017/kafka-tool.png %}" />
 
 You can also use this tool to create a topic and send/receive messages:
 
-<img src="{{ site.baseurl }}/assets/2017/kafka-tool-message.png" />
+<img src="{% link /assets/2017/kafka-tool-message.png %}" />
 
 This proves that our Kafka installation works fine.
 

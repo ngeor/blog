@@ -97,7 +97,7 @@ Some practical tips:
 
 In the end, you get a fancy diagram in Confluence:
 
-<figure><img src="{{ site.baseurl }}/assets/2018/11/uml-confluence.png" /><figcaption>From Swagger to Confluence</figcaption></figure>
+<figure><img src="{% link /assets/2018/11/uml-confluence.png %}" /><figcaption>From Swagger to Confluence</figcaption></figure>
 
 [swagger codegen maven plugin]: https://github.com/swagger-api/swagger-codegen/tree/master/modules/swagger-codegen-maven-plugin
 [swagger to uml]: https://github.com/nlohmann/swagger_to_uml

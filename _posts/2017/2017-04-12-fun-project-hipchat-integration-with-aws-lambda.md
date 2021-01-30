@@ -17,15 +17,15 @@ that gets the pull requests that still need code reviews from Bitbucket and post
 
 Hobby projects are a fun way to learn something new. In this case it started by curiosity. I noticed that HipChat, the group chat that we use at work, has an Integrations menu that allows you to connect to third party services:
 
-<img src="{{ site.baseurl }}/assets/2017/hipchat.png" />
+<img src="{% link /assets/2017/hipchat.png %}" />
 
 Even more interestingly, if you follow the menu, the first available integration is called "Build your own":
 
-<img src="{{ site.baseurl }}/assets/2017/hipchat2.png" />
+<img src="{% link /assets/2017/hipchat2.png %}" />
 
 Now, that sounds like an invitation to a party to my ears. When you click this link, it asks you to name your integration and that's it:
 
-<img src="{{ site.baseurl }}/assets/2017/hipchat31.png" />
+<img src="{% link /assets/2017/hipchat31.png %}" />
 
 You get a URL with an authentication token and you're ready to start posting messages to that URL.
 
@@ -33,11 +33,11 @@ Then I asked myself: what could I post to my team's HipChat group that could act
 
 I created a prototype project that connects to Bitbucket's API and gets open pull requests for a set of git repositories. For every pull request, we require at least 2 approvals. If a pull request has less than two approvals, the script uses the HipChat URL to post a "please review" message:
 
-<img src="{{ site.baseurl }}/assets/2017/hipchat41.png" />
+<img src="{% link /assets/2017/hipchat41.png %}" />
 
 This just a PoC so I don't have unit tests and the code base is more or less contained in a single file (~150 lines). Knowing that it can't get much bigger than this, and because I wanted to play a bit with AWS Lambda as well, I implemented it as an AWS Lambda function. You get started off with an easy template and you can edit the code directly in the AWS Lambda UI:
 
-<img src="{{ site.baseurl }}/assets/2017/lambda.png" />
+<img src="{% link /assets/2017/lambda.png %}" />
 
 You can also use node modules, but you'll have to upload a zip file containing everything. I definitely needed the request module in order to call Bitbucket.
 
@@ -45,11 +45,11 @@ The zip file complicated things and I ended up doing a bit more plumbing work. I
 
 I was pleased to see that my CD pipeline was actually a freebie by Travis. Travis supports deploying to AWS Lambda out of the box. So as soon as I commit something to my repository, CI produces my zip file and CD uploads the new version to AWS. If Travis didn't offer this, I'd have to use the AWS CLI on my own.
 
-<img src="{{ site.baseurl }}/assets/2017/lambda2.png" />
+<img src="{% link /assets/2017/lambda2.png %}" />
 
 The last part is the schedule. I'd like to invoke my function automatically every hour, with a cron like system. In AWS, you can use a CloudWatch event rule for this. It's more friendly that it sounds and when you configure the Lambda's triggers, it actually gives this as a possible trigger. I think in general the UX of the AWS website is quite friendly and it guides you well.
 
-<img src="{{ site.baseurl }}/assets/2017/cloudwatch.png" />
+<img src="{% link /assets/2017/cloudwatch.png %}" />
 
 This entire thing from begin to end didn't take more than a few hours. Editing and running the code directly in the browser is quite fun.
 
@@ -59,7 +59,7 @@ It can also check how old a pull request has been open and if it's open for more
 
 Also, I noticed that HipChat offers commands for the integration. This can turn the HipChat integration into a bot, replying to user's commands:
 
-<img src="{{ site.baseurl }}/assets/2017/hipchat5.png" />
+<img src="{% link /assets/2017/hipchat5.png %}" />
 
 So maybe instead of having an hourly schedule, a developer can instead type "/reviews" and the Lambda can reply back a list of PRs that need a review. It can even reply a more personalized message, excluding PRs for which the user is the author (assuming here that Bitbucket and HipChat usernames are identical or have a known mapping).
 

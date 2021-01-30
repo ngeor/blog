@@ -67,9 +67,9 @@ Some points about this script:
 
 OpenCover will generate an XML file at <code>opencover.xml</code> and then ReportGenerator will produce the HTML report at the <code>coverage</code> folder.
 
-<figure><img src="{{ site.baseurl }}/assets/2018/coverage-report.png" /><figcaption>Coverage summary</figcaption></figure>
+<figure><img src="{% link /assets/2018/coverage-report.png %}" /><figcaption>Coverage summary</figcaption></figure>
 
-<figure><img src="{{ site.baseurl }}/assets/2018/coverage-class.png" /><figcaption>Coverage of a class</figcaption></figure>
+<figure><img src="{% link /assets/2018/coverage-class.png %}" /><figcaption>Coverage of a class</figcaption></figure>
 <h2>Analyzing code quality with SonarCloud</h2>
 
 I discovered the other day that it's possible to use SonarQube online for free for open source projects via a service called <a href="https://about.sonarcloud.io/">SonarCloud</a>.
@@ -115,21 +115,21 @@ Some comments on the script:
 
 The first analysis will take more time, subsequent runs are faster. In the end you get a nice dashboard:
 
-<figure><img src="{{ site.baseurl }}/assets/2018/sonarcloud-dashboard.png" /><figcaption>SonarCloud Dashboard</figcaption></figure>
+<figure><img src="{% link /assets/2018/sonarcloud-dashboard.png %}" /><figcaption>SonarCloud Dashboard</figcaption></figure>
 
 And I see SonarCloud even supports various <a href="{% post_url 2016/2016-03-05-github-badges %}">badges</a> for your README:
 
 <figure>
-  <img src="{{ site.baseurl }}/assets/2018/badge-coverage.png" />
+  <img src="{% link /assets/2018/badge-coverage.png %}" />
   <figcaption>Code coverage badge</figcaption>
 </figure>
 
 <figure>
-  <img src="{{ site.baseurl }}/assets/2018/badge-quality-gate.png" />
+  <img src="{% link /assets/2018/badge-quality-gate.png %}" />
   <figcaption>Quality gate badge</figcaption>
 </figure>
 
 <figure>
-  <img src="{{ site.baseurl }}/assets/2018/badge-technical-debt.png" />
+  <img src="{% link /assets/2018/badge-technical-debt.png %}" />
   <figcaption>Technical debt badge</figcaption>
 </figure>

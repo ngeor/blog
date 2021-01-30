@@ -14,7 +14,7 @@ In this post I'm setting up a Jenkins server to be able to package and sign Andr
 
 First of all, download the latest command line tools. You can find them on <a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">this page</a> all the way at the bottom ("Get just the command line tools"):
 
-<img src="{{ site.baseurl }}/assets/2017/android-sdk-download.png" />
+<img src="{% link /assets/2017/android-sdk-download.png %}" />
 
 You need to download that zip file and transfer it to the Jenkins server. You can also right click, copy the <a href="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" target="_blank" rel="noopener">download URL</a>, and download it directly on the Jenkins server with wget or curl:
 
@@ -49,7 +49,7 @@ If Jenkins is already running, restart it so that it will pick up the new enviro
 
 This should be enough for Jenkins to be able to use the SDK. Here's how my build configuration looks like:
 
-<img src="{{ site.baseurl }}/assets/2017/android-jenkins.png" />
+<img src="{% link /assets/2017/android-jenkins.png %}" />
 
 The first part is using Gradle to produce an unsigned APK in release configuration.
 

@@ -114,7 +114,7 @@ and the body of the TestFixtureSetUp method.
 
 This is how this type of tests look like in NUnit GUI:
 
-<img src="{{ site.baseurl }}/assets/2012/nunit-companion-example.png" />
+<img src="{% link /assets/2012/nunit-companion-example.png %}" />
 
 Notice how the test fixture has now child test fixtures, each for every database
 I want to target. The test methods themselves also contain in their name the
@@ -128,7 +128,7 @@ DLLs to the addins folder of NUnit.
 Integrating with TeamCity was a bit trickier but it worked in the end. Here's
 what my configuration looks like:
 
-<img src="{{ site.baseurl }}/assets/2012/nunit-companion-teamcity-configuration.png" />
+<img src="{% link /assets/2012/nunit-companion-teamcity-configuration.png %}" />
 
 Some points of interest:
 

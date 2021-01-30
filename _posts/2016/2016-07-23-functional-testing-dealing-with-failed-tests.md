@@ -102,11 +102,11 @@ What does this do? After each test runs, check if it had an error (that's the <c
 
 Running our test will fail again, but now we end up with a png file in our working directory.
 
-<img src="{{ site.baseurl }}/assets/2016/file.png" />
+<img src="{% link /assets/2016/file.png %}" />
 
 And the screenshot itself indeed validates our findings from the previous post: the page is in Greek, the search result count is higher, and the search duration is not shown in the Greek version.
 
-<img src="{{ site.baseurl }}/assets/2016/should-search-for-pokemon.png" />
+<img src="{% link /assets/2016/should-search-for-pokemon.png %}" />
 
 Configure your CI to consume these files as artifacts and you'll be able to have more insight of what was really happening on the browser at the time of the failure.
 

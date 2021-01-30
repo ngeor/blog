@@ -24,7 +24,7 @@ Kubernetes offers all of the above. It is "an open-source system for automating 
 
 Small side note: I've only worked with Kubernetes for a month or less but I'm very impressed by the features it offers and how transparent its configuration is. Once you understand the concepts, it's a system that just makes sense when you work with it. Having said that, I'd like to share this funny image I found on the internet, captioned "just deployed my blog on Kubernetes":
 
-<img src="{{ site.baseurl }}/assets/2017/blog-kubernetes.jpg" />
+<img src="{% link /assets/2017/blog-kubernetes.jpg %}" />
 
 As I had said <a href="{% post_url 2017/2017-04-29-keeping-it-simple-with-microservices-communication %}">in a previous post</a>, my advice is to pick a solution that fits the business needs, not a solution that is cool to work on. End of side note.
 

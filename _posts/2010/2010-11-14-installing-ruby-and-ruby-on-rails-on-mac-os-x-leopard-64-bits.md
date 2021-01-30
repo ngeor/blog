@@ -106,17 +106,17 @@ rails server
 
 The following screen shows the system information. Notice that Rails version is 3.0.1
 
-<img src="{{ site.baseurl }}/assets/2010/rails-about.png" />
+<img src="{% link /assets/2010/rails-about.png %}" />
 
 With the scaffold magic, we get at /posts an entire CRUD interface for Posts containing a title and a description:
 
-<img src="{{ site.baseurl }}/assets/2010/rails-posts-empty.png" />
+<img src="{% link /assets/2010/rails-posts-empty.png %}" />
 
-<img src="{{ site.baseurl }}/assets/2010/rails-add-post.png" />
+<img src="{% link /assets/2010/rails-add-post.png %}" />
 
-<img src="{{ site.baseurl }}/assets/2010/rails-post-added.png" />
+<img src="{% link /assets/2010/rails-post-added.png %}" />
 
-<img src="{{ site.baseurl }}/assets/2010/rails-post-list.png" />
+<img src="{% link /assets/2010/rails-post-list.png %}" />
 
 And we didn't have to write a single line of code.
 <h2>MySQL</h2>

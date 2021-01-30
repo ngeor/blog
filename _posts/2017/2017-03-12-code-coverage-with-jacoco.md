@@ -18,7 +18,7 @@ Code Coverage is a useful set of metrics that show you how much of your code you
 
 Let's start with the easiest option: using it with TeamCity. In this case, you don't have to do anything in your source code (the pom file). You probably already have a Maven build step in your build configuration which runs your unit tests. All you have to do is to select "JaCoCo" from the Code Coverage drop down:
 
-<img src="{{ site.baseurl }}/assets/2017/teamcity-jacoco.png" />
+<img src="{% link /assets/2017/teamcity-jacoco.png %}" />
 
 and fill-in the "Classfile directories or jars" field. Test classes are typically excluded (because they will inflate your code coverage numbers) so the patterns specified here are:
 
@@ -29,7 +29,7 @@ and fill-in the "Classfile directories or jars" field. Test classes are typicall
 
 That's it actually! This is all it takes to start seeing metrics in TeamCity:
 
-<img src="{{ site.baseurl }}/assets/2017/teamcity-coverage-metrics.png" />
+<img src="{% link /assets/2017/teamcity-coverage-metrics.png %}" />
 
 If you follow the Code Coverage tab, you can see the full reports that JaCoCo produces, broken down per package, per file, showing you what you missed. Note that these reports are a JaCoCo feature, so you can also get them without TeamCity.
 
@@ -37,7 +37,7 @@ As you can see, my coverage is quite poor for my pet project. In a real life wor
 
 This is done by adding a new failure condition:
 
-<img src="{{ site.baseurl }}/assets/2017/teamcity-failure-coverage.png" />
+<img src="{% link /assets/2017/teamcity-failure-coverage.png %}" />
 
 so here if we have a 1% drop, it will break the build. You can configure multiple failure conditions. In my mind, this feature of TeamCity makes it ideal for dealing with legacy projects and getting them in shape progressively.
 

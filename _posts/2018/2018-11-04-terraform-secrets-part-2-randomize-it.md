@@ -19,7 +19,7 @@ exposes it as an output. With a bash script, we pass the output to Helm as a
 supplementary set of values. This ends up as an environment variable to the
 application at runtime.
 
-<figure><img src="{{ site.baseurl }}/assets/2018/11/deployment-cosmosdb.png" /><figcaption>Getting secret connection string from Azure</figcaption></figure>
+<figure><img src="{% link /assets/2018/11/deployment-cosmosdb.png %}" /><figcaption>Getting secret connection string from Azure</figcaption></figure>
 
 For PostgreSQL (still in Azure), we need to tell Azure what username and
 password we prefer. We want to create the database via Terraform automatically
@@ -121,7 +121,7 @@ This has no impact to the application (it still reads the same value). It just
 protects the password from unauthorized eyes. In order to read the value of the
 secret you need to be authorized by your Kubernetes administrator.
 
-<figure><img src="{{ site.baseurl }}/assets/2018/11/deployment-postgresql.png" /><figcaption>Random password and Kubernetes secret</figcaption></figure>
+<figure><img src="{% link /assets/2018/11/deployment-postgresql.png %}" /><figcaption>Random password and Kubernetes secret</figcaption></figure>
 
 With all these changes we have achieved:
 

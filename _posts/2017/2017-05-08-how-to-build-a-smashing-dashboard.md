@@ -75,7 +75,7 @@ In order to use the widget, you need to place it in a dashboard:
 </li>
 ```
 
-The pieces of the puzzle fit together here. The <code>data-id</code> attribute is the widget's ID, so the job must use the same to publish data. The <code>data-view</code> attribute needs to map to the widget definition.<img src="{{ site.baseurl }}/assets/2017/widget-link.png" />
+The pieces of the puzzle fit together here. The <code>data-id</code> attribute is the widget's ID, so the job must use the same to publish data. The <code>data-view</code> attribute needs to map to the widget definition.<img src="{% link /assets/2017/widget-link.png %}" />
 
 I really liked working with smashing, because it has a good architecture defined, separating jobs, widgets and dashboards. The fact that it comes with a hello world project gives you also example code to study and learn by example.
 

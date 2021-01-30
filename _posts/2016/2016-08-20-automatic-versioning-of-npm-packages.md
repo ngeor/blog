@@ -48,7 +48,7 @@ echo LOCAL_VERSION=`node -e "var p = require('./package.json'); console.log(p.ve
 echo PROJECT_NAME=`node -e "var p = require('./package.json'); console.log(p.name);"`
 ```
 
-<img src="{{ site.baseurl }}/assets/2016/build-environment.png" />
+<img src="{% link /assets/2016/build-environment.png %}" />
 
 We'll use these variables in the build step but also in the post-build to tag the version in git. Note that the above is made possible with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Environment+Script+Plugin">Environment Script Plugin</a> (in Jenkins, you need quite some plugins to get things done).
 
@@ -70,12 +70,12 @@ else
 fi
 ```
 
-<img src="{{ site.baseurl }}/assets/2016/build.png" />
+<img src="{% link /assets/2016/build.png %}" />
 
 The <code>echo</code> statements are for diagnostic purposes. It also does <code>npm install</code> and <code>npm test</code> as an extra precaution, but this really should work if the main build plan had passed the build.
 
 The last step is to tag the version in Git. This is done with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin">Jenkins Git plugin</a> (most likely you'll already have this one installed).
 
-<img src="{{ site.baseurl }}/assets/2016/git-tag.png" />
+<img src="{% link /assets/2016/git-tag.png %}" />
 
 Note that we're using the <code>LOCAL_VERSION</code> environment variable that we populated with the information coming from <code>package.json</code>. Also, the tag will only be published to git if the previous steps succeeded. In other words it won't tag anything in git if publishing the package to npm fails. Finally, the 'update tag' checkbox is disabled, which means that the build will fail if the same tag already exists. Just another sanity check that shouldn't happen.

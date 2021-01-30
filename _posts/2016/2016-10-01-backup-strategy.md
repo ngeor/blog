@@ -76,7 +76,7 @@ to have another backup of the photos for example.
 
 If I want to put this all in a nice diagram, it will look like this:
 
-<img src="{{ site.baseurl }}/assets/2016/backup-strategy-1.png" />
+<img src="{% link /assets/2016/backup-strategy-1.png %}" />
 
 The bold lines are the only ones that qualify as a backup. Google Drive does not
 count as a backup. If a file gets deleted or corrupted, it's gone. The same for

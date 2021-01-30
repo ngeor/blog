@@ -45,11 +45,11 @@ Note that you can additionally configure it as a build plugin and use it to brea
 
 As I mentioned in the <a href="{% post_url 2017/2017-03-12-code-coverage-with-jacoco %}">previous post about JaCoCo</a>, <strong>TeamCity can really help solving the problems one step at a time</strong>. It supports consuming the XML report that Checkstyle generates and understands it as Inspection Errors. This is a built-in metric of TeamCity, which means that you can define a custom failure condition for that metric. It's a two step configuration process. First, you need to tell TeamCity where to find the report. That's done with the XML report processing Build Feature:
 
-<img src="{{ site.baseurl }}/assets/2017/teamcity-checkstyle.png" />
+<img src="{% link /assets/2017/teamcity-checkstyle.png %}" />
 
 Just like with code coverage, you can tell TeamCity to break the build if you have more Inspection Errors than the last successful build. This ensures <strong>we can only improve the code, we can't make it any worse</strong>.
 
-<img src="{{ site.baseurl }}/assets/2017/teamcity-inspection-errors.png" />
+<img src="{% link /assets/2017/teamcity-inspection-errors.png %}" />
 
 I don't know if it gets better than this, but this is pretty neat.
 
@@ -107,7 +107,7 @@ And now, the rules I added. They're quite a lot but you're probably already usin
 
 One final step remains: use <strong>Checkstyle in the IDE</strong>. I use IntelliJ these days and it happens that there's a plugin for Checkstyle. It's called Checkstyle-IDEA and its configuration looks like this:
 
-<img src="{{ site.baseurl }}/assets/2017/checkstyle-idea.png" />
+<img src="{% link /assets/2017/checkstyle-idea.png %}" />
 
 Some interesting points:
 <ul>

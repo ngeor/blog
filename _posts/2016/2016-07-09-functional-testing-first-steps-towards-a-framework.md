@@ -33,7 +33,7 @@ If you get a failure in a high level test, not just do you have a bug in your fu
 
 Back to our folders. Inside the new folder for functional testing, we’ll make two top level sub-folders. One for the tests and one for our framework code. The tests folder will contain tests and probably will get its own internal structure as well as the tests grow in volume. For example, you could have a separate folder for each page of your site (e.g. separate folder for home page, login page, etc) and place tests specific to that page in each folder. The framework folder will contain code that often repeats in tests (like the WebDriverIO setup code we already have in the hooks). In later posts, when we explore the Page Object pattern, we’ll see how that also fits in this framework folder.
 
-<img src="{{ site.baseurl }}/assets/2016/structure.png" />
+<img src="{% link /assets/2016/structure.png %}" />
 
 Let’s see how we can implement our first framework file, the <code>webdriver_helper.js</code>. This module will contain the before and after hooks we currently have inlined in the tests and it will expose the browser variable to the tests.
 

@@ -22,7 +22,7 @@ Let's start with the router, the magic box in the living room, whose blinking li
 
 This little guy sits between my devices and the internet, as shown in this awesome diagram I drew all by myself:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/helm-network1.jpg" /><figcaption>Router and friends</figcaption></figure>
+<figure><img src="{% link /assets/2017/helm-network1.jpg %}" /><figcaption>Router and friends</figcaption></figure>
 
 I get an IP address from my internet provider, which I can quickly check by <a href="https://www.google.com/search?q=what+is+my+ip+address" target="_blank" rel="noopener">googling "what is my ip address"</a>. That's the public IP, which hits directly the router. On the inside, we have the local IP addresses. These are not accessible outside this local network. The router automatically assigns an IP address from the range of 192.168.2.1 up to 192.168.2.254 to any one who connects.
 
@@ -30,7 +30,7 @@ These devices that are on the same local network (192.168.2.0/24 if we want to u
 
 In this Kubernetes experiment, we are using minikube with VirtualBox. VirtualBox supports <a href="https://www.virtualbox.org/manual/ch06.html" target="_blank" rel="noopener">all sorts of networking setups</a> for exposing or isolating the virtual machine to/from the outside world. In the default setup, the virtual machine that minikube creates is only accessible to the host device. In my case, that's my desktop computer:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/helm-network2.jpg" /><figcaption>Turbo button reference</figcaption></figure>
+<figure><img src="{% link /assets/2017/helm-network2.jpg %}" /><figcaption>Turbo button reference</figcaption></figure>
 
 The virtual machine exposes itself to the host on a different network which is only accessible to the host. The IP is usually 192.168.99.100. When I'm working on the desktop computer, I can point my browser to the Kubernetes dashboard on http://192.168.99.100:30000/, but that doesn't work from my laptop or my phone.
 

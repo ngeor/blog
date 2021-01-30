@@ -26,8 +26,8 @@ class library for the unit tests. The following animation shows it in action:
 
 It is already discoverable if you search in Yeoman:
 
-<img src="{{ site.baseurl }}/assets/2015/09/yeoman-generator-csharp-cli-app.png" />
+<img src="{% link /assets/2015/09/yeoman-generator-csharp-cli-app.png %}" />
 
 and of course also in npm:
 
-<img src="{{ site.baseurl }}/assets/2015/09/npm-generator-csharp-cli-app.png" />
+<img src="{% link /assets/2015/09/npm-generator-csharp-cli-app.png %}" />

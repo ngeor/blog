@@ -28,7 +28,7 @@ However, people are a bit happier with the result than what they should. Mostly
 because they judge the success based on the sleek appearance and impressive load
 times on the frontend. Which reminds me of the following cartoon:
 
-<img src="{{ site.baseurl }}/assets/2016/xxiyrya.png" />
+<img src="{% link /assets/2016/xxiyrya.png %}" />
 
 While things are not looking bad on the frontend, our OPS are starting to
 discover what goes on in the backend. To name a few:
@@ -63,7 +63,7 @@ production.
 Why do the developers not take these things into account?
 
 <ul>
-<li>They don't necessarily have that mindset. Developers often think their job is done when the product owner approves the ticket.<img src="{{ site.baseurl }}/assets/2016/worked-in-dev.jpg" />
+<li>They don't necessarily have that mindset. Developers often think their job is done when the product owner approves the ticket.<img src="{% link /assets/2016/worked-in-dev.jpg %}" />
 </li>
 <li>There is no OPS member in the team during planning poker. OPS is an island.</li>
 <li>Even if senior developers propose we implement service monitoring, the product owners will be surprised (to say the least), since we never did it before. And they have already a Deadline imposed to them anyway, so this will drop out again and become the technical debt that will not be paid.</li>

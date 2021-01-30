@@ -33,11 +33,11 @@ To keep our sanity, it makes sense to use a <strong>single version number</stron
 
 So for the master branch we'll have something like this:
 
-<img src="{{ site.baseurl }}/assets/2017/helm1.png" />
+<img src="{% link /assets/2017/helm1.png %}" />
 
 With a small difference for feature branches:
 
-<img src="{{ site.baseurl }}/assets/2017/helm2.png" />
+<img src="{% link /assets/2017/helm2.png %}" />
 
 To make all this happen, we need to write a bit of code in the commit stage.
 
@@ -163,7 +163,7 @@ We made it this far, let's make one more step to <strong>deploy our app into Kub
 
 For this to happen, Kubernetes needs to be able to find the Docker images that TeamCity builds during the commit stage. <strong>The best way would be to setup a Docker registry, which we'll do on a future post</strong>. I've taken a shortcut however: <strong>I'm running TeamCity inside Kubernetes and TeamCity Agent is using Docker on Docker</strong>. This means that the TeamCity Agent is a dockerized application itself, but it's using the Docker daemon of Kubernetes when it needs to runs docker (remember, we've dockerized the build plan). It's very confusing, especially when volumes come into play. It feels a bit like the movie Inception, wondering on which level are you running currently:
 
-<img src="{{ site.baseurl }}/assets/2017/docker-inception.jpg" />
+<img src="{% link /assets/2017/docker-inception.jpg %}" />
 
 We start by creating a new build configuration called Deploy Stage. We'd like to <strong>consume the artifacts from the Commit Stage</strong>:
 

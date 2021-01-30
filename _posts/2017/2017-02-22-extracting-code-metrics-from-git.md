@@ -29,7 +29,7 @@ Furthermore, it can report the state of the repository at the beginning of each 
 
 Is this useful? I don't know. Is it interesting? I find it very interesting. See the following graph, which shows the number of commits on a project at work:
 
-<img src="{{ site.baseurl }}/assets/2017/number-of-commits.png" />
+<img src="{% link /assets/2017/number-of-commits.png %}" />
 
 Given a stable team composition, you would expect a more or less flat line. But as you can tell by the graph, the team composition was not stable. We scaled up from 1 team to 2 teams and later on we added 2 extra remote teams to help finish the project on time.
 

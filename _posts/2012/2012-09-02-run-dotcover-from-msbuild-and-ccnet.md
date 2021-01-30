@@ -55,7 +55,7 @@ dotCover analyse
 This will generate the report.html file and a folder with CSS and JS that
 provide a pretty code coverage report.
 
-<img src="{{ site.baseurl }}/assets/2012/dotcover-report.png" />
+<img src="{% link /assets/2012/dotcover-report.png %}" />
 
 It is also possible to generate both the XML and HTML reports. To do that, you
 only need to run the time consuming dotCover coverage part just once. Then, you
