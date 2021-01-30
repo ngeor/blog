@@ -9,7 +9,7 @@ tags:
 - unit tests
 ---
 
-Last time we had a look at <a href="/2016/04/what-is-test-driven-development/">test driven development</a> and our calculator learned how to do multiplication. In this post, we'll add division and talk a bit about code coverage and unit test quality.
+Last time we had a look at <a href="{% post_url 2016/2016-04-30-what-is-test-driven-development %}">test driven development</a> and our calculator learned how to do multiplication. In this post, we'll add division and talk a bit about code coverage and unit test quality.
 
 <!--more-->
 

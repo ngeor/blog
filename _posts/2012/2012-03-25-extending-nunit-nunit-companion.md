@@ -146,6 +146,5 @@ with TeamCity giving live results. Also code coverage still works as expected.
 <h2>References</h2>
 <ol>
 <li><a href="http://www.simple-talk.com/dotnet/.net-tools/testing-times-ahead-extending-nunit/">Testing Times Ahead: Extending NUnit</a></li>
-<li><a href="https://sourceforge.net/projects/nunitcompanion/">NUnit Companion</a></li>
 <li><a href="http://confluence.jetbrains.net/display/TCD7/TeamCity+NUnit+Test+Launcher">TeamCity NUnit Test Launcher</a></li>
 </ol>

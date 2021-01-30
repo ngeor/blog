@@ -70,7 +70,7 @@ the version.
 Let's do some hands on work. I'll modify
 <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">blog-helm</a>, the
 project I used in the
-<a href="{{ site.baseurl }}/cd-with-helm.html" target="_blank">CD with Helm
+<a href="{% link _series/2017-12-09-cd-with-helm.md %}" target="_blank">CD with Helm
 series</a>, to use GitVersion. First, in order to install GitVersion you can use
 chocolatey (<code>choco install GitVersion.Portable</code>) or brew (<code>brew
 install gitversion</code>). It is written in .NET so it will pull in mono on

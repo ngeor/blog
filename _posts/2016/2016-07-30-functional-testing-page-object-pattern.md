@@ -13,7 +13,7 @@ tags:
 
 So far, we've seen how to write functional tests using the WebDriverIO API directly. Let's see what problems we may encounter with that and how the page object pattern comes to rescue.
 <!--more-->
-Our example functional tests work against Google's homepage. One test verifies that the search text box exists and it's visible. Another test types something into that search text box and performs the search. In order to identify the text box, we use the same <a href="/2016/07/functional-testing-selectors/">selector</a>, <code>input[name=q]</code>. The problem starts here and it's not unique to functional tests: it's copy pasting around magic strings.
+Our example functional tests work against Google's homepage. One test verifies that the search text box exists and it's visible. Another test types something into that search text box and performs the search. In order to identify the text box, we use the same <a href="{% post_url 2016/2016-07-16-functional-testing-selectors %}">selector</a>, <code>input[name=q]</code>. The problem starts here and it's not unique to functional tests: it's copy pasting around magic strings.
 
 If our implementation changes and the text field is no longer identified by the name 'q', then we'll have to replace it at potentially many places.
 
