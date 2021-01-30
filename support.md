@@ -36,17 +36,3 @@ You can use PayPal:
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 <img alt="" border="0" src="https://www.paypal.com/en_NL/i/scr/pixel.gif" width="1" height="1" />
 </form>
-
-or Bitcoin:
-
-<div class="qr-code">
-  <div>1GryvZFs7Gk7paTeXd9iifgQtEJSFqkGEw</div>
-  <img src="/assets/bitcoin.svg" alt="Bitcoin QR code" />
-</div>
-
-or Ethereum:
-
-<div class="qr-code">
-  <div>0x4f9874ce7a2eddd8630a08dc3f8b49751672bc70</div>
-  <img src="/assets/ethereum.png" alt="Ethereum QR code" />
-</div>
