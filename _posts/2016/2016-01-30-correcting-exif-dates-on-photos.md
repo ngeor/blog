@@ -14,7 +14,7 @@ Sometimes, the photos I take with my phone don't have the correct EXIF tags set.
 
 There's a nice command line utility, called <a href="http://www.sno.phy.queensu.ca/~phil/exiftool/" target="_blank">exiftool</a>, which is like a swiss army knife when it comes to manipulating these EXIF tags. I wrote a small python script that can be used to create these tags, provided that the date information is captured by the filename of the photo. For instance, if the photo file is named 'IMG_20160130_135210.jpg', then the python script can extract the date and time and tell exiftool to correct it.
 
-I uploaded the script as <a href="https://gist.github.com/ngeor/dbcae5002d81b22b4466" target="_blank">a gist in GitHub</a>, it assumes exiftool is already installed and available on the PATH.
+I uploaded the script as <a href="https://github.com/ngeor/kamino/blob/trunk/dotfiles/bin/fix-img-date.py" target="_blank">in GitHub</a>, it assumes exiftool is already installed and available on the PATH.
 
 On Mac/Linux, you can run it as:
 

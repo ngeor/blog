@@ -10,7 +10,7 @@ tags:
 - WebdriverIO
 ---
 
-So far, we have essentially <a href="/2016/07/functional-testing-first-steps-towards-a-framework/">only one test</a>, a test that verifies the title of the browser. Let's try to make a more interesting test. We'll need to interact with elements on the page and simulate the user's journey.<!--more-->
+So far, we have essentially <a href="{% post_url 2016/2016-07-09-functional-testing-first-steps-towards-a-framework %}">only one test</a>, a test that verifies the title of the browser. Let's try to make a more interesting test. We'll need to interact with elements on the page and simulate the user's journey.<!--more-->
 
 Since we started with the Google site, we'll try to write a test that searches for something. The Google homepage has a text box and a search button. We have to type some text into the text box and click the button to perform the search, just like a normal human user would do. It's important to write your tests as close as possible to <strong>mimic the normal user behavior</strong>. According to the documentation, we need the <a href="http://webdriver.io/api/action/setValue.html">setValue</a> method to set the text and the <a href="http://webdriver.io/api/action/click.html">click</a> method to click the button.
 

@@ -8,10 +8,10 @@ tags:
 ---
 
 <strong>Ενημέρωση 7 Φλεβάρη 2013:</strong> Υπάρχει
-<a href="/2013/02/ellinofreneia-v3">νέα έκδοση</a> για το podcast
+<a href="{% post_url 2013/2013-02-06-ellinofreneia-v3 %}">νέα έκδοση</a> για το podcast
 
 Kάτι λιγότερο από χρόνο από τότε που έφτιαξα το προηγούμενο
-<a href="/2011/06/ellinofreneia-podcast">ανεπίσημο podcast για την
+<a href="{% post_url 2011/2011-06-19-ellinofreneia-podcast %}">ανεπίσημο podcast για την
 Ελληνοφρένεια</a>, έρχεται και το σίκουελ...
 
 Το παλιό podcast εξακολουθεί να δουλεύει.

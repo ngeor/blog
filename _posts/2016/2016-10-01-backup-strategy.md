@@ -56,7 +56,7 @@ anything about it, it's all automated:
 <li>I wrote a launchd agent for the Mac (bash script doing rsync) that kicks in automatically</li>
 <li>For the Windows laptop a robocopy batch file in the Task Scheduler</li>
 <li>The ubuntu desktop has a cron job with rsync as well</li>
-<li>I automatically clone all my GitHub repositories with my <a href="https://github.com/ngeor/clone-all">clone-all</a> program</li>
+<li>I automatically clone all my GitHub repositories with my <a href="https://github.com/ngeor/kamino/tree/trunk/clone-all">clone-all</a> program</li>
 </ul>
 
 On the mini computer itself, I have CrashPlan installed. I recently bought a

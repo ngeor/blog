@@ -11,8 +11,7 @@ tags:
 
 Δοκίμασα χθες την
 <a href="http://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">τεχνική
-pomodoro</a> για να κάνω λίγη δουλειά στο
-<a href="https://sourceforge.net/projects/resxtranslator/" target="_blank">ResxTranslator</a>.
+pomodoro</a> για να κάνω λίγη δουλειά στο ResxTranslator.
 Την τεχνική την πληροφορήθηκα από
 <a href="http://blog.postmaster.gr/2010/11/15/a-simple-pomodoro-timer/" target="_blank">αυτό
 το άρθρο</a>. Η λέξη pomodoro είναι Ιταλική και σημαίνει ντομάτα. Η τεχνική
@@ -44,8 +43,7 @@ pomodoro κάνεις ένα μεγαλύτερο διάλειμμα, π.χ. 10 
 
 Yesterday I tried out the
 <a href="http://en.wikipedia.org/wiki/Pomodoro_Technique">pomodoro technique</a>
-in order to do a little work on
-<a href="http://sourceforge.net/projects/resxtranslator/" target="_blank">ResxTranslator</a>.
+in order to do a little work on ResxTranslator.
 I first heard of this technique by this
 <a href="http://blog.postmaster.gr/2010/11/15/a-simple-pomodoro-timer/" target="_blank">article</a>.
 The word pomodoro is Italian and it means tomato. The pomodoro technique says

@@ -14,7 +14,7 @@ tags:
 - WebdriverIO
 ---
 
-In the <a href="/2016/07/functional-testing-selectors/">previous post</a>, we wrote some functional tests and we encountered our first failing test. Let's see how we can go about investigating these failures, both on a developer machine and during continuous integration.<!--more-->
+In the <a href="{% post_url 2016/2016-07-16-functional-testing-selectors %}">previous post</a>, we wrote some functional tests and we encountered our first failing test. Let's see how we can go about investigating these failures, both on a developer machine and during continuous integration.<!--more-->
 
 First of all, it would be great if you could just understand what went wrong by looking at the <strong>test output</strong>. That's why we should follow the same practices that we follow for unit tests:
 <ul>

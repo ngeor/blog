@@ -9,13 +9,13 @@ tags:
 - unit tests
 ---
 
-Let's continue building up our calculator with more mathematic operations. So far <a href="/2016/04/a-closer-look-to-a-basic-unit-test/">we have addition and subtraction</a>, so multiplication comes up next.  In this post, we'll have a look at test driven development. Even though the examples are a bit trivial, I hope they'll outline the important points.<!--more-->
+Let's continue building up our calculator with more mathematic operations. So far <a href="{% post_url 2016/2016-04-23-a-closer-look-to-a-basic-unit-test %}">we have addition and subtraction</a>, so multiplication comes up next.  In this post, we'll have a look at test driven development. Even though the examples are a bit trivial, I hope they'll outline the important points.<!--more-->
 
 So, what is test driven development? Test driven development is a different way of developing in which you write the unit tests first, before you've even written any line of code. If you've never done it before, it seems counterintuitive. How can you write a test for something that doesn't even exist? Well let's try it then!
 
 We find our test and we add a new <code>describe</code> scope to correspond to the new method:
 
-```
+```js
 describe('Calculator', function() {
     describe('add', function() { /* the add unit tests */ });
     describe('subtract', function() { /* the subtract unit tests */ });
@@ -31,7 +31,7 @@ describe('Calculator', function() {
 
 Since we don't have such a method in the <code>Calculator</code> class, the test will fail. If you're using a compiled language like Java, the code won't even compile. Let's add an implementation in our class:
 
-```
+```js
 Calculator.prototype.multiply = function(x, y) {
     // TODO: learn how to multiply
 };
@@ -41,7 +41,7 @@ I am adding on purpose an empty implementation because this is what I would've d
 
 The test will still turn red, but now with a different error. We have to fix the implementation:
 
-```
+```js
 Calculator.prototype.multiply = function(x, y) {
     return x * y;
 };

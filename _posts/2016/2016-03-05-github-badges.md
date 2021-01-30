@@ -27,7 +27,7 @@ In the next screenshot, you can see an example of a failed build.
 
 <img src="{{ site.baseurl }}/assets/2016/travis-failed-build.png" />
 
-The badge I'm talking about sits on the top. It's next to the header and it says "build failing". That's pretty clear that something needs to be fixed in this project! <strong>Side note:</strong> this project is called <a href="/2015/09/introducing-generator-csharp-cli-app/" target="_blank">generator-csharp-cli-app</a> and I'll be using that name for the rest of the blog post <strong>just as a placeholder</strong>. Just replace it with your own project name.
+The badge I'm talking about sits on the top. It's next to the header and it says "build failing". That's pretty clear that something needs to be fixed in this project! <strong>Side note:</strong> this project is called <a href="{% post_url 2015/2015-09-06-introducing-generator-csharp-cli-app %}" target="_blank">generator-csharp-cli-app</a> and I'll be using that name for the rest of the blog post <strong>just as a placeholder</strong>. Just replace it with your own project name.
 
 How do we add this badge to the project's homepage in GitHub? That's typically done in the README.md file. Click the badge on the Travis page and a popup will appear. In there, select "Markdown". Markdown is the popular formatting language that GitHub also uses. Just copy paste that markdown code into your readme file, usually just below the title so that it appears on the top.
 

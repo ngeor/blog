@@ -17,7 +17,7 @@ tags:
 
 Before we go any further, let’s take a break and add a bit of a structure to our functional tests. This will allow us to reduce the code we have to write for each test. We’ll also start thinking about how to organize the tests into folders and files.<!--more-->
 
-<a href="/2016/07/functional-testing-reducing-code-duplication/">Our current “solution”</a> consists of just one file that contains everything and as you can imagine that doesn’t scale well. That file contains:
+<a href="{% post_url 2016/2016-07-02-functional-testing-reducing-code-duplication %}">Our current “solution”</a> consists of just one file that contains everything and as you can imagine that doesn’t scale well. That file contains:
 <ul>
 <li>Setup code that allows us to use WebDriverIO</li>
 <li>Tests that focus on different pages. In our example, we have one test for Google and one test for Yahoo. In a real life project, this could be different pages/areas of the same site.</li>

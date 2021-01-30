@@ -24,12 +24,4 @@ The only problem is that the official image is a bit large, weighing in at 493MB
 
 I've managed to slim that down significantly at 85MB, by installing only the necessary mono libraries (with some trial and error).
 
-My fork is <a href="https://github.com/ngeor/GitVersion">here</a> and the Dockerfile is called <a href="https://github.com/ngeor/GitVersion/blob/master/Dockerfile-slim">Dockerfile-slim</a>. You can use my <a href="https://hub.docker.com/r/ngeor/gitversion/">slim GitVersion image</a> simply by replacing the "gittools" with "ngeor" in the above command:
-
-```
-docker run --rm \
-    -v $(pwd):/repo \
-    ngeor/gitversion /showvariable SemVer
-```
-
 This makes it a bit easier to use this tool. However, porting it to .NET Core might be a better solution overall.

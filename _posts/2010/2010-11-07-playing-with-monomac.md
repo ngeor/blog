@@ -10,7 +10,7 @@ tags:
 - monomac
 ---
 
-Yesterday I played a bit with <a href="http://www.mono-project.com/MonoMac" target="_blank">MonoMac</a>, a new framework for Mono that you can use in order to create .NET applications that have a native look and feel in Mac OS X. I have never done any Mac related development in the past so I had to read up on how Apple builts its UIs. My experiments made their way to <a href="http://sourceforge.net/projects/resxtranslator/" target="_blank">ResxTranslator</a>'s code base, so I intend that ResxTranslator will have three separate UIs: WinForms, GTK# and now Cocoa via MonoMac!<!--more-->
+Yesterday I played a bit with <a href="http://www.mono-project.com/MonoMac" target="_blank">MonoMac</a>, a new framework for Mono that you can use in order to create .NET applications that have a native look and feel in Mac OS X. I have never done any Mac related development in the past so I had to read up on how Apple builts its UIs. My experiments made their way to  ResxTranslator's code base, so I intend that ResxTranslator will have three separate UIs: WinForms, GTK# and now Cocoa via MonoMac!<!--more-->
 
 In order to play with MonoMac you'll have to do the following things:
 <ul>

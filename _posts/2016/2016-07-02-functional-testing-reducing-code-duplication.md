@@ -11,7 +11,7 @@ tags:
 - WebdriverIO
 ---
 
-Let's <a href="/2016/06/functional-testing-hello-world/">continue our functional testing</a> examples by adding a few more tests. This will demonstrate why we need to start thinking about the structure of our tests and why we should be developing a framework that will allow us to write less code.
+Let's <a href="{% post_url 2016/2016-06-25-functional-testing-hello-world %}">continue our functional testing</a> examples by adding a few more tests. This will demonstrate why we need to start thinking about the structure of our tests and why we should be developing a framework that will allow us to write less code.
 <!--more-->
 Let's add one more test. We already have a test that verifies Google's homepage title. We'll do the same for Yahoo's homepage. By the way, maybe it goes without saying, but normally you would be verifying your own site, during development and CI.
 

@@ -8,7 +8,7 @@ tags:
   - ruby on rails
 ---
 
-During <a href="/2013/04/installing-ruby-on-rails-on-windows-8">my previous
+During <a href="{% post_url 2013/2013-04-16-installing-ruby-on-rails-on-windows-8 %}">my previous
 attempt</a> to install Ruby on Rails on Windows 8 I ran into a couple of issues.
 I decided to try again with the latest and greatest and see what happens.
 

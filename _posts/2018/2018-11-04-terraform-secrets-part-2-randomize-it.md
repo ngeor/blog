@@ -141,4 +141,4 @@ every N deployments). I'm also curious to play with a system like
 [Vault](https://www.vaultproject.io/) (which comes from the same company as
 Terraform, HashiCorp).
 
-[previous post]: {{ site.baseurl }}{% post_url 2018/2018-10-06-terraform-secrets %}
+[previous post]: {% post_url 2018/2018-10-06-terraform-secrets %}

@@ -57,7 +57,7 @@ Here's what needs to happen:
 - make sure you don't do this if a PR is already open about this
 
 The [python
-script]({{ site.baseurl }}{% post_url 2019/2019-02-11-goodbye-bash %}) that does
+script]({% post_url 2019/2019-02-11-goodbye-bash %}) that does
 all of the above weighs in at exactly 200 lines, and while it could probably be
 improved a bit, it works on my cloud.
 

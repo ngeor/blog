@@ -77,4 +77,4 @@ So, as long as there is a 'blogName' parameter in the route, the correct blog wi
 
 Coming up next? Building up post and page links... stay tuned!
 
-[previous post]: {{ site.baseurl }}{% post_url 2013/2013-03-06-blogengine-net-mvc-hello-world %}
+[previous post]: {% post_url 2013/2013-03-06-blogengine-net-mvc-hello-world %}

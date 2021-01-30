@@ -204,7 +204,7 @@ PS> gitversion /showvariable SemVer
 ```
 
 There are more configuration options documented
-<a href="http://gitversion.readthedocs.io/en/stable/configuration/" target="_blank">here</a>.
+<a href="https://gitversion.net/docs/configuration" target="_blank">here</a>.
 
 To use it in TeamCity, I'll rewrite the bash script `version.sh` which used to
 look like this and relied on <code>package.json</code> to determine the version:

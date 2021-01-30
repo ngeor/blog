@@ -382,6 +382,6 @@ module.exports = TestNamingRule;
 ```
 
 
-[previous post]: {{ site.baseurl }}{% post_url 2016/2016-02-07-javascript-static-code-analysis %}
+[previous post]: {% post_url 2016/2016-02-07-javascript-static-code-analysis %}
 [esprima]: http://esprima.org/
 [jscs plugin]: https://github.com/jscs-dev/node-jscs/wiki/Plugin-API

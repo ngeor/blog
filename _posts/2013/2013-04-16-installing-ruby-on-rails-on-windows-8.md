@@ -11,7 +11,7 @@ tags:
 
 I had some problems installing Ruby on Rails on Windows 8 so I'm writing this down as a summary.
 
-<strong>You might also want to read the <a href="/2013/08/installing-ruby-on-rails-august-2013">most recent post</a> on the same topic.</strong>
+<strong>You might also want to read the <a href="{% post_url 2013/2013-08-28-installing-ruby-on-rails-august-2013 %}">most recent post</a> on the same topic.</strong>
 <ol>
 <li>Use <a href="http://rubyinstaller.org/downloads/">RubyInstaller</a>. I recommend version 1.9.3. With version 2, I run into various problems trying to build native gems (e.g. libiconv not found). By default this will install Ruby at C:Ruby193. I also recommend selecting the Add Ruby to the PATH during installation, no need to do it manually later.</li>
 <li>From the same site, download DevKit. It's a self extracting archive and you need to extract it to its final location. I extracted it under C:Ruby193devkit so it's together with ruby.</li>

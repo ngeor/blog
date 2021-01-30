@@ -11,7 +11,7 @@ tags:
 - unit tests
 ---
 
-In the previous post we had a look at <a href="{{ site.baseurl }}/2016/05/21/using-sinon-spies.html">sinon spies</a>. With spies, we are able to determine if a specific function was called or not. Usually the dependencies between units are more interesting, they involve units co-operating, exchanging data and so on. Spies do not suffice. Let's have a look at another technique, using stubs.<!--more-->
+In the previous post we had a look at <a href="{% post_url 2016/2016-05-21-using-sinon-spies %}">sinon spies</a>. With spies, we are able to determine if a specific function was called or not. Usually the dependencies between units are more interesting, they involve units co-operating, exchanging data and so on. Spies do not suffice. Let's have a look at another technique, using stubs.<!--more-->
 
 A stub is <strong>pre-programmed function</strong>. You define the expected input and output and the stub complies happily. If you call the stub in an unexpected way, it will typically return a default value (<code>undefined</code>). In code, this looks something like that:
 
@@ -79,7 +79,7 @@ Calculator.prototype.isReady = function() {
 };
 ```
 
-Are we done? Not really. First of all, we only added one unit test that proves the calculator reports it is ready when the battery is charged. We should cover the opposite case as well: the calculator should report it's not ready when the battery is empty. Note that even if we don't cover this case, code coverage will be reported as 100% (remember how <a href="{{ site.baseurl }}/2016/05/07/what-is-code-coverage.html">code coverage doesn't say anything about the quality of your tests</a>).
+Are we done? Not really. First of all, we only added one unit test that proves the calculator reports it is ready when the battery is charged. We should cover the opposite case as well: the calculator should report it's not ready when the battery is empty. Note that even if we don't cover this case, code coverage will be reported as 100% (remember how <a href="{% post_url 2016/2016-05-07-what-is-code-coverage %}">code coverage doesn't say anything about the quality of your tests</a>).
 
 To cover the negative test case, we could copy paste the test we already wrote and change it slightly:
 

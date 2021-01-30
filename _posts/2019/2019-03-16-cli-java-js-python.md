@@ -439,7 +439,7 @@ Pick whatever you like. I like to write less code and having less dependencies
 to worry about. And remember that
 [there are two kinds of programming languages: the ones people complain about and the ones that nobody uses](https://en.wikiquote.org/wiki/Bjarne_Stroustrup).
 
-[stop writing bash scripts]: {{ site.baseurl }}{% post_url 2019/2019-02-11-goodbye-bash %}
+[stop writing bash scripts]: {% post_url 2019/2019-02-11-goodbye-bash %}
 [commander]: https://www.npmjs.com/package/commander
 [argparse]: https://docs.python.org/3/library/argparse.html
 [Apache Commons IO]: https://commons.apache.org/proper/commons-io/

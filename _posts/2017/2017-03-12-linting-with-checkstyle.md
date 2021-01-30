@@ -63,7 +63,7 @@ To <strong>define your own rules</strong>, start by downloading the Sun XML fil
 </configuration>
 ```
 
-I have committed a modified checkstyle.xml and you can have a look at it <a href="https://github.com/ngeor/zfs-snapshot-trimmer/blob/master/checkstyle.xml" target="_blank">here</a>. I made some rules more relaxed and I added some rules that were missing and I find useful. First, the rules I relaxed:
+I made some rules more relaxed and I added some rules that were missing and I find useful. First, the rules I relaxed:
 <ul>
 <li>disabled the <strong>JavadocPackage</strong> rule. Since I'm not writing library code, I think that documenting packages are a bit too much for me.</li>
 <li>changed the <strong>JavadocVariable</strong> rule to be a bit more lenient. I don't want to document private fields, because usually the documentation will be on their corresponding getter/setter method. I do want to document protected/public fields, because if they exist, they are probably important. Ideally fields should be private, so a protected/public field better have a good documentation comment to justify it.</li>

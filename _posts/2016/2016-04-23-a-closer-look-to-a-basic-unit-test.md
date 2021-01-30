@@ -11,7 +11,7 @@ tags:
 - unit tests
 ---
 
-In the <a href="/2016/04/what-is-a-unit-test-and-why-should-i-care/">previous post</a> we started writing a basic Calculator class and added the first unit test. Let's have a closer look at that unit test and extend our calculator with more features.
+In the <a href="{% post_url 2016/2016-04-16-what-is-a-unit-test-and-why-should-i-care %}">previous post</a> we started writing a basic Calculator class and added the first unit test. Let's have a closer look at that unit test and extend our calculator with more features.
 
 <!--more-->
 

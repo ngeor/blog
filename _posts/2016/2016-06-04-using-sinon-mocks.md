@@ -10,7 +10,7 @@ tags:
 - unit tests
 ---
 
-In the previous posts we had a look at sinon <a href="/2016/05/using-sinon-spies/">spies</a> and <a href="/2016/05/using-sinon-stubs/">stubs</a>. There is one more technique we can use in order to orchestrate our test dependencies: mocks.
+In the previous posts we had a look at sinon <a href="{% post_url 2016/2016-05-21-using-sinon-spies %}">spies</a> and <a href="{% post_url 2016/2016-05-28-using-sinon-stubs %}">stubs</a>. There is one more technique we can use in order to orchestrate our test dependencies: mocks.
 
 <!--more-->
 

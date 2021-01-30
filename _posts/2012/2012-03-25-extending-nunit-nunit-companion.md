@@ -24,9 +24,9 @@ significant effort to maintain. Enter NUnit extensibility.<!--more-->
 I found most of the information I needed in
 <a href="http://www.simple-talk.com/dotnet/.net-tools/testing-times-ahead-extending-nunit/">this
 nice article</a> and I hacked away this morning into a result that works on my
-machine (TM) - and also on my build server! The source code is available in
+machine (TM) - and also on my build server! ~~The source code is available in
 SourceForge, I wrapped it up in a project called
-<a href="https://sourceforge.net/projects/nunitcompanion/">NUnit Companion</a>.
+NUnit Companion~~.
 
 <h2>How to use it</h2>
 

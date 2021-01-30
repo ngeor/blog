@@ -14,7 +14,7 @@ In my recent blog posts I've played a lot with TeamCity. Often, when I want to b
 
 My setup is on a Windows laptop, running Windows 10 Home. This means I have to use <strong>Docker Toolbox</strong>, which runs docker inside a virtual machine and not hyper-v. This is an additional layer that makes things a little bit more complicated.
 
-I'm using <strong>docker compose</strong> to bring up TeamCity Server and Agent, as well as a custom Docker Registry. The configuration, together with some utility scripts, is <a href="https://github.com/ngeor/teamcity-playground">available on GitHub</a>. All volumes are stored under a common subfolder named <code>data</code> (so it's easy to add only one folder in <code>.gitignore</code>).
+I'm using <strong>docker compose</strong> to bring up TeamCity Server and Agent, as well as a custom Docker Registry. The configuration, together with some utility scripts, is <a href="https://github.com/ngeor/kamino/tree/trunk/dockerfiles/teamcity">available on GitHub</a>. All volumes are stored under a common subfolder named <code>data</code> (so it's easy to add only one folder in <code>.gitignore</code>).
 
 Here's my <code>docker-compose.yaml</code> file:
 
@@ -70,14 +70,3 @@ The last service is the Docker Registry, but there's nothing special going on he
 I'd like to explain a bit the <code>/opt/buildagent/work:/opt/buildagent/work</code> volume mapping. Since I'm running Docker Toolbox, that folder is inside the virtual machine and not directly on my laptop. This is the root folder in which the TeamCity Agent checks out code and runs the builds.
 
 When TeamCity runs a step which uses a Docker image, it offers the current directory as a volume, so that the Docker image will have access to the current working directory. However, I'm running Docker on Docker. That means that in the end these volumes will be resolved by the docker host (in my case, that's the virtual machine of Docker Toolbox). If I don't expose the <code>/opt/buildagent/work</code> volume to the outside world, TeamCity will be mounting a non existing volume and the dockerized build steps will find an empty directory instead of the currently checked out code. It's a bit complicated, but it's important to understand that in the end volumes are resolved at the docker daemon's host.
-
-Finally, I also have a few custom scripts that help me make the setup complete. The <a href="https://github.com/ngeor/teamcity-playground/blob/master/docker-toolbox-provision.sh">first one</a> uses <code>docker-machine</code>. It modifies <code>/etc/hosts</code> so that <code>registry.local</code> points to my IP and it convinces docker to trust my self-generated SSL certificate. <del datetime="2017-12-27T07:46:21+01:00">The <a href="https://github.com/ngeor/teamcity-playground/blob/master/provision-teamcity-agent.sh">second script</a> runs against the TeamCity Agent container and it convinces the agent to trust <code>github.com</code>. Without this, build steps that call git directly fail complaining about host key verification.</del>
-
-<strong>Update:</strong> I removed the need for the second script by building a custom Docker image for the TeamCity Agent:
-
-```
-FROM jetbrains/teamcity-agent:2017.2.1
-
-RUN mkdir -p /etc/ssh
-RUN ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts
-```

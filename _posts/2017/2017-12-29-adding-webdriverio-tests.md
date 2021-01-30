@@ -62,7 +62,7 @@ describe('homepage', () => {
 });
 ```
 
-Small note: the <a href="{{ site.baseurl }}/2016/06/25/functional-testing-hello-world.html" target="_blank">last time I dove into WebdriverIO</a>, things were a bit more complicated, with promises and callbacks. Now all that seems to be hidden away.
+Small note: the <a href="{% post_url 2016/2016-06-25-functional-testing-hello-world %}" target="_blank">last time I dove into WebdriverIO</a>, things were a bit more complicated, with promises and callbacks. Now all that seems to be hidden away.
 
 <strong>Run the tests</strong>
 

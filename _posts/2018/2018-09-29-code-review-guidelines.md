@@ -159,4 +159,4 @@ language you're using:
 - Add good documentation comments (javadoc, jsdoc, xmldoc) according to the
   linter (at least on classes and public functions)
 
-[ci-requirements]: {{ site.baseurl }}{% post_url 2018/2018-09-24-ci-requirements %}
+[ci-requirements]: {% post_url 2018/2018-09-24-ci-requirements %}

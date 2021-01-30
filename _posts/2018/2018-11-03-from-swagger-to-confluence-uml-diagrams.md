@@ -103,4 +103,4 @@ In the end, you get a fancy diagram in Confluence:
 [swagger to uml]: https://github.com/nlohmann/swagger_to_uml
 [plant uml]: http://plantuml.com/
 [graphviz]: http://www.graphviz.org/
-[swagger-to-diagram]: https://github.com/ngeor/docker-swagger-to-diagram
+[swagger-to-diagram]: https://github.com/ngeor/kamino/tree/trunk/dockerfiles/swagger-to-diagram

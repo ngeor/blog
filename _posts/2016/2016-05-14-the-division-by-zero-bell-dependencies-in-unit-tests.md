@@ -9,9 +9,9 @@ tags:
 - unit tests
 ---
 
-We left our calculator <a href="/2016/05/what-is-code-coverage/">in the previous post</a> in a decent state, being able to do the four basic mathematical operations. In the special case of division by zero, we want the calculator to make a noise like a bell. Let's see what we can do about this.<!--more-->
+We left our calculator <a href="{% post_url 2016/2016-05-07-what-is-code-coverage %}">in the previous post</a> in a decent state, being able to do the four basic mathematical operations. In the special case of division by zero, we want the calculator to make a noise like a bell. Let's see what we can do about this.<!--more-->
 
-Like I mentioned in previous posts, the good thing about <a href="/2016/04/what-is-test-driven-development/">TDD</a> is that it guides you towards code that is better organized and follows good principles. What do I mean? We could start of course by adding the code that connects to the sound system of the calculator directly inside our <code>Calculator</code> class. However, unit testing in that case would be rather difficult. Even worse, it's bad practice because it puts too much responsibilities in the same class. The <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">single responsibility principle</a> says that the <code>Calculator</code> should keep doing only its maths and leave anything else to other classes.
+Like I mentioned in previous posts, the good thing about <a href="{% post_url 2016/2016-04-30-what-is-test-driven-development %}">TDD</a> is that it guides you towards code that is better organized and follows good principles. What do I mean? We could start of course by adding the code that connects to the sound system of the calculator directly inside our <code>Calculator</code> class. However, unit testing in that case would be rather difficult. Even worse, it's bad practice because it puts too much responsibilities in the same class. The <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">single responsibility principle</a> says that the <code>Calculator</code> should keep doing only its maths and leave anything else to other classes.
 
 The unit test for dividing by zero might look like this:
 

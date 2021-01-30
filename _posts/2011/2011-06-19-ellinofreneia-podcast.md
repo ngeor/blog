@@ -25,4 +25,4 @@ Real FM στο iTunes.</del> Λογικά θα λειτουργεί και αλ�
 ποστ.
 
 <strong>Ενημέρωση 3 Μαρτίου 2012: Υπάρχει και
-<a href="/2013/02/ellinofreneia-v3">νέα έκδοση του podcast</a>.</strong>
+<a href="{% post_url 2013/2013-02-06-ellinofreneia-v3 %}">νέα έκδοση του podcast</a>.</strong>

@@ -43,7 +43,7 @@ To fix this, I'd have to go through all the posts, find all code snippets, and r
 
 <strong>New Year Resolutions</strong>
 
-Learning new things is always fun. I wanted to do a bit more Python this year, even though I never wrote anything with Python professionally. It's a language I found interesting but never had the chance to use it. The Python 2 vs 3 schism was also a deterrent. It's still annoying that search results on google take you to Python 2 results. I had the same problem when I was trying to do a hello world project with Angular, where search results appear for the old AngularJS. But, I gave it a try and I managed to put together what I wanted to achieve without much effort. I called the tool <a href="https://github.com/ngeor/wpbot">wpbot</a> and it's available on GitHub.
+Learning new things is always fun. I wanted to do a bit more Python this year, even though I never wrote anything with Python professionally. It's a language I found interesting but never had the chance to use it. The Python 2 vs 3 schism was also a deterrent. It's still annoying that search results on google take you to Python 2 results. I had the same problem when I was trying to do a hello world project with Angular, where search results appear for the old AngularJS. But, I gave it a try and I managed to put together what I wanted to achieve without much effort. I called the tool <a href="https://github.com/ngeor/kamino/tree/trunk/wpbot">wpbot</a> and it's available on GitHub.
 
 <strong>WordPress.org vs WordPress.com</strong>
 

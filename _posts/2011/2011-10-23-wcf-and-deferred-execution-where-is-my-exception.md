@@ -11,7 +11,7 @@ tags:
 ---
 
 A long time ago, I blogged about
-<a href="/2010/09/deferred-linq-queries-in-wcf-services" target="_blank">WCF and
+<a href="{% post_url 2010/2010-09-12-deferred-linq-queries-in-wcf-services %}" target="_blank">WCF and
 deferred LINQ queries</a> and some surprises that combination may have. Back
 then, our WCF service would crash inexplicably when the returning type of an
 operation would contain an enumerable whose evaluation was deferred until after

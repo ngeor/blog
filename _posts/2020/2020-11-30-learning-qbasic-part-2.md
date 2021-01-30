@@ -229,4 +229,4 @@ E --> |No| S[Success]
 </div>
 
 
-[previous post]: {{ site.baseurl }}{% post_url 2020/2020-08-08-learning-qbasic %}
+[previous post]: {% post_url 2020/2020-08-08-learning-qbasic %}
