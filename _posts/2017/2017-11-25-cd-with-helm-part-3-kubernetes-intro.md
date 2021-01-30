@@ -160,7 +160,7 @@ We can see various other IP addresses, but these are internal to the cluster. Th
 
 One more trick: if you run <code>minikube dashboard</code>, you'll get a web dashboard showing you the same information we've explored with the CLI and more:
 
-<img src="{{ site.baseurl }}/assets/2017/11/25/11_33_11-overview-kubernetes-dashboard.png" />
+<img src="{% link /assets/2017/11/25/11_33_11-overview-kubernetes-dashboard.png %}" />
 
 To summarize what we did in this post: we installed minikube locally. We connected to minikube's docker daemon. We created a deployment to run the app inside a pod. Finally we created a service to expose the deployment outside the cluster. There are a lot of Kubernetes concepts here already, but if you want you can study these in details <a href="https://kubernetes.io/docs/concepts/" target="_blank">online</a>.
 

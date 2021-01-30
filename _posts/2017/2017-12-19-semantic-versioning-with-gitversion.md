@@ -285,11 +285,11 @@ branch available at all. This can confuse GitVersion.
 The last bit also overrides the build number of TeamCity, which improves UX
 because we see the semantic version as the build number:
 
-<img src="{{ site.baseurl }}/assets/2017/12/19/20_35_20-blog-helm-__-commit-stage-_-branches-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/19/20_35_20-blog-helm-__-commit-stage-_-branches-e28094-teamcity.png %}" />
 
 We can see that consecutive commits change the build number:
 
-<img src="{{ site.baseurl }}/assets/2017/12/19/20_41_33-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/19/20_41_33-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png %}" />
 
 If we re-run a branch, it won't have an effect to its build number. The build
 number is now derived from the semantic version and the semantic version is
@@ -297,13 +297,13 @@ calculated solely based on the git history.
 
 We should also have TeamCity tag the master branch automatically:
 
-<img src="{{ site.baseurl }}/assets/2017/12/19/19_07_58-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/19/19_07_58-commit-stage-configuration-e28094-teamcity.png %}" />
 
 Now, let's try to create a minor feature. As before, we create a feature branch
 out of master. But this time, in the commit message we specify the magic string
 <code>+semver: minor</code>. The version gets adjusted automatically:
 
-<img src="{{ site.baseurl }}/assets/2017/12/19/20_59_12-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/19/20_59_12-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png %}" />
 
 When this gets merged, master will get version 1.1.0.
 

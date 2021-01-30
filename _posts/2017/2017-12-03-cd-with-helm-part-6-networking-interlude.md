@@ -18,7 +18,7 @@ Before we continue with setting up the multiple environments that comprise our D
 
 Let's start with the router, the magic box in the living room, whose blinking lights connect us to the world. Here's a photo of an old one I had in 2015:
 
-<figure><img src="{{ site.baseurl }}/assets/2015/11/11/194237.jpg" /><figcaption>Red light on my router</figcaption></figure>
+<figure><img src="{% link /assets/2015/11/11/194237.jpg%}" /><figcaption>Red light on my router</figcaption></figure>
 
 This little guy sits between my devices and the internet, as shown in this awesome diagram I drew all by myself:
 
@@ -42,7 +42,7 @@ vboxmanage modifyvm minikube --nic3 bridged --bridgeadapter3 eth0
 
 By default, the virtual machine of minikube has two network devices, so we create a third one. It is also assumed here that the host's network device is <code>eth0</code>. What does this do? Let's start again minikube with <code>minikube start</code> and when it's up and running, ssh into it with <code>minikube ssh</code>. From within that session, run <code>ifconfig</code> to see the network interfaces. There will be quite a lot, but you'll notice one of them has an IP on the 192.168.2.0/24 network:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/03/10_00_08-mingw64__c_users_ngeor.png" /><figcaption>We now have an IP visible to the local network</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/03/10_00_08-mingw64__c_users_ngeor.png %}" /><figcaption>We now have an IP visible to the local network</figcaption></figure>
 
 This IP, in my case 192.168.2.18, is accessible from all devices on the local network. This means I can now access the Kubernetes dashboard from my phone on http://192.168.2.18:30000/.
 
@@ -50,7 +50,7 @@ Now we've explained a bit what happens with the local network and the virtual ma
 
 Our application, blog-helm, is running as a Docker container. If we see the pod's information, there is an IP assigned to it (in my case 172.17.0.3):
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/03/10_33_24-blog-helm-blog-helm-555f4bd677-r72q2-kubernetes-dashboard.png" /><figcaption>The IP address of the pod</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/03/10_33_24-blog-helm-blog-helm-555f4bd677-r72q2-kubernetes-dashboard.png %}" /><figcaption>The IP address of the pod</figcaption></figure>
 
 This IP is not accessible to anyone but Kubernetes itself. We can login to minikube with <code>minikube ssh</code> and test it:
 
@@ -72,7 +72,7 @@ ngeor@mini:~$
 
 The application works fine and listens to port 3000. To make it accessible outside the cluster, we first need a service. The service gets assigned a random IP, which is virtual, and is called cluster IP.
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/03/10_47_56-blog-helm-blog-helm-kubernetes-dashboard.png" /><figcaption>The virtual IP address of the service (cluster IP)</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/03/10_47_56-blog-helm-blog-helm-kubernetes-dashboard.png %}" /><figcaption>The virtual IP address of the service (cluster IP)</figcaption></figure>
 
 The cluster IP is 10.100.9.182 in this case. Our <code>values.yaml</code> file in the Helm chart had these values for the service:
 
@@ -106,7 +106,7 @@ Note that by default the service is still not accessible outside of the cluster!
 
 Our Helm chart so far has been using a <strong>NodePort</strong>. This selects a random port in the range 30000-32767 and makes that available outside the cluster. You can also specify a port if you want to. This is the technique the dashboard is also using by default. Our app has been assigned the port 32048, which is accessible outside the cluster:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/03/10_56_48-mozilla-firefox.png" /><figcaption>Accessing the app via the NodePort</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/03/10_56_48-mozilla-firefox.png %}" /><figcaption>Accessing the app via the NodePort</figcaption></figure>
 
 The other option we will explore is <strong>Ingress</strong>. Ingress is another layer on top of the services. While a service allows us to route traffic to multiple pods of the same application, ingress allows us to route traffic to various services based on criteria like the host name or the URL path. It's like a reverse proxy (in fact one of the implementation of ingress is using nginx).
 
@@ -130,6 +130,6 @@ ingress:
 
 Of course, this host name needs to point to the cluster's public IP. Remember that's 192.168.99.100 which is public only to the host (my desktop computer) or 192.168.2.18 which is public to all my devices. None of these is public to the internet. To do that you have three options: the easiest is to modify the HOSTS file (/etc/hosts or C:\Windows\system32\drivers\etc\hosts) on the computer you want to browse from. I'm not sure you can do this on a phone though, which takes us to the other two options: setup your own DNS server and configure the router to use it so that all connected devices will use it. This is what I've done and it wasn't too hard. The last option is quite easy, providing you have purchased your own domain. Just login to the domain manager tool and assign a few hostnames e.g. blog-helm.my-domain.com to point to the IP.
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/03/11_13_03.png" /><figcaption>Accessing the app via Ingress</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/03/11_13_03.png %}" /><figcaption>Accessing the app via Ingress</figcaption></figure>
 
 In the next post, we'll make things a bit neater by using a Docker registry and we'll be ready to start setting up our DTAP.

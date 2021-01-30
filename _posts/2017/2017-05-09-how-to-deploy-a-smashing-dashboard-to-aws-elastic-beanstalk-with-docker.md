@@ -110,6 +110,6 @@ It's definitely more verbose compared to the command line arguments, but it is e
 
 Notice that we didn't have to provide a Dockerfile at all. That's because we were lucky and someone had created a Docker image that covers all of our requirements. To deploy the app to AWS Elastic Beanstalk, we just need to create a zip file that creates the Dockerrun.aws.json file, together with the code folders of our app (dashboards, jobs, widgets).
 
-<img src="{{ site.baseurl }}/assets/2017/05/09/21_39_13-dashboard2-env-dashboard-e2808e-microsoft-edge.png" />
+<img src="{% link /assets/2017/05/09/21_39_13-dashboard2-env-dashboard-e2808e-microsoft-edge.png %}" />
 
 This simple exercise is a nice example of how Docker solves infrastructure obstacles. Instead of figuring out what it takes for AWS to support our exotic stack, we provide a Docker container that just works.

@@ -59,7 +59,7 @@ docker run \
 ```
 
 The XML test report gets consumed and the tests are presented in the Test tab:
-<img src="{{ site.baseurl }}/assets/2017/12/29/18_12_36-blog-helm-__-commit-stage-_-2-2-2-29-dec-17-16_41-_-tests-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/29/18_12_36-blog-helm-__-commit-stage-_-2-2-2-29-dec-17-16_41-_-tests-e28094-teamcity.png %}" />
 
 <strong>Visual Studio Code</strong>
 

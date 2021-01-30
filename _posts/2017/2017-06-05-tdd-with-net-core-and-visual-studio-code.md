@@ -179,7 +179,7 @@ Test execution time: 1,2565 Seconds
 Visual Studio Code has amazing support for .NET Core. Notice the "run test" and
 "debug test" labels above the unit test method:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_20_04-unittest1-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_20_04-unittest1-cs-myapp-visual-studio-code.png %}" />
 
 These labels are clickable, so you can run the test directly from the editor.
 
@@ -188,22 +188,22 @@ able to say hello to a person, so it will have a SayHello method.
 
 We'll start by adding the Greeter test:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_24_57-greetertest-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_24_57-greetertest-cs-myapp-visual-studio-code.png %}" />
 
 since there's no <code>Greeter</code> class, that's the first error. Let's
 create the file in the MyApp.CLI project (no need to modify the csproj file!):
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_26_42-greeter-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_26_42-greeter-cs-myapp-visual-studio-code.png %}" />
 
 Back in the test, the editor is intelligent enough to propose importing the new
 class, a convenience usually found in full blown IDEs:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_28_07-greetertest-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_28_07-greetertest-cs-myapp-visual-studio-code.png %}" />
 
 The next step is to call the Greeter's (non-existing)
 <code>SayHello</code> method:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_30_26-greetertest-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_30_26-greetertest-cs-myapp-visual-studio-code.png %}" />
 
 The refactoring helper is great here too, it allows us to generate a method that
 throws a <code>NotImplementedException</code> (perfect for our TDD approach).
@@ -211,15 +211,15 @@ throws a <code>NotImplementedException</code> (perfect for our TDD approach).
 The final bit for our unit test is to write the assertion (and change the class
 to <code>public</code> for xUnit to see it, I forgot that bit...):
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_36_16-greetertest-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_36_16-greetertest-cs-myapp-visual-studio-code.png %}" />
 
 Clicking the "run test" link leads to a failed test:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_37_57-greetertest-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_37_57-greetertest-cs-myapp-visual-studio-code.png %}" />
 
 We need to implement the Greeter's method:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_40_04-greeter-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_40_04-greeter-cs-myapp-visual-studio-code.png %}" />
 
 And running the test again passes.
 
@@ -231,11 +231,11 @@ red-green, it's red-green-blue (blue being the refactoring phase).
 With that in mind, let's do some refactoring. Not much to improve here, other
 than show off some of C#'s more recent features like string interpolation:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_44_08-greeter-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_44_08-greeter-cs-myapp-visual-studio-code.png %}" />
 
 and shorter, expression-bodied methods:
 
-<img src="{{ site.baseurl }}/assets/2017/06/04/16_46_00-greeter-cs-myapp-visual-studio-code.png" />
+<img src="{% link /assets/2017/06/04/16_46_00-greeter-cs-myapp-visual-studio-code.png %}" />
 
 and of course rename the <code>v</code> parameter to a more appropriate name,
 like <code>personToGreet</code> (well anything is better than <code>v</code> in

@@ -20,7 +20,7 @@ In the weekend, I was looking into an open source dashboard called <a href="http
 
 To get started with smashing, you'll need Ruby. Install the bundler and smashing gems (just follow the instructions on its homepage). For Windows, I experienced that I needed nodeJS to be installed as well, your mileage might vary. The smashing gem provides a CLI to create a new dashboard project.  That's done with <code>smashing new mydashboard</code>. Run <code>bundle</code> inside the newly created <code>mydashboard</code> folder to install your dependencies. Finally, run <code>smashing start</code> to start the dashboard. It's available on port 3030 and looks pretty spiffy out of the box:
 
-<img src="{{ site.baseurl }}/assets/2017/05/08/21_50_49-my-super-sweet-dashboard.png" />
+<img src="{% link /assets/2017/05/08/21_50_49-my-super-sweet-dashboard.png %}" />
 
 What's even nicer is how simple the codebase is and how easy it is to start working on your own widgets. I wanted to create a widget which will show the build status of certain TeamCity builds. There are already a few dashing widgets available for that, but, again the curse of the open source strikes. Abandoned widgets, depending on abandoned gems that wrap the TeamCity REST API (I counted 3 or 4 different gems, all targeting old TeamCity versions). The other reason for this curse is that it's quite easy to implement such a widget in a few lines of code, instead of diving into other people's abandonware (which is what I did as well).
 
@@ -81,6 +81,6 @@ I really liked working with smashing, because it has a good architecture defined
 
 My humble dashboard with two TeamCity builds looks like this:
 
-<img src="{{ site.baseurl }}/assets/2017/05/08/21_37_18-my-super-sweet-dashboard.png" />
+<img src="{% link /assets/2017/05/08/21_37_18-my-super-sweet-dashboard.png %}" />
 
 and, as they say, it works on my machine.

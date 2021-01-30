@@ -53,11 +53,11 @@ If we have all this in place, we can publish to nexus with no extra plugin. Mave
 
 If you manage to get through all this, you'll have a new package. You might thing we're done. Well, sorry, no. Unfortunately, it doesn't get published directly, but it ends up in a <strong>staging area</strong> where you can review it, approve it or reject it. Like I said, the whole experience feels a bit antiquated. This is one last bit that needs manual intervention unfortunately. It looks like this:
 
-<img src="{{ site.baseurl }}/assets/2017/03/27/11_32_33-nexus-repository-manager.png" />
+<img src="{% link /assets/2017/03/27/11_32_33-nexus-repository-manager.png %}" />
 
 You need to first "Close" and then "Release" the package. You can also browse to verify it has the expected version:
 
-<img src="{{ site.baseurl }}/assets/2017/03/27/11_33_24-nexus-repository-manager.png" />
+<img src="{% link /assets/2017/03/27/11_33_24-nexus-repository-manager.png %}" />
 
 The first time you publish, you need to comment on the JIRA ticket, so that they will set up some synchronization process. This is a one time only task. Once that is done, the package finally becomes available. Subsequent deployments don't require any JIRA interaction.
 

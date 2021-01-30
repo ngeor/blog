@@ -16,27 +16,27 @@ According to <a href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">Wi
 
 First we need to create the new build configuration:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_21_44-create-build-configuration-e28094-teamcity.png" /><figcaption>Adding a new build configuration for the Smoke Test</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_21_44-create-build-configuration-e28094-teamcity.png %}" /><figcaption>Adding a new build configuration for the Smoke Test</figcaption></figure>
 
 Just like in the previous post, we need to make it part of the <a href="{% post_url 2017/2017-12-27-build-chains-in-teamcity %}">build chain</a>, so it needs the VCS root:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_22_48-smoke-test-configuration-e28094-teamcity.png" /><figcaption>Attaching VCS root</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_22_48-smoke-test-configuration-e28094-teamcity.png %}" /><figcaption>Attaching VCS root</figcaption></figure>
 
 and the snapshot dependency. Note that the only artifact needed is the <code>image-tag.txt</code> file that contains the Docker image tag name.
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_24_40-smoke-test-configuration-e28094-teamcity.png" /><figcaption>Configuring dependencies</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_24_40-smoke-test-configuration-e28094-teamcity.png %}" /><figcaption>Configuring dependencies</figcaption></figure>
 
 I'd like to smoke test all feature branches automatically on every commit, so I configure a Finished Build trigger:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_26_31-smoke-test-configuration-e28094-teamcity.png" /><figcaption>Automatically smoke test all green Commit Stage builds</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_26_31-smoke-test-configuration-e28094-teamcity.png %}" /><figcaption>Automatically smoke test all green Commit Stage builds</figcaption></figure>
 
 and I don't want to be able to deploy to the test environment unless the smoke test has passed, so I add another snapshot dependency to the Deploy to Test build configuration:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_29_16-deploy-to-test-configuration-e28094-teamcity.png" /><figcaption>Only deploy when smoke test passes</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_29_16-deploy-to-test-configuration-e28094-teamcity.png %}" /><figcaption>Only deploy when smoke test passes</figcaption></figure>
 
 With these changes we have a new build chain with the Smoke Test build configuration in between Commit Stage and Deploy to Test:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/08_52_34-blog-helm-__-commit-stage-_-build-chains-e28094-teamcity.png" /><figcaption>The new build chain</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/08_52_34-blog-helm-__-commit-stage-_-build-chains-e28094-teamcity.png %}" /><figcaption>The new build chain</figcaption></figure>
 
 Now the build pipeline is configured and we just need to write the script that performs the smoke test. The script is a bit long at 98 lines of Bash, so I'll just <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/ci-scripts/smoke-test-docker-image.sh">link to it</a> if you want to read it. Its logic is roughly as follows:
 <ul>
@@ -49,13 +49,13 @@ Now the build pipeline is configured and we just need to write the script that p
 
 Let's see an example build log of a successful smoke test:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/09_15_19-blog-helm-__-smoke-test-_-1-5-0-smoke-test-2-28-dec-17-08_09-_-build-log-e28094-te.png" /><figcaption>Build log of a passed smoke test</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/09_15_19-blog-helm-__-smoke-test-_-1-5-0-smoke-test-2-28-dec-17-08_09-_-build-log-e28094-te.png %}" /><figcaption>Build log of a passed smoke test</figcaption></figure>
 
 You can see that the container starts and stays up. The script tried 5 times and the container didn't die inexplicably in between, so that's good enough as far this smoke test is concerned.
 
 To get a red build out of this smoke test, I modified the <code>CMD</code> instruction in the <code>Dockerfile</code> so that it references a non-existing JavaScript file (<code>indexx.js</code> instead of <code>index.js</code>). This is the resulting build log:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/28/09_22_22-blog-helm-__-smoke-test-_-1-5-0-smoke-test-3-28-dec-17-08_21-_-build-log-e28094-te.png" /><figcaption>Build log of a failed smoke test</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/28/09_22_22-blog-helm-__-smoke-test-_-1-5-0-smoke-test-3-28-dec-17-08_21-_-build-log-e28094-te.png %}" /><figcaption>Build log of a failed smoke test</figcaption></figure>
 
 The container starts successfully, but a few seconds later it dies. The smoke test script prints the container logs, so we can clearly see that nodeJS exited because it couldn't find the file <code>/app/indexx.js</code>.
 

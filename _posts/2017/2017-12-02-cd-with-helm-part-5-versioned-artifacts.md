@@ -98,13 +98,13 @@ echo "##teamcity[setParameter name='env.IMAGE_TAG' value='$IMAGE_TAG']"
 
 Let's go over the TeamCity configuration at this point. We have one extra build step, 4 in total:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/13_40_25-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/13_40_25-commit-stage-configuration-e28094-teamcity.png %}" />
 <ol>
 <li>Determine version. This runs the new script, <code>ci-scripts/version.sh</code>, which figures out the Docker image version (and Helm chart version) we will use.</li>
 <li>Build CI image. This builds the Docker image which includes all dependencies, including devDependencies. The only change here is that I'm now using TeamCity's Docker Build native step, instead of using a Command Line step.</li>
 <li>Run linting. No changes here, it uses the image built in the previous step to run linting. Notice that this image does not need to be versioned.</li>
 <li>Build production Docker image. Here we're using the environment variable <code>IMAGE_TAG</code> that is injected by the first build step. It looks like this:
-<img src="{{ site.baseurl }}/assets/2017/12/02/13_47_01-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/13_47_01-commit-stage-configuration-e28094-teamcity.png %}" />
 </li>
 </ol>
 
@@ -116,13 +116,13 @@ helm package --version $IMAGE_TAG ./helm/blog-helm
 
 The command line utility helm will not be present on the build agent. As we discussed in <a href="{% post_url 2017/2017-11-18-cd-with-helm-part-2-dockerize-the-build-plan %}" target="_blank">Dockerize the build plan</a>, we need to wrap helm into a Docker image so that we can use it. Luckily, someone else has already created a <a href="https://hub.docker.com/r/lachlanevenson/k8s-helm/" target="_blank">Docker image with helm</a>. The build step in TeamCity looks like this:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/13_54_55-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/13_54_55-commit-stage-configuration-e28094-teamcity.png %}" />
 
 The reason this works so seamlessly is that TeamCity mounts the current directory as a volume inside the Docker container. The integration is very nicely done by TeamCity, but it's still important to understand what happens under the hood.
 
 One last touch is to <strong>configure our artifacts in TeamCity</strong>:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_06_52-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_06_52-commit-stage-configuration-e28094-teamcity.png %}" />
 
 The tgz file is the Helm chart and the txt file is the small text file that specifies the image version.
 
@@ -130,7 +130,7 @@ The tgz file is the Helm chart and the txt file is the small text file that spec
 
 <strong>Demo time!</strong> Let's see if everything works fine. First, I'll bump the version on master branch to 1.0.1 to trigger a build. The build creates this artifacts:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_08_01-blog-helm-__-commit-stage-_-20-02-dec-17-13_05-_-artifacts-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_08_01-blog-helm-__-commit-stage-_-20-02-dec-17-13_05-_-artifacts-e28094-teamcity.png %}" />
 
 If we download them, we'll see that <code>image-tag.txt</code> just contains "1.0.1". The tgz file can be unzipped and there we'll see that <code>Chart.yaml</code> has the correct version:
 
@@ -155,7 +155,7 @@ app.get('/', (req, res) => res.send(`
 
 I'll also bump the version to 1.0.2. Here's the result in TeamCity:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_18_37-blog-helm-__-commit-stage-_-21-02-dec-17-13_15-_-artifacts-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_18_37-blog-helm-__-commit-stage-_-21-02-dec-17-13_15-_-artifacts-e28094-teamcity.png %}" />
 
 This time, we're on a feature branch, so both the Docker image and the Helm chart will have the git SHA in their version.
 
@@ -167,7 +167,7 @@ For this to happen, Kubernetes needs to be able to find the Docker images that T
 
 We start by creating a new build configuration called Deploy Stage. We'd like to <strong>consume the artifacts from the Commit Stage</strong>:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_21_14-deploy-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_21_14-deploy-stage-configuration-e28094-teamcity.png %}" />
 
 We don't have any dependency to the source code. All we need is the artifacts. We can deploy everything with one command:
 
@@ -192,7 +192,7 @@ helm upgrade --install blog-helm \
 
 Here's how it looks like in TeamCity:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_25_16-deploy-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_25_16-deploy-stage-configuration-e28094-teamcity.png %}" />
 
 Let's explain a bit the command:
 <ul>
@@ -207,17 +207,17 @@ Let's explain a bit the command:
 
 I can trigger a custom deployment to use my feature branch:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_29_21-blog-helm-__-deploy-stage-_-overview-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/02/14_29_21-blog-helm-__-deploy-stage-_-overview-e28094-teamcity.png %}" />
 
 After the deployment finishes, we can see the results in the Kubernetes dashboard:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_31_12-blog-helm-blog-helm-kubernetes-dashboard.png" />
+<img src="{% link /assets/2017/12/02/14_31_12-blog-helm-blog-helm-kubernetes-dashboard.png %}" />
 
 Notice how both the Helm chart version (indicated by the label "chart" in the top) and the Docker image tag (indicated in the replica set area) are aligned.
 
 And, of course, the app is now sporting an H1 header:
 
-<img src="{{ site.baseurl }}/assets/2017/12/02/14_35_22-mozilla-firefox.png" />
+<img src="{% link /assets/2017/12/02/14_35_22-mozilla-firefox.png %}" />
 
 Perhaps it's worth to mention that you can use any other version strategy that makes sense. In this case, git leads. You can also turn it around and have the build server leading, ignoring what is specified in the code. Or you can mix and match, using for example the major.minor parts of semver from git and the patch from the build server. The important thing is to make sure you have one unique version identifier that you can use to link everything together.
 

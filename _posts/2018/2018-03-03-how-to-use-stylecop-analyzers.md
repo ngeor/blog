@@ -37,7 +37,7 @@ The <code>$schema</code> field adds Intellisense for this json file in Visual St
 
 <strong>Small gotcha</strong>: StyleCop.Analyzers didn't respect my configuration initially. The way it worked was by selecting the file's build action as C# additional file. I don't know if this is the expected behavior but this did the trick for me.
 
-<img src="{{ site.baseurl }}/assets/2018/03/03/09_48_41-ub-parcelshops-microsoft-visual-studio.png" />
+<img src="{% link /assets/2018/03/03/09_48_41-ub-parcelshops-microsoft-visual-studio.png %}" />
 
 That was the first thing I changed. The configuration you can do with the stylecop.json is mentioned <a href="https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/Configuration.md">here</a> but I find that it's a bit limited. They do mention that you can use rule set files to fine tune the rules, but the documentation was not very helpful.
 
@@ -45,11 +45,11 @@ So, the next thing I wanted to change is not having to prefix local calls with <
 
 Each of these rules has an identifier, e.g. in this case it was SA1101. I noticed that these rules are available in the Solution Explorer in Visual Studio, by expanding Dependencies, Analyzers, StyleCop.Analyzers:
 
-<img src="{{ site.baseurl }}/assets/2018/03/03/09_54_54-ub-parcelshops-microsoft-visual-studio.png" />
+<img src="{% link /assets/2018/03/03/09_54_54-ub-parcelshops-microsoft-visual-studio.png %}" />
 
 I can right click on the rule that I want and change its severity to None:
 
-<img src="{{ site.baseurl }}/assets/2018/03/03/09_56_30-ub-parcelshops-microsoft-visual-studio.png" />
+<img src="{% link /assets/2018/03/03/09_56_30-ub-parcelshops-microsoft-visual-studio.png %}" />
 
 This will create the ruleset for me in my project! I couldn't find documentation for this feature and I think it should really be part of the StyleCop.Analyzers documentation. The file has an XML format and a ruleset file extension.
 

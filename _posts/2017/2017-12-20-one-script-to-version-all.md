@@ -19,7 +19,7 @@ The script is a bit large at exactly 100 lines of bash so I'll just link to it <
 
 You can see here the 4 different ways it can be used to generate a version:
 
-<img src="{{ site.baseurl }}/assets/2017/12/20/20_26_51-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/20/20_26_51-blog-helm-__-commit-stage-_-overview-e28094-teamcity.png %}" />
 
 I'll take it from bottom to top:
 <ul>
@@ -55,11 +55,11 @@ The script needs to be called with two parameters: <code>TeamCity %build.number%
 
 It's useful here to clarify the difference between the build counter and the build number in TeamCity. Here's the initial settings of the build configuration. As you can see, by default the build number is equal to the build counter:
 
-<img src="{{ site.baseurl }}/assets/2017/12/20/20_22_50-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/20/20_22_50-commit-stage-configuration-e28094-teamcity.png %}" />
 
 To demonstrate the difference, I've changed the build number to <code>2.4.%build.counter%</code> (it can be obviously anything at all):
 
-<img src="{{ site.baseurl }}/assets/2017/12/20/20_23_46-commit-stage-configuration-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/20/20_23_46-commit-stage-configuration-e28094-teamcity.png %}" />
 
 that's why the build ended up to 2.4.80.
 

@@ -86,11 +86,11 @@ To use this script, we'll add a new step in the deploy template which uses it. F
 
 Note that the only parameter we need to specify in the deployment build configurations is the <code>app.host</code>; the others can be calculated based on that:
 
-<img src="{{ site.baseurl }}/assets/2017/12/29/12_44_30-deploy-template-template-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/29/12_44_30-deploy-template-template-e28094-teamcity.png %}" />
 
 The build step is simply running the <code>wait-for-version</code> script, with parameters <code>%app.version.url%</code> and <code>%build.number%</code>:
 
-<img src="{{ site.baseurl }}/assets/2017/12/29/12_46_06-deploy-template-template-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/29/12_46_06-deploy-template-template-e28094-teamcity.png %}" />
 
 Here's an example of the output log:
 

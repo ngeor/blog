@@ -15,7 +15,7 @@ If your Windows PowerShell profile is inside your OneDrive folder and you don't 
 <li>change the Personal key's value</li>
 </ul>
 
-<img src="{{ site.baseurl }}/assets/2017/04/16/13_51_21-registry-editor.png" />
+<img src="{% link /assets/2017/04/16/13_51_21-registry-editor.png %}" />
 
 In this example, the old value of the Personal folder was C:\Users\ngeor\OneDrive\Documents. This is what Windows PowerShell uses to determine where the profile should live. Changing this to the non-OneDrive old school "My Documents" folder (C:\Users\ngeor\Documents in my case) works for PowerShell too.
 

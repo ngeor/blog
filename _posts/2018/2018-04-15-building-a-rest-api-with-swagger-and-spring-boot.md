@@ -20,7 +20,7 @@ Swagger offers an <a href="https://editor.swagger.io/">online editor</a> which i
 
 On the left side of the editor you can see the YAML syntax. On the right side, a preview of the API, which is updated real-time as you modify the YAML definition:
 
-<img src="{{ site.baseurl }}/assets/2018/04/15/09_15_41.png" />
+<img src="{% link /assets/2018/04/15/09_15_41.png %}" />
 <h2>Blog REST API</h2>
 
 The example REST API will be an API for blogging.
@@ -296,7 +296,7 @@ server.contextPath=/v1
 server.servlet.contextPath=/v1
 ```
 
-<img src="{{ site.baseurl }}/assets/2018/04/15/09_18_44.png" />
+<img src="{% link /assets/2018/04/15/09_18_44.png %}" />
 
 Every time you run the code generation tool, it will overwrite the code it had generated previously. Luckily, it offers a way of leaving certain files intact. That's that <code>.swagger-codegen-ignore</code> file, which works just like a <code>.gitignore</code> file. For now, I add the <code>pom.xml</code> and <code>application.properties</code> there:
 

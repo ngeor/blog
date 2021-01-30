@@ -75,7 +75,7 @@ PS> helm create blog-helm
 
 We get a bunch of new files (<a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">browse code at this point</a>):
 
-<img src="{{ site.baseurl }}/assets/2017/11/27/19_02_31-blog-helm-visual-studio-code.png" />
+<img src="{% link /assets/2017/11/27/19_02_31-blog-helm-visual-studio-code.png %}" />
 <ul>
 <li><code>.helmignore</code> will be used to ignore files when packaging the chart. It's similar to <code>.gitignore</code> and <code>.dockerignore</code>.</li>
 <li><code>Chart.yaml</code> is the main file of the chart. It's mainly there to identify the chart's name and its version.</li>

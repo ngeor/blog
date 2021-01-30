@@ -115,8 +115,8 @@ While in theory this should've worked, it didn't. PhantomJS did not run. The rea
 
 In the end, we can see that we have the new test passing on all environments:
 
-<img src="{{ site.baseurl }}/assets/2017/12/29/14_07_21-blog-helm-__-deploy-to-production-_-build-chains-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/29/14_07_21-blog-helm-__-deploy-to-production-_-build-chains-e28094-teamcity.png %}" />
 
 And we can see the test title in the test report too:
 
-<img src="{{ site.baseurl }}/assets/2017/12/29/14_07_49-blog-helm-__-deploy-to-test-_-2-0-0-29-dec-17-13_05-_-tests-e28094-teamcity.png" />
+<img src="{% link /assets/2017/12/29/14_07_49-blog-helm-__-deploy-to-test-_-2-0-0-29-dec-17-13_05-_-tests-e28094-teamcity.png %}" />

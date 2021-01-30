@@ -21,11 +21,11 @@ In this post, I'll modify the pipeline from the previous posts to use a Docker r
 
 First, we need to enable ECR in Amazon and create our repositories. We have two images that we need to publish, <code>blog-helm</code> and <code>blog-helm-ci</code>, so we need two repositories.
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/08_43_50-amazon-ecs.png" /><figcaption>Enable ECR</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/08_43_50-amazon-ecs.png %}" /><figcaption>Enable ECR</figcaption></figure>
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/08_50_43-amazon-ecs.png" /><figcaption>Create the blog-helm repository</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/08_50_43-amazon-ecs.png %}" /><figcaption>Create the blog-helm repository</figcaption></figure>
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/08_58_05-amazon-ecs.png" /><figcaption>Success!</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/08_58_05-amazon-ecs.png %}" /><figcaption>Success!</figcaption></figure>
 
 The second repository is created in the same way.
 
@@ -46,7 +46,7 @@ TeamCity in theory supports connecting to a Docker registry as a build feature. 
 
 First, we'll create a few parameters on the project level:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/13_21_50-blog-helm-project-_-parameters-e28094-teamcity.png" /><figcaption>Configuration Parameters for the Docker registry</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/13_21_50-blog-helm-project-_-parameters-e28094-teamcity.png %}" /><figcaption>Configuration Parameters for the Docker registry</figcaption></figure>
 
 With this in place, I need to add two new build steps:
 <ul>
@@ -103,9 +103,9 @@ changeProject("d3c230cf-b4cd-4a9e-8017-4b4b945b3a3c") {
 
 With this in place, I'm able to publish the images to AWS ECR:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/13_39_36-amazon-ecs.png" /><figcaption>Production Image (blog-helm)</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/13_39_36-amazon-ecs.png %}" /><figcaption>Production Image (blog-helm)</figcaption></figure>
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/13_40_19-amazon-ecs.png" /><figcaption>CI Image (blog-helm-ci)</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/13_40_19-amazon-ecs.png %}" /><figcaption>CI Image (blog-helm-ci)</figcaption></figure>
 
 You can see that the production image is much smaller than the ci image, because the latter contains dev dependencies and <a href="{% post_url 2017/2017-12-29-adding-webdriverio-tests %}">it's not based on alpine, due to PhantomJS</a>.
 
@@ -156,12 +156,12 @@ In the AWS UI, there's a prominent warning: <em>Amazon ECR limits the number of 
 
 Luckily AWS offers a cleanup policy. It can delete images based on their age or their count. Images are selected based on the tag prefix. Unfortunately we don't have a specific catch-all prefix in the current setup, as the image tag is following semver. It would be perhaps interesting to implement a tag scheme that has a different prefix for feature branches and different for the master branch (e.g. prod-1.2.3 for master and feat-1.2.4-some-feature-branch.1 for the feature branches). It would be also great if AWS allowed for a regex match. In any case, since my code is at the moment on major version 2, I can setup a rule for all images starting with "2." and specify I want to keep the 5 most recent:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/14_18_17-amazon-ecs.png" /><figcaption>Creating a lifecycle policy</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/14_18_17-amazon-ecs.png %}" /><figcaption>Creating a lifecycle policy</figcaption></figure>
 
 These are the 7 images currently available:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/14_19_59-amazon-ecs.png" /><figcaption>Images sorted by date</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/14_19_59-amazon-ecs.png %}" /><figcaption>Images sorted by date</figcaption></figure>
 
 If I do a dry-run on the rule, it correctly identifies the two oldest that will be deleted with this policy:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/30/14_19_15-amazon-ecs.png" /><figcaption>Termination candidates</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/30/14_19_15-amazon-ecs.png %}" /><figcaption>Termination candidates</figcaption></figure>

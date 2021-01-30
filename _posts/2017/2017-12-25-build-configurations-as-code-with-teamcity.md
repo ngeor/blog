@@ -14,21 +14,21 @@ In this post, I'll show how to setup TeamCity so that your project's build confi
 
 I'm going to use the <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm">blog-helm</a> project that I had configured in the <a href="{% link _series/2017-12-09-cd-with-helm.md %}">CD with Helm series</a>. In TeamCity, the project had two build configurations:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/08_20_48-projects-e28094-teamcity.png" /><figcaption>Project with two build configurations</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/08_20_48-projects-e28094-teamcity.png %}" /><figcaption>Project with two build configurations</figcaption></figure>
 
 First, edit the project and find the versioned settings section:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/08_24_14-blog-helm-project-_-versioned-settings-e28094-teamcity.png" /><figcaption>Versioned Settings - Before the changes</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/08_24_14-blog-helm-project-_-versioned-settings-e28094-teamcity.png %}" /><figcaption>Versioned Settings - Before the changes</figcaption></figure>
 
 In this form, we enable synchronization, specify the git repository (blog-helm) to use, select 'use settings from VCS' and finally use the Kotlin format:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/08_26_46-blog-helm-project-_-versioned-settings-e28094-teamcity.png" /><figcaption>Versioned Settings - After the changes</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/08_26_46-blog-helm-project-_-versioned-settings-e28094-teamcity.png %}" /><figcaption>Versioned Settings - After the changes</figcaption></figure>
 
 Once you do this, TeamCity will commit to the master branch a bunch of files that describe everything under the project: in my case that's the two build configurations (Commit Stage and Deploy Stage) but also the VCS root definition of the project. Make sure TeamCtiy has write access to your git repository, otherwise it won't be able to push these changes.
 
 After this is done, we can get latest and see that we have a new folder named <code>.teamcity</code> in our repository:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/08_41_52-blog-helm-visual-studio-code.png" /><figcaption>Versioned settings</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/08_41_52-blog-helm-visual-studio-code.png %}" /><figcaption>Versioned settings</figcaption></figure>
 
 It should be straightforward enough: everything is under <code>.teamcity</code>. The first subfolder is the name of the project, <code>BlogHelm</code>. Build configurations are under the <code>buildTypes</code> subfolder and the VCS root is under the <code>vcsRoots</code> subfolder.
 
@@ -67,25 +67,25 @@ steps {
 
 When I push these changes, the build will start with the settings defined in that branch. We can see that in the log of the build:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/09_04_48-blog-helm-__-commit-stage-_-1-3-2-add-diagnostics-step-1-25-dec-17-08_02-_-bu.png" /><figcaption>Feature branch with extra build steps</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/09_04_48-blog-helm-__-commit-stage-_-1-3-2-add-diagnostics-step-1-25-dec-17-08_02-_-bu.png %}" /><figcaption>Feature branch with extra build steps</figcaption></figure>
 
 Our new build step was executed and it worked fine. Since this is just a feature branch, TeamCity will still report 7 build steps via the UI:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/09_06_47-commit-stage-configuration-e28094-teamcity.png" /><figcaption>Before merging the feature branch</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/09_06_47-commit-stage-configuration-e28094-teamcity.png %}" /><figcaption>Before merging the feature branch</figcaption></figure>
 
 If we merge the feature branch into master, TeamCity will show the new step in the UI:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/09_13_14-commit-stage-configuration-e28094-teamcity.png" /><figcaption>After merging the feature branch</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/09_13_14-commit-stage-configuration-e28094-teamcity.png %}" /><figcaption>After merging the feature branch</figcaption></figure>
 
 What happens if you still want to use the UI? TeamCity allows you to do so. Once you modify something in your build, TeamCity will commit the changes to the master branch. However, it won't modify the existing files. It will create instead a patch file, containing only the change you did, with instructions on how to merge the patch back to where it belongs and then delete it. This is an interesting design choice. They could've just opted for overwriting the files directly, but perhaps that could've lead to some conflicts.
 
 As an example, I'll modify the newly created diagnostics step to also print the Linux version the agent is running (with <code>lsb_release -cdir</code>):
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/09_18_42-todoist_-to-do-list-and-task-manager.png" /><figcaption>Modifying the build with the UI</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/09_18_42-todoist_-to-do-list-and-task-manager.png %}" /><figcaption>Modifying the build with the UI</figcaption></figure>
 
 This will create a new commit in master branch, with a new folder named <code>patches</code>, containing the change:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/25/09_22_33-3f8adc5d-5b14-4a13-9ecd-70b624f828de-kts-blog-helm-visual-studio-code.png" /><figcaption>Patch file</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/25/09_22_33-3f8adc5d-5b14-4a13-9ecd-70b624f828de-kts-blog-helm-visual-studio-code.png %}" /><figcaption>Patch file</figcaption></figure>
 
 The patch file mentions the expected steps and finally contains the actual change:
 

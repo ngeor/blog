@@ -61,20 +61,20 @@ I'll explain a bit my configuration:
 
 This is how the HTML report looks like on a file level (I only have one file to test in the sample project anyway):
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/29/18_47_19-code-coverage-report-for-index-js.png" /><figcaption>HTML coverage report</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/29/18_47_19-code-coverage-report-for-index-js.png %}" /><figcaption>HTML coverage report</figcaption></figure>
 
 As I said in the previous post, I only added a unit test for the <code>/version</code> endpoint, so the other two functions are not covered and appear with a red-pink color.
 
 In TeamCity, the code coverage metrics are visible on the Overview tab:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/29/18_50_05-blog-helm-__-commit-stage-_-2-2-2-29-dec-17-16_41-_-overview-e28094-teamcity.png" /><figcaption>TeamCity code coverage summary</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/29/18_50_05-blog-helm-__-commit-stage-_-2-2-2-29-dec-17-16_41-_-overview-e28094-teamcity.png %}" /><figcaption>TeamCity code coverage summary</figcaption></figure>
 
 <strong>Failure conditions</strong>
 
 It is possible to configure nyc to break the build when the code coverage drops under a certain fixed value. TeamCity allows you to take a different approach: break the build if code coverage drops by a certain amount compared to the previous successful build:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/29/17_28_32-commit-stage-configuration-e28094-teamcity.png" /><figcaption>TeamCity failure condition gives dynamic thresholds</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/29/17_28_32-commit-stage-configuration-e28094-teamcity.png %}" /><figcaption>TeamCity failure condition gives dynamic thresholds</figcaption></figure>
 
 This is great if you have a project with a low code coverage and you are determined to improve it. Every green build sets automatically the bar higher, without having to manually update the thresholds:
 
-<figure><img src="{{ site.baseurl }}/assets/2017/12/29/19_03_57-blog-helm-__-commit-stage-_-2-2-3-drop-coverage-2-29-dec-17-18_02-_-overview.png" /><figcaption>Broken build due to lower coverage</figcaption></figure>
+<figure><img src="{% link /assets/2017/12/29/19_03_57-blog-helm-__-commit-stage-_-2-2-3-drop-coverage-2-29-dec-17-18_02-_-overview.png %}" /><figcaption>Broken build due to lower coverage</figcaption></figure>

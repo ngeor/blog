@@ -17,11 +17,11 @@ TL;DR: I had some fun hacking a tiny tool to batch edit posts in my blog in orde
 
 My blog has had various incarnations over time. It's been on WordPress.com, on my own server with Jekyll and on my own server with WordPress. At some point I went full circle and returned to WordPress.com. The end result is that the various code snippets I include in my posts are not very readable. This is how old code snippets look like:
 
-<figure><img src="{{ site.baseurl }}/assets/2018/01/04/08_16_46-extending-nunit_-nunit-companion-e28093-ngeor-wordpress-com.png" /><figcaption>Old code snippets</figcaption></figure>
+<figure><img src="{% link /assets/2018/01/04/08_16_46-extending-nunit_-nunit-companion-e28093-ngeor-wordpress-com.png %}" /><figcaption>Old code snippets</figcaption></figure>
 
 It's not very readable compared to the more recent posts:
 
-<figure><img src="{{ site.baseurl }}/assets/2018/01/04/08_20_01-adding-webdriverio-tests-e28093-ngeor-wordpress-com.png" /><figcaption>New code snippets</figcaption></figure>
+<figure><img src="{% link /assets/2018/01/04/08_20_01-adding-webdriverio-tests-e28093-ngeor-wordpress-com.png %}" /><figcaption>New code snippets</figcaption></figure>
 
 The reason has to do with the underlying markup. The old posts were using HTML like:
 
@@ -53,7 +53,7 @@ Googling was confusing in this case too. Just like with Python 2 vs Python 3, I 
 
 The most difficult part was setting up OAuth (partly due to the confusion between WordPress.org and WordPress.com). The first step is to create a new <a href="https://developer.wordpress.com/apps/">WordPress.com application</a>. This will provide you with a client ID and a client secret. With the client ID and secret, it's possible to authorize the app to edit posts:
 
-<figure><img src="{{ site.baseurl }}/assets/2018/01/04/08_49_38-authorize-wpbot.png" /><figcaption>Authorizing my app</figcaption></figure>
+<figure><img src="{% link /assets/2018/01/04/08_49_38-authorize-wpbot.png %}" /><figcaption>Authorizing my app</figcaption></figure>
 
 WordPress will then redirect to the URL of the application. Since this is a CLI tool, I launch a small web server from the tool which listens on localhost:3000 to intercept the OAuth code.
 
