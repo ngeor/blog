@@ -6,14 +6,15 @@ My blog
 
 Requirements:
 
-- ruby
-- bundler
+- [VirtualBox](https://www.virtualbox.org/)
+- [Vagrant](https://www.vagrantup.com/)
 
 Commands:
 
-- Install with `bundle install --path vendor/bundle`
-- Start with `bundle exec jekyll serve`
-- Or, start incremental with `bundle exec jekyll serve --incremental`
+- Start the box with `vagrant up`
+- Login to the box with `vagrant ssh` and start jekyll with `j`
+  (alias to `jekyll serve --incremental --host 0.0.0.0`)
+- When done, cleanup with `vagrant destroy`
 - Upgrade with `bundle update github-pages`
 - Profile with `bundle exec jekyll build --profile`
 

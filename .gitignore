@@ -5,3 +5,4 @@ _site/
 .vscode/
 vendor/
 .bundle/
+.vagrant/
