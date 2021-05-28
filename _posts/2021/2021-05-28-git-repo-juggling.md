@@ -9,7 +9,7 @@ tags:
 ---
 
 This post shows how to use `git subtree` commands to move git repositories around.
-Perfect if you're indicisive about monorepo vs multirepo.
+Perfect if you're indecisive about monorepo vs multirepo.
 
 ## Move a repo in a different repo as a subfolder
 
