@@ -12,7 +12,7 @@ F<sub>n-2</sub>.
 I made this page with a bit of [MS-DOS](https://en.wikipedia.org/wiki/MS-DOS)
 nostalgia, showing a solution to the Fibonacci quiz in some of my earliest
 programming languages (if you're curious, I have
-[more Fibonacci implementations](https://github.com/ngeor/kamino/tree/trunk/fibonacci)).
+[more Fibonacci implementations](https://github.com/ngeor/fibonacci)).
 
 Click on a screenshot to see the solution:
 
