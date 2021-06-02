@@ -13,7 +13,7 @@ I have a small mini PC at home that is always turned on. It runs Ubuntu 14.04 (I
 plan to upgrade to 16.04). It sits at the living room and it doesn't make any
 noise, so it acts as a media server. I watch movies and TV series from there. I
 used 3 external disks, 2TB each, to make a ZFS raidz1 pool of 4TB. What is ZFS
-you ask?<!--more-->
+you ask?
 
 <a href="https://en.wikipedia.org/wiki/ZFS">ZFS</a> is a file system that can
 combine multiple drives and make them appear as one. It will figure out where
@@ -76,7 +76,7 @@ thin out older snapshots. The rules are simple:
 
 This is easy to implement because all of my snapshots are named consistently.
 I've made
-the script <a href="https://github.com/ngeor/kamino/tree/trunk/java/zfs-snapshot-trimmer">available in
+the script <a href="https://github.com/ngeor/java/tree/trunk/apps/zfs-snapshot-trimmer">available in
 GitHub</a>.
 
 Hope this helps.

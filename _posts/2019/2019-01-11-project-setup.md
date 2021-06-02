@@ -201,7 +201,7 @@ Maven projects.
 
 #### Tagging master with Maven
 
-[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/kamino/tree/trunk/java/yak4j-bitbucket-maven-plugin)
+[yak4j-bitbucket-maven-plugin](https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-bitbucket-maven-plugin)
 supports Maven projects. It breaks the build if the tag already exists and it is
 able to push a tag to Bitbucket after a successful green build on master.
 

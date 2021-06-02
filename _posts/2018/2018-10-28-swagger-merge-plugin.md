@@ -79,7 +79,7 @@ That's a lot of work. And you will need to do it everytime the API of a service
 changes.
 
 As it turns out, I had to perform this task, and I'm not a fan of doing things
-manually. That's why I created a [swagger maven plugin](https://github.com/ngeor/kamino/tree/trunk/java/yak4j-swagger-maven-plugin)
+manually. That's why I created a [swagger maven plugin](https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-swagger-maven-plugin)
 which does these tasks automatically.
 
 Here's how it can be used in order to merge the swagger files, applying

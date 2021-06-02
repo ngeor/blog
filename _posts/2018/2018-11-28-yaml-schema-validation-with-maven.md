@@ -69,7 +69,7 @@ I did some investigation here as well and I couldn't find an existing Maven
 plugin. The code to [convert YAML to JSON is trivial with
 Jackson](https://stackoverflow.com/questions/23744216/how-do-i-convert-from-yaml-to-json-in-java)
 so I put together a [tiny Maven
-plugin](https://github.com/ngeor/kamino/tree/trunk/java/yak4j-json-yaml-converter-maven-plugin) which
+plugin](https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-json-yaml-converter-maven-plugin) which
 does exactly that and nothing more.
 
 ## Validating JSON schema

@@ -67,8 +67,8 @@ Includes images regarding:
 - Generate diagrams out of swagger definitions and publish them to Confluence
   Cloud
 
-[archetype-quickstart-jdk8]: https://github.com/ngeor/kamino/tree/trunk/archetype-quickstart-jdk8
-[checkstyle-rules]: https://github.com/ngeor/kamino/tree/trunk/checkstyle-rules
+[archetype-quickstart-jdk8]: https://github.com/ngeor/java/tree/trunk/maven-archetypes/archetype-quickstart-jdk8
+[checkstyle-rules]: https://github.com/ngeor/java/tree/trunk/libs/checkstyle-rules
 [clone-all]: https://github.com/ngeor/kamino/tree/trunk/clone-all
 [dirloop]: https://github.com/ngeor/kamino/tree/trunk/dirloop
 [dockerfiles]: https://github.com/ngeor/kamino/tree/trunk/dockerfiles
@@ -76,13 +76,13 @@ Includes images regarding:
 [generator-csharp-nuget-lib]: https://github.com/ngeor/kamino/tree/trunk/generator-csharp-nuget-lib
 [generator-nodejs]: https://github.com/ngeor/kamino/tree/trunk/generator-nodejs
 [instarepo]: https://github.com/ngeor/kamino/tree/trunk/instarepo
-[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-bitbucket-maven-plugin
-[yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-filename-conventions-maven-plugin
-[yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-json-yaml-converter-maven-plugin
-[yak4j-spring-test-utils]: https://github.com/ngeor/kamino/tree/trunk/yak4j-spring-test-utils
-[yak4j-swagger-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-swagger-maven-plugin
-[yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-sync-archetype-maven-plugin
-[yak4j-utc-time-zone-mapper]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-utc-time-zone-mapper
-[yak4j-xml]: https://github.com/ngeor/kamino/tree/trunk/java/yak4j-xml
+[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-bitbucket-maven-plugin
+[yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-filename-conventions-maven-plugin
+[yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-json-yaml-converter-maven-plugin
+[yak4j-spring-test-utils]: https://github.com/ngeor/java/tree/trunk/libs/trunk/yak4j-spring-test-utils
+[yak4j-swagger-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-swagger-maven-plugin
+[yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-sync-archetype-maven-plugin
+[yak4j-utc-time-zone-mapper]: https://github.com/ngeor/java/tree/trunk/libs/java/yak4j-utc-time-zone-mapper
+[yak4j-xml]: https://github.com/ngeor/java/tree/trunk/libs/yak4j-xml
 [yart]: https://github.com/ngeor/kamino/tree/trunk/yart
 [yak shaving]: https://en.wiktionary.org/wiki/yak_shaving
