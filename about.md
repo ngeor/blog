@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+tags:
+  - menu
 ---
 
 My name is Nikolaos Georgiou. I'm a Greek software engineer

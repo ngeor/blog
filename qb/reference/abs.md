@@ -1,6 +1,8 @@
 ---
 title: ABS
 layout: page
+tags:
+  - QBasic Reference
 ---
 
 Calculates the absolute value of the argument.

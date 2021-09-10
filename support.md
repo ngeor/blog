@@ -2,6 +2,8 @@
 layout: page
 title: Support
 permalink: /support/
+tags:
+  - menu
 ---
 
 Hello there!

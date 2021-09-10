@@ -2,6 +2,8 @@
 layout: page
 title: Fibonacci
 permalink: /fibonacci/
+tags:
+  - menu
 ---
 
 Write a program that prints the first N numbers of the

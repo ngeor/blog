@@ -1,6 +1,8 @@
 ---
 layout: page
 title: QBasic
+tags:
+  - menu
 ---
 
 This part of my blog is dedicated to QBasic.
