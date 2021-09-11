@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Series
-permalink: /series/
 tags:
   - menu
 ---

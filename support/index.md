@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Support
-permalink: /support/
 tags:
   - menu
 ---

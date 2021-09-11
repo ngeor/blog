@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Fibonacci
-permalink: /fibonacci/
 tags:
   - menu
 ---
