@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Stats
-hidden: true
 permalink: /archives/stats/
 ---
 

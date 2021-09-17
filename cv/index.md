@@ -1,6 +1,8 @@
 ---
 layout: page
 title: CV
+tags:
+  - menu
 ---
 
 Polyglot full-stack software engineer with 15+ years of working experience.

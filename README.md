@@ -34,3 +34,5 @@ The page layout has a top-level element `article`.
 
 The `article` will have the data attribute `data-file` which is the file path of
 the page, without the `.md` extension and with all slashes replaced by hyphens.
+
+To show a page in the burger menu, tag it with `menu`.

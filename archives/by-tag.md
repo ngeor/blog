@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Archive by tag
-hidden: true
 permalink: /archives/tag/
 ---
 

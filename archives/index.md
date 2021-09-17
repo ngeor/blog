@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Archives
+tags:
+  - menu
 ---
 
 > Impossible. Perhaps the Archives are incomplete.
