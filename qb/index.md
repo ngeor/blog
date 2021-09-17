@@ -3,7 +3,7 @@ layout: page
 title: QBasic
 tags:
   - menu
-# published: false  
+published: false  
 ---
 
 This part of my blog is dedicated to QBasic.
