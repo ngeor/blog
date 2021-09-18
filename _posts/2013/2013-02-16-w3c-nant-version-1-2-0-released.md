@@ -7,7 +7,7 @@ tags:
   - pet project
   - w3c-nant
   - ".NET"
-  - C
+  - C#
   - NAnt
 ---
 
