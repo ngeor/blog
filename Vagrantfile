@@ -71,7 +71,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     # install ruby
-    apt-get install -y build-essential ruby ruby-dev ruby-bundler
+    apt-get install -y build-essential ruby ruby-dev
+    # install bundler via gem, because ruby-bundler version is old
+    gem install bundler
     # disable Canonical collecting info https://ubuntu.com/legal/motd
     echo "ENABLED=0" > /etc/default/motd-news
     # add a motd with some useful tips
