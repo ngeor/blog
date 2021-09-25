@@ -177,7 +177,7 @@ if (exitCode != 0) {
 }
 
 // get the output of the command to process it
-InputStream output = process.getOutputStream();
+InputStream stdout = process.getInputStream();
 ```
 
 If we don't care to process the command's output, but we want to show it as part
