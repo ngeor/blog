@@ -79,8 +79,9 @@ Vagrant.configure("2") do |config|
     # add a motd with some useful tips
     echo "#!/bin/sh" > /etc/update-motd.d/50-jekyll
     echo "echo ''" >> /etc/update-motd.d/50-jekyll
-    echo "echo 'Jekyll commands'" >> /etc/update-motd.d/50-jekyll
-    echo "echo '- Simply run: j (alias for jekyll s --incremental --host 0.0.0.0)'" >> /etc/update-motd.d/50-jekyll
+    echo "echo 'Jekyll aliases'" >> /etc/update-motd.d/50-jekyll
+    echo "echo '- j: alias for jekyll s --incremental --host 0.0.0.0'" >> /etc/update-motd.d/50-jekyll
+    echo "echo '- jc: alias for jekyll clean && jekyll s --host 0.0.0.0'" >> /etc/update-motd.d/50-jekyll
     chmod +x /etc/update-motd.d/50-jekyll
     # install gems
     cd /vagrant && bundle install
@@ -88,7 +89,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     # automatically switch to /vagrant folder on login
     echo "cd /vagrant" >> /home/vagrant/.bashrc
-    # add j as an alias
+    # add jekyll aliases
     echo "alias j='jekyll s --incremental --host 0.0.0.0'" > /home/vagrant/.bash_aliases
+    echo "alias jc='jekyll clean && jekyll s --host 0.0.0.0'" >> /home/vagrant/.bash_aliases
   SHELL
 end

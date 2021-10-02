@@ -1,5 +1,5 @@
 ---
-title: PRINT
+title: PRINT statement (QBasic)
 layout: page
 tags:
   - QBasic Reference
