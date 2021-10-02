@@ -4,6 +4,8 @@ My blog
 
 ## Developing
 
+### Local Development
+
 Requirements:
 
 - [VirtualBox](https://www.virtualbox.org/)
@@ -16,7 +18,12 @@ Commands:
   (alias to `jekyll serve --incremental --host 0.0.0.0`)
 - When done, cleanup with `vagrant destroy`
 - Upgrade with `bundle update github-pages`
-- Profile with `bundle exec jekyll build --profile`
+- Profile with `jekyll build --profile`
+
+### GitPod
+
+- Install with `bundle install`
+- Run with `jekyll s --incremental`
 
 ## New Post
 
