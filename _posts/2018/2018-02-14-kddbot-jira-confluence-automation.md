@@ -47,7 +47,7 @@ ticket and creates the blank KDD page.
 <strong>The code</strong>
 
 The code is on GitHub with the imaginative name
-<a href="https://github.com/ngeor/python/tree/trunk/apps/kddbot">kddbot</a> and an equally fancy logo
+<a href="https://github.com/ngeor/kddbot">kddbot</a> and an equally fancy logo
 (I combined two free images together). It is basically an AWS Lambda function
 written in Python (new year resolutions). The README file has sufficient
 technical information on how to set it up if you're interested.
