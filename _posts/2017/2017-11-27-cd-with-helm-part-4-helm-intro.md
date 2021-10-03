@@ -73,7 +73,7 @@ PS> cd helm
 PS> helm create blog-helm
 ```
 
-We get a bunch of new files (<a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">browse code at this point</a>):
+We get a bunch of new files (<a href="https://github.com/ngeor/blog-helm" target="_blank">browse code at this point</a>):
 
 <img src="{% link /assets/2017/11/27/19_02_31-blog-helm-visual-studio-code.png %}" />
 <ul>
@@ -179,7 +179,7 @@ service:
   internalPort: 3000
 ```
 
-Now that we have our Helm chart (<a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">browse code at this point</a>), we can use it to deploy our application:
+Now that we have our Helm chart (<a href="https://github.com/ngeor/blog-helm" target="_blank">browse code at this point</a>), we can use it to deploy our application:
 ```
 PS> helm install ./blog-helm
 NAME:   callous-koala

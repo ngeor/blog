@@ -38,7 +38,7 @@ With these changes we have a new build chain with the Smoke Test build configura
 
 <figure><img src="{% link /assets/2017/12/28/08_52_34-blog-helm-__-commit-stage-_-build-chains-e28094-teamcity.png %}" /><figcaption>The new build chain</figcaption></figure>
 
-Now the build pipeline is configured and we just need to write the script that performs the smoke test. The script is a bit long at 98 lines of Bash, so I'll just <a href="https://github.com/ngeor/kamino/blob/trunk/blog-helm/ci-scripts/smoke-test-docker-image.sh">link to it</a> if you want to read it. Its logic is roughly as follows:
+Now the build pipeline is configured and we just need to write the script that performs the smoke test. The script is a bit long at 98 lines of Bash, so I'll just <a href="https://github.com/ngeor/blog-helm/blob/trunk/ci-scripts/smoke-test-docker-image.sh">link to it</a> if you want to read it. Its logic is roughly as follows:
 <ul>
 <li>Pull the image from the custom docker registry</li>
 <li>Start a container with this image in the background (so that the script can continue)</li>

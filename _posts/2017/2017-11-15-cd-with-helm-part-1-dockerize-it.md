@@ -92,6 +92,6 @@ ADD . /app
 CMD ["node", "index.js"]
 ```
 
-This optimization is a life saver, as the costly part that installs npm dependencies will only be run when <code>package.json</code> changes <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm" target="_blank">(browse code)</a>.
+This optimization is a life saver, as the costly part that installs npm dependencies will only be run when <code>package.json</code> changes <a href="https://github.com/ngeor/blog-helm" target="_blank">(browse code)</a>.
 
 That was a lot for this post, but we're not quite done with Docker yet. We dockerized the app, but we forgot to test it (our testing range consists only of linting for this example app). We could just run <code>npm run lint</code>, but when we are configuring the CI server, we need to make sure it has the node version we want. Another team might need a different node version. Another team might need more and more dependencies, risking conflicts and increasing server management work. Well, we can also <strong>dockerize our build environment</strong>. The only requirement for the CI server will be that it needs to run docker. Each team then can define its own requirements independently. More on that on the next post, where we'll switch to looking things from the CI server's point of view.

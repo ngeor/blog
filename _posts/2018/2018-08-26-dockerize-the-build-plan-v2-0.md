@@ -14,7 +14,7 @@ Back in 2017, I wrote a series of articles about using Helm for Continuous Deplo
 
 This is the approach I had used back then:
 <ul>
-<li>We have a sample application called <a href="https://github.com/ngeor/kamino/tree/trunk/blog-helm">blog-helm</a>. It can greet you with "Hello world!" on port 3000. It is written in nodeJS/<a href="https://expressjs.com/">express</a>.</li>
+<li>We have a sample application called <a href="https://github.com/ngeor/blog-helm">blog-helm</a>. It can greet you with "Hello world!" on port 3000. It is written in nodeJS/<a href="https://expressjs.com/">express</a>.</li>
 <li><code>npm</code> is used for dependency management.</li>
 <li>The <code>Dockerfile</code> of the application packages the production image (only production dependencies).</li>
 <li>A separate Dockerfile named <code>Dockerfile-ci</code> is used to "dockerize the build plan". All dependencies (including dev dependencies) are installed in the image, creating a highly specialized Docker image for the app.</li>
@@ -96,7 +96,7 @@ In the approach I'm currently using, I <strong>always try to find first an exist
 <ul>
 <li>For an Angular project, I needed an image that can run Karma tests and Protractor end to end tests, with Chrome headless browser. I found <a href="https://hub.docker.com/r/weboaks/node-karma-protractor-chrome">this one</a>, it worked fine for many months now.</li>
 <li>For deployment projects that use Helm, I needed an image that supports <code>kubectl</code> and <code>helm</code>. I found <a href="https://hub.docker.com/r/dtzar/helm-kubectl">this one</a>, fantastic.</li>
-<li>For deployment projects that use the AWS CLI and the AWS ElasticBeanstalk CLI... I didn't find an image. I created <a href="https://github.com/ngeor/kamino/blob/trunk/dockerfiles/awscli-alpine/Dockerfile">one myself</a> and published it to the Docker Hub.</li>
+<li>For deployment projects that use the AWS CLI and the AWS ElasticBeanstalk CLI... I didn't find an image. I created <a href="https://github.com/ngeor/dockerfiles/blob/trunk/awscli-alpine/Dockerfile">one myself</a> and published it to the Docker Hub.</li>
 </ul>
 
 Some criteria for picking an existing image: is it well documented? Is it still maintained? Does it have its Dockerfile on GitHub somewhere? How popular is it (downloads and stars)? Does it have automatic builds?

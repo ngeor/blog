@@ -69,13 +69,13 @@ Includes images regarding:
 
 [archetype-quickstart-jdk8]: https://github.com/ngeor/java/tree/trunk/maven-archetypes/archetype-quickstart-jdk8
 [checkstyle-rules]: https://github.com/ngeor/java/tree/trunk/libs/checkstyle-rules
-[clone-all]: https://github.com/ngeor/kamino/tree/trunk/clone-all
-[dirloop]: https://github.com/ngeor/kamino/tree/trunk/dirloop
-[dockerfiles]: https://github.com/ngeor/kamino/tree/trunk/dockerfiles
-[generator-csharp-cli-app]: https://github.com/ngeor/kamino/tree/trunk/generator-csharp-cli-app
-[generator-csharp-nuget-lib]: https://github.com/ngeor/kamino/tree/trunk/generator-csharp-nuget-lib
-[generator-nodejs]: https://github.com/ngeor/kamino/tree/trunk/generator-nodejs
-[instarepo]: https://github.com/ngeor/kamino/tree/trunk/instarepo
+[clone-all]: https://github.com/ngeor/clone-all
+[dirloop]: https://github.com/ngeor/dirloop
+[dockerfiles]: https://github.com/ngeor/dockerfiles
+[generator-csharp-cli-app]: https://github.com/ngeor/generator-csharp-cli-app
+[generator-csharp-nuget-lib]: https://github.com/ngeor/generator-csharp-nuget-lib
+[generator-nodejs]: https://github.com/ngeor/generator-nodejs
+[instarepo]: https://github.com/ngeor/instarepo
 [yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-bitbucket-maven-plugin
 [yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-filename-conventions-maven-plugin
 [yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-json-yaml-converter-maven-plugin
@@ -84,5 +84,5 @@ Includes images regarding:
 [yak4j-sync-archetype-maven-plugin]: https://github.com/ngeor/java/tree/trunk/maven-plugins/yak4j-sync-archetype-maven-plugin
 [yak4j-utc-time-zone-mapper]: https://github.com/ngeor/java/tree/trunk/libs/java/yak4j-utc-time-zone-mapper
 [yak4j-xml]: https://github.com/ngeor/java/tree/trunk/libs/yak4j-xml
-[yart]: https://github.com/ngeor/kamino/tree/trunk/yart
+[yart]: https://github.com/ngeor/yart
 [yak shaving]: https://en.wiktionary.org/wiki/yak_shaving

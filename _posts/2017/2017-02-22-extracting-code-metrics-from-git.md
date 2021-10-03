@@ -15,7 +15,7 @@ TL;DR: I wrote a bash script that walks through your git repository history and 
 
 <!--more-->
 
-If you like creating graphs in Excel, this one is for you. I wrote a prototype (aka works on my machine) script, which is available <a href="https://github.com/ngeor/kamino/tree/trunk/git-analyze" target="_blank">here</a>, that goes over the history of a git repository. It walks over the master branch, assuming you're practicing GitHub Flow. For every month, it can measure:
+If you like creating graphs in Excel, this one is for you. I wrote a prototype (aka works on my machine) script, which is available <a href="https://github.com/ngeor/python/tree/trunk/apps/git-analyze" target="_blank">here</a>, that goes over the history of a git repository. It walks over the master branch, assuming you're practicing GitHub Flow. For every month, it can measure:
 <ul>
 <li>number of commits</li>
 <li>number of merges (which we can say it's equal to number of merged pull requests)</li>

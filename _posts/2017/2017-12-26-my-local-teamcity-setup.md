@@ -14,7 +14,7 @@ In my recent blog posts I've played a lot with TeamCity. Often, when I want to b
 
 My setup is on a Windows laptop, running Windows 10 Home. This means I have to use <strong>Docker Toolbox</strong>, which runs docker inside a virtual machine and not hyper-v. This is an additional layer that makes things a little bit more complicated.
 
-I'm using <strong>docker compose</strong> to bring up TeamCity Server and Agent, as well as a custom Docker Registry. The configuration, together with some utility scripts, is <a href="https://github.com/ngeor/kamino/tree/trunk/dockerfiles/teamcity">available on GitHub</a>. All volumes are stored under a common subfolder named <code>data</code> (so it's easy to add only one folder in <code>.gitignore</code>).
+I'm using <strong>docker compose</strong> to bring up TeamCity Server and Agent, as well as a custom Docker Registry. The configuration, together with some utility scripts, is <a href="https://github.com/ngeor/dockerfiles/tree/trunk/teamcity">available on GitHub</a>. All volumes are stored under a common subfolder named <code>data</code> (so it's easy to add only one folder in <code>.gitignore</code>).
 
 Here's my <code>docker-compose.yaml</code> file:
 
