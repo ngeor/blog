@@ -23,7 +23,7 @@ Source repo             Destination repo
 |-- src                 |-- packages
 |   \-- index.ts        |   \-- bar
 |-- package.json        \-- README.md
-|-- package-lock.json    
+|-- package-lock.json
 \-- README.md
 ```
 
@@ -58,7 +58,7 @@ Use case: you want to move a library out of a monorepo into its own dedicated re
 Before:
 
 ```
-Source repo     
+Source repo
 |
 |-- packages
 |   |-- bar
@@ -83,7 +83,7 @@ Steps:
 - In the source folder, run `git subtree push -P packages/foo ../destination master`
 - To double check everything went fine, you can clone the bare repo into a regular repo and inspect
   its contents.
-- Delete the library from the source repo  
+- Delete the library from the source repo
 
 ## Move a subfolder to an existing repo
 
@@ -97,7 +97,7 @@ Source repo    Destination repo
 |              |
 |-- packages   |-- libs
     |-- bar        \-- bar
-    \-- foo       
+    \-- foo
 ```
 
 After:
@@ -115,4 +115,9 @@ Source repo    Destination repo
 - In the source repo, keep only the desired library with `git subtree split -P packages/bar -b temp` (temp is the name of a branch we'll use next)
 - Checkout the `temp` branch and double check the source repo folder only has the desired library
 - In the destination repo, add the library with `git subtree add -P libs/bar_v2 ../source temp`
-- Delete the library from the source repo  
+- Delete the library from the source repo
+
+## Update: 2021-10-03
+
+I have a put together [a script](https://github.com/ngeor/dotfiles/blob/trunk/bin/git-juggle.sh) that handles some of these cases
+(especially the moving back to multirepo part).

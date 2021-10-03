@@ -33,7 +33,7 @@ I also found all sorts of websites I was creating. I did not port these to GitHu
 
 What did I learn from this migration exercise?
 
-Well, first of all I learned that today's browsers don't even bother supporting Java Applets. Chrome doesn't support it, Microsoft Edge the same. I believe I managed to run my <a href="https://github.com/ngeor/java/tree/trunk/apps/jHangMan">hangman game</a> in Safari, but I'm not sure.
+Well, first of all I learned that today's browsers don't even bother supporting Java Applets. Chrome doesn't support it, Microsoft Edge the same. I believe I managed to run my <a href="https://github.com/ngeor/jHangMan">hangman game</a> in Safari, but I'm not sure.
 
 Another thing I learned is that exploring all sorts of programming languages is good because you learn more things but it is also bad because you can't be an expert in everything. I have all sorts of code repositories now that I can't even begin to read or understand. It's okay to play with something to learn, but when you're creating something that you'll have to support, stick with one programming language if possible.
 

@@ -76,7 +76,7 @@ thin out older snapshots. The rules are simple:
 
 This is easy to implement because all of my snapshots are named consistently.
 I've made
-the script <a href="https://github.com/ngeor/java/tree/trunk/apps/zfs-snapshot-trimmer">available in
+the script <a href="https://github.com/ngeor/zfs-snapshot-trimmer">available in
 GitHub</a>.
 
 Hope this helps.

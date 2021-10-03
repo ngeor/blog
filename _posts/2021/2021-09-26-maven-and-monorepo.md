@@ -74,10 +74,10 @@ An interesting detail is that they don't commit `pom.xml` files at all into the 
 They commit `pom.xml.template` files, which are used to auto-generate `pom.xml` files based on the desired
 Maven modules and version numbers.
 
-In [my repo](https://github.com/ngeor/java), I already have `pom.xml` files and I didn't want to remove them for now, but I think
+In [my repo](https://github.com/ngeor/java/tree/v1.10.0), I already have `pom.xml` files and I didn't want to remove them for now, but I think
 the template approach they're taking is better.
 
-I hacked together [some code](https://github.com/ngeor/java/tree/trunk/apps/yak4j-cli) to automate this (works on my machine), but the principle is the following:
+I hacked together [some code](https://github.com/ngeor/java/tree/v1.10.0/apps/yak4j-cli) to automate this (works on my machine), but the principle is the following:
 
 - Make a backup of the parent `pom.xml` in case things go wrong
 - Make sure we're on the default branch and there aren't any pending changes
