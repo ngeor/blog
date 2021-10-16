@@ -72,8 +72,11 @@ Vagrant.configure("2") do |config|
     apt-get update
     # install ruby
     apt-get install -y build-essential ruby ruby-dev
-    # install bundler via gem, because ruby-bundler version is old
-    gem install bundler
+    # 1. install bundler via gem, because ruby-bundler version is old
+    # 2. installing the exact bundler specified in Gemfile.lock
+    #    to prevent error https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html
+    #    "Can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)"
+    gem install bundler -v "$(grep -A 1 "BUNDLED WITH" /vagrant/Gemfile.lock | tail -n 1)"
     # disable Canonical collecting info https://ubuntu.com/legal/motd
     echo "ENABLED=0" > /etc/default/motd-news
     # add a motd with some useful tips
