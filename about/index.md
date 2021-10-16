@@ -11,6 +11,8 @@ living in the Netherlands.
 I blog mostly about things that I try out. Usually it's about
 programming, continuous integration, testing, automation, code quality.
 
+{% include social.html %}
+
 ## Cookies
 
 This site uses third party cookies from Google Analytics and
