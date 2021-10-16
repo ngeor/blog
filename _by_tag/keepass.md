@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/keepass/
-title: keepass
+title: Posts tagged with keepass
+tag: keepass
 post_count: 1
 sort_index: 998-keepass
 ---
-<h1 class="page-heading">Posts tagged with keepass</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

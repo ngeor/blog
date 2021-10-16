@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/kubernetes/
-title: kubernetes
+title: Posts tagged with kubernetes
+tag: kubernetes
 post_count: 12
 sort_index: 987-kubernetes
 ---
-<h1 class="page-heading">Posts tagged with kubernetes</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

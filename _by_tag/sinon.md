@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/sinon/
-title: sinon
+title: Posts tagged with sinon
+tag: sinon
 post_count: 4
 sort_index: 995-sinon
 ---
-<h1 class="page-heading">Posts tagged with sinon</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

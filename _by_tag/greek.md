@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/greek/
-title: Greek
+title: Posts tagged with Greek
+tag: Greek
 post_count: 1
 sort_index: 998-greek
 ---
-<h1 class="page-heading">Posts tagged with Greek</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/personal/
-title: personal
+title: Posts tagged with personal
+tag: personal
 post_count: 19
 sort_index: 980-personal
 ---
-<h1 class="page-heading">Posts tagged with personal</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

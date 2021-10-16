@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/maintainability/
-title: maintainability
+title: Posts tagged with maintainability
+tag: maintainability
 post_count: 2
 sort_index: 997-maintainability
 ---
-<h1 class="page-heading">Posts tagged with maintainability</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

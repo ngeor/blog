@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/json/
-title: JSON
+title: Posts tagged with JSON
+tag: JSON
 post_count: 1
 sort_index: 998-json
 ---
-<h1 class="page-heading">Posts tagged with JSON</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

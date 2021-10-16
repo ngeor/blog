@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/kddbot/
-title: kddbot
+title: Posts tagged with kddbot
+tag: kddbot
 post_count: 1
 sort_index: 998-kddbot
 ---
-<h1 class="page-heading">Posts tagged with kddbot</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

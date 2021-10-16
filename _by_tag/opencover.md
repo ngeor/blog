@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/opencover/
-title: OpenCover
+title: Posts tagged with OpenCover
+tag: OpenCover
 post_count: 2
 sort_index: 997-opencover
 ---
-<h1 class="page-heading">Posts tagged with OpenCover</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

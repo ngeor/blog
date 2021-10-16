@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/comments/
-title: comments
+title: Posts tagged with comments
+tag: comments
 post_count: 1
 sort_index: 998-comments
 ---
-<h1 class="page-heading">Posts tagged with comments</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

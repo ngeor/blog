@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/selenium/
-title: selenium
+title: Posts tagged with selenium
+tag: selenium
 post_count: 1
 sort_index: 998-selenium
 ---
-<h1 class="page-heading">Posts tagged with selenium</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

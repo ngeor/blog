@@ -2,32 +2,35 @@
 layout: default
 ---
 
-{%- if page.title -%}
-<h1 class="page-heading">{{ page.title }}</h1>
-{%- endif -%}
+<main class="page-content" aria-label="Content">
+    {%- if page.title -%}
+        <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
 
-{{ content }}
+    {{ content }}
 
-{%- if paginator.posts.size > 0 -%}
-{%- assign posts = paginator.posts -%}
-{%- include post-list.html -%}
-{%- endif -%}
+    {%- if paginator.posts.size > 0 -%}
+    {%- assign posts = paginator.posts -%}
+    {%- include post-list.html -%}
+    {%- endif -%}
 
-<!-- Pagination links -->
-<div class="page-navigation">
-  {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path }}" class="prev">
-    &laquo; Previous
-  </a>
-  {% else %}
-  <span>&laquo; Previous</span>
-  {% endif %}
-  <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
-  {% else %}
-  <span>Next &raquo;</span>
-  {% endif %}
-</div>
+    <nav class="page-navigation">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="prev">
+            &laquo; Previous
+        </a>
+        {% else %}
+            <span>&laquo; Previous</span>
+        {% endif %}
+        <span class="page_number ">
+            Page: {{ paginator.page }} of {{ paginator.total_pages }}
+        </span>
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">
+                Next &raquo;
+            </a>
+        {% else %}
+            <span>Next &raquo;</span>
+        {% endif %}
+    </nav>
+</main>

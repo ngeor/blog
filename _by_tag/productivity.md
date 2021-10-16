@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/productivity/
-title: productivity
+title: Posts tagged with productivity
+tag: productivity
 post_count: 2
 sort_index: 997-productivity
 ---
-<h1 class="page-heading">Posts tagged with productivity</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

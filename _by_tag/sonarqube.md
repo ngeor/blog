@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/sonarqube/
-title: SonarQube
+title: Posts tagged with SonarQube
+tag: SonarQube
 post_count: 1
 sort_index: 998-sonarqube
 ---
-<h1 class="page-heading">Posts tagged with SonarQube</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

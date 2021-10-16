@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/governance/
-title: governance
+title: Posts tagged with governance
+tag: governance
 post_count: 1
 sort_index: 998-governance
 ---
-<h1 class="page-heading">Posts tagged with governance</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

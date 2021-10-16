@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/chai-as-promised/
-title: chai-as-promised
+title: Posts tagged with chai-as-promised
+tag: chai-as-promised
 post_count: 2
 sort_index: 997-chai-as-promised
 ---
-<h1 class="page-heading">Posts tagged with chai-as-promised</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

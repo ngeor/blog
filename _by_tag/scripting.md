@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/scripting/
-title: scripting
+title: Posts tagged with scripting
+tag: scripting
 post_count: 1
 sort_index: 998-scripting
 ---
-<h1 class="page-heading">Posts tagged with scripting</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

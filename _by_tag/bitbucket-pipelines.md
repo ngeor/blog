@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/bitbucket-pipelines/
-title: bitbucket pipelines
+title: Posts tagged with bitbucket pipelines
+tag: bitbucket pipelines
 post_count: 1
 sort_index: 998-bitbucket pipelines
 ---
-<h1 class="page-heading">Posts tagged with bitbucket pipelines</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/duolingo/
-title: DuoLingo
+title: Posts tagged with DuoLingo
+tag: DuoLingo
 post_count: 1
 sort_index: 998-duolingo
 ---
-<h1 class="page-heading">Posts tagged with DuoLingo</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

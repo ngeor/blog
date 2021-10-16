@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/quality/
-title: quality
+title: Posts tagged with quality
+tag: quality
 post_count: 1
 sort_index: 998-quality
 ---
-<h1 class="page-heading">Posts tagged with quality</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

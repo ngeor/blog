@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/wcf/
-title: WCF
+title: Posts tagged with WCF
+tag: WCF
 post_count: 5
 sort_index: 994-wcf
 ---
-<h1 class="page-heading">Posts tagged with WCF</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

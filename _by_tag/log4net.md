@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/log4net/
-title: log4net
+title: Posts tagged with log4net
+tag: log4net
 post_count: 1
 sort_index: 998-log4net
 ---
-<h1 class="page-heading">Posts tagged with log4net</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

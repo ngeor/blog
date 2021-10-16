@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/swagger/
-title: swagger
+title: Posts tagged with swagger
+tag: swagger
 post_count: 8
 sort_index: 991-swagger
 ---
-<h1 class="page-heading">Posts tagged with swagger</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

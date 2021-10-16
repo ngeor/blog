@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/nuget/
-title: NuGet
+title: Posts tagged with NuGet
+tag: NuGet
 post_count: 1
 sort_index: 998-nuget
 ---
-<h1 class="page-heading">Posts tagged with NuGet</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

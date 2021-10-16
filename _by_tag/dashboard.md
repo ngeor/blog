@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/dashboard/
-title: dashboard
+title: Posts tagged with dashboard
+tag: dashboard
 post_count: 2
 sort_index: 997-dashboard
 ---
-<h1 class="page-heading">Posts tagged with dashboard</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

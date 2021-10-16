@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/docker/
-title: docker
+title: Posts tagged with docker
+tag: docker
 post_count: 30
 sort_index: 969-docker
 ---
-<h1 class="page-heading">Posts tagged with docker</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

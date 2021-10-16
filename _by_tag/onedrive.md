@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/onedrive/
-title: OneDrive
+title: Posts tagged with OneDrive
+tag: OneDrive
 post_count: 1
 sort_index: 998-onedrive
 ---
-<h1 class="page-heading">Posts tagged with OneDrive</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

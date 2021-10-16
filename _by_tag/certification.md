@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/certification/
-title: certification
+title: Posts tagged with certification
+tag: certification
 post_count: 4
 sort_index: 995-certification
 ---
-<h1 class="page-heading">Posts tagged with certification</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

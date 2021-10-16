@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/wordpress/
-title: wordpress
+title: Posts tagged with wordpress
+tag: wordpress
 post_count: 4
 sort_index: 995-wordpress
 ---
-<h1 class="page-heading">Posts tagged with wordpress</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

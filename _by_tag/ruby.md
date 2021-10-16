@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/ruby/
-title: ruby
+title: Posts tagged with ruby
+tag: ruby
 post_count: 6
 sort_index: 993-ruby
 ---
-<h1 class="page-heading">Posts tagged with ruby</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

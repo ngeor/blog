@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/goals/
-title: goals
+title: Posts tagged with goals
+tag: goals
 post_count: 1
 sort_index: 998-goals
 ---
-<h1 class="page-heading">Posts tagged with goals</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

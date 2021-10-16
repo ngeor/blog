@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/esprima/
-title: esprima
+title: Posts tagged with esprima
+tag: esprima
 post_count: 1
 sort_index: 998-esprima
 ---
-<h1 class="page-heading">Posts tagged with esprima</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

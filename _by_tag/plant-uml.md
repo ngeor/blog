@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/plant-uml/
-title: plant uml
+title: Posts tagged with plant uml
+tag: plant uml
 post_count: 1
 sort_index: 998-plant uml
 ---
-<h1 class="page-heading">Posts tagged with plant uml</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

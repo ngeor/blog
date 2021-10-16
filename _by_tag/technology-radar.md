@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/technology-radar/
-title: technology radar
+title: Posts tagged with technology radar
+tag: technology radar
 post_count: 1
 sort_index: 998-technology radar
 ---
-<h1 class="page-heading">Posts tagged with technology radar</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

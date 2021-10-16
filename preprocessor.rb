@@ -104,17 +104,17 @@ def create_tag_page(pi)
   File.open(fullpath, 'w:UTF-8') do |f|
     f.puts(<<~HERE
       ---
-      layout: default
+      layout: tag
       permalink: /archives/tag/#{normalized_tag}/
-      title: #{tag}
+      title: Posts tagged with #{tag}
+      tag: #{tag}
       post_count: #{pi.post_count}
       sort_index: #{pi.sort_index}
       ---
-      <h1 class="page-heading">Posts tagged with #{tag}</h1>
-      {% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+      {% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
       {%- include post-list.html -%}
       HERE
-          )
+    )
   end
   fullpath
 end

@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/reportgenerator/
-title: ReportGenerator
+title: Posts tagged with ReportGenerator
+tag: ReportGenerator
 post_count: 1
 sort_index: 998-reportgenerator
 ---
-<h1 class="page-heading">Posts tagged with ReportGenerator</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/aws-lambda/
-title: aws lambda
+title: Posts tagged with aws lambda
+tag: aws lambda
 post_count: 2
 sort_index: 997-aws lambda
 ---
-<h1 class="page-heading">Posts tagged with aws lambda</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

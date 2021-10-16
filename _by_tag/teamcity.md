@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/teamcity/
-title: TeamCity
+title: Posts tagged with TeamCity
+tag: TeamCity
 post_count: 22
 sort_index: 977-teamcity
 ---
-<h1 class="page-heading">Posts tagged with TeamCity</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

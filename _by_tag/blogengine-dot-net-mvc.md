@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/blogengine-dot-net-mvc/
-title: BlogEngine.NET MVC
+title: Posts tagged with BlogEngine.NET MVC
+tag: BlogEngine.NET MVC
 post_count: 5
 sort_index: 994-blogengine.net mvc
 ---
-<h1 class="page-heading">Posts tagged with BlogEngine.NET MVC</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

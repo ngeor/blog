@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/aws-ecr/
-title: AWS ECR
+title: Posts tagged with AWS ECR
+tag: AWS ECR
 post_count: 1
 sort_index: 998-aws ecr
 ---
-<h1 class="page-heading">Posts tagged with AWS ECR</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

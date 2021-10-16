@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/atlassian/
-title: atlassian
+title: Posts tagged with atlassian
+tag: atlassian
 post_count: 4
 sort_index: 995-atlassian
 ---
-<h1 class="page-heading">Posts tagged with atlassian</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

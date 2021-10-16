@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/java/
-title: java
+title: Posts tagged with java
+tag: java
 post_count: 30
 sort_index: 969-java
 ---
-<h1 class="page-heading">Posts tagged with java</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

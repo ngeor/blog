@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/html/
-title: html
+title: Posts tagged with html
+tag: html
 post_count: 2
 sort_index: 997-html
 ---
-<h1 class="page-heading">Posts tagged with html</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

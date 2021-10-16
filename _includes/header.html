@@ -1,17 +1,6 @@
 <header class="site-header">
-  <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-  <div class="site-description">
-    {{- site.description -}}
-  </div>
-  <ul class="pages-list">
-    <li>
-      <a href="/">Home</a>
-    </li>
-    {%- assign filtered_pages = site.pages | where_exp: "item", "item.tags contains 'menu'" | sort: "title" -%}
-    {%- for my_page in filtered_pages -%}
-    <li>
-      <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-    </li>
-    {%- endfor -%}
-  </ul>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <div class="site-description">
+        {{- site.description -}}
+    </div>
 </header>

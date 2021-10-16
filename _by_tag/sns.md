@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/sns/
-title: SNS
+title: Posts tagged with SNS
+tag: SNS
 post_count: 2
 sort_index: 997-sns
 ---
-<h1 class="page-heading">Posts tagged with SNS</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

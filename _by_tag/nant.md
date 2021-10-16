@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/nant/
-title: NAnt
+title: Posts tagged with NAnt
+tag: NAnt
 post_count: 7
 sort_index: 992-nant
 ---
-<h1 class="page-heading">Posts tagged with NAnt</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

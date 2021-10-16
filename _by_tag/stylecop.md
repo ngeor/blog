@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/stylecop/
-title: StyleCop
+title: Posts tagged with StyleCop
+tag: StyleCop
 post_count: 1
 sort_index: 998-stylecop
 ---
-<h1 class="page-heading">Posts tagged with StyleCop</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}

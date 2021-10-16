@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: tag
 permalink: /archives/tag/phantomjs/
-title: phantomjs
+title: Posts tagged with phantomjs
+tag: phantomjs
 post_count: 2
 sort_index: 997-phantomjs
 ---
-<h1 class="page-heading">Posts tagged with phantomjs</h1>
-{% assign posts = site.posts | where_exp: "item", "item.tags contains page.title" -%}
+{% assign posts = site.posts | where_exp: "item", "item.tags contains page.tag" -%}
 {%- include post-list.html -%}
