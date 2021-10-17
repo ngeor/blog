@@ -1,0 +1,13 @@
+<section class="post-tags">
+    {% if post.tags and post.tags.size > 0 %}
+        Tags:
+        {%- for tag in post.tags -%}
+            {%- assign tag_page = site.by_tag | where: "tag", tag | first -%}
+            {%- if tag_page %}
+                <a href="{{ tag_page.url | relative_url }}">{{ tag }}</a>
+            {% else %}
+                {{ tag }}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+</section>

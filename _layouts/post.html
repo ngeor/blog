@@ -48,24 +48,23 @@ layout: default
     </nav>
   {%- endif -%}
 
-  {%- include meta.html -%}
+    <section class="support-banner">
+        Thank you for reading this post. If you liked it, spread the word or see how
+        you can
+        <a href="/support/">support</a> this blog!
+    </section>
 
-<section class="support-banner">
-  Thank you for reading this post. If you liked it, spread the word or see how
-  you can
-  <a href="/support/">support</a> this blog!
-</section>
+    {%- include post-tags.html -%}
 
-<nav class="page-navigation">
-  {% if page.previous.url %}
-  <a class="prev" href="{{page.previous.url}}"
-    >&laquo; {{page.previous.title}}</a
-  >
-  {% endif %} {% if page.next.url %}
-  <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-  {% endif %}
-</nav>
+    <nav class="page-navigation">
+        {% if page.previous.url %}
+            <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+        {% endif %}
+        {% if page.next.url %}
+            <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+    </nav>
 
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true, flowchart: { useMaxWidth: true }});</script>
+    <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, flowchart: { useMaxWidth: true }});</script>
 </article>

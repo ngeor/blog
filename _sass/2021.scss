@@ -1,20 +1,42 @@
 @charset "utf-8";
 
+$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$margin: 30px;
+
+
+@mixin margin-bottom-children {
+    > * {
+      margin-bottom: $margin;
+    }
+  }
+
+  @mixin margin-bottom-children-except-last {
+    > * {
+      margin-bottom: $margin;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: $base-font-family; // 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
 }
 
 code {
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: $code-font-family; // Consolas, 'Courier New', monospace;
 }
 
 // for code blocks that have too long lines,
 // add horizontal scrollbar as needed and
 // prevent overflow
-pre.highlight {
+pre {
     overflow: auto;
 }
 
@@ -23,35 +45,39 @@ pre.highlight {
     height: 16px;
 }
 
-h1 {
-    font-size: 24px;
+@mixin lighter-on-hover {
+    &:hover {
+        color: #666;
+    }
 }
 
-h2 {
-    font-size: 20px;
-    color: #333;
+@mixin underlined-link {
+    color: inherit;
+    text-decoration: underline;
+    @include lighter-on-hover;
 }
 
-h3 {
-    font-size: 18px;
+@mixin ui-link {
+    color: inherit;
+    text-decoration: none;
+    @include lighter-on-hover;
 }
 
-// mobile
+@mixin list-style-none {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// mobile first
 
 header.site-header {
     background: #ccddcc;
     text-align: center;
     padding: 30px;
     .site-title {
-        color: inherit;
-        text-decoration: inherit;
         font-size: 200%;
-        &:hover {
-            color: #666;
-        }
-    }
-    .site-description {
-
+        @include ui-link;
     }
 }
 
@@ -60,51 +86,80 @@ main, article {
     padding: 30px;
 }
 
+$post-title-font-size: 24px;
+
+@mixin post-title {
+    font-size: $post-title-font-size;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    h2 {
+        @include post-title;
+    }
+
+    a {
+        @include underlined-link;
+    }
+}
+
 article {
     img {
         max-width: 100%;
+    }
+
+    h1 {
+        @include post-title;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    a {
+        @include underlined-link;
+    }
+
+    .post-tags, .page-navigation {
+        margin-top: 30px;
     }
 }
 
 .page-navigation {
     display: flex;
     justify-content: space-between;
+    a {
+        @include underlined-link;
+    }
 }
 
 .support-banner {
-
-}
-
-// used on home page but also on tag pages
-.post-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        .post-header {
-            .post-title {
-                a {
-
-                }
-            }
-            .post-meta-header {
-                .post-time {
-
-                }
-            }
-        }
-        p {
-
-        }
-    }
+    border: 1px solid #fcc;
+    padding: 30px;
+    background: #ffc;
 }
 
 aside {
     padding: 30px;
-    background: red;
+    background: #ccc;
+
+    nav {
+        header  {
+            display: none;
+        }
+    }
     .page-list {
-        background: yellow;
+        @include list-style-none;
+
+        a {
+            @include underlined-link;
+        }
     }
 }
 
@@ -114,19 +169,62 @@ footer {
 }
 
 .cookies {
+    background: #ffc;
+    border: 2px solid black;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
     padding: 30px;
+    position: fixed;
+    right: 0;
 }
 
 .cookies--acknowledged {
-    // display: none;
+    display: none;
 }
 
 // desktop overrides
 
-$desktop: 700px;
+$desktop: 800px;
 
 @media screen and (min-width: $desktop) {
     .main-outer-wrapper {
         display: flex;
+        margin: 0 auto;
+        max-width: 1024px;
+    }
+
+    .main-inner-wrapper {
+        flex: 0.8 1 0;
+        min-width: 0;
+    }
+
+    aside {
+        background: inherit;
+        box-sizing: border-box;
+        flex: 0.2 1 0;
+        nav {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+
+            header  {
+                display: block; // was hidden in mobile
+                background: #ccddcc;
+                border-bottom: 1px solid #ccc;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+        }
+        .page-list {
+            box-sizing: border-box;
+            @include list-style-none;
+            padding: 20px;
+
+            a {
+                @include underlined-link;
+            }
+        }
     }
 }
+
+@import "syntax_highlight", "fibonacci", "cv", "series", "post_list";

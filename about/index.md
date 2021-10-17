@@ -28,5 +28,3 @@ source code for the blog is [here](https://github.com/ngeor/blog).
 
 - [Gray test tube 4 icon](https://www.iconsdb.com/gray-icons/test-tube-4-icon.html)
 - [Helm logo](https://github.com/helm/helm/blob/master/docs/logos/helm-blue-vector.svg)
-- [Burger icon](https://www.iconfinder.com/icons/2427852/burger_cheeseburger_fast_food_food_junk_food_icon)
-- [Close icon](https://www.iconfinder.com/icons/4476869/cancel_exit_reject_ui_close_interface_remove_icon)
