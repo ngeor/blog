@@ -1,48 +1,45 @@
 @charset "utf-8";
 
 $base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$base-font-size: 16px;
 $code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 $margin: 30px;
 
-
 @mixin margin-bottom-children {
     > * {
-      margin-bottom: $margin;
+        margin-bottom: $margin;
     }
-  }
+}
 
-  @mixin margin-bottom-children-except-last {
+@mixin margin-bottom-children-except-last {
     > * {
-      margin-bottom: $margin;
+        margin-bottom: $margin;
     }
 
     > *:last-child {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
-  }
+}
 
+@mixin paragraph-margin {
+    margin: 0 0 $base-font-size 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: $base-font-family; // 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-}
-
-code {
-    font-family: $code-font-family; // Consolas, 'Courier New', monospace;
-}
-
-// for code blocks that have too long lines,
-// add horizontal scrollbar as needed and
-// prevent overflow
-pre {
-    overflow: auto;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
 }
 
 .svg-icon {
     width: 16px;
     height: 16px;
+}
+
+p {
+    @include paragraph-margin;
 }
 
 @mixin lighter-on-hover {
@@ -74,7 +71,7 @@ pre {
 header.site-header {
     background: #ccddcc;
     text-align: center;
-    padding: 30px;
+    padding: $margin;
     .site-title {
         font-size: 200%;
         @include ui-link;
@@ -83,22 +80,10 @@ header.site-header {
 
 // main is used for the home page, article is used for posts and pages
 main, article {
-    padding: 30px;
-}
-
-$post-title-font-size: 24px;
-
-@mixin post-title {
-    font-size: $post-title-font-size;
-    margin: 0;
-    padding: 0;
+    padding: $margin;
 }
 
 main {
-    h2 {
-        @include post-title;
-    }
-
     a {
         @include underlined-link;
     }
@@ -107,10 +92,6 @@ main {
 article {
     img {
         max-width: 100%;
-    }
-
-    h1 {
-        @include post-title;
     }
 
     h2 {
@@ -127,7 +108,7 @@ article {
     }
 
     .post-tags, .page-navigation {
-        margin-top: 30px;
+        margin-top: $margin;
     }
 }
 
@@ -141,12 +122,12 @@ article {
 
 .support-banner {
     border: 1px solid #fcc;
-    padding: 30px;
+    padding: $margin;
     background: #ffc;
 }
 
 aside {
-    padding: 30px;
+    padding: $margin;
     background: #ccc;
 
     nav {
@@ -164,8 +145,12 @@ aside {
 }
 
 footer {
-    padding: 30px;
+    padding: $margin;
     background: #ccc;
+
+    a {
+        @include ui-link;
+    }
 }
 
 .cookies {
@@ -174,7 +159,7 @@ footer {
     bottom: 0;
     box-sizing: border-box;
     left: 0;
-    padding: 30px;
+    padding: $margin;
     position: fixed;
     right: 0;
 }
@@ -227,4 +212,4 @@ $desktop: 800px;
     }
 }
 
-@import "syntax_highlight", "fibonacci", "cv", "series", "post_list";
+@import "code", "syntax_highlight", "fibonacci", "cv", "series", "post_list", "post_header";

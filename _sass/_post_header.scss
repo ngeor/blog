@@ -1,0 +1,24 @@
+$post-title-font-size: 24px;
+
+@mixin post-title {
+    font-size: $post-title-font-size;
+    @include paragraph-margin;
+}
+
+main {
+    h2 {
+        @include post-title;
+    }
+}
+
+article {
+    h1 {
+        @include post-title;
+    }
+}
+
+.post-time {
+    color: #666;
+    font-style: italic;
+    @include paragraph-margin;
+}

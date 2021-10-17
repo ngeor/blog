@@ -16,6 +16,12 @@
         </div>
 
         {%- include footer.html -%}
+        
+        {% if page.use_mermaid %}
+            <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({startOnLoad:true, flowchart: { useMaxWidth: true }});</script>
+        {% endif %}
+
     </body>
 
 </html>

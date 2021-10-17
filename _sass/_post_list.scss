@@ -1,3 +1,11 @@
 .post-list {
     @include list-style-none;
+
+    li {
+        margin: 0 0 ($margin + $base-font-size) 0;
+    }
+
+    li:last-child {
+        margin: 0 0 $margin 0;
+    }
 }

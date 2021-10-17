@@ -5,6 +5,7 @@ date: 2020-11-30 08:50:25 +02:00
 tags:
   - qbasic
   - rusty basic
+use_mermaid: true
 ---
 
 This is the 2nd part of learning QBasic, still figuring out how QBasic works in

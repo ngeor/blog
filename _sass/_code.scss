@@ -1,0 +1,18 @@
+$code-background-color: #eeeeff;
+
+code {
+    font-family: $code-font-family;
+    background: $code-background-color;
+}
+
+// for code blocks that have too long lines,
+// add horizontal scrollbar as needed and
+// prevent overflow
+pre {
+    overflow: auto;
+    @include paragraph-margin;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: $base-font-size;
+    background: $code-background-color;
+}
