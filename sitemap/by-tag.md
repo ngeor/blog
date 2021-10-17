@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Archive by tag
-permalink: /archives/tag/
+title: Tag cloud
+permalink: /sitemap/tag-cloud/
 ---
 
 Find posts tagged with a specific tag.
