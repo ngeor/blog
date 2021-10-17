@@ -4,21 +4,22 @@ title: Archive by tag
 permalink: /archives/tag/
 ---
 
-Tags
+Find posts tagged with a specific tag.
 
-{% assign tags = site.by_tag | sort: "sort_index" %}
+{% assign tags = site.by_tag | sort_natural: "tag" %}
 
 <ul>
 
-{% for tag in tags %}
+    {%- for tag_page in tags -%}
+        {%- assign font_size = tag_page.post_count | times: 500.0 | divided_by: tags.size | at_least: 10 -%}
 
-<li>
-  <a href="{{ tag.url | relative_url }}">
-    {{ tag.title | escape }} ({{ tag.post_count }}
-    {% if tag.post_count > 1 -%} posts {%- else -%} post {%- endif -%})
-  </a>
-</li>
+        <li>
+            <a href="{{ tag_page.url | relative_url }}" style="font-size: {{- font_size -}}px">
+                {{ tag_page.tag | escape }} ({{ tag_page.post_count }}
+                {% if tag_page.post_count > 1 -%} posts {%- else -%} post {%- endif -%})
+            </a>
+        </li>
 
-{% endfor %}
+    {%- endfor -%}
 
 </ul>
