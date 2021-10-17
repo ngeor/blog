@@ -23,8 +23,3 @@ Google AdSense.
 This blog is powered by [jekyll](https://jekyllrb.com/) and
 it is hosted on [GitHub Pages](https://pages.github.com/). The
 source code for the blog is [here](https://github.com/ngeor/blog).
-
-## Icons
-
-- [Gray test tube 4 icon](https://www.iconsdb.com/gray-icons/test-tube-4-icon.html)
-- [Helm logo](https://github.com/helm/helm/blob/master/docs/logos/helm-blue-vector.svg)
