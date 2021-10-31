@@ -1,10 +1,7 @@
 ---
-layout: post
+layout: page
 title: IntelliJ IDEA
 date: 2019-09-09
-tags:
-  - reference
-  - IntelliJ IDEA
 ---
 
 Extensions, themes and configuration for IntelliJ IDEA.

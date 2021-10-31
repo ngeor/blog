@@ -1,10 +1,7 @@
 ---
-layout: post
+layout: page
 title: Fonts
 date: 2019-09-08
-tags:
-  - reference
-  - fonts
 ---
 
 Various fonts (typically programming fonts) that I've used.

@@ -1,10 +1,7 @@
 ---
-layout: post
+layout: page
 title: Custom Tooling
 date: 2019-03-11
-tags:
-  - pet project
-  - reference
 ---
 
 A catalog of custom tooling I've written. yak4j stands for [yak shaving] for

@@ -1,10 +1,7 @@
 ---
-layout: post
+layout: page
 title: Visual Studio Code
 date: 2019-01-10
-tags:
-  - reference
-  - Visual Studio Code
 ---
 
 Extensions, themes and configuration for Visual Studio Code.

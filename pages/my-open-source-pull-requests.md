@@ -1,12 +1,7 @@
 ---
-layout: post
+layout: page
 title: My open source pull requests
 date: 2019-12-15
-published: true
-tags:
-  - open source
-  - reference
-  - pull requests
 ---
 
 I thought of tracking down the pull requests I've written for open source
