@@ -4,6 +4,7 @@ title: About
 tags:
   - menu
 permalink: /about/
+date: 2021-10-31
 ---
 
 My name is Nikolaos Georgiou. I'm a Greek software engineer

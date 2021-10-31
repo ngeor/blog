@@ -8,12 +8,17 @@ layout: default
 {%- endif -%}
 <article class="{{ css_class }}">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+    <div class="post-content">
+        {{ content }}
+
+        {%- if page.date -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <p><em>Last updated: {{ page.date | date: date_format }}</em></p>
+        {%- endif -%}
+    </div>
 
 </article>

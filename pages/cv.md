@@ -5,6 +5,7 @@ tags:
   - menu
 permalink: /cv/
 extra_css: cv
+date: 2020-06-29
 ---
 
 Polyglot full-stack software engineer with 15+ years of working experience.

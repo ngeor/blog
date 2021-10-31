@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Jekyll Cheatsheet
+date: 2021-10-31
 ---
 
 A cheatsheet for [Jekyll](https://jekyllrb.com/).
