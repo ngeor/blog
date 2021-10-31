@@ -1,36 +1,28 @@
 ---
 layout: page
 title: Custom Tooling
-date: 2019-03-11
+date: 2021-10-31
 ---
 
 A catalog of custom tooling I've written. yak4j stands for [yak shaving] for
 Java.
 
-## Creating a new project
+## Batch processing
 
-- [instarepo] creates a new git repository and activates build pipeline
+- [instarepo] applies batch changes to multiple repositories.
 
-### Scaffolding
+## Scaffolding
 
 - [archetype-quickstart-jdk8] Maven archetype
-- [generator-csharp-cli-app] Yeoman generator for a C# cli app
-- [generator-csharp-nuget-lib] Yeoman generator for a C# NuGet package
-- [generator-nodejs] Yeoman generator for a nodeJS app
 
 ## Getting latest
 
-- [clone-all] clones all missing repositories from GitHub or Bitbucket Cloud
-- [dirloop] runs the same command over multiple directories (e.g.
-  `dirloop git pull`)
 - [yak4j-sync-archetype-maven-plugin] Regenerates a project out of its maven
   archetype and overwrites specific files
 
 ## Versioning
 
-- [yak4j-bitbucket-maven-plugin] breaks the build if the tag already exists,
-  creates a tag on successful build
-- [yart] manual bump version and tag publishing
+- [yart] helps with releasing a project that follows semantic versioning
 
 ## Linting
 
@@ -54,26 +46,9 @@ Java.
 - [yak4j-spring-test-utils] custom assertJ assertions for Spring
   TestRestTemplate and MvcActions
 
-## Docker Images
-
-I moved all my custom Docker images in a single repository: [dockerfiles].
-Includes images regarding:
-
-- Deployment with helm, kubectl, terraform
-- nodeJS with headless Chrome
-- Generate diagrams out of swagger definitions and publish them to Confluence
-  Cloud
-
 [archetype-quickstart-jdk8]: https://github.com/ngeor/archetype-quickstart-jdk8
 [checkstyle-rules]: https://github.com/ngeor/checkstyle-rules
-[clone-all]: https://github.com/ngeor/clone-all
-[dirloop]: https://github.com/ngeor/dirloop
-[dockerfiles]: https://github.com/ngeor/dockerfiles
-[generator-csharp-cli-app]: https://github.com/ngeor/generator-csharp-cli-app
-[generator-csharp-nuget-lib]: https://github.com/ngeor/generator-csharp-nuget-lib
-[generator-nodejs]: https://github.com/ngeor/generator-nodejs
 [instarepo]: https://github.com/ngeor/instarepo
-[yak4j-bitbucket-maven-plugin]: https://github.com/ngeor/yak4j-bitbucket-maven-plugin
 [yak4j-filename-conventions-maven-plugin]: https://github.com/ngeor/yak4j-filename-conventions-maven-plugin
 [yak4j-json-yaml-converter-maven-plugin]: https://github.com/ngeor/yak4j-json-yaml-converter-maven-plugin
 [yak4j-spring-test-utils]: https://github.com/ngeor/yak4j-spring-test-utils
