@@ -25,21 +25,21 @@ Commands:
 - Install with `bundle install`
 - Run with `jekyll s --incremental`
 
-## New Post
+## Authoring
 
 Scaffold a new post with `new.rb`.
+
+The custom attribute `use_mermaid` will enable [mermaid](https://mermaid-js.github.io/mermaid/#/) diagrams.
+
+### Pages
+
+The custom attribute `extra_css` can be used to add extra styling to a page.
+The value of that attribute will be postfixed to the `page__` prefix.
+
+To show a page in the burger menu, tag it with `menu`.
 
 ## Tags
 
 The custom script `preprocessor.rb` generates tag pages. The tags need to be
 specified in the post's front-matter using the human-friendly name (e.g. `.net`
 instead of `dot-net`).
-
-## Pages
-
-The page layout has a top-level element `article`.
-
-The custom attribute `extra_css` can be used to add extra styling to a page.
-The value of that attribute will be postfixed to the `page__` prefix.
-
-To show a page in the burger menu, tag it with `menu`.
