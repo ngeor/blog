@@ -3,6 +3,7 @@ layout: page
 title: Support
 tags:
   - menu
+permalink: /support/
 ---
 
 Hello there!

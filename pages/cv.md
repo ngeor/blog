@@ -3,6 +3,8 @@ layout: page
 title: CV
 tags:
   - menu
+permalink: /cv/
+extra_css: cv
 ---
 
 Polyglot full-stack software engineer with 15+ years of working experience.

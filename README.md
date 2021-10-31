@@ -39,7 +39,7 @@ instead of `dot-net`).
 
 The page layout has a top-level element `article`.
 
-The `article` will have the data attribute `data-file` which is the file path of
-the page, without the `.md` extension and with all slashes replaced by hyphens.
+The custom attribute `extra_css` can be used to add extra styling to a page.
+The value of that attribute will be postfixed to the `page__` prefix.
 
 To show a page in the burger menu, tag it with `menu`.

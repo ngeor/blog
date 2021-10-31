@@ -1,7 +1,12 @@
 ---
 layout: default
 ---
-<article data-file="{{ page.path | replace: '.md', '' | replace: '/', '-' }}" class="page page__{{ page.path | replace: '.md', '' | replace: '/', '-' }}">
+{%- if page.extra_css -%}
+{%- assign css_class = "page page__" | append: page.extra_css -%}
+{%- else -%}
+{%- assign css_class = "page" -%}
+{%- endif -%}
+<article class="{{ css_class }}">
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>

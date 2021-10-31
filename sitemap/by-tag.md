@@ -2,6 +2,7 @@
 layout: page
 title: Tag cloud
 permalink: /sitemap/tag-cloud/
+extra_css: sitemap-by-tag
 ---
 
 Find posts tagged with a specific tag.

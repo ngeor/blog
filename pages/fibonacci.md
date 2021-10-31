@@ -3,6 +3,8 @@ layout: page
 title: Fibonacci
 tags:
   - menu
+permalink: /fibonacci/
+extra_css: fibonacci
 ---
 
 Write a program that prints the first N numbers of the

@@ -3,6 +3,7 @@ layout: page
 title: Series
 tags:
   - menu
+extra_css: series
 ---
 I've written a few series of blog posts on topics that are too big to fit in a
 single post. In this page you can find a list of all these series.

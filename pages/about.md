@@ -3,6 +3,7 @@ layout: page
 title: About
 tags:
   - menu
+permalink: /about/
 ---
 
 My name is Nikolaos Georgiou. I'm a Greek software engineer
