@@ -64,9 +64,7 @@
             const headings = document.querySelectorAll('article h2[id]');
             for (let i = headings.length - 1; i >= 0; i--) {
                 const heading = headings[i];
-                console.log(heading);
                 const headingId = heading.getAttribute('id');
-                console.log(headingId);
                 const newLink = document.createElement('a');
                 newLink.setAttribute('class', 'heading-link');
                 newLink.setAttribute('href', '#' + headingId);
