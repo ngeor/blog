@@ -1,38 +1,36 @@
-.page__fibonacci {
-  ul.selector {
+.fibonacci ul.selector {
     list-style: none;
     margin-left: 0;
 
     li {
-      margin-bottom: $margin;
+        margin-bottom: $margin;
     }
 
     figure {
-      padding: 0;
-      border: none;
-      box-shadow: none;
-      border-radius: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
 
-      > * {
-        margin-bottom: 0;
-      }
+        > * {
+            margin-bottom: 0;
+        }
     }
 
     label {
-      cursor: pointer;
+        cursor: pointer;
     }
 
     input {
-      display: none;
+        display: none;
     }
 
     .code {
-      display: none;
-      @include margin-bottom-children;
+        display: none;
+        @include margin-bottom-children;
     }
 
     input[type="checkbox"]:checked ~ .code {
-      display: block;
+        display: block;
     }
   }
-}

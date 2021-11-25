@@ -1,12 +1,7 @@
 ---
 layout: default
 ---
-{%- if page.extra_css -%}
-{%- assign css_class = "page page__" | append: page.extra_css -%}
-{%- else -%}
-{%- assign css_class = "page" -%}
-{%- endif -%}
-<article class="{{ css_class }}">
+<article class="page">
 
     <header class="post-header">
         <h1 class="post-title">{{ page.title | escape }}</h1>

@@ -8,6 +8,7 @@ tags:
   - java
   - javascript
   - python
+extra_css: h2-counter
 ---
 
 The inspiration for this post is the

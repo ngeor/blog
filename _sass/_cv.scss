@@ -1,21 +1,21 @@
-.page__cv {
-  ul {
-    @include margin-bottom-children;
-    list-style: none;
-    margin-left: 0;
+.cv article.page {
+    ul {
+        @include margin-bottom-children;
+        list-style: none;
+        margin-left: 0;
 
-    li {
-      @include margin-bottom-children;
-      box-sizing: border-box;
-      border-bottom: 1px solid #ccc;
-    }
+        li {
+            @include margin-bottom-children;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+        }
 
-    li:last-child {
-      border-bottom: none;
-    }
+        li:last-child {
+            border-bottom: none;
+        }
 
-    .keywords {
-      font-size: smaller;
+        .keywords {
+            font-size: smaller;
+        }
     }
-  }
 }

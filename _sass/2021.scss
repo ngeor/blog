@@ -100,6 +100,18 @@ article {
     h2 {
         font-size: 20px;
         color: #333;
+
+        a.heading-link {
+            display: none;
+            margin: 0;
+            padding: 0 10px;
+        }
+    }
+
+    h2:hover {
+        a.heading-link {
+            display: inline-block;
+        }
     }
 
     h3 {
@@ -190,7 +202,7 @@ footer {
     }
 }
 
-.page__sitemap-by-tag {
+.sitemap-by-tag article.page {
     ul {
         @include list-style-none;
     }
@@ -245,4 +257,4 @@ $desktop: 800px;
     }
 }
 
-@import "code", "syntax_highlight", "fibonacci", "cv", "series", "post_list", "post_header";
+@import "code", "syntax_highlight", "fibonacci", "cv", "series", "post_list", "post_header", "extra";
