@@ -37,7 +37,7 @@ Automation, testing, continuous delivery, observability.
     <div class="period">February 2018 – October 2019</div>
     <div>
       Defined the technology stack and micro-service architecture of a greenfield
-      multi-tenant platfrom. Implemented backend, frontend, ci/cd pipelines, and
+      multi-tenant platform. Implemented backend, frontend, ci/cd pipelines, and
       infrastructure of the platform. Migrated legacy monolith systems to the new
       platform.
     </div>
