@@ -12,6 +12,8 @@ tags:
 In this post I'm describing my current setup regarding releasing
 a versioned library into Maven central repository.
 
+**Update: see latest in [v2]({% post_url 2022/2022-12-03-my-maven-release-workflow-v2 %})**
+
 ## Initiating the release
 
 The release starts from the default branch. There shouldn't be any
