@@ -135,12 +135,6 @@ article {
     }
 }
 
-.support-banner {
-    border: 1px solid #fcc;
-    padding: $margin;
-    background: #ffc;
-}
-
 aside {
     padding: $margin;
     background: #ccc;
@@ -166,21 +160,6 @@ footer {
     a {
         @include non-underlined-link;
     }
-}
-
-.cookies {
-    background: #ffc;
-    border: 2px solid black;
-    bottom: 0;
-    box-sizing: border-box;
-    left: 0;
-    padding: $margin;
-    position: fixed;
-    right: 0;
-}
-
-.cookies--acknowledged {
-    display: none;
 }
 
 .social-media-list {
