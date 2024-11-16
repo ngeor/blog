@@ -39,10 +39,6 @@
       href="https://youtube.com/{{ site.youtube_username| cgi_escape | escape }}"><svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#youtube' | relative_url }}"></use>
       </svg> <span class="username">{{ site.youtube_username| escape }}</span></a></li>{%- endif -%}
-  {%- if site.googleplus_username -%}<li><a href="https://plus.google.com/{{ site.googleplus_username| escape }}"><svg
-        class="svg-icon">
-        <use xlink:href="{{ '/assets/minima-social-icons.svg#googleplus' | relative_url }}"></use>
-      </svg> <span class="username">{{ site.googleplus_username| escape }}</span></a></li>{%- endif -%}
   {%- if site.so_link -%}<li><a href="{{ site.so_link }}"><svg class="svg-icon">
         <use xlink:href="{{ '/assets/minima-social-icons.svg#stackoverflow' | relative_url }}"></use>
       </svg> <span class="username">{{ site.so_link | escape }}</span></a></li>{%- endif -%}

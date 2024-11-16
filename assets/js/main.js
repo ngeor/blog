@@ -13,51 +13,6 @@
         }
     }
 
-    const cookiesModule = {
-        // so that it runs on every page
-        selector: 'body',
-
-        /**
-         * Checks if the user has acknowledged the usage of cookies.
-         */
-        hasAcknowledgedCookies: function () {
-            // https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#Example_3_Do_something_only_once
-            return document.cookie.replace(/(?:(?:^|.*;\s*)ackCookies\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
-        },
-
-        /**
-       * Stores a cookie to indicate that the user has acknowledged the usage of cookies.
-       */
-        acknowledgedCookies: function () {
-            document.cookie = "ackCookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-        },
-
-        showCookiesPopup: function () {
-            if (this.hasAcknowledgedCookies()) {
-                return;
-            }
-
-            const that = this;
-            var el = document.getElementById('js-cookies');
-
-            // show the cookie popup
-            el.className = 'cookies';
-            addEventListener(document.getElementById('js-cookies-close'), 'click', function (event) {
-                event.preventDefault();
-
-                // hide the cookie popup
-                el.className = 'cookies cookies--acknowledged';
-
-                // store a cookie to not show the popup next time
-                that.acknowledgedCookies();
-            });
-        },
-
-        main: function () {
-            this.showCookiesPopup();
-        }
-    };
-
     const linksModule = {
         selector: 'article',
         main: function() {
@@ -76,7 +31,6 @@
 
     function main() {
         const modules = [
-            cookiesModule,
             linksModule
         ];
 

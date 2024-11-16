@@ -50,7 +50,6 @@ exclude:
 
 permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: true
-google_analytics: G-2G859GGLYY
 
 collections:
   by_tag:

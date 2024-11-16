@@ -15,11 +15,6 @@ programming, continuous integration, testing, automation, code quality.
 
 {% include social.html %}
 
-## Cookies
-
-This site uses third party cookies from Google Analytics and
-Google AdSense.
-
 ## Meta
 
 This blog is powered by [jekyll](https://jekyllrb.com/) and
