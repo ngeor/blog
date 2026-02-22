@@ -4,26 +4,17 @@ My blog
 
 ## Developing
 
-### Local Development
-
 Requirements:
 
-- [VirtualBox](https://www.virtualbox.org/)
-- [Vagrant](https://www.vagrantup.com/)
+- Ruby
+- Jekyll
 
 Commands:
 
-- Start the box with `vagrant up`
-- Login to the box with `vagrant ssh` and start jekyll with `j`
-  (alias to `jekyll serve --incremental --host 0.0.0.0`)
-- When done, cleanup with `vagrant destroy`
-- Upgrade with `bundle update github-pages`
-- Profile with `jekyll build --profile`
-
-### GitPod
-
 - Install with `bundle install`
-- Run with `jekyll s --incremental`
+- Start serving the site with `bundle exec jekyll serve --incremental --host 0.0.0.0`
+- Upgrade with `bundle update github-pages`
+- Profile with `bundle exec jekyll build --profile`
 
 ## Authoring
 

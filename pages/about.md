@@ -17,6 +17,5 @@ programming, continuous integration, testing, automation, code quality.
 
 ## Meta
 
-This blog is powered by [jekyll](https://jekyllrb.com/) and
-it is hosted on [GitHub Pages](https://pages.github.com/). The
-source code for the blog is [here](https://github.com/ngeor/blog).
+This blog is powered by [jekyll](https://jekyllrb.com/).
+The source code for the blog is [here](https://github.com/ngeor/blog).
